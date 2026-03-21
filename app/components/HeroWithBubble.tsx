@@ -45,13 +45,13 @@ export function HeroWithBubble() {
           Product Designer · UX
         </p>
         <h1 className="font-semibold text-4xl sm:text-5xl md:text-6xl leading-[1.1] tracking-tight max-w-[36rem]">
-          I turn ambiguous problems into clear,{" "}
-          <span className="lg:whitespace-nowrap">measurable outcomes</span>.
+          I turn complex, ambiguous problems into clear, measurable outcomes.
         </h1>
-        <p className="mt-6 text-lg text-zinc-400 max-w-xl">
-          Public services, AI products, and marketplaces. I lead research,
-          design systems, and end-to-end UX so products feel trustworthy and
-          easy to use.
+        <p className="mt-6 text-lg text-zinc-400 max-w-xl whitespace-pre-line">
+          Designed systems for 600+ users, improving complex workflows across
+          backend and user-facing products
+          {"\n\n"}Leading research, design systems, and end-to-end UX to create
+          products that feel trustworthy and easy to use
         </p>
         <div className="mt-10 flex flex-wrap gap-4">
           <Link

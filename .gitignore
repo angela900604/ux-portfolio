@@ -49,3 +49,6 @@ dist
 *.mov
 *.zip
 .DS_Store
+
+*.mov
+*.mp4
