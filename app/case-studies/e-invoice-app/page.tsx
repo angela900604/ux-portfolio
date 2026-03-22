@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import FlowSlideshow from "./FlowSlideshow";
 import SolutionGallery from "./SolutionGallery";
 import { ImageLightbox } from "./ImageLightbox";
 
@@ -430,12 +429,25 @@ export default function EInvoiceCaseStudy() {
                 monochrome UI and heavy navy–gold “institutional” palettes that
                 can feel more like a bank lobby than a daily-use consumer app.
               </p>
-              <p className="mt-3 text-zinc-400 text-sm leading-relaxed max-w-3xl italic">
-                Public-sector comms nuance: an overly “party-coded” green or blue
-                palette can read as political signal in Taiwan—so a warmer,
-                multi-hue friendly direction was also a pragmatic choice for
-                neutral citizen-facing messaging.
-              </p>
+              <div className="mt-4 max-w-3xl rounded-2xl border border-amber-500/35 bg-gradient-to-br from-amber-500/10 to-zinc-900/80 px-4 py-4 sm:px-5 sm:py-5 shadow-[inset_0_1px_0_0_rgba(251,191,36,0.12)]">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-amber-400/95">
+                  Fun fact · Taiwan public sector
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-zinc-200">
+                  This rarely shows up in a design brief: on an official ministry
+                  app, going{" "}
+                  <span className="text-zinc-100 font-medium">too “blue”</span>{" "}
+                  or{" "}
+                  <span className="text-zinc-100 font-medium">too “green”</span>{" "}
+                  can read like party-coded branding—and local outlets may spin
+                  it as political. We leaned{" "}
+                  <span className="text-zinc-100 font-medium">
+                    warm, multi-hue, citizen-friendly
+                  </span>{" "}
+                  so the story stayed about invoices and usability, not
+                  headlines.
+                </p>
+              </div>
 
               <p className="mt-8 text-sm font-medium text-zinc-200">
                 Home screen: three styles for decision
@@ -445,46 +457,116 @@ export default function EInvoiceCaseStudy() {
                 client could judge hierarchy, contrast, and brand feel on a real
                 entry screen—not only on static mood boards.
               </p>
-              <div className="mt-4">
-                <FullBleedStrip
-                  src="/case-studies/e-invoice/style-proposals-home-compare.png"
-                  alt="Three home screen mockups comparing friendly, minimalist, and professional styles"
-                  caption="Same home structure, three visual systems—presented for side-by-side selection."
-                />
+              <p className="mt-3 text-xs text-zinc-500 max-w-3xl">
+                Same home structure, three visual systems—left to right: friendly
+                &amp; lively, modern minimalist, professional &amp; practical.
+              </p>
+              <div className="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-3 sm:gap-4">
+                {[
+                  {
+                    src: "/case-studies/e-invoice/home-style-01-friendly-lively.png",
+                    alt: "Home screen mockup: friendly and lively purple theme",
+                    label: "01 · Friendly & lively",
+                  },
+                  {
+                    src: "/case-studies/e-invoice/home-style-02-minimal.png",
+                    alt: "Home screen mockup: modern minimalist with yellow accents",
+                    label: "02 · Modern minimalist",
+                  },
+                  {
+                    src: "/case-studies/e-invoice/home-style-03-professional.png",
+                    alt: "Home screen mockup: professional navy and gold theme",
+                    label: "03 · Professional & practical",
+                  },
+                ].map((item) => (
+                  <div key={item.src} className="flex min-w-0 flex-col">
+                    <ImageLightbox src={item.src} alt={item.alt} className="block w-full">
+                      <div
+                        className={`relative mx-auto aspect-[9/19] w-full max-w-[220px] overflow-hidden bg-zinc-950 ${R_IMG}`}
+                      >
+                        <Image
+                          src={item.src}
+                          alt={item.alt}
+                          fill
+                          sizes="(max-width: 640px) 100vw, 33vw"
+                          className="object-cover object-center"
+                        />
+                      </div>
+                    </ImageLightbox>
+                    <p className="mt-2 text-center text-[11px] leading-snug text-zinc-500">
+                      {item.label}
+                    </p>
+                  </div>
+                ))}
               </div>
 
-              <p className="mt-10 text-sm font-medium text-zinc-200">
-                Design system foundation
-              </p>
-              <p className="mt-2 text-zinc-300 leading-relaxed max-w-3xl text-sm">
-                Wireframes started from Apple’s official iOS design resources,
-                then components were adapted as we mapped real flows—spacing,
-                states, and patterns were extended where the product needed
-                government-specific density and clarity.
-              </p>
-              <div className="mt-4">
-                <FullBleedStrip
-                  src="/case-studies/e-invoice/design-system-ios-kit.png"
-                  alt="Apple iOS and iPadOS UI Kit design resources cover"
-                  caption="Baseline: iOS / iPadOS UI Kit as the starting point before custom components."
-                />
-              </div>
+              <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8 lg:items-stretch">
+                {/* A · Platform — what we anchored to */}
+                <article className="flex min-h-0 flex-col rounded-2xl border border-zinc-800/90 bg-zinc-900/50 p-5 sm:p-6 shadow-sm shadow-black/20">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-emerald-400/90">
+                    A · Platform baseline
+                  </p>
+                  <h4 className="mt-2 text-base font-semibold tracking-tight text-zinc-100">
+                    Design system foundation
+                  </h4>
+                  <p className="mt-2 text-sm leading-relaxed text-zinc-300">
+                    Wireframes started from Apple's official iOS design resources,
+                    then components were adapted as we mapped real flows—spacing,
+                    states, and patterns were extended where the product needed
+                    government-specific density and clarity.
+                  </p>
+                  <div className="mt-4 lg:mt-auto lg:pt-2">
+                    <figure className="space-y-2">
+                      <ImageLightbox
+                        src="/case-studies/e-invoice/design-system-ios-kit.png"
+                        alt="Apple iOS and iPadOS UI Kit design resources cover"
+                        className="w-full"
+                      >
+                        <div
+                          className={`relative h-[170px] w-full overflow-hidden rounded-xl border border-zinc-700/60 bg-zinc-950 sm:h-[200px] ${R_IMG}`}
+                        >
+                          <Image
+                            src="/case-studies/e-invoice/design-system-ios-kit.png"
+                            alt="Apple iOS and iPadOS UI Kit design resources cover"
+                            fill
+                            className="object-cover object-center"
+                            sizes="(max-width: 1024px) 100vw, 50vw"
+                          />
+                        </div>
+                      </ImageLightbox>
+                      <figcaption className="text-xs text-zinc-500">
+                        Baseline: iOS / iPadOS UI Kit before custom components.
+                      </figcaption>
+                    </figure>
+                  </div>
+                </article>
 
-              <p className="mt-10 text-sm font-medium text-zinc-200">
-                Wireframes
-              </p>
-              <p className="mt-2 text-zinc-300 leading-relaxed max-w-3xl text-sm">
-                Low-fidelity flows in Figma covered prize claim, scan, and
-                verification paths—structure first, visual polish after the
-                direction was locked.
-              </p>
-              <div className="mt-4">
-                <FullBleedStrip
-                  src="/case-studies/e-invoice/wireframe-figma.png"
-                  alt="Figma wireframe canvas for invoice and prize flows"
-                  caption="Wireframe phase: grouped flows for claim, scan, and verification."
-                />
+                {/* B · Flows — what we mapped */}
+                <article className="flex min-h-0 flex-col rounded-2xl border border-zinc-800/90 bg-zinc-900/50 p-5 sm:p-6 shadow-sm shadow-black/20">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-violet-400/90">
+                    B · Flow coverage
+                  </p>
+                  <h4 className="mt-2 text-base font-semibold tracking-tight text-zinc-100">
+                    Wireframes
+                  </h4>
+                  <p className="mt-2 text-sm leading-relaxed text-zinc-300">
+                    Low-fidelity flows in Figma covered prize claim, scan, and
+                    verification paths—structure first, visual polish after the
+                    direction was locked.
+                  </p>
+                  <div className="mt-4 min-h-0 flex-1">
+                    <FullBleedStrip
+                      src="/case-studies/e-invoice/wireframe-figma.png"
+                      alt="Figma wireframe canvas for invoice and prize flows"
+                      caption="Grouped flows for claim, scan, and verification—full canvas in Figma."
+                    />
+                  </div>
+                </article>
               </div>
+              <p className="mt-4 text-[11px] text-zinc-600 max-w-2xl">
+                <span className="font-medium text-zinc-500">At a glance · </span>
+                Left: official UI baseline. Right: full flow canvas before polish.
+              </p>
 
               <div
                 className={`mt-8 border border-zinc-800 bg-zinc-900/40 p-6 sm:p-8 ${R_IMG}`}
@@ -541,13 +623,23 @@ export default function EInvoiceCaseStudy() {
                 were validated with users and used to align government
                 leadership decisions.
               </p>
-              <div className="mt-6 space-y-3">
-                <FlowSlideshow />
-                <p className="text-xs text-zinc-500 max-w-2xl">
-                  Page flow and navigation structure that simplified login and
-                  core tasks—shown across key architecture iterations.
-                </p>
+              <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <FullBleedStrip
+                  src="/case-studies/e-invoice/flow-figma-mockup-settings-features.png"
+                  alt="Figma APP Mockup: Settings and feature overview across standard mobile, dark mode, and 200% text accessibility"
+                  caption="High-fidelity mockup canvas: same flows in standard view, dark mode, and large text—evidence of inclusive hand-off and readiness for dev."
+                />
+                <FullBleedStrip
+                  src="/case-studies/e-invoice/flow-figma-page-flow-prize-redemption.png"
+                  alt="Figma page flow: 06 prize redemption paths for EasyCard, iPASS, e-invoice, and paper invoice"
+                  caption="Page-flow diagram for prize redemption: branching logic across payment and invoice types, aligned with engineering and legacy constraints."
+                />
               </div>
+              <p className="mt-4 text-xs text-zinc-500 max-w-2xl">
+                Figma captures both screen breadth and flow logic—how users move
+                through regulated flows, and how UI adapts for accessibility
+                and dark environments.
+              </p>
             </div>
           </div>
         </section>
@@ -735,7 +827,7 @@ export default function EInvoiceCaseStudy() {
               if your story is about cross-functional leadership.
             </dd>
           </dl>
-          <div className="mt-6 space-y-8">
+          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
             <FullBleedStrip
               src="/case-studies/e-invoice/photo-stakeholder-meeting.png"
               alt="Workshop with stakeholders: laptop with Figma mockups and printed review documents"
@@ -760,39 +852,45 @@ export default function EInvoiceCaseStudy() {
             live production analytics—so it validates flow comprehension and
             usability risk, not a causal claim of post-launch KPIs.
           </p>
-          <dl className="mt-4 text-sm text-zinc-400 max-w-3xl space-y-2 border-l-2 border-zinc-700 pl-4">
-            <dt className="text-zinc-500 uppercase tracking-wider text-xs">
-              Method note (readability for recruiters)
-            </dt>
-            <dd>
-              <span className="text-zinc-300">Overall task success ~88%</span>{" "}
-              — aggregate success across task attempts in the matrix; figures
-              below are directional summaries from the test deck.{" "}
-              <span className="text-zinc-300">Login & registration ~75%</span>{" "}
-              — friction often at SMS/email verification.{" "}
-              <span className="text-zinc-300">Carrier binding ~67%</span> —
-              errors clustered in form entry.{" "}
-              <span className="text-zinc-300">Wallet & donation ~83%</span> —
-              flow understood; confusion when switching carriers.{" "}
-              <span className="text-zinc-300">Scan & prize redemption ~92%</span>{" "}
-              — most intuitive path; redemption guidance could still be clearer.{" "}
-              <span className="text-zinc-300">Spending analysis ~100%</span> in
-              sessions.{" "}
-              <span className="text-zinc-300">~1.3 errors per participant</span>{" "}
-              on average—mostly form entry and unclear prompts.
-            </dd>
-          </dl>
-          <div className="mt-6 space-y-8">
-            <FullBleedStrip
-              src="/case-studies/e-invoice/prototype-task-matrix.png"
-              alt="Spreadsheet: prototype task success matrix with green checks and red crosses per participant"
-              caption="Raw task matrix: evidence of where flows passed—used to prioritize fixes."
-            />
-            <FullBleedStrip
-              src="/case-studies/e-invoice/usability-metrics-summary.png"
-              alt="Summary of usability metrics by task area and participant notes"
-              caption="Aggregated view: task-level success rates and time-on-task notes from the same study."
-            />
+          <div className="mt-6 flex flex-col md:flex-row gap-6 md:gap-8 items-start">
+            <dl className="flex-1 min-w-0 text-sm text-zinc-400 space-y-2 border-l-2 border-zinc-700 pl-4">
+              <dt className="text-zinc-500 uppercase tracking-wider text-xs">
+                Method note (readability for recruiters)
+              </dt>
+              <dd>
+                <span className="text-zinc-300">Overall task success ~88%</span>{" "}
+                — aggregate success across task attempts in the matrix; figures
+                below are directional summaries from the test deck.{" "}
+                <span className="text-zinc-300">Login & registration ~75%</span>{" "}
+                — friction often at SMS/email verification.{" "}
+                <span className="text-zinc-300">Carrier binding ~67%</span> —
+                errors clustered in form entry.{" "}
+                <span className="text-zinc-300">Wallet & donation ~83%</span> —
+                flow understood; confusion when switching carriers.{" "}
+                <span className="text-zinc-300">Scan & prize redemption ~92%</span>{" "}
+                — most intuitive path; redemption guidance could still be clearer.{" "}
+                <span className="text-zinc-300">Spending analysis ~100%</span> in
+                sessions.{" "}
+                <span className="text-zinc-300">~1.3 errors per participant</span>{" "}
+                on average—mostly form entry and unclear prompts.
+              </dd>
+            </dl>
+            <figure className="w-full md:w-[min(100%,340px)] shrink-0 space-y-2">
+              <ImageLightbox src="/case-studies/e-invoice/prototype-task-matrix.png" alt="Spreadsheet: prototype task success matrix with green checks and red crosses per participant" className="block w-full">
+                <div className={`relative w-full aspect-[4/3] overflow-hidden bg-zinc-950 ${R_IMG}`}>
+                  <Image
+                    src="/case-studies/e-invoice/prototype-task-matrix.png"
+                    alt="Spreadsheet: prototype task success matrix with green checks and red crosses per participant"
+                    fill
+                    className="object-contain object-center"
+                    sizes="340px"
+                  />
+                </div>
+              </ImageLightbox>
+              <figcaption className="text-xs text-zinc-500">
+                Raw task matrix: evidence of where flows passed—used to prioritize fixes.
+              </figcaption>
+            </figure>
           </div>
 
           <div className="mt-10 rounded-2xl bg-zinc-800/60 border border-zinc-700/50 p-8 sm:p-10">
