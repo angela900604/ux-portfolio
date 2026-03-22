@@ -6,7 +6,7 @@ const FEATURED = {
   flagship: {
     slug: "e-invoice-app",
     title: "Redesigning Taiwan's e-Invoice app for accessibility & trust",
-    outcome: "68% → 92% login success",
+    outcome: "~88% prototype task success (moderated)",
     tag: "Flagship",
     description:
       "Led end-to-end UX for a nationwide public service app. Research across 30+ sessions, clearer flows, and inclusive design for millions of citizens.",

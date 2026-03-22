@@ -15,7 +15,7 @@ Curated set for **strongest visual impact**, **key decision points**, and **fina
 | 5 | Process (Flows) | `page-flow.png` | "Page flow and navigation structure that simplified login and core tasks." | **page flow** — key decision, easy to scan |
 | 6 | Solution | `final-1.png` | "Primary login path: clear language and one confident flow." | **Screenshot 11.03.47** (or main login) — in device mockup |
 | 7 | Solution | `final-2.png` | "Biometric and alternative login options for returning users." | **Screenshot 11.03.56** (or biometric) — in device mockup |
-| 8 | Impact | `task-completion.png` | "Task completion and validation results that informed the 68% → 92% outcome." | **task completion 1** — evidence for impact |
+| 8 | Impact & validation | `prototype-task-matrix.png` + `usability-metrics-summary.png` | Method + aggregated prototype metrics (~88% overall; per-task rates in copy). | **Evidence** — spreadsheet matrix + summary slide (not live prod KPIs). |
 
 ---
 
@@ -51,15 +51,15 @@ one main image + multiple thumbnails.
 - **Group 13 (Modern Minimal), Group 11 (Friendly Life)** → **Remove.** One direction (Professional) tells the story and avoids crowding.
 - **page flow** → **Keep.** `page-flow.png`. Key flow decision.
 - **Research photos (年輕族, 銀髮族, 視障, 聽障, wheelchair, meetings)** → **Keep one.** Use 銀髮族 as `research-elderly.png` to represent diverse research and accessibility.
-- **prototype testing (Excel matrix)** → **Replace.** Don’t use raw Excel. Use **task completion 1** in Impact as the validation visual; optionally add a 1–2 sentence summary in copy.
+- **prototype testing (Excel matrix)** → **Use** `prototype-task-matrix.png` + `usability-metrics-summary.png` in §05 with a short method footnote (prototype testing, not production analytics).
 
 ### Solution
 - **Screenshot 11.03.47, 11.03.56, 11.04.03** → **Keep 2–3.** Use as `final-1.png`, `final-2.png` (and optional `final-3.png`). Present inside **device mockups** (see below).
 - **mockup on figma** → Already used as hero; no need to repeat.
 
-### Impact
-- **task completion 1** → **Keep.** `task-completion.png`. Supports 68% → 92% and validation.
-- **user feedback 1** → **Skip.** Impact is clearer with one metric visual (task completion).
+### Impact & validation
+- **task matrix / metrics summary** → **Keep.** `prototype-task-matrix.png`, `usability-metrics-summary.png`. Honest prototype methodology; avoid implying live login lift without analytics.
+- Optional: `photo-stakeholder-meeting.png`, `photo-team-dinner.png` for collaboration narrative.
 
 ---
 

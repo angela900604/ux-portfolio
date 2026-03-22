@@ -75,7 +75,8 @@ export default function ResumePage() {
                 <li>
                   End-to-end UX for Taiwan Ministry Invoice App (nationwide
                   public service); redesigned auth, clarified login terminology,
-                  added biometric login — login success 68% → 92%.
+                  added biometric login; moderated prototype testing (~88%
+                  aggregate task success, per-task rates in study docs).
                 </li>
                 <li>
                   30+ user research sessions (focus groups, 1:1) across

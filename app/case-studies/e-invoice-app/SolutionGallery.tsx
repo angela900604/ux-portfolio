@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { ImageLightbox } from "./ImageLightbox";
 
 export type SolutionItem = {
   src: string;
@@ -14,15 +17,17 @@ export default function SolutionGallery({ items }: { items: SolutionItem[] }) {
     <div className="mt-6 grid grid-cols-2 lg:grid-cols-4 gap-4">
       {items.map((item) => (
         <div key={item.src + item.label} className="flex min-w-0 flex-col">
-          <div className="relative aspect-[9/19] w-full overflow-hidden rounded-2xl bg-zinc-950">
-            <Image
+          <ImageLightbox src={item.src} alt={item.alt} className="block w-full">
+            <div className="relative aspect-[9/19] w-full overflow-hidden rounded-[20px] bg-zinc-950">
+              <Image
               src={item.src}
               alt={item.alt}
               fill
               sizes="(max-width: 1024px) 50vw, 25vw"
               className="object-cover object-center"
             />
-          </div>
+            </div>
+          </ImageLightbox>
           <p className="mt-2 text-[11px] leading-snug text-zinc-400">
             {item.label}
           </p>

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
+import { ImageLightbox } from "./ImageLightbox";
 
 const SLIDES = [
   {
@@ -34,35 +35,39 @@ export default function FlowSlideshow() {
     return () => window.clearInterval(id);
   }, [paused, advance]);
 
+  const currentSlide = SLIDES[index];
+
   return (
     <figure className="space-y-3">
-      <div
-        className="relative w-full aspect-[16/10] overflow-hidden rounded-2xl bg-zinc-950"
-        onMouseEnter={() => setPaused(true)}
-        onMouseLeave={() => setPaused(false)}
-        role="region"
-        aria-roledescription="carousel"
-        aria-label="Flow architecture slides"
-      >
-        {SLIDES.map((slide, i) => (
-          <div
-            key={slide.src}
-            className={`absolute inset-0 transition-opacity duration-700 ease-out ${
-              i === index ? "opacity-100 z-[1]" : "opacity-0 z-0"
-            }`}
-            aria-hidden={i !== index}
-          >
-            <Image
-              src={slide.src}
-              alt={slide.alt}
-              fill
-              className="object-cover object-center"
-              sizes="(max-width: 1440px) 100vw, 1240px"
-              priority={i === 0}
-            />
-          </div>
-        ))}
-      </div>
+      <ImageLightbox src={currentSlide.src} alt={currentSlide.alt} className="block w-full">
+        <div
+          className="relative w-full aspect-[16/10] overflow-hidden rounded-[20px] bg-zinc-950"
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => setPaused(false)}
+          role="region"
+          aria-roledescription="carousel"
+          aria-label="Flow architecture slides"
+        >
+          {SLIDES.map((slide, i) => (
+            <div
+              key={slide.src}
+              className={`absolute inset-0 transition-opacity duration-700 ease-out ${
+                i === index ? "opacity-100 z-[1]" : "opacity-0 z-0"
+              }`}
+              aria-hidden={i !== index}
+            >
+              <Image
+                src={slide.src}
+                alt={slide.alt}
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 1440px) 100vw, 1240px"
+                priority={i === 0}
+              />
+            </div>
+          ))}
+        </div>
+      </ImageLightbox>
       <div className="flex flex-wrap items-center justify-end gap-3">
         <p className="sr-only" aria-live="polite">
           Slide {index + 1} of {SLIDES.length}. Auto-advances; pauses on hover.
