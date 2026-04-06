@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PhoneMockup, PortraitTile, WideFigure } from "./EInvoiceFigures";
+import { PortraitTile, WideFigure } from "./EInvoiceFigures";
 
 export const metadata = {
   title: "Reimagining Taiwan’s e-Invoice Experience | Angela Yang",
@@ -1108,11 +1108,11 @@ export default function EInvoiceCaseStudy() {
           </p>
           <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
             {FINAL_SOLUTION_SCREENS.map((item) => (
-              <PhoneMockup
+              <WideFigure
                 key={item.id}
+                borderless
                 src={ASSET(`solution-final-${item.id}.png`)}
                 alt={item.title}
-                label={item.title}
               />
             ))}
           </div>
