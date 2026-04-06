@@ -156,7 +156,6 @@ export default function EInvoiceCaseStudy() {
             <WideFigure
               src={ASSET("before-after-overview.png")}
               alt="Before and after overview of the e-invoice app redesign"
-              caption="Before / after · redesign overview (export)."
             />
           </div>
         </div>

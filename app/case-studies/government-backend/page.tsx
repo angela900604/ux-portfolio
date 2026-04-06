@@ -89,7 +89,6 @@ export default function GovernmentBackendCaseStudy() {
             <WideFigure
               src={ASSET("hero-platform-overview.png")}
               alt="Government backend platform overview — dashboards and navigation"
-              cropTopBottomPx={12}
             />
           </div>
         </div>
