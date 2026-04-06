@@ -11,28 +11,54 @@ export function WideFigure({
   alt,
   caption,
   className = "",
+  frame = "default",
 }: {
   src: string;
   alt: string;
   caption?: string;
   className?: string;
+  /** `light`: white card with 12px padding (diagrams on dark pages) */
+  frame?: "default" | "light";
 }) {
-  return (
-    <figure className={`space-y-2 ${className}`}>
-      <ImageLightbox
+  const image = (
+    <ImageLightbox
+      src={src}
+      alt={alt}
+      className={
+        frame === "light"
+          ? "block overflow-hidden rounded-[12px] bg-white"
+          : "block overflow-hidden rounded-[20px] border border-zinc-700/60 bg-zinc-900/30"
+      }
+    >
+      <Image
         src={src}
         alt={alt}
-        className="block overflow-hidden rounded-[20px] border border-zinc-700/60 bg-zinc-900/30"
-      >
-        <Image
-          src={src}
-          alt={alt}
-          width={2400}
-          height={1350}
-          className="h-auto w-full object-contain"
-          sizes="(max-width: 1200px) 100vw, 1100px"
-        />
-      </ImageLightbox>
+        width={2400}
+        height={1350}
+        className="h-auto w-full object-contain"
+        sizes="(max-width: 1200px) 100vw, 1100px"
+      />
+    </ImageLightbox>
+  );
+
+  if (frame === "light") {
+    return (
+      <figure className={`space-y-0 ${className}`}>
+        <div className="rounded-[20px] bg-white p-[12px]">
+          {image}
+          {caption && (
+            <figcaption className="mt-2 max-w-none text-xs leading-relaxed text-zinc-600">
+              {caption}
+            </figcaption>
+          )}
+        </div>
+      </figure>
+    );
+  }
+
+  return (
+    <figure className={`space-y-2 ${className}`}>
+      {image}
       {caption && (
         <figcaption className="max-w-3xl text-xs text-zinc-500">{caption}</figcaption>
       )}
@@ -98,6 +124,40 @@ export function PhoneMockup({
         {hint && (
           <p className="mt-1 text-[11px] leading-snug text-zinc-500">{hint}</p>
         )}
+      </figcaption>
+    </figure>
+  );
+}
+
+/** App screenshot without device chrome — rounded container + lightbox */
+export function FlatAppShot({
+  src,
+  alt,
+  label,
+}: {
+  src: string;
+  alt: string;
+  label: string;
+}) {
+  return (
+    <figure className="flex flex-col space-y-2">
+      <ImageLightbox
+        src={src}
+        alt={alt}
+        ariaLabel={`${alt} — tap to enlarge`}
+        className="mx-auto block w-full max-w-[min(100%,280px)] overflow-hidden rounded-[20px] border border-zinc-700/60 bg-zinc-900/30"
+      >
+        <Image
+          src={src}
+          alt={alt}
+          width={780}
+          height={1688}
+          className="h-auto w-full object-cover object-top"
+          sizes="(max-width: 640px) 72vw, 280px"
+        />
+      </ImageLightbox>
+      <figcaption className="text-center">
+        <p className="text-xs font-medium leading-snug text-zinc-200">{label}</p>
       </figcaption>
     </figure>
   );

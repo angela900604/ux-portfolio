@@ -1,5 +1,10 @@
+import type { ReactNode } from "react";
 import Link from "next/link";
-import { PhoneMockup, WideFigure } from "../e-invoice-app/EInvoiceFigures";
+import {
+  FlatAppShot,
+  PhoneMockup,
+  WideFigure,
+} from "../e-invoice-app/EInvoiceFigures";
 
 export const metadata = {
   title: "Role-Based Government Backend (600+ Staff) | Angela Yang",
@@ -8,6 +13,14 @@ export const metadata = {
 };
 
 const ASSET = (name: string) => `/case-studies/government-backend/${name}`;
+
+function Metric({ children }: { children: ReactNode }) {
+  return (
+    <span className="rounded-md bg-emerald-500/15 px-1.5 py-0.5 font-semibold text-emerald-200/95 tabular-nums">
+      {children}
+    </span>
+  );
+}
 
 function RbacCell({ granted }: { granted: boolean }) {
   return (
@@ -44,13 +57,15 @@ export default function GovernmentBackendCaseStudy() {
           <p className="mt-4 text-xl text-zinc-400 max-w-2xl">
             Backend platform for the Ministry of Finance&apos;s Uniform Invoice
             Lottery Redemption App—designed role-based access and reporting tools
-            for 600+ government staff, enabling faster invoice management and
-            reducing errors.
+            for <Metric>600+</Metric> government staff, enabling faster invoice
+            management and reducing errors.
           </p>
           <dl className="mt-8 flex flex-wrap gap-x-10 gap-y-2 text-sm">
             <div>
               <dt className="text-zinc-500 uppercase tracking-wider">Timeline</dt>
-              <dd className="text-zinc-200">July – September 2025</dd>
+              <dd className="text-zinc-200">
+                <Metric>July – September 2025</Metric>
+              </dd>
             </div>
             <div>
               <dt className="text-zinc-500 uppercase tracking-wider">Role</dt>
@@ -86,7 +101,8 @@ export default function GovernmentBackendCaseStudy() {
             Summary
           </span>
           <h2 className="text-xl font-semibold text-zinc-100">
-            Supporting 600+ government staff with role-based access control
+            Supporting <Metric>600+</Metric> government staff with role-based
+            access control
           </h2>
           <p className="text-zinc-300 leading-relaxed">
             I designed a role-based permission system that aligned responsibilities
@@ -100,9 +116,12 @@ export default function GovernmentBackendCaseStudy() {
           </h2>
           <p className="text-zinc-300 leading-relaxed">
             I redesigned reporting into an actionable dashboard with weekly and
-            monthly views, time-based filters, and CSV export. Staff could prepare
-            reports independently for meetings and audits, reducing reliance on
-            engineers and speeding up operational workflows.
+            monthly views, time-based filters, and{" "}
+            <span className="rounded-md bg-sky-500/15 px-1.5 py-0.5 font-medium text-sky-200/95">
+              CSV export
+            </span>
+            . Staff could prepare reports independently for meetings and audits,
+            reducing reliance on engineers and speeding up operational workflows.
           </p>
           <h2 className="text-xl font-semibold text-zinc-100 pt-2">
             Aligning UI decisions with system logic under tight constraints
@@ -129,11 +148,13 @@ export default function GovernmentBackendCaseStudy() {
             campaigns, push notifications, data reporting, and app version updates.
           </p>
           <p className="text-zinc-300 leading-relaxed max-w-3xl">
-            With over 600 staff members relying on national platforms, consistency
-            and alignment were critical. During early discovery, staff repeatedly
-            emphasized their need for workflows to feel familiar with the systems
-            they were already using. To clarify their expectations, I conducted
-            three rounds of needs interviews. These sessions helped me identify
+            With over <Metric>600</Metric> staff members relying on national
+            platforms, consistency and alignment were critical. During early
+            discovery, staff repeatedly emphasized their need for workflows to
+            feel familiar with the systems they were already using. To clarify
+            their expectations, I conducted{" "}
+            <Metric>3</Metric> rounds of needs interviews. These sessions helped
+            me identify
             feature priorities and validate user flows before diving into design.
           </p>
           <p className="text-zinc-300 leading-relaxed max-w-3xl">
@@ -158,30 +179,48 @@ export default function GovernmentBackendCaseStudy() {
               in-app <span className="text-zinc-200">notification center</span> and
               message details—aligned with those backend rules.
             </p>
-            <div className="grid gap-8 lg:grid-cols-2 lg:items-start lg:gap-10">
-              <div className="min-w-0">
+            <div className="space-y-8">
+              <div className="min-w-0 space-y-3">
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="rounded-md bg-sky-500/20 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-sky-200">
+                    Backend
+                  </span>
+                  <span className="text-xs text-zinc-500">
+                    Admin console (staff-facing)
+                  </span>
+                </div>
                 <WideFigure
                   src={ASSET("backend-notification-settings.png")}
                   alt="Backend admin: notification content and scheduled publishing"
                   caption="Backend · Notification settings (content + pre-scheduled publish time)."
                 />
               </div>
-              <div className="flex min-w-0 flex-col gap-8 sm:max-lg:max-w-md sm:max-lg:mx-auto lg:mx-0">
-                <PhoneMockup
-                  src={ASSET("app-push-notification.png")}
-                  alt="App: push notification on lock screen triggered by backend settings"
-                  label="App · Push notification (triggered by backend)"
-                />
-                <PhoneMockup
-                  src={ASSET("app-notification-list.png")}
-                  alt="App: notification center list"
-                  label="App · Notification center list"
-                />
-                <PhoneMockup
-                  src={ASSET("app-notification-detail.png")}
-                  alt="App: notification detail screen"
-                  label="App · Detail (from list or push)"
-                />
+              <div className="space-y-3">
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="rounded-md bg-violet-500/20 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-violet-200">
+                    App
+                  </span>
+                  <span className="text-xs text-zinc-500">
+                    End-user mobile (triggered by backend rules)
+                  </span>
+                </div>
+                <div className="grid grid-cols-1 items-end gap-8 sm:grid-cols-3 sm:gap-6">
+                  <FlatAppShot
+                    src={ASSET("app-push-notification.png")}
+                    alt="App: push notification on lock screen triggered by backend settings"
+                    label="App · Push notification (triggered by backend)"
+                  />
+                  <PhoneMockup
+                    src={ASSET("app-notification-list.png")}
+                    alt="App: notification center list"
+                    label="App · Notification center list"
+                  />
+                  <PhoneMockup
+                    src={ASSET("app-notification-detail.png")}
+                    alt="App: notification detail screen"
+                    label="App · Detail (from list or push)"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -210,8 +249,9 @@ export default function GovernmentBackendCaseStudy() {
             Some roles had partial access. For example, in the Promotion Zone
             (public education content), multiple roles could create articles, but
             only the National Tax Bureau Headquarters could pin them to the top.
-            Since pinned articles directly shaped the app homepage (limited to five
-            pinned slots), the &quot;Pin to Top&quot; button only appeared for that
+            Since pinned articles directly shaped the app homepage (limited to{" "}
+            <Metric>5</Metric> pinned slots), the &quot;Pin to Top&quot; button only
+            appeared for that
             specific role. For all other roles, the article list showed without the
             pinning option.
           </p>
@@ -248,34 +288,34 @@ export default function GovernmentBackendCaseStudy() {
               RBAC in the UI · Role-based visibility
             </h3>
             <p className="text-sm text-zinc-500 max-w-3xl">
-              Matrix of main vs. sub-functions by organization (aligned with
-              stakeholder definitions): checkmarks indicate access; dashes mean the
-              feature is not available for that role.
+              Matrix of main vs. sub-functions by organization (from stakeholder
+              definitions): checkmarks indicate access; dashes mean the feature is
+              not available for that unit.
             </p>
             <div className="overflow-x-auto rounded-xl border border-zinc-800">
-              <table className="min-w-[880px] w-full border-collapse text-left text-sm">
+              <table className="min-w-[960px] w-full border-collapse text-left text-sm">
                 <thead className="bg-zinc-950 text-zinc-100">
                   <tr>
                     <th className="border border-zinc-800 px-3 py-2.5 font-semibold">
-                      主功能
+                      Main function
                     </th>
                     <th className="border border-zinc-800 px-3 py-2.5 font-semibold">
-                      子功能
+                      Sub-function
                     </th>
                     <th className="border border-zinc-800 px-2 py-2.5 text-center font-semibold">
-                      中心
+                      Center
                     </th>
                     <th className="border border-zinc-800 px-2 py-2.5 text-center font-semibold">
-                      國稅局總局
+                      NTA HQ
                     </th>
                     <th className="border border-zinc-800 px-2 py-2.5 text-center font-semibold">
-                      國稅局分局稽徵所
+                      NTA branches &amp; offices
                     </th>
                     <th className="border border-zinc-800 px-2 py-2.5 text-center font-semibold">
-                      印刷廠
+                      Printing
                     </th>
                     <th className="border border-zinc-800 px-2 py-2.5 text-center font-semibold">
-                      賦稅署
+                      Tax admin.
                     </th>
                   </tr>
                 </thead>
@@ -285,11 +325,11 @@ export default function GovernmentBackendCaseStudy() {
                       className="border border-zinc-800 px-3 py-2.5 text-zinc-200"
                       rowSpan={2}
                     >
-                      01_基本資料維護
+                      01 Basic information
                     </td>
                     <td className="border border-zinc-800 px-3 py-2.5">
-                      1_1 服務條款與隱私權 &amp; 1_2
-                      手機條碼中獎獎金匯款服務須知
+                      1_1 Terms &amp; privacy · 1_2 Mobile barcode prize remittance
+                      notice
                     </td>
                     <RbacCell granted />
                     <RbacCell granted={false} />
@@ -299,7 +339,7 @@ export default function GovernmentBackendCaseStudy() {
                   </tr>
                   <tr className="align-top">
                     <td className="border border-zinc-800 px-3 py-2.5">
-                      1_3 APP版本管理
+                      1_3 App version management
                     </td>
                     <RbacCell granted />
                     <RbacCell granted={false} />
@@ -312,10 +352,10 @@ export default function GovernmentBackendCaseStudy() {
                       className="border border-zinc-800 px-3 py-2.5 text-zinc-200"
                       rowSpan={2}
                     >
-                      02_資料統計
+                      02 Data statistics
                     </td>
                     <td className="border border-zinc-800 px-3 py-2.5">
-                      2_1 首次使用兌獎APP清單
+                      2_1 First-time lottery app users
                     </td>
                     <RbacCell granted />
                     <RbacCell granted />
@@ -325,7 +365,7 @@ export default function GovernmentBackendCaseStudy() {
                   </tr>
                   <tr className="align-top">
                     <td className="border border-zinc-800 px-3 py-2.5">
-                      2_2 使用兌獎APP會員數
+                      2_2 Lottery app member count
                     </td>
                     <RbacCell granted />
                     <RbacCell granted />
@@ -338,20 +378,10 @@ export default function GovernmentBackendCaseStudy() {
                       className="border border-zinc-800 px-3 py-2.5 text-zinc-200"
                       rowSpan={3}
                     >
-                      03_訊息通知設定
+                      03 Notifications
                     </td>
                     <td className="border border-zinc-800 px-3 py-2.5">
-                      3_1 公告通知
-                    </td>
-                    <RbacCell granted />
-                    <RbacCell granted />
-                    <RbacCell granted={false} />
-                    <RbacCell granted={false} />
-                    <RbacCell granted={false} />
-                  </tr>
-                  <tr className="align-top">
-                    <td className="border border-zinc-800 px-3 py-2.5">
-                      3_2 個人通知
+                      3_1 Announcements
                     </td>
                     <RbacCell granted />
                     <RbacCell granted />
@@ -361,7 +391,17 @@ export default function GovernmentBackendCaseStudy() {
                   </tr>
                   <tr className="align-top">
                     <td className="border border-zinc-800 px-3 py-2.5">
-                      3_3 首頁置頂通知
+                      3_2 Personal notifications
+                    </td>
+                    <RbacCell granted />
+                    <RbacCell granted />
+                    <RbacCell granted={false} />
+                    <RbacCell granted={false} />
+                    <RbacCell granted={false} />
+                  </tr>
+                  <tr className="align-top">
+                    <td className="border border-zinc-800 px-3 py-2.5">
+                      3_3 Homepage pinned notice
                     </td>
                     <RbacCell granted />
                     <RbacCell granted />
@@ -374,10 +414,10 @@ export default function GovernmentBackendCaseStudy() {
                       className="border border-zinc-800 px-3 py-2.5 text-zinc-200"
                       rowSpan={2}
                     >
-                      04_宣導專區設定
+                      04 Promotion zone
                     </td>
                     <td className="border border-zinc-800 px-3 py-2.5">
-                      4_1 宣導文宣上架
+                      4_1 Publish promo content
                     </td>
                     <RbacCell granted={false} />
                     <RbacCell granted />
@@ -387,7 +427,7 @@ export default function GovernmentBackendCaseStudy() {
                   </tr>
                   <tr className="align-top">
                     <td className="border border-zinc-800 px-3 py-2.5">
-                      4_2 置頂文宣設定
+                      4_2 Pin promo content
                     </td>
                     <RbacCell granted={false} />
                     <RbacCell granted />
@@ -434,10 +474,21 @@ export default function GovernmentBackendCaseStudy() {
               datasets still needed sensible time bounds and export limits.
             </p>
             <p className="text-zinc-300 leading-relaxed">
-              <span className="text-zinc-200 font-semibold">Impact:</span> Present
-              weekly and monthly numbers in meetings without manual calculations;
-              compare time periods more easily; export datasets independently,
-              reducing reliance on engineers and speeding up decision-making.
+              <span className="text-zinc-200 font-semibold">Impact:</span> Present{" "}
+              <span className="rounded-md bg-amber-500/15 px-1.5 py-0.5 font-medium text-amber-100/90">
+                weekly
+              </span>{" "}
+              and{" "}
+              <span className="rounded-md bg-amber-500/15 px-1.5 py-0.5 font-medium text-amber-100/90">
+                monthly
+              </span>{" "}
+              numbers in meetings without manual calculations; compare time periods
+              more easily;{" "}
+              <span className="rounded-md bg-sky-500/15 px-1.5 py-0.5 font-medium text-sky-200/95">
+                export
+              </span>{" "}
+              datasets independently, reducing reliance on engineers and speeding up
+              decision-making.
             </p>
           </div>
 
@@ -483,6 +534,7 @@ export default function GovernmentBackendCaseStudy() {
 
           <div className="max-w-4xl pt-2">
             <WideFigure
+              frame="light"
               src={ASSET("iteration-version-control-flow.png")}
               alt="Flow diagram: APP version management add and view flows with validation and system decision points"
               caption="Iteration 2 · Version control — UI flows and system judgment (add / view, validation, confirmation)."
