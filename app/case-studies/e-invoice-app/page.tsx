@@ -684,64 +684,53 @@ export default function EInvoiceCaseStudy() {
                 </p>
               </div>
             </article>
-          </div>
 
-          <div className="space-y-5 rounded-2xl border border-zinc-800/90 bg-zinc-900/25 p-5 sm:p-8">
-            <div className="space-y-2">
-              <p className="text-xs font-semibold uppercase tracking-wider text-violet-400/95">
-                Persona 05 · Visually impaired user
-              </p>
-              <h4 className="text-base font-semibold text-zinc-100">
-                陳老師 · Retired elementary teacher · Severe low vision
-              </h4>
-              <p className="text-sm text-zinc-400">
-                Macular degeneration limits vision to light and shadow; relies on
-                hearing and memory. Uses Android with family help; distrusts payment
-                barcodes and unclear confirmation states.
-              </p>
-            </div>
-            <div className="grid gap-8 lg:grid-cols-2 lg:items-start">
-              <div className="space-y-4 text-sm text-zinc-300">
-                <p className="border-l-2 border-amber-500/40 pl-3 italic text-zinc-300">
+            <article className="flex flex-col overflow-hidden rounded-2xl border border-zinc-800/90 bg-zinc-900/35 sm:flex-row">
+              <div className="shrink-0 sm:w-[42%]">
+                <PortraitTile
+                  src={ASSET("persona-portrait-vi-session.png")}
+                  alt="Portrait for persona Chen, visually impaired participant in a research session"
+                  className="sm:rounded-l-2xl sm:rounded-r-none rounded-t-2xl sm:rounded-t-none"
+                />
+              </div>
+              <div className="flex min-w-0 flex-1 flex-col justify-center gap-3 p-5 text-sm">
+                <p className="text-xs font-semibold uppercase tracking-wider text-violet-400/95">
+                  Persona 05 · Visually impaired user
+                </p>
+                <p className="font-medium text-zinc-100">
+                  陳老師 · Retired elementary teacher · Severe low vision
+                </p>
+                <p className="text-zinc-400">
+                  <span className="text-zinc-300">Tech:</span> Macular degeneration—
+                  mostly light and shadow; uses Android with family help; avoids
+                  payment barcodes when she can&apos;t confirm what will be scanned.
+                </p>
+                <div>
+                  <p className="text-xs font-semibold text-zinc-500">Pain points</p>
+                  <ul className="mt-1 list-disc pl-4 text-zinc-400 marker:text-zinc-600">
+                    <li>Cannot operate most apps independently—feels helpless</li>
+                    <li>Fear of scams and wrong barcode scans</li>
+                    <li>Screen reader prompts feel overwhelming</li>
+                    <li>Needs very large, high-contrast targets to see anything</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-zinc-500">Goals</p>
+                  <ul className="mt-1 list-disc pl-4 text-zinc-400 marker:text-zinc-600">
+                    <li>Fixed button positions and predictable layout</li>
+                    <li>High contrast, large type, minimal noise</li>
+                    <li>Clear voice guidance and calmer screen-reader behavior</li>
+                    <li>Distinct success sounds; caregiver-friendly setup flows</li>
+                  </ul>
+                </div>
+                <p className="border-l-2 border-violet-500/50 pl-3 italic text-zinc-300">
                   &ldquo;The words and buttons are unclear. I have to ask my daughter
                   every time for e-invoice—I&apos;m afraid the clerk will scan the
                   wrong barcode. I hope the app can be voice-controlled so I can do
                   more myself.&rdquo;
                 </p>
-                <div>
-                  <p className="text-xs font-semibold text-zinc-500">Needs &amp; pain</p>
-                  <ul className="mt-2 list-disc space-y-1 pl-4 text-zinc-400 marker:text-zinc-600">
-                    <li>Cannot operate most apps independently—feels helpless</li>
-                    <li>Fear of scams and wrong barcode scans</li>
-                    <li>Screen reader chatter feels overwhelming</li>
-                    <li>Needs very large, high-contrast targets to see anything</li>
-                  </ul>
-                </div>
-                <div>
-                  <p className="text-xs font-semibold text-zinc-500">Design goals</p>
-                  <ul className="mt-2 list-disc space-y-1 pl-4 text-zinc-400 marker:text-zinc-600">
-                    <li>Fixed button positions and predictable layout</li>
-                    <li>High contrast, large type, minimal noise</li>
-                    <li>Clear voice guidance and filtered screen-reader prompts</li>
-                    <li>Distinct audio cues for success; caregiver setup flows</li>
-                  </ul>
-                </div>
               </div>
-              <div className="space-y-4">
-                <WideFigure
-                  src={ASSET("persona-vi-poster.png")}
-                  alt="Visually impaired persona research poster: profile, quote, behaviors, and solution goals"
-                  caption="Accessibility research synthesis · visually impaired participant (poster)."
-                />
-                <PortraitTile
-                  src={ASSET("persona-portrait-vi-session.png")}
-                  alt="Research session observing a participant using a smartphone"
-                />
-                <p className="text-center text-[11px] text-zinc-500">
-                  Contextual session · observation &amp; assisted device use
-                </p>
-              </div>
-            </div>
+            </article>
           </div>
 
           <p className="max-w-3xl text-zinc-300 leading-relaxed">
