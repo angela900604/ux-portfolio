@@ -1,11 +1,30 @@
 import Link from "next/link";
-import VisualPlaceholder from "../_components/VisualPlaceholder";
+import { PhoneMockup, WideFigure } from "../e-invoice-app/EInvoiceFigures";
 
 export const metadata = {
   title: "Role-Based Government Backend (600+ Staff) | Angela Yang",
   description:
     "Backend platform for the Ministry of Finance uniform invoice lottery redemption app: role-based access, reporting, and version control for 600+ government staff (July–September 2025).",
 };
+
+const ASSET = (name: string) => `/case-studies/government-backend/${name}`;
+
+function RbacCell({ granted }: { granted: boolean }) {
+  return (
+    <td className="px-2 py-2.5 text-center align-middle text-sm tabular-nums">
+      {granted ? (
+        <span
+          className="inline-flex h-6 w-6 items-center justify-center rounded bg-emerald-600 text-xs font-semibold text-white"
+          aria-label="Granted"
+        >
+          ✓
+        </span>
+      ) : (
+        <span className="text-zinc-600">—</span>
+      )}
+    </td>
+  );
+}
 
 export default function GovernmentBackendCaseStudy() {
   return (
@@ -52,10 +71,10 @@ export default function GovernmentBackendCaseStudy() {
             </div>
           </dl>
           <div className="mt-12">
-            <VisualPlaceholder
-              label="Hero visual (platform overview)"
-              hint="Replace with a representative dashboard or workflow image from this project."
-              aspect="wide"
+            <WideFigure
+              src={ASSET("hero-platform-overview.png")}
+              alt="Government backend platform overview — dashboards and navigation"
+              caption="Hero visual · Platform overview."
             />
           </div>
         </div>
@@ -96,20 +115,20 @@ export default function GovernmentBackendCaseStudy() {
           </p>
         </section>
 
-        <section className="space-y-5 max-w-3xl">
+        <section className="max-w-5xl space-y-6">
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Project background
           </span>
           <h2 className="text-xl font-semibold text-zinc-100">
             Why this platform existed
           </h2>
-          <p className="text-zinc-300 leading-relaxed">
+          <p className="text-zinc-300 leading-relaxed max-w-3xl">
             After completing the Uniform Invoice Lottery Redemption App, I also took
             on designing an entirely new backend management platform. Government
             staff needed a unified system to manage announcements, promotion
             campaigns, push notifications, data reporting, and app version updates.
           </p>
-          <p className="text-zinc-300 leading-relaxed">
+          <p className="text-zinc-300 leading-relaxed max-w-3xl">
             With over 600 staff members relying on national platforms, consistency
             and alignment were critical. During early discovery, staff repeatedly
             emphasized their need for workflows to feel familiar with the systems
@@ -117,7 +136,7 @@ export default function GovernmentBackendCaseStudy() {
             three rounds of needs interviews. These sessions helped me identify
             feature priorities and validate user flows before diving into design.
           </p>
-          <p className="text-zinc-300 leading-relaxed">
+          <p className="text-zinc-300 leading-relaxed max-w-3xl">
             As the sole UX/UI designer, I collaborated closely with engineers.
             Because our team had also built the app itself, we could strategically
             decide which elements should remain editable in the backend and which
@@ -127,14 +146,48 @@ export default function GovernmentBackendCaseStudy() {
             collaboration and allowed us to refine details iteratively during
             ongoing discussions with stakeholders and engineers.
           </p>
-          <VisualPlaceholder
-            label="Example of corresponding screens"
-            hint="Add redacted screenshots that show how backend tasks map to the live product."
-            aspect="wide"
-          />
+
+          <div className="space-y-3 pt-4">
+            <h3 className="text-sm font-semibold text-zinc-100">
+              Example of corresponding screens
+            </h3>
+            <p className="max-w-3xl text-sm text-zinc-400 leading-relaxed">
+              Staff compose notification content in the backend, set publish timing,
+              and schedule delivery in advance. End users receive{" "}
+              <span className="text-zinc-200">push notifications</span>, then open the
+              in-app <span className="text-zinc-200">notification center</span> and
+              message details—aligned with those backend rules.
+            </p>
+            <div className="grid gap-8 lg:grid-cols-2 lg:items-start lg:gap-10">
+              <div className="min-w-0">
+                <WideFigure
+                  src={ASSET("backend-notification-settings.png")}
+                  alt="Backend admin: notification content and scheduled publishing"
+                  caption="Backend · Notification settings (content + pre-scheduled publish time)."
+                />
+              </div>
+              <div className="flex min-w-0 flex-col gap-8 sm:max-lg:max-w-md sm:max-lg:mx-auto lg:mx-0">
+                <PhoneMockup
+                  src={ASSET("app-push-notification.png")}
+                  alt="App: push notification on lock screen triggered by backend settings"
+                  label="App · Push notification (triggered by backend)"
+                />
+                <PhoneMockup
+                  src={ASSET("app-notification-list.png")}
+                  alt="App: notification center list"
+                  label="App · Notification center list"
+                />
+                <PhoneMockup
+                  src={ASSET("app-notification-detail.png")}
+                  alt="App: notification detail screen"
+                  label="App · Detail (from list or push)"
+                />
+              </div>
+            </div>
+          </div>
         </section>
 
-        <section className="space-y-5 max-w-3xl">
+        <section className="space-y-5 max-w-4xl">
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Role-based access control
           </span>
@@ -167,7 +220,7 @@ export default function GovernmentBackendCaseStudy() {
             independently while preventing conflicts that could undermine
             credibility.
           </p>
-          <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6 space-y-4">
+          <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6 space-y-4 max-w-3xl">
             <h3 className="text-sm font-semibold text-zinc-100">
               Role &amp; permission example · Promotion Zone
             </h3>
@@ -189,11 +242,163 @@ export default function GovernmentBackendCaseStudy() {
               role can decide the final order of content displayed to end users.
             </p>
           </div>
-          <VisualPlaceholder
-            label="RBAC in the UI (role-based visibility)"
-            hint="Show sidebar and article tools with Pin to Top visible only for the HQ role."
-            aspect="wide"
-          />
+
+          <div className="space-y-3 pt-2">
+            <h3 className="text-sm font-semibold text-zinc-100">
+              RBAC in the UI · Role-based visibility
+            </h3>
+            <p className="text-sm text-zinc-500 max-w-3xl">
+              Matrix of main vs. sub-functions by organization (aligned with
+              stakeholder definitions): checkmarks indicate access; dashes mean the
+              feature is not available for that role.
+            </p>
+            <div className="overflow-x-auto rounded-xl border border-zinc-800">
+              <table className="min-w-[880px] w-full border-collapse text-left text-sm">
+                <thead className="bg-zinc-950 text-zinc-100">
+                  <tr>
+                    <th className="border border-zinc-800 px-3 py-2.5 font-semibold">
+                      主功能
+                    </th>
+                    <th className="border border-zinc-800 px-3 py-2.5 font-semibold">
+                      子功能
+                    </th>
+                    <th className="border border-zinc-800 px-2 py-2.5 text-center font-semibold">
+                      中心
+                    </th>
+                    <th className="border border-zinc-800 px-2 py-2.5 text-center font-semibold">
+                      國稅局總局
+                    </th>
+                    <th className="border border-zinc-800 px-2 py-2.5 text-center font-semibold">
+                      國稅局分局稽徵所
+                    </th>
+                    <th className="border border-zinc-800 px-2 py-2.5 text-center font-semibold">
+                      印刷廠
+                    </th>
+                    <th className="border border-zinc-800 px-2 py-2.5 text-center font-semibold">
+                      賦稅署
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-zinc-800 bg-zinc-900/30 text-zinc-300">
+                  <tr className="align-top">
+                    <td
+                      className="border border-zinc-800 px-3 py-2.5 text-zinc-200"
+                      rowSpan={2}
+                    >
+                      01_基本資料維護
+                    </td>
+                    <td className="border border-zinc-800 px-3 py-2.5">
+                      1_1 服務條款與隱私權 &amp; 1_2
+                      手機條碼中獎獎金匯款服務須知
+                    </td>
+                    <RbacCell granted />
+                    <RbacCell granted={false} />
+                    <RbacCell granted={false} />
+                    <RbacCell granted={false} />
+                    <RbacCell granted={false} />
+                  </tr>
+                  <tr className="align-top">
+                    <td className="border border-zinc-800 px-3 py-2.5">
+                      1_3 APP版本管理
+                    </td>
+                    <RbacCell granted />
+                    <RbacCell granted={false} />
+                    <RbacCell granted={false} />
+                    <RbacCell granted={false} />
+                    <RbacCell granted={false} />
+                  </tr>
+                  <tr className="align-top">
+                    <td
+                      className="border border-zinc-800 px-3 py-2.5 text-zinc-200"
+                      rowSpan={2}
+                    >
+                      02_資料統計
+                    </td>
+                    <td className="border border-zinc-800 px-3 py-2.5">
+                      2_1 首次使用兌獎APP清單
+                    </td>
+                    <RbacCell granted />
+                    <RbacCell granted />
+                    <RbacCell granted />
+                    <RbacCell granted />
+                    <RbacCell granted />
+                  </tr>
+                  <tr className="align-top">
+                    <td className="border border-zinc-800 px-3 py-2.5">
+                      2_2 使用兌獎APP會員數
+                    </td>
+                    <RbacCell granted />
+                    <RbacCell granted />
+                    <RbacCell granted />
+                    <RbacCell granted />
+                    <RbacCell granted />
+                  </tr>
+                  <tr className="align-top">
+                    <td
+                      className="border border-zinc-800 px-3 py-2.5 text-zinc-200"
+                      rowSpan={3}
+                    >
+                      03_訊息通知設定
+                    </td>
+                    <td className="border border-zinc-800 px-3 py-2.5">
+                      3_1 公告通知
+                    </td>
+                    <RbacCell granted />
+                    <RbacCell granted />
+                    <RbacCell granted={false} />
+                    <RbacCell granted={false} />
+                    <RbacCell granted={false} />
+                  </tr>
+                  <tr className="align-top">
+                    <td className="border border-zinc-800 px-3 py-2.5">
+                      3_2 個人通知
+                    </td>
+                    <RbacCell granted />
+                    <RbacCell granted />
+                    <RbacCell granted={false} />
+                    <RbacCell granted={false} />
+                    <RbacCell granted={false} />
+                  </tr>
+                  <tr className="align-top">
+                    <td className="border border-zinc-800 px-3 py-2.5">
+                      3_3 首頁置頂通知
+                    </td>
+                    <RbacCell granted />
+                    <RbacCell granted />
+                    <RbacCell granted={false} />
+                    <RbacCell granted={false} />
+                    <RbacCell granted={false} />
+                  </tr>
+                  <tr className="align-top">
+                    <td
+                      className="border border-zinc-800 px-3 py-2.5 text-zinc-200"
+                      rowSpan={2}
+                    >
+                      04_宣導專區設定
+                    </td>
+                    <td className="border border-zinc-800 px-3 py-2.5">
+                      4_1 宣導文宣上架
+                    </td>
+                    <RbacCell granted={false} />
+                    <RbacCell granted />
+                    <RbacCell granted />
+                    <RbacCell granted={false} />
+                    <RbacCell granted={false} />
+                  </tr>
+                  <tr className="align-top">
+                    <td className="border border-zinc-800 px-3 py-2.5">
+                      4_2 置頂文宣設定
+                    </td>
+                    <RbacCell granted={false} />
+                    <RbacCell granted />
+                    <RbacCell granted={false} />
+                    <RbacCell granted={false} />
+                    <RbacCell granted={false} />
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </section>
 
         <section className="space-y-8 max-w-3xl">
@@ -214,21 +419,19 @@ export default function GovernmentBackendCaseStudy() {
               Design iteration 1 · Data reporting
             </h3>
             <p className="text-zinc-300 leading-relaxed">
-              <span className="text-zinc-200 font-semibold">Before:</span> The
-              original reporting page only showed yearly totals through a dropdown
-              (for example, 2026, 2027, 2028). This made it unusable for staff who
-              needed weekly views, cumulative tracking, and campaign-specific
-              queries.
+              <span className="text-zinc-200 font-semibold">Before:</span> Reporting
+              worked, but the layout made it harder to answer common questions in one
+              place: how membership trended over a chosen year, how to read peaks
+              quickly in meetings, and how to export without second-guessing the
+              time range.
             </p>
             <p className="text-zinc-300 leading-relaxed">
-              <span className="text-zinc-200 font-semibold">After:</span> I
-              redesigned the page into an actionable dashboard that displayed data
-              from the past 12 months relative to the query date; introduced
-              toggles for Weekly View (every Sunday) and Monthly View (end of each
-              month)—because staff feedback showed they relied on weekly and
-              monthly reports for meetings and archiving; and enabled CSV export.
-              Engineers noted that massive user data required filtering or
-              time-based limits to stay manageable.
+              <span className="text-zinc-200 font-semibold">After:</span> I iterated
+              on the same metrics with clearer filters (for example, statistical
+              year), stronger chart hierarchy and hover detail, and explicit
+              weekly/monthly views—so staff could prep for reviews and audits
+              without rebuilding tables by hand. Engineers noted that large user
+              datasets still needed sensible time bounds and export limits.
             </p>
             <p className="text-zinc-300 leading-relaxed">
               <span className="text-zinc-200 font-semibold">Impact:</span> Present
@@ -238,73 +441,53 @@ export default function GovernmentBackendCaseStudy() {
             </p>
           </div>
 
-          <VisualPlaceholder
-            label="Iteration 1 · Data reporting (before / after)"
-            hint="Place a before/after pair for the reporting dashboard and export path."
-            aspect="wide"
-          />
+          <div className="max-w-4xl space-y-10 pt-2">
+            <WideFigure
+              src={ASSET("iteration-reporting-before.png")}
+              alt="Before: data reporting dashboard with cumulative member count and monthly bar chart"
+              caption="Iteration 1 · Data reporting — before (baseline reporting view)."
+            />
+            <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
+              <WideFigure
+                src={ASSET("iteration-reporting-after-1.png")}
+                alt="After: reporting with statistical year filter and cumulative member bar chart for 2024"
+                caption="Iteration 1 · After — clearer query + chart (statistical year &amp; monthly cumulative)."
+              />
+              <WideFigure
+                src={ASSET("iteration-reporting-after-2.png")}
+                alt="After: reporting with weekly and monthly toggles, tooltip, and CSV export"
+                caption="Iteration 1 · After — weekly/monthly views, tooltips, and CSV export."
+              />
+            </div>
+          </div>
 
-          <div className="space-y-4">
+          <div className="space-y-4 max-w-3xl">
             <h3 className="text-sm font-semibold text-zinc-100">
               Design iteration 2 · App update version control
             </h3>
             <p className="text-zinc-300 leading-relaxed">
-              <span className="text-zinc-200 font-semibold">Before:</span> The
-              first backend design only let staff add new versions. It lacked
-              critical controls: no way to enforce mandatory updates and no syncing
-              of version numbers with app build codes. This created risks of
-              mismatched versions and made urgent updates nearly impossible.
-              Engineers clarified that version control directly affected user
-              experience and app stability—without precise control, users could
-              remain on outdated builds or face inconsistencies.
+              With engineers, I aligned how the UI should surface{" "}
+              <span className="text-zinc-200">mandatory vs. optional updates</span>,{" "}
+              <span className="text-zinc-200">duplicate version checks</span>, and
+              feedback when saves fail—so staff always understand what the system
+              will do before data is committed.
             </p>
             <p className="text-zinc-300 leading-relaxed">
-              <span className="text-zinc-200 font-semibold">After:</span> I
-              redesigned the page into an actionable dashboard that included a Force
-              Update option to mark versions as mandatory so critical updates
-              couldn&apos;t be skipped; accurate version mapping so version numbers
-              mapped directly to app build codes, reducing mismatches; and input
-              flexibility—dropdowns for common fields reduced errors, while manual
-              input fields gave staff the flexibility they needed.
-            </p>
-            <p className="text-zinc-300 leading-relaxed">
-              <span className="text-zinc-200 font-semibold">Impact:</span> This
-              empowered staff to handle version control independently, reduced risks
-              of mismatched versions, and ensured that critical security or
-              policy-driven updates could be rolled out instantly. It showed how UI
-              decisions could align directly with system logic to create a more
-              reliable workflow.
+              The flow diagram below maps user actions to backend judgment: for
+              example, whether an update is forced, whether a version number already
+              exists, and how errors surface (inline validation, confirmation
+              modals, success toasts). That shared picture kept UX and implementation
+              in sync under tight release constraints.
             </p>
           </div>
 
-          <VisualPlaceholder
-            label="Iteration 2 · Version control (before / after)"
-            hint="Show force update, build-code mapping, and safer field inputs."
-            aspect="wide"
-          />
-        </section>
-
-        <section className="space-y-5 max-w-3xl">
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Visual consistency
-          </span>
-          <h2 className="text-xl font-semibold text-zinc-100">
-            Familiarity reduces training overhead
-          </h2>
-          <p className="text-zinc-300 leading-relaxed">
-            Beyond features, staff emphasized the need for the backend to feel
-            consistent with their existing tools. This was less about solving
-            &quot;pain points&quot; and more about reducing training overhead. To
-            meet this need, I kept sidebar information architecture aligned with
-            existing platforms; preserved familiar table layouts, button placements,
-            and status tags; and maintained overall interaction consistency to lower
-            the learning curve across departments.
-          </p>
-          <VisualPlaceholder
-            label="Visual consistency reference"
-            hint="Optional: a side-by-side showing alignment with existing internal tools."
-            aspect="wide"
-          />
+          <div className="max-w-4xl pt-2">
+            <WideFigure
+              src={ASSET("iteration-version-control-flow.png")}
+              alt="Flow diagram: APP version management add and view flows with validation and system decision points"
+              caption="Iteration 2 · Version control — UI flows and system judgment (add / view, validation, confirmation)."
+            />
+          </div>
         </section>
 
         <section className="space-y-5 max-w-3xl">

@@ -1131,7 +1131,7 @@ export default function EInvoiceCaseStudy() {
             High-fidelity UI across core tasks
           </h2>
           <p className="max-w-3xl text-zinc-300 leading-relaxed">
-            挑選較重要的功能頁面呈現。
+            Selected key functional screens—focused on the flows that matter most.
           </p>
           <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
             {FINAL_SOLUTION_SCREENS.map((item) => (
