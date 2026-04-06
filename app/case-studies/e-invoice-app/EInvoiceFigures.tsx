@@ -12,22 +12,32 @@ export function WideFigure({
   caption,
   className = "",
   frame = "default",
+  borderless = false,
+  cropTopBottomPx = 0,
 }: {
   src: string;
   alt: string;
   caption?: string;
   className?: string;
-  /** `light`: white card with 12px padding (diagrams on dark pages) */
-  frame?: "default" | "light";
+  /** `white`: full white background, no border; caption renders outside the image area */
+  frame?: "default" | "white";
+  /** Omit border stroke on the default (dark) frame */
+  borderless?: boolean;
+  /** Crop this many pixels from top and bottom (e.g. hero tuning) */
+  cropTopBottomPx?: number;
 }) {
-  const image = (
+  const imageInner = (
     <ImageLightbox
       src={src}
       alt={alt}
       className={
-        frame === "light"
-          ? "block overflow-hidden rounded-[12px] bg-white"
-          : "block overflow-hidden rounded-[20px] border border-zinc-700/60 bg-zinc-900/30"
+        frame === "white"
+          ? "block w-full overflow-hidden bg-white"
+          : `block overflow-hidden rounded-[20px] ${
+              borderless
+                ? "bg-zinc-900/30"
+                : "border border-zinc-700/60 bg-zinc-900/30"
+            }`
       }
     >
       <Image
@@ -35,23 +45,37 @@ export function WideFigure({
         alt={alt}
         width={2400}
         height={1350}
-        className="h-auto w-full object-contain"
+        className={`h-auto w-full object-contain ${
+          frame === "white" ? "bg-white" : ""
+        }`}
         sizes="(max-width: 1200px) 100vw, 1100px"
       />
     </ImageLightbox>
   );
 
-  if (frame === "light") {
+  const image =
+    cropTopBottomPx > 0 ? (
+      <div
+        className="overflow-hidden rounded-[20px]"
+        style={{
+          clipPath: `inset(${cropTopBottomPx}px 0 ${cropTopBottomPx}px 0)`,
+        }}
+      >
+        {imageInner}
+      </div>
+    ) : (
+      imageInner
+    );
+
+  if (frame === "white") {
     return (
       <figure className={`space-y-0 ${className}`}>
-        <div className="rounded-[20px] bg-white p-[12px]">
-          {image}
-          {caption && (
-            <figcaption className="mt-2 max-w-none text-xs leading-relaxed text-zinc-600">
-              {caption}
-            </figcaption>
-          )}
-        </div>
+        <div className="bg-white">{image}</div>
+        {caption && (
+          <figcaption className="mt-3 max-w-3xl text-xs leading-relaxed text-zinc-500">
+            {caption}
+          </figcaption>
+        )}
       </figure>
     );
   }
@@ -72,19 +96,21 @@ export function PhoneMockup({
   alt,
   label,
   hint,
+  className = "",
 }: {
   src: string;
   alt: string;
   label: string;
   hint?: string;
+  className?: string;
 }) {
   return (
-    <figure className="space-y-3">
+    <figure className={`space-y-3 ${className}`}>
       <ImageLightbox
         src={src}
         alt={alt}
         ariaLabel={`${alt} — tap to enlarge`}
-        className="mx-auto block w-full max-w-[300px]"
+        className="mx-auto block w-full max-w-[280px]"
       >
         <div className="relative rounded-[3rem] bg-gradient-to-b from-zinc-600 via-zinc-800 to-zinc-950 p-[11px] shadow-[0_28px_56px_-16px_rgba(0,0,0,0.75)] ring-1 ring-white/[0.12]">
           <div
@@ -134,25 +160,27 @@ export function FlatAppShot({
   src,
   alt,
   label,
+  className = "",
 }: {
   src: string;
   alt: string;
   label: string;
+  className?: string;
 }) {
   return (
-    <figure className="flex flex-col space-y-2">
+    <figure className={`flex w-full max-w-[280px] flex-col space-y-2 ${className}`}>
       <ImageLightbox
         src={src}
         alt={alt}
         ariaLabel={`${alt} — tap to enlarge`}
-        className="mx-auto block w-full max-w-[min(100%,280px)] overflow-hidden rounded-[20px] border border-zinc-700/60 bg-zinc-900/30"
+        className="mx-auto block w-full max-w-[280px] overflow-hidden rounded-[20px] border border-zinc-700/60 bg-zinc-900/30"
       >
         <Image
           src={src}
           alt={alt}
           width={780}
           height={1688}
-          className="h-auto w-full object-cover object-top"
+          className="h-auto w-full object-contain object-top"
           sizes="(max-width: 640px) 72vw, 280px"
         />
       </ImageLightbox>

@@ -89,7 +89,7 @@ export default function GovernmentBackendCaseStudy() {
             <WideFigure
               src={ASSET("hero-platform-overview.png")}
               alt="Government backend platform overview — dashboards and navigation"
-              caption="Hero visual · Platform overview."
+              cropTopBottomPx={12}
             />
           </div>
         </div>
@@ -190,6 +190,7 @@ export default function GovernmentBackendCaseStudy() {
                   </span>
                 </div>
                 <WideFigure
+                  borderless
                   src={ASSET("backend-notification-settings.png")}
                   alt="Backend admin: notification content and scheduled publishing"
                   caption="Backend · Notification settings (content + pre-scheduled publish time)."
@@ -204,22 +205,28 @@ export default function GovernmentBackendCaseStudy() {
                     End-user mobile (triggered by backend rules)
                   </span>
                 </div>
-                <div className="grid grid-cols-1 items-end gap-8 sm:grid-cols-3 sm:gap-6">
-                  <FlatAppShot
-                    src={ASSET("app-push-notification.png")}
-                    alt="App: push notification on lock screen triggered by backend settings"
-                    label="App · Push notification (triggered by backend)"
-                  />
-                  <PhoneMockup
-                    src={ASSET("app-notification-list.png")}
-                    alt="App: notification center list"
-                    label="App · Notification center list"
-                  />
-                  <PhoneMockup
-                    src={ASSET("app-notification-detail.png")}
-                    alt="App: notification detail screen"
-                    label="App · Detail (from list or push)"
-                  />
+                <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 sm:items-end sm:gap-6">
+                  <div className="flex justify-center sm:min-h-[560px] sm:flex-col sm:items-center sm:justify-end">
+                    <FlatAppShot
+                      src={ASSET("app-push-notification.png")}
+                      alt="App: push notification on lock screen triggered by backend settings"
+                      label="App · Push notification (triggered by backend)"
+                    />
+                  </div>
+                  <div className="flex justify-center sm:min-h-[560px] sm:flex-col sm:items-center sm:justify-end">
+                    <PhoneMockup
+                      src={ASSET("app-notification-list.png")}
+                      alt="App: notification center list"
+                      label="App · Notification center list"
+                    />
+                  </div>
+                  <div className="flex justify-center sm:min-h-[560px] sm:flex-col sm:items-center sm:justify-end">
+                    <PhoneMockup
+                      src={ASSET("app-notification-detail.png")}
+                      alt="App: notification detail screen"
+                      label="App · Notification Detail"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -493,11 +500,6 @@ export default function GovernmentBackendCaseStudy() {
           </div>
 
           <div className="max-w-4xl space-y-10 pt-2">
-            <WideFigure
-              src={ASSET("iteration-reporting-before.png")}
-              alt="Before: data reporting dashboard with cumulative member count and monthly bar chart"
-              caption="Iteration 1 · Data reporting — before (baseline reporting view)."
-            />
             <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
               <WideFigure
                 src={ASSET("iteration-reporting-after-1.png")}
@@ -510,6 +512,11 @@ export default function GovernmentBackendCaseStudy() {
                 caption="Iteration 1 · After — weekly/monthly views, tooltips, and CSV export."
               />
             </div>
+            <WideFigure
+              src={ASSET("iteration-reporting-before.png")}
+              alt="Before: data reporting dashboard with cumulative member count and monthly bar chart"
+              caption="Iteration 1 · Data reporting — before (baseline reporting view)."
+            />
           </div>
 
           <div className="space-y-4 max-w-3xl">
@@ -534,7 +541,7 @@ export default function GovernmentBackendCaseStudy() {
 
           <div className="max-w-4xl pt-2">
             <WideFigure
-              frame="light"
+              frame="white"
               src={ASSET("iteration-version-control-flow.png")}
               alt="Flow diagram: APP version management add and view flows with validation and system decision points"
               caption="Iteration 2 · Version control — UI flows and system judgment (add / view, validation, confirmation)."
