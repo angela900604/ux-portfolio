@@ -27,27 +27,27 @@ const STYLE_SWATCHES: { hex: string; name: string }[] = [
   { hex: "#F8D364", name: "Warm yellow" },
 ];
 
-/** Labels for solution-17 … solution-35 (export batch). */
+/** Labels for solution-17 … solution-35 (aligned to export batch order). */
 const FINAL_SOLUTION_SCREENS: { n: number; title: string }[] = [
-  { n: 17, title: "載具歸戶 · Carrier integration" },
-  { n: 18, title: "領獎資料 · Prize claim / invoice info" },
-  { n: 19, title: "捐贈發票 · Donation picker" },
-  { n: 20, title: "減碳存摺 · Carbon reduction passbook" },
-  { n: 21, title: "雲端備份 · Cloud backup onboarding" },
-  { n: 22, title: "我要領獎 · Redemption hub (status)" },
-  { n: 23, title: "功能總覽 · Settings & profile" },
-  { n: 24, title: "發票存摺 · Invoice passbook" },
-  { n: 25, title: "發票明細 · Receipt detail" },
+  { n: 17, title: "消費分析 · Spending insights" },
+  { n: 18, title: "會員卡管理 · Membership cards" },
+  { n: 19, title: "功能總覽 · Settings overview" },
+  { n: 20, title: "載具歸戶 · Carrier binding" },
+  { n: 21, title: "領獎資料 · Prize claim info" },
+  { n: 22, title: "捐贈發票 · Donation" },
+  { n: 23, title: "減碳存摺分享 · Carbon passbook share" },
+  { n: 24, title: "新手教學 · First-run tutorial" },
+  { n: 25, title: "我要領獎安全驗證 · Redeem security check" },
   { n: 26, title: "掃描對獎 · Scan & check (tab)" },
-  { n: 27, title: "末三碼對獎 · Last-three-digit match" },
-  { n: 28, title: "宣導專區 · Events & promos" },
+  { n: 27, title: "發票存摺 · Invoice passbook" },
+  { n: 28, title: "發票明細 · Receipt detail" },
   { n: 29, title: "首頁 · Home hub" },
   { n: 30, title: "登入 · Face ID / quick login" },
-  { n: 31, title: "通知中心 · Notifications" },
-  { n: 32, title: "我要領獎 · Winning invoices list" },
-  { n: 33, title: "掃描發票 · Camera capture" },
-  { n: 34, title: "功能流程 · UI state (variant)" },
-  { n: 35, title: "介面狀態 · UI state (variant)" },
+  { n: 31, title: "末三碼對獎 · Last-three-digit match" },
+  { n: 32, title: "宣導專區 · Events & promos" },
+  { n: 33, title: "查看中獎發票 · Winning invoices" },
+  { n: 34, title: "掃描紙本發票 · Paper receipt scan" },
+  { n: 35, title: "通知中心 · Notifications" },
 ];
 
 export default function EInvoiceCaseStudy() {
@@ -509,51 +509,57 @@ export default function EInvoiceCaseStudy() {
               User personas
             </h3>
             <p className="max-w-3xl text-sm leading-relaxed text-zinc-400">
-              Four primary archetypes from interviews, plus a dedicated visually
-              impaired persona from accessibility research—each with goals, pain
-              points, and a representative portrait.
+              Four age-and-context archetypes from MoF research boards (18–30,
+              31–50, 51+, and foreign residents), plus a visually impaired persona
+              from accessibility sessions—each with goals, pain points, and a
+              portrait aligned to those sources.
             </p>
           </div>
 
-          <div className="grid gap-8 lg:grid-cols-2">
+          <div className="grid max-w-4xl grid-cols-1 gap-8">
             <article className="flex flex-col overflow-hidden rounded-2xl border border-zinc-800/90 bg-zinc-900/35 sm:flex-row">
               <div className="shrink-0 sm:w-[42%]">
                 <PortraitTile
                   src={ASSET("persona-portrait-01.png")}
-                  alt="Portrait for persona Sara, tech-savvy young adult"
+                  alt="Portrait for Persona 01, 18–30 young professional"
                   className="sm:rounded-l-2xl sm:rounded-r-none rounded-t-2xl sm:rounded-t-none"
                 />
               </div>
               <div className="flex min-w-0 flex-1 flex-col justify-center gap-3 p-5 text-sm">
                 <p className="text-xs font-semibold uppercase tracking-wider text-violet-400/95">
-                  Persona 01 · Tech-savvy young adult
+                  Persona 01 · 18–30 · Young professionals
                 </p>
                 <p className="font-medium text-zinc-100">
-                  Sara · 29 · Malaysia / Taiwan · Student
+                  宜庭 · 26 · Taiwan · Planner / creative
                 </p>
                 <p className="text-zinc-400">
-                  <span className="text-zinc-300">Tech:</span> Heavy smartphone use;
-                  mobile payments and digital wallets.
+                  <span className="text-zinc-300">Tech:</span> High digital fluency—
+                  iOS, wearables, widgets &amp; Wallet for carrier barcodes; tracks
+                  spending and promos; uses third-party invoice tools for draws.
                 </p>
                 <div>
                   <p className="text-xs font-semibold text-zinc-500">Pain points</p>
                   <ul className="mt-1 list-disc pl-4 text-zinc-400 marker:text-zinc-600">
-                    <li>Slow app launches</li>
-                    <li>Cumbersome navigation in retail apps</li>
-                    <li>Wants faster access to member barcodes at checkout</li>
+                    <li>Busy UI; slow cold start and intrusive ads before the barcode</li>
+                    <li>Carrier binding still feels “browser-heavy” and fragmented</li>
+                    <li>Merchant names inconsistent in history—hard to search wins</li>
+                    <li>Forgets the MoF verification code; weak win / remittance alerts</li>
+                    <li>Paper invoice scanning fails often</li>
                   </ul>
                 </div>
                 <div>
                   <p className="text-xs font-semibold text-zinc-500">Goals</p>
                   <ul className="mt-1 list-disc pl-4 text-zinc-400 marker:text-zinc-600">
-                    <li>Quick scan-and-pay flow</li>
-                    <li>Core tasks on the first screen</li>
-                    <li>Track spending and promotions</li>
+                    <li>Cleaner visual style; barcode-first home</li>
+                    <li>Accurate spending search &amp; categories</li>
+                    <li>Stronger win &amp; payout notifications</li>
+                    <li>Biometrics / pattern login; stable scan</li>
                   </ul>
                 </div>
                 <p className="border-l-2 border-violet-500/50 pl-3 italic text-zinc-300">
-                  &ldquo;I have a fast-paced life—I need the member barcode fast. I
-                  track where I spend and watch for promotions.&rdquo;
+                  &ldquo;I move fast—I need the carrier barcode immediately. I care
+                  how the UI looks, track spend for habits and deals, but waiting on
+                  a slow app or closing ads just to copy a barcode drives me nuts.&rdquo;
                 </p>
               </div>
             </article>
@@ -562,41 +568,49 @@ export default function EInvoiceCaseStudy() {
               <div className="shrink-0 sm:w-[42%]">
                 <PortraitTile
                   src={ASSET("persona-portrait-02.png")}
-                  alt="Portrait for persona David, busy professional"
+                  alt="Portrait for Persona 02, 31–50 middle-aged professional"
                   className="sm:rounded-l-2xl sm:rounded-r-none rounded-t-2xl sm:rounded-t-none"
                 />
               </div>
               <div className="flex min-w-0 flex-1 flex-col justify-center gap-3 p-5 text-sm">
                 <p className="text-xs font-semibold uppercase tracking-wider text-violet-400/95">
-                  Persona 02 · Busy professional
+                  Persona 02 · 31–50 · Established professionals
                 </p>
                 <p className="font-medium text-zinc-100">
-                  David · 43 · Taiwan · Project manager
+                  David · 41 · Taiwan · Service PM
                 </p>
                 <p className="text-zinc-400">
-                  <span className="text-zinc-300">Tech:</span> Mobile payments,
-                  member apps, budgeting tools; often checks App Store screenshots
-                  before tasks.
+                  <span className="text-zinc-300">Tech:</span> High digital usage—
+                  mobile payment apps (e.g. LINE Pay, JKOPAY, Taiwan Pay), widgets,
+                  Apple Wallet / printed barcodes; shops online &amp; offline; checks
+                  promos and rough monthly spend.
                 </p>
                 <div>
                   <p className="text-xs font-semibold text-zinc-500">Pain points</p>
                   <ul className="mt-1 list-disc pl-4 text-zinc-400 marker:text-zinc-600">
-                    <li>Language barriers in official apps</li>
-                    <li>Slow launch or unclear function placement</li>
-                    <li>Budgeting apps not connected to invoice data</li>
+                    <li>Often forgets the MoF app password / verification code</li>
+                    <li>Win emails feel wordy; wants clearer push when numbers drop</li>
+                    <li>Needs rock-solid stability—can&apos;t wait on checkout load</li>
+                    <li>Wants better consumption breakdown (categories feel wrong)</li>
+                    <li>Skips opening the app at the register if it feels slow</li>
                   </ul>
                 </div>
                 <div>
                   <p className="text-xs font-semibold text-zinc-500">Goals</p>
                   <ul className="mt-1 list-disc pl-4 text-zinc-400 marker:text-zinc-600">
-                    <li>Fast barcode and donation access</li>
-                    <li>Clear multilingual UI</li>
-                    <li>Integrated spending view</li>
+                    <li>Biometrics &amp; quick login; stronger win reminders</li>
+                    <li>Smoother performance &amp; reward / streak mechanics</li>
+                    <li>
+                      Real <span className="text-zinc-300">consumption analysis</span>{" "}
+                      tied to invoices
+                    </li>
+                    <li>Faster barcode surface at payment</li>
                   </ul>
                 </div>
                 <p className="border-l-2 border-violet-500/50 pl-3 italic text-zinc-300">
-                  &ldquo;I didn&apos;t know invoices could be donated online—it&apos;s
-                  more convenient than going to a store.&rdquo;
+                  &ldquo;My phone is my second wallet—I want payments, invoices, and
+                  membership in one flow. At the counter I can&apos;t afford a sluggish
+                  app; I also want to see where my money goes, not fight the UI.&rdquo;
                 </p>
               </div>
             </article>
@@ -605,40 +619,44 @@ export default function EInvoiceCaseStudy() {
               <div className="shrink-0 sm:w-[42%]">
                 <PortraitTile
                   src={ASSET("persona-portrait-03.png")}
-                  alt="Portrait for persona Mei-Ling, silver generation"
+                  alt="Portrait for Persona 03, 51+ silver generation"
                   className="sm:rounded-l-2xl sm:rounded-r-none rounded-t-2xl sm:rounded-t-none"
                 />
               </div>
               <div className="flex min-w-0 flex-1 flex-col justify-center gap-3 p-5 text-sm">
                 <p className="text-xs font-semibold uppercase tracking-wider text-violet-400/95">
-                  Persona 03 · Silver generation
+                  Persona 03 · 51+ · Silver generation
                 </p>
                 <p className="font-medium text-zinc-100">
-                  Mei-Ling · 70 · Taiwan · Retired
+                  Mei-Ling · 68 · Taiwan · Retired nurse
                 </p>
                 <p className="text-zinc-400">
-                  <span className="text-zinc-300">Tech:</span> Low; cash and paper
-                  invoices; often needs family help with apps.
+                  <span className="text-zinc-300">Tech:</span> Low digital literacy—
+                  cash &amp; cards; long habit of donating paper invoices; prize
+                  checks and in-store claims; needs guidance for anything beyond
+                  basics.
                 </p>
                 <div>
                   <p className="text-xs font-semibold text-zinc-500">Pain points</p>
                   <ul className="mt-1 list-disc pl-4 text-zinc-400 marker:text-zinc-600">
-                    <li>Too many options on screen</li>
-                    <li>Forgetting passwords</li>
-                    <li>Cannot complete flows alone</li>
+                    <li>Apps feel like a maze—unclear next step, small type &amp; taps</li>
+                    <li>Monochrome or crowded screens hide primary actions</li>
+                    <li>Wants transparency when donating—trust that help reaches people</li>
+                    <li>Forgets MoF verification code; in-store small-prize claims feel tedious</li>
                   </ul>
                 </div>
                 <div>
                   <p className="text-xs font-semibold text-zinc-500">Goals</p>
                   <ul className="mt-1 list-disc pl-4 text-zinc-400 marker:text-zinc-600">
-                    <li>Simple navigation</li>
-                    <li>Clear donation tracking</li>
-                    <li>Accessible scanning and prize checking</li>
+                    <li>Large text, color-coded main tasks, obvious help</li>
+                    <li>Simple donation path with clear org info</li>
+                    <li>Easier prize check &amp; claim—including online tutorials</li>
                   </ul>
                 </div>
                 <p className="border-l-2 border-violet-500/50 pl-3 italic text-zinc-300">
-                  &ldquo;Modern apps feel like a maze. I only want to check prizes
-                  and donate invoices—easily.&rdquo;
+                  &ldquo;This app is like a labyrinth—I don&apos;t know the next step
+                  or how to exit. I want to donate paper invoices with confidence and
+                  understand what I&apos;m tapping.&rdquo;
                 </p>
               </div>
             </article>
@@ -647,40 +665,45 @@ export default function EInvoiceCaseStudy() {
               <div className="shrink-0 sm:w-[42%]">
                 <PortraitTile
                   src={ASSET("persona-portrait-04.png")}
-                  alt="Portrait for persona Leo, mobile-first professional"
+                  alt="Portrait for Persona 04, foreign resident / animator"
                   className="sm:rounded-l-2xl sm:rounded-r-none rounded-t-2xl sm:rounded-t-none"
                 />
               </div>
               <div className="flex min-w-0 flex-1 flex-col justify-center gap-3 p-5 text-sm">
                 <p className="text-xs font-semibold uppercase tracking-wider text-violet-400/95">
-                  Persona 04 · Mobile-first professional
+                  Persona 04 · Foreign resident · Heavy mobile user
                 </p>
                 <p className="font-medium text-zinc-100">
-                  Leo · 33 · Taiwan · Field / creative work
+                  Alex · 29 · Malaysia / Taiwan · Animator
                 </p>
                 <p className="text-zinc-400">
-                  <span className="text-zinc-300">Tech:</span> Lives on the phone;
-                  mobile payments, loyalty apps, and photo-based workflows.
+                  <span className="text-zinc-300">Tech:</span> Heavy iOS use; mobile
+                  payments &amp; member apps; home-screen widgets for barcodes;
+                  tracks monthly categories; wants one-handed flows and clear visual
+                  hierarchy (Chinese is not his first language).
                 </p>
                 <div>
                   <p className="text-xs font-semibold text-zinc-500">Pain points</p>
                   <ul className="mt-1 list-disc pl-4 text-zinc-400 marker:text-zinc-600">
-                    <li>Unstable or slow performance on the move</li>
-                    <li>Notifications that are easy to miss</li>
-                    <li>Hard to see spending patterns at a glance</li>
+                    <li>Didn&apos;t know paper receipts could be claimed online at first</li>
+                    <li>Busy or “ugly” layouts; dense copy slows scanning</li>
+                    <li>Ambiguous icons raise cognitive load for non-native readers</li>
+                    <li>Slow cold start or noisy ads before core tasks</li>
                   </ul>
                 </div>
                 <div>
                   <p className="text-xs font-semibold text-zinc-500">Goals</p>
                   <ul className="mt-1 list-disc pl-4 text-zinc-400 marker:text-zinc-600">
-                    <li>Reliable, fast experience</li>
-                    <li>Barcode and member tools without friction</li>
-                    <li>Clear breakdown of spend and promos</li>
+                    <li>Short tutorials highlighting online prize claim</li>
+                    <li>Cleaner visuals &amp; icon system that bridges language gaps</li>
+                    <li>Integrated bookkeeping / spend view with invoices</li>
+                    <li>Faster launch; barcode copy &amp; display in more contexts</li>
                   </ul>
                 </div>
                 <p className="border-l-2 border-violet-500/50 pl-3 italic text-zinc-300">
-                  &ldquo;My phone is my second wallet—I want payments, member cards,
-                  and invoices in one place.&rdquo;
+                  &ldquo;Classmates got me onto cloud invoices—I dislike trekking to a
+                  store to claim. Give me a calm interface and obvious icons; long
+                  paragraphs are exhausting when Chinese isn&apos;t my first language.&rdquo;
                 </p>
               </div>
             </article>
