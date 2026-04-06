@@ -1,11 +1,24 @@
 import Link from "next/link";
-import VisualPlaceholder from "../_components/VisualPlaceholder";
+import { WideFigure } from "../e-invoice-app/EInvoiceFigures";
+import { AnnotatedFlowSlideshow } from "./AnnotatedFlowSlideshow";
 
 export const metadata = {
   title: "Baskin-Robbins Taiwan Membership App | Angela Yang",
   description:
     "Lead UX/UI for BR31 Taiwan’s first membership app: team objectives, functional map, style proposals, MVP delivery, and build-ready UI kit and handoff.",
 };
+
+const ASSET = (name: string) => `/case-studies/baskin-robbins/${name}`;
+
+const ANNOTATED_SLIDES = [1, 2, 3, 4, 5, 6].map((n) => ({
+  src: ASSET(`annotated-${String(n).padStart(2, "0")}.png`),
+  alt: `Annotated mockup and page-flow reference ${n} of 6`,
+}));
+
+const FINAL_SCREEN_ALTS = Array.from(
+  { length: 20 },
+  (_, i) => `Core journey screen ${i + 1} of 20 — Baskin-Robbins Taiwan membership app`
+);
 
 export default function BaskinRobbinsCaseStudy() {
   return (
@@ -47,10 +60,9 @@ export default function BaskinRobbinsCaseStudy() {
             </div>
           </dl>
           <div className="mt-12">
-            <VisualPlaceholder
-              label="Hero visual (membership app)"
-              hint="Replace with the primary marketing or home-hub composition for this case study."
-              aspect="wide"
+            <WideFigure
+              src={ASSET("hero-membership.png")}
+              alt="Baskin-Robbins Taiwan membership app — hero visual"
             />
           </div>
         </div>
@@ -116,14 +128,14 @@ export default function BaskinRobbinsCaseStudy() {
           </p>
         </section>
 
-        <section className="space-y-5 max-w-3xl">
+        <section className="space-y-6 max-w-5xl">
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Project background
           </span>
           <h2 className="text-xl font-semibold text-zinc-100">
             From Japan&apos;s proven program to Taiwan&apos;s gap
           </h2>
-          <p className="text-zinc-300 leading-relaxed">
+          <p className="text-zinc-300 leading-relaxed max-w-3xl">
             BR31 Ice Cream, known for its 31 playful flavors, had already built a
             strong digital-first membership program in Japan that kept fans
             engaged with rewards and exclusives. In Taiwan, however, the brand
@@ -136,16 +148,21 @@ export default function BaskinRobbinsCaseStudy() {
             app—bringing the proven success of Japan&apos;s model to Taiwan while
             tailoring the experience to local users.
           </p>
-          <p className="text-zinc-200 font-medium text-lg pt-2">
+          <p className="text-zinc-200 font-medium text-lg max-w-3xl pt-2">
             The goal was simple yet powerful: transform casual customers into loyal
             fans by offering them a fun, seamless, and rewarding digital journey
             with every scoop.
           </p>
-          <VisualPlaceholder
-            label="Stakeholder alignment (Japan HQ · Taiwan)"
-            hint="Meeting photo or slide snapshot showing cross-market alignment."
-            aspect="wide"
-          />
+          <div className="space-y-2 pt-2">
+            <h3 className="text-sm font-semibold text-zinc-100">
+              Stakeholder alignment (Japan HQ · Taiwan)
+            </h3>
+            <WideFigure
+              borderless
+              src={ASSET("stakeholder-alignment.png")}
+              alt="Stakeholder alignment across Japan HQ and Taiwan"
+            />
+          </div>
         </section>
 
         <section className="space-y-5 max-w-3xl">
@@ -164,6 +181,14 @@ export default function BaskinRobbinsCaseStudy() {
             Proposals for the client to decide on visual style and color usage.
             Finally, I confirmed Page Flow and system logic with the client so
             engineering could build with a shared map of branching and states.
+          </p>
+          <h3 className="text-sm font-semibold text-zinc-100 pt-2">
+            Functional map · Style proposal · Page flow
+          </h3>
+          <p className="text-sm text-zinc-400 leading-relaxed">
+            Functional mapping, directional style boards, and page-flow validation
+            were consolidated in Figma before high-fidelity execution (see style
+            proposals and annotated flows below).
           </p>
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5">
@@ -185,11 +210,6 @@ export default function BaskinRobbinsCaseStudy() {
               </p>
             </div>
           </div>
-          <VisualPlaceholder
-            label="Functional map · Style proposal · Page flow"
-            hint="Place the functional map, direction boards, and page-flow diagram used to lock MVP scope."
-            aspect="wide"
-          />
         </section>
 
         <section className="space-y-5 max-w-3xl">
@@ -239,17 +259,17 @@ export default function BaskinRobbinsCaseStudy() {
           </p>
         </section>
 
-        <section className="space-y-6 max-w-3xl">
+        <section className="space-y-6 max-w-5xl">
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Visual style &amp; UI design
           </span>
           <h2 className="text-xl font-semibold text-zinc-100">
             Three directions for stakeholder selection
           </h2>
-          <p className="text-zinc-300 leading-relaxed">
+          <p className="text-zinc-300 leading-relaxed max-w-3xl">
             I presented three style options for the client to choose from:
           </p>
-          <div className="space-y-4">
+          <div className="space-y-4 max-w-3xl">
             <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5">
               <h3 className="text-sm font-semibold text-zinc-100">
                 Style A · Sweet &amp; energetic
@@ -281,11 +301,28 @@ export default function BaskinRobbinsCaseStudy() {
               </p>
             </div>
           </div>
-          <VisualPlaceholder
-            label="Style proposals (A / B / C)"
-            hint="Three direction boards as presented to the client."
-            aspect="wide"
-          />
+          <div className="space-y-3 pt-2">
+            <h3 className="text-sm font-semibold text-zinc-100">
+              Style proposals (A / B / C)
+            </h3>
+            <div className="grid gap-6 md:grid-cols-3">
+              <WideFigure
+                borderless
+                src={ASSET("style-proposal-a.png")}
+                alt="Style proposal A — sweet and energetic"
+              />
+              <WideFigure
+                borderless
+                src={ASSET("style-proposal-b.png")}
+                alt="Style proposal B — minimal and fresh"
+              />
+              <WideFigure
+                borderless
+                src={ASSET("style-proposal-c.png")}
+                alt="Style proposal C — gradient and premium"
+              />
+            </div>
+          </div>
         </section>
 
         <section className="space-y-5 max-w-3xl">
@@ -332,21 +369,21 @@ export default function BaskinRobbinsCaseStudy() {
           </p>
         </section>
 
-        <section className="space-y-5 max-w-3xl">
+        <section className="space-y-6 max-w-5xl">
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Annotations &amp; page flow
           </span>
           <h2 className="text-xl font-semibold text-zinc-100">
             Developer handoff without guesswork
           </h2>
-          <p className="text-zinc-300 leading-relaxed">
+          <p className="text-zinc-300 leading-relaxed max-w-3xl">
             To ensure smooth developer handoff, I provided comprehensive page
             annotations and slicing instructions alongside the page designs. These
             annotations clarify elements like scrollable and non-scrollable areas,
             and provide essential information on dimensions, constraints, and
             spacing that require particular attention.
           </p>
-          <p className="text-zinc-300 leading-relaxed">
+          <p className="text-zinc-300 leading-relaxed max-w-3xl">
             Once mockups were approved by the client, I used a Page Flow to clearly
             define page-to-page interactions and the system&apos;s decision-making
             logic. Beyond using arrows for the flow, I provided detailed annotations
@@ -355,68 +392,96 @@ export default function BaskinRobbinsCaseStudy() {
             feature to cross-reference relevant explanations—enabling developers to
             quickly understand the design.
           </p>
-          <VisualPlaceholder
-            label="Annotated mockups · Page flow"
-            hint="Cropped mockup with annotations + linked page-flow diagram."
-            aspect="wide"
-          />
+          <div className="space-y-3 pt-2">
+            <h3 className="text-sm font-semibold text-zinc-100">
+              Annotated mockups · Page flow
+            </h3>
+            <AnnotatedFlowSlideshow items={ANNOTATED_SLIDES} />
+          </div>
         </section>
 
-        <section className="space-y-6 max-w-3xl">
+        <section className="space-y-6 max-w-5xl">
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Delivery
           </span>
           <h2 className="text-xl font-semibold text-zinc-100">
             UI kit, typography, color, and components
           </h2>
-          <p className="text-zinc-300 leading-relaxed">
+          <p className="text-zinc-300 leading-relaxed max-w-3xl">
             I created a UI Kit that systematically organizes core design
             specifications—including Main Components, Colors, Typography, and
             Icons. This setup allows the development team to directly export and use
             these assets—ensuring design consistency and boosting development
             efficiency.
           </p>
-          <p className="text-zinc-300 leading-relaxed">
+          <p className="text-zinc-300 leading-relaxed max-w-3xl">
             Given the need to support both iOS and Android platforms, the app&apos;s
             design was initially developed for iOS using the PingFang TC typeface.
             For Android, Roboto is the chosen font.
           </p>
-          <p className="text-zinc-300 leading-relaxed">
+          <p className="text-zinc-300 leading-relaxed max-w-3xl">
             The palette combines BR31&apos;s signature pink and blue with neutral
             tones to balance playfulness and readability. Primary colors highlight
             key actions, while secondary tones support visual hierarchy.
           </p>
-          <p className="text-zinc-300 leading-relaxed">
+          <p className="text-zinc-300 leading-relaxed max-w-3xl">
             A modular system of buttons, cards, navigation, and input fields was
             built for cross-platform consistency—scalable for future features and
             aligned with BR31&apos;s brand identity.
           </p>
-          <VisualPlaceholder
-            label="UI kit · Components"
-            hint="Component library overview: buttons, cards, navigation, inputs."
-            aspect="wide"
-          />
+          <div className="space-y-3 pt-2">
+            <h3 className="text-sm font-semibold text-zinc-100">
+              UI kit · Components
+            </h3>
+            <div className="grid gap-6 md:grid-cols-3">
+              <WideFigure
+                borderless
+                src={ASSET("ui-kit-01.png")}
+                alt="UI kit — components overview 1 of 3"
+              />
+              <WideFigure
+                borderless
+                src={ASSET("ui-kit-02.png")}
+                alt="UI kit — components overview 2 of 3"
+              />
+              <WideFigure
+                borderless
+                src={ASSET("ui-kit-03.png")}
+                alt="UI kit — components overview 3 of 3"
+              />
+            </div>
+          </div>
         </section>
 
-        <section className="space-y-5 max-w-3xl">
+        <section className="space-y-6 max-w-5xl">
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Final product
           </span>
           <h2 className="text-xl font-semibold text-zinc-100">
             What members experience on device
           </h2>
-          <p className="text-zinc-300 leading-relaxed">
+          <p className="text-zinc-300 leading-relaxed max-w-3xl">
             The final app delivers a seamless membership experience—enabling BR31
             Taiwan users to easily accumulate points, redeem rewards, and enjoy
             personalized offers. The design balances brand playfulness with
             usability—ensuring consistency across iOS and Android while meeting both
             client and user needs.
           </p>
-          <VisualPlaceholder
-            label="Final screens (core journey)"
-            hint="Home, earn/track, redeem, and store-ready surfaces."
-            aspect="wide"
-          />
+          <div className="space-y-3 pt-2">
+            <h3 className="text-sm font-semibold text-zinc-100">
+              Final screens (core journey)
+            </h3>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              {FINAL_SCREEN_ALTS.map((alt, i) => (
+                <WideFigure
+                  key={ASSET(`final-screen-${String(i + 1).padStart(2, "0")}.png`)}
+                  borderless
+                  src={ASSET(`final-screen-${String(i + 1).padStart(2, "0")}.png`)}
+                  alt={alt}
+                />
+              ))}
+            </div>
+          </div>
         </section>
 
         <section className="border-t border-zinc-800 pt-12">
