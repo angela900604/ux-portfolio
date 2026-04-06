@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PhoneMockup, WideFigure } from "../e-invoice-app/EInvoiceFigures";
+import { WideFigure } from "../e-invoice-app/EInvoiceFigures";
 import { AnnotatedFlowSlideshow } from "./AnnotatedFlowSlideshow";
 
 export const metadata = {
@@ -462,25 +462,20 @@ export default function BaskinRobbinsCaseStudy() {
             usability—ensuring consistency across iOS and Android while meeting both
             client and user needs.
           </p>
-          <div className="space-y-10">
-            <h3 className="text-sm font-semibold text-zinc-100">
-              Final screens (core journey)
-            </h3>
-            <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-              {Array.from({ length: 20 }, (_, i) => {
-                const src = ASSET(
-                  `final-screen-${String(i + 1).padStart(2, "0")}.png`
-                );
-                return (
-                  <PhoneMockup
-                    key={src}
-                    src={src}
-                    alt={`Core journey screen ${i + 1} of 20 — Baskin-Robbins Taiwan membership app`}
-                    label={`Screen ${i + 1} of 20`}
-                  />
-                );
-              })}
-            </div>
+          <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+            {Array.from({ length: 20 }, (_, i) => {
+              const src = ASSET(
+                `final-screen-${String(i + 1).padStart(2, "0")}.png`
+              );
+              return (
+                <WideFigure
+                  key={src}
+                  borderless
+                  src={src}
+                  alt={`Baskin-Robbins Taiwan membership app — screen ${i + 1} of 20`}
+                />
+              );
+            })}
           </div>
         </section>
 
