@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PhoneMockup, WideFigure } from "./EInvoiceFigures";
+import { PhoneMockup, PortraitTile, WideFigure } from "./EInvoiceFigures";
 
 export const metadata = {
   title: "Reimagining Taiwan’s e-Invoice Experience | Angela Yang",
@@ -14,7 +14,9 @@ const FIGMA_WIREFRAME_FLOW =
 
 const ASSET = (name: string) => `/case-studies/e-invoice/case-assets/${name}`;
 
-const YOUTUBE_A11Y_EMBED = "https://www.youtube.com/embed/5ySntQxxINE";
+const YOUTUBE_A11Y_EMBED = "https://www.youtube.com/embed/yfwERMFfXDM";
+const YOUTUBE_A11Y_URL =
+  "https://www.youtube.com/shorts/yfwERMFfXDM?si=edcvB-xno43PtoFN";
 
 /** Friendly lifestyle palette (style direction 01) */
 const STYLE_SWATCHES: { hex: string; name: string }[] = [
@@ -25,30 +27,27 @@ const STYLE_SWATCHES: { hex: string; name: string }[] = [
   { hex: "#F8D364", name: "Warm yellow" },
 ];
 
-/**
- * Labels for solution-17 … solution-35 (export batch).
- * Titles follow on-screen function where identifiable; hints note source file id.
- */
-const FINAL_SOLUTION_SCREENS: { n: number; title: string; fileHint: string }[] = [
-  { n: 17, title: "載具歸戶 · Carrier integration", fileHint: "_____01_01-e00cd375" },
-  { n: 18, title: "領獎資料 · Prize claim / invoice info", fileHint: "______01_01-fd8b2ebe" },
-  { n: 19, title: "捐贈發票 · Donation picker", fileHint: "____-db9fe7ad" },
-  { n: 20, title: "減碳存摺 · Carbon reduction passbook", fileHint: "_____01_01-de79bc20" },
-  { n: 21, title: "雲端備份 · Cloud backup onboarding", fileHint: "_____01_02-edb36f24" },
-  { n: 22, title: "我要領獎 · Redemption hub (status)", fileHint: "_____01_01-88276f58" },
-  { n: 23, title: "功能總覽 · Settings & profile", fileHint: "_____01_04-7e308df2" },
-  { n: 24, title: "發票存摺 · Invoice passbook", fileHint: "___03-b38fbf39" },
-  { n: 25, title: "發票明細 · Receipt detail", fileHint: "_____02-9e1adb38" },
-  { n: 26, title: "掃描對獎 · Scan & check (tab)", fileHint: "_____01-8608df6a" },
-  { n: 27, title: "末三碼對獎 · Last-three-digit match", fileHint: "_____01_00-0760715c" },
-  { n: 28, title: "宣導專區 · Events & promos", fileHint: "_____01-26121e59" },
-  { n: 29, title: "首頁 · Home hub", fileHint: "home_01_00-6bf3cc5b" },
-  { n: 30, title: "登入 · Face ID / quick login", fileHint: "Face_ID_02" },
-  { n: 31, title: "通知中心 · Notifications", fileHint: "____01_02-3f11733c" },
-  { n: 32, title: "我要領獎 · Winning invoices list", fileHint: "_____01_01-42974418" },
-  { n: 33, title: "掃描發票 · Camera capture", fileHint: "_____01_01-12a97583" },
-  { n: 34, title: "功能流程 · UI state (variant)", fileHint: "_____01_01-9fc29cfc" },
-  { n: 35, title: "介面狀態 · UI state (variant)", fileHint: "_____01_01-7eedf949" },
+/** Labels for solution-17 … solution-35 (export batch). */
+const FINAL_SOLUTION_SCREENS: { n: number; title: string }[] = [
+  { n: 17, title: "載具歸戶 · Carrier integration" },
+  { n: 18, title: "領獎資料 · Prize claim / invoice info" },
+  { n: 19, title: "捐贈發票 · Donation picker" },
+  { n: 20, title: "減碳存摺 · Carbon reduction passbook" },
+  { n: 21, title: "雲端備份 · Cloud backup onboarding" },
+  { n: 22, title: "我要領獎 · Redemption hub (status)" },
+  { n: 23, title: "功能總覽 · Settings & profile" },
+  { n: 24, title: "發票存摺 · Invoice passbook" },
+  { n: 25, title: "發票明細 · Receipt detail" },
+  { n: 26, title: "掃描對獎 · Scan & check (tab)" },
+  { n: 27, title: "末三碼對獎 · Last-three-digit match" },
+  { n: 28, title: "宣導專區 · Events & promos" },
+  { n: 29, title: "首頁 · Home hub" },
+  { n: 30, title: "登入 · Face ID / quick login" },
+  { n: 31, title: "通知中心 · Notifications" },
+  { n: 32, title: "我要領獎 · Winning invoices list" },
+  { n: 33, title: "掃描發票 · Camera capture" },
+  { n: 34, title: "功能流程 · UI state (variant)" },
+  { n: 35, title: "介面狀態 · UI state (variant)" },
 ];
 
 export default function EInvoiceCaseStudy() {
@@ -272,68 +271,141 @@ export default function EInvoiceCaseStudy() {
               <tbody className="divide-y divide-zinc-800 text-zinc-300">
                 <tr className="align-top">
                   <td className="px-4 py-4 text-zinc-200">
-                    Before shopping — first download
+                    <span className="rounded bg-amber-500/15 px-1.5 py-0.5 text-amber-100/95">
+                      Before shopping
+                    </span>{" "}
+                    — first download
                   </td>
                   <td className="px-4 py-4">
-                    Understand the app&apos;s functions and advantages
+                    Understand the app&apos;s{" "}
+                    <span className="rounded bg-emerald-500/15 px-1.5 py-0.5 text-emerald-200/95">
+                      functions &amp; advantages
+                    </span>
                   </td>
                   <td className="px-4 py-4 text-zinc-400">
-                    High learning curve; carrier binding fails often; prize claim
-                    &amp; bank setup hard to find; invoice history unclear
+                    <span className="rounded bg-rose-500/15 px-1.5 py-0.5 text-rose-200/95">
+                      High learning curve
+                    </span>
+                    ;{" "}
+                    <span className="rounded bg-rose-500/15 px-1.5 py-0.5 text-rose-200/95">
+                      carrier binding fails
+                    </span>{" "}
+                    often;{" "}
+                    <span className="rounded bg-rose-500/15 px-1.5 py-0.5 text-rose-200/95">
+                      prize claim &amp; bank setup
+                    </span>{" "}
+                    hard to find; invoice history unclear
                   </td>
                   <td className="px-4 py-4 text-zinc-400">
-                    Clearer tutorials; simplify registration &amp; binding; improve
-                    interface
+                    <span className="rounded bg-violet-500/15 px-1.5 py-0.5 text-violet-200/95">
+                      Clearer tutorials
+                    </span>
+                    ; simplify{" "}
+                    <span className="rounded bg-violet-500/15 px-1.5 py-0.5 text-violet-200/95">
+                      registration &amp; binding
+                    </span>
+                    ; improve interface
                   </td>
                 </tr>
                 <tr className="align-top">
                   <td className="px-4 py-4 text-zinc-200">
-                    Before shopping — registration &amp; carrier binding
-                  </td>
-                  <td className="px-4 py-4">Successfully bind carrier</td>
-                  <td className="px-4 py-4 text-zinc-400">
-                    Slow startup; barcode scan fails; functions scattered; frequent
-                    logouts; manual refresh needed
-                  </td>
-                  <td className="px-4 py-4 text-zinc-400">
-                    Show error hints; better stability &amp; maintenance
-                  </td>
-                </tr>
-                <tr className="align-top">
-                  <td className="px-4 py-4 text-zinc-200">
-                    During shopping — using carrier barcode
-                  </td>
-                  <td className="px-4 py-4">Quickly display carrier barcode</td>
-                  <td className="px-4 py-4 text-zinc-400">
-                    App slow at checkout; barcode sometimes fails
-                  </td>
-                  <td className="px-4 py-4 text-zinc-400">
-                    Improve speed &amp; reliability
-                  </td>
-                </tr>
-                <tr className="align-top">
-                  <td className="px-4 py-4 text-zinc-200">
-                    After shopping — manage invoices / prize draw / claim prize
+                    <span className="rounded bg-amber-500/15 px-1.5 py-0.5 text-amber-100/95">
+                      Before shopping
+                    </span>{" "}
+                    — registration &amp; carrier binding
                   </td>
                   <td className="px-4 py-4">
-                    Easily manage invoices &amp; quickly check prizes
+                    Successfully{" "}
+                    <span className="rounded bg-emerald-500/15 px-1.5 py-0.5 text-emerald-200/95">
+                      bind carrier
+                    </span>
                   </td>
                   <td className="px-4 py-4 text-zinc-400">
-                    Hard to find invoices; no batch edit; scanning limited; prize
-                    alerts hidden; not accessible for visually impaired
+                    <span className="rounded bg-rose-500/15 px-1.5 py-0.5 text-rose-200/95">
+                      Slow startup
+                    </span>
+                    ;{" "}
+                    <span className="rounded bg-rose-500/15 px-1.5 py-0.5 text-rose-200/95">
+                      barcode scan fails
+                    </span>
+                    ; functions scattered; frequent logouts; manual refresh
                   </td>
                   <td className="px-4 py-4 text-zinc-400">
-                    Better invoice display; integrated scanning &amp; management
+                    <span className="rounded bg-violet-500/15 px-1.5 py-0.5 text-violet-200/95">
+                      Error hints
+                    </span>
+                    ;{" "}
+                    <span className="rounded bg-violet-500/15 px-1.5 py-0.5 text-violet-200/95">
+                      stability &amp; maintenance
+                    </span>
+                  </td>
+                </tr>
+                <tr className="align-top">
+                  <td className="px-4 py-4 text-zinc-200">
+                    <span className="rounded bg-amber-500/15 px-1.5 py-0.5 text-amber-100/95">
+                      During shopping
+                    </span>{" "}
+                    — carrier barcode
+                  </td>
+                  <td className="px-4 py-4">
+                    Quickly display{" "}
+                    <span className="rounded bg-emerald-500/15 px-1.5 py-0.5 text-emerald-200/95">
+                      carrier barcode
+                    </span>
+                  </td>
+                  <td className="px-4 py-4 text-zinc-400">
+                    <span className="rounded bg-rose-500/15 px-1.5 py-0.5 text-rose-200/95">
+                      Slow at checkout
+                    </span>
+                    ; barcode sometimes fails
+                  </td>
+                  <td className="px-4 py-4 text-zinc-400">
+                    <span className="rounded bg-violet-500/15 px-1.5 py-0.5 text-violet-200/95">
+                      Speed &amp; reliability
+                    </span>
+                  </td>
+                </tr>
+                <tr className="align-top">
+                  <td className="px-4 py-4 text-zinc-200">
+                    <span className="rounded bg-amber-500/15 px-1.5 py-0.5 text-amber-100/95">
+                      After shopping
+                    </span>{" "}
+                    — invoices / draw / claim
+                  </td>
+                  <td className="px-4 py-4">
+                    Manage invoices &amp;{" "}
+                    <span className="rounded bg-emerald-500/15 px-1.5 py-0.5 text-emerald-200/95">
+                      check prizes quickly
+                    </span>
+                  </td>
+                  <td className="px-4 py-4 text-zinc-400">
+                    Hard to find invoices; no batch edit;{" "}
+                    <span className="rounded bg-rose-500/15 px-1.5 py-0.5 text-rose-200/95">
+                      scanning limited
+                    </span>
+                    ;{" "}
+                    <span className="rounded bg-rose-500/15 px-1.5 py-0.5 text-rose-200/95">
+                      prize alerts hidden
+                    </span>
+                    ; not accessible for{" "}
+                    <span className="rounded bg-rose-500/15 px-1.5 py-0.5 text-rose-200/95">
+                      visually impaired
+                    </span>
+                  </td>
+                  <td className="px-4 py-4 text-zinc-400">
+                    <span className="rounded bg-violet-500/15 px-1.5 py-0.5 text-violet-200/95">
+                      Invoice display
+                    </span>
+                    ;{" "}
+                    <span className="rounded bg-violet-500/15 px-1.5 py-0.5 text-violet-200/95">
+                      integrated scanning
+                    </span>{" "}
+                    &amp; management
                   </td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <WideFigure
-            src={ASSET("journey-map-full.png")}
-            alt="Full user journey map diagram for the e-invoice app"
-            caption="User journey map — full diagram (export)."
-          />
         </section>
 
         <section className="space-y-6 max-w-3xl">
@@ -417,9 +489,9 @@ export default function EInvoiceCaseStudy() {
                 />
               </div>
               <p className="mt-2 text-center text-[11px] text-zinc-500">
-                Vertical clip ·{" "}
+                Short clip ·{" "}
                 <a
-                  href="https://youtu.be/5ySntQxxINE"
+                  href={YOUTUBE_A11Y_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-zinc-400 underline hover:text-zinc-200"
@@ -431,24 +503,247 @@ export default function EInvoiceCaseStudy() {
           </div>
         </section>
 
-        <section className="max-w-5xl space-y-8">
+        <section className="max-w-5xl space-y-10">
           <div className="space-y-3">
             <h3 className="text-lg font-semibold tracking-tight text-zinc-100">
               User personas
             </h3>
             <p className="max-w-3xl text-sm leading-relaxed text-zinc-400">
-              Four archetypes from interviews—age, tech comfort, and language
-              context—summarized on one board for stakeholder review.
+              Four primary archetypes from interviews, plus a dedicated visually
+              impaired persona from accessibility research—each with goals, pain
+              points, and a representative portrait.
             </p>
           </div>
-          <div className="rounded-2xl border border-zinc-800/80 bg-zinc-900/25 p-4 shadow-inner shadow-black/20 sm:p-6">
-            <WideFigure
-              src={ASSET("personas-overview.png")}
-              alt="Four user persona cards: young adult, busy professional, silver generation, and foreign national"
-              caption="Persona board · Screenshot_2026-04-05_at_8.48.17_PM (export)."
-              className="!space-y-3"
-            />
+
+          <div className="grid gap-8 lg:grid-cols-2">
+            <article className="flex flex-col overflow-hidden rounded-2xl border border-zinc-800/90 bg-zinc-900/35 sm:flex-row">
+              <div className="shrink-0 sm:w-[42%]">
+                <PortraitTile
+                  src={ASSET("persona-portrait-01.png")}
+                  alt="Portrait for persona Sara, tech-savvy young adult"
+                  className="sm:rounded-l-2xl sm:rounded-r-none rounded-t-2xl sm:rounded-t-none"
+                />
+              </div>
+              <div className="flex min-w-0 flex-1 flex-col justify-center gap-3 p-5 text-sm">
+                <p className="text-xs font-semibold uppercase tracking-wider text-violet-400/95">
+                  Persona 01 · Tech-savvy young adult
+                </p>
+                <p className="font-medium text-zinc-100">
+                  Sara · 29 · Malaysia / Taiwan · Student
+                </p>
+                <p className="text-zinc-400">
+                  <span className="text-zinc-300">Tech:</span> Heavy smartphone use;
+                  mobile payments and digital wallets.
+                </p>
+                <div>
+                  <p className="text-xs font-semibold text-zinc-500">Pain points</p>
+                  <ul className="mt-1 list-disc pl-4 text-zinc-400 marker:text-zinc-600">
+                    <li>Slow app launches</li>
+                    <li>Cumbersome navigation in retail apps</li>
+                    <li>Wants faster access to member barcodes at checkout</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-zinc-500">Goals</p>
+                  <ul className="mt-1 list-disc pl-4 text-zinc-400 marker:text-zinc-600">
+                    <li>Quick scan-and-pay flow</li>
+                    <li>Core tasks on the first screen</li>
+                    <li>Track spending and promotions</li>
+                  </ul>
+                </div>
+                <p className="border-l-2 border-violet-500/50 pl-3 italic text-zinc-300">
+                  &ldquo;I have a fast-paced life—I need the member barcode fast. I
+                  track where I spend and watch for promotions.&rdquo;
+                </p>
+              </div>
+            </article>
+
+            <article className="flex flex-col overflow-hidden rounded-2xl border border-zinc-800/90 bg-zinc-900/35 sm:flex-row">
+              <div className="shrink-0 sm:w-[42%]">
+                <PortraitTile
+                  src={ASSET("persona-portrait-02.png")}
+                  alt="Portrait for persona David, busy professional"
+                  className="sm:rounded-l-2xl sm:rounded-r-none rounded-t-2xl sm:rounded-t-none"
+                />
+              </div>
+              <div className="flex min-w-0 flex-1 flex-col justify-center gap-3 p-5 text-sm">
+                <p className="text-xs font-semibold uppercase tracking-wider text-violet-400/95">
+                  Persona 02 · Busy professional
+                </p>
+                <p className="font-medium text-zinc-100">
+                  David · 43 · Taiwan · Project manager
+                </p>
+                <p className="text-zinc-400">
+                  <span className="text-zinc-300">Tech:</span> Mobile payments,
+                  member apps, budgeting tools; often checks App Store screenshots
+                  before tasks.
+                </p>
+                <div>
+                  <p className="text-xs font-semibold text-zinc-500">Pain points</p>
+                  <ul className="mt-1 list-disc pl-4 text-zinc-400 marker:text-zinc-600">
+                    <li>Language barriers in official apps</li>
+                    <li>Slow launch or unclear function placement</li>
+                    <li>Budgeting apps not connected to invoice data</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-zinc-500">Goals</p>
+                  <ul className="mt-1 list-disc pl-4 text-zinc-400 marker:text-zinc-600">
+                    <li>Fast barcode and donation access</li>
+                    <li>Clear multilingual UI</li>
+                    <li>Integrated spending view</li>
+                  </ul>
+                </div>
+                <p className="border-l-2 border-violet-500/50 pl-3 italic text-zinc-300">
+                  &ldquo;I didn&apos;t know invoices could be donated online—it&apos;s
+                  more convenient than going to a store.&rdquo;
+                </p>
+              </div>
+            </article>
+
+            <article className="flex flex-col overflow-hidden rounded-2xl border border-zinc-800/90 bg-zinc-900/35 sm:flex-row">
+              <div className="shrink-0 sm:w-[42%]">
+                <PortraitTile
+                  src={ASSET("persona-portrait-03.png")}
+                  alt="Portrait for persona Mei-Ling, silver generation"
+                  className="sm:rounded-l-2xl sm:rounded-r-none rounded-t-2xl sm:rounded-t-none"
+                />
+              </div>
+              <div className="flex min-w-0 flex-1 flex-col justify-center gap-3 p-5 text-sm">
+                <p className="text-xs font-semibold uppercase tracking-wider text-violet-400/95">
+                  Persona 03 · Silver generation
+                </p>
+                <p className="font-medium text-zinc-100">
+                  Mei-Ling · 70 · Taiwan · Retired
+                </p>
+                <p className="text-zinc-400">
+                  <span className="text-zinc-300">Tech:</span> Low; cash and paper
+                  invoices; often needs family help with apps.
+                </p>
+                <div>
+                  <p className="text-xs font-semibold text-zinc-500">Pain points</p>
+                  <ul className="mt-1 list-disc pl-4 text-zinc-400 marker:text-zinc-600">
+                    <li>Too many options on screen</li>
+                    <li>Forgetting passwords</li>
+                    <li>Cannot complete flows alone</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-zinc-500">Goals</p>
+                  <ul className="mt-1 list-disc pl-4 text-zinc-400 marker:text-zinc-600">
+                    <li>Simple navigation</li>
+                    <li>Clear donation tracking</li>
+                    <li>Accessible scanning and prize checking</li>
+                  </ul>
+                </div>
+                <p className="border-l-2 border-violet-500/50 pl-3 italic text-zinc-300">
+                  &ldquo;Modern apps feel like a maze. I only want to check prizes
+                  and donate invoices—easily.&rdquo;
+                </p>
+              </div>
+            </article>
+
+            <article className="flex flex-col overflow-hidden rounded-2xl border border-zinc-800/90 bg-zinc-900/35 sm:flex-row">
+              <div className="shrink-0 sm:w-[42%]">
+                <PortraitTile
+                  src={ASSET("persona-portrait-04.png")}
+                  alt="Portrait for persona Leo, mobile-first professional"
+                  className="sm:rounded-l-2xl sm:rounded-r-none rounded-t-2xl sm:rounded-t-none"
+                />
+              </div>
+              <div className="flex min-w-0 flex-1 flex-col justify-center gap-3 p-5 text-sm">
+                <p className="text-xs font-semibold uppercase tracking-wider text-violet-400/95">
+                  Persona 04 · Mobile-first professional
+                </p>
+                <p className="font-medium text-zinc-100">
+                  Leo · 33 · Taiwan · Field / creative work
+                </p>
+                <p className="text-zinc-400">
+                  <span className="text-zinc-300">Tech:</span> Lives on the phone;
+                  mobile payments, loyalty apps, and photo-based workflows.
+                </p>
+                <div>
+                  <p className="text-xs font-semibold text-zinc-500">Pain points</p>
+                  <ul className="mt-1 list-disc pl-4 text-zinc-400 marker:text-zinc-600">
+                    <li>Unstable or slow performance on the move</li>
+                    <li>Notifications that are easy to miss</li>
+                    <li>Hard to see spending patterns at a glance</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-zinc-500">Goals</p>
+                  <ul className="mt-1 list-disc pl-4 text-zinc-400 marker:text-zinc-600">
+                    <li>Reliable, fast experience</li>
+                    <li>Barcode and member tools without friction</li>
+                    <li>Clear breakdown of spend and promos</li>
+                  </ul>
+                </div>
+                <p className="border-l-2 border-violet-500/50 pl-3 italic text-zinc-300">
+                  &ldquo;My phone is my second wallet—I want payments, member cards,
+                  and invoices in one place.&rdquo;
+                </p>
+              </div>
+            </article>
           </div>
+
+          <div className="space-y-5 rounded-2xl border border-zinc-800/90 bg-zinc-900/25 p-5 sm:p-8">
+            <div className="space-y-2">
+              <p className="text-xs font-semibold uppercase tracking-wider text-violet-400/95">
+                Persona 05 · Visually impaired user
+              </p>
+              <h4 className="text-base font-semibold text-zinc-100">
+                陳老師 · Retired elementary teacher · Severe low vision
+              </h4>
+              <p className="text-sm text-zinc-400">
+                Macular degeneration limits vision to light and shadow; relies on
+                hearing and memory. Uses Android with family help; distrusts payment
+                barcodes and unclear confirmation states.
+              </p>
+            </div>
+            <div className="grid gap-8 lg:grid-cols-2 lg:items-start">
+              <div className="space-y-4 text-sm text-zinc-300">
+                <p className="border-l-2 border-amber-500/40 pl-3 italic text-zinc-300">
+                  &ldquo;The words and buttons are unclear. I have to ask my daughter
+                  every time for e-invoice—I&apos;m afraid the clerk will scan the
+                  wrong barcode. I hope the app can be voice-controlled so I can do
+                  more myself.&rdquo;
+                </p>
+                <div>
+                  <p className="text-xs font-semibold text-zinc-500">Needs &amp; pain</p>
+                  <ul className="mt-2 list-disc space-y-1 pl-4 text-zinc-400 marker:text-zinc-600">
+                    <li>Cannot operate most apps independently—feels helpless</li>
+                    <li>Fear of scams and wrong barcode scans</li>
+                    <li>Screen reader chatter feels overwhelming</li>
+                    <li>Needs very large, high-contrast targets to see anything</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-zinc-500">Design goals</p>
+                  <ul className="mt-2 list-disc space-y-1 pl-4 text-zinc-400 marker:text-zinc-600">
+                    <li>Fixed button positions and predictable layout</li>
+                    <li>High contrast, large type, minimal noise</li>
+                    <li>Clear voice guidance and filtered screen-reader prompts</li>
+                    <li>Distinct audio cues for success; caregiver setup flows</li>
+                  </ul>
+                </div>
+              </div>
+              <div className="space-y-4">
+                <WideFigure
+                  src={ASSET("persona-vi-poster.png")}
+                  alt="Visually impaired persona research poster: profile, quote, behaviors, and solution goals"
+                  caption="Accessibility research synthesis · visually impaired participant (poster)."
+                />
+                <PortraitTile
+                  src={ASSET("persona-portrait-vi-session.png")}
+                  alt="Research session observing a participant using a smartphone"
+                />
+                <p className="text-center text-[11px] text-zinc-500">
+                  Contextual session · observation &amp; assisted device use
+                </p>
+              </div>
+            </div>
+          </div>
+
           <p className="max-w-3xl text-zinc-300 leading-relaxed">
             Users want convenience, clarity, and control—but many face obstacles
             that reduce trust. Accessibility and clearer spending insight remain
@@ -639,7 +934,6 @@ export default function EInvoiceCaseStudy() {
               <WideFigure
                 src={ASSET("moodboard-lifestyle-hero.png")}
                 alt="Person using a phone outdoors in an urban setting, sunny lifestyle context"
-                caption="Lifestyle reference · _____01_1 (export) — paired with the Friendly lifestyle concept."
               />
             </div>
           </div>
@@ -794,19 +1088,16 @@ export default function EInvoiceCaseStudy() {
               src={ASSET("iteration-home-01.png")}
               alt="Home screen iteration"
               label="首頁 · Home"
-              hint="home_01_00"
             />
             <PhoneMockup
               src={ASSET("iteration-redeem-01.png")}
               alt="Redeem screen iteration one"
               label="我要領獎 · Redeem"
-              hint="_____01_01 (variant 1)"
             />
             <PhoneMockup
               src={ASSET("iteration-redeem-02.png")}
               alt="Redeem screen iteration two"
               label="我要領獎 · Redeem (state)"
-              hint="_____01_01 (variant 2)"
             />
           </div>
         </section>
@@ -819,8 +1110,7 @@ export default function EInvoiceCaseStudy() {
             High-fidelity UI across core tasks
           </h2>
           <p className="max-w-3xl text-zinc-300 leading-relaxed">
-            Selected hi-fi exports (batch 17–35). Captions combine a functional
-            label with the source file id for traceability.
+            Selected high-fidelity exports (batch 17–35) for core flows.
           </p>
           <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
             {FINAL_SOLUTION_SCREENS.map((item) => (
@@ -829,7 +1119,6 @@ export default function EInvoiceCaseStudy() {
                 src={ASSET(`solution-${item.n}.png`)}
                 alt={item.title}
                 label={item.title}
-                hint={`File: ${item.fileHint}`}
               />
             ))}
           </div>

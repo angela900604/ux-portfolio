@@ -102,3 +102,31 @@ export function PhoneMockup({
     </figure>
   );
 }
+
+/** Persona / lifestyle portrait — hover + lightbox */
+export function PortraitTile({
+  src,
+  alt,
+  className = "",
+}: {
+  src: string;
+  alt: string;
+  className?: string;
+}) {
+  return (
+    <ImageLightbox
+      src={src}
+      alt={alt}
+      className={`block w-full overflow-hidden rounded-xl border border-zinc-700/50 bg-zinc-900/40 ${className}`}
+    >
+      <Image
+        src={src}
+        alt={alt}
+        width={480}
+        height={640}
+        className="aspect-[3/4] h-auto w-full object-cover object-center"
+        sizes="(max-width: 640px) 100vw, 200px"
+      />
+    </ImageLightbox>
+  );
+}
