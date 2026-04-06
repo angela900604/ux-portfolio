@@ -1,5 +1,4 @@
 import Link from "next/link";
-import VisualPlaceholder from "../_components/VisualPlaceholder";
 
 export const metadata = {
   title: "MINA · AI Marketplace for Parents (Coming Soon) | Angela Yang",
@@ -20,15 +19,18 @@ export default function AiMarketplaceCaseStudy() {
             <span className="inline-flex items-center rounded-full border border-violet-500/40 bg-violet-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-widest text-violet-200">
               Coming soon
             </span>
+            <span className="inline-flex items-center rounded-full border border-amber-500/35 bg-amber-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-widest text-amber-100/90">
+              Ongoing project
+            </span>
             <span className="text-xs uppercase tracking-widest text-zinc-500">
               Case study · AI marketplace · Zero to one
             </span>
           </div>
 
           <p className="text-sm text-zinc-400 max-w-2xl leading-relaxed border-l-2 border-violet-500/50 pl-4">
-            Full visuals, flows, and outcomes will ship with the next portfolio
-            update. Below is the product narrative and design intent—written as
-            we build.
+            This case study is <span className="text-zinc-200">in progress</span>.
+            Screens, flows, and metrics will be added when the work is ready—no image
+            placeholders until then.
           </p>
 
           <h1 className="mt-8 font-semibold text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight max-w-3xl">
@@ -52,17 +54,11 @@ export default function AiMarketplaceCaseStudy() {
             </div>
             <div>
               <dt className="text-zinc-500 uppercase tracking-wider">Status</dt>
-              <dd className="text-zinc-200">In development · case study TBD</dd>
+              <dd className="text-zinc-200">
+                Ongoing — ship artifacts &amp; visuals later (coming soon)
+              </dd>
             </div>
           </dl>
-
-          <div className="mt-12">
-            <VisualPlaceholder
-              label="Hero · Product vision"
-              hint="App hero or lifestyle still: SF parents, stroller gear, or chat-first UI mood."
-              aspect="wide"
-            />
-          </div>
         </div>
       </header>
 
@@ -135,11 +131,6 @@ export default function AiMarketplaceCaseStudy() {
               </p>
             </div>
           </div>
-          <VisualPlaceholder
-            label="Problem framing"
-            hint="Photo collage or diagram: outgrown gear vs closet space vs landfill / resale intent."
-            aspect="wide"
-          />
         </section>
 
         <section className="max-w-3xl space-y-4">
@@ -159,11 +150,6 @@ export default function AiMarketplaceCaseStudy() {
             should recognize the product in seconds and complete a sale without
             reading a manual.
           </p>
-          <VisualPlaceholder
-            label="Community & trust context"
-            hint="Screenshots or logos from parent groups / hyperlocal trust signals (anonymized)."
-            aspect="wide"
-          />
         </section>
 
         <section className="max-w-3xl space-y-6">
@@ -192,11 +178,11 @@ export default function AiMarketplaceCaseStudy() {
             <p className="mt-3 text-zinc-300 leading-relaxed">
               Parents can <span className="text-zinc-100">take one photo</span> (or a
               single upload batch) and let AI propose{" "}
-              <span className="text-zinc-100">multiple listings at once</span>—titles,
-              categories, condition notes, and bundle suggestions—ready to edit before
-              anything goes live. The objective is to make batching outgrown gear feel
-              closer to &quot;showing a friend what is on the floor&quot; than
-              &quot;opening a spreadsheet.&quot;
+              <span className="text-zinc-100">multiple listings at once</span>
+              —titles, categories, condition notes, and bundle suggestions—ready to
+              edit before anything goes live. The objective is to make batching
+              outgrown gear feel closer to &quot;showing a friend what is on the
+              floor&quot; than &quot;opening a spreadsheet.&quot;
             </p>
           </div>
 
@@ -220,22 +206,6 @@ export default function AiMarketplaceCaseStudy() {
               </p>
             </div>
           </div>
-
-          <VisualPlaceholder
-            label="AI agent chat · Primary UI"
-            hint="Chat transcript: seller describes items, AI proposes listings and asks clarifying questions."
-            aspect="wide"
-          />
-          <VisualPlaceholder
-            label="One upload → AI-generated listing batch"
-            hint="Before/after: single photo vs grid of draft listings with edit affordances."
-            aspect="wide"
-          />
-          <VisualPlaceholder
-            label="Handoff · time & place"
-            hint="Conversation snippet or calendar picker coordinated via agent (seller view)."
-            aspect="wide"
-          />
         </section>
 
         <section className="max-w-3xl space-y-4">
@@ -269,11 +239,6 @@ export default function AiMarketplaceCaseStudy() {
               </span>
             </li>
           </ul>
-          <VisualPlaceholder
-            label="Design principles · UI notes"
-            hint="Annotated frames: preview/confirm, edit affordances, safety copy."
-            aspect="wide"
-          />
         </section>
 
         <section className="max-w-3xl rounded-2xl border border-dashed border-zinc-700 bg-zinc-900/30 p-8 sm:p-10">
@@ -281,14 +246,14 @@ export default function AiMarketplaceCaseStudy() {
             What will appear here later
           </span>
           <h2 className="mt-2 text-xl font-semibold text-zinc-100">
-            Full case study — when the work is ready to show
+            Full case study — ongoing · coming soon
           </h2>
           <p className="mt-4 text-zinc-400 leading-relaxed">
             The next version of this page will include end-to-end flows, research
-            snapshots from mom communities, prototype learnings, and the specific
-            interaction patterns we used to keep AI assistance legible and
-            reversible. If you are reviewing this in recruiting: the narrative above
-            is the current product direction; ship artifacts are still in progress.
+            snapshots from mom communities, prototype learnings, and UI captures—
+            <span className="text-zinc-300">when the project is ready to show</span>.
+            If you are reviewing this in recruiting: the narrative above is the
+            current product direction; visuals are still in progress.
           </p>
         </section>
 

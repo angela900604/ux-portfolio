@@ -27,7 +27,15 @@ const STYLE_SWATCHES: { hex: string; name: string }[] = [
   { hex: "#F8D364", name: "Warm yellow" },
 ];
 
-/** Labels for solution-17 … solution-35 (aligned to export batch order). */
+/** Key metrics — emerald chip (hero stats, inline %, deltas) */
+const M_HERO =
+  "inline-block rounded-lg bg-emerald-500/15 px-3 py-1 text-2xl font-semibold tabular-nums text-emerald-200";
+const M_TXT =
+  "rounded-md bg-emerald-500/20 px-1.5 py-0.5 font-semibold tabular-nums text-emerald-200";
+const M_TIME =
+  "rounded-md bg-amber-500/15 px-1.5 py-0.5 font-medium tabular-nums text-amber-100/95";
+
+/** Final solution mockups; solution-26 export omitted (did not match caption). */
 const FINAL_SOLUTION_SCREENS: { n: number; title: string }[] = [
   { n: 17, title: "消費分析 · Spending insights" },
   { n: 18, title: "會員卡管理 · Membership cards" },
@@ -38,7 +46,6 @@ const FINAL_SOLUTION_SCREENS: { n: number; title: string }[] = [
   { n: 23, title: "減碳存摺分享 · Carbon passbook share" },
   { n: 24, title: "新手教學 · First-run tutorial" },
   { n: 25, title: "我要領獎安全驗證 · Redeem security check" },
-  { n: 26, title: "掃描對獎 · Scan & check (tab)" },
   { n: 27, title: "發票存摺 · Invoice passbook" },
   { n: 28, title: "發票明細 · Receipt detail" },
   { n: 29, title: "首頁 · Home hub" },
@@ -96,8 +103,8 @@ export default function EInvoiceCaseStudy() {
               <p className="text-xs font-semibold uppercase tracking-widest text-emerald-400/90">
                 Increasing login success
               </p>
-              <p className="mt-2 text-2xl font-semibold text-zinc-100 tabular-nums">
-                68% → 92%
+              <p className="mt-2">
+                <span className={M_HERO}>68% → 92%</span>
               </p>
               <p className="mt-2 text-sm text-zinc-400 leading-relaxed">
                 Biometric login and in-app password recovery to reduce login
@@ -109,8 +116,8 @@ export default function EInvoiceCaseStudy() {
               <p className="text-xs font-semibold uppercase tracking-widest text-emerald-400/90">
                 Boosting onboarding completion
               </p>
-              <p className="mt-2 text-2xl font-semibold text-zinc-100 tabular-nums">
-                +30%
+              <p className="mt-2">
+                <span className={M_HERO}>+30%</span>
               </p>
               <p className="mt-2 text-sm text-zinc-400 leading-relaxed">
                 Guided first-time onboarding introducing biometric login, prize
@@ -122,8 +129,8 @@ export default function EInvoiceCaseStudy() {
               <p className="text-xs font-semibold uppercase tracking-widest text-emerald-400/90">
                 Reducing missed prize redemptions
               </p>
-              <p className="mt-2 text-2xl font-semibold text-zinc-100 tabular-nums">
-                −70%
+              <p className="mt-2">
+                <span className={M_HERO}>−70%</span>
               </p>
               <p className="mt-2 text-sm text-zinc-400 leading-relaxed">
                 Clear countdown timers, prize status, and redemption deadlines—
@@ -134,8 +141,8 @@ export default function EInvoiceCaseStudy() {
               <p className="text-xs font-semibold uppercase tracking-widest text-emerald-400/90">
                 Task success across ages
               </p>
-              <p className="mt-2 text-2xl font-semibold text-zinc-100 tabular-nums">
-                88%
+              <p className="mt-2">
+                <span className={M_HERO}>88%</span>
               </p>
               <p className="mt-2 text-sm text-zinc-400 leading-relaxed">
                 Usability testing with users aged 18–70+, including visually
@@ -973,8 +980,8 @@ export default function EInvoiceCaseStudy() {
             I conducted usability tests using one-on-one observation. Each
             participant completed key tasks while I tracked completion rates, errors,
             and satisfaction. Across 12 diverse participants, we reached an{" "}
-            <span className="text-zinc-200 font-medium">88% overall success rate</span>
-            . Sessions surfaced pain points—especially login verification and form
+            <span className={M_TXT}>88%</span> overall success rate. Sessions surfaced
+            pain points—especially login verification and form
             entry—which became actionable opportunities to improve accessibility and
             efficiency before launch.
           </p>
@@ -998,33 +1005,35 @@ export default function EInvoiceCaseStudy() {
             <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 text-sm">
               <div className="flex justify-between gap-4 border-b border-zinc-800/80 py-2">
                 <span className="text-zinc-400">Overall</span>
-                <span className="text-zinc-100 font-semibold tabular-nums">88%</span>
+                <span className={M_TXT}>88%</span>
               </div>
               <div className="flex justify-between gap-4 border-b border-zinc-800/80 py-2">
                 <span className="text-zinc-400">Login &amp; registration</span>
-                <span className="text-zinc-100 font-semibold tabular-nums">75%</span>
+                <span className={M_TXT}>75%</span>
               </div>
               <div className="flex justify-between gap-4 border-b border-zinc-800/80 py-2">
                 <span className="text-zinc-400">Carrier binding</span>
-                <span className="text-zinc-100 font-semibold tabular-nums">67%</span>
+                <span className={M_TXT}>67%</span>
               </div>
               <div className="flex justify-between gap-4 border-b border-zinc-800/80 py-2">
                 <span className="text-zinc-400">Invoice wallet &amp; donation</span>
-                <span className="text-zinc-100 font-semibold tabular-nums">83%</span>
+                <span className={M_TXT}>83%</span>
               </div>
               <div className="flex justify-between gap-4 border-b border-zinc-800/80 py-2">
                 <span className="text-zinc-400">Scan &amp; prize redemption</span>
-                <span className="text-zinc-100 font-semibold tabular-nums">92%</span>
+                <span className={M_TXT}>92%</span>
               </div>
               <div className="flex justify-between gap-4 border-b border-zinc-800/80 py-2">
                 <span className="text-zinc-400">Spending analysis</span>
-                <span className="text-zinc-100 font-semibold tabular-nums">100%</span>
+                <span className={M_TXT}>100%</span>
               </div>
             </div>
             <p className="mt-4 text-sm text-zinc-400">
-              Errors: average 1.3 errors per participant—mostly form entry and
-              unclear prompts. Shortest task: scan &amp; prize redemption (~40s avg.).
-              Longest: carrier binding (~2m 20s avg.).
+              Errors: average{" "}
+              <span className={M_TIME}>1.3</span> errors per participant—mostly form
+              entry and unclear prompts. Shortest task: scan &amp; prize redemption (
+              <span className={M_TIME}>~40s</span> avg.). Longest: carrier binding (
+              <span className={M_TIME}>~2m 20s</span> avg.).
             </p>
             <p className="mt-3 text-sm text-zinc-300">
               <span className="text-zinc-200">What worked:</span> scan &amp; prize check
@@ -1122,7 +1131,7 @@ export default function EInvoiceCaseStudy() {
             High-fidelity UI across core tasks
           </h2>
           <p className="max-w-3xl text-zinc-300 leading-relaxed">
-            Selected high-fidelity exports (batch 17–35) for core flows.
+            挑選較重要的功能頁面呈現。
           </p>
           <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
             {FINAL_SOLUTION_SCREENS.map((item) => (
@@ -1161,9 +1170,10 @@ export default function EInvoiceCaseStudy() {
                 <span className="text-zinc-200">Solutions:</span> biometric login
                 (Face ID, Touch ID) and in-app recovery; embedded &quot;Forgot
                 password&quot; workflow.{" "}
-                <span className="text-zinc-200">Impact:</span> login success
-                increased from 68% → 92%; elderly and visually impaired users can
-                operate independently; fewer interruptions and frustration.
+                <span className="text-zinc-200">Impact:</span> login success increased
+                from <span className={M_TXT}>68%</span> →{" "}
+                <span className={M_TXT}>92%</span>; elderly and visually impaired
+                users can operate independently; fewer interruptions and frustration.
               </p>
             </div>
             <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-5">
@@ -1177,8 +1187,9 @@ export default function EInvoiceCaseStudy() {
                 tutorials and guided prompts; simplified workflows, visual cues,
                 contextual guidance.{" "}
                 <span className="text-zinc-200">Impact:</span> onboarding completion
-                increased from 55% → 85%; reduced confusion for foreign nationals and
-                elderly users.
+                increased from <span className={M_TXT}>55%</span> →{" "}
+                <span className={M_TXT}>85%</span>; reduced confusion for foreign
+                nationals and elderly users.
               </p>
             </div>
             <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-5">
@@ -1191,8 +1202,9 @@ export default function EInvoiceCaseStudy() {
                 <span className="text-zinc-200">Solutions:</span> countdown timers
                 and clear status indicators; real-time push and customizable alerts.{" "}
                 <span className="text-zinc-200">Impact:</span> missed redemption
-                reduced by 70%; higher trust in the official app; users know about
-                winning invoices instantly—less reliance on external sources.
+                reduced by <span className={M_TXT}>70%</span>; higher trust in the
+                official app; users know about winning invoices instantly—less
+                reliance on external sources.
               </p>
             </div>
             <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-5">
