@@ -19,7 +19,7 @@ export default function BaskinRobbinsCaseStudy() {
   return (
     <article className="min-h-screen bg-zinc-950 text-zinc-100">
       <header className="border-b border-zinc-800">
-        <div className="mx-auto max-w-[1200px] px-6 sm:px-[100px] py-16 sm:py-24">
+        <div className="mx-auto max-w-[1280px] px-6 sm:px-[100px] py-16 sm:py-24">
           <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-zinc-500 mb-6">
             <span>Case Study</span>
             <span className="text-zinc-600">·</span>
@@ -63,7 +63,7 @@ export default function BaskinRobbinsCaseStudy() {
         </div>
       </header>
 
-      <div className="mx-auto max-w-[1200px] px-6 sm:px-[100px] py-12 sm:py-16 space-y-20">
+      <div className="mx-auto max-w-[1280px] px-6 sm:px-[100px] py-12 sm:py-16 space-y-20">
         <section className="space-y-5 max-w-3xl">
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Team objectives

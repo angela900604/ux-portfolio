@@ -14,7 +14,7 @@ export default function AiMarketplaceCaseStudy() {
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(120,119,198,0.22),transparent)]"
           aria-hidden
         />
-        <div className="relative mx-auto max-w-[1200px] px-6 sm:px-[100px] py-16 sm:py-24">
+        <div className="relative mx-auto max-w-[1280px] px-6 sm:px-[100px] py-16 sm:py-24">
           <div className="flex flex-wrap items-center gap-3 mb-6">
             <span className="inline-flex items-center rounded-full border border-violet-500/40 bg-violet-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-widest text-violet-200">
               Coming soon
@@ -62,7 +62,7 @@ export default function AiMarketplaceCaseStudy() {
         </div>
       </header>
 
-      <div className="mx-auto max-w-[1200px] px-6 sm:px-[100px] py-12 sm:py-16 space-y-20">
+      <div className="mx-auto max-w-[1280px] px-6 sm:px-[100px] py-12 sm:py-16 space-y-20">
         <section className="max-w-3xl space-y-4">
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Why this exists

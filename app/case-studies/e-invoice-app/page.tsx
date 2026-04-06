@@ -35,33 +35,33 @@ const M_TXT =
 const M_TIME =
   "rounded-md bg-amber-500/15 px-1.5 py-0.5 font-medium tabular-nums text-amber-100/95";
 
-/** Final solution mockups; solution-26 export omitted (did not match caption). */
-const FINAL_SOLUTION_SCREENS: { n: number; title: string }[] = [
-  { n: 17, title: "消費分析 · Spending insights" },
-  { n: 18, title: "會員卡管理 · Membership cards" },
-  { n: 19, title: "功能總覽 · Settings overview" },
-  { n: 20, title: "載具歸戶 · Carrier binding" },
-  { n: 21, title: "領獎資料 · Prize claim info" },
-  { n: 22, title: "捐贈發票 · Donation" },
-  { n: 23, title: "減碳存摺分享 · Carbon passbook share" },
-  { n: 24, title: "新手教學 · First-run tutorial" },
-  { n: 25, title: "我要領獎安全驗證 · Redeem security check" },
-  { n: 27, title: "發票存摺 · Invoice passbook" },
-  { n: 28, title: "發票明細 · Receipt detail" },
-  { n: 29, title: "首頁 · Home hub" },
-  { n: 30, title: "登入 · Face ID / quick login" },
-  { n: 31, title: "末三碼對獎 · Last-three-digit match" },
-  { n: 32, title: "宣導專區 · Events & promos" },
-  { n: 33, title: "查看中獎發票 · Winning invoices" },
-  { n: 34, title: "掃描紙本發票 · Paper receipt scan" },
-  { n: 35, title: "通知中心 · Notifications" },
+/** Final solution screens — high-fidelity exports (18), filenames solution-final-01 … 18. */
+const FINAL_SOLUTION_SCREENS: { id: string; title: string }[] = [
+  { id: "01", title: "消費分析 · Spending insights" },
+  { id: "02", title: "會員卡管理 · Membership cards" },
+  { id: "03", title: "功能總覽 · Settings overview" },
+  { id: "04", title: "載具歸戶 · Carrier binding" },
+  { id: "05", title: "領獎資料 · Prize claim info" },
+  { id: "06", title: "捐贈發票 · Donation" },
+  { id: "07", title: "減碳存摺分享 · Carbon passbook share" },
+  { id: "08", title: "新手教學 · First-run tutorial" },
+  { id: "09", title: "我要領獎安全驗證 · Redeem security check" },
+  { id: "10", title: "發票存摺 · Invoice passbook" },
+  { id: "11", title: "發票明細 · Receipt detail" },
+  { id: "12", title: "首頁 · Home hub" },
+  { id: "13", title: "登入 · Face ID / quick login" },
+  { id: "14", title: "末三碼對獎 · Last-three-digit match" },
+  { id: "15", title: "宣導專區 · Events & promos" },
+  { id: "16", title: "查看中獎發票 · Winning invoices" },
+  { id: "17", title: "掃描紙本發票 · Paper receipt scan" },
+  { id: "18", title: "通知中心 · Notifications" },
 ];
 
 export default function EInvoiceCaseStudy() {
   return (
     <article className="min-h-screen bg-zinc-950 text-zinc-100">
       <header className="border-b border-zinc-800">
-        <div className="mx-auto max-w-[1200px] px-6 sm:px-[100px] py-16 sm:py-24">
+        <div className="mx-auto max-w-[1280px] px-6 sm:px-[100px] py-16 sm:py-24">
           <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-zinc-500 mb-6">
             <span>Case Study</span>
             <span className="text-zinc-600">·</span>
@@ -161,7 +161,7 @@ export default function EInvoiceCaseStudy() {
         </div>
       </header>
 
-      <div className="mx-auto max-w-[1200px] px-6 sm:px-[100px] py-12 sm:py-16 space-y-20">
+      <div className="mx-auto max-w-[1280px] px-6 sm:px-[100px] py-12 sm:py-16 space-y-20">
         <section className="space-y-6 max-w-3xl">
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             01 · Project background
@@ -1059,67 +1059,41 @@ export default function EInvoiceCaseStudy() {
           </div>
         </section>
 
-        <section className="space-y-5 max-w-3xl">
+        <section className="space-y-4 max-w-3xl">
           <h3 className="text-lg font-semibold text-zinc-100">
             Donation flow — before &amp; after
           </h3>
           <p className="text-zinc-300 leading-relaxed">
-            For invoice donation we identified two scenarios: donating from the
-            phone by selecting invoices from the current period and choosing an
-            organization; and on-site events where users scan a QR code and must
-            donate a required number of invoices to receive a prize.
+            Invoice donation had to cover in-app giving (pick invoices, choose a
+            charity) and event flows (scan a QR, meet a minimum count for a reward).
           </p>
           <p className="text-zinc-300 leading-relaxed">
-            <span className="text-zinc-200">Before:</span> The flow prioritized speed.
-            A &quot;Quick Select 5&quot; button instantly selected invoices; with only
-            one invoice available, the app auto-selected it, updated the Next button
-            label (&quot;1 invoice selected&quot;), and moved users straight to
-            organization selection—then to the &quot;Donated&quot; list. That matched
-            younger users&apos; expectations for one-tap completion.
+            <span className="text-zinc-200">Before:</span> The path favored speed—e.g.
+            quick-select shortcuts and auto-advancing when few invoices were
+            available—aligned with users who wanted one-tap completion.
           </p>
           <p className="text-zinc-300 leading-relaxed">
-            <span className="text-zinc-200">After:</span> If only one invoice is
-            available and the user taps &quot;Quick Select 5,&quot; the system shows a
-            confirmation modal with how many invoices were actually selected. After
-            confirmation, Quick Select 5 disables, the invoice is visibly checked,
-            and the user can proceed with Next. Older adults were the primary
-            donation group—they valued reassurance over speed; accidental selections
-            felt stressful and irreversible because donations cannot be undone.
-          </p>
-          <p className="text-zinc-300 leading-relaxed">
-            This trade-off optimizes for confidence and error prevention—even if the
-            flow is slightly longer for some users—and reflects inclusivity over raw
-            efficiency for a national platform.
+            <span className="text-zinc-200">After:</span> When quick actions
+            couldn&apos;t match the requested batch size, we added an explicit
+            confirmation, clearer selected state, and guardrails so donors—often
+            older adults—couldn&apos;t mis-tap into an irreversible donation.
           </p>
         </section>
 
-        <section className="space-y-8 max-w-5xl">
+        <section className="space-y-4 max-w-3xl">
           <h3 className="text-lg font-semibold text-zinc-100">
             National-platform challenges — home &amp; redemption iteration
           </h3>
-          <p className="text-zinc-300 leading-relaxed max-w-3xl">
-            We balanced strong visual anchors for older users with a cleaner surface
-            for younger users—large, color-led actions for scan and donate, with a
-            calmer structure elsewhere. Scan stayed at the top of home by observed
-            frequency.
+          <p className="text-zinc-300 leading-relaxed">
+            Home and prize redemption were iterated so high-frequency actions (scan,
+            donate) stayed visually prominent, while the rest of the UI stayed
+            calmer—strong anchors for older users, less noise for younger ones.
           </p>
-          <div className="grid gap-10 sm:grid-cols-3">
-            <PhoneMockup
-              src={ASSET("iteration-home-01.png")}
-              alt="Home screen iteration"
-              label="首頁 · Home"
-            />
-            <PhoneMockup
-              src={ASSET("iteration-redeem-01.png")}
-              alt="Redeem screen iteration one"
-              label="我要領獎 · Redeem"
-            />
-            <PhoneMockup
-              src={ASSET("iteration-redeem-02.png")}
-              alt="Redeem screen iteration two"
-              label="我要領獎 · Redeem (state)"
-            />
-          </div>
+          <p className="text-zinc-300 leading-relaxed">
+            Scan remained at the top of home based on usage; redemption screens were
+            tightened to reduce confusion in multi-step prize flows on a national,
+            multi-audience app.
+          </p>
         </section>
 
         <section className="space-y-10 max-w-6xl">
@@ -1135,8 +1109,8 @@ export default function EInvoiceCaseStudy() {
           <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
             {FINAL_SOLUTION_SCREENS.map((item) => (
               <PhoneMockup
-                key={item.n}
-                src={ASSET(`solution-${item.n}.png`)}
+                key={item.id}
+                src={ASSET(`solution-final-${item.id}.png`)}
                 alt={item.title}
                 label={item.title}
               />

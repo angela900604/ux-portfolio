@@ -28,7 +28,7 @@ export default function RootLayout({
       <body className="min-h-screen bg-zinc-950 text-zinc-100 antialiased font-sans">
         <div className="flex min-h-screen flex-col">
           <header className="sticky top-0 z-50 border-b border-zinc-800 bg-zinc-950/80 backdrop-blur-sm">
-            <div className="mx-auto flex max-w-[1200px] items-center justify-between px-6 sm:px-[100px] py-4">
+            <div className="mx-auto flex max-w-[1280px] items-center justify-between px-6 sm:px-[100px] py-4">
               <a
                 href="/"
                 className="text-sm font-medium tracking-wide text-zinc-400 hover:text-zinc-100 transition"
@@ -55,7 +55,7 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
 
           <footer className="border-t border-zinc-800">
-            <div className="mx-auto flex max-w-[1200px] items-center justify-between px-6 sm:px-[100px] py-5 text-xs text-zinc-500">
+            <div className="mx-auto flex max-w-[1280px] items-center justify-between px-6 sm:px-[100px] py-5 text-xs text-zinc-500">
               <span>© {new Date().getFullYear()} Angela Yang</span>
               <span>Product Design · UX · Vancouver</span>
             </div>

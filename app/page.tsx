@@ -97,14 +97,14 @@ export default function Home() {
     <div className="min-h-screen bg-zinc-950 text-zinc-100">
       {/* Hero */}
       <section className="border-b border-zinc-800">
-        <div className="mx-auto max-w-[1200px] px-6 sm:px-[100px] py-20 sm:py-28">
+        <div className="mx-auto max-w-[1280px] px-6 sm:px-[100px] py-20 sm:py-28">
           <HeroWithBubble />
         </div>
       </section>
 
       {/* Core product design */}
       <section id="featured" className="border-b border-zinc-800">
-        <div className="mx-auto max-w-[1200px] px-6 sm:px-[100px] py-16 sm:py-20">
+        <div className="mx-auto max-w-[1280px] px-6 sm:px-[100px] py-16 sm:py-20">
           <p className="text-xs font-medium uppercase tracking-widest text-zinc-500 mb-2">
             Core product design
           </p>
@@ -194,7 +194,7 @@ export default function Home() {
 
       {/* Adjacent: brand, growth, IP */}
       <section id="selected-work" className="border-b border-zinc-800">
-        <div className="mx-auto max-w-[1200px] px-6 sm:px-[100px] py-16 sm:py-20">
+        <div className="mx-auto max-w-[1280px] px-6 sm:px-[100px] py-16 sm:py-20">
           <p className="text-xs font-medium uppercase tracking-widest text-zinc-500 mb-2">
             Adjacent work
           </p>
@@ -248,7 +248,7 @@ export default function Home() {
 
       {/* About preview */}
       <section className="border-b border-zinc-800">
-        <div className="mx-auto max-w-[1200px] px-6 sm:px-[100px] py-16 sm:py-20">
+        <div className="mx-auto max-w-[1280px] px-6 sm:px-[100px] py-16 sm:py-20">
           <p className="text-xs font-medium uppercase tracking-widest text-zinc-500 mb-2">
             About
           </p>
@@ -272,7 +272,7 @@ export default function Home() {
 
       {/* Contact */}
       <section id="contact" className="border-b border-zinc-800">
-        <div className="mx-auto max-w-[1200px] px-6 sm:px-[100px] py-16 sm:py-20">
+        <div className="mx-auto max-w-[1280px] px-6 sm:px-[100px] py-16 sm:py-20">
           <p className="text-xs font-medium uppercase tracking-widest text-zinc-500 mb-2">
             Contact
           </p>
