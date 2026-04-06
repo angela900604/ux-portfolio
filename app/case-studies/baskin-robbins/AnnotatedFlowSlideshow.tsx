@@ -9,11 +9,14 @@ export type SlideshowSlide = {
   alt: string;
 };
 
+const AUTO_MS = 3000;
+
 /**
- * Full-width gallery with prev/next, dots, and lightbox on the active slide.
+ * Full-width gallery with prev/next, dots, lightbox, auto-advance, pause on hover.
  */
 export function AnnotatedFlowSlideshow({ items }: { items: SlideshowSlide[] }) {
   const [index, setIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
   const n = items.length;
   const safeIndex = ((index % n) + n) % n;
   const current = items[safeIndex];
@@ -34,9 +37,21 @@ export function AnnotatedFlowSlideshow({ items }: { items: SlideshowSlide[] }) {
     return () => window.removeEventListener("keydown", onKey);
   }, [go]);
 
+  useEffect(() => {
+    if (paused || n <= 1) return;
+    const id = window.setInterval(() => {
+      setIndex((i) => (i + 1) % n);
+    }, AUTO_MS);
+    return () => window.clearInterval(id);
+  }, [paused, n, safeIndex]);
+
   return (
     <div className="max-w-4xl space-y-4">
-      <div className="relative">
+      <div
+        className="relative"
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+      >
         <ImageLightbox
           src={current.src}
           alt={current.alt}

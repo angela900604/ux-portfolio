@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { WideFigure } from "../e-invoice-app/EInvoiceFigures";
+import { PhoneMockup, WideFigure } from "../e-invoice-app/EInvoiceFigures";
 import { AnnotatedFlowSlideshow } from "./AnnotatedFlowSlideshow";
 
 export const metadata = {
@@ -14,11 +14,6 @@ const ANNOTATED_SLIDES = [1, 2, 3, 4, 5, 6].map((n) => ({
   src: ASSET(`annotated-${String(n).padStart(2, "0")}.png`),
   alt: `Annotated mockup and page-flow reference ${n} of 6`,
 }));
-
-const FINAL_SCREEN_ALTS = Array.from(
-  { length: 20 },
-  (_, i) => `Core journey screen ${i + 1} of 20 — Baskin-Robbins Taiwan membership app`
-);
 
 export default function BaskinRobbinsCaseStudy() {
   return (
@@ -433,7 +428,7 @@ export default function BaskinRobbinsCaseStudy() {
             <h3 className="text-sm font-semibold text-zinc-100">
               UI kit · Components
             </h3>
-            <div className="grid gap-6 md:grid-cols-3">
+            <div className="mx-auto flex max-w-4xl flex-col gap-10">
               <WideFigure
                 borderless
                 src={ASSET("ui-kit-01.png")}
@@ -471,15 +466,20 @@ export default function BaskinRobbinsCaseStudy() {
             <h3 className="text-sm font-semibold text-zinc-100">
               Final screens (core journey)
             </h3>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              {FINAL_SCREEN_ALTS.map((alt, i) => (
-                <WideFigure
-                  key={ASSET(`final-screen-${String(i + 1).padStart(2, "0")}.png`)}
-                  borderless
-                  src={ASSET(`final-screen-${String(i + 1).padStart(2, "0")}.png`)}
-                  alt={alt}
-                />
-              ))}
+            <div className="grid grid-cols-1 justify-items-center gap-14 sm:grid-cols-2 lg:grid-cols-3">
+              {Array.from({ length: 20 }, (_, i) => {
+                const src = ASSET(
+                  `final-screen-${String(i + 1).padStart(2, "0")}.png`
+                );
+                return (
+                  <PhoneMockup
+                    key={src}
+                    src={src}
+                    alt={`Core journey screen ${i + 1} of 20 — Baskin-Robbins Taiwan membership app`}
+                    label={`Screen ${i + 1} of 20`}
+                  />
+                );
+              })}
             </div>
           </div>
         </section>
