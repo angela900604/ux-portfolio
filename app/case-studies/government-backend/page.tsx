@@ -1,10 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
-import {
-  FlatAppShot,
-  PhoneMockup,
-  WideFigure,
-} from "../e-invoice-app/EInvoiceFigures";
+import { FlatAppShot, WideFigure } from "../e-invoice-app/EInvoiceFigures";
 
 export const metadata = {
   title: "Role-Based Government Backend (600+ Staff) | Angela Yang",
@@ -212,14 +208,16 @@ export default function GovernmentBackendCaseStudy() {
                     alt="App: push notification on lock screen triggered by backend settings"
                     label="App · Push notification (triggered by backend)"
                   />
-                  <PhoneMockup
+                  <FlatAppShot
                     uniform
+                    frameless
                     src={ASSET("app-notification-list.png")}
                     alt="App: notification center list"
                     label="App · Notification center list"
                   />
-                  <PhoneMockup
+                  <FlatAppShot
                     uniform
+                    frameless
                     src={ASSET("app-notification-detail.png")}
                     alt="App: notification detail screen"
                     label="App · Notification Detail"
