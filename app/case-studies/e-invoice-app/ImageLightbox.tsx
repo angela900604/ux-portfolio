@@ -7,11 +7,14 @@ export function ImageLightbox({
   alt,
   children,
   className = "",
+  ariaLabel,
 }: {
   src: string;
   alt: string;
   children: React.ReactNode;
   className?: string;
+  /** Optional label for the clickable trigger (defaults to “View larger”). */
+  ariaLabel?: string;
 }) {
   const [open, setOpen] = useState(false);
 
@@ -40,9 +43,12 @@ export function ImageLightbox({
       <div
         role="button"
         tabIndex={0}
+        aria-label={ariaLabel ?? `View larger — ${alt}`}
         onClick={() => setOpen(true)}
-        onKeyDown={(e) => e.key === "Enter" && setOpen(true)}
-        className={`cursor-pointer overflow-hidden transition-transform duration-300 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 focus:ring-offset-zinc-950 ${className}`}
+        onKeyDown={(e) =>
+          (e.key === "Enter" || e.key === " ") && (e.preventDefault(), setOpen(true))
+        }
+        className={`cursor-pointer overflow-hidden transition-transform duration-300 ease-out hover:scale-[1.035] focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 focus:ring-offset-zinc-950 ${className}`}
       >
         {children}
       </div>

@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import { PhoneMockup, WideFigure } from "./EInvoiceFigures";
 
 export const metadata = {
   title: "Reimagining Taiwan’s e-Invoice Experience | Angela Yang",
@@ -13,78 +13,17 @@ const FIGMA_WIREFRAME_FLOW =
   "https://www.figma.com/design/ixS4TwNUz1pu0Riv7peXRA/APP-Wireframe?node-id=2120-5665&t=j3rbIoMCpkpNcAY2-1";
 
 const ASSET = (name: string) => `/case-studies/e-invoice/case-assets/${name}`;
-const R_IMG = "rounded-[20px]";
 
 const YOUTUBE_A11Y_EMBED = "https://www.youtube.com/embed/5ySntQxxINE";
 
-/** Wide figure for diagrams / exports */
-function WideFigure({
-  src,
-  alt,
-  caption,
-}: {
-  src: string;
-  alt: string;
-  caption?: string;
-}) {
-  return (
-    <figure className="space-y-2">
-      <div
-        className={`overflow-hidden border border-zinc-700/60 bg-zinc-900/30 ${R_IMG}`}
-      >
-        <Image
-          src={src}
-          alt={alt}
-          width={2400}
-          height={1350}
-          className="h-auto w-full object-contain"
-          sizes="(max-width: 1200px) 100vw, 1100px"
-        />
-      </div>
-      {caption && (
-        <figcaption className="text-xs text-zinc-500 max-w-3xl">{caption}</figcaption>
-      )}
-    </figure>
-  );
-}
-
-/** Single phone frame — final solution & iteration shots */
-function MobileMockup({
-  src,
-  alt,
-  label,
-  hint,
-}: {
-  src: string;
-  alt: string;
-  label: string;
-  hint?: string;
-}) {
-  return (
-    <figure className="space-y-2">
-      <div className="mx-auto max-w-[280px] rounded-[2.35rem] border border-zinc-600/70 bg-zinc-900/90 p-2 shadow-xl shadow-black/50">
-        <div
-          className={`overflow-hidden bg-zinc-950 ring-1 ring-zinc-800 ${R_IMG}`}
-        >
-          <Image
-            src={src}
-            alt={alt}
-            width={780}
-            height={1688}
-            className="h-auto w-full object-cover object-top"
-            sizes="280px"
-          />
-        </div>
-      </div>
-      <figcaption className="px-1 text-center">
-        <p className="text-xs font-medium leading-snug text-zinc-200">{label}</p>
-        {hint && (
-          <p className="mt-1 text-[11px] leading-snug text-zinc-500">{hint}</p>
-        )}
-      </figcaption>
-    </figure>
-  );
-}
+/** Friendly lifestyle palette (style direction 01) */
+const STYLE_SWATCHES: { hex: string; name: string }[] = [
+  { hex: "#25244A", name: "Deep navy" },
+  { hex: "#51B0A9", name: "Teal" },
+  { hex: "#A089FD", name: "Lavender" },
+  { hex: "#E57651", name: "Coral" },
+  { hex: "#F8D364", name: "Warm yellow" },
+];
 
 /**
  * Labels for solution-17 … solution-35 (export batch).
@@ -441,9 +380,9 @@ export default function EInvoiceCaseStudy() {
             unclear processes.
           </p>
           <WideFigure
-            src={ASSET("interview-findings.png")}
-            alt="Research synthesis and interview findings summary"
-            caption="Research snapshot · demographics &amp; interview synthesis (export)."
+            src={ASSET("interview-field-20250321-1330-copy.png")}
+            alt="Field interview session with participants at a startup hub"
+            caption="Field research · 20250321_1330 · startup hub session (file: 20250321_1330____2___copy — duplicate export)."
           />
         </section>
 
@@ -467,7 +406,7 @@ export default function EInvoiceCaseStudy() {
             </div>
             <div className="mx-auto w-full max-w-[280px] shrink-0 lg:mx-0">
               <div
-                className={`relative aspect-[9/16] overflow-hidden bg-black ${R_IMG} border border-zinc-700`}
+                className="relative aspect-[9/16] overflow-hidden rounded-[20px] bg-black border border-zinc-700"
               >
                 <iframe
                   src={YOUTUBE_A11Y_EMBED}
@@ -492,32 +431,22 @@ export default function EInvoiceCaseStudy() {
           </div>
         </section>
 
-        <section className="space-y-6 max-w-5xl">
-          <h3 className="text-lg font-semibold text-zinc-100">User personas</h3>
-          <p className="max-w-3xl text-zinc-300 leading-relaxed">
-            Four personas grounded in interviews—covering age, tech comfort, and
-            language context.
-          </p>
-          <div className="grid gap-6 sm:grid-cols-2">
+        <section className="max-w-5xl space-y-8">
+          <div className="space-y-3">
+            <h3 className="text-lg font-semibold tracking-tight text-zinc-100">
+              User personas
+            </h3>
+            <p className="max-w-3xl text-sm leading-relaxed text-zinc-400">
+              Four archetypes from interviews—age, tech comfort, and language
+              context—summarized on one board for stakeholder review.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-zinc-800/80 bg-zinc-900/25 p-4 shadow-inner shadow-black/20 sm:p-6">
             <WideFigure
-              src={ASSET("persona-01.png")}
-              alt="Persona 01 — tech-savvy young adult"
-              caption="Persona 01 · Tech-savvy young adult (export)."
-            />
-            <WideFigure
-              src={ASSET("persona-02.png")}
-              alt="Persona 02 — busy professional"
-              caption="Persona 02 · Busy professional (export)."
-            />
-            <WideFigure
-              src={ASSET("persona-03.png")}
-              alt="Persona 03 — silver generation"
-              caption="Persona 03 · Silver generation (export)."
-            />
-            <WideFigure
-              src={ASSET("persona-04.png")}
-              alt="Persona 04 — foreign national"
-              caption="Persona 04 · Foreign national (export)."
+              src={ASSET("personas-overview.png")}
+              alt="Four user persona cards: young adult, busy professional, silver generation, and foreign national"
+              caption="Persona board · Screenshot_2026-04-05_at_8.48.17_PM (export)."
+              className="!space-y-3"
             />
           </div>
           <p className="max-w-3xl text-zinc-300 leading-relaxed">
@@ -629,56 +558,102 @@ export default function EInvoiceCaseStudy() {
             polish.
           </p>
           <WideFigure
-            src={ASSET("functional-map.png")}
-            alt="Functional map of the e-invoice app"
-            caption="Functional map (export)."
+            src={ASSET("functional-map-v0.png")}
+            alt="Functional map v0.0 — information architecture of the e-invoice app"
+            caption="Functional map v0.0 · Functional_map_v0.0 (export)."
           />
         </section>
 
-        <section className="space-y-6 max-w-4xl">
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            04 · Page flow, UI direction &amp; design system
-          </span>
-          <h2 className="text-xl font-semibold text-zinc-100">
-            From flow logic to visual language
-          </h2>
-          <p className="text-zinc-300 leading-relaxed max-w-3xl">
-            Page flow diagrams show step-by-step movement from login through
-            invoice management and redemption—so gaps in navigation surfaced early.
-          </p>
-          <WideFigure
-            src={ASSET("page-flow.png")}
-            alt="Page flow diagram for the e-invoice app"
-            caption="Page flow diagram (export)."
-          />
-          <h3 className="text-lg font-semibold text-zinc-100 pt-4">
-            Moodboard &amp; style directions
-          </h3>
-          <p className="text-zinc-300 leading-relaxed max-w-3xl">
-            Keywords from interviews—intuitive, minimalist, refreshing,
-            modern—translated into moodboards and client-facing style proposals
-            (Friendly Living, Modern Minimalist, Professional &amp; Practical).
-          </p>
-          <div className="grid gap-6 sm:grid-cols-2">
-            <WideFigure
-              src={ASSET("moodboard-01.png")}
-              alt="Moodboard and style exploration one"
-              caption="Style exploration · board 01"
-            />
-            <WideFigure
-              src={ASSET("moodboard-02.png")}
-              alt="Moodboard and style exploration two"
-              caption="Style exploration · board 02"
-            />
+        <section className="max-w-5xl space-y-12">
+          <div className="max-w-3xl space-y-4">
+            <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+              04 · Page flow, UI direction &amp; design system
+            </span>
+            <h2 className="text-xl font-semibold text-zinc-100">
+              From flow logic to visual language
+            </h2>
+            <p className="text-zinc-300 leading-relaxed">
+              Page flows in Figma mapped login, invoice management, and redemption
+              so navigation gaps surfaced before visual polish. The direction below
+              locks the first approved style route:{" "}
+              <span className="text-zinc-200">Friendly lifestyle</span>—grounded in
+              interviews and client review.
+            </p>
           </div>
-          <h3 className="text-lg font-semibold text-zinc-100 pt-6">
-            Mockups &amp; design system
-          </h3>
-          <p className="text-zinc-300 leading-relaxed max-w-3xl">
-            High-fidelity work used the iOS / iPadOS UI Kit as a baseline—native
-            components, predictable spacing, and patterns that engineering could map
-            quickly to production constraints.
-          </p>
+
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-start lg:gap-14">
+            <div className="min-w-0 space-y-6">
+              <p className="text-xs font-semibold uppercase tracking-widest text-violet-400/90">
+                Concept development
+              </p>
+              <h3 className="text-lg font-semibold text-zinc-100">
+                Moodboard &amp; style directions · 01 Friendly lifestyle
+              </h3>
+              <p className="text-zinc-300 leading-relaxed">
+                We stayed close to daily life: a multi-color system where{" "}
+                <span className="text-zinc-200">hue signals function</span>, so core
+                tasks stay recognizable at a glance. The goal was a friendly,
+                low-friction feel that still reads as a trustworthy government
+                service—not decorative noise.
+              </p>
+              <p className="text-zinc-300 leading-relaxed">
+                That balance supports faster scanning, clearer hierarchy, and less
+                cognitive load when people are moving (checkout lines, transit,
+                one-handed use).
+              </p>
+              <div>
+                <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">
+                  Palette
+                </p>
+                <ul className="mt-3 flex flex-wrap gap-3">
+                  {STYLE_SWATCHES.map((s) => (
+                    <li
+                      key={s.hex}
+                      className="flex flex-col items-center gap-1.5 text-center"
+                    >
+                      <span
+                        className="h-11 w-11 rounded-xl shadow-md ring-1 ring-white/10 sm:h-12 sm:w-12"
+                        style={{ backgroundColor: s.hex }}
+                        title={s.hex}
+                      />
+                      <span className="max-w-[5.5rem] text-[10px] leading-tight text-zinc-500">
+                        {s.name}
+                        <span className="block font-mono text-zinc-400">{s.hex}</span>
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="flex flex-wrap gap-2 pt-1">
+                {["Vibrant", "Life", "Fun"].map((word) => (
+                  <span
+                    key={word}
+                    className="rounded-full border border-zinc-700/80 bg-zinc-900/60 px-3 py-1 text-xs font-medium text-zinc-300"
+                  >
+                    {word}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="min-w-0 lg:sticky lg:top-24">
+              <WideFigure
+                src={ASSET("moodboard-lifestyle-hero.png")}
+                alt="Person using a phone outdoors in an urban setting, sunny lifestyle context"
+                caption="Lifestyle reference · _____01_1 (export) — paired with the Friendly lifestyle concept."
+              />
+            </div>
+          </div>
+
+          <div className="max-w-3xl space-y-4 pt-2">
+            <h3 className="text-lg font-semibold text-zinc-100">
+              Mockups &amp; design system
+            </h3>
+            <p className="text-zinc-300 leading-relaxed">
+              High-fidelity work used the iOS / iPadOS UI Kit as a baseline—native
+              components, predictable spacing, and patterns that engineering could map
+              quickly to production constraints.
+            </p>
+          </div>
         </section>
 
         <section className="space-y-6 max-w-3xl">
@@ -815,19 +790,19 @@ export default function EInvoiceCaseStudy() {
             frequency.
           </p>
           <div className="grid gap-10 sm:grid-cols-3">
-            <MobileMockup
+            <PhoneMockup
               src={ASSET("iteration-home-01.png")}
               alt="Home screen iteration"
               label="首頁 · Home"
               hint="home_01_00"
             />
-            <MobileMockup
+            <PhoneMockup
               src={ASSET("iteration-redeem-01.png")}
               alt="Redeem screen iteration one"
               label="我要領獎 · Redeem"
               hint="_____01_01 (variant 1)"
             />
-            <MobileMockup
+            <PhoneMockup
               src={ASSET("iteration-redeem-02.png")}
               alt="Redeem screen iteration two"
               label="我要領獎 · Redeem (state)"
@@ -849,7 +824,7 @@ export default function EInvoiceCaseStudy() {
           </p>
           <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
             {FINAL_SOLUTION_SCREENS.map((item) => (
-              <MobileMockup
+              <PhoneMockup
                 key={item.n}
                 src={ASSET(`solution-${item.n}.png`)}
                 alt={item.title}
