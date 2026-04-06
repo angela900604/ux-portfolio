@@ -2,8 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import type { ReactNode } from "react";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
-import { WideFigure } from "../e-invoice-app/EInvoiceFigures";
 import { MomiOutcomesChart } from "./MomiOutcomesChart";
+import { MomiUniformTile } from "./MomiUniformTile";
 
 export const metadata = {
   title: "MOMI Animal Health | Angela Yang",
@@ -137,14 +137,9 @@ export default function MomiAnimalHealthCaseStudy() {
             </div>
           </div>
 
-          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:items-stretch">
             {WHAT_I_DID_IMAGES.map((item) => (
-              <WideFigure
-                key={item.src}
-                borderless
-                src={item.src}
-                alt={item.alt}
-              />
+              <MomiUniformTile key={item.src} src={item.src} alt={item.alt} />
             ))}
           </div>
         </Section>

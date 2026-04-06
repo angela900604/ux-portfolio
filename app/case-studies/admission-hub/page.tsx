@@ -145,7 +145,7 @@ export default function AdmissionHubCaseStudy() {
             <WideFigure
               borderless
               src={AH_ASSET("what-i-did-01.png")}
-              alt="Admission Hub — Instagram-style social feed mockups and campaign graphics"
+              alt="Admission Hub — seasonal social post (Dragon Boat Festival) and Working Holiday COOP program flyer"
             />
             <WideFigure
               borderless
