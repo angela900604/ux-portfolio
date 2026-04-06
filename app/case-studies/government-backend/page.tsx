@@ -204,28 +204,26 @@ export default function GovernmentBackendCaseStudy() {
                     End-user mobile (triggered by backend rules)
                   </span>
                 </div>
-                <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 sm:items-end sm:gap-6">
-                  <div className="flex justify-center sm:min-h-[560px] sm:flex-col sm:items-center sm:justify-end">
-                    <FlatAppShot
-                      src={ASSET("app-push-notification.png")}
-                      alt="App: push notification on lock screen triggered by backend settings"
-                      label="App · Push notification (triggered by backend)"
-                    />
-                  </div>
-                  <div className="flex justify-center sm:min-h-[560px] sm:flex-col sm:items-center sm:justify-end">
-                    <PhoneMockup
-                      src={ASSET("app-notification-list.png")}
-                      alt="App: notification center list"
-                      label="App · Notification center list"
-                    />
-                  </div>
-                  <div className="flex justify-center sm:min-h-[560px] sm:flex-col sm:items-center sm:justify-end">
-                    <PhoneMockup
-                      src={ASSET("app-notification-detail.png")}
-                      alt="App: notification detail screen"
-                      label="App · Notification Detail"
-                    />
-                  </div>
+                <div className="grid grid-cols-1 justify-items-center gap-10 sm:grid-cols-3 sm:gap-6">
+                  <FlatAppShot
+                    uniform
+                    frameless
+                    src={ASSET("app-push-notification.png")}
+                    alt="App: push notification on lock screen triggered by backend settings"
+                    label="App · Push notification (triggered by backend)"
+                  />
+                  <PhoneMockup
+                    uniform
+                    src={ASSET("app-notification-list.png")}
+                    alt="App: notification center list"
+                    label="App · Notification center list"
+                  />
+                  <PhoneMockup
+                    uniform
+                    src={ASSET("app-notification-detail.png")}
+                    alt="App: notification detail screen"
+                    label="App · Notification Detail"
+                  />
                 </div>
               </div>
             </div>
