@@ -1,3 +1,5 @@
+import VisualPlaceholder from "../_components/VisualPlaceholder";
+
 export const metadata = {
   title: "Haphy Living (Brand IP) | Angela Yang",
   description:
@@ -61,7 +63,7 @@ export default function PhyphyyaCaseStudy() {
 
   return (
     <div className="min-h-screen bg-[#F5F3EF] text-[#4A4A4A]">
-      <div className="mx-auto max-w-[1440px]">
+      <div className="mx-auto max-w-[1200px]">
         {/* Hero */}
         <section className="py-[60px] px-6 sm:px-[80px] text-center bg-[#F5F3EF]">
           <div className="w-[60px] h-[2px] bg-[#B0B0B0] mx-auto my-[24px]" />
@@ -88,6 +90,14 @@ export default function PhyphyyaCaseStudy() {
             </a>
           </div>
         </section>
+
+        <div className="px-6 sm:px-[100px]">
+          <VisualPlaceholder
+            label="Brand story / moodboard"
+            hint="Add a visual that connects the brand concept to the product world (reference imagery, moodboard, or brand principles)."
+            aspect="wide"
+          />
+        </div>
 
         {/* Logo Concept - Soft & Rounded */}
         <section className="py-[80px] px-6 sm:px-[100px] flex flex-col items-center">

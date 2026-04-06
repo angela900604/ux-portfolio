@@ -4,18 +4,18 @@ import Image from "next/image";
 export const metadata = {
   title: "About | Angela Yang",
   description:
-    "Product designer with 2+ years in UX. Public services, AI products, and marketplaces. Based in Vancouver.",
+    "Product designer in Vancouver—public services, AI products, and systems-minded UX. How I work with AI as part of the craft.",
 };
 
 export default function AboutPage() {
   return (
       <div className="min-h-screen bg-zinc-950 text-zinc-100">
-      <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-16 sm:py-24">
+      <div className="mx-auto max-w-[1200px] px-6 sm:px-[100px] py-16 sm:py-24">
         <p className="text-xs font-medium uppercase tracking-widest text-zinc-500 mb-4">
           About
         </p>
         <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl max-w-2xl">
-          I design with a product lens and a systems mindset
+          How I ended up here, and where I’m pointed
         </h1>
 
         {/* Profile visual */}
@@ -23,7 +23,7 @@ export default function AboutPage() {
           <div>
             <Image
               src="/about/profile-v2.png"
-              alt="Profile page"
+              alt="Angela Yang"
               width={768}
               height={1024}
               className="w-full h-auto"
@@ -33,20 +33,33 @@ export default function AboutPage() {
           </div>
 
           <div>
-            <p className="mt-4 text-zinc-400 leading-relaxed max-w-2xl">
-              I’m Angela — a product-focused UX designer with 2+ years of
-              experience. I use an AI agent as a thinking partner to turn
-              ambiguity into clear, actionable roadmaps and user-centered
-              solutions.
+            <p className="mt-4 text-zinc-300 leading-relaxed max-w-2xl">
+              I’m Angela. I became a designer because I kept bumping into the gap
+              between what teams meant to ship and what people actually
+              experienced—especially when the stakes were high and mistakes were
+              hard to undo. I wanted a practice where empathy and rigor lived in
+              the same place: where flows, language, and accessibility weren’t
+              polish added at the end, but part of how we decided what to build.
             </p>
-            <p className="mt-4 text-zinc-400 leading-relaxed max-w-2xl">
-              I’ve led end-to-end UX for nationwide public services, AI products,
-              and loyalty platforms. My focus is research, clear flows,
-              accessibility, and design systems that scale with engineering teams.
+            <p className="mt-4 text-zinc-300 leading-relaxed max-w-2xl">
+              Product work in public service drew me in because millions of people
+              don’t get a “beta”—they get one confusing screen and they’re gone.
+              Designing for that scale taught me to hold complexity so users
+              don’t have to, and to earn trust in small, concrete ways. AI
+              product work sharpened a different muscle: being explicit about what
+              the system can promise, where it should stay quiet, and how to
+              design for uncertainty without dumping it on the person trying to
+              get something done. Those two threads aren’t opposites for me;
+              they’re where I keep choosing to spend my time.
             </p>
-            <p className="mt-4 text-zinc-400 leading-relaxed max-w-2xl">
-              Based in Vancouver. Open to full-time product design, UX/UI design,
-              and AI-assisted creative roles. Available immediately.
+            <p className="mt-4 text-zinc-300 leading-relaxed max-w-2xl">
+              I’m based in Vancouver and I’m building toward roles where I can
+              own meaningful slices of the experience—close to research,
+              engineering, and the real constraints—on teams that care about
+              shipping well, not just shipping fast. I want the work to show that
+              thoughtful UX isn’t a tax on velocity; it’s what keeps the first
+              release from becoming the expensive fix. If that sounds like your
+              team, I’d love to talk.
             </p>
           </div>
         </div>
@@ -67,15 +80,13 @@ export default function AboutPage() {
 
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
               <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-                What I’m great at
+                Where I focus
               </p>
-              <h2 className="mt-2 text-lg font-semibold">AI-accelerated UX delivery</h2>
+              <h2 className="mt-2 text-lg font-semibold">Public-scale &amp; AI-native products</h2>
               <p className="mt-3 text-zinc-400 text-sm leading-relaxed">
-                I use new AI tools and automation to remove repetitive work, iterate
-                faster, and turn insights into shippable experiences. As a design
-                team lead, I also design AI-assisted workflows (with clear UX
-                boundaries, safety cues, and measurable outcomes) so teams ship
-                with confidence.
+                Services millions rely on, AI experiences that need clear guardrails,
+                and loyalty or marketplace flows where the backend is messy but the
+                UI can’t be.
               </p>
             </div>
 
@@ -92,35 +103,56 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* How I think */}
+        {/* AI-assisted design as process */}
         <section className="mt-14 border-t border-zinc-800 pt-12">
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            04 · How I think
+            Process
           </span>
           <h2 className="mt-2 text-2xl font-semibold text-zinc-100 max-w-2xl">
-            I iterate with AI, then design for humans.
+            AI-assisted design is part of the job—not a side project
           </h2>
-          <div className="mt-6 grid gap-6 md:grid-cols-2">
+          <p className="mt-4 text-zinc-300 leading-relaxed max-w-3xl">
+            I treat AI tools the same way I treat Figma or a research plan: as
+            leverage for the work product, not a substitute for judgment. In
+            practice that means pairing with models for synthesis and variation
+            (Claude), using an agentic editor when I want to ship or prototype
+            interaction details quickly (Cursor), and staying in Figma for the
+            decisions that need pixels and systems. The outcome isn’t “I used
+            AI”—it’s faster cycles, clearer bets, and handoffs engineering can
+            build from without translating intent from screenshots.
+          </p>
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
               <h3 className="text-sm font-semibold text-zinc-100">
-                Downtime experiments
+                Faster iteration
               </h3>
               <p className="mt-3 text-zinc-400 text-sm leading-relaxed">
-                During rest time, I explore new AI agents and tools to accelerate
-                branding and product visual exploration — for example using Lovart
-                to generate and iterate on branding product visuals.
+                I use AI to compress exploration: more layout and copy variants,
+                quicker stress-tests of edge cases, and less time stuck on
+                mechanical production—so the calendar goes to critique and
+                refinement, not busywork.
               </p>
             </div>
-
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
               <h3 className="text-sm font-semibold text-zinc-100">
-                Faster delivery, better UI
+                Sharper hypotheses
               </h3>
               <p className="mt-3 text-zinc-400 text-sm leading-relaxed">
-                I also use Cursor to build and refine my portfolio efficiently,
-                and Claude + Figma to offload repetitive, time-consuming steps —
-                so I can spend more effort on clarity, hierarchy, and the last
-                10% that makes UI feel intentional.
+                Models are strong at surfacing assumptions and alternate framings.
+                I use that to tighten problem statements and research questions
+                before we lock UI—so we’re testing what we actually believe, not
+                the first screen we sketched.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
+              <h3 className="text-sm font-semibold text-zinc-100">
+                Better handoffs
+              </h3>
+              <p className="mt-3 text-zinc-400 text-sm leading-relaxed">
+                When specs, annotations, and component rationale are easier to
+                produce and keep consistent, engineering gets fewer “what did the
+                designer mean?” tickets. That’s the bar I hold the toolchain to:
+                does it reduce ambiguity for the people who build?
               </p>
             </div>
           </div>

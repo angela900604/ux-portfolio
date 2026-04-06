@@ -1,61 +1,17 @@
 import Link from "next/link";
-import Image from "next/image";
+import VisualPlaceholder from "../_components/VisualPlaceholder";
 
 export const metadata = {
   title: "Role-Based Government Backend (600+ Staff) | Angela Yang",
   description:
-    "Senior product design for a Ministry of Finance operations platform: RBAC, unified workflows, and measurable gains in speed and data accuracy for 600+ staff across four departments.",
+    "Backend platform for the Ministry of Finance uniform invoice lottery redemption app: role-based access, reporting, and version control for 600+ government staff (July–September 2025).",
 };
-
-const HERO = "/case-studies/government-backend/hero.png";
-
-function CaseImage({
-  src,
-  alt,
-  caption,
-  aspect = "wide",
-  fullBleed = false,
-}: {
-  src: string;
-  alt: string;
-  caption?: string;
-  aspect?: "video" | "wide";
-  fullBleed?: boolean;
-}) {
-  const aspectClass = aspect === "wide" ? "aspect-[21/9]" : "aspect-video";
-  return (
-    <figure className="space-y-2">
-      <div
-        className={`relative w-full ${aspectClass} overflow-hidden rounded-2xl ${
-          fullBleed
-            ? "bg-zinc-950"
-            : "bg-zinc-800/80 border border-zinc-700/50"
-        }`}
-      >
-        <Image
-          src={src}
-          alt={alt}
-          fill
-          className={
-            fullBleed
-              ? "object-cover object-center"
-              : "object-contain p-4 sm:p-6"
-          }
-          sizes="(max-width: 1440px) 100vw, 1240px"
-        />
-      </div>
-      {caption && (
-        <figcaption className="text-xs text-zinc-500 max-w-2xl">{caption}</figcaption>
-      )}
-    </figure>
-  );
-}
 
 export default function GovernmentBackendCaseStudy() {
   return (
     <article className="min-h-screen bg-zinc-950 text-zinc-100">
       <header className="border-b border-zinc-800">
-        <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-16 sm:py-24">
+        <div className="mx-auto max-w-[1200px] px-6 sm:px-[100px] py-16 sm:py-24">
           <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-zinc-500 mb-6">
             <span>Case Study</span>
             <span className="text-zinc-600">·</span>
@@ -67,294 +23,335 @@ export default function GovernmentBackendCaseStudy() {
             Role-based backend for 600+ government staff
           </h1>
           <p className="mt-4 text-xl text-zinc-400 max-w-2xl">
-            Administrative platform for the Ministry of Finance’s uniform-invoice
-            lottery redemption operations—one system of record, explicit
-            permissions, and workflows that scale across departments.
+            Backend platform for the Ministry of Finance&apos;s Uniform Invoice
+            Lottery Redemption App—designed role-based access and reporting tools
+            for 600+ government staff, enabling faster invoice management and
+            reducing errors.
           </p>
           <dl className="mt-8 flex flex-wrap gap-x-10 gap-y-2 text-sm">
             <div>
+              <dt className="text-zinc-500 uppercase tracking-wider">Timeline</dt>
+              <dd className="text-zinc-200">July – September 2025</dd>
+            </div>
+            <div>
               <dt className="text-zinc-500 uppercase tracking-wider">Role</dt>
-              <dd className="text-zinc-200">Senior Product Designer</dd>
+              <dd className="text-zinc-200">Lead UX/UI Designer</dd>
             </div>
             <div>
-              <dt className="text-zinc-500 uppercase tracking-wider">Scale</dt>
-              <dd className="text-zinc-200">600+ users · 4 departments</dd>
+              <dt className="text-zinc-500 uppercase tracking-wider">
+                Project type
+              </dt>
+              <dd className="text-zinc-200">Backend platform</dd>
             </div>
             <div>
-              <dt className="text-zinc-500 uppercase tracking-wider">Surface</dt>
-              <dd className="text-zinc-200">Web admin · responsive</dd>
-            </div>
-            <div>
-              <dt className="text-zinc-500 uppercase tracking-wider">Client</dt>
-              <dd className="text-zinc-200">Ministry of Finance, R.O.C.</dd>
+              <dt className="text-zinc-500 uppercase tracking-wider">Focus</dt>
+              <dd className="text-zinc-200">
+                Client-driven end-to-end product design · Cross-functional
+                collaboration
+              </dd>
             </div>
           </dl>
           <div className="mt-12">
-            <CaseImage
-              src={HERO}
-              alt="Desktop dashboard and mobile view of the government backend operations platform"
-              caption="Unified admin: desktop operations view with a responsive companion for field and on-call workflows."
+            <VisualPlaceholder
+              label="Hero visual (platform overview)"
+              hint="Replace with a representative dashboard or workflow image from this project."
               aspect="wide"
-              fullBleed
             />
           </div>
         </div>
       </header>
 
-      <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-12 sm:py-16 space-y-20">
-        {/* 1. Context */}
-        <section>
+      <div className="mx-auto max-w-[1200px] px-6 sm:px-[100px] py-12 sm:py-16 space-y-20">
+        <section className="space-y-6 max-w-3xl">
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            1 · Context
+            Summary
           </span>
-          <h2 className="mt-2 text-xl font-semibold text-zinc-100">
-            Operations software where mistakes become compliance risk
+          <h2 className="text-xl font-semibold text-zinc-100">
+            Supporting 600+ government staff with role-based access control
           </h2>
-          <div className="mt-5 space-y-4 text-zinc-300 leading-relaxed max-w-3xl">
-            <p>
-              This backend supports staff who review applications, reconcile
-              payouts, and audit activity around Taiwan’s uniform-invoice lottery
-              redemption. Work spans four departments with different mandates but
-              overlapping data—exactly where informal tools and “who has the latest
-              spreadsheet?” create drift.
-            </p>
-            <p>
-              The product problem wasn’t a missing feature list; it was{" "}
-              <span className="text-zinc-100">
-                fragmented tooling, unclear ownership of data, and permission
-                models that didn’t match how power and responsibility actually
-                flow in government operations
-              </span>
-              . That’s why the interface had to encode policy—not just display it.
-            </p>
-          </div>
-        </section>
-
-        {/* 2. Problem */}
-        <section>
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            2 · Problem
-          </span>
-          <h2 className="mt-2 text-xl font-semibold text-zinc-100">
-            Manual glue, inconsistent truth, and access that was either too loose
-            or too blunt
-          </h2>
-          <ul className="mt-5 space-y-3 text-zinc-300 leading-relaxed max-w-3xl list-none">
-            <li className="flex gap-3">
-              <span className="text-violet-400 font-semibold shrink-0">
-                Workflow cost
-              </span>
-              <span>
-                Staff re-keyed information across tools and cross-checked status by
-                message chains. High-throughput periods meant errors scaled with
-                volume—not with headcount.
-              </span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-violet-400 font-semibold shrink-0">
-                Source of truth
-              </span>
-              <span>
-                Multiple partial systems produced conflicting application states.
-                Managers couldn’t trust dashboards because metrics weren’t tied to
-                a single lifecycle model.
-              </span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-violet-400 font-semibold shrink-0">
-                Access control
-              </span>
-              <span>
-                Sensitive financial and citizen-adjacent data required{" "}
-                <span className="text-zinc-100">
-                  granular, auditable permissions
-                </span>
-                —not role titles copied from an org chart. “Admin” as a catch-all
-                was both risky and unusable at scale.
-              </span>
-            </li>
-          </ul>
-        </section>
-
-        {/* 3. My Role */}
-        <section>
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            3 · My role
-          </span>
-          <h2 className="mt-2 text-xl font-semibold text-zinc-100">
-            End-to-end product design for a system that has to ship and stay
-            governable
-          </h2>
-          <div className="mt-5 space-y-4 text-zinc-300 leading-relaxed max-w-3xl">
-            <p>I owned:</p>
-            <ul className="list-disc pl-5 space-y-2 marker:text-zinc-500">
-              <li>
-                <span className="text-zinc-100">Research with staff</span>{" "}
-                (interviews and workflow observation) to map real tasks, exceptions,
-                and escalation—not idealized process diagrams.
-              </li>
-              <li>
-                <span className="text-zinc-100">Information architecture</span> for
-                navigation, record lifecycles, and cross-department handoffs.
-              </li>
-              <li>
-                <span className="text-zinc-100">UX and UI</span> for dense,
-                policy-heavy screens: tables, filters, bulk actions, and
-                confirmation patterns that reduce wrong clicks under time pressure.
-              </li>
-              <li>
-                <span className="text-zinc-100">Design system foundations</span> so
-                new modules don’t invent new interaction models every quarter.
-              </li>
-            </ul>
-            <p className="text-zinc-400 text-sm">
-              Engineering and compliance were embedded partners; my job was to make
-              constraints visible in the UI so policy, security, and usability
-              didn’t trade off in the dark.
-            </p>
-          </div>
-        </section>
-
-        {/* 4. Key Decisions */}
-        <section>
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            4 · Key decisions
-          </span>
-          <h2 className="mt-2 text-xl font-semibold text-zinc-100">
-            Product architecture choices, not decoration
-          </h2>
-          <div className="mt-6 space-y-8 max-w-3xl">
-            <div>
-              <h3 className="text-sm font-semibold text-zinc-100">
-                Role-based access control (RBAC) as the spine
-              </h3>
-              <p className="mt-2 text-zinc-300 leading-relaxed">
-                I modeled permissions as{" "}
-                <span className="text-zinc-100">
-                  capabilities tied to tasks and data domains
-                </span>
-                —exposed as a matrix (roles × actions) leadership could review.
-                That turned “who can do what” from tribal knowledge into an
-                inspectable contract: critical for audits and for onboarding 600+
-                people with mixed digital literacy.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-sm font-semibold text-zinc-100">
-                One operational dashboard for situational awareness
-              </h3>
-              <p className="mt-2 text-zinc-300 leading-relaxed">
-                Department heads needed a single place to see backlog, SLA risk,
-                and anomalies—not exports emailed at end of day. The dashboard
-                anchored KPIs to the same record model staff used in detail views,
-                so “pending review” in a chart meant the same thing as “pending”
-                in a row—reducing debate in meetings.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-sm font-semibold text-zinc-100">
-                Standardized components for repeatable data entry
-              </h3>
-              <p className="mt-2 text-zinc-300 leading-relaxed">
-                High-frequency forms moved to{" "}
-                <span className="text-zinc-100">
-                  grouped field patterns, inline validation, and explicit save vs.
-                  submit
-                </span>
-                —so partial work didn’t pollute production state. The goal was to
-                remove ambiguity at the moment of entry, where most errors originate.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* 5. Solution */}
-        <section>
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            5 · Solution
-          </span>
-          <h2 className="mt-2 text-xl font-semibold text-zinc-100">
-            What shipped: clarity under load, trust through structure
-          </h2>
-          <div className="mt-5 space-y-4 text-zinc-300 leading-relaxed max-w-3xl">
-            <p>
-              <span className="text-zinc-100">User management</span> consolidated
-              staff records with searchable tables, status (active/inactive), and
-              side-panel editing so role changes didn’t require duplicating
-              accounts or offline requests.
-            </p>
-            <p>
-              <span className="text-zinc-100">Core workflows</span> moved from
-              text-heavy, flat layouts to a predictable shell: primary navigation,
-              contextual secondary actions, and forms broken into scannable groups—
-              reducing cognitive load when a case file spans many fields and
-              attachments.
-            </p>
-            <p>
-              <span className="text-zinc-100">Managers</span> got chart-backed
-              summaries (e.g. total applications, pending reviews) tied to filters
-              they could drill from—so review meetings started from shared numbers,
-              not competing spreadsheets.
-            </p>
-            <p className="text-zinc-400 text-sm">
-              Visual language stayed enterprise-blue and restrained: the point was
-              legibility and auditability, not brand novelty.
-            </p>
-          </div>
-        </section>
-
-        {/* 6. Impact */}
-        <section>
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            6 · Impact
-          </span>
-          <h2 className="mt-2 text-xl font-semibold text-zinc-100">
-            Measured efficiency and fewer failure modes at scale
-          </h2>
-          <p className="mt-4 text-zinc-300 leading-relaxed max-w-3xl">
-            After rollout and stabilization, operations metrics moved in the
-            direction the product was built for: less manual repetition, fewer
-            inconsistent records, and faster alignment between departments because
-            the system—not Slack—carried state.
+          <p className="text-zinc-300 leading-relaxed">
+            I designed a role-based permission system that aligned responsibilities
+            across departments. By hiding inaccessible features and limiting
+            high-impact actions to specific roles, the platform enabled teams to
+            work independently while preventing conflicts that could affect
+            public-facing content.
           </p>
-          <div className="mt-8 rounded-2xl bg-zinc-800/60 border border-zinc-700/50 p-8 sm:p-10 max-w-3xl">
-            <ul className="space-y-4 text-zinc-200">
-              <li className="flex gap-3">
-                <span className="text-emerald-400 font-semibold shrink-0">
-                  ~30% less time
-                </span>
-                <span>on manual data entry and cross-tool reconciliation.</span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-emerald-400 font-semibold shrink-0">
-                  ~99% accuracy
-                </span>
-                <span>
-                  on key operational datasets after consolidation—fewer downstream
-                  corrections and exception handling.
-                </span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-emerald-400 font-semibold shrink-0">
-                  600+ staff
-                </span>
-                <span>
-                  onboarded into a unified environment with role-appropriate
-                  access—scaling without turning everyone into an “admin.”
-                </span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-emerald-400 font-semibold shrink-0">
-                  Trust & collaboration
-                </span>
-                <span>
-                  Qualitatively, teams reported higher confidence in shared numbers
-                  and smoother handoffs—because the UI reflected one lifecycle, not
-                  parallel unofficial truths.
-                </span>
-              </li>
-            </ul>
+          <h2 className="text-xl font-semibold text-zinc-100 pt-2">
+            Enabling self-service reporting for faster decision-making
+          </h2>
+          <p className="text-zinc-300 leading-relaxed">
+            I redesigned reporting into an actionable dashboard with weekly and
+            monthly views, time-based filters, and CSV export. Staff could prepare
+            reports independently for meetings and audits, reducing reliance on
+            engineers and speeding up operational workflows.
+          </p>
+          <h2 className="text-xl font-semibold text-zinc-100 pt-2">
+            Aligning UI decisions with system logic under tight constraints
+          </h2>
+          <p className="text-zinc-300 leading-relaxed">
+            Working closely with engineers, I designed backend flows that balanced
+            flexibility and stability—such as version control with mandatory update
+            settings and build-code mapping—so critical updates could be enforced
+            quickly without risking system inconsistency.
+          </p>
+        </section>
+
+        <section className="space-y-5 max-w-3xl">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            Project background
+          </span>
+          <h2 className="text-xl font-semibold text-zinc-100">
+            Why this platform existed
+          </h2>
+          <p className="text-zinc-300 leading-relaxed">
+            After completing the Uniform Invoice Lottery Redemption App, I also took
+            on designing an entirely new backend management platform. Government
+            staff needed a unified system to manage announcements, promotion
+            campaigns, push notifications, data reporting, and app version updates.
+          </p>
+          <p className="text-zinc-300 leading-relaxed">
+            With over 600 staff members relying on national platforms, consistency
+            and alignment were critical. During early discovery, staff repeatedly
+            emphasized their need for workflows to feel familiar with the systems
+            they were already using. To clarify their expectations, I conducted
+            three rounds of needs interviews. These sessions helped me identify
+            feature priorities and validate user flows before diving into design.
+          </p>
+          <p className="text-zinc-300 leading-relaxed">
+            As the sole UX/UI designer, I collaborated closely with engineers.
+            Because our team had also built the app itself, we could strategically
+            decide which elements should remain editable in the backend and which
+            needed to stay hard-coded to maintain stability during updates. Given
+            the tight timeline, I validated requirements through mockups and page
+            flows rather than full functional maps. This approach sped up
+            collaboration and allowed us to refine details iteratively during
+            ongoing discussions with stakeholders and engineers.
+          </p>
+          <VisualPlaceholder
+            label="Example of corresponding screens"
+            hint="Add redacted screenshots that show how backend tasks map to the live product."
+            aspect="wide"
+          />
+        </section>
+
+        <section className="space-y-5 max-w-3xl">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            Role-based access control
+          </span>
+          <h2 className="text-xl font-semibold text-zinc-100">
+            Collaboration across departments—without stepping on each other
+          </h2>
+          <p className="text-zinc-300 leading-relaxed">
+            The first major challenge was enabling multiple departments to
+            collaborate within one system while respecting each other&apos;s
+            responsibilities. That challenge became the foundation for designing
+            role-based access control.
+          </p>
+          <p className="text-zinc-300 leading-relaxed">
+            I defined a clear set of principles for access: which roles could see
+            which features, and how permissions should differ. If a role had no
+            access to a feature, that feature simply did not appear in their
+            sidebar.
+          </p>
+          <p className="text-zinc-300 leading-relaxed">
+            Some roles had partial access. For example, in the Promotion Zone
+            (public education content), multiple roles could create articles, but
+            only the National Tax Bureau Headquarters could pin them to the top.
+            Since pinned articles directly shaped the app homepage (limited to five
+            pinned slots), the &quot;Pin to Top&quot; button only appeared for that
+            specific role. For all other roles, the article list showed without the
+            pinning option.
+          </p>
+          <p className="text-zinc-300 leading-relaxed">
+            This careful role definition empowered each department to work
+            independently while preventing conflicts that could undermine
+            credibility.
+          </p>
+          <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6 space-y-4">
+            <h3 className="text-sm font-semibold text-zinc-100">
+              Role &amp; permission example · Promotion Zone
+            </h3>
+            <p className="text-zinc-300 leading-relaxed text-sm">
+              <span className="text-zinc-200 font-medium">General role</span> with
+              &quot;Create Article&quot; permission: users can create and manage
+              promotion articles. However, the &quot;Pin to Top&quot; option is
+              hidden—so they can contribute content without interfering with how
+              articles are prioritized on the app homepage.
+            </p>
+            <p className="text-zinc-300 leading-relaxed text-sm">
+              <span className="text-zinc-200 font-medium">
+                National Tax Bureau Headquarters role
+              </span>{" "}
+              with &quot;Create Article&quot; and &quot;Pin to Top&quot;
+              permissions: in addition to creating and managing promotion articles,
+              this role has exclusive access to &quot;Pin to Top.&quot; Because
+              pinned articles directly control up to five homepage slots, only this
+              role can decide the final order of content displayed to end users.
+            </p>
           </div>
+          <VisualPlaceholder
+            label="RBAC in the UI (role-based visibility)"
+            hint="Show sidebar and article tools with Pin to Top visible only for the HQ role."
+            aspect="wide"
+          />
+        </section>
+
+        <section className="space-y-8 max-w-3xl">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            Key design iterations
+          </span>
+          <h2 className="text-xl font-semibold text-zinc-100">
+            Two iterations that went through the longest discussions
+          </h2>
+          <p className="text-zinc-300 leading-relaxed">
+            There were many iterations when discussing API capabilities, data
+            sources, and staffing needs. I chose the following two features because
+            those iterations went through the longest discussions.
+          </p>
+
+          <div className="space-y-4">
+            <h3 className="text-sm font-semibold text-zinc-100">
+              Design iteration 1 · Data reporting
+            </h3>
+            <p className="text-zinc-300 leading-relaxed">
+              <span className="text-zinc-200 font-semibold">Before:</span> The
+              original reporting page only showed yearly totals through a dropdown
+              (for example, 2026, 2027, 2028). This made it unusable for staff who
+              needed weekly views, cumulative tracking, and campaign-specific
+              queries.
+            </p>
+            <p className="text-zinc-300 leading-relaxed">
+              <span className="text-zinc-200 font-semibold">After:</span> I
+              redesigned the page into an actionable dashboard that displayed data
+              from the past 12 months relative to the query date; introduced
+              toggles for Weekly View (every Sunday) and Monthly View (end of each
+              month)—because staff feedback showed they relied on weekly and
+              monthly reports for meetings and archiving; and enabled CSV export.
+              Engineers noted that massive user data required filtering or
+              time-based limits to stay manageable.
+            </p>
+            <p className="text-zinc-300 leading-relaxed">
+              <span className="text-zinc-200 font-semibold">Impact:</span> Present
+              weekly and monthly numbers in meetings without manual calculations;
+              compare time periods more easily; export datasets independently,
+              reducing reliance on engineers and speeding up decision-making.
+            </p>
+          </div>
+
+          <VisualPlaceholder
+            label="Iteration 1 · Data reporting (before / after)"
+            hint="Place a before/after pair for the reporting dashboard and export path."
+            aspect="wide"
+          />
+
+          <div className="space-y-4">
+            <h3 className="text-sm font-semibold text-zinc-100">
+              Design iteration 2 · App update version control
+            </h3>
+            <p className="text-zinc-300 leading-relaxed">
+              <span className="text-zinc-200 font-semibold">Before:</span> The
+              first backend design only let staff add new versions. It lacked
+              critical controls: no way to enforce mandatory updates and no syncing
+              of version numbers with app build codes. This created risks of
+              mismatched versions and made urgent updates nearly impossible.
+              Engineers clarified that version control directly affected user
+              experience and app stability—without precise control, users could
+              remain on outdated builds or face inconsistencies.
+            </p>
+            <p className="text-zinc-300 leading-relaxed">
+              <span className="text-zinc-200 font-semibold">After:</span> I
+              redesigned the page into an actionable dashboard that included a Force
+              Update option to mark versions as mandatory so critical updates
+              couldn&apos;t be skipped; accurate version mapping so version numbers
+              mapped directly to app build codes, reducing mismatches; and input
+              flexibility—dropdowns for common fields reduced errors, while manual
+              input fields gave staff the flexibility they needed.
+            </p>
+            <p className="text-zinc-300 leading-relaxed">
+              <span className="text-zinc-200 font-semibold">Impact:</span> This
+              empowered staff to handle version control independently, reduced risks
+              of mismatched versions, and ensured that critical security or
+              policy-driven updates could be rolled out instantly. It showed how UI
+              decisions could align directly with system logic to create a more
+              reliable workflow.
+            </p>
+          </div>
+
+          <VisualPlaceholder
+            label="Iteration 2 · Version control (before / after)"
+            hint="Show force update, build-code mapping, and safer field inputs."
+            aspect="wide"
+          />
+        </section>
+
+        <section className="space-y-5 max-w-3xl">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            Visual consistency
+          </span>
+          <h2 className="text-xl font-semibold text-zinc-100">
+            Familiarity reduces training overhead
+          </h2>
+          <p className="text-zinc-300 leading-relaxed">
+            Beyond features, staff emphasized the need for the backend to feel
+            consistent with their existing tools. This was less about solving
+            &quot;pain points&quot; and more about reducing training overhead. To
+            meet this need, I kept sidebar information architecture aligned with
+            existing platforms; preserved familiar table layouts, button placements,
+            and status tags; and maintained overall interaction consistency to lower
+            the learning curve across departments.
+          </p>
+          <VisualPlaceholder
+            label="Visual consistency reference"
+            hint="Optional: a side-by-side showing alignment with existing internal tools."
+            aspect="wide"
+          />
+        </section>
+
+        <section className="space-y-5 max-w-3xl">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            Reflection
+          </span>
+          <h2 className="text-xl font-semibold text-zinc-100">
+            Processes and interfaces, under constraints
+          </h2>
+          <p className="text-zinc-300 leading-relaxed">
+            This project taught me that designing government-scale platforms
+            isn&apos;t just about new features—it&apos;s about integrating with
+            established habits, hierarchies, and system logic. The biggest challenge
+            was balancing existing workflows with a scalable backend architecture,
+            all under a tight timeline.
+          </p>
+          <p className="text-zinc-300 leading-relaxed">
+            I made intentional trade-offs: instead of building a full functional
+            map, I validated requirements directly through annotated mockups and
+            page flows. This accelerated collaboration but required refining details
+            live during discussions. It was a valuable lesson in designing under
+            constraints while still maintaining trust and accuracy.
+          </p>
+          <p className="text-zinc-300 leading-relaxed">
+            Most importantly, I learned that in enterprise-scale projects, solving
+            problems often means designing processes as much as interfaces. This
+            strengthened my ability to align system logic with human workflows,
+            advocate for practical solutions, and deliver designs that enhance
+            usability while driving organizational efficiency.
+          </p>
+        </section>
+
+        <section className="space-y-5 max-w-3xl">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            Final result
+          </span>
+          <h2 className="text-xl font-semibold text-zinc-100">
+            One reliable platform for cross-department operations
+          </h2>
+          <p className="text-zinc-300 leading-relaxed">
+            The final backend platform unified the management of announcements,
+            promotions, push notifications, data reports, and app version updates.
+            With carefully defined role-based permissions, workflow-driven
+            reporting, and system-level consistency, the design enabled government
+            staff across multiple departments to collaborate effectively within one
+            reliable platform.
+          </p>
         </section>
 
         <section className="border-t border-zinc-800 pt-12">

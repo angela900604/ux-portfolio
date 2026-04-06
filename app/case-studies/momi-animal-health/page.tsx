@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { ReactNode } from "react";
+import VisualPlaceholder from "../_components/VisualPlaceholder";
 
 export const metadata = {
   title: "MOMI Animal Health | Angela Yang",
@@ -32,7 +33,7 @@ export default function MomiAnimalHealthCaseStudy() {
   return (
     <article className="min-h-screen bg-zinc-950 text-zinc-100">
       <header className="border-b border-zinc-800">
-        <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-16 sm:py-24">
+        <div className="mx-auto max-w-[1200px] px-6 sm:px-[100px] py-16 sm:py-24">
           <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-zinc-500 mb-6">
             <span>Case Study</span>
             <span className="text-zinc-600">·</span>
@@ -81,7 +82,7 @@ export default function MomiAnimalHealthCaseStudy() {
         </div>
       </header>
 
-      <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-12 sm:py-16 space-y-16">
+      <div className="mx-auto max-w-[1200px] px-6 sm:px-[100px] py-12 sm:py-16 space-y-16">
         <Section kicker="01 · Goal" title="Make product value feel clear and actionable">
           <p className="mt-4 text-zinc-300 leading-relaxed max-w-2xl">
             MOMI Animal Health focuses on high-quality rabbit care products. The
@@ -89,6 +90,11 @@ export default function MomiAnimalHealthCaseStudy() {
             supporting purchase and account questions across social and
             eCommerce channels.
           </p>
+          <VisualPlaceholder
+            label="Goal / audience context"
+            hint="Add an example of the product page or customer questions that informed the content system (what people needed to understand to buy)."
+            aspect="wide"
+          />
         </Section>
 
         <Section kicker="02 · What I did" title="Content system across touchpoints">
@@ -140,6 +146,11 @@ export default function MomiAnimalHealthCaseStudy() {
         </Section>
 
         <Section kicker="03 · Outcomes" title="A clear lift in online sales">
+          <VisualPlaceholder
+            label="Outcome evidence"
+            hint="Add a screenshot of sales/traffic highlights or campaign performance that supports the reported sales lift."
+            aspect="wide"
+          />
           <div className="mt-6 rounded-2xl bg-zinc-800/60 border border-zinc-700/50 p-8 sm:p-10">
             <ul className="space-y-3 text-zinc-200">
               <li className="flex gap-3">

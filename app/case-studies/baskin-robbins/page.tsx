@@ -1,57 +1,17 @@
 import Link from "next/link";
-import Image from "next/image";
+import VisualPlaceholder from "../_components/VisualPlaceholder";
 
 export const metadata = {
   title: "Baskin-Robbins Taiwan Membership App | Angela Yang",
   description:
-    "Lead UX/UI for Taiwan’s first BR31 loyalty app: MVP scoping against Japan reference, localized membership rules, POS-ready redemption, and dev-ready systems design in four months.",
+    "Lead UX/UI for BR31 Taiwan’s first membership app: team objectives, functional map, style proposals, MVP delivery, and build-ready UI kit and handoff.",
 };
-
-const HERO = "/case-studies/baskin-robbins/hero.png";
-
-function CaseImage({
-  src,
-  alt,
-  caption,
-  fullBleed = true,
-}: {
-  src: string;
-  alt: string;
-  caption?: string;
-  fullBleed?: boolean;
-}) {
-  return (
-    <figure className="space-y-2">
-      <div
-        className={`relative w-full aspect-[21/9] overflow-hidden rounded-2xl ${
-          fullBleed ? "bg-zinc-950" : "bg-zinc-800/80 border border-zinc-700/50"
-        }`}
-      >
-        <Image
-          src={src}
-          alt={alt}
-          fill
-          className={
-            fullBleed
-              ? "object-cover object-center"
-              : "object-contain p-4 sm:p-6"
-          }
-          sizes="(max-width: 1440px) 100vw, 1240px"
-          priority
-        />
-      </div>
-      {caption && (
-        <figcaption className="text-xs text-zinc-500 max-w-2xl">{caption}</figcaption>
-      )}
-    </figure>
-  );
-}
 
 export default function BaskinRobbinsCaseStudy() {
   return (
     <article className="min-h-screen bg-zinc-950 text-zinc-100">
       <header className="border-b border-zinc-800">
-        <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-16 sm:py-24">
+        <div className="mx-auto max-w-[1200px] px-6 sm:px-[100px] py-16 sm:py-24">
           <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-zinc-500 mb-6">
             <span>Case Study</span>
             <span className="text-zinc-600">·</span>
@@ -63,303 +23,400 @@ export default function BaskinRobbinsCaseStudy() {
             Baskin-Robbins Taiwan&apos;s first membership app
           </h1>
           <p className="mt-4 text-xl text-zinc-400 max-w-2xl">
-            Built the loyalty surface Taiwan didn&apos;t have—points, rewards, and
-            a store-ready redemption path—by scoping a credible MVP against a
-            Japan reference model and real CRM constraints.
+            Baskin Robbins Taiwan Membership App — boosting brand affinity and
+            customer engagement.
           </p>
           <dl className="mt-8 flex flex-wrap gap-x-10 gap-y-2 text-sm">
+            <div>
+              <dt className="text-zinc-500 uppercase tracking-wider">Timeline</dt>
+              <dd className="text-zinc-200">December 2024 – March 2025</dd>
+            </div>
             <div>
               <dt className="text-zinc-500 uppercase tracking-wider">Role</dt>
               <dd className="text-zinc-200">Lead UX/UI Designer</dd>
             </div>
             <div>
-              <dt className="text-zinc-500 uppercase tracking-wider">Timeline</dt>
-              <dd className="text-zinc-200">Dec 2024 – Mar 2025 (design phase)</dd>
+              <dt className="text-zinc-500 uppercase tracking-wider">Project type</dt>
+              <dd className="text-zinc-200">Mobile app</dd>
             </div>
             <div>
-              <dt className="text-zinc-500 uppercase tracking-wider">Team</dt>
-              <dd className="text-zinc-200">PM · 4 engineers · client + JP HQ</dd>
-            </div>
-            <div>
-              <dt className="text-zinc-500 uppercase tracking-wider">Scope</dt>
-              <dd className="text-zinc-200">End-to-end app UX/UI · UI kit · handoff</dd>
+              <dt className="text-zinc-500 uppercase tracking-wider">Focus</dt>
+              <dd className="text-zinc-200">
+                Client-driven end-to-end product design
+              </dd>
             </div>
           </dl>
           <div className="mt-12">
-            <CaseImage
-              src={HERO}
-              alt="Baskin-Robbins Taiwan membership app on iPhones: home hub with loyalty actions and flavor catalog"
-              caption="Home hub for points, vouchers, and member actions next to dense catalog browse—brand-forward layout with a single primary navigation model."
+            <VisualPlaceholder
+              label="Hero visual (membership app)"
+              hint="Replace with the primary marketing or home-hub composition for this case study."
+              aspect="wide"
             />
           </div>
         </div>
       </header>
 
-      <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-12 sm:py-16 space-y-20">
-        {/* Context */}
-        <section>
+      <div className="mx-auto max-w-[1200px] px-6 sm:px-[100px] py-12 sm:py-16 space-y-20">
+        <section className="space-y-5 max-w-3xl">
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Context
+            Team objectives
           </span>
-          <h2 className="mt-2 text-xl font-semibold text-zinc-100">
-            Japan had the program; Taiwan had the gap
+          <h2 className="text-xl font-semibold text-zinc-100">
+            Why we built a dedicated membership surface in Taiwan
           </h2>
-          <div className="mt-5 space-y-4 text-zinc-300 leading-relaxed max-w-3xl">
-            <p>
-              In Japan, BR31 already runs a mature digital membership: rewards,
-              exclusives, and repeat engagement. In Taiwan, the brand was still
-              missing a{" "}
-              <span className="text-zinc-100">first-party loyalty surface</span>{" "}
-              that could compete with chains already owning mobile rewards and
-              personalized offers.
-            </p>
-            <p>
-              The product mandate wasn&apos;t “make pretty screens”—it was to{" "}
-              <span className="text-zinc-100">
-                convert occasional buyers into repeat members
-              </span>{" "}
-              through a coherent earn-and-redeem loop, while staying aligned with
-              headquarters and shippable on a fixed calendar.
-            </p>
-          </div>
+          <p className="text-zinc-300 leading-relaxed">
+            To create a dedicated membership app for BR31 Ice Cream in Taiwan,
+            allowing Taiwanese consumers to enjoy digital experiences such as point
+            accumulation and reward redemption—similar to the 31 Ice Cream
+            membership in Japan.
+          </p>
         </section>
 
-        {/* Problem */}
-        <section>
+        <section className="space-y-5 max-w-3xl">
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Problem
+            Role &amp; deliverables
           </span>
-          <h2 className="mt-2 text-xl font-semibold text-zinc-100">
-            Copying Japan wouldn&apos;t work—and neither would scope creep
+          <h2 className="text-xl font-semibold text-zinc-100">
+            What I owned end-to-end
           </h2>
-          <ul className="mt-5 space-y-3 text-zinc-300 leading-relaxed max-w-3xl list-none">
-            <li className="flex gap-3">
-              <span className="text-rose-400 font-semibold shrink-0">
-                Market rules
-              </span>
-              <span>
-                Japan uses points to drive membership tiers; Taiwan&apos;s
-                commercial and CRM setup emphasized{" "}
-                <span className="text-zinc-100">spend-based progression</span>.
-                Treating “parity” as identical UI would have shipped the wrong
-                mental model.
-              </span>
+          <p className="text-zinc-300 leading-relaxed">
+            I collaborated with a product manager and four front-end/back-end
+            engineers. As the lead designer, I was responsible for the entire UX
+            and UI design process—including requirement interviews, user flow
+            planning, and final visual design.
+          </p>
+        </section>
+
+        <section className="space-y-5 max-w-3xl">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            Project challenges
+          </span>
+          <h2 className="text-xl font-semibold text-zinc-100">
+            Technical and timeline constraints
+          </h2>
+          <p className="text-zinc-300 leading-relaxed">
+            The project faced numerous technical and timeline constraints. To
+            ensure the timely launch of the first-phase MVP, we continuously
+            adjusted task priorities and maintained frequent internal discussions
+            and client communications to align team and client understanding.
+          </p>
+        </section>
+
+        <section className="space-y-5 max-w-3xl">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            Project outcomes
+          </span>
+          <h2 className="text-xl font-semibold text-zinc-100">
+            First-phase MVP launch
+          </h2>
+          <p className="text-zinc-300 leading-relaxed">
+            Within four months, we successfully launched the first-phase MVP in
+            September 2025—providing BR31 Ice Cream members in Taiwan with a
+            seamless point accumulation and redemption experience.
+          </p>
+        </section>
+
+        <section className="space-y-5 max-w-3xl">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            Project background
+          </span>
+          <h2 className="text-xl font-semibold text-zinc-100">
+            From Japan&apos;s proven program to Taiwan&apos;s gap
+          </h2>
+          <p className="text-zinc-300 leading-relaxed">
+            BR31 Ice Cream, known for its 31 playful flavors, had already built a
+            strong digital-first membership program in Japan that kept fans
+            engaged with rewards and exclusives. In Taiwan, however, the brand
+            lacked a dedicated loyalty experience—leaving customers with fewer ways
+            to connect and putting the company at risk of falling behind
+            competitors with established platforms. Taiwanese consumers, who were
+            increasingly drawn to mobile-first rewards and personalized offers,
+            needed a smoother way to engage with the brand. Our project set out to
+            change that by designing and developing a dedicated membership
+            app—bringing the proven success of Japan&apos;s model to Taiwan while
+            tailoring the experience to local users.
+          </p>
+          <p className="text-zinc-200 font-medium text-lg pt-2">
+            The goal was simple yet powerful: transform casual customers into loyal
+            fans by offering them a fun, seamless, and rewarding digital journey
+            with every scoop.
+          </p>
+          <VisualPlaceholder
+            label="Stakeholder alignment (Japan HQ · Taiwan)"
+            hint="Meeting photo or slide snapshot showing cross-market alignment."
+            aspect="wide"
+          />
+        </section>
+
+        <section className="space-y-5 max-w-3xl">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            Design process
+          </span>
+          <h2 className="text-xl font-semibold text-zinc-100">
+            A streamlined pipeline under a tight schedule
+          </h2>
+          <p className="text-zinc-300 leading-relaxed">
+            Due to the tight schedule, I streamlined the design process while
+            ensuring client requirements were met. I started with a Functional Map to
+            understand client needs and confirm feature feasibility with backend
+            developers. I then moved into Mockups—designing wireframes, defining
+            interactions, annotated slices, and preparing a UI Kit. I provided Style
+            Proposals for the client to decide on visual style and color usage.
+            Finally, I confirmed Page Flow and system logic with the client so
+            engineering could build with a shared map of branching and states.
+          </p>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5">
+              <h3 className="text-sm font-semibold text-zinc-100">
+                Mockup Figma file
+              </h3>
+              <p className="mt-2 text-sm text-zinc-300 leading-relaxed">
+                Includes complete high-fidelity page designs and slicing
+                instructions for the development team&apos;s reference.
+              </p>
+            </div>
+            <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5">
+              <h3 className="text-sm font-semibold text-zinc-100">
+                UI Kit Figma file
+              </h3>
+              <p className="mt-2 text-sm text-zinc-300 leading-relaxed">
+                Systematically organized design components, typography, and color
+                guidelines to ensure consistency and improve efficiency.
+              </p>
+            </div>
+          </div>
+          <VisualPlaceholder
+            label="Functional map · Style proposal · Page flow"
+            hint="Place the functional map, direction boards, and page-flow diagram used to lock MVP scope."
+            aspect="wide"
+          />
+        </section>
+
+        <section className="space-y-5 max-w-3xl">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            Requirement interviews
+          </span>
+          <h2 className="text-xl font-semibold text-zinc-100">
+            Functional confirmation before high fidelity
+          </h2>
+          <p className="text-zinc-300 leading-relaxed">
+            Ice Cream Taiwan aimed to replicate the Japanese app&apos;s features but,
+            due to time and budget constraints, opted for rapid development using
+            our standard features. I created a Functional Map integrating backend
+            rules and client requirements to clarify the scope.
+          </p>
+          <p className="text-zinc-300 leading-relaxed">
+            Through the Functional Map and client discussions, we agreed on minor
+            optimizations for the first-phase launch and deferred larger changes to
+            the second phase. We also collaborated with engineers to assess
+            feasibility and provide timelines for client decisions.
+          </p>
+          <p className="text-zinc-300 leading-relaxed">
+            The Functional Map helped identify features as web views or external
+            URLs—ensuring client alignment and reducing development errors.
+          </p>
+        </section>
+
+        <section className="space-y-5 max-w-3xl">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            Function difference
+          </span>
+          <h2 className="text-xl font-semibold text-zinc-100">
+            Local rules vs Japan reference
+          </h2>
+          <p className="text-zinc-300 leading-relaxed">
+            31 Ice Cream Taiwan aimed to align with Japan&apos;s membership rules,
+            but market differences required adjustments. For example, Japan uses
+            &quot;points&quot; for membership levels, while Taiwan relies on
+            &quot;spending amounts.&quot; With no initial plan for point redemption in
+            Taiwan, we reassessed the points feature and explored a more suitable
+            membership mechanism for the local market.
+          </p>
+          <p className="text-zinc-300 leading-relaxed">
+            Due to time constraints, I prioritized standard features in style
+            proposals and mockups—making minor adjustments only after client
+            agreement.
+          </p>
+        </section>
+
+        <section className="space-y-6 max-w-3xl">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            Visual style &amp; UI design
+          </span>
+          <h2 className="text-xl font-semibold text-zinc-100">
+            Three directions for stakeholder selection
+          </h2>
+          <p className="text-zinc-300 leading-relaxed">
+            I presented three style options for the client to choose from:
+          </p>
+          <div className="space-y-4">
+            <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5">
+              <h3 className="text-sm font-semibold text-zinc-100">
+                Style A · Sweet &amp; energetic
+              </h3>
+              <p className="mt-2 text-sm text-zinc-300 leading-relaxed">
+                Focused on 31 Ice Cream&apos;s signature pink—creating a lively,
+                youthful vibe for users who love vibrant colors, conveying joy and
+                enthusiasm.
+              </p>
+            </div>
+            <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5">
+              <h3 className="text-sm font-semibold text-zinc-100">
+                Style B · Minimal &amp; fresh
+              </h3>
+              <p className="mt-2 text-sm text-zinc-300 leading-relaxed">
+                Primarily white with pink accents—offering a clean and refreshing
+                style similar to Japan&apos;s 31 app, ideal for users seeking
+                simplicity.
+              </p>
+            </div>
+            <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5">
+              <h3 className="text-sm font-semibold text-zinc-100">
+                Style C · Gradient &amp; premium
+              </h3>
+              <p className="mt-2 text-sm text-zinc-300 leading-relaxed">
+                Used gradient effects to enhance sophistication—adding depth and
+                modern design elements to reflect a premium and innovative brand
+                image.
+              </p>
+            </div>
+          </div>
+          <VisualPlaceholder
+            label="Style proposals (A / B / C)"
+            hint="Three direction boards as presented to the client."
+            aspect="wide"
+          />
+        </section>
+
+        <section className="space-y-5 max-w-3xl">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            Challenges
+          </span>
+          <h2 className="text-xl font-semibold text-zinc-100">
+            What made the timeline difficult
+          </h2>
+          <ul className="list-disc pl-5 space-y-3 text-zinc-300 leading-relaxed marker:text-zinc-500">
+            <li>
+              Page designs prioritized client needs and existing technical
+              constraints due to tight timelines.
             </li>
-            <li className="flex gap-3">
-              <span className="text-rose-400 font-semibold shrink-0">
-                Delivery ceiling
-              </span>
-              <span>
-                The client wanted Japan-like breadth; engineering needed{" "}
-                <span className="text-zinc-100">
-                  minimal backend churn and predictable surfaces
-                </span>
-                (including webviews and external URLs where native wasn&apos;t
-                justified for MVP).
-              </span>
+            <li>
+              Explored cost-effective solutions that addressed user pain points
+              while still meeting business objectives.
             </li>
-            <li className="flex gap-3">
-              <span className="text-rose-400 font-semibold shrink-0">
-                Omnichannel truth
-              </span>
-              <span>
-                Rewards only matter if redemption works in store. The design had
-                to anticipate{" "}
-                <span className="text-zinc-100">
-                  member identity at POS—QR or equivalent handoff
-                </span>
-                —so digital and physical stayed one account, not two stories.
-              </span>
+            <li>
+              Balancing user-focused design goals with engineers&apos; priority to
+              minimize system changes required ongoing compromise.
+            </li>
+            <li>
+              The outdated membership system limited opportunities to improve user
+              experience.
             </li>
           </ul>
         </section>
 
-        {/* My role */}
-        <section>
+        <section className="space-y-5 max-w-3xl">
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            My role
+            Learnings
           </span>
-          <h2 className="mt-2 text-xl font-semibold text-zinc-100">
-            Own the path from ambiguity to build-ready files
+          <h2 className="text-xl font-semibold text-zinc-100">
+            What I took forward
           </h2>
-          <div className="mt-5 space-y-4 text-zinc-300 leading-relaxed max-w-3xl">
-            <p>
-              I led UX and UI with the PM and four engineers. That meant
-              requirements synthesis,{" "}
-              <span className="text-zinc-100">
-                feasibility negotiation with backend reality
-              </span>
-              , and continuous alignment with Taiwan stakeholders and Japan
-              headquarters—not a handoff after a big reveal.
-            </p>
-            <ul className="list-disc pl-5 space-y-2 marker:text-zinc-500">
-              <li>
-                <span className="text-zinc-100">Functional map</span> merging
-                client goals with CRM capabilities and API boundaries—so scope was
-                explicit before pixels.
-              </li>
-              <li>
-                <span className="text-zinc-100">Flows + page logic</span> after
-                wireframe approval: branching, edge cases, and what ships as
-                webview vs native.
-              </li>
-              <li>
-                <span className="text-zinc-100">Hi-fi UI + UI kit</span>{" "}
-                (components, color, type, icons) for consistent iOS/Android
-                implementation.
-              </li>
-              <li>
-                <span className="text-zinc-100">Developer handoff</span>:
-                annotations, slicing notes, scroll vs fixed regions, and Figma links
-                so engineering didn&apos;t interpret layout by guesswork.
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        {/* Key decisions */}
-        <section>
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Key decisions
-          </span>
-          <h2 className="mt-2 text-xl font-semibold text-zinc-100">
-            What we optimized for under pressure
-          </h2>
-          <div className="mt-6 space-y-8 max-w-3xl">
-            <div>
-              <h3 className="text-sm font-semibold text-zinc-100">
-                MVP scope as a contract—not a wish list
-              </h3>
-              <p className="mt-2 text-zinc-300 leading-relaxed">
-                The functional map forced decisions: what lands in phase one, what
-                waits for phase two, and which experiences stay{" "}
-                <span className="text-zinc-100">thin wrappers (webview/URL)</span>{" "}
-                to protect the launch date. That reduced rework when product,
-                client, and engineering meant different things by “launch.”
-              </p>
-            </div>
-            <div>
-              <h3 className="text-sm font-semibold text-zinc-100">
-                Localize the membership mechanic, not just the copy
-              </h3>
-              <p className="mt-2 text-zinc-300 leading-relaxed">
-                We reassessed points vs spend when Taiwan had no initial
-                one-to-one redemption plan like Japan. I reframed UX around the
-                mechanism the business could operationalize—so screens matched
-                backend rules users would actually hit.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-sm font-semibold text-zinc-100">
-                Visual direction as a business choice
-              </h3>
-              <p className="mt-2 text-zinc-300 leading-relaxed">
-                I presented three distinct directions (energetic pink-led,
-                minimal/fresh, gradient/premium). The selected route balanced{" "}
-                <span className="text-zinc-100">
-                  brand energy with scanability
-                </span>
-                for dense menus and promo surfaces—because loyalty apps fail when
-                users can&apos;t complete tasks in line or at the counter.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Solution */}
-        <section>
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Solution
-          </span>
-          <h2 className="mt-2 text-xl font-semibold text-zinc-100">
-            A member hub, not a brochure
-          </h2>
-          <div className="mt-5 space-y-4 text-zinc-300 leading-relaxed max-w-3xl">
-            <p>
-              The app centers on{" "}
-              <span className="text-zinc-100">
-                earn → track → redeem
-              </span>
-              : points, vouchers, and transaction visibility, with quick actions
-              surfaced on home so habitual use doesn&apos;t depend on hunting
-              through catalogs.
-            </p>
-            <p>
-              Flavor and merchandising content stay visually rich but structured:
-              grids, promos, and navigation patterns that repeat so learnability
-              compounds across sessions.
-            </p>
-            <p>
-              Cross-platform execution was specified, not implied:{" "}
-              <span className="text-zinc-100">
-                PingFang TC on iOS, Roboto on Android
-              </span>
-              ; BR pink and blue anchored to components; modular buttons, cards,
-              nav, and inputs so future features don&apos;t fork the system.
-            </p>
-          </div>
-        </section>
-
-        {/* Impact */}
-        <section>
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Outcomes
-          </span>
-          <h2 className="mt-2 text-xl font-semibold text-zinc-100">
-            What “done” meant in this engagement
-          </h2>
-          <p className="mt-4 text-zinc-300 leading-relaxed max-w-3xl">
-            This project measured success in delivery quality under constraint: a
-            client-approved MVP packaged for engineering, aligned with HQ, and
-            honest about what required backend work vs front-end-only wins.
+          <p className="text-zinc-300 leading-relaxed">
+            I learned to distinguish which UX improvements required backend support
+            versus which could be achieved through front-end adjustments. I
+            collaborated closely with the backend PM to understand CRM
+            capabilities, API usage, and available data—and developed a stronger
+            sense of when to advocate for UX and when to adapt to technical
+            feasibility.
           </p>
-          <div className="mt-8 rounded-2xl bg-zinc-800/60 border border-zinc-700/50 p-8 sm:p-10 max-w-3xl">
-            <ul className="space-y-4 text-zinc-200">
-              <li className="flex gap-3">
-                <span className="text-emerald-400 font-semibold shrink-0">
-                  ~4 months
-                </span>
-                <span>
-                  From kickoff to dev-ready mockups and UI kit—while continuously
-                  trimming and reprioritizing for the MVP launch window.
-                </span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-emerald-400 font-semibold shrink-0">
-                  Fewer build-time surprises
-                </span>
-                <span>
-                  Flow diagrams with system logic + annotations reduced ambiguous
-                  tickets; webview vs native was decided early to match capacity.
-                </span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-emerald-400 font-semibold shrink-0">
-                  Phase-one MVP
-                </span>
-                <span>
-                  Scoped for launch on an agreed timeline (including post-design
-                  build), with larger parity moves queued for phase two instead of
-                  collapsing the schedule.
-                </span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-emerald-400 font-semibold shrink-0">
-                  Skill carryover
-                </span>
-                <span>
-                  Clearer judgment on when UX needs backend support vs when
-                  front-end patterns suffice—critical for enterprise-style
-                  delivery.
-                </span>
-              </li>
-            </ul>
-          </div>
-          <p className="mt-6 text-zinc-500 text-sm max-w-3xl">
-            Quantitative engagement metrics post-launch can be added once the
-            client releases them; the portfolio story here is judgment, scope
-            control, and ship-ready craft.
+        </section>
+
+        <section className="space-y-5 max-w-3xl">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            Annotations &amp; page flow
+          </span>
+          <h2 className="text-xl font-semibold text-zinc-100">
+            Developer handoff without guesswork
+          </h2>
+          <p className="text-zinc-300 leading-relaxed">
+            To ensure smooth developer handoff, I provided comprehensive page
+            annotations and slicing instructions alongside the page designs. These
+            annotations clarify elements like scrollable and non-scrollable areas,
+            and provide essential information on dimensions, constraints, and
+            spacing that require particular attention.
           </p>
+          <p className="text-zinc-300 leading-relaxed">
+            Once mockups were approved by the client, I used a Page Flow to clearly
+            define page-to-page interactions and the system&apos;s decision-making
+            logic. Beyond using arrows for the flow, I provided detailed annotations
+            so the development team fully comprehended the design guidelines and
+            interaction behaviors. To streamline access, I used Figma&apos;s linking
+            feature to cross-reference relevant explanations—enabling developers to
+            quickly understand the design.
+          </p>
+          <VisualPlaceholder
+            label="Annotated mockups · Page flow"
+            hint="Cropped mockup with annotations + linked page-flow diagram."
+            aspect="wide"
+          />
+        </section>
+
+        <section className="space-y-6 max-w-3xl">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            Delivery
+          </span>
+          <h2 className="text-xl font-semibold text-zinc-100">
+            UI kit, typography, color, and components
+          </h2>
+          <p className="text-zinc-300 leading-relaxed">
+            I created a UI Kit that systematically organizes core design
+            specifications—including Main Components, Colors, Typography, and
+            Icons. This setup allows the development team to directly export and use
+            these assets—ensuring design consistency and boosting development
+            efficiency.
+          </p>
+          <p className="text-zinc-300 leading-relaxed">
+            Given the need to support both iOS and Android platforms, the app&apos;s
+            design was initially developed for iOS using the PingFang TC typeface.
+            For Android, Roboto is the chosen font.
+          </p>
+          <p className="text-zinc-300 leading-relaxed">
+            The palette combines BR31&apos;s signature pink and blue with neutral
+            tones to balance playfulness and readability. Primary colors highlight
+            key actions, while secondary tones support visual hierarchy.
+          </p>
+          <p className="text-zinc-300 leading-relaxed">
+            A modular system of buttons, cards, navigation, and input fields was
+            built for cross-platform consistency—scalable for future features and
+            aligned with BR31&apos;s brand identity.
+          </p>
+          <VisualPlaceholder
+            label="UI kit · Components"
+            hint="Component library overview: buttons, cards, navigation, inputs."
+            aspect="wide"
+          />
+        </section>
+
+        <section className="space-y-5 max-w-3xl">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            Final product
+          </span>
+          <h2 className="text-xl font-semibold text-zinc-100">
+            What members experience on device
+          </h2>
+          <p className="text-zinc-300 leading-relaxed">
+            The final app delivers a seamless membership experience—enabling BR31
+            Taiwan users to easily accumulate points, redeem rewards, and enjoy
+            personalized offers. The design balances brand playfulness with
+            usability—ensuring consistency across iOS and Android while meeting both
+            client and user needs.
+          </p>
+          <VisualPlaceholder
+            label="Final screens (core journey)"
+            hint="Home, earn/track, redeem, and store-ready surfaces."
+            aspect="wide"
+          />
         </section>
 
         <section className="border-t border-zinc-800 pt-12">

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import VisualPlaceholder from "../_components/VisualPlaceholder";
 
 const KNOWN_SLUGS = [
   "e-invoice-app",
@@ -38,6 +39,13 @@ export default function CaseStudySlugPage({
         Content and visuals for this project will be added here. For now, check
         out the e-Invoice flagship case.
       </p>
+      <div className="w-full max-w-[720px] mt-8">
+        <VisualPlaceholder
+          label="Case study visuals (coming soon)"
+          hint="Add 1–3 key screens or artifacts that anchor the narrative once the write-up is ready."
+          aspect="wide"
+        />
+      </div>
       <Link
         href="/case-studies/e-invoice-app"
         className="mt-8 text-sm font-medium text-zinc-300 hover:text-zinc-100"

@@ -42,16 +42,16 @@ export function HeroWithBubble() {
         className="relative z-10 min-w-0 w-full max-w-[36rem] shrink-0"
       >
         <p className="text-xs font-medium uppercase tracking-widest text-zinc-500 mb-4">
-          Product Designer · UX
+          Product design · Public services · AI
         </p>
         <h1 className="font-semibold text-4xl sm:text-5xl md:text-6xl leading-[1.1] tracking-tight max-w-[36rem]">
-          I turn complex, ambiguous problems into clear, measurable outcomes.
+          Complex systems, clear experiences.
         </h1>
-        <p className="mt-6 text-lg text-zinc-400 max-w-xl whitespace-pre-line">
-          Designed systems for 600+ users, improving complex workflows across
-          backend and user-facing products
-          {"\n\n"}Leading research, design systems, and end-to-end UX to create
-          products that feel trustworthy and easy to use
+        <p className="mt-6 text-lg text-zinc-400 max-w-xl leading-relaxed">
+          I design public-service and AI-native products that balance user trust,
+          operational reality, and implementation speed. I use Cursor, Claude,
+          and current AI tooling to speed exploration and handoff without
+          trading clarity for speed.
         </p>
         <div className="mt-10 flex flex-wrap gap-4">
           <Link

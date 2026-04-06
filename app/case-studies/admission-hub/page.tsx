@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { ReactNode } from "react";
+import VisualPlaceholder from "../_components/VisualPlaceholder";
 
 export const metadata = {
   title: "Admission Hub (Digital Marketing) | Angela Yang",
@@ -32,7 +33,7 @@ export default function AdmissionHubCaseStudy() {
   return (
     <article className="min-h-screen bg-zinc-950 text-zinc-100">
       <header className="border-b border-zinc-800">
-        <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-16 sm:py-24">
+        <div className="mx-auto max-w-[1200px] px-6 sm:px-[100px] py-16 sm:py-24">
           <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-zinc-500 mb-6">
             <span>Case Study</span>
             <span className="text-zinc-600">·</span>
@@ -80,7 +81,7 @@ export default function AdmissionHubCaseStudy() {
         </div>
       </header>
 
-      <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-12 sm:py-16 space-y-16">
+      <div className="mx-auto max-w-[1200px] px-6 sm:px-[100px] py-12 sm:py-16 space-y-16">
         <Section
           kicker="01 · Challenge"
           title="Earn attention, then convert it into trust"
@@ -91,6 +92,11 @@ export default function AdmissionHubCaseStudy() {
             discover relevant content, stay engaged, and take the next step
             with confidence.
           </p>
+          <VisualPlaceholder
+            label="Challenge context visual"
+            hint="Add an example of the original content/landing page state or an audience journey sketch that motivated the campaign work."
+            aspect="wide"
+          />
         </Section>
 
         <Section
@@ -149,6 +155,11 @@ export default function AdmissionHubCaseStudy() {
         </Section>
 
         <Section kicker="03 · Outcomes" title="Measurable growth in engagement and reach">
+          <VisualPlaceholder
+            label="Outcome evidence"
+            hint="Add a screenshot of analytics highlights (Mailchimp, GA, or IG insights) that support the reported lifts."
+            aspect="wide"
+          />
           <div className="mt-6 rounded-2xl bg-zinc-800/60 border border-zinc-700/50 p-8 sm:p-10">
             <ul className="space-y-3 text-zinc-200">
               <li className="flex gap-3">

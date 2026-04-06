@@ -1,90 +1,24 @@
-import Link from "next/link";
 import Image from "next/image";
-import SolutionGallery from "./SolutionGallery";
-import { ImageLightbox } from "./ImageLightbox";
+import Link from "next/link";
 
 export const metadata = {
-  title: "Taiwan e-Invoice App Redesign | Angela Yang",
+  title: "Reimagining Taiwan’s e-Invoice Experience | Angela Yang",
   description:
-    "Lead UX for Taiwan's nationwide e-invoice app: research, IA, inclusive home customization, and moderated prototype testing (~88% task success) with government stakeholders.",
+    "End-to-end mobile app redesign for the Ministry of Finance Cloud Invoice App: research, competitors, IA, testing (~88% task success), accessibility, and measurable outcomes.",
 };
-
-const IMG = (name: string) =>
-  `/case-studies/e-invoice/${
-    name === "hero" ? "hero-v2" : name
-  }.png`;
 
 const FIGMA_MOCKUP_PAGE =
   "https://www.figma.com/design/xvssk9Yfmx51aiSpwWE8sv/APP-Mockup?node-id=2103-5106&t=Ynz1CgBhJkN04Gfz-1";
 const FIGMA_WIREFRAME_FLOW =
   "https://www.figma.com/design/ixS4TwNUz1pu0Riv7peXRA/APP-Wireframe?node-id=2120-5665&t=j3rbIoMCpkpNcAY2-1";
 
-/** Case-study photo / figure radius — full image visible (no crop) in strips via object-contain */
+const ASSET = (name: string) => `/case-studies/e-invoice/case-assets/${name}`;
 const R_IMG = "rounded-[20px]";
 
-function CaseImage({
-  src,
-  alt,
-  caption,
-  aspect = "video",
-  className = "",
-  /** Fill the frame edge-to-edge (no padding / no “gray frame”). Use for hero lifestyle shots. */
-  fullBleed = false,
-  /** With fullBleed: `cover` fills and may crop; `contain` shows the full image (no side crop). */
-  fullBleedFit = "cover",
-}: {
-  src: string;
-  alt: string;
-  caption?: string;
-  aspect?: "video" | "wide" | "wideNatural" | "portrait";
-  className?: string;
-  fullBleed?: boolean;
-  fullBleedFit?: "cover" | "contain";
-}) {
-  const aspectClass =
-    aspect === "video"
-      ? "aspect-video"
-      : aspect === "wide"
-        ? "aspect-[21/9]"
-        : aspect === "wideNatural"
-          ? "aspect-[1832/723]"
-          : "aspect-[3/4]";
-  return (
-    <figure className={`space-y-2 ${className}`}>
-      <ImageLightbox src={src} alt={alt} className="w-full">
-        <div
-          className={`relative w-full ${aspectClass} overflow-hidden ${R_IMG} ${
-            fullBleed
-              ? "bg-zinc-950"
-              : "bg-zinc-800/80 border border-zinc-700/50"
-          }`}
-        >
-          <Image
-            src={src}
-            alt={alt}
-            fill
-            className={
-              fullBleed
-                ? fullBleedFit === "contain"
-                  ? "object-contain object-center"
-                  : "object-cover object-center"
-                : "object-contain p-4 sm:p-6"
-            }
-            sizes="(max-width: 1440px) 100vw, 1240px"
-          />
-        </div>
-      </ImageLightbox>
-      {caption && (
-        <figcaption className="text-xs text-zinc-500 max-w-xl">
-          {caption}
-        </figcaption>
-      )}
-    </figure>
-  );
-}
+const YOUTUBE_A11Y_EMBED = "https://www.youtube.com/embed/5ySntQxxINE";
 
-/** Edge-to-edge strip: no border; full image visible (contain), aligned to frame. */
-function FullBleedStrip({
+/** Wide figure for diagrams / exports */
+function WideFigure({
   src,
   alt,
   caption,
@@ -95,53 +29,94 @@ function FullBleedStrip({
 }) {
   return (
     <figure className="space-y-2">
-      <ImageLightbox src={src} alt={alt} className="w-full">
-        <div className={`relative w-full overflow-hidden bg-zinc-950 ${R_IMG}`}>
-          <Image
-            src={src}
-            alt={alt}
-            width={1920}
-            height={1080}
-            className="h-auto w-full object-contain object-center align-middle"
-            sizes="(max-width: 1440px) 100vw, 1240px"
-          />
-        </div>
-      </ImageLightbox>
+      <div
+        className={`overflow-hidden border border-zinc-700/60 bg-zinc-900/30 ${R_IMG}`}
+      >
+        <Image
+          src={src}
+          alt={alt}
+          width={2400}
+          height={1350}
+          className="h-auto w-full object-contain"
+          sizes="(max-width: 1200px) 100vw, 1100px"
+        />
+      </div>
       {caption && (
-        <figcaption className="max-w-3xl text-xs text-zinc-500">{caption}</figcaption>
+        <figcaption className="text-xs text-zinc-500 max-w-3xl">{caption}</figcaption>
       )}
     </figure>
   );
 }
 
-const STYLE_PROPOSAL_CARDS: {
+/** Single phone frame — final solution & iteration shots */
+function MobileMockup({
+  src,
+  alt,
+  label,
+  hint,
+}: {
   src: string;
   alt: string;
-  caption: string;
-}[] = [
-  {
-    src: "/case-studies/e-invoice/style-proposal-01-friendly.png",
-    alt: "Style proposal 01: Friendly and lively",
-    caption: "01 · Friendly & lively (親切活潑)",
-  },
-  {
-    src: "/case-studies/e-invoice/style-proposal-02-minimal.png",
-    alt: "Style proposal 02: Modern minimalist",
-    caption: "02 · Modern minimalist (現代極簡)",
-  },
-  {
-    src: "/case-studies/e-invoice/style-proposal-03-professional.png",
-    alt: "Style proposal 03: Professional and practical",
-    caption: "03 · Professional & practical (專業實用)",
-  },
+  label: string;
+  hint?: string;
+}) {
+  return (
+    <figure className="space-y-2">
+      <div className="mx-auto max-w-[280px] rounded-[2.35rem] border border-zinc-600/70 bg-zinc-900/90 p-2 shadow-xl shadow-black/50">
+        <div
+          className={`overflow-hidden bg-zinc-950 ring-1 ring-zinc-800 ${R_IMG}`}
+        >
+          <Image
+            src={src}
+            alt={alt}
+            width={780}
+            height={1688}
+            className="h-auto w-full object-cover object-top"
+            sizes="280px"
+          />
+        </div>
+      </div>
+      <figcaption className="px-1 text-center">
+        <p className="text-xs font-medium leading-snug text-zinc-200">{label}</p>
+        {hint && (
+          <p className="mt-1 text-[11px] leading-snug text-zinc-500">{hint}</p>
+        )}
+      </figcaption>
+    </figure>
+  );
+}
+
+/**
+ * Labels for solution-17 … solution-35 (export batch).
+ * Titles follow on-screen function where identifiable; hints note source file id.
+ */
+const FINAL_SOLUTION_SCREENS: { n: number; title: string; fileHint: string }[] = [
+  { n: 17, title: "載具歸戶 · Carrier integration", fileHint: "_____01_01-e00cd375" },
+  { n: 18, title: "領獎資料 · Prize claim / invoice info", fileHint: "______01_01-fd8b2ebe" },
+  { n: 19, title: "捐贈發票 · Donation picker", fileHint: "____-db9fe7ad" },
+  { n: 20, title: "減碳存摺 · Carbon reduction passbook", fileHint: "_____01_01-de79bc20" },
+  { n: 21, title: "雲端備份 · Cloud backup onboarding", fileHint: "_____01_02-edb36f24" },
+  { n: 22, title: "我要領獎 · Redemption hub (status)", fileHint: "_____01_01-88276f58" },
+  { n: 23, title: "功能總覽 · Settings & profile", fileHint: "_____01_04-7e308df2" },
+  { n: 24, title: "發票存摺 · Invoice passbook", fileHint: "___03-b38fbf39" },
+  { n: 25, title: "發票明細 · Receipt detail", fileHint: "_____02-9e1adb38" },
+  { n: 26, title: "掃描對獎 · Scan & check (tab)", fileHint: "_____01-8608df6a" },
+  { n: 27, title: "末三碼對獎 · Last-three-digit match", fileHint: "_____01_00-0760715c" },
+  { n: 28, title: "宣導專區 · Events & promos", fileHint: "_____01-26121e59" },
+  { n: 29, title: "首頁 · Home hub", fileHint: "home_01_00-6bf3cc5b" },
+  { n: 30, title: "登入 · Face ID / quick login", fileHint: "Face_ID_02" },
+  { n: 31, title: "通知中心 · Notifications", fileHint: "____01_02-3f11733c" },
+  { n: 32, title: "我要領獎 · Winning invoices list", fileHint: "_____01_01-42974418" },
+  { n: 33, title: "掃描發票 · Camera capture", fileHint: "_____01_01-12a97583" },
+  { n: 34, title: "功能流程 · UI state (variant)", fileHint: "_____01_01-9fc29cfc" },
+  { n: 35, title: "介面狀態 · UI state (variant)", fileHint: "_____01_01-7eedf949" },
 ];
 
 export default function EInvoiceCaseStudy() {
   return (
     <article className="min-h-screen bg-zinc-950 text-zinc-100">
-      {/* Hero */}
       <header className="border-b border-zinc-800">
-        <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-16 sm:py-24">
+        <div className="mx-auto max-w-[1200px] px-6 sm:px-[100px] py-16 sm:py-24">
           <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-zinc-500 mb-6">
             <span>Case Study</span>
             <span className="text-zinc-600">·</span>
@@ -149,801 +124,883 @@ export default function EInvoiceCaseStudy() {
             <span className="text-zinc-600">·</span>
             <span>Mobile App</span>
           </div>
-          <h1 className="font-semibold text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight max-w-3xl">
-            Redesigning Taiwan’s e-Invoice app for accessibility & trust
+          <h1 className="font-semibold text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl">
+            Reimagining Taiwan&apos;s e-Invoice experience: guided onboarding,
+            lottery prize redemption &amp; eco-friendly engagement
           </h1>
-          <p className="mt-4 text-xl text-zinc-400 max-w-2xl">
-            Research-led IA, inclusive home customization, and prototype-tested
-            flows—aligned with engineers, PM, and Ministry stakeholders on a
-            legacy cloud invoice system.
+          <p className="mt-4 text-xl text-zinc-400 max-w-3xl">
+            End-to-end redesign of the Ministry of Finance Cloud Invoice App—
+            combining research, accessibility standards, and modern design
+            practices so the service feels faster, more inclusive, and more
+            trustworthy.
           </p>
           <dl className="mt-8 flex flex-wrap gap-x-10 gap-y-2 text-sm">
             <div>
+              <dt className="text-zinc-500 uppercase tracking-wider">Timeline</dt>
+              <dd className="text-zinc-200">Feb – Sep 2025 (8 months)</dd>
+            </div>
+            <div>
               <dt className="text-zinc-500 uppercase tracking-wider">Role</dt>
-              <dd className="text-zinc-200">Lead UX Designer</dd>
+              <dd className="text-zinc-200">UX/UI Designer</dd>
             </div>
             <div>
               <dt className="text-zinc-500 uppercase tracking-wider">
-                Timeline
+                Project type
               </dt>
-              <dd className="text-zinc-200">2024 – 2025</dd>
-            </div>
-            <div>
-              <dt className="text-zinc-500 uppercase tracking-wider">
-                Platform
-              </dt>
-              <dd className="text-zinc-200">iOS & Android</dd>
-            </div>
-            <div>
-              <dt className="text-zinc-500 uppercase tracking-wider">Client</dt>
               <dd className="text-zinc-200">
-                The Ministry of Finance, R.O.C.
+                End-to-end mobile app redesign · Government service app
               </dd>
             </div>
           </dl>
 
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5">
+              <p className="text-xs font-semibold uppercase tracking-widest text-emerald-400/90">
+                Increasing login success
+              </p>
+              <p className="mt-2 text-2xl font-semibold text-zinc-100 tabular-nums">
+                68% → 92%
+              </p>
+              <p className="mt-2 text-sm text-zinc-400 leading-relaxed">
+                Biometric login and in-app password recovery to reduce login
+                friction—helping elderly and visually impaired users log in
+                independently.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5">
+              <p className="text-xs font-semibold uppercase tracking-widest text-emerald-400/90">
+                Boosting onboarding completion
+              </p>
+              <p className="mt-2 text-2xl font-semibold text-zinc-100 tabular-nums">
+                +30%
+              </p>
+              <p className="mt-2 text-sm text-zinc-400 leading-relaxed">
+                Guided first-time onboarding introducing biometric login, prize
+                redemption, and cloud backup—reducing confusion and improving
+                initial setup completion.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5">
+              <p className="text-xs font-semibold uppercase tracking-widest text-emerald-400/90">
+                Reducing missed prize redemptions
+              </p>
+              <p className="mt-2 text-2xl font-semibold text-zinc-100 tabular-nums">
+                −70%
+              </p>
+              <p className="mt-2 text-sm text-zinc-400 leading-relaxed">
+                Clear countdown timers, prize status, and redemption deadlines—
+                plus real-time push notifications—to reduce missed redemptions.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5">
+              <p className="text-xs font-semibold uppercase tracking-widest text-emerald-400/90">
+                Task success across ages
+              </p>
+              <p className="mt-2 text-2xl font-semibold text-zinc-100 tabular-nums">
+                88%
+              </p>
+              <p className="mt-2 text-sm text-zinc-400 leading-relaxed">
+                Usability testing with users aged 18–70+, including visually
+                impaired participants—refining scanning, donation, and
+                redemption flows.
+              </p>
+            </div>
+          </div>
+
           <div className="mt-12">
-            <CaseImage
-              src={IMG("hero")}
-              alt="e-Invoice app key screen or device mockup"
-              aspect="wide"
-              fullBleed
+            <WideFigure
+              src={ASSET("before-after-overview.png")}
+              alt="Before and after overview of the e-invoice app redesign"
+              caption="Before / after · redesign overview (export)."
             />
           </div>
         </div>
       </header>
 
-      <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-12 sm:py-16 space-y-20">
-        {/* 00 TL;DR */}
-        <section>
+      <div className="mx-auto max-w-[1200px] px-6 sm:px-[100px] py-12 sm:py-16 space-y-20">
+        <section className="space-y-6 max-w-3xl">
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            00 · At a glance
+            01 · Project background
           </span>
-          <h2 className="mt-2 text-xl font-semibold text-zinc-100">
-            TL;DR — problem, move, proof
+          <h2 className="text-xl font-semibold text-zinc-100">
+            Why the Cloud Invoice App needed a redesign
           </h2>
-          <div className="mt-5 rounded-2xl bg-zinc-900/50 border border-zinc-800 p-6 sm:p-8">
-            <ul className="space-y-3 text-zinc-200">
-              <li>
-                <span className="text-emerald-400 font-semibold">Problem:</span>{" "}
-                A nationwide e-invoice app had to serve very different ages and
-                mental models—while staying understandable, trustworthy, and
-                shippable on legacy constraints.
-              </li>
-              <li>
-                <span className="text-emerald-400 font-semibold">Move:</span>{" "}
-                Research-led functional maps and IA; inclusive home
-                customization; flows validated with moderated prototype
-                sessions and tight PM/engineering collaboration.
-              </li>
-              <li>
-                <span className="text-emerald-400 font-semibold">Proof:</span>{" "}
-                Moderated prototype testing showed strong task completion across
-                core journeys (e.g. ~88% overall across tasks; see
-                methodology in §05)—with clear friction points in
-                verification and forms that drove iteration.
-              </li>
-            </ul>
+          <p className="text-zinc-300 leading-relaxed">
+            In Taiwan, every purchase comes with an invoice. For years, people
+            collected stacks of paper receipts and checked them for the
+            government&apos;s famous &quot;invoice lottery.&quot; Exciting as it was,
+            the system also created paper waste and made finances harder to
+            manage. To address this, the Ministry of Finance (MoF) launched the
+            Cloud Invoice App—a mobile tool for citizens to manage invoices
+            digitally. The app makes it possible to store and organize electronic
+            invoices, check government lottery numbers instantly, donate
+            invoices to charity with one tap, and reduce reliance on paper while
+            supporting sustainability.
+          </p>
+          <p className="text-zinc-300 leading-relaxed">
+            Over time, the app showed clear pain points: slow, unstable
+            performance that reduced trust; complicated steps and small text that
+            frustrated elderly users; language and navigation issues for foreign
+            nationals; and a cluttered interface that overwhelmed younger users.
+          </p>
+          <p className="text-zinc-300 leading-relaxed">
+            This project set out to redesign the Cloud Invoice App with people at
+            the center. The goal was an app that is faster and easier to use;
+            inclusive for seniors, people with disabilities, and foreign users;
+            and reliable and trustworthy—strengthening public confidence in
+            digital government services.
+          </p>
+        </section>
+
+        <section className="space-y-6 max-w-3xl">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            Problem, client goals &amp; user goals
+          </span>
+          <h2 className="text-xl font-semibold text-zinc-100">
+            Convenience, trust, and adoption
+          </h2>
+          <p className="text-zinc-300 leading-relaxed">
+            The Cloud Invoice App was designed to make managing receipts and
+            participating in lottery draws easier—while promoting paperless
+            transactions for environmental and efficiency benefits. However,
+            many users still found the app confusing, slow, or difficult to
+            navigate, which limited adoption and impact. The Ministry of Finance
+            faces two main challenges: ensuring citizens can easily use the app,
+            and encouraging adoption of digital receipts and donations. When users
+            struggle, the app fails to deliver on its promise of convenience and
+            trust.
+          </p>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-5">
+              <h3 className="text-sm font-semibold text-zinc-100">Client goals</h3>
+              <ul className="mt-3 list-disc pl-5 space-y-2 text-sm text-zinc-300 marker:text-zinc-500">
+                <li>
+                  Build trust and credibility in a government digital service.
+                </li>
+                <li>
+                  Increase adoption of cloud invoices over paper receipts—supporting
+                  environmental sustainability.
+                </li>
+                <li>
+                  Deliver a seamless, inclusive experience for all citizens—
+                  regardless of age, ability, or language.
+                </li>
+              </ul>
+            </div>
+            <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-5">
+              <h3 className="text-sm font-semibold text-zinc-100">User goals</h3>
+              <ul className="mt-3 list-disc pl-5 space-y-2 text-sm text-zinc-300 marker:text-zinc-500">
+                <li>Quickly check invoice lottery results.</li>
+                <li>Track and manage receipts efficiently.</li>
+                <li>Easily donate invoices to charities.</li>
+                <li>
+                  Use an app that is simple, reliable, and intuitive—without
+                  confusion or frustration.
+                </li>
+              </ul>
+            </div>
           </div>
         </section>
 
-        {/* 01 Context */}
-        <section>
+        <section className="space-y-6 max-w-4xl">
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            01 · Context
+            User journey map
           </span>
-          <h2 className="mt-2 text-xl font-semibold text-zinc-100">
-            Challenge and context
+          <h2 className="text-xl font-semibold text-zinc-100">
+            From App Store reviews to interview questions
           </h2>
-          <h3 className="mt-6 text-sm font-semibold text-zinc-200">
-            Scope, ownership & who decided what
+          <p className="text-zinc-300 leading-relaxed max-w-3xl">
+            I used a user journey map to analyze App Store reviews, uncover pain
+            points across usage stages, and generate targeted interview questions
+            to better understand users&apos; needs with the current app.{" "}
+            <span className="text-zinc-200">
+              Data source: App Store user reviews in the past year (2024/3 –
+              2025/3).
+            </span>
+          </p>
+          <div className="overflow-x-auto rounded-xl border border-zinc-800">
+            <table className="min-w-[640px] w-full text-left text-sm">
+              <thead className="bg-zinc-900/80 text-xs uppercase tracking-wider text-zinc-500">
+                <tr>
+                  <th className="px-4 py-3 font-medium">Stage</th>
+                  <th className="px-4 py-3 font-medium">Goal</th>
+                  <th className="px-4 py-3 font-medium">Pain points</th>
+                  <th className="px-4 py-3 font-medium">
+                    Opportunities / design suggestions
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-zinc-800 text-zinc-300">
+                <tr className="align-top">
+                  <td className="px-4 py-4 text-zinc-200">
+                    Before shopping — first download
+                  </td>
+                  <td className="px-4 py-4">
+                    Understand the app&apos;s functions and advantages
+                  </td>
+                  <td className="px-4 py-4 text-zinc-400">
+                    High learning curve; carrier binding fails often; prize claim
+                    &amp; bank setup hard to find; invoice history unclear
+                  </td>
+                  <td className="px-4 py-4 text-zinc-400">
+                    Clearer tutorials; simplify registration &amp; binding; improve
+                    interface
+                  </td>
+                </tr>
+                <tr className="align-top">
+                  <td className="px-4 py-4 text-zinc-200">
+                    Before shopping — registration &amp; carrier binding
+                  </td>
+                  <td className="px-4 py-4">Successfully bind carrier</td>
+                  <td className="px-4 py-4 text-zinc-400">
+                    Slow startup; barcode scan fails; functions scattered; frequent
+                    logouts; manual refresh needed
+                  </td>
+                  <td className="px-4 py-4 text-zinc-400">
+                    Show error hints; better stability &amp; maintenance
+                  </td>
+                </tr>
+                <tr className="align-top">
+                  <td className="px-4 py-4 text-zinc-200">
+                    During shopping — using carrier barcode
+                  </td>
+                  <td className="px-4 py-4">Quickly display carrier barcode</td>
+                  <td className="px-4 py-4 text-zinc-400">
+                    App slow at checkout; barcode sometimes fails
+                  </td>
+                  <td className="px-4 py-4 text-zinc-400">
+                    Improve speed &amp; reliability
+                  </td>
+                </tr>
+                <tr className="align-top">
+                  <td className="px-4 py-4 text-zinc-200">
+                    After shopping — manage invoices / prize draw / claim prize
+                  </td>
+                  <td className="px-4 py-4">
+                    Easily manage invoices &amp; quickly check prizes
+                  </td>
+                  <td className="px-4 py-4 text-zinc-400">
+                    Hard to find invoices; no batch edit; scanning limited; prize
+                    alerts hidden; not accessible for visually impaired
+                  </td>
+                  <td className="px-4 py-4 text-zinc-400">
+                    Better invoice display; integrated scanning &amp; management
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <WideFigure
+            src={ASSET("journey-map-full.png")}
+            alt="Full user journey map diagram for the e-invoice app"
+            caption="User journey map — full diagram (export)."
+          />
+        </section>
+
+        <section className="space-y-6 max-w-3xl">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            02 · Understanding the problem
+          </span>
+          <h2 className="text-xl font-semibold text-zinc-100">
+            Interview findings across demographics
+          </h2>
+          <p className="text-zinc-300 leading-relaxed">
+            Interviews revealed that users across age groups face challenges with
+            app speed, navigation, and clarity. Younger users value speed and
+            aesthetics; middle-aged users seek convenience and integrated features;
+            older users need simple, intuitive interfaces. Common pain points
+            include forgotten passwords, unclear onboarding, slow prize redemption,
+            and limited spending insights.
+          </p>
+          <ul className="list-disc pl-5 space-y-2 text-zinc-300 marker:text-zinc-500">
+            <li>
+              <span className="text-zinc-200">Younger (18–30):</span> slow loading,
+              cumbersome navigation, unclear spending categories.
+            </li>
+            <li>
+              <span className="text-zinc-200">Middle-aged (31–50):</span> confusing
+              notifications, slow barcode access, need for diverse login options.
+            </li>
+            <li>
+              <span className="text-zinc-200">Silver generation (51+):</span> complex
+              navigation, unclear instructions, difficulty with scanning and
+              redemption.
+            </li>
+            <li>
+              <span className="text-zinc-200">Foreign nationals:</span> unclear
+              function labels, slow performance, difficulty understanding online
+              donation and redemption.
+            </li>
+          </ul>
+          <p className="text-zinc-300 leading-relaxed">
+            Cross-demographic insights: forgotten passwords and verification codes
+            are a major frustration—users need better onboarding and multi-language
+            support. Spending analysis and integration with budgeting features are
+            desired. Interface design should balance simplicity, clarity, and speed.
+            Online prize redemption and notifications are underutilized due to
+            unclear processes.
+          </p>
+          <WideFigure
+            src={ASSET("interview-findings.png")}
+            alt="Research synthesis and interview findings summary"
+            caption="Research snapshot · demographics &amp; interview synthesis (export)."
+          />
+        </section>
+
+        <section className="max-w-4xl space-y-6">
+          <h3 className="text-lg font-semibold text-zinc-100">
+            Accessibility work — VoiceOver &amp; screen reader
           </h3>
-          <p className="mt-2 text-zinc-300 leading-relaxed max-w-3xl">
-            I was the lead UX designer: early research, synthesis, competitor
-            review, personas, and the evolving functional map lived with me. A
-            UI designer partnered with me on wireframes and mockups so I could
-            stay parallel with PM and engineering. I spent the most time with
-            engineers and government clients—because we had to reverse
-            engineer how the legacy cloud invoice redemption app was built, why
-            the hierarchy looked the way it did, and what could change without
-            breaking the system.
-          </p>
-          <p className="mt-3 text-zinc-300 leading-relaxed max-w-3xl">
-            <span className="text-zinc-100 font-medium">What I did not own</span>{" "}
-            — final engineering timelines, backend policy, or legal sign-off;
-            those sat with engineering, PM, and client leadership.{" "}
-            <span className="text-zinc-100 font-medium">Where I pushed</span> —
-            trade-offs between clarity and scope (e.g. customizable home
-            modules, verification copy, and task flows that reduced dead-ends in
-            testing).
-          </p>
-          <p className="mt-4 text-zinc-300 leading-relaxed max-w-2xl">
-            Taiwan’s e-Invoice app is a nationwide public service: citizens
-            store receipts, check lottery winnings, and manage rewards. When I
-            joined Turn Cloud Technology Service Taiwan, the app was widely
-            used but hard to use—people struggled to log in, didn’t trust the
-            interface, and often gave up before completing basic tasks.
-          </p>
-          <p className="mt-3 text-zinc-300 leading-relaxed max-w-2xl">
-            I led end-to-end UX for the authentication and core flows, working
-            with government stakeholders and a cross-functional team of 10+
-            engineers.
-          </p>
-        </section>
-
-        {/* 02 Core UX gaps */}
-        <section>
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            02 · Three core UX gaps
-          </span>
-          <h2 className="mt-2 text-xl font-semibold text-zinc-100">
-            One journey, three systemic barriers
-          </h2>
-          <div className="mt-6 grid gap-4 sm:grid-cols-3">
-            <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5">
-              <p className="text-[11px] uppercase tracking-widest text-zinc-500">
-                Gap 01
+          <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-10">
+            <div className="min-w-0 flex-1 space-y-3 text-zinc-300 leading-relaxed">
+              <p>
+                I interviewed blind participants and recorded VoiceOver sessions
+                on the legacy app—unclear focus feedback, controls not exposed as
+                buttons, and static copy read as interactive.
               </p>
-              <h3 className="mt-2 text-sm font-semibold text-zinc-100">
-                Cognitive load in complex government flows
-              </h3>
-              <p className="mt-2 text-sm text-zinc-400">
-                Users did not know sequence, next step, or current stage. They
-                hesitated and dropped off before finishing.
+              <p>
+                I annotated components for alt text, reading order, and action vs.
+                information, and paired with engineering for implementation. The
+                revised build is planned for Taiwan&apos;s accessibility
+                certification pathway (2026).
               </p>
             </div>
-            <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5">
-              <p className="text-[11px] uppercase tracking-widest text-zinc-500">
-                Gap 02
-              </p>
-              <h3 className="mt-2 text-sm font-semibold text-zinc-100">
-                Trust and safety gap in invoice and money context
-              </h3>
-              <p className="mt-2 text-sm text-zinc-400">
-                Users asked: Did it go through? Will this fail? Did I receive
-                my money? Confirmation and reassurance were not explicit enough.
-              </p>
-            </div>
-            <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5">
-              <p className="text-[11px] uppercase tracking-widest text-zinc-500">
-                Gap 03
-              </p>
-              <h3 className="mt-2 text-sm font-semibold text-zinc-100">
-                Discoverability and inclusive setup on mobile
-              </h3>
-              <p className="mt-2 text-sm text-zinc-400">
-                Seniors and foreign users had difficulty finding key functions
-                and completing reward-bank setup without guided onboarding.
-              </p>
-            </div>
-          </div>
-          <div className="mt-8">
-            <CaseImage
-              src={IMG("user-journey-map")}
-              alt="User journey map showing pain points and touchpoints"
-              caption="Journey map aligned all stakeholders on where confidence broke: sequence ambiguity, trust uncertainty, and setup friction."
-              aspect="wideNatural"
-              fullBleed
-              fullBleedFit="contain"
-            />
-          </div>
-        </section>
-
-        {/* 03 Design approach */}
-        <section>
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            03 · Design approach
-          </span>
-          <h2 className="mt-2 text-xl font-semibold text-zinc-100">
-            Principles and decisions per gap
-          </h2>
-          <p className="mt-4 text-zinc-300 leading-relaxed max-w-3xl">
-            I treated this as one high-stakes citizen journey and translated
-            research into three design principles: reduce cognitive load with
-            step-based progress, increase trust with explicit system feedback,
-            and improve discoverability with guided setup and clear IA.
-          </p>
-
-          <div className="mt-8 space-y-12">
-            <div>
-              <h3 className="text-sm font-medium uppercase tracking-wider text-zinc-400">
-                Research and synthesis
-              </h3>
-              <p className="mt-2 text-zinc-300 leading-relaxed max-w-2xl">
-                I ran 30+ sessions—focus groups and 1:1 interviews—with
-                teenagers, seniors, foreigners, and visually impaired users. I
-                mapped where people hesitated, which terms confused them, and
-                how they recovered from errors. The insight: many users weren’t
-                “bad with technology”; they were confused by system language
-                and flow structure.
-              </p>
-              <div className="mt-6">
-                <CaseImage
-                  src={IMG("research-elderly")}
-                  alt="Research session with elderly users"
-                  caption="Research with elderly users (銀髮族) to understand accessibility and trust barriers."
-                  aspect="video"
-                  fullBleed
-                />
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-sm font-medium uppercase tracking-wider text-zinc-400">
-                System-level design principles
-              </h3>
-              <p className="mt-2 text-zinc-300 leading-relaxed max-w-3xl">
-                From research and stakeholder alignment, I defined a consistent
-                language and hierarchy model: name things the way citizens do,
-                reveal one next action at a time, make status explicit, and
-                provide reassurance at critical moments. Below: how we explored
-                visual direction, chose a citizen-friendly look with the client,
-                grounded execution in platform patterns, then moved into
-                wireframes.
-              </p>
-
-              <p className="mt-6 text-sm font-medium text-zinc-200">
-                Style exploration (three directions)
-              </p>
-              <p className="mt-2 text-zinc-300 leading-relaxed max-w-3xl text-sm">
-                I presented three concept boards—friendly & lively, modern
-                minimalist, and professional & practical—so stakeholders could
-                compare mood, color systems, and readability side by side.
-              </p>
-              <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-3 md:items-stretch">
-                {STYLE_PROPOSAL_CARDS.map((item) => (
-                  <figure
-                    key={item.src}
-                    className={`flex min-h-0 flex-col overflow-hidden bg-zinc-950 ${R_IMG}`}
-                  >
-                    <ImageLightbox
-                      src={item.src}
-                      alt={item.alt}
-                      className="flex min-h-0 flex-1"
-                    >
-                      <div className="relative aspect-[4/3] w-full min-h-[200px] md:aspect-auto md:min-h-[280px] md:flex-1">
-                        <Image
-                          src={item.src}
-                          alt={item.alt}
-                          fill
-                          className="object-contain object-center p-2 sm:p-3"
-                          sizes="(max-width: 768px) 100vw, 33vw"
-                        />
-                      </div>
-                    </ImageLightbox>
-                    <figcaption className="border-t border-zinc-800/80 px-3 py-2 text-[11px] leading-snug text-zinc-500">
-                      {item.caption}
-                    </figcaption>
-                  </figure>
-                ))}
-              </div>
-
-              <p className="mt-8 text-zinc-300 leading-relaxed max-w-3xl">
-                <span className="text-zinc-100 font-medium">
-                  Why the client chose “friendly & lively”
-                </span>{" "}
-                — It reads as approachable for a mass public service, reduces the
-                cold “official system” feeling that slows first-time users, and
-                uses clearer color segmentation for scanning across tasks and age
-                groups. It also differentiated the product from both stark
-                monochrome UI and heavy navy–gold “institutional” palettes that
-                can feel more like a bank lobby than a daily-use consumer app.
-              </p>
-              <div className="mt-4 max-w-3xl rounded-2xl border border-amber-500/35 bg-gradient-to-br from-amber-500/10 to-zinc-900/80 px-4 py-4 sm:px-5 sm:py-5 shadow-[inset_0_1px_0_0_rgba(251,191,36,0.12)]">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-amber-400/95">
-                  Fun fact · Taiwan public sector
-                </p>
-                <p className="mt-2 text-sm leading-relaxed text-zinc-200">
-                  This rarely shows up in a design brief: on an official ministry
-                  app, going{" "}
-                  <span className="text-zinc-100 font-medium">too “blue”</span>{" "}
-                  or{" "}
-                  <span className="text-zinc-100 font-medium">too “green”</span>{" "}
-                  can read like party-coded branding—and local outlets may spin
-                  it as political. We leaned{" "}
-                  <span className="text-zinc-100 font-medium">
-                    warm, multi-hue, citizen-friendly
-                  </span>{" "}
-                  so the story stayed about invoices and usability, not
-                  headlines.
-                </p>
-              </div>
-
-              <p className="mt-8 text-sm font-medium text-zinc-200">
-                Home screen: three styles for decision
-              </p>
-              <p className="mt-2 text-zinc-300 leading-relaxed max-w-3xl text-sm">
-                We translated each direction into the same home layout so the
-                client could judge hierarchy, contrast, and brand feel on a real
-                entry screen—not only on static mood boards.
-              </p>
-              <p className="mt-3 text-xs text-zinc-500 max-w-3xl">
-                Same home structure, three visual systems—left to right: friendly
-                &amp; lively, modern minimalist, professional &amp; practical.
-              </p>
-              <div className="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-3 sm:gap-4">
-                {[
-                  {
-                    src: "/case-studies/e-invoice/home-style-01-friendly-lively.png",
-                    alt: "Home screen mockup: friendly and lively purple theme",
-                    label: "01 · Friendly & lively",
-                  },
-                  {
-                    src: "/case-studies/e-invoice/home-style-02-minimal.png",
-                    alt: "Home screen mockup: modern minimalist with yellow accents",
-                    label: "02 · Modern minimalist",
-                  },
-                  {
-                    src: "/case-studies/e-invoice/home-style-03-professional.png",
-                    alt: "Home screen mockup: professional navy and gold theme",
-                    label: "03 · Professional & practical",
-                  },
-                ].map((item) => (
-                  <div key={item.src} className="flex min-w-0 flex-col">
-                    <ImageLightbox src={item.src} alt={item.alt} className="block w-full">
-                      <div
-                        className={`relative mx-auto aspect-[9/19] w-full max-w-[220px] overflow-hidden bg-zinc-950 ${R_IMG}`}
-                      >
-                        <Image
-                          src={item.src}
-                          alt={item.alt}
-                          fill
-                          sizes="(max-width: 640px) 100vw, 33vw"
-                          className="object-cover object-center"
-                        />
-                      </div>
-                    </ImageLightbox>
-                    <p className="mt-2 text-center text-[11px] leading-snug text-zinc-500">
-                      {item.label}
-                    </p>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8 lg:items-stretch">
-                {/* A · Platform — what we anchored to */}
-                <article className="flex min-h-0 flex-col rounded-2xl border border-zinc-800/90 bg-zinc-900/50 p-5 sm:p-6 shadow-sm shadow-black/20">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-emerald-400/90">
-                    A · Platform baseline
-                  </p>
-                  <h4 className="mt-2 text-base font-semibold tracking-tight text-zinc-100">
-                    Design system foundation
-                  </h4>
-                  <p className="mt-2 text-sm leading-relaxed text-zinc-300">
-                    Wireframes started from Apple's official iOS design resources,
-                    then components were adapted as we mapped real flows—spacing,
-                    states, and patterns were extended where the product needed
-                    government-specific density and clarity.
-                  </p>
-                  <div className="mt-4 lg:mt-auto lg:pt-2">
-                    <figure className="space-y-2">
-                      <ImageLightbox
-                        src="/case-studies/e-invoice/design-system-ios-kit.png"
-                        alt="Apple iOS and iPadOS UI Kit design resources cover"
-                        className="w-full"
-                      >
-                        <div
-                          className={`relative h-[170px] w-full overflow-hidden rounded-xl border border-zinc-700/60 bg-zinc-950 sm:h-[200px] ${R_IMG}`}
-                        >
-                          <Image
-                            src="/case-studies/e-invoice/design-system-ios-kit.png"
-                            alt="Apple iOS and iPadOS UI Kit design resources cover"
-                            fill
-                            className="object-cover object-center"
-                            sizes="(max-width: 1024px) 100vw, 50vw"
-                          />
-                        </div>
-                      </ImageLightbox>
-                      <figcaption className="text-xs text-zinc-500">
-                        Baseline: iOS / iPadOS UI Kit before custom components.
-                      </figcaption>
-                    </figure>
-                  </div>
-                </article>
-
-                {/* B · Flows — what we mapped */}
-                <article className="flex min-h-0 flex-col rounded-2xl border border-zinc-800/90 bg-zinc-900/50 p-5 sm:p-6 shadow-sm shadow-black/20">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-violet-400/90">
-                    B · Flow coverage
-                  </p>
-                  <h4 className="mt-2 text-base font-semibold tracking-tight text-zinc-100">
-                    Wireframes
-                  </h4>
-                  <p className="mt-2 text-sm leading-relaxed text-zinc-300">
-                    Low-fidelity flows in Figma covered prize claim, scan, and
-                    verification paths—structure first, visual polish after the
-                    direction was locked.
-                  </p>
-                  <div className="mt-4 min-h-0 flex-1">
-                    <FullBleedStrip
-                      src="/case-studies/e-invoice/wireframe-figma.png"
-                      alt="Figma wireframe canvas for invoice and prize flows"
-                      caption="Grouped flows for claim, scan, and verification—full canvas in Figma."
-                    />
-                  </div>
-                </article>
-              </div>
-              <p className="mt-4 text-[11px] text-zinc-600 max-w-2xl">
-                <span className="font-medium text-zinc-500">At a glance · </span>
-                Left: official UI baseline. Right: full flow canvas before polish.
-              </p>
-
+            <div className="mx-auto w-full max-w-[280px] shrink-0 lg:mx-0">
               <div
-                className={`mt-8 border border-zinc-800 bg-zinc-900/40 p-6 sm:p-8 ${R_IMG}`}
+                className={`relative aspect-[9/16] overflow-hidden bg-black ${R_IMG} border border-zinc-700`}
               >
-                <p className="text-sm font-medium text-zinc-200">
-                  Explore the file (recruiters & leads)
-                </p>
-                <p className="mt-2 text-sm text-zinc-400 max-w-3xl">
-                  Figma links are the fastest way to show interaction breadth—put
-                  them where you already explain structure: right after
-                  wireframes / before solution screens.
-                </p>
-                <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                  <a
-                    href={FIGMA_MOCKUP_PAGE}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full border border-zinc-600 px-4 py-2 text-sm text-zinc-200 hover:border-zinc-400 hover:text-zinc-50 transition"
-                  >
-                    Mockup & page flow →
-                  </a>
-                  <a
-                    href={FIGMA_WIREFRAME_FLOW}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full border border-zinc-600 px-4 py-2 text-sm text-zinc-200 hover:border-zinc-400 hover:text-zinc-50 transition"
-                  >
-                    Wireframe & wireflow →
-                  </a>
-                </div>
-              </div>
-
-              <div className="mt-8 flex flex-wrap gap-4">
-                <span className="rounded-full bg-zinc-800 px-4 py-2 text-sm text-zinc-300">
-                  Step-based progress clarity
-                </span>
-                <span className="rounded-full bg-zinc-800 px-4 py-2 text-sm text-zinc-300">
-                  Confirmation and reassurance
-                </span>
-                <span className="rounded-full bg-zinc-800 px-4 py-2 text-sm text-zinc-300">
-                  Guided setup and discoverability
-                </span>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-sm font-medium uppercase tracking-wider text-zinc-400">
-                Flow architecture and iteration
-              </h3>
-              <p className="mt-2 text-zinc-300 leading-relaxed max-w-2xl">
-                I redesigned the flow architecture with explicit stage cues,
-                rewrote feedback and helper messaging, and introduced guided
-                setup patterns for reward banking and key actions. Prototypes
-                were validated with users and used to align government
-                leadership decisions.
-              </p>
-              <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <FullBleedStrip
-                  src="/case-studies/e-invoice/flow-figma-mockup-settings-features.png"
-                  alt="Figma APP Mockup: Settings and feature overview across standard mobile, dark mode, and 200% text accessibility"
-                  caption="High-fidelity mockup canvas: same flows in standard view, dark mode, and large text—evidence of inclusive hand-off and readiness for dev."
-                />
-                <FullBleedStrip
-                  src="/case-studies/e-invoice/flow-figma-page-flow-prize-redemption.png"
-                  alt="Figma page flow: 06 prize redemption paths for EasyCard, iPASS, e-invoice, and paper invoice"
-                  caption="Page-flow diagram for prize redemption: branching logic across payment and invoice types, aligned with engineering and legacy constraints."
+                <iframe
+                  src={YOUTUBE_A11Y_EMBED}
+                  title="VoiceOver accessibility research — e-invoice app"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="absolute inset-0 h-full w-full"
                 />
               </div>
-              <p className="mt-4 text-xs text-zinc-500 max-w-2xl">
-                Figma captures both screen breadth and flow logic—how users move
-                through regulated flows, and how UI adapts for accessibility
-                and dark environments.
+              <p className="mt-2 text-center text-[11px] text-zinc-500">
+                Vertical clip ·{" "}
+                <a
+                  href="https://youtu.be/5ySntQxxINE"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-zinc-400 underline hover:text-zinc-200"
+                >
+                  Open on YouTube
+                </a>
               </p>
             </div>
           </div>
         </section>
 
-        {/* 04 Solution by theme */}
-        <section>
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            04 · Solution by theme
-          </span>
-          <h2 className="mt-2 text-xl font-semibold text-zinc-100">
-            How the product changed across the three gaps
-          </h2>
-          <p className="mt-4 text-zinc-300 leading-relaxed max-w-2xl">
-            Instead of showcasing isolated screens, this section maps shipped UI
-            changes to each core UX gap so recruiters and stakeholders can see
-            the logic from problem to solution.
+        <section className="space-y-6 max-w-5xl">
+          <h3 className="text-lg font-semibold text-zinc-100">User personas</h3>
+          <p className="max-w-3xl text-zinc-300 leading-relaxed">
+            Four personas grounded in interviews—covering age, tech comfort, and
+            language context.
           </p>
-
-          <div className="mt-10 space-y-14">
-            <div>
-              <h3 className="text-sm font-medium uppercase tracking-wider text-zinc-400">
-                Gap 01 · Cognitive load reduction
-              </h3>
-              <p className="mt-2 text-zinc-300 leading-relaxed max-w-2xl">
-                I introduced step-based flow, stronger hierarchy, and clear
-                grouping so users always know what stage they are in and what to
-                do next.
-              </p>
-              <SolutionGallery
-                items={[
-                  {
-                    src: IMG("solution-2"),
-                    alt: "Invoice verification flow with clear sequence",
-                    label: "Step-based sequence in scan-to-claim",
-                  },
-                  {
-                    src: IMG("solution-3"),
-                    alt: "Invoice ledger with clearer hierarchy",
-                    label: "Hierarchy and grouping in ledger",
-                  },
-                  {
-                    src: IMG("solution-4"),
-                    alt: "Rewards list with explicit next actions",
-                    label: "Next actions are explicit",
-                  },
-                  {
-                    src: IMG("solution-1"),
-                    alt: "Login and onboarding with clearer progression",
-                    label: "Clear progression in entry flows",
-                  },
-                ]}
-              />
-            </div>
-
-            <div>
-              <h3 className="text-sm font-medium uppercase tracking-wider text-zinc-400">
-                Gap 02 · Trust and safety
-              </h3>
-              <p className="mt-2 text-zinc-300 leading-relaxed max-w-2xl">
-                I redesigned confirmation clarity, feedback messaging, and
-                reassurance states to reduce fear of failure in invoice and
-                money-related actions.
-              </p>
-              <SolutionGallery
-                items={[
-                  {
-                    src: IMG("solution-1"),
-                    alt: "Secure entry options and safety controls",
-                    label: "Secure entry choices",
-                  },
-                  {
-                    src: IMG("solution-5"),
-                    alt: "Prize status and processing feedback",
-                    label: "Clear status and confirmation",
-                  },
-                  {
-                    src: IMG("solution-7"),
-                    alt: "Transparent analysis and value summary",
-                    label: "Transparent outcomes and value",
-                  },
-                  {
-                    src: IMG("solution-6"),
-                    alt: "Feature overview reinforcing predictable structure",
-                    label: "Predictable structure builds confidence",
-                  },
-                ]}
-              />
-            </div>
-
-            <div>
-              <h3 className="text-sm font-medium uppercase tracking-wider text-zinc-400">
-                Gap 03 · Discoverability and inclusive setup
-              </h3>
-              <p className="mt-2 text-zinc-300 leading-relaxed max-w-3xl">
-                For seniors and foreign users, I added guidance-oriented
-                onboarding and setup flow patterns so critical features are
-                findable and reward account setup is completable.
-              </p>
-              <p className="mt-4 text-zinc-300 leading-relaxed max-w-3xl">
-                <span className="text-zinc-100 font-medium">
-                  Decision (A/B → pick → cost)
-                </span>{" "}
-                — Research showed a split: younger participants wanted a calm,
-                information-dense home to scan wins and spending; older
-                participants wanted fewer items on screen and high-contrast
-                anchors to remember where to tap—especially to pull up a
-                donation barcode at checkout. A single static layout could not
-                serve both.{" "}
-                <span className="text-zinc-100">Option A:</span> optimize for one
-                cohort. <span className="text-zinc-100">Option B:</span> ship a
-                customizable home with defaults aligned to the government’s
-                paperless mission (scan paper invoices surfaced first), then
-                let users show or hide modules for prizes, ledger, and donation.
-                We chose B with engineering: higher settings complexity, but
-                better inclusivity and fewer “wrong home for me” failures in
-                testing.
-              </p>
-              <SolutionGallery
-                items={[
-                  {
-                    src: IMG("solution-6"),
-                    alt: "Feature overview and discoverability improvements",
-                    label: "Findability of key functions",
-                  },
-                  {
-                    src: IMG("solution-1"),
-                    alt: "Guided login and setup affordances",
-                    label: "Guided entry and setup affordances",
-                  },
-                  {
-                    src: IMG("solution-3"),
-                    alt: "Structured information for diverse users",
-                    label: "Inclusive information structure",
-                  },
-                  {
-                    src: IMG("solution-4"),
-                    alt: "Rewards and next steps with explicit actions",
-                    label: "Explicit next steps in rewards flow",
-                  },
-                ]}
-              />
-            </div>
-          </div>
-        </section>
-
-        {/* 05 Impact & validation */}
-        <section>
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            05 · Impact & validation
-          </span>
-          <h2 className="mt-2 text-xl font-semibold text-zinc-100">
-            Outcomes, constraints, and evidence
-          </h2>
-          <p className="mt-4 text-zinc-300 leading-relaxed max-w-3xl">
-            Impact here is a mix of qualitative confidence (clearer
-            transactions, fewer dead-ends in testing) and structured
-            validation—below is how we worked under government process, plus
-            prototype metrics that are honest about what they measure.
-          </p>
-
-          <h3 className="mt-10 text-sm font-semibold uppercase tracking-wider text-zinc-400">
-            Delivery constraints & collaboration
-          </h3>
-          <p className="mt-3 text-zinc-300 leading-relaxed max-w-3xl">
-            While I ran research, competitor analysis, interviews, and persona
-            synthesis, another designer advanced the legacy functional map in
-            parallel—so we could align on what the old app actually did before
-            proposing changes. The slowest part was rarely Figma; it was
-            government-facing documentation: PowerPoint and review packets for
-            leadership, with staged deadlines that each had to include
-            adjustments from the last meeting. Because design was rolling,
-            PMs were critical to track versions and submission windows. On the
-            technical side, every flow had to be validated against what the
-            existing codebase could support—so UX was continuously negotiating
-            clarity vs. feasibility with engineering—this project was
-            inherently collaborative.
-          </p>
-          <dl className="mt-4 text-sm text-zinc-400 max-w-3xl space-y-2 border-l-2 border-zinc-700 pl-4">
-            <dt className="text-zinc-500 uppercase tracking-wider text-xs">
-              Worth a photo?
-            </dt>
-            <dd>
-              Stakeholder working sessions and a team dinner aren’t “screens,”
-              but they show real collaboration and trust under pressure—useful
-              if your story is about cross-functional leadership.
-            </dd>
-          </dl>
-          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <FullBleedStrip
-              src="/case-studies/e-invoice/photo-stakeholder-meeting.png"
-              alt="Workshop with stakeholders: laptop with Figma mockups and printed review documents"
-              caption="Client and vendor review: digital mockups plus printed materials for leadership sign-off—typical of how this project moved."
+          <div className="grid gap-6 sm:grid-cols-2">
+            <WideFigure
+              src={ASSET("persona-01.png")}
+              alt="Persona 01 — tech-savvy young adult"
+              caption="Persona 01 · Tech-savvy young adult (export)."
             />
-            <FullBleedStrip
-              src="/case-studies/e-invoice/photo-team-dinner.png"
-              alt="Project team dinner after a milestone"
-              caption="Team offsite dinner—tight timelines and shared ownership made this one of the most collaborative groups I’ve shipped with."
+            <WideFigure
+              src={ASSET("persona-02.png")}
+              alt="Persona 02 — busy professional"
+              caption="Persona 02 · Busy professional (export)."
+            />
+            <WideFigure
+              src={ASSET("persona-03.png")}
+              alt="Persona 03 — silver generation"
+              caption="Persona 03 · Silver generation (export)."
+            />
+            <WideFigure
+              src={ASSET("persona-04.png")}
+              alt="Persona 04 — foreign national"
+              caption="Persona 04 · Foreign national (export)."
             />
           </div>
-
-          <h3 className="mt-14 text-sm font-semibold uppercase tracking-wider text-zinc-400">
-            Moderated prototype testing (metrics)
-          </h3>
-          <p className="mt-3 text-zinc-300 leading-relaxed max-w-3xl">
-            We ran moderated sessions with task-based scripts and a spreadsheet
-            matrix (pass/fail per step). Task mix covered onboarding, carriers,
-            wallet/donation, scan/prize redemption, and analysis—mirroring
-            the citizen journey. The summary below reflects{" "}
-            <span className="text-zinc-100">prototype performance</span>, not
-            live production analytics—so it validates flow comprehension and
-            usability risk, not a causal claim of post-launch KPIs.
-          </p>
-          <div className="mt-6 flex flex-col md:flex-row gap-6 md:gap-8 items-start">
-            <dl className="flex-1 min-w-0 text-sm text-zinc-400 space-y-2 border-l-2 border-zinc-700 pl-4">
-              <dt className="text-zinc-500 uppercase tracking-wider text-xs">
-                Method note (readability for recruiters)
-              </dt>
-              <dd>
-                <span className="text-zinc-300">Overall task success ~88%</span>{" "}
-                — aggregate success across task attempts in the matrix; figures
-                below are directional summaries from the test deck.{" "}
-                <span className="text-zinc-300">Login & registration ~75%</span>{" "}
-                — friction often at SMS/email verification.{" "}
-                <span className="text-zinc-300">Carrier binding ~67%</span> —
-                errors clustered in form entry.{" "}
-                <span className="text-zinc-300">Wallet & donation ~83%</span> —
-                flow understood; confusion when switching carriers.{" "}
-                <span className="text-zinc-300">Scan & prize redemption ~92%</span>{" "}
-                — most intuitive path; redemption guidance could still be clearer.{" "}
-                <span className="text-zinc-300">Spending analysis ~100%</span> in
-                sessions.{" "}
-                <span className="text-zinc-300">~1.3 errors per participant</span>{" "}
-                on average—mostly form entry and unclear prompts.
-              </dd>
-            </dl>
-            <figure className="w-full md:w-[min(100%,340px)] shrink-0 space-y-2">
-              <ImageLightbox src="/case-studies/e-invoice/prototype-task-matrix.png" alt="Spreadsheet: prototype task success matrix with green checks and red crosses per participant" className="block w-full">
-                <div className={`relative w-full aspect-[4/3] overflow-hidden bg-zinc-950 ${R_IMG}`}>
-                  <Image
-                    src="/case-studies/e-invoice/prototype-task-matrix.png"
-                    alt="Spreadsheet: prototype task success matrix with green checks and red crosses per participant"
-                    fill
-                    className="object-contain object-center"
-                    sizes="340px"
-                  />
-                </div>
-              </ImageLightbox>
-              <figcaption className="text-xs text-zinc-500">
-                Raw task matrix: evidence of where flows passed—used to prioritize fixes.
-              </figcaption>
-            </figure>
-          </div>
-
-          <div className="mt-10 rounded-2xl bg-zinc-800/60 border border-zinc-700/50 p-8 sm:p-10">
-            <ul className="space-y-4 text-zinc-200">
-              <li className="flex gap-3">
-                <span className="text-emerald-400 font-semibold shrink-0">
-                  Flow clarity
-                </span>
-                <span>
-                  Prototype testing showed stronger completion on scan and
-                  prize paths; verification and carrier binding were the
-                  highest-friction areas to iterate next.
-                </span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-emerald-400 font-semibold shrink-0">
-                  Trust & reassurance
-                </span>
-                <span>
-                  Confirmation and feedback patterns reduced uncertainty in
-                  money-adjacent moments during testing.
-                </span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-emerald-400 font-semibold shrink-0">
-                  Inclusive IA
-                </span>
-                <span>
-                  Customizable home and guided setup reduced “wrong home for me”
-                  risk across age groups in research and prototype sessions.
-                </span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-emerald-400 font-semibold shrink-0">
-                  Accessibility
-                </span>
-                <span>
-                  Worked within accessibility and certification expectations for
-                  government digital services (requirements evolve with policy).
-                </span>
-              </li>
-            </ul>
-          </div>
-          <p className="mt-6 text-zinc-400 text-sm max-w-3xl">
-            This project reinforced how much impact you can get from
-            understanding diverse users, naming things clearly, and being
-            intentional about the full entry-to-claim journey—especially when
-            validation artifacts are shared with stakeholders who can’t watch
-            every research session.
+          <p className="max-w-3xl text-zinc-300 leading-relaxed">
+            Users want convenience, clarity, and control—but many face obstacles
+            that reduce trust. Accessibility and clearer spending insight remain
+            cross-cutting themes.
           </p>
         </section>
 
-        {/* CTA */}
+        <section className="space-y-5 max-w-3xl">
+          <h3 className="text-lg font-semibold text-zinc-100">
+            Business constraints
+          </h3>
+          <div className="grid gap-4 sm:grid-cols-3">
+            <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-4">
+              <p className="text-xs font-semibold text-violet-400">Timeline</p>
+              <p className="mt-2 text-sm text-zinc-300">
+                Tight deadlines for research, design, and testing—solutions needed
+                to ship in sprints without delaying release schedules.
+              </p>
+            </div>
+            <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-4">
+              <p className="text-xs font-semibold text-violet-400">Stakeholders</p>
+              <p className="mt-2 text-sm text-zinc-300">
+                As a Ministry of Finance government service, features must follow
+                official regulations and public-sector standards—no commercial
+                partnerships or private-business campaigns.
+              </p>
+            </div>
+            <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-4">
+              <p className="text-xs font-semibold text-violet-400">Technical</p>
+              <p className="mt-2 text-sm text-zinc-300">
+                Existing backends limit real-time integration for spending analysis
+                and multi-language support. Performance must stay smooth despite
+                biometric login, push notifications, and donation batch processing.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="space-y-6 max-w-3xl">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            03 · Competitor insights &amp; design process
+          </span>
+          <h2 className="text-xl font-semibold text-zinc-100">
+            What we learned from leading invoice apps
+          </h2>
+          <p className="text-zinc-300 leading-relaxed">
+            When redesigning the Ministry of Finance Uniform Invoice App, we looked
+            at leading invoice apps to see how they solve real user problems. Each
+            competitor offered valuable lessons—some features to emulate, others to
+            improve upon.
+          </p>
+          <div className="space-y-4">
+            <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-5">
+              <h3 className="text-sm font-semibold text-zinc-100">
+                1. LINE Invoice Manager — welcoming &amp; guided onboarding
+              </h3>
+              <p className="mt-2 text-sm text-zinc-300 leading-relaxed">
+                Illustrated onboarding, step-by-step instructions, and functional
+                hints. Pull-to-hide/expand barcode widgets save space; spending
+                records stay easy to scroll.{" "}
+                <span className="text-zinc-200">Differentiation for us:</span>{" "}
+                integrate onboarding within the official Ministry app with
+                multi-language support and real-time tips—especially for online prize
+                redemption and donation.
+              </p>
+            </div>
+            <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-5">
+              <h3 className="text-sm font-semibold text-zinc-100">
+                2. Cloud Invoice — quick access &amp; efficient scanning
+              </h3>
+              <p className="mt-2 text-sm text-zinc-300 leading-relaxed">
+                Multiple login options (Google, Facebook, Apple ID, biometrics);
+                keyword search, category/date filters, swipe navigation; lottery
+                countdown timers.{" "}
+                <span className="text-zinc-200">Differentiation for us:</span> embed
+                biometric login and password recovery directly in-app; add smart,
+                contextual guidance for prize redemption.
+              </p>
+            </div>
+            <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-5">
+              <h3 className="text-sm font-semibold text-zinc-100">
+                3. Invoice Locker — accessibility, insights &amp; multi-device
+              </h3>
+              <p className="mt-2 text-sm text-zinc-300 leading-relaxed">
+                Scan across devices, copy barcodes quickly, view spending as charts
+                over time; audio feedback for visually impaired users.{" "}
+                <span className="text-zinc-200">Differentiation for us:</span> full
+                accessibility compliance (VoiceOver/TalkBack, sensory feedback,
+                focus management); comprehensive multi-device support within the
+                Ministry app.
+              </p>
+            </div>
+          </div>
+          <p className="text-zinc-300 leading-relaxed">
+            Takeaways: welcome first-time users with guided onboarding; enable fast,
+            flexible access with multi-login and smooth scanning; support
+            accessibility and engagement through sensory feedback, analytics, and
+            rewards—within public-sector constraints.
+          </p>
+        </section>
+
+        <section className="space-y-5 max-w-4xl">
+          <h3 className="text-lg font-semibold text-zinc-100">Functional map</h3>
+          <p className="text-zinc-300 leading-relaxed max-w-3xl">
+            A functional map aligned the team on scope: how login, home,
+            notifications, scan-and-win, and downstream flows connect before hi-fi
+            polish.
+          </p>
+          <WideFigure
+            src={ASSET("functional-map.png")}
+            alt="Functional map of the e-invoice app"
+            caption="Functional map (export)."
+          />
+        </section>
+
+        <section className="space-y-6 max-w-4xl">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            04 · Page flow, UI direction &amp; design system
+          </span>
+          <h2 className="text-xl font-semibold text-zinc-100">
+            From flow logic to visual language
+          </h2>
+          <p className="text-zinc-300 leading-relaxed max-w-3xl">
+            Page flow diagrams show step-by-step movement from login through
+            invoice management and redemption—so gaps in navigation surfaced early.
+          </p>
+          <WideFigure
+            src={ASSET("page-flow.png")}
+            alt="Page flow diagram for the e-invoice app"
+            caption="Page flow diagram (export)."
+          />
+          <h3 className="text-lg font-semibold text-zinc-100 pt-4">
+            Moodboard &amp; style directions
+          </h3>
+          <p className="text-zinc-300 leading-relaxed max-w-3xl">
+            Keywords from interviews—intuitive, minimalist, refreshing,
+            modern—translated into moodboards and client-facing style proposals
+            (Friendly Living, Modern Minimalist, Professional &amp; Practical).
+          </p>
+          <div className="grid gap-6 sm:grid-cols-2">
+            <WideFigure
+              src={ASSET("moodboard-01.png")}
+              alt="Moodboard and style exploration one"
+              caption="Style exploration · board 01"
+            />
+            <WideFigure
+              src={ASSET("moodboard-02.png")}
+              alt="Moodboard and style exploration two"
+              caption="Style exploration · board 02"
+            />
+          </div>
+          <h3 className="text-lg font-semibold text-zinc-100 pt-6">
+            Mockups &amp; design system
+          </h3>
+          <p className="text-zinc-300 leading-relaxed max-w-3xl">
+            High-fidelity work used the iOS / iPadOS UI Kit as a baseline—native
+            components, predictable spacing, and patterns that engineering could map
+            quickly to production constraints.
+          </p>
+        </section>
+
+        <section className="space-y-6 max-w-3xl">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            05 · Testing &amp; iterations
+          </span>
+          <h2 className="text-xl font-semibold text-zinc-100">
+            Prototype testing &amp; key refinements
+          </h2>
+          <p className="text-zinc-300 leading-relaxed">
+            I conducted usability tests using one-on-one observation. Each
+            participant completed key tasks while I tracked completion rates, errors,
+            and satisfaction. Across 12 diverse participants, we reached an{" "}
+            <span className="text-zinc-200 font-medium">88% overall success rate</span>
+            . Sessions surfaced pain points—especially login verification and form
+            entry—which became actionable opportunities to improve accessibility and
+            efficiency before launch.
+          </p>
+          <h3 className="text-sm font-semibold uppercase tracking-wider text-zinc-400">
+            Five core test tasks
+          </h3>
+          <ul className="list-disc pl-5 space-y-2 text-zinc-300 marker:text-zinc-500">
+            <li>Login &amp; registration — verify account creation and access.</li>
+            <li>Carrier binding — link and manage invoice carriers.</li>
+            <li>Invoice wallet &amp; donation — store invoices and test donation.</li>
+            <li>
+              Scan &amp; prize redemption — scan invoices, check results, claim
+              prizes.
+            </li>
+            <li>Spending analysis — view and interpret expense breakdowns.</li>
+          </ul>
+          <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-6">
+            <h4 className="text-sm font-semibold text-zinc-100">
+              Results summary (prototype)
+            </h4>
+            <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 text-sm">
+              <div className="flex justify-between gap-4 border-b border-zinc-800/80 py-2">
+                <span className="text-zinc-400">Overall</span>
+                <span className="text-zinc-100 font-semibold tabular-nums">88%</span>
+              </div>
+              <div className="flex justify-between gap-4 border-b border-zinc-800/80 py-2">
+                <span className="text-zinc-400">Login &amp; registration</span>
+                <span className="text-zinc-100 font-semibold tabular-nums">75%</span>
+              </div>
+              <div className="flex justify-between gap-4 border-b border-zinc-800/80 py-2">
+                <span className="text-zinc-400">Carrier binding</span>
+                <span className="text-zinc-100 font-semibold tabular-nums">67%</span>
+              </div>
+              <div className="flex justify-between gap-4 border-b border-zinc-800/80 py-2">
+                <span className="text-zinc-400">Invoice wallet &amp; donation</span>
+                <span className="text-zinc-100 font-semibold tabular-nums">83%</span>
+              </div>
+              <div className="flex justify-between gap-4 border-b border-zinc-800/80 py-2">
+                <span className="text-zinc-400">Scan &amp; prize redemption</span>
+                <span className="text-zinc-100 font-semibold tabular-nums">92%</span>
+              </div>
+              <div className="flex justify-between gap-4 border-b border-zinc-800/80 py-2">
+                <span className="text-zinc-400">Spending analysis</span>
+                <span className="text-zinc-100 font-semibold tabular-nums">100%</span>
+              </div>
+            </div>
+            <p className="mt-4 text-sm text-zinc-400">
+              Errors: average 1.3 errors per participant—mostly form entry and
+              unclear prompts. Shortest task: scan &amp; prize redemption (~40s avg.).
+              Longest: carrier binding (~2m 20s avg.).
+            </p>
+            <p className="mt-3 text-sm text-zinc-300">
+              <span className="text-zinc-200">What worked:</span> scan &amp; prize check
+              with visual/audio feedback; homepage layout (especially for elderly);
+              spending charts valued by younger users.
+            </p>
+            <p className="mt-2 text-sm text-zinc-300">
+              <span className="text-zinc-200">What didn&apos;t:</span> onboarding too
+              long (often skipped); multi-language prompts unclear; prize redemption
+              steps confusing.
+            </p>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 max-w-4xl">
+            <WideFigure
+              src={ASSET("prototype-matrix.png")}
+              alt="Prototype task success matrix spreadsheet"
+              caption="Task matrix / pass-fail by participant (export)."
+            />
+            <WideFigure
+              src={ASSET("prototype-task-notes.png")}
+              alt="Session notes and task completion tracking"
+              caption="Session notes &amp; completion log (export)."
+            />
+          </div>
+        </section>
+
+        <section className="space-y-5 max-w-3xl">
+          <h3 className="text-lg font-semibold text-zinc-100">
+            Donation flow — before &amp; after
+          </h3>
+          <p className="text-zinc-300 leading-relaxed">
+            For invoice donation we identified two scenarios: donating from the
+            phone by selecting invoices from the current period and choosing an
+            organization; and on-site events where users scan a QR code and must
+            donate a required number of invoices to receive a prize.
+          </p>
+          <p className="text-zinc-300 leading-relaxed">
+            <span className="text-zinc-200">Before:</span> The flow prioritized speed.
+            A &quot;Quick Select 5&quot; button instantly selected invoices; with only
+            one invoice available, the app auto-selected it, updated the Next button
+            label (&quot;1 invoice selected&quot;), and moved users straight to
+            organization selection—then to the &quot;Donated&quot; list. That matched
+            younger users&apos; expectations for one-tap completion.
+          </p>
+          <p className="text-zinc-300 leading-relaxed">
+            <span className="text-zinc-200">After:</span> If only one invoice is
+            available and the user taps &quot;Quick Select 5,&quot; the system shows a
+            confirmation modal with how many invoices were actually selected. After
+            confirmation, Quick Select 5 disables, the invoice is visibly checked,
+            and the user can proceed with Next. Older adults were the primary
+            donation group—they valued reassurance over speed; accidental selections
+            felt stressful and irreversible because donations cannot be undone.
+          </p>
+          <p className="text-zinc-300 leading-relaxed">
+            This trade-off optimizes for confidence and error prevention—even if the
+            flow is slightly longer for some users—and reflects inclusivity over raw
+            efficiency for a national platform.
+          </p>
+        </section>
+
+        <section className="space-y-8 max-w-5xl">
+          <h3 className="text-lg font-semibold text-zinc-100">
+            National-platform challenges — home &amp; redemption iteration
+          </h3>
+          <p className="text-zinc-300 leading-relaxed max-w-3xl">
+            We balanced strong visual anchors for older users with a cleaner surface
+            for younger users—large, color-led actions for scan and donate, with a
+            calmer structure elsewhere. Scan stayed at the top of home by observed
+            frequency.
+          </p>
+          <div className="grid gap-10 sm:grid-cols-3">
+            <MobileMockup
+              src={ASSET("iteration-home-01.png")}
+              alt="Home screen iteration"
+              label="首頁 · Home"
+              hint="home_01_00"
+            />
+            <MobileMockup
+              src={ASSET("iteration-redeem-01.png")}
+              alt="Redeem screen iteration one"
+              label="我要領獎 · Redeem"
+              hint="_____01_01 (variant 1)"
+            />
+            <MobileMockup
+              src={ASSET("iteration-redeem-02.png")}
+              alt="Redeem screen iteration two"
+              label="我要領獎 · Redeem (state)"
+              hint="_____01_01 (variant 2)"
+            />
+          </div>
+        </section>
+
+        <section className="space-y-10 max-w-6xl">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            06 · Final solution screens
+          </span>
+          <h2 className="text-xl font-semibold text-zinc-100">
+            High-fidelity UI across core tasks
+          </h2>
+          <p className="max-w-3xl text-zinc-300 leading-relaxed">
+            Selected hi-fi exports (batch 17–35). Captions combine a functional
+            label with the source file id for traceability.
+          </p>
+          <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+            {FINAL_SOLUTION_SCREENS.map((item) => (
+              <MobileMockup
+                key={item.n}
+                src={ASSET(`solution-${item.n}.png`)}
+                alt={item.title}
+                label={item.title}
+                hint={`File: ${item.fileHint}`}
+              />
+            ))}
+          </div>
+        </section>
+
+        <section className="space-y-6 max-w-3xl">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            Impact &amp; results
+          </span>
+          <h2 className="text-xl font-semibold text-zinc-100">
+            Measurable benefits for diverse users
+          </h2>
+          <p className="text-zinc-300 leading-relaxed">
+            After implementing improvements from research, competitor analysis, and
+            testing, the app delivered measurable benefits—from tech-savvy younger
+            users to elderly and visually impaired users. Updates improved usability,
+            reduced errors, and increased satisfaction.
+          </p>
+          <div className="space-y-6">
+            <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-5">
+              <p className="text-sm font-semibold text-emerald-400/90">
+                01 · Reduced errors &amp; frustration
+              </p>
+              <p className="mt-2 text-sm text-zinc-300">
+                <span className="text-zinc-200">Pain points:</span> forgotten
+                verification codes; switching to external websites for password
+                recovery.{" "}
+                <span className="text-zinc-200">Solutions:</span> biometric login
+                (Face ID, Touch ID) and in-app recovery; embedded &quot;Forgot
+                password&quot; workflow.{" "}
+                <span className="text-zinc-200">Impact:</span> login success
+                increased from 68% → 92%; elderly and visually impaired users can
+                operate independently; fewer interruptions and frustration.
+              </p>
+            </div>
+            <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-5">
+              <p className="text-sm font-semibold text-emerald-400/90">
+                02 · Faster onboarding &amp; learning
+              </p>
+              <p className="mt-2 text-sm text-zinc-300">
+                <span className="text-zinc-200">Pain points:</span> high learning
+                curve; difficulty understanding layout.{" "}
+                <span className="text-zinc-200">Solutions:</span> multi-language
+                tutorials and guided prompts; simplified workflows, visual cues,
+                contextual guidance.{" "}
+                <span className="text-zinc-200">Impact:</span> onboarding completion
+                increased from 55% → 85%; reduced confusion for foreign nationals and
+                elderly users.
+              </p>
+            </div>
+            <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-5">
+              <p className="text-sm font-semibold text-emerald-400/90">
+                03 · Improved prize redemption &amp; notifications
+              </p>
+              <p className="mt-2 text-sm text-zinc-300">
+                <span className="text-zinc-200">Pain points:</span> missed redemption
+                deadlines; no immediate win notifications.{" "}
+                <span className="text-zinc-200">Solutions:</span> countdown timers
+                and clear status indicators; real-time push and customizable alerts.{" "}
+                <span className="text-zinc-200">Impact:</span> missed redemption
+                reduced by 70%; higher trust in the official app; users know about
+                winning invoices instantly—less reliance on external sources.
+              </p>
+            </div>
+            <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-5">
+              <p className="text-sm font-semibold text-emerald-400/90">
+                04 · Higher satisfaction &amp; engagement
+              </p>
+              <p className="mt-2 text-sm text-zinc-300">
+                <span className="text-zinc-200">Features:</span> spending analysis
+                with detailed charts and category breakdowns; homepage with large
+                buttons and quick access to member barcode and loyalty cards; visual
+                &amp; accessibility updates—high-contrast colors, larger fonts,
+                multi-sensory feedback.{" "}
+                <span className="text-zinc-200">Impact:</span> easier expense
+                tracking for budgeting; daily tasks faster and simpler—improving
+                repeat engagement; enhanced usability for elderly and visually
+                impaired users.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="space-y-5 max-w-3xl">
+          <h2 className="text-xl font-semibold text-zinc-100">
+            Reflection &amp; learnings
+          </h2>
+          <p className="text-zinc-300 leading-relaxed">
+            I learned how differently diverse users interact with the app—from
+            tech-savvy younger users to elderly users with accessibility needs.
+            Prioritizing core functions like quick barcode access, scanning, and prize
+            redemption is essential. Multi-sensory feedback and guided onboarding help
+            users feel confident and independent.
+          </p>
+          <p className="text-zinc-300 leading-relaxed">
+            If I had more time, I would explore deeper personalization—adaptive
+            interfaces for different ages, tech skills, and accessibility needs—and
+            expand testing with more diverse users to catch edge cases and optimize
+            every interaction.
+          </p>
+          <p className="text-zinc-300 leading-relaxed">
+            This project strengthened my skills in user research, empathy-driven
+            design, and iterative prototyping. Good UX/UI doesn&apos;t only make
+            apps usable—it makes them inclusive, trustworthy, and enjoyable for
+            everyone.
+          </p>
+          <p className="text-zinc-300 leading-relaxed">
+            We saw firsthand how small frustrations—forgotten passwords, complex
+            redemption, unclear navigation—shape daily life. By redesigning with
+            simplicity, accessibility, and guidance at the core, the experience
+            became smoother and faster. Looking forward, deeper backend integration
+            and connections with other financial and loyalty systems could make the
+            app even smarter and more efficient. Thoughtful design doesn&apos;t only
+            look good—it changes how people interact with technology in meaningful
+            ways.
+          </p>
+        </section>
+
+        <section className="space-y-5 max-w-3xl rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6 sm:p-8">
+          <p className="text-sm font-medium text-zinc-200">
+            Want to review the source files directly?
+          </p>
+          <p className="mt-2 text-sm text-zinc-400 max-w-3xl">
+            Open the Figma files below to see full wireflows, page logic, and
+            high-fidelity mockups in one place.
+          </p>
+          <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <a
+              href={FIGMA_MOCKUP_PAGE}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-zinc-600 px-4 py-2 text-sm text-zinc-200 hover:border-zinc-400 hover:text-zinc-50 transition"
+            >
+              Mockup &amp; page flow →
+            </a>
+            <a
+              href={FIGMA_WIREFRAME_FLOW}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-zinc-600 px-4 py-2 text-sm text-zinc-200 hover:border-zinc-400 hover:text-zinc-50 transition"
+            >
+              Wireframe &amp; wireflow →
+            </a>
+          </div>
+        </section>
+
         <section className="border-t border-zinc-800 pt-12">
           <Link
             href="/"

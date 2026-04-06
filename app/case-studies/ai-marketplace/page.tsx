@@ -1,371 +1,297 @@
 import Link from "next/link";
-import Image from "next/image";
+import VisualPlaceholder from "../_components/VisualPlaceholder";
 
 export const metadata = {
-  title: "MINA Parenting Copilot | Angela Yang",
+  title: "MINA · AI Marketplace for Parents (Coming Soon) | Angela Yang",
   description:
-    "Designed a life-stage triggered circulation flow for circular baby goods: proactive prompts, personalized suggestions, demand signals, and AI-assisted one-tap listings.",
+    "Zero-to-one concept: a San Francisco mom-first marketplace for fast-turnover baby gear—AI agent chat, one-photo multi-listing, and seller-led coordination to cut listing time and buyer management.",
 };
 
-const IMG = (name: string) => `/case-studies/mina/${name}.png`;
-
-function CaseImage({
-  src,
-  alt,
-  caption,
-  aspect = "video",
-}: {
-  src: string;
-  alt: string;
-  caption?: string;
-  aspect?: "video" | "wide";
-}) {
-  const aspectClass = aspect === "wide" ? "aspect-[21/9]" : "aspect-video";
-  return (
-    <figure className="space-y-2">
-      <div className={`relative w-full ${aspectClass} overflow-hidden rounded-2xl bg-zinc-800/80 border border-zinc-700/50`}>
-        <Image
-          src={src}
-          alt={alt}
-          fill
-          className="object-contain bg-[#1c1c1e]"
-          sizes="(max-width: 896px) 100vw, 896px"
-        />
-      </div>
-      {caption && (
-        <figcaption className="text-xs text-zinc-500 max-w-2xl">
-          {caption}
-        </figcaption>
-      )}
-    </figure>
-  );
-}
-
-export default function MinaParentingCopilotCaseStudy() {
+export default function AiMarketplaceCaseStudy() {
   return (
     <article className="min-h-screen bg-zinc-950 text-zinc-100">
-      {/* Hero */}
-      <header className="border-b border-zinc-800">
-        <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-16 sm:py-24">
-          <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-zinc-500 mb-6">
-            <span>Case Study</span>
-            <span className="text-zinc-600">·</span>
-            <span>AI Marketplace</span>
-            <span className="text-zinc-600">·</span>
-            <span>System Design</span>
+      <header className="border-b border-zinc-800 relative overflow-hidden">
+        <div
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(120,119,198,0.22),transparent)]"
+          aria-hidden
+        />
+        <div className="relative mx-auto max-w-[1200px] px-6 sm:px-[100px] py-16 sm:py-24">
+          <div className="flex flex-wrap items-center gap-3 mb-6">
+            <span className="inline-flex items-center rounded-full border border-violet-500/40 bg-violet-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-widest text-violet-200">
+              Coming soon
+            </span>
+            <span className="text-xs uppercase tracking-widest text-zinc-500">
+              Case study · AI marketplace · Zero to one
+            </span>
           </div>
 
-          <h1 className="font-semibold text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight max-w-3xl">
-            MINA Parenting Copilot
+          <p className="text-sm text-zinc-400 max-w-2xl leading-relaxed border-l-2 border-violet-500/50 pl-4">
+            Full visuals, flows, and outcomes will ship with the next portfolio
+            update. Below is the product narrative and design intent—written as
+            we build.
+          </p>
+
+          <h1 className="mt-8 font-semibold text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight max-w-3xl">
+            MINA — an AI-native marketplace for parents who outgrow baby gear
+            overnight
           </h1>
           <p className="mt-4 text-xl text-zinc-400 max-w-2xl">
-            Designing a life-stage triggered circulation system for baby items—
-            turning decluttering into a low-effort, meaningful exchange.
+            Starting from zero with San Francisco mom communities: reduce waste,
+            reclaim space, and make resale feel as light as a conversation—not a
+            second job.
           </p>
 
           <dl className="mt-8 flex flex-wrap gap-x-10 gap-y-2 text-sm">
             <div>
               <dt className="text-zinc-500 uppercase tracking-wider">Role</dt>
-              <dd className="text-zinc-200">Product Designer</dd>
+              <dd className="text-zinc-200">Product designer · AI UX</dd>
             </div>
             <div>
-              <dt className="text-zinc-500 uppercase tracking-wider">Product</dt>
-              <dd className="text-zinc-200">Circular baby goods marketplace</dd>
+              <dt className="text-zinc-500 uppercase tracking-wider">Region</dt>
+              <dd className="text-zinc-200">San Francisco · parent communities</dd>
             </div>
             <div>
-              <dt className="text-zinc-500 uppercase tracking-wider">Focus</dt>
-              <dd className="text-zinc-200">Life-stage triggers · AI listing · demand signals</dd>
+              <dt className="text-zinc-500 uppercase tracking-wider">Status</dt>
+              <dd className="text-zinc-200">In development · case study TBD</dd>
             </div>
           </dl>
 
           <div className="mt-12">
-            <CaseImage
-              src={IMG("flow-3")}
-              alt="Life-stage declutter flow: prompt to pass it on, suggested items, AI-assisted listing"
-              caption="Hero flow: trigger → suggested items → AI-assisted listing. (Replace with a higher-res export if you have it.)"
+            <VisualPlaceholder
+              label="Hero · Product vision"
+              hint="App hero or lifestyle still: SF parents, stroller gear, or chat-first UI mood."
+              aspect="wide"
             />
           </div>
         </div>
       </header>
 
-      <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-12 sm:py-16 space-y-20">
-        {/* The story */}
-        <section>
+      <div className="mx-auto max-w-[1200px] px-6 sm:px-[100px] py-12 sm:py-16 space-y-20">
+        <section className="max-w-3xl space-y-4">
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            The story (15 seconds)
+            Why this exists
           </span>
-          <p className="mt-4 text-zinc-300 leading-relaxed max-w-2xl">
-            Parents accumulate a large number of baby items in the first year—many
-            used only for a few months. But there’s no clear moment or system that
-            helps them decide when and how to pass items on. This design explores
-            how life-stage signals can proactively guide parents to declutter,
-            circulate, and help other families with minimal effort.
+          <h2 className="text-xl font-semibold text-zinc-100">
+            Built from the ground up for how fast babies—and closets—change
+          </h2>
+          <p className="text-zinc-300 leading-relaxed">
+            We are designing a marketplace that starts with{" "}
+            <span className="text-zinc-100">San Francisco mom groups</span>, not a
+            generic national grid. Little ones move through stages quickly: what you
+            need at three months is not what you need at nine. Gear is expensive,
+            emotionally loaded, and often{" "}
+            <span className="text-zinc-100">only useful for a short window</span>—then
+            it sits in bins, strollers crowd hallways, and perfectly good items
+            age out of relevance.
+          </p>
+          <p className="text-zinc-300 leading-relaxed">
+            In the Bay Area, many families already care deeply about{" "}
+            <span className="text-zinc-100">sustainability</span> and conscious
+            consumption—but resale still takes time, attention, and learning curve.
+            Our bet is simple:{" "}
+            <span className="text-zinc-100">
+              if we gather demand in trusted parent networks first
+            </span>
+            , and remove the operational drag of listing and coordinating, more gear
+            circulates instead of landfilling or idling in storage.
           </p>
         </section>
 
-        {/* Problem */}
-        <section>
+        <section className="max-w-3xl space-y-4">
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            01 · Problem
+            The pain we are solving
           </span>
-          <h2 className="mt-2 text-xl font-semibold text-zinc-100">
-            Items sit unused because the effort and uncertainty are too high
+          <h2 className="text-xl font-semibold text-zinc-100">
+            Too much gear, too little time—and resale that feels like admin work
           </h2>
-          <ul className="mt-4 space-y-2 text-zinc-300 max-w-2xl list-disc pl-5">
-            <li>
-              <span className="font-medium text-zinc-200">Unclear timing:</span>{" "}
-              parents don’t know when it’s appropriate to let go.
-            </li>
-            <li>
-              <span className="font-medium text-zinc-200">High effort to list:</span>{" "}
-              manual listing is time-consuming and gets postponed.
-            </li>
-            <li>
-              <span className="font-medium text-zinc-200">No demand signal:</span>{" "}
-              parents don’t know if anyone actually needs their items.
-            </li>
-          </ul>
-          <p className="mt-4 text-zinc-400 text-sm max-w-2xl">
-            Result: clutter grows, while community value stays locked away.
+          <p className="text-zinc-300 leading-relaxed">
+            Traditional marketplaces assume sellers behave like micro-retailers:
+            write titles, pick categories, price competitively, answer the same DM
+            questions, and negotiate pickup. For sleep-deprived parents, that is
+            exactly why good intentions stall. The problem is not only
+            &quot;clutter&quot;—it is{" "}
+            <span className="text-zinc-100">
+              the recurring cost of attention
+            </span>{" "}
+            every time a stage ends and a new pile appears.
           </p>
-        </section>
-
-        {/* Opportunity */}
-        <section>
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            02 · Opportunity
-          </span>
-          <h2 className="mt-2 text-xl font-semibold text-zinc-100">
-            A baby turning one is a natural transition point
-          </h2>
-          <ul className="mt-4 space-y-2 text-zinc-300 max-w-2xl list-disc pl-5">
-            <li>Many items (e.g., newborn clothes, bassinets) are no longer needed.</li>
-            <li>Parents are already adjusting routines and space.</li>
-            <li>Redistribution to younger families becomes timely and relevant.</li>
-          </ul>
-          <blockquote className="mt-6 rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6 text-zinc-200 max-w-2xl">
-            <p className="text-sm leading-relaxed">
-              Reframe the moment as a guided opportunity to{" "}
-              <span className="font-medium">clear space</span>,{" "}
-              <span className="font-medium">reduce friction</span>, and{" "}
-              <span className="font-medium">help nearby families</span>.
-            </p>
-          </blockquote>
-        </section>
-
-        {/* Solution */}
-        <section>
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            03 · Solution
-          </span>
-          <h2 className="mt-2 text-xl font-semibold text-zinc-100">
-            A life-stage triggered circulation flow
-          </h2>
-          <p className="mt-4 text-zinc-300 leading-relaxed max-w-2xl">
-            The system detects a transition moment (baby approaching 12 months),
-            suggests items the parent may be ready to pass on, connects those
-            items to real demand from nearby families, and enables one-tap
-            listing with AI-assisted prefill.
-          </p>
-
-          <div className="mt-8 space-y-10">
-            <div className="grid gap-4 sm:grid-cols-3">
-              <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-5">
-                <p className="text-xs uppercase tracking-widest text-zinc-500">1</p>
-                <p className="mt-2 text-sm font-medium text-zinc-100">Trigger</p>
-                <p className="mt-2 text-sm text-zinc-400">
-                  “Pass it on — your baby is turning 1.”
-                </p>
-              </div>
-              <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-5">
-                <p className="text-xs uppercase tracking-widest text-zinc-500">2</p>
-                <p className="mt-2 text-sm font-medium text-zinc-100">Guidance</p>
-                <p className="mt-2 text-sm text-zinc-400">
-                  Suggested items with context (0–3 months) to reduce hesitation.
-                </p>
-              </div>
-              <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-5">
-                <p className="text-xs uppercase tracking-widest text-zinc-500">3</p>
-                <p className="mt-2 text-sm font-medium text-zinc-100">Action</p>
-                <p className="mt-2 text-sm text-zinc-400">
-                  AI-assisted listing: photo-detected details, editable anytime.
-                </p>
-              </div>
-            </div>
-
-            <CaseImage
-              src={IMG("flow-3")}
-              alt="Declutter needs flow showing trigger, suggested items, and AI listing"
-              caption="Core flow: life-stage awareness → personalized item suggestions → demand cues → AI-assisted listing."
-            />
-          </div>
-        </section>
-
-        {/* Key decisions */}
-        <section>
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            04 · Key decisions
-          </span>
-          <h2 className="mt-2 text-xl font-semibold text-zinc-100">
-            Reduce effort and emotional friction—while making AI feel tangible
-          </h2>
-          <div className="mt-6 grid gap-6 sm:grid-cols-2">
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
-              <h3 className="text-sm font-medium text-zinc-100">
-                From passive info → guided action
-              </h3>
-              <p className="mt-2 text-sm text-zinc-400 leading-relaxed">
-                Instead of telling parents what to do, the system initiates action
-                at the right moment and narrows the task to a small set of items.
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5">
+              <p className="text-xs font-semibold uppercase tracking-widest text-rose-400/90">
+                Short use cycles
+              </p>
+              <p className="mt-2 text-sm text-zinc-300 leading-relaxed">
+                Items serve a phase, then become obsolete for{" "}
+                <em>your</em> family—while still valuable for the next parent in line.
               </p>
             </div>
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
-              <h3 className="text-sm font-medium text-zinc-100">
-                Connect supply to real demand
-              </h3>
-              <p className="mt-2 text-sm text-zinc-400 leading-relaxed">
-                Nearby family needs add purpose and immediacy—turning declutter into
-                meaningful exchange.
+            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5">
+              <p className="text-xs font-semibold uppercase tracking-widest text-emerald-400/90">
+                Sustainability without guilt trips
               </p>
-            </div>
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
-              <h3 className="text-sm font-medium text-zinc-100">
-                Make AI visible (and controllable)
-              </h3>
-              <p className="mt-2 text-sm text-zinc-400 leading-relaxed">
-                AI value shows up as pre-filled listings and smart suggestions—
-                with editing always available.
-              </p>
-            </div>
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
-              <h3 className="text-sm font-medium text-zinc-100">
-                Reduce decision fatigue
-              </h3>
-              <p className="mt-2 text-sm text-zinc-400 leading-relaxed">
-                Copy cues like “Used typically 0–3 months” help parents feel confident
-                letting go.
+              <p className="mt-2 text-sm text-zinc-300 leading-relaxed">
+                SF audiences respond to reuse when the path is credible and
+                low-friction—not when it adds another chore.
               </p>
             </div>
           </div>
+          <VisualPlaceholder
+            label="Problem framing"
+            hint="Photo collage or diagram: outgrown gear vs closet space vs landfill / resale intent."
+            aspect="wide"
+          />
+        </section>
 
-          <div className="mt-10 space-y-4">
-            <h3 className="text-sm font-medium text-zinc-100">
-              Turning high-risk AI actions into user-controlled flows
+        <section className="max-w-3xl space-y-4">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            Product strategy
+          </span>
+          <h2 className="text-xl font-semibold text-zinc-100">
+            Community first, then scale—so listings find the right families faster
+          </h2>
+          <p className="text-zinc-300 leading-relaxed">
+            We are intentionally{" "}
+            <span className="text-zinc-100">aggregating mom communities</span> early:
+            shared norms, mutual trust, and local pickup density beat anonymous
+            nationwide matching for this category. The goal is to{" "}
+            <span className="text-zinc-100">decrease listing time</span> and{" "}
+            <span className="text-zinc-100">decrease learning time</span>—parents
+            should recognize the product in seconds and complete a sale without
+            reading a manual.
+          </p>
+          <VisualPlaceholder
+            label="Community & trust context"
+            hint="Screenshots or logos from parent groups / hyperlocal trust signals (anonymized)."
+            aspect="wide"
+          />
+        </section>
+
+        <section className="max-w-3xl space-y-6">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            Core experience
+          </span>
+          <h2 className="text-xl font-semibold text-zinc-100">
+            An AI agent you talk to—not a form you fight with
+          </h2>
+          <p className="text-zinc-300 leading-relaxed">
+            The app is centered on{" "}
+            <span className="text-zinc-100">conversation with an AI agent</span> as
+            the primary interface. Instead of navigating dense settings, sellers
+            describe what they are passing on, confirm details in plain language,
+            and let the system handle the busywork. The same agent helps with{" "}
+            <span className="text-zinc-100">transactions</span>: suggesting fair
+            pricing language, surfacing next steps, and coordinating{" "}
+            <span className="text-zinc-100">location and time</span> through dialogue
+            so sellers spend less energy managing individual buyers.
+          </p>
+
+          <div className="rounded-2xl border border-violet-500/25 bg-violet-500/5 p-6 sm:p-8">
+            <h3 className="text-sm font-semibold text-violet-200 uppercase tracking-wider">
+              One photo → many listings
             </h3>
-            <p className="text-sm text-zinc-300 leading-relaxed max-w-2xl">
-              The Parenting Copilot flow takes a potentially high-risk AI action
-              and makes it transparent and user-controlled. In UX terms, it
-              addresses automation anxiety, loss of control, and unclear system
-              behavior by combining preview, explicit confirmation, and clear
-              reversibility messaging.
+            <p className="mt-3 text-zinc-300 leading-relaxed">
+              Parents can <span className="text-zinc-100">take one photo</span> (or a
+              single upload batch) and let AI propose{" "}
+              <span className="text-zinc-100">multiple listings at once</span>—titles,
+              categories, condition notes, and bundle suggestions—ready to edit before
+              anything goes live. The objective is to make batching outgrown gear feel
+              closer to &quot;showing a friend what is on the floor&quot; than
+              &quot;opening a spreadsheet.&quot;
             </p>
-            <ul className="space-y-2 text-sm text-zinc-400 max-w-2xl list-disc pl-5">
-              <li>
-                <span className="font-medium text-zinc-200">Automation anxiety:</span>{" "}
-                parents see exactly what AI will do before anything is committed.
-              </li>
-              <li>
-                <span className="font-medium text-zinc-200">Loss of control:</span>{" "}
-                the UI makes it clear that parents make the final call, not the system.
-              </li>
-              <li>
-                <span className="font-medium text-zinc-200">Unclear system behavior:</span>{" "}
-                every AI step is paired with plain-language explanations of what will
-                happen next.
-              </li>
-            </ul>
-            <p className="text-sm text-zinc-400 leading-relaxed max-w-2xl">
-              To achieve this, the flow uses three patterns: rich previews of AI
-              output, explicit confirmation moments, and reassuring copy that
-              highlights editability and reversibility.
-            </p>
+          </div>
 
-            <div className="mt-4">
-              <CaseImage
-                src={IMG("flow-3-alt")}
-                alt="Parenting Copilot AI safety flow with preview and explicit confirmation"
-                caption="Turning a high-risk AI action into a user-controlled flow: parents preview AI suggestions, confirm explicitly, and are reminded they can edit or undo at any time."
-                aspect="wide"
-              />
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/35 p-5">
+              <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500">
+                Seller ↔ AI
+              </p>
+              <p className="mt-2 text-sm text-zinc-300 leading-relaxed">
+                Pickup windows, handoff spots, and buyer communication are steered
+                through chat so sellers are not juggling five threads per item.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/35 p-5">
+              <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500">
+                Less buyer management
+              </p>
+              <p className="mt-2 text-sm text-zinc-300 leading-relaxed">
+                The agent carries routine coordination and status updates—parents
+                intervene when judgment matters, not for every ping.
+              </p>
             </div>
           </div>
+
+          <VisualPlaceholder
+            label="AI agent chat · Primary UI"
+            hint="Chat transcript: seller describes items, AI proposes listings and asks clarifying questions."
+            aspect="wide"
+          />
+          <VisualPlaceholder
+            label="One upload → AI-generated listing batch"
+            hint="Before/after: single photo vs grid of draft listings with edit affordances."
+            aspect="wide"
+          />
+          <VisualPlaceholder
+            label="Handoff · time & place"
+            hint="Conversation snippet or calendar picker coordinated via agent (seller view)."
+            aspect="wide"
+          />
         </section>
 
-        {/* Copilot context */}
-        <section>
+        <section className="max-w-3xl space-y-4">
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            05 · Copilot context
+            Design principles (draft)
           </span>
-          <h2 className="mt-2 text-xl font-semibold text-zinc-100">
-            Life-stage guidance makes circulation feel timely
+          <h2 className="text-xl font-semibold text-zinc-100">
+            Trust, speed, and parent-grade clarity
           </h2>
-          <p className="mt-4 text-zinc-300 leading-relaxed max-w-2xl">
-            The Parenting Copilot experience supports parents through each stage
-            with guidance and relevant suggestions. That context makes the declutter
-            prompt feel grounded in real needs—rather than a generic reminder.
-          </p>
-          <div className="mt-8 grid gap-8">
-            <CaseImage
-              src={IMG("flow-1")}
-              alt="Copilot flow: asking about an item and getting life-stage guidance"
-              caption="Copilot context: life-stage content + relevant items build trust before asking parents to take action."
-            />
-            <CaseImage
-              src={IMG("flow-2")}
-              alt="Copilot follow-up flow: user asks a follow-up question and receives guidance"
-              caption="Optional support: follow-up Q&A keeps the copilot conversational while staying tied to helpful items."
-            />
-          </div>
-          <p className="mt-4 text-xs text-zinc-500 max-w-2xl">
-            If you want a tighter, faster-scanning version, remove the follow-up flow (Flow 2) and keep Flow 1 + the core declutter flow.
-          </p>
-        </section>
-
-        {/* Impact */}
-        <section>
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Impact
-          </span>
-          <h2 className="mt-2 text-xl font-semibold text-zinc-100">
-            From accumulation → proactive circulation
-          </h2>
-          <div className="mt-6 rounded-2xl bg-zinc-800/60 border border-zinc-700/50 p-8 sm:p-10">
-            <div className="grid gap-6 sm:grid-cols-2">
-              <div>
-                <p className="text-xs uppercase tracking-widest text-zinc-500">Before</p>
-                <ul className="mt-3 space-y-2 text-sm text-zinc-200 list-disc pl-5">
-                  <li>Items accumulate and sit unused.</li>
-                  <li>Listing feels like work.</li>
-                  <li>No urgency to act.</li>
-                </ul>
-              </div>
-              <div>
-                <p className="text-xs uppercase tracking-widest text-zinc-500">After</p>
-                <ul className="mt-3 space-y-2 text-sm text-zinc-200 list-disc pl-5">
-                  <li>Timely prompts based on life stage.</li>
-                  <li>AI suggests what to pass on.</li>
-                  <li>Listing becomes a ~30-second action.</li>
-                  <li>Items circulate within the community.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Next steps */}
-        <section>
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Next steps
-          </span>
-          <ul className="mt-4 space-y-2 text-zinc-300 max-w-2xl list-disc pl-5">
-            <li>Bundle multiple items into a single listing flow.</li>
-            <li>Improve demand matching accuracy.</li>
-            <li>Introduce pickup coordination between families.</li>
-            <li>Expand to other life stages (newborn, toddler transitions).</li>
+          <ul className="space-y-3 text-zinc-300 leading-relaxed list-none">
+            <li className="flex gap-3">
+              <span className="text-violet-400 font-semibold shrink-0">01</span>
+              <span>
+                <span className="text-zinc-100">Preview before publish</span> — AI
+                drafts are always visible and editable; nothing ships silently.
+              </span>
+            </li>
+            <li className="flex gap-3">
+              <span className="text-violet-400 font-semibold shrink-0">02</span>
+              <span>
+                <span className="text-zinc-100">Local-first language</span> — copy and
+                defaults tuned for SF pickup reality (density, transit, weather).
+              </span>
+            </li>
+            <li className="flex gap-3">
+              <span className="text-violet-400 font-semibold shrink-0">03</span>
+              <span>
+                <span className="text-zinc-100">Quiet automation</span> — the agent
+                reduces coordination noise without hiding who is on the other side
+                of a transaction.
+              </span>
+            </li>
           </ul>
+          <VisualPlaceholder
+            label="Design principles · UI notes"
+            hint="Annotated frames: preview/confirm, edit affordances, safety copy."
+            aspect="wide"
+          />
         </section>
 
-        {/* CTA */}
+        <section className="max-w-3xl rounded-2xl border border-dashed border-zinc-700 bg-zinc-900/30 p-8 sm:p-10">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            What will appear here later
+          </span>
+          <h2 className="mt-2 text-xl font-semibold text-zinc-100">
+            Full case study — when the work is ready to show
+          </h2>
+          <p className="mt-4 text-zinc-400 leading-relaxed">
+            The next version of this page will include end-to-end flows, research
+            snapshots from mom communities, prototype learnings, and the specific
+            interaction patterns we used to keep AI assistance legible and
+            reversible. If you are reviewing this in recruiting: the narrative above
+            is the current product direction; ship artifacts are still in progress.
+          </p>
+        </section>
+
         <section className="border-t border-zinc-800 pt-12">
           <Link
             href="/"
@@ -378,4 +304,3 @@ export default function MinaParentingCopilotCaseStudy() {
     </article>
   );
 }
-
