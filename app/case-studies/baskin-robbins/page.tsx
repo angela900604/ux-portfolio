@@ -448,25 +448,25 @@ export default function BaskinRobbinsCaseStudy() {
           </div>
         </section>
 
-        <section className="space-y-6 max-w-5xl">
+        <section className="space-y-10 max-w-6xl">
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Final product
           </span>
           <h2 className="text-xl font-semibold text-zinc-100">
             What members experience on device
           </h2>
-          <p className="text-zinc-300 leading-relaxed max-w-3xl">
+          <p className="max-w-3xl text-zinc-300 leading-relaxed">
             The final app delivers a seamless membership experience—enabling BR31
             Taiwan users to easily accumulate points, redeem rewards, and enjoy
             personalized offers. The design balances brand playfulness with
             usability—ensuring consistency across iOS and Android while meeting both
             client and user needs.
           </p>
-          <div className="space-y-3 pt-2">
+          <div className="space-y-10">
             <h3 className="text-sm font-semibold text-zinc-100">
               Final screens (core journey)
             </h3>
-            <div className="grid grid-cols-1 justify-items-center gap-14 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
               {Array.from({ length: 20 }, (_, i) => {
                 const src = ASSET(
                   `final-screen-${String(i + 1).padStart(2, "0")}.png`
