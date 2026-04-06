@@ -536,7 +536,7 @@ export default function GovernmentBackendCaseStudy() {
 
           <div className="max-w-4xl pt-2">
             <WideFigure
-              frame="white"
+              borderless
               src={ASSET("iteration-version-control-flow.png")}
               alt="Flow diagram: APP version management add and view flows with validation and system decision points"
               caption="Iteration 2 · Version control — UI flows and system judgment (add / view, validation, confirmation)."
