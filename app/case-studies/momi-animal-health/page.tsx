@@ -1,13 +1,22 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { ReactNode } from "react";
-import VisualPlaceholder from "../_components/VisualPlaceholder";
+import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
+import { WideFigure } from "../e-invoice-app/EInvoiceFigures";
+import { MomiOutcomesChart } from "./MomiOutcomesChart";
 
 export const metadata = {
   title: "MOMI Animal Health | Angela Yang",
   description:
     "Designed social and promotional content for rabbit-care products and supported eCommerce execution, driving a 75% increase in online sales within two months.",
 };
+
+const MOMI_ASSET = (n: string) => `/case-studies/momi-animal-health/${n}`;
+
+const WHAT_I_DID_IMAGES = Array.from({ length: 9 }, (_, i) => ({
+  src: MOMI_ASSET(`what-i-did-${String(i + 1).padStart(2, "0")}.png`),
+  alt: `MOMI Animal Health — campaign and product creative ${i + 1} of 9`,
+}));
 
 function Section({
   kicker,
@@ -90,11 +99,6 @@ export default function MomiAnimalHealthCaseStudy() {
             supporting purchase and account questions across social and
             eCommerce channels.
           </p>
-          <VisualPlaceholder
-            label="Goal / audience context"
-            hint="Add an example of the product page or customer questions that informed the content system (what people needed to understand to buy)."
-            aspect="wide"
-          />
         </Section>
 
         <Section kicker="02 · What I did" title="Content system across touchpoints">
@@ -133,39 +137,31 @@ export default function MomiAnimalHealthCaseStudy() {
             </div>
           </div>
 
-          <div className="mt-8">
-            <div className="relative w-full aspect-video overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/30">
-              <img
-                src="https://www.ycnangelayang.com/wp-content/uploads/2025/09/ecommerce-scaled.png"
-                alt="eCommerce cover (external)"
-                className="w-full h-full object-cover"
-                loading="lazy"
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {WHAT_I_DID_IMAGES.map((item) => (
+              <WideFigure
+                key={item.src}
+                borderless
+                src={item.src}
+                alt={item.alt}
               />
-            </div>
+            ))}
           </div>
         </Section>
 
         <Section kicker="03 · Outcomes" title="A clear lift in online sales">
-          <VisualPlaceholder
-            label="Outcome evidence"
-            hint="Add a screenshot of sales/traffic highlights or campaign performance that supports the reported sales lift."
-            aspect="wide"
-          />
-          <div className="mt-6 rounded-2xl bg-zinc-800/60 border border-zinc-700/50 p-8 sm:p-10">
-            <ul className="space-y-3 text-zinc-200">
-              <li className="flex gap-3">
-                <span className="text-emerald-400 font-semibold shrink-0">75%</span>
-                <span>increase in online sales within two months</span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-emerald-400 font-semibold shrink-0">Improved</span>
-                <span>marketing clarity across social and eCommerce</span>
-              </li>
-            </ul>
+          <p className="mt-4 text-zinc-300 leading-relaxed max-w-2xl">
+            Within two months, stronger creatives and clearer messaging translated
+            into measurable eCommerce lift and more consistent storytelling across
+            channels.
+          </p>
+          <div className="mt-6 max-w-3xl">
+            <MomiOutcomesChart />
           </div>
         </Section>
 
-        <section className="border-t border-zinc-800 pt-12">
+        <section className="border-t border-zinc-800 pt-12 space-y-8">
+          <CaseStudyPrevNext currentSlug="momi-animal-health" />
           <Link
             href="/"
             className="text-sm font-medium text-zinc-400 hover:text-zinc-100 transition"
@@ -177,4 +173,3 @@ export default function MomiAnimalHealthCaseStudy() {
     </article>
   );
 }
-

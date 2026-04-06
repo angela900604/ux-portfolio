@@ -1,7 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { ReactNode } from "react";
-import VisualPlaceholder from "../_components/VisualPlaceholder";
+import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
+import { WideFigure } from "../e-invoice-app/EInvoiceFigures";
+import { OutcomesMetricsChart } from "./OutcomesMetricsChart";
+
+const AH_ASSET = (name: string) => `/case-studies/admission-hub/${name}`;
 
 export const metadata = {
   title: "Admission Hub (Digital Marketing) | Angela Yang",
@@ -92,11 +96,6 @@ export default function AdmissionHubCaseStudy() {
             discover relevant content, stay engaged, and take the next step
             with confidence.
           </p>
-          <VisualPlaceholder
-            label="Challenge context visual"
-            hint="Add an example of the original content/landing page state or an audience journey sketch that motivated the campaign work."
-            aspect="wide"
-          />
         </Section>
 
         <Section
@@ -142,43 +141,32 @@ export default function AdmissionHubCaseStudy() {
             </div>
           </div>
 
-          <div className="mt-8">
-            <div className="relative w-full aspect-video overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/30">
-              <img
-                src="https://www.ycnangelayang.com/wp-content/uploads/2023/07/Trendy-Instagram-Post-Mockups-Community_page-0001.jpg"
-                alt="Instagram post mockups (external)"
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
-            </div>
+          <div className="mt-8 grid gap-6 sm:grid-cols-2">
+            <WideFigure
+              borderless
+              src={AH_ASSET("what-i-did-01.png")}
+              alt="Admission Hub — Instagram-style social feed mockups and campaign graphics"
+            />
+            <WideFigure
+              borderless
+              src={AH_ASSET("what-i-did-02.png")}
+              alt="Admission Hub — print flyer for Working Holiday COOP and Canada ADM services"
+            />
           </div>
         </Section>
 
         <Section kicker="03 · Outcomes" title="Measurable growth in engagement and reach">
-          <VisualPlaceholder
-            label="Outcome evidence"
-            hint="Add a screenshot of analytics highlights (Mailchimp, GA, or IG insights) that support the reported lifts."
-            aspect="wide"
-          />
-          <div className="mt-6 rounded-2xl bg-zinc-800/60 border border-zinc-700/50 p-8 sm:p-10">
-            <ul className="space-y-3 text-zinc-200">
-              <li className="flex gap-3">
-                <span className="text-emerald-400 font-semibold shrink-0">+500</span>
-                <span>social followers (3 months)</span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-emerald-400 font-semibold shrink-0">+21%</span>
-                <span>engagement improvement</span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-emerald-400 font-semibold shrink-0">+18%</span>
-                <span>organic traffic increase</span>
-              </li>
-            </ul>
+          <p className="mt-4 text-zinc-300 leading-relaxed max-w-2xl">
+            Reported lifts over a three-month window: audience growth on social,
+            stronger engagement on content, and more organic sessions on the site.
+          </p>
+          <div className="mt-6 max-w-3xl">
+            <OutcomesMetricsChart />
           </div>
         </Section>
 
-        <section className="border-t border-zinc-800 pt-12">
+        <section className="border-t border-zinc-800 pt-12 space-y-8">
+          <CaseStudyPrevNext currentSlug="admission-hub" />
           <Link
             href="/"
             className="text-sm font-medium text-zinc-400 hover:text-zinc-100 transition"

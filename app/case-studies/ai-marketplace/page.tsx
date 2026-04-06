@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 
 export const metadata = {
   title: "MINA · AI Marketplace for Parents (Coming Soon) | Angela Yang",
@@ -257,7 +258,8 @@ export default function AiMarketplaceCaseStudy() {
           </p>
         </section>
 
-        <section className="border-t border-zinc-800 pt-12">
+        <section className="border-t border-zinc-800 pt-12 space-y-8">
+          <CaseStudyPrevNext currentSlug="ai-marketplace" />
           <Link
             href="/"
             className="text-sm font-medium text-zinc-400 hover:text-zinc-100 transition"

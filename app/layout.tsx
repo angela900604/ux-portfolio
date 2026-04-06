@@ -24,7 +24,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${sans.variable} ${display.variable}`}>
+    <html
+      lang="en"
+      className={`${sans.variable} ${display.variable} scroll-smooth`}
+    >
       <body className="min-h-screen bg-zinc-950 text-zinc-100 antialiased font-sans">
         <div className="flex min-h-screen flex-col">
           <header className="sticky top-0 z-50 border-b border-zinc-800 bg-zinc-950/80 backdrop-blur-sm">

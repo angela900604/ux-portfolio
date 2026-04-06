@@ -1,4 +1,5 @@
-import VisualPlaceholder from "../_components/VisualPlaceholder";
+import Link from "next/link";
+import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 
 export const metadata = {
   title: "Haphy Living (Brand IP) | Angela Yang",
@@ -90,14 +91,6 @@ export default function PhyphyyaCaseStudy() {
             </a>
           </div>
         </section>
-
-        <div className="px-6 sm:px-[100px]">
-          <VisualPlaceholder
-            label="Brand story / moodboard"
-            hint="Add a visual that connects the brand concept to the product world (reference imagery, moodboard, or brand principles)."
-            aspect="wide"
-          />
-        </div>
 
         {/* Logo Concept - Soft & Rounded */}
         <section className="py-[80px] px-6 sm:px-[100px] flex flex-col items-center">
@@ -534,6 +527,16 @@ export default function PhyphyyaCaseStudy() {
             ))}
           </div>
         </section>
+
+        <footer className="border-t border-[#E0D9CE] bg-[#F5F3EF] px-6 sm:px-[100px] py-14">
+          <CaseStudyPrevNext currentSlug="phyphyya" variant="light" />
+          <Link
+            href="/"
+            className="mt-8 inline-block text-sm text-[#6A6358] transition hover:text-[#2C3E50]"
+          >
+            ← Back to work
+          </Link>
+        </footer>
       </div>
     </div>
   );

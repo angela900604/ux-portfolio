@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { PortraitTile, WideFigure } from "./EInvoiceFigures";
 
 export const metadata = {
@@ -97,6 +98,16 @@ export default function EInvoiceCaseStudy() {
               </dd>
             </div>
           </dl>
+
+          <a
+            href="#final-solution-screens"
+            className="mt-8 inline-flex items-center gap-2 rounded-full border border-violet-500/35 bg-violet-500/10 px-4 py-2.5 text-sm font-medium text-violet-200 transition hover:border-violet-400/45 hover:bg-violet-500/15"
+          >
+            Jump to final solutions
+            <span aria-hidden className="text-violet-400/90">
+              ↓
+            </span>
+          </a>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5">
@@ -1096,7 +1107,10 @@ export default function EInvoiceCaseStudy() {
           </p>
         </section>
 
-        <section className="space-y-10 max-w-6xl">
+        <section
+          id="final-solution-screens"
+          className="scroll-mt-28 space-y-10 max-w-6xl"
+        >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             06 · Final solution screens
           </span>
@@ -1262,7 +1276,8 @@ export default function EInvoiceCaseStudy() {
           </div>
         </section>
 
-        <section className="border-t border-zinc-800 pt-12">
+        <section className="border-t border-zinc-800 pt-12 space-y-8">
+          <CaseStudyPrevNext currentSlug="e-invoice-app" />
           <Link
             href="/"
             className="text-sm font-medium text-zinc-400 hover:text-zinc-100 transition"

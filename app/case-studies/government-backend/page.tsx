@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
+import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { FlatAppShot, WideFigure } from "../e-invoice-app/EInvoiceFigures";
 
 export const metadata = {
@@ -591,7 +592,8 @@ export default function GovernmentBackendCaseStudy() {
           </p>
         </section>
 
-        <section className="border-t border-zinc-800 pt-12">
+        <section className="border-t border-zinc-800 pt-12 space-y-8">
+          <CaseStudyPrevNext currentSlug="government-backend" />
           <Link
             href="/"
             className="text-sm font-medium text-zinc-400 hover:text-zinc-100 transition"

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { WideFigure } from "../e-invoice-app/EInvoiceFigures";
 import { AnnotatedFlowSlideshow } from "./AnnotatedFlowSlideshow";
 
@@ -54,6 +55,15 @@ export default function BaskinRobbinsCaseStudy() {
               </dd>
             </div>
           </dl>
+          <a
+            href="#final-product"
+            className="mt-8 inline-flex items-center gap-2 rounded-full border border-violet-500/35 bg-violet-500/10 px-4 py-2.5 text-sm font-medium text-violet-200 transition hover:border-violet-400/45 hover:bg-violet-500/15"
+          >
+            Jump to final solutions
+            <span aria-hidden className="text-violet-400/90">
+              ↓
+            </span>
+          </a>
           <div className="mt-12">
             <WideFigure
               src={ASSET("hero-membership.png")}
@@ -448,7 +458,10 @@ export default function BaskinRobbinsCaseStudy() {
           </div>
         </section>
 
-        <section className="space-y-10 max-w-6xl">
+        <section
+          id="final-product"
+          className="scroll-mt-28 space-y-10 max-w-6xl"
+        >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Final product
           </span>
@@ -479,7 +492,8 @@ export default function BaskinRobbinsCaseStudy() {
           </div>
         </section>
 
-        <section className="border-t border-zinc-800 pt-12">
+        <section className="border-t border-zinc-800 pt-12 space-y-8">
+          <CaseStudyPrevNext currentSlug="baskin-robbins" />
           <Link
             href="/"
             className="text-sm font-medium text-zinc-400 hover:text-zinc-100 transition"
