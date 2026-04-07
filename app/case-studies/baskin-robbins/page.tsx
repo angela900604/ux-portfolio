@@ -11,6 +11,16 @@ export const metadata = {
 
 const ASSET = (name: string) => `/case-studies/baskin-robbins/${name}`;
 
+/** Taiwan App Store — 31俱樂部 (Baskin-Robbins Taiwan official app) */
+const APP_STORE_TW =
+  "https://apps.apple.com/tw/app/31%E4%BF%B1%E6%A8%82%E9%83%A8/id6755289789";
+
+/** Design process — Figma (mockups + UI kit handoff) */
+const FIGMA_BR31_MOCKUP =
+  "https://www.figma.com/design/ejRSIEjZ8FJzpIO6lhveJS/%E3%80%9031%E5%86%B0%E6%B7%87%E6%B7%8B%E3%80%91UI-KIT?node-id=10-2&t=FbCcNsX3Hx6jC4ao-1";
+const FIGMA_BR31_UI_KIT =
+  "https://www.figma.com/design/BvD4SWAEeHn1mUy8qZPDHM/%E3%80%9031%E5%86%B0%E6%B7%87%E6%B7%8B%E3%80%91App-UI_v02%EF%BC%88%E7%84%A1%E7%94%9C%E8%9C%9C%E5%86%B0%E9%BB%9E%EF%BC%89?node-id=1-10&t=s2SR0r2opMRgk5d0-1";
+
 const ANNOTATED_SLIDES = [1, 2, 3, 4, 5, 6].map((n) => ({
   src: ASSET(`annotated-${String(n).padStart(2, "0")}.png`),
   alt: `Annotated mockup and page-flow reference ${n} of 6`,
@@ -55,15 +65,28 @@ export default function BaskinRobbinsCaseStudy() {
               </dd>
             </div>
           </dl>
-          <a
-            href="#final-product"
-            className="mt-8 inline-flex items-center gap-2 rounded-full border border-violet-500/35 bg-violet-500/10 px-4 py-2.5 text-sm font-medium text-violet-200 transition hover:border-violet-400/45 hover:bg-violet-500/15"
-          >
-            Jump to final solutions
-            <span aria-hidden className="text-violet-400/90">
-              ↓
-            </span>
-          </a>
+          <div className="mt-8 flex flex-wrap items-center gap-3">
+            <a
+              href={APP_STORE_TW}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-zinc-600 bg-zinc-900/50 px-4 py-2.5 text-sm font-medium text-zinc-100 transition hover:border-zinc-500 hover:bg-zinc-800/80"
+            >
+              31俱樂部 · App Store (Taiwan)
+              <span aria-hidden className="text-zinc-500">
+                ↗
+              </span>
+            </a>
+            <a
+              href="#final-product"
+              className="inline-flex items-center gap-2 rounded-full border border-violet-500/35 bg-violet-500/10 px-4 py-2.5 text-sm font-medium text-violet-200 transition hover:border-violet-400/45 hover:bg-violet-500/15"
+            >
+              Jump to final solutions
+              <span aria-hidden className="text-violet-400/90">
+                ↓
+              </span>
+            </a>
+          </div>
           <div className="mt-12">
             <WideFigure
               src={ASSET("hero-membership.png")}
@@ -196,7 +219,12 @@ export default function BaskinRobbinsCaseStudy() {
             proposals and annotated flows below).
           </p>
           <div className="grid gap-4 sm:grid-cols-2">
-            <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5">
+            <a
+              href={FIGMA_BR31_MOCKUP}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group rounded-xl border border-zinc-800 bg-zinc-900/40 p-5 transition hover:border-zinc-600 hover:bg-zinc-900/60"
+            >
               <h3 className="text-sm font-semibold text-zinc-100">
                 Mockup Figma file
               </h3>
@@ -204,8 +232,16 @@ export default function BaskinRobbinsCaseStudy() {
                 Includes complete high-fidelity page designs and slicing
                 instructions for the development team&apos;s reference.
               </p>
-            </div>
-            <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5">
+              <p className="mt-4 text-xs font-medium text-violet-400/90 group-hover:text-violet-300">
+                Open in Figma ↗
+              </p>
+            </a>
+            <a
+              href={FIGMA_BR31_UI_KIT}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group rounded-xl border border-zinc-800 bg-zinc-900/40 p-5 transition hover:border-zinc-600 hover:bg-zinc-900/60"
+            >
               <h3 className="text-sm font-semibold text-zinc-100">
                 UI Kit Figma file
               </h3>
@@ -213,7 +249,10 @@ export default function BaskinRobbinsCaseStudy() {
                 Systematically organized design components, typography, and color
                 guidelines to ensure consistency and improve efficiency.
               </p>
-            </div>
+              <p className="mt-4 text-xs font-medium text-violet-400/90 group-hover:text-violet-300">
+                Open in Figma ↗
+              </p>
+            </a>
           </div>
         </section>
 
@@ -274,58 +313,62 @@ export default function BaskinRobbinsCaseStudy() {
           <p className="text-zinc-300 leading-relaxed max-w-3xl">
             I presented three style options for the client to choose from:
           </p>
-          <div className="space-y-4 max-w-3xl">
-            <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5">
-              <h3 className="text-sm font-semibold text-zinc-100">
-                Style A · Sweet &amp; energetic
-              </h3>
-              <p className="mt-2 text-sm text-zinc-300 leading-relaxed">
-                Focused on 31 Ice Cream&apos;s signature pink—creating a lively,
-                youthful vibe for users who love vibrant colors, conveying joy and
-                enthusiasm.
-              </p>
-            </div>
-            <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5">
-              <h3 className="text-sm font-semibold text-zinc-100">
-                Style B · Minimal &amp; fresh
-              </h3>
-              <p className="mt-2 text-sm text-zinc-300 leading-relaxed">
-                Primarily white with pink accents—offering a clean and refreshing
-                style similar to Japan&apos;s 31 app, ideal for users seeking
-                simplicity.
-              </p>
-            </div>
-            <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5">
-              <h3 className="text-sm font-semibold text-zinc-100">
-                Style C · Gradient &amp; premium
-              </h3>
-              <p className="mt-2 text-sm text-zinc-300 leading-relaxed">
-                Used gradient effects to enhance sophistication—adding depth and
-                modern design elements to reflect a premium and innovative brand
-                image.
-              </p>
-            </div>
-          </div>
           <div className="space-y-3 pt-2">
             <h3 className="text-sm font-semibold text-zinc-100">
               Style proposals (A / B / C)
             </h3>
             <div className="grid gap-6 md:grid-cols-3">
-              <WideFigure
-                borderless
-                src={ASSET("style-proposal-a.png")}
-                alt="Style proposal A — sweet and energetic"
-              />
-              <WideFigure
-                borderless
-                src={ASSET("style-proposal-b.png")}
-                alt="Style proposal B — minimal and fresh"
-              />
-              <WideFigure
-                borderless
-                src={ASSET("style-proposal-c.png")}
-                alt="Style proposal C — gradient and premium"
-              />
+              <div className="space-y-4">
+                <WideFigure
+                  borderless
+                  src={ASSET("style-proposal-a.png")}
+                  alt="Style proposal A — sweet and energetic"
+                />
+                <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5">
+                  <h3 className="text-sm font-semibold text-zinc-100">
+                    Style A · Sweet &amp; energetic
+                  </h3>
+                  <p className="mt-2 text-sm text-zinc-300 leading-relaxed">
+                    Focused on 31 Ice Cream&apos;s signature pink—creating a lively,
+                    youthful vibe for users who love vibrant colors, conveying joy
+                    and enthusiasm.
+                  </p>
+                </div>
+              </div>
+              <div className="space-y-4">
+                <WideFigure
+                  borderless
+                  src={ASSET("style-proposal-b.png")}
+                  alt="Style proposal — gradient and premium (Style C)"
+                />
+                <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5">
+                  <h3 className="text-sm font-semibold text-zinc-100">
+                    Style C · Gradient &amp; premium
+                  </h3>
+                  <p className="mt-2 text-sm text-zinc-300 leading-relaxed">
+                    Used gradient effects to enhance sophistication—adding depth and
+                    modern design elements to reflect a premium and innovative brand
+                    image.
+                  </p>
+                </div>
+              </div>
+              <div className="space-y-4">
+                <WideFigure
+                  borderless
+                  src={ASSET("style-proposal-c.png")}
+                  alt="Style proposal — minimal and fresh (Style B)"
+                />
+                <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5">
+                  <h3 className="text-sm font-semibold text-zinc-100">
+                    Style B · Minimal &amp; fresh
+                  </h3>
+                  <p className="mt-2 text-sm text-zinc-300 leading-relaxed">
+                    Primarily white with pink accents—offering a clean and refreshing
+                    style similar to Japan&apos;s 31 app, ideal for users seeking
+                    simplicity.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -438,7 +481,7 @@ export default function BaskinRobbinsCaseStudy() {
             <h3 className="text-sm font-semibold text-zinc-100">
               UI kit · Components
             </h3>
-            <div className="mx-auto flex max-w-4xl flex-col gap-10">
+            <div className="flex w-full max-w-3xl flex-col gap-10">
               <WideFigure
                 borderless
                 src={ASSET("ui-kit-01.png")}
