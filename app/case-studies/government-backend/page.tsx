@@ -21,7 +21,7 @@ const GOV_BACKEND_SCAN_SUMMARY = [
 
 function Metric({ children }: { children: ReactNode }) {
   return (
-    <span className="rounded-md bg-brand/15 px-1.5 py-0.5 font-semibold text-brand-bright/95 tabular-nums">
+    <span className="rounded-md bg-emerald-500/15 px-1.5 py-0.5 font-semibold text-emerald-200/95 tabular-nums">
       {children}
     </span>
   );
@@ -32,7 +32,7 @@ function RbacCell({ granted }: { granted: boolean }) {
     <td className="px-2 py-2.5 text-center align-middle text-sm tabular-nums">
       {granted ? (
         <span
-          className="inline-flex h-6 w-6 items-center justify-center rounded bg-brand text-xs font-semibold text-white"
+          className="inline-flex h-6 w-6 items-center justify-center rounded bg-emerald-600 text-xs font-semibold text-white"
           aria-label="Granted"
         >
           ✓
@@ -150,7 +150,7 @@ export default function GovernmentBackendCaseStudy() {
           <p className="text-zinc-300 leading-relaxed">
             I redesigned reporting into an actionable dashboard with weekly and
             monthly views, time-based filters, and{" "}
-            <span className="rounded-md bg-brand/12 px-1.5 py-0.5 font-medium text-brand-soft">
+            <span className="rounded-md bg-sky-500/15 px-1.5 py-0.5 font-medium text-sky-200/95">
               CSV export
             </span>
             . Staff could prepare reports independently for meetings and audits,
@@ -215,7 +215,7 @@ export default function GovernmentBackendCaseStudy() {
             <div className="space-y-8">
               <div className="min-w-0 space-y-3">
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="rounded-md bg-brand/18 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-brand-bright">
+                  <span className="rounded-md bg-sky-500/20 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-sky-200">
                     Backend
                   </span>
                   <span className="text-xs text-zinc-500">
@@ -231,7 +231,7 @@ export default function GovernmentBackendCaseStudy() {
               </div>
               <div className="space-y-3">
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="rounded-md bg-brand/22 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-brand-bright">
+                  <span className="rounded-md bg-violet-500/20 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-violet-200">
                     App
                   </span>
                   <span className="text-xs text-zinc-500">
@@ -515,16 +515,16 @@ export default function GovernmentBackendCaseStudy() {
             </p>
             <p className="text-zinc-300 leading-relaxed">
               <span className="text-zinc-200 font-semibold">Impact:</span> Present{" "}
-              <span className="rounded-md bg-brand/12 px-1.5 py-0.5 font-medium text-brand-soft">
+              <span className="rounded-md bg-amber-500/15 px-1.5 py-0.5 font-medium text-amber-100/90">
                 weekly
               </span>{" "}
               and{" "}
-              <span className="rounded-md bg-brand/14 px-1.5 py-0.5 font-medium text-brand-soft">
+              <span className="rounded-md bg-amber-500/15 px-1.5 py-0.5 font-medium text-amber-100/90">
                 monthly
               </span>{" "}
               numbers in meetings without manual calculations; compare time periods
               more easily;{" "}
-              <span className="rounded-md bg-brand/16 px-1.5 py-0.5 font-medium text-brand-bright">
+              <span className="rounded-md bg-sky-500/15 px-1.5 py-0.5 font-medium text-sky-200/95">
                 export
               </span>{" "}
               datasets independently, reducing reliance on engineers and speeding up

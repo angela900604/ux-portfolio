@@ -36,7 +36,7 @@ export function MarketSizingCharts() {
                 role="presentation"
               >
                 <div
-                  className="h-full rounded-full bg-gradient-to-r from-brand-deep/95 to-brand-soft/85"
+                  className="h-full rounded-full bg-gradient-to-r from-[#b80768]/95 to-[#ff5ca8]/85"
                   style={{ width: `${cagrWidth}%` }}
                 />
               </div>
@@ -53,7 +53,7 @@ export function MarketSizingCharts() {
                 role="presentation"
               >
                 <div
-                  className="h-full rounded-full bg-gradient-to-r from-brand/90 to-brand-bright/80"
+                  className="h-full rounded-full bg-gradient-to-r from-[#F20C90]/90 to-[#ff8cc8]/80"
                   style={{ width: `${yoyWidth}%` }}
                 />
               </div>
@@ -81,7 +81,7 @@ export function MarketSizingCharts() {
             aria-label={`Relative scale: ${MARKET_B} billion US dollars of 2 billion US dollars reference`}
           >
             <div
-              className="h-full rounded-full bg-gradient-to-r from-brand-soft/90 to-brand/75"
+              className="h-full rounded-full bg-gradient-to-r from-[#ff5ca8]/90 to-[#F20C90]/75"
               style={{ width: `${sizeWidth}%` }}
             />
           </div>

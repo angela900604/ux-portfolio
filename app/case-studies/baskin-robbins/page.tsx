@@ -176,16 +176,19 @@ export default function BaskinRobbinsCaseStudy() {
           </div>
 
           <div className="mt-8">
-            <CaseStudyScanSummary items={SCAN_SUMMARY_LINES} />
+            <CaseStudyScanSummary
+              items={SCAN_SUMMARY_LINES}
+              bulletClassName="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#F20C90]"
+            />
           </div>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <a
               href="#final-product"
-              className="inline-flex items-center gap-2 rounded-full border border-brand/35 bg-brand/10 px-4 py-2.5 text-sm font-medium text-brand-bright transition hover:border-brand/50 hover:bg-brand/15"
+              className="inline-flex items-center gap-2 rounded-full border border-[#F20C90]/35 bg-[#F20C90]/10 px-4 py-2.5 text-sm font-medium text-[#ff8cc8] transition hover:border-[#F20C90]/50 hover:bg-[#F20C90]/15"
             >
               Jump to final solutions
-              <span aria-hidden className="text-brand-soft">
+              <span aria-hidden className="text-[#ff5ca8]">
                 ↓
               </span>
             </a>
@@ -346,7 +349,7 @@ export default function BaskinRobbinsCaseStudy() {
                 Includes complete high-fidelity page designs and slicing
                 instructions for the development team&apos;s reference.
               </p>
-              <p className="mt-4 text-xs font-medium text-brand-soft group-hover:text-brand-bright">
+              <p className="mt-4 text-xs font-medium text-[#ff5ca8] group-hover:text-[#ff8cc8]">
                 Open in Figma ↗
               </p>
             </a>
@@ -363,7 +366,7 @@ export default function BaskinRobbinsCaseStudy() {
                 Systematically organized design components, typography, and color
                 guidelines to ensure consistency and improve efficiency.
               </p>
-              <p className="mt-4 text-xs font-medium text-brand-soft group-hover:text-brand-bright">
+              <p className="mt-4 text-xs font-medium text-[#ff5ca8] group-hover:text-[#ff8cc8]">
                 Open in Figma ↗
               </p>
             </a>
