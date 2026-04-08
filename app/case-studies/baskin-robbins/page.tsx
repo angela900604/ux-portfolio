@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { CaseStudyMetaStrip } from "../_components/CaseStudyMetaStrip";
 import { CaseStudyScanSummary } from "../_components/CaseStudyScanSummary";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { WideFigure } from "../e-invoice-app/EInvoiceFigures";
@@ -89,13 +88,6 @@ const FINAL_PRODUCT_GROUPS: readonly FinalProductGroup[] = [
   },
 ];
 
-const CASE_META_STRIP = [
-  { label: "Role", value: "Lead UX/UI" },
-  { label: "Timeline", value: "Dec 2024 – Mar 2025" },
-  { label: "Tools", value: "Figma" },
-  { label: "Outcome", value: "MVP shipped · 5★ (Taiwan)" },
-] as const;
-
 const SCAN_SUMMARY_LINES = [
   "Led end-to-end UX/UI for BR31 Taiwan’s first membership app (31 Club), from discovery through developer handoff.",
   "Delivered functional maps, high-fidelity mockups, annotated flows, and a build-ready UI kit aligned with engineering.",
@@ -118,8 +110,7 @@ export default function BaskinRobbinsCaseStudy() {
             <span className="text-zinc-600">·</span>
             <span>Zero-to-one</span>
           </div>
-          <CaseStudyMetaStrip items={CASE_META_STRIP} />
-          <h1 className="mt-8 font-semibold text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight max-w-3xl">
+          <h1 className="font-semibold text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight max-w-3xl">
             Baskin-Robbins Taiwan&apos;s first membership app
           </h1>
           <p className="mt-5 max-w-3xl text-lg leading-relaxed text-zinc-200 sm:text-xl">
