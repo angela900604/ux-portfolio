@@ -29,13 +29,13 @@ const STYLE_SWATCHES: { hex: string; name: string }[] = [
   { hex: "#F8D364", name: "Warm yellow" },
 ];
 
-/** Key metrics — emerald chip (hero stats, inline %, deltas) */
+/** Key metrics — brand accent chips (hero stats, inline %, deltas) */
 const M_HERO =
-  "inline-block rounded-lg bg-emerald-500/15 px-3 py-1 text-2xl font-semibold tabular-nums text-emerald-200";
+  "inline-block rounded-lg bg-brand/15 px-3 py-1 text-2xl font-semibold tabular-nums text-brand-bright";
 const M_TXT =
-  "rounded-md bg-emerald-500/20 px-1.5 py-0.5 font-semibold tabular-nums text-emerald-200";
+  "rounded-md bg-brand/20 px-1.5 py-0.5 font-semibold tabular-nums text-brand-bright";
 const M_TIME =
-  "rounded-md bg-amber-500/15 px-1.5 py-0.5 font-medium tabular-nums text-amber-100/95";
+  "rounded-md bg-brand/12 px-1.5 py-0.5 font-medium tabular-nums text-brand-soft";
 
 /** Final solution screens — high-fidelity exports (18), filenames solution-final-01 … 18. */
 const E_INVOICE_SCAN_SUMMARY = [
@@ -137,17 +137,17 @@ export default function EInvoiceCaseStudy() {
 
           <a
             href="#final-solution-screens"
-            className="mt-8 inline-flex items-center gap-2 rounded-full border border-violet-500/35 bg-violet-500/10 px-4 py-2.5 text-sm font-medium text-violet-200 transition hover:border-violet-400/45 hover:bg-violet-500/15"
+            className="mt-8 inline-flex items-center gap-2 rounded-full border border-brand/35 bg-brand/10 px-4 py-2.5 text-sm font-medium text-brand-bright transition hover:border-brand/50 hover:bg-brand/15"
           >
             Jump to final solutions
-            <span aria-hidden className="text-violet-400/90">
+            <span aria-hidden className="text-brand-soft">
               ↓
             </span>
           </a>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5">
-              <p className="text-xs font-semibold uppercase tracking-widest text-emerald-400/90">
+              <p className="text-xs font-semibold uppercase tracking-widest text-brand-soft">
                 Increasing login success
               </p>
               <p className="mt-2">
@@ -160,7 +160,7 @@ export default function EInvoiceCaseStudy() {
               </p>
             </div>
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5">
-              <p className="text-xs font-semibold uppercase tracking-widest text-emerald-400/90">
+              <p className="text-xs font-semibold uppercase tracking-widest text-brand-soft">
                 Boosting onboarding completion
               </p>
               <p className="mt-2">
@@ -173,7 +173,7 @@ export default function EInvoiceCaseStudy() {
               </p>
             </div>
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5">
-              <p className="text-xs font-semibold uppercase tracking-widest text-emerald-400/90">
+              <p className="text-xs font-semibold uppercase tracking-widest text-brand-soft">
                 Reducing missed prize redemptions
               </p>
               <p className="mt-2">
@@ -185,7 +185,7 @@ export default function EInvoiceCaseStudy() {
               </p>
             </div>
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5">
-              <p className="text-xs font-semibold uppercase tracking-widest text-emerald-400/90">
+              <p className="text-xs font-semibold uppercase tracking-widest text-brand-soft">
                 Task success across ages
               </p>
               <p className="mt-2">
@@ -324,14 +324,14 @@ export default function EInvoiceCaseStudy() {
               <tbody className="divide-y divide-zinc-800 text-zinc-300">
                 <tr className="align-top">
                   <td className="px-4 py-4 text-zinc-200">
-                    <span className="rounded bg-amber-500/15 px-1.5 py-0.5 text-amber-100/95">
+                    <span className="rounded bg-brand/10 px-1.5 py-0.5 text-brand-soft">
                       Before shopping
                     </span>{" "}
                     — first download
                   </td>
                   <td className="px-4 py-4">
                     Understand the app&apos;s{" "}
-                    <span className="rounded bg-emerald-500/15 px-1.5 py-0.5 text-emerald-200/95">
+                    <span className="rounded bg-brand/14 px-1.5 py-0.5 text-brand-bright">
                       functions &amp; advantages
                     </span>
                   </td>
@@ -350,11 +350,11 @@ export default function EInvoiceCaseStudy() {
                     hard to find; invoice history unclear
                   </td>
                   <td className="px-4 py-4 text-zinc-400">
-                    <span className="rounded bg-violet-500/15 px-1.5 py-0.5 text-violet-200/95">
+                    <span className="rounded bg-brand/18 px-1.5 py-0.5 text-brand-bright">
                       Clearer tutorials
                     </span>
                     ; simplify{" "}
-                    <span className="rounded bg-violet-500/15 px-1.5 py-0.5 text-violet-200/95">
+                    <span className="rounded bg-brand/18 px-1.5 py-0.5 text-brand-bright">
                       registration &amp; binding
                     </span>
                     ; improve interface
@@ -362,14 +362,14 @@ export default function EInvoiceCaseStudy() {
                 </tr>
                 <tr className="align-top">
                   <td className="px-4 py-4 text-zinc-200">
-                    <span className="rounded bg-amber-500/15 px-1.5 py-0.5 text-amber-100/95">
+                    <span className="rounded bg-brand/10 px-1.5 py-0.5 text-brand-soft">
                       Before shopping
                     </span>{" "}
                     — registration &amp; carrier binding
                   </td>
                   <td className="px-4 py-4">
                     Successfully{" "}
-                    <span className="rounded bg-emerald-500/15 px-1.5 py-0.5 text-emerald-200/95">
+                    <span className="rounded bg-brand/14 px-1.5 py-0.5 text-brand-bright">
                       bind carrier
                     </span>
                   </td>
@@ -384,25 +384,25 @@ export default function EInvoiceCaseStudy() {
                     ; functions scattered; frequent logouts; manual refresh
                   </td>
                   <td className="px-4 py-4 text-zinc-400">
-                    <span className="rounded bg-violet-500/15 px-1.5 py-0.5 text-violet-200/95">
+                    <span className="rounded bg-brand/18 px-1.5 py-0.5 text-brand-bright">
                       Error hints
                     </span>
                     ;{" "}
-                    <span className="rounded bg-violet-500/15 px-1.5 py-0.5 text-violet-200/95">
+                    <span className="rounded bg-brand/18 px-1.5 py-0.5 text-brand-bright">
                       stability &amp; maintenance
                     </span>
                   </td>
                 </tr>
                 <tr className="align-top">
                   <td className="px-4 py-4 text-zinc-200">
-                    <span className="rounded bg-amber-500/15 px-1.5 py-0.5 text-amber-100/95">
+                    <span className="rounded bg-brand/10 px-1.5 py-0.5 text-brand-soft">
                       During shopping
                     </span>{" "}
                     — carrier barcode
                   </td>
                   <td className="px-4 py-4">
                     Quickly display{" "}
-                    <span className="rounded bg-emerald-500/15 px-1.5 py-0.5 text-emerald-200/95">
+                    <span className="rounded bg-brand/14 px-1.5 py-0.5 text-brand-bright">
                       carrier barcode
                     </span>
                   </td>
@@ -413,21 +413,21 @@ export default function EInvoiceCaseStudy() {
                     ; barcode sometimes fails
                   </td>
                   <td className="px-4 py-4 text-zinc-400">
-                    <span className="rounded bg-violet-500/15 px-1.5 py-0.5 text-violet-200/95">
+                    <span className="rounded bg-brand/18 px-1.5 py-0.5 text-brand-bright">
                       Speed &amp; reliability
                     </span>
                   </td>
                 </tr>
                 <tr className="align-top">
                   <td className="px-4 py-4 text-zinc-200">
-                    <span className="rounded bg-amber-500/15 px-1.5 py-0.5 text-amber-100/95">
+                    <span className="rounded bg-brand/10 px-1.5 py-0.5 text-brand-soft">
                       After shopping
                     </span>{" "}
                     — invoices / draw / claim
                   </td>
                   <td className="px-4 py-4">
                     Manage invoices &amp;{" "}
-                    <span className="rounded bg-emerald-500/15 px-1.5 py-0.5 text-emerald-200/95">
+                    <span className="rounded bg-brand/14 px-1.5 py-0.5 text-brand-bright">
                       check prizes quickly
                     </span>
                   </td>
@@ -446,11 +446,11 @@ export default function EInvoiceCaseStudy() {
                     </span>
                   </td>
                   <td className="px-4 py-4 text-zinc-400">
-                    <span className="rounded bg-violet-500/15 px-1.5 py-0.5 text-violet-200/95">
+                    <span className="rounded bg-brand/18 px-1.5 py-0.5 text-brand-bright">
                       Invoice display
                     </span>
                     ;{" "}
-                    <span className="rounded bg-violet-500/15 px-1.5 py-0.5 text-violet-200/95">
+                    <span className="rounded bg-brand/18 px-1.5 py-0.5 text-brand-bright">
                       integrated scanning
                     </span>{" "}
                     &amp; management
@@ -579,7 +579,7 @@ export default function EInvoiceCaseStudy() {
                 />
               </div>
               <div className="flex min-w-0 flex-1 flex-col justify-center gap-3 p-5 text-sm">
-                <p className="text-xs font-semibold uppercase tracking-wider text-violet-400/95">
+                <p className="text-xs font-semibold uppercase tracking-wider text-brand-soft">
                   Persona 01 · 18–30 · Young professionals
                 </p>
                 <p className="font-medium text-zinc-100">
@@ -609,7 +609,7 @@ export default function EInvoiceCaseStudy() {
                     <li>Biometrics / pattern login; stable scan</li>
                   </ul>
                 </div>
-                <p className="border-l-2 border-violet-500/50 pl-3 italic text-zinc-300">
+                <p className="border-l-2 border-brand/50 pl-3 italic text-zinc-300">
                   &ldquo;I move fast—I need the carrier barcode immediately. I care
                   how the UI looks, track spend for habits and deals, but waiting on
                   a slow app or closing ads just to copy a barcode drives me nuts.&rdquo;
@@ -626,7 +626,7 @@ export default function EInvoiceCaseStudy() {
                 />
               </div>
               <div className="flex min-w-0 flex-1 flex-col justify-center gap-3 p-5 text-sm">
-                <p className="text-xs font-semibold uppercase tracking-wider text-violet-400/95">
+                <p className="text-xs font-semibold uppercase tracking-wider text-brand-soft">
                   Persona 02 · 31–50 · Established professionals
                 </p>
                 <p className="font-medium text-zinc-100">
@@ -660,7 +660,7 @@ export default function EInvoiceCaseStudy() {
                     <li>Faster barcode surface at payment</li>
                   </ul>
                 </div>
-                <p className="border-l-2 border-violet-500/50 pl-3 italic text-zinc-300">
+                <p className="border-l-2 border-brand/50 pl-3 italic text-zinc-300">
                   &ldquo;My phone is my second wallet—I want payments, invoices, and
                   membership in one flow. At the counter I can&apos;t afford a sluggish
                   app; I also want to see where my money goes, not fight the UI.&rdquo;
@@ -677,7 +677,7 @@ export default function EInvoiceCaseStudy() {
                 />
               </div>
               <div className="flex min-w-0 flex-1 flex-col justify-center gap-3 p-5 text-sm">
-                <p className="text-xs font-semibold uppercase tracking-wider text-violet-400/95">
+                <p className="text-xs font-semibold uppercase tracking-wider text-brand-soft">
                   Persona 03 · 51+ · Silver generation
                 </p>
                 <p className="font-medium text-zinc-100">
@@ -706,7 +706,7 @@ export default function EInvoiceCaseStudy() {
                     <li>Easier prize check &amp; claim—including online tutorials</li>
                   </ul>
                 </div>
-                <p className="border-l-2 border-violet-500/50 pl-3 italic text-zinc-300">
+                <p className="border-l-2 border-brand/50 pl-3 italic text-zinc-300">
                   &ldquo;This app is like a labyrinth—I don&apos;t know the next step
                   or how to exit. I want to donate paper invoices with confidence and
                   understand what I&apos;m tapping.&rdquo;
@@ -723,7 +723,7 @@ export default function EInvoiceCaseStudy() {
                 />
               </div>
               <div className="flex min-w-0 flex-1 flex-col justify-center gap-3 p-5 text-sm">
-                <p className="text-xs font-semibold uppercase tracking-wider text-violet-400/95">
+                <p className="text-xs font-semibold uppercase tracking-wider text-brand-soft">
                   Persona 04 · Foreign resident · Heavy mobile user
                 </p>
                 <p className="font-medium text-zinc-100">
@@ -753,7 +753,7 @@ export default function EInvoiceCaseStudy() {
                     <li>Faster launch; barcode copy &amp; display in more contexts</li>
                   </ul>
                 </div>
-                <p className="border-l-2 border-violet-500/50 pl-3 italic text-zinc-300">
+                <p className="border-l-2 border-brand/50 pl-3 italic text-zinc-300">
                   &ldquo;Classmates got me onto cloud invoices—I dislike trekking to a
                   store to claim. Give me a calm interface and obvious icons; long
                   paragraphs are exhausting when Chinese isn&apos;t my first language.&rdquo;
@@ -770,7 +770,7 @@ export default function EInvoiceCaseStudy() {
                 />
               </div>
               <div className="flex min-w-0 flex-1 flex-col justify-center gap-3 p-5 text-sm">
-                <p className="text-xs font-semibold uppercase tracking-wider text-violet-400/95">
+                <p className="text-xs font-semibold uppercase tracking-wider text-brand-soft">
                   Persona 05 · Visually impaired user
                 </p>
                 <p className="font-medium text-zinc-100">
@@ -799,7 +799,7 @@ export default function EInvoiceCaseStudy() {
                     <li>Distinct success sounds; caregiver-friendly setup flows</li>
                   </ul>
                 </div>
-                <p className="border-l-2 border-violet-500/50 pl-3 italic text-zinc-300">
+                <p className="border-l-2 border-brand/50 pl-3 italic text-zinc-300">
                   &ldquo;The words and buttons are unclear. I have to ask my daughter
                   every time for e-invoice—I&apos;m afraid the clerk will scan the
                   wrong barcode. I hope the app can be voice-controlled so I can do
@@ -822,14 +822,14 @@ export default function EInvoiceCaseStudy() {
           </h3>
           <div className="grid gap-4 sm:grid-cols-3">
             <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-4">
-              <p className="text-xs font-semibold text-violet-400">Timeline</p>
+              <p className="text-xs font-semibold text-brand-soft">Timeline</p>
               <p className="mt-2 text-sm text-zinc-300">
                 Tight deadlines for research, design, and testing—solutions needed
                 to ship in sprints without delaying release schedules.
               </p>
             </div>
             <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-4">
-              <p className="text-xs font-semibold text-violet-400">Stakeholders</p>
+              <p className="text-xs font-semibold text-brand-soft">Stakeholders</p>
               <p className="mt-2 text-sm text-zinc-300">
                 As a Ministry of Finance government service, features must follow
                 official regulations and public-sector standards—no commercial
@@ -837,7 +837,7 @@ export default function EInvoiceCaseStudy() {
               </p>
             </div>
             <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-4">
-              <p className="text-xs font-semibold text-violet-400">Technical</p>
+              <p className="text-xs font-semibold text-brand-soft">Technical</p>
               <p className="mt-2 text-sm text-zinc-300">
                 Existing backends limit real-time integration for spending analysis
                 and multi-language support. Performance must stay smooth despite
@@ -943,7 +943,7 @@ export default function EInvoiceCaseStudy() {
 
           <div className="grid gap-10 lg:grid-cols-2 lg:items-start lg:gap-14">
             <div className="min-w-0 space-y-6">
-              <p className="text-xs font-semibold uppercase tracking-widest text-violet-400/90">
+              <p className="text-xs font-semibold uppercase tracking-widest text-brand-soft/90">
                 Concept development
               </p>
               <h3 className="text-lg font-semibold text-zinc-100">
@@ -1183,7 +1183,7 @@ export default function EInvoiceCaseStudy() {
           </p>
           <div className="space-y-6">
             <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-5">
-              <p className="text-sm font-semibold text-emerald-400/90">
+              <p className="text-sm font-semibold text-brand-soft">
                 01 · Reduced errors &amp; frustration
               </p>
               <p className="mt-2 text-sm text-zinc-300">
@@ -1200,7 +1200,7 @@ export default function EInvoiceCaseStudy() {
               </p>
             </div>
             <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-5">
-              <p className="text-sm font-semibold text-emerald-400/90">
+              <p className="text-sm font-semibold text-brand-soft">
                 02 · Faster onboarding &amp; learning
               </p>
               <p className="mt-2 text-sm text-zinc-300">
@@ -1216,7 +1216,7 @@ export default function EInvoiceCaseStudy() {
               </p>
             </div>
             <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-5">
-              <p className="text-sm font-semibold text-emerald-400/90">
+              <p className="text-sm font-semibold text-brand-soft">
                 03 · Improved prize redemption &amp; notifications
               </p>
               <p className="mt-2 text-sm text-zinc-300">
@@ -1231,7 +1231,7 @@ export default function EInvoiceCaseStudy() {
               </p>
             </div>
             <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-5">
-              <p className="text-sm font-semibold text-emerald-400/90">
+              <p className="text-sm font-semibold text-brand-soft">
                 04 · Higher satisfaction &amp; engagement
               </p>
               <p className="mt-2 text-sm text-zinc-300">

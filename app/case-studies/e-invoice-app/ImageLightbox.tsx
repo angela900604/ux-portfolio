@@ -48,7 +48,7 @@ export function ImageLightbox({
         onKeyDown={(e) =>
           (e.key === "Enter" || e.key === " ") && (e.preventDefault(), setOpen(true))
         }
-        className={`cursor-pointer overflow-hidden transition-transform duration-300 ease-out hover:scale-[1.035] focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 focus:ring-offset-zinc-950 ${className}`}
+        className={`cursor-pointer overflow-hidden transition-transform duration-300 ease-out hover:scale-[1.035] focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 focus:ring-offset-zinc-950 ${className}`}
       >
         {children}
       </div>

@@ -20,7 +20,7 @@ export function CaseStudyOnPageNav({
           <li key={link.href}>
             <a
               href={link.href}
-              className="inline-flex rounded-full border border-zinc-700/90 bg-zinc-900/60 px-3 py-1.5 text-xs font-medium text-zinc-300 transition hover:border-violet-500/40 hover:bg-violet-500/10 hover:text-violet-200"
+              className="inline-flex rounded-full border border-zinc-700/90 bg-zinc-900/60 px-3 py-1.5 text-xs font-medium text-zinc-300 transition hover:border-brand/45 hover:bg-brand/10 hover:text-brand-bright"
             >
               {link.label}
             </a>

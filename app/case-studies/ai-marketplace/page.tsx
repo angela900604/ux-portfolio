@@ -12,15 +12,15 @@ export default function AiMarketplaceCaseStudy() {
     <article className="min-h-screen bg-zinc-950 text-zinc-100">
       <header className="border-b border-zinc-800 relative overflow-hidden">
         <div
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(120,119,198,0.22),transparent)]"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(242,12,144,0.18),transparent)]"
           aria-hidden
         />
         <div className="relative mx-auto max-w-[1280px] px-6 sm:px-[100px] py-16 sm:py-24">
           <div className="flex flex-wrap items-center gap-3 mb-6">
-            <span className="inline-flex items-center rounded-full border border-violet-500/40 bg-violet-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-widest text-violet-200">
+            <span className="inline-flex items-center rounded-full border border-brand/40 bg-brand/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-widest text-brand-bright">
               Coming soon
             </span>
-            <span className="inline-flex items-center rounded-full border border-amber-500/35 bg-amber-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-widest text-amber-100/90">
+            <span className="inline-flex items-center rounded-full border border-brand/30 bg-brand/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-widest text-brand-soft">
               Ongoing project
             </span>
             <span className="text-xs uppercase tracking-widest text-zinc-500">
@@ -28,7 +28,7 @@ export default function AiMarketplaceCaseStudy() {
             </span>
           </div>
 
-          <p className="text-sm text-zinc-400 max-w-2xl leading-relaxed border-l-2 border-violet-500/50 pl-4">
+          <p className="text-sm text-zinc-400 max-w-2xl leading-relaxed border-l-2 border-brand/50 pl-4">
             This case study is <span className="text-zinc-200">in progress</span>.
             Screens, flows, and metrics will be added when the work is ready—no image
             placeholders until then.
@@ -114,7 +114,7 @@ export default function AiMarketplaceCaseStudy() {
           </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5">
-              <p className="text-xs font-semibold uppercase tracking-widest text-rose-400/90">
+              <p className="text-xs font-semibold uppercase tracking-widest text-brand-soft">
                 Short use cycles
               </p>
               <p className="mt-2 text-sm text-zinc-300 leading-relaxed">
@@ -123,7 +123,7 @@ export default function AiMarketplaceCaseStudy() {
               </p>
             </div>
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5">
-              <p className="text-xs font-semibold uppercase tracking-widest text-emerald-400/90">
+              <p className="text-xs font-semibold uppercase tracking-widest text-brand-bright">
                 Sustainability without guilt trips
               </p>
               <p className="mt-2 text-sm text-zinc-300 leading-relaxed">
@@ -172,8 +172,8 @@ export default function AiMarketplaceCaseStudy() {
             so sellers spend less energy managing individual buyers.
           </p>
 
-          <div className="rounded-2xl border border-violet-500/25 bg-violet-500/5 p-6 sm:p-8">
-            <h3 className="text-sm font-semibold text-violet-200 uppercase tracking-wider">
+          <div className="rounded-2xl border border-brand/25 bg-brand/5 p-6 sm:p-8">
+            <h3 className="text-sm font-semibold text-brand-bright uppercase tracking-wider">
               One photo → many listings
             </h3>
             <p className="mt-3 text-zinc-300 leading-relaxed">
@@ -218,21 +218,21 @@ export default function AiMarketplaceCaseStudy() {
           </h2>
           <ul className="space-y-3 text-zinc-300 leading-relaxed list-none">
             <li className="flex gap-3">
-              <span className="text-violet-400 font-semibold shrink-0">01</span>
+              <span className="text-brand-soft font-semibold shrink-0">01</span>
               <span>
                 <span className="text-zinc-100">Preview before publish</span> — AI
                 drafts are always visible and editable; nothing ships silently.
               </span>
             </li>
             <li className="flex gap-3">
-              <span className="text-violet-400 font-semibold shrink-0">02</span>
+              <span className="text-brand-soft font-semibold shrink-0">02</span>
               <span>
                 <span className="text-zinc-100">Local-first language</span> — copy and
                 defaults tuned for SF pickup reality (density, transit, weather).
               </span>
             </li>
             <li className="flex gap-3">
-              <span className="text-violet-400 font-semibold shrink-0">03</span>
+              <span className="text-brand-soft font-semibold shrink-0">03</span>
               <span>
                 <span className="text-zinc-100">Quiet automation</span> — the agent
                 reduces coordination noise without hiding who is on the other side

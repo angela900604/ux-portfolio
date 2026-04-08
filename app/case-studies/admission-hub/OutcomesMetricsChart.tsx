@@ -16,21 +16,21 @@ export function OutcomesMetricsChart() {
           value="+500"
           valueNote="net new"
           barWidth={100}
-          barClass="bg-emerald-500/85"
+          barClass="bg-brand/85"
         />
         <MetricRow
           label="Engagement rate"
           value="+21%"
           valueNote="vs. baseline"
           barWidth={21}
-          barClass="bg-violet-500/80"
+          barClass="bg-brand-soft/80"
         />
         <MetricRow
           label="Organic traffic"
           value="+18%"
           valueNote="site sessions"
           barWidth={18}
-          barClass="bg-sky-500/75"
+          barClass="bg-brand-deep/75"
         />
       </div>
       <p className="mt-5 text-xs text-zinc-500">
@@ -59,7 +59,7 @@ function MetricRow({
       <div className="flex flex-wrap items-baseline justify-between gap-2">
         <span className="text-sm text-zinc-300">{label}</span>
         <div className="text-right">
-          <span className="text-lg font-semibold tabular-nums text-emerald-400">
+          <span className="text-lg font-semibold tabular-nums text-brand-bright">
             {value}
           </span>
           <span className="ml-2 text-xs text-zinc-500">{valueNote}</span>

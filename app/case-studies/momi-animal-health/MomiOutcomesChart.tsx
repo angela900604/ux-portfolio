@@ -15,14 +15,14 @@ export function MomiOutcomesChart() {
         <div>
           <div className="flex flex-wrap items-baseline justify-between gap-2">
             <span className="text-sm text-zinc-300">Online sales</span>
-            <span className="text-lg font-semibold tabular-nums text-emerald-400">
+            <span className="text-lg font-semibold tabular-nums text-brand-bright">
               +75%
             </span>
           </div>
           <p className="mt-1 text-xs text-zinc-500">vs. baseline before campaign push</p>
           <div className="mt-2 h-2.5 overflow-hidden rounded-full bg-zinc-800/90">
             <div
-              className="h-full w-[75%] rounded-full bg-emerald-500/85"
+              className="h-full w-[75%] rounded-full bg-brand/85"
               aria-hidden
             />
           </div>
@@ -31,7 +31,7 @@ export function MomiOutcomesChart() {
         <div>
           <div className="flex flex-wrap items-baseline justify-between gap-2">
             <span className="text-sm text-zinc-300">Marketing clarity</span>
-            <span className="text-sm font-medium text-violet-300">
+            <span className="text-sm font-medium text-brand-bright">
               Improved · Social + eCommerce
             </span>
           </div>
@@ -54,11 +54,11 @@ function ChannelBar({ label, width }: { label: string; width: number }) {
     <div>
       <div className="flex justify-between text-[11px] text-zinc-400">
         <span>{label}</span>
-        <span className="text-violet-400/90">↑</span>
+        <span className="text-brand-soft">↑</span>
       </div>
       <div className="mt-1 h-2 overflow-hidden rounded-full bg-zinc-800/90">
         <div
-          className="h-full rounded-full bg-violet-500/70"
+          className="h-full rounded-full bg-brand/70"
           style={{ width: `${Math.min(100, width)}%` }}
         />
       </div>

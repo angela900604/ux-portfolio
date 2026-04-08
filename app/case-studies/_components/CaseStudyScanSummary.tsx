@@ -14,7 +14,7 @@ export function CaseStudyScanSummary({
         {items.map((line) => (
           <li key={line} className="flex gap-3">
             <span
-              className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-violet-400/90"
+              className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"
               aria-hidden
             />
             <span>{line}</span>

@@ -132,13 +132,13 @@ export default function Home() {
                 />
               </div>
               <div className="p-6 sm:p-8">
-                <span className="inline-block text-[10px] font-medium uppercase tracking-widest text-amber-400/90 mb-3">
+                <span className="inline-block text-[10px] font-medium uppercase tracking-widest text-brand-soft mb-3">
                   {CORE_PRODUCT.flagship.tag}
                 </span>
                 <h3 className="text-xl sm:text-2xl font-semibold text-zinc-100 group-hover:text-zinc-50 transition">
                   {CORE_PRODUCT.flagship.title}
                 </h3>
-                <p className="mt-1 text-sm font-medium text-emerald-400/90">
+                <p className="mt-1 text-sm font-medium text-brand-soft">
                   {CORE_PRODUCT.flagship.outcome}
                 </p>
                 <p className="mt-3 text-zinc-400 text-sm leading-relaxed max-w-2xl">
@@ -176,7 +176,7 @@ export default function Home() {
                   <h3 className="mt-2 text-lg font-semibold text-zinc-100 group-hover:text-zinc-50">
                     {item.title}
                   </h3>
-                  <p className="mt-1 text-sm text-emerald-400/80">
+                  <p className="mt-1 text-sm text-brand-soft/90">
                     {item.outcome}
                   </p>
                   <p className="mt-2 text-sm text-zinc-400 line-clamp-2">
@@ -230,7 +230,7 @@ export default function Home() {
                   <h3 className="mt-2 text-lg font-semibold text-zinc-100 group-hover:text-zinc-50">
                     {item.title}
                   </h3>
-                  <p className="mt-1 text-sm text-emerald-400/80">
+                  <p className="mt-1 text-sm text-brand-soft/90">
                     {item.outcome}
                   </p>
                   <p className="mt-2 text-sm text-zinc-400 line-clamp-2">
