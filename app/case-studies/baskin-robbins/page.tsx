@@ -2,6 +2,7 @@ import Link from "next/link";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { WideFigure } from "../e-invoice-app/EInvoiceFigures";
 import { AnnotatedFlowSlideshow } from "./AnnotatedFlowSlideshow";
+import { AppStoreReviewsSection } from "./AppStoreReviews";
 
 export const metadata = {
   title: "Baskin-Robbins Taiwan Membership App | Angela Yang",
@@ -67,17 +68,6 @@ export default function BaskinRobbinsCaseStudy() {
           </dl>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <a
-              href={APP_STORE_TW}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-zinc-600 bg-zinc-900/50 px-4 py-2.5 text-sm font-medium text-zinc-100 transition hover:border-zinc-500 hover:bg-zinc-800/80"
-            >
-              31俱樂部 · App Store (Taiwan)
-              <span aria-hidden className="text-zinc-500">
-                ↗
-              </span>
-            </a>
-            <a
               href="#final-product"
               className="inline-flex items-center gap-2 rounded-full border border-violet-500/35 bg-violet-500/10 px-4 py-2.5 text-sm font-medium text-violet-200 transition hover:border-violet-400/45 hover:bg-violet-500/15"
             >
@@ -93,6 +83,7 @@ export default function BaskinRobbinsCaseStudy() {
               alt="Baskin-Robbins Taiwan membership app — hero visual"
             />
           </div>
+          <AppStoreReviewsSection appStoreHref={APP_STORE_TW} />
         </div>
       </header>
 
@@ -105,10 +96,23 @@ export default function BaskinRobbinsCaseStudy() {
             Why we built a dedicated membership surface in Taiwan
           </h2>
           <p className="text-zinc-300 leading-relaxed">
-            To create a dedicated membership app for BR31 Ice Cream in Taiwan,
-            allowing Taiwanese consumers to enjoy digital experiences such as point
-            accumulation and reward redemption—similar to the 31 Ice Cream
-            membership in Japan.
+            Taiwan&apos;s loyalty market expanded at an{" "}
+            <span className="text-zinc-200 font-medium">11.3% CAGR</span> from
+            2019–2023; in 2024 it was projected to grow another{" "}
+            <span className="text-zinc-200 font-medium">10.1%</span>, reaching
+            roughly{" "}
+            <span className="text-zinc-200 font-medium">US$1.84 billion</span>.
+            The category was scaling fast—and BR31 still had no
+            dedicated app, which meant risking absence during a critical growth
+            window for digital loyalty (market sizing via{" "}
+            <span className="text-zinc-400">Business Wire</span>).
+          </p>
+          <p className="text-zinc-300 leading-relaxed">
+            Our objective was to create that surface: a membership app for BR31
+            Ice Cream in Taiwan so consumers could access points, rewards, and
+            redemption in one place—aligned with the 31 Ice Cream membership
+            experience in Japan, but built for how people expect to engage on
+            mobile in Taiwan.
           </p>
         </section>
 
@@ -311,7 +315,16 @@ export default function BaskinRobbinsCaseStudy() {
             Three directions for stakeholder selection
           </h2>
           <p className="text-zinc-300 leading-relaxed max-w-3xl">
-            I presented three style options for the client to choose from:
+            Following competitive analysis, I presented three visual directions so
+            stakeholders could compare how each approach would feel on device.
+          </p>
+          <p className="text-zinc-300 leading-relaxed max-w-3xl">
+            <span className="text-zinc-200 font-medium">Style B</span>—clean white
+            with pink accents—was selected by Japan HQ. It keeps visual
+            continuity with the existing Japan BR31 app, which lowers cognitive
+            dissonance for cross-market users who already know the brand from
+            Japan, while the minimal layout lets promotional content and product
+            imagery take center stage instead of competing with UI chrome.
           </p>
           <div className="space-y-3 pt-2">
             <h3 className="text-sm font-semibold text-zinc-100">
