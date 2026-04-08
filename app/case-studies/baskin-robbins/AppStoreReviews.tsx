@@ -9,40 +9,40 @@ type AppStoreReview = {
 
 const REVIEWS: AppStoreReview[] = [
   {
-    title: "推推",
+    title: "Highly recommended",
     user: "郭柏霆",
     date: "2025/12/29",
-    body: "喜歡介面，資料修改跟福利查詢都很直覺",
+    body: "Love the interface—updating details and checking perks feels very intuitive.",
   },
   {
     leadEmoji: "👍",
     user: "丹尼爾123",
     date: "2025/12/29",
-    body: "繁體中文介面看得很親切，文字大小跟排版都很舒服",
+    body: "The Traditional Chinese UI feels familiar; the type size and layout are easy on the eyes.",
   },
   {
-    title: "很方便～",
+    title: "So convenient",
     user: "Anikitsai",
     date: "2025/12/29",
-    body: "註冊會員簡單，馬上就能管理自己的優惠內容，很方便",
+    body: "Signing up is simple, and I can manage my offers right away—very convenient.",
   },
   {
-    title: "讚",
+    title: "Great",
     user: "我可歌可泣奧進口額唷唷",
     date: "2025/12/29",
-    body: "新系統的流暢度很不錯，滑動介面很滑順",
+    body: "The new system runs smoothly; scrolling and swiping feel great.",
   },
   {
-    title: "讚",
+    title: "Great",
     user: "漂亮怪",
     date: "2025/12/29",
-    body: "資訊查詢功能很齊全，想找介紹都有",
+    body: "Information lookup is comprehensive—I can find the details I need.",
   },
   {
-    title: "商品資訊非常齊全，連蛋糕跟飲品的資訊都寫得清清楚楚",
+    title: "Product info is thorough—cakes and drinks are all clearly described",
     user: "sp98383120",
     date: "2025/12/29",
-    body: "商品資訊非常齊全，連蛋糕跟飲品的資訊都寫得清清楚楚",
+    body: "Product info is thorough—cakes and drinks are all clearly described.",
   },
 ];
 
@@ -100,10 +100,10 @@ export function AppStoreReviewsSection({ appStoreHref }: { appStoreHref: string 
             App Store
           </p>
           <h2 className="mt-1 text-lg font-semibold text-zinc-100">
-            使用者回饋
+            User feedback
           </h2>
           <p className="mt-1 max-w-xl text-sm text-zinc-500">
-            節錄自台灣 App Store 使用者評論（評分皆為 5 星）。
+            Excerpts from Taiwan App Store reviews (all ratings are 5 stars).
           </p>
         </div>
         <a
@@ -112,7 +112,7 @@ export function AppStoreReviewsSection({ appStoreHref }: { appStoreHref: string 
           rel="noopener noreferrer"
           className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full border border-zinc-600 bg-zinc-900/50 px-5 py-2.5 text-sm font-medium text-zinc-100 transition hover:border-zinc-500 hover:bg-zinc-800/80 sm:self-start"
         >
-          31俱樂部 · App Store（台灣）
+          31 Club · App Store (Taiwan)
           <span aria-hidden className="text-zinc-500">
             ↗
           </span>

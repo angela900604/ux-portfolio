@@ -3,6 +3,10 @@ import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { WideFigure } from "../e-invoice-app/EInvoiceFigures";
 import { AnnotatedFlowSlideshow } from "./AnnotatedFlowSlideshow";
 import { AppStoreReviewsSection } from "./AppStoreReviews";
+import {
+  FinalProductScreens,
+  type FinalProductGroup,
+} from "./FinalProductScreens";
 
 export const metadata = {
   title: "Baskin-Robbins Taiwan Membership App | Angela Yang",
@@ -27,6 +31,61 @@ const ANNOTATED_SLIDES = [1, 2, 3, 4, 5, 6].map((n) => ({
   alt: `Annotated mockup and page-flow reference ${n} of 6`,
 }));
 
+/**
+ * Final product (`final-screen-01` … `final-screen-20`): each number 1–20 appears
+ * exactly once. Order in each `screenNumbers` = display order.
+ */
+const FINAL_PRODUCT_GROUPS: readonly FinalProductGroup[] = [
+  {
+    title: "Sign-in & registration",
+    description:
+      "Account creation and login so members can access points and perks securely, including flows that match Taiwan’s CRM and legal expectations.",
+    screenNumbers: [10, 16, 3],
+  },
+  {
+    title: "Member home",
+    description:
+      "The signed-in dashboard for balance, shortcuts, and at-a-glance status—the surface members return to most often.",
+    screenNumbers: [20, 9, 12],
+  },
+  {
+    title: "Products",
+    description:
+      "Browse cakes, beverages, and product detail—helping members decide what to order with clear imagery and specs.",
+    screenNumbers: [19, 14],
+  },
+  {
+    title: "Member zone",
+    description:
+      "Member-only content and utilities beyond the home hub—profile, perks, and settings tailored to the loyalty program.",
+    screenNumbers: [18, 17],
+  },
+  {
+    title: "Vouchers",
+    description:
+      "Coupons and ticket-style rewards in one place so members can find and use what they’ve earned without digging through email.",
+    screenNumbers: [13, 5, 15],
+  },
+  {
+    title: "Transactions & invoice capture",
+    description:
+      "Order history plus invoice registration—so members can reconcile spend, recover receipts, and keep points accurate.",
+    screenNumbers: [7, 2, 11],
+  },
+  {
+    title: "Store locator",
+    description:
+      "Find nearby shops, hours, and visit-ready info when members are on the go.",
+    screenNumbers: [4, 1],
+  },
+  {
+    title: "In-store visits & points",
+    description:
+      "Flows for earning points when dining in—bridging physical visits with the digital wallet.",
+    screenNumbers: [6, 8],
+  },
+];
+
 export default function BaskinRobbinsCaseStudy() {
   return (
     <article className="min-h-screen bg-zinc-950 text-zinc-100">
@@ -42,30 +101,68 @@ export default function BaskinRobbinsCaseStudy() {
           <h1 className="font-semibold text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight max-w-3xl">
             Baskin-Robbins Taiwan&apos;s first membership app
           </h1>
-          <p className="mt-4 text-xl text-zinc-400 max-w-2xl">
-            Baskin Robbins Taiwan Membership App — boosting brand affinity and
-            customer engagement.
+          <p className="mt-5 max-w-3xl text-lg leading-relaxed text-zinc-200 sm:text-xl">
+            Taiwan&apos;s loyalty market was growing fast while BR31 still had no
+            native app—I led end-to-end UX/UI for 31 Club, shipped the phase-one MVP
+            on schedule, and early reviews on the Taiwan App Store came in at five
+            stars.
           </p>
-          <dl className="mt-8 flex flex-wrap gap-x-10 gap-y-2 text-sm">
-            <div>
-              <dt className="text-zinc-500 uppercase tracking-wider">Timeline</dt>
-              <dd className="text-zinc-200">December 2024 – March 2025</dd>
+
+          <div className="mt-8 space-y-3">
+            <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+              Impact summary
+            </p>
+            <div className="grid gap-3 sm:grid-cols-2 sm:max-w-2xl">
+              <div className="rounded-xl border border-zinc-800/90 bg-zinc-900/50 px-4 py-3">
+                <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">
+                  Launched
+                </p>
+                <p className="mt-1 text-sm font-medium text-zinc-100">
+                  Phase-one MVP · Sept 2025
+                </p>
+              </div>
+              <div className="rounded-xl border border-zinc-800/90 bg-zinc-900/50 px-4 py-3">
+                <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">
+                  App Store (Taiwan)
+                </p>
+                <p className="mt-1 text-sm font-medium text-zinc-100">
+                  5★ user reviews at launch
+                </p>
+              </div>
             </div>
-            <div>
-              <dt className="text-zinc-500 uppercase tracking-wider">Role</dt>
-              <dd className="text-zinc-200">Lead UX/UI Designer</dd>
+          </div>
+
+          <div className="mt-8 space-y-3">
+            <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+              At a glance
+            </p>
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              {(
+                [
+                  ["Timeline", "December 2024 – March 2025"],
+                  ["Role", "Lead UX/UI Designer"],
+                  ["Project type", "Mobile app"],
+                  [
+                    "Focus",
+                    "Client-driven end-to-end product design",
+                  ],
+                ] as const
+              ).map(([label, value]) => (
+                <div
+                  key={label}
+                  className="rounded-xl border border-zinc-800/90 bg-zinc-900/40 px-4 py-3"
+                >
+                  <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">
+                    {label}
+                  </p>
+                  <p className="mt-1 text-sm font-medium leading-snug text-zinc-100">
+                    {value}
+                  </p>
+                </div>
+              ))}
             </div>
-            <div>
-              <dt className="text-zinc-500 uppercase tracking-wider">Project type</dt>
-              <dd className="text-zinc-200">Mobile app</dd>
-            </div>
-            <div>
-              <dt className="text-zinc-500 uppercase tracking-wider">Focus</dt>
-              <dd className="text-zinc-200">
-                Client-driven end-to-end product design
-              </dd>
-            </div>
-          </dl>
+          </div>
+
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <a
               href="#final-product"
@@ -128,21 +225,6 @@ export default function BaskinRobbinsCaseStudy() {
             engineers. As the lead designer, I was responsible for the entire UX
             and UI design process—including requirement interviews, user flow
             planning, and final visual design.
-          </p>
-        </section>
-
-        <section className="space-y-5 max-w-3xl">
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Project challenges
-          </span>
-          <h2 className="text-xl font-semibold text-zinc-100">
-            Technical and timeline constraints
-          </h2>
-          <p className="text-zinc-300 leading-relaxed">
-            The project faced numerous technical and timeline constraints. To
-            ensure the timely launch of the first-phase MVP, we continuously
-            adjusted task priorities and maintained frequent internal discussions
-            and client communications to align team and client understanding.
           </p>
         </section>
 
@@ -531,21 +613,7 @@ export default function BaskinRobbinsCaseStudy() {
             usability—ensuring consistency across iOS and Android while meeting both
             client and user needs.
           </p>
-          <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-            {Array.from({ length: 20 }, (_, i) => {
-              const src = ASSET(
-                `final-screen-${String(i + 1).padStart(2, "0")}.png`
-              );
-              return (
-                <WideFigure
-                  key={src}
-                  borderless
-                  src={src}
-                  alt={`Baskin-Robbins Taiwan membership app — screen ${i + 1} of 20`}
-                />
-              );
-            })}
-          </div>
+          <FinalProductScreens asset={ASSET} groups={FINAL_PRODUCT_GROUPS} />
         </section>
 
         <section className="border-t border-zinc-800 pt-12 space-y-8">
