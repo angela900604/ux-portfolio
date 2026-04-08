@@ -1,9 +1,16 @@
 type Item = { label: string; value: string };
 
-export function CaseStudyMetaStrip({ items }: { items: readonly Item[] }) {
+export function CaseStudyMetaStrip({
+  items,
+  borderLeftClassName = "border-violet-500/45",
+}: {
+  items: readonly Item[];
+  /** Tailwind border color class for the left accent bar */
+  borderLeftClassName?: string;
+}) {
   return (
     <div
-      className="flex flex-wrap items-center gap-x-3 gap-y-2 border-l-2 border-violet-500/45 bg-zinc-900/35 py-3 pl-4 pr-3 text-sm text-zinc-300 sm:gap-x-4"
+      className={`flex flex-wrap items-center gap-x-3 gap-y-2 border-l-2 bg-zinc-900/35 py-3 pl-4 pr-3 text-sm text-zinc-300 sm:gap-x-4 ${borderLeftClassName}`}
       aria-label="Project summary"
     >
       {items.map((item, i) => (

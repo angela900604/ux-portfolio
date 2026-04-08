@@ -49,7 +49,7 @@ const REVIEWS: AppStoreReview[] = [
 function StarRow() {
   return (
     <div
-      className="flex gap-0.5 text-[#FF9500]"
+      className="flex gap-0.5 text-[#F20C90]"
       aria-label="5 out of 5 stars"
       role="img"
     >

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
+import { CaseStudyScanSummary } from "../_components/CaseStudyScanSummary";
 import { PortraitTile, WideFigure } from "./EInvoiceFigures";
 
 export const metadata = {
@@ -37,6 +38,13 @@ const M_TIME =
   "rounded-md bg-amber-500/15 px-1.5 py-0.5 font-medium tabular-nums text-amber-100/95";
 
 /** Final solution screens — high-fidelity exports (18), filenames solution-final-01 … 18. */
+const E_INVOICE_SCAN_SUMMARY = [
+  "End-to-end UX/UI redesign of Taiwan’s Ministry of Finance Cloud Invoice App—from discovery and competitive research through wireframes, mockups, and documented final screens.",
+  "Usability testing with participants aged 18–70+ (including visually impaired users) reached about 88% task success; iterations focused on IA, onboarding, scanning, donation, and redemption.",
+  "Login success improved from 68% to 92% with biometric login and in-app recovery; clearer deadlines and notifications helped cut missed prize redemptions.",
+  "Aligned flows with accessibility expectations and government service constraints so the app feels faster, more inclusive, and more trustworthy for everyday use.",
+] as const;
+
 const FINAL_SOLUTION_SCREENS: { id: string; title: string }[] = [
   { id: "01", title: "消費分析 · Spending insights" },
   { id: "02", title: "會員卡管理 · Membership cards" },
@@ -98,6 +106,34 @@ export default function EInvoiceCaseStudy() {
               </dd>
             </div>
           </dl>
+
+          <div className="mt-8 space-y-3">
+            <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+              Impact summary
+            </p>
+            <div className="grid gap-3 sm:grid-cols-2 sm:max-w-2xl">
+              <div className="rounded-xl border border-zinc-800/90 bg-zinc-900/50 px-4 py-3">
+                <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">
+                  Usability testing
+                </p>
+                <p className="mt-1 text-sm font-medium text-zinc-100">
+                  ~88% task success · ages 18–70+
+                </p>
+              </div>
+              <div className="rounded-xl border border-zinc-800/90 bg-zinc-900/50 px-4 py-3">
+                <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">
+                  Login success
+                </p>
+                <p className="mt-1 text-sm font-medium text-zinc-100">
+                  68% → 92%
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-8">
+            <CaseStudyScanSummary items={E_INVOICE_SCAN_SUMMARY} />
+          </div>
 
           <a
             href="#final-solution-screens"

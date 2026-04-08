@@ -1,9 +1,11 @@
 export function CaseStudyScanSummary({
   title = "Read in ~30 seconds",
   items,
+  bulletClassName = "bg-violet-400/90",
 }: {
   title?: string;
   items: readonly string[];
+  bulletClassName?: string;
 }) {
   return (
     <div className="rounded-xl border border-zinc-800/90 bg-zinc-900/45 p-5 sm:p-6">
@@ -14,7 +16,7 @@ export function CaseStudyScanSummary({
         {items.map((line) => (
           <li key={line} className="flex gap-3">
             <span
-              className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-violet-400/90"
+              className={`mt-2 h-1.5 w-1.5 shrink-0 rounded-full ${bulletClassName}`}
               aria-hidden
             />
             <span>{line}</span>

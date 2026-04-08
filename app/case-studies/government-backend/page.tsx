@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
+import { CaseStudyScanSummary } from "../_components/CaseStudyScanSummary";
 import { FlatAppShot, WideFigure } from "../e-invoice-app/EInvoiceFigures";
 
 export const metadata = {
@@ -10,6 +11,13 @@ export const metadata = {
 };
 
 const ASSET = (name: string) => `/case-studies/government-backend/${name}`;
+
+const GOV_BACKEND_SCAN_SUMMARY = [
+  "Lead UX/UI for the Ministry of Finance uniform invoice lottery redemption backend—role-based access, operational reporting, and workflows for 600+ government staff.",
+  "Designed a permission model that hides irrelevant features and restricts high-impact actions by role so teams can work in parallel without breaking public-facing content.",
+  "Redesigned reporting into actionable dashboards with weekly/monthly views, filters, and CSV export so staff could prep meetings and audits with less reliance on engineering.",
+  "Delivered end-to-end product design with PM and engineering partners on a July–September 2025 timeline.",
+] as const;
 
 function Metric({ children }: { children: ReactNode }) {
   return (
@@ -82,6 +90,35 @@ export default function GovernmentBackendCaseStudy() {
               </dd>
             </div>
           </dl>
+
+          <div className="mt-8 space-y-3">
+            <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+              Impact summary
+            </p>
+            <div className="grid gap-3 sm:grid-cols-2 sm:max-w-2xl">
+              <div className="rounded-xl border border-zinc-800/90 bg-zinc-900/50 px-4 py-3">
+                <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">
+                  Coverage
+                </p>
+                <p className="mt-1 text-sm font-medium text-zinc-100">
+                  600+ staff · role-based access
+                </p>
+              </div>
+              <div className="rounded-xl border border-zinc-800/90 bg-zinc-900/50 px-4 py-3">
+                <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">
+                  Shipped
+                </p>
+                <p className="mt-1 text-sm font-medium text-zinc-100">
+                  July–September 2025
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-8">
+            <CaseStudyScanSummary items={GOV_BACKEND_SCAN_SUMMARY} />
+          </div>
+
           <div className="mt-12">
             <WideFigure
               src={ASSET("hero-platform-overview.png")}
