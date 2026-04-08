@@ -72,7 +72,7 @@ export function AnnotatedFlowSlideshow({ items }: { items: SlideshowSlide[] }) {
           <button
             type="button"
             onClick={() => go(-1)}
-            className="pointer-events-auto rounded-full border border-zinc-600/80 bg-zinc-950/85 px-3 py-2 text-sm text-zinc-100 shadow-lg backdrop-blur-sm transition hover:bg-zinc-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-[#F20C90]/80"
+            className="pointer-events-auto rounded-full border border-zinc-600/80 bg-zinc-950/85 px-3 py-2 text-sm text-zinc-100 shadow-lg backdrop-blur-sm transition hover:bg-zinc-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-violet-500"
             aria-label="Previous slide"
           >
             ←
@@ -80,7 +80,7 @@ export function AnnotatedFlowSlideshow({ items }: { items: SlideshowSlide[] }) {
           <button
             type="button"
             onClick={() => go(1)}
-            className="pointer-events-auto rounded-full border border-zinc-600/80 bg-zinc-950/85 px-3 py-2 text-sm text-zinc-100 shadow-lg backdrop-blur-sm transition hover:bg-zinc-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-[#F20C90]/80"
+            className="pointer-events-auto rounded-full border border-zinc-600/80 bg-zinc-950/85 px-3 py-2 text-sm text-zinc-100 shadow-lg backdrop-blur-sm transition hover:bg-zinc-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-violet-500"
             aria-label="Next slide"
           >
             →
@@ -94,9 +94,7 @@ export function AnnotatedFlowSlideshow({ items }: { items: SlideshowSlide[] }) {
             type="button"
             onClick={() => setIndex(i)}
             className={`h-2 w-2 rounded-full transition ${
-              i === safeIndex
-                ? "bg-[#F20C90]"
-                : "bg-zinc-600 hover:bg-[#004291]/60"
+              i === safeIndex ? "bg-violet-400" : "bg-zinc-600 hover:bg-zinc-500"
             }`}
             aria-label={`Go to slide ${i + 1}`}
             aria-current={i === safeIndex}
