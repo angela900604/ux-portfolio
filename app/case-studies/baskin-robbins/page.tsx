@@ -1,4 +1,7 @@
 import Link from "next/link";
+import { CaseStudyMetaStrip } from "../_components/CaseStudyMetaStrip";
+import { CaseStudyOnPageNav } from "../_components/CaseStudyOnPageNav";
+import { CaseStudyScanSummary } from "../_components/CaseStudyScanSummary";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { WideFigure } from "../e-invoice-app/EInvoiceFigures";
 import { AnnotatedFlowSlideshow } from "./AnnotatedFlowSlideshow";
@@ -7,6 +10,7 @@ import {
   FinalProductScreens,
   type FinalProductGroup,
 } from "./FinalProductScreens";
+import { MarketSizingCharts } from "./MarketSizingCharts";
 
 export const metadata = {
   title: "Baskin-Robbins Taiwan Membership App | Angela Yang",
@@ -86,6 +90,39 @@ const FINAL_PRODUCT_GROUPS: readonly FinalProductGroup[] = [
   },
 ];
 
+const CASE_META_STRIP = [
+  { label: "Role", value: "Lead UX/UI" },
+  { label: "Timeline", value: "Dec 2024 – Mar 2025" },
+  { label: "Tools", value: "Figma" },
+  { label: "Outcome", value: "MVP shipped · 5★ (Taiwan)" },
+] as const;
+
+const SCAN_SUMMARY_LINES = [
+  "Led end-to-end UX/UI for BR31 Taiwan’s first membership app (31 Club), from discovery through developer handoff.",
+  "Delivered functional maps, high-fidelity mockups, annotated flows, and a build-ready UI kit aligned with engineering.",
+  "Shipped the phase-one MVP on schedule; early Taiwan App Store reviews were five stars.",
+  "Collaborated with a PM and four engineers under a tight timeline and real backend constraints.",
+] as const;
+
+const ON_PAGE_LINKS = [
+  { href: "#team-objectives", label: "Market & goals" },
+  { href: "#role-deliverables", label: "Role" },
+  { href: "#project-outcomes", label: "Outcomes" },
+  { href: "#project-background", label: "Background" },
+  { href: "#design-process", label: "Process" },
+  { href: "#requirement-interviews", label: "Requirements" },
+  { href: "#function-difference", label: "Local vs Japan" },
+  { href: "#visual-style", label: "Visual style" },
+  { href: "#challenges", label: "Challenges" },
+  { href: "#learnings", label: "Learnings" },
+  { href: "#annotations-flow", label: "Handoff" },
+  { href: "#delivery-kit", label: "UI kit" },
+  { href: "#final-product", label: "Final app" },
+] as const;
+
+const sectionScroll =
+  "scroll-mt-28 sm:scroll-mt-32";
+
 export default function BaskinRobbinsCaseStudy() {
   return (
     <article className="min-h-screen bg-zinc-950 text-zinc-100">
@@ -98,7 +135,8 @@ export default function BaskinRobbinsCaseStudy() {
             <span className="text-zinc-600">·</span>
             <span>Zero-to-one</span>
           </div>
-          <h1 className="font-semibold text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight max-w-3xl">
+          <CaseStudyMetaStrip items={CASE_META_STRIP} />
+          <h1 className="mt-8 font-semibold text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight max-w-3xl">
             Baskin-Robbins Taiwan&apos;s first membership app
           </h1>
           <p className="mt-5 max-w-3xl text-lg leading-relaxed text-zinc-200 sm:text-xl">
@@ -132,6 +170,10 @@ export default function BaskinRobbinsCaseStudy() {
             </div>
           </div>
 
+          <div className="mt-8">
+            <CaseStudyScanSummary items={SCAN_SUMMARY_LINES} />
+          </div>
+
           <div className="mt-8 space-y-3">
             <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
               At a glance
@@ -163,6 +205,10 @@ export default function BaskinRobbinsCaseStudy() {
             </div>
           </div>
 
+          <div className="mt-8">
+            <CaseStudyOnPageNav links={ON_PAGE_LINKS} />
+          </div>
+
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <a
               href="#final-product"
@@ -185,26 +231,26 @@ export default function BaskinRobbinsCaseStudy() {
       </header>
 
       <div className="mx-auto max-w-[1280px] px-6 sm:px-[100px] py-12 sm:py-16 space-y-20">
-        <section className="space-y-5 max-w-3xl">
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Team objectives
-          </span>
-          <h2 className="text-xl font-semibold text-zinc-100">
-            Why we built a dedicated membership surface in Taiwan
-          </h2>
-          <p className="text-zinc-300 leading-relaxed">
-            Taiwan&apos;s loyalty market expanded at an{" "}
-            <span className="text-zinc-200 font-medium">11.3% CAGR</span> from
-            2019–2023; in 2024 it was projected to grow another{" "}
-            <span className="text-zinc-200 font-medium">10.1%</span>, reaching
-            roughly{" "}
-            <span className="text-zinc-200 font-medium">US$1.84 billion</span>.
-            The category was scaling fast—and BR31 still had no
-            dedicated app, which meant risking absence during a critical growth
-            window for digital loyalty (market sizing via{" "}
+        <section
+          id="team-objectives"
+          className={`space-y-6 max-w-5xl ${sectionScroll}`}
+        >
+          <div className="max-w-3xl space-y-5">
+            <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+              Team objectives
+            </span>
+            <h2 className="text-xl font-semibold text-zinc-100">
+              Why we built a dedicated membership surface in Taiwan
+            </h2>
+          </div>
+          <MarketSizingCharts />
+          <p className="max-w-3xl text-zinc-300 leading-relaxed">
+            The category was scaling fast—and BR31 still had no dedicated app,
+            which meant risking absence during a critical growth window for digital
+            loyalty (market sizing via{" "}
             <span className="text-zinc-400">Business Wire</span>).
           </p>
-          <p className="text-zinc-300 leading-relaxed">
+          <p className="max-w-3xl text-zinc-300 leading-relaxed">
             Our objective was to create that surface: a membership app for BR31
             Ice Cream in Taiwan so consumers could access points, rewards, and
             redemption in one place—aligned with the 31 Ice Cream membership
@@ -213,7 +259,10 @@ export default function BaskinRobbinsCaseStudy() {
           </p>
         </section>
 
-        <section className="space-y-5 max-w-3xl">
+        <section
+          id="role-deliverables"
+          className={`space-y-5 max-w-3xl ${sectionScroll}`}
+        >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Role &amp; deliverables
           </span>
@@ -228,7 +277,10 @@ export default function BaskinRobbinsCaseStudy() {
           </p>
         </section>
 
-        <section className="space-y-5 max-w-3xl">
+        <section
+          id="project-outcomes"
+          className={`space-y-5 max-w-3xl ${sectionScroll}`}
+        >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Project outcomes
           </span>
@@ -242,7 +294,10 @@ export default function BaskinRobbinsCaseStudy() {
           </p>
         </section>
 
-        <section className="space-y-6 max-w-5xl">
+        <section
+          id="project-background"
+          className={`space-y-6 max-w-5xl ${sectionScroll}`}
+        >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Project background
           </span>
@@ -279,7 +334,10 @@ export default function BaskinRobbinsCaseStudy() {
           </div>
         </section>
 
-        <section className="space-y-5 max-w-3xl">
+        <section
+          id="design-process"
+          className={`space-y-5 max-w-3xl ${sectionScroll}`}
+        >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Design process
           </span>
@@ -342,7 +400,10 @@ export default function BaskinRobbinsCaseStudy() {
           </div>
         </section>
 
-        <section className="space-y-5 max-w-3xl">
+        <section
+          id="requirement-interviews"
+          className={`space-y-5 max-w-3xl ${sectionScroll}`}
+        >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Requirement interviews
           </span>
@@ -367,7 +428,10 @@ export default function BaskinRobbinsCaseStudy() {
           </p>
         </section>
 
-        <section className="space-y-5 max-w-3xl">
+        <section
+          id="function-difference"
+          className={`space-y-5 max-w-3xl ${sectionScroll}`}
+        >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Function difference
           </span>
@@ -389,7 +453,10 @@ export default function BaskinRobbinsCaseStudy() {
           </p>
         </section>
 
-        <section className="space-y-6 max-w-5xl">
+        <section
+          id="visual-style"
+          className={`space-y-6 max-w-5xl ${sectionScroll}`}
+        >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Visual style &amp; UI design
           </span>
@@ -468,7 +535,10 @@ export default function BaskinRobbinsCaseStudy() {
           </div>
         </section>
 
-        <section className="space-y-5 max-w-3xl">
+        <section
+          id="challenges"
+          className={`space-y-5 max-w-3xl ${sectionScroll}`}
+        >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Challenges
           </span>
@@ -495,7 +565,10 @@ export default function BaskinRobbinsCaseStudy() {
           </ul>
         </section>
 
-        <section className="space-y-5 max-w-3xl">
+        <section
+          id="learnings"
+          className={`space-y-5 max-w-3xl ${sectionScroll}`}
+        >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Learnings
           </span>
@@ -512,7 +585,10 @@ export default function BaskinRobbinsCaseStudy() {
           </p>
         </section>
 
-        <section className="space-y-6 max-w-5xl">
+        <section
+          id="annotations-flow"
+          className={`space-y-6 max-w-5xl ${sectionScroll}`}
+        >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Annotations &amp; page flow
           </span>
@@ -543,7 +619,10 @@ export default function BaskinRobbinsCaseStudy() {
           </div>
         </section>
 
-        <section className="space-y-6 max-w-5xl">
+        <section
+          id="delivery-kit"
+          className={`space-y-6 max-w-5xl ${sectionScroll}`}
+        >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Delivery
           </span>
@@ -598,7 +677,7 @@ export default function BaskinRobbinsCaseStudy() {
 
         <section
           id="final-product"
-          className="scroll-mt-28 space-y-10 max-w-6xl"
+          className={`space-y-10 max-w-6xl ${sectionScroll}`}
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Final product
