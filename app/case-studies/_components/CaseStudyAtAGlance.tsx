@@ -31,20 +31,23 @@ export function CaseStudyAtAGlance({
         At a glance
       </p>
       <div
-        className="relative flex"
+        className="relative flex items-start gap-2.5 sm:gap-3"
         aria-label="Project summary at a glance"
       >
-        <div className={`w-1 shrink-0 self-stretch ${bar}`} aria-hidden />
-        <div className="flex min-w-0 flex-1 flex-col gap-y-3 lg:flex-row lg:gap-x-6 lg:gap-y-0 xl:gap-x-8">
+        <div
+          className={`mt-0.5 h-8 w-1 shrink-0 rounded-sm sm:h-9 ${bar}`}
+          aria-hidden
+        />
+        <div className="flex min-w-0 flex-1 flex-col gap-y-2 lg:flex-row lg:gap-x-6 lg:gap-y-0 xl:gap-x-8">
           {items.map((item) => (
             <div
               key={item.label}
-              className="min-w-0 flex-1 px-4 py-2 sm:px-5 sm:py-2.5"
+              className="min-w-0 flex-1 px-0 py-1 sm:py-1.5 lg:px-0"
             >
               <p className="text-[11px] font-semibold uppercase tracking-wider text-zinc-500">
                 {item.label}
               </p>
-              <p className="mt-1 text-sm font-medium leading-snug text-zinc-100">
+              <p className="mt-0.5 text-sm font-medium leading-snug text-zinc-100">
                 {item.value}
               </p>
             </div>
