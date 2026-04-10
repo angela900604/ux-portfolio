@@ -17,7 +17,7 @@ const ACCENT_BAR = {
 } as const;
 
 /**
- * “At a glance” — single segmented panel (not four separate cards).
+ * “At a glance” — left accent stripe with inline columns (no card chrome).
  */
 export function CaseStudyAtAGlance({
   items,
@@ -26,29 +26,25 @@ export function CaseStudyAtAGlance({
   const bar = ACCENT_BAR[accent];
 
   return (
-    <div className="space-y-3">
+    <div className="space-y-2">
       <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
         At a glance
       </p>
       <div
-        className="relative flex overflow-hidden rounded-2xl bg-zinc-900/25"
+        className="relative flex"
         aria-label="Project summary at a glance"
       >
-        <div className={`w-1 shrink-0 ${bar}`} aria-hidden />
-        <div className="flex min-w-0 flex-1 flex-col lg:flex-row">
-          {items.map((item, i) => (
+        <div className={`w-1 shrink-0 self-stretch ${bar}`} aria-hidden />
+        <div className="flex min-w-0 flex-1 flex-col gap-y-3 lg:flex-row lg:gap-x-6 lg:gap-y-0 xl:gap-x-8">
+          {items.map((item) => (
             <div
               key={item.label}
-              className={`min-w-0 flex-1 px-5 py-4 sm:px-6 sm:py-5 ${
-                i > 0
-                  ? "border-t border-zinc-800/75 lg:border-l lg:border-t-0"
-                  : ""
-              }`}
+              className="min-w-0 flex-1 px-4 py-2 sm:px-5 sm:py-2.5"
             >
               <p className="text-[11px] font-semibold uppercase tracking-wider text-zinc-500">
                 {item.label}
               </p>
-              <p className="mt-2 text-sm font-medium leading-snug text-zinc-100">
+              <p className="mt-1 text-sm font-medium leading-snug text-zinc-100">
                 {item.value}
               </p>
             </div>
