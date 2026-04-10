@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
+import { CaseStudyAtAGlance } from "../_components/CaseStudyAtAGlance";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { CaseStudyScanSummary } from "../_components/CaseStudyScanSummary";
 import { FlatAppShot, WideFigure } from "../e-invoice-app/EInvoiceFigures";
@@ -11,6 +12,17 @@ export const metadata = {
 };
 
 const ASSET = (name: string) => `/case-studies/government-backend/${name}`;
+
+const AT_A_GLANCE_ITEMS = [
+  { label: "Timeline", value: "July – September 2025" },
+  { label: "Role", value: "Lead UX/UI Designer" },
+  { label: "Project type", value: "Backend platform" },
+  {
+    label: "Focus",
+    value:
+      "Client-driven end-to-end product design · Cross-functional collaboration",
+  },
+] as const;
 
 const GOV_BACKEND_SCAN_SUMMARY = [
   "Lead UX/UI for the Ministry of Finance uniform invoice lottery redemption backend—role-based access, operational reporting, and workflows for 600+ government staff.",
@@ -66,35 +78,8 @@ export default function GovernmentBackendCaseStudy() {
             management and reducing errors.
           </p>
 
-          <div className="mt-8 space-y-3">
-            <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-              At a glance
-            </p>
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-              {(
-                [
-                  ["Timeline", "July – September 2025"],
-                  ["Role", "Lead UX/UI Designer"],
-                  ["Project type", "Backend platform"],
-                  [
-                    "Focus",
-                    "Client-driven end-to-end product design · Cross-functional collaboration",
-                  ],
-                ] as const
-              ).map(([label, value]) => (
-                <div
-                  key={label}
-                  className="rounded-xl border border-zinc-800/90 bg-zinc-900/40 px-4 py-3"
-                >
-                  <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">
-                    {label}
-                  </p>
-                  <p className="mt-1 text-sm font-medium leading-snug text-zinc-100">
-                    {value}
-                  </p>
-                </div>
-              ))}
-            </div>
+          <div className="mt-8">
+            <CaseStudyAtAGlance items={AT_A_GLANCE_ITEMS} />
           </div>
 
           <div className="mt-8 space-y-3">

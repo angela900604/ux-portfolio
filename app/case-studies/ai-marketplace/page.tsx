@@ -1,6 +1,17 @@
 import Link from "next/link";
+import { CaseStudyAtAGlance } from "../_components/CaseStudyAtAGlance";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { CaseStudyScanSummary } from "../_components/CaseStudyScanSummary";
+
+const AT_A_GLANCE_ITEMS = [
+  { label: "Timeline", value: "Ongoing (2025+)" },
+  { label: "Role", value: "Product designer · AI UX" },
+  {
+    label: "Project type",
+    value: "Mobile app · AI marketplace (zero-to-one)",
+  },
+  { label: "Region", value: "San Francisco · parent communities" },
+] as const;
 
 const MINA_SCAN_SUMMARY = [
   "Zero-to-one product design for MINA—an AI-native resale marketplace for San Francisco parent communities and fast-turnover baby gear.",
@@ -52,32 +63,8 @@ export default function AiMarketplaceCaseStudy() {
             second job.
           </p>
 
-          <div className="mt-8 space-y-3">
-            <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-              At a glance
-            </p>
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-              {(
-                [
-                  ["Timeline", "Ongoing (2025+)"],
-                  ["Role", "Product designer · AI UX"],
-                  ["Project type", "Mobile app · AI marketplace (zero-to-one)"],
-                  ["Region", "San Francisco · parent communities"],
-                ] as const
-              ).map(([label, value]) => (
-                <div
-                  key={label}
-                  className="rounded-xl border border-zinc-800/90 bg-zinc-900/40 px-4 py-3"
-                >
-                  <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">
-                    {label}
-                  </p>
-                  <p className="mt-1 text-sm font-medium leading-snug text-zinc-100">
-                    {value}
-                  </p>
-                </div>
-              ))}
-            </div>
+          <div className="mt-8">
+            <CaseStudyAtAGlance items={AT_A_GLANCE_ITEMS} />
           </div>
 
           <div className="mt-8 space-y-3">
@@ -267,6 +254,86 @@ export default function AiMarketplaceCaseStudy() {
               </p>
             </div>
           </div>
+        </section>
+
+        <section
+          id="engineering-proposal"
+          className="max-w-3xl scroll-mt-28 space-y-5 sm:scroll-mt-32"
+        >
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            Proposal &amp; alignment
+          </span>
+          <h2 className="text-xl font-semibold text-zinc-100">
+            An innovative create-listing flow—and how we stress-tested it with
+            engineering
+          </h2>
+          <p className="text-zinc-300 leading-relaxed">
+            Our co-founder emphasized that{" "}
+            <span className="text-zinc-100">
+              investors care about measurable upside and how clearly the product
+              stands out
+            </span>
+            . To ground that story, I audited{" "}
+            <span className="text-zinc-100">
+              create-listing flows across mainstream marketplace apps
+            </span>
+            . None of them centered on a{" "}
+            <span className="text-zinc-100">chat-native agent</span> for listing
+            creation—most still feel like long forms and category pickers. That gap
+            became the wedge I wanted to spell out for the team.
+          </p>
+          <p className="text-zinc-300 leading-relaxed">
+            I translated the direction into{" "}
+            <span className="text-zinc-100">mockups and a page flow</span> so
+            engineers could follow the narrative beat-by-beat: the user opens with a
+            single photo; the model analyzes the scene,{" "}
+            <span className="text-zinc-100">
+              detects items, and surfaces labels on the image
+            </span>
+            ; the user then talks to the agent in chat about intent—for example,
+            &quot;I want to sell this stroller&quot;—and the system{" "}
+            <span className="text-zinc-100">drafts a listing</span> from that
+            conversation. The goal was to show a differentiated, investor-friendly
+            story without hiding the hard parts.
+          </p>
+          <p className="text-zinc-300 leading-relaxed">
+            Engineers pushed back on feasibility:{" "}
+            <span className="text-zinc-100">
+              one image alone may not carry enough signal for full listing quality
+            </span>
+            . I folded that into the flow by adding an explicit beat where the agent{" "}
+            <span className="text-zinc-100">
+              asks the user to upload additional photos
+            </span>{" "}
+            when detail is thin—so the experience stays ambitious but honest about
+            what multimodal models need.
+          </p>
+          <p className="text-zinc-300 leading-relaxed">
+            Beyond the selling agent, I also sketched how MINA could grow into
+            adjacent agents: one that{" "}
+            <span className="text-zinc-100">
+              helps coordinate buyers and sellers
+            </span>{" "}
+            (status, timing, handoff), and a{" "}
+            <span className="text-zinc-100">parenting copilot</span> that nudges
+            parents through developmental phases—what stage the baby is entering and
+            what gear tends to matter—so the app feels useful even between
+            transactions.
+          </p>
+          <p className="text-zinc-300 leading-relaxed">
+            The team raised a fair concern: promoting{" "}
+            <span className="text-zinc-100">several different AI chat agents</span>{" "}
+            could confuse users on the surface and multiply complexity in the
+            backend model layer. My counter was directional:{" "}
+            <span className="text-zinc-100">
+              if each agent has a clearly separated entry point in the product, can
+              we also treat the underlying models or orchestration as separate
+              lanes—so the UX stays legible and the stack does not collapse into one
+              overloaded generalist?
+            </span>{" "}
+            That question stays open; it is part of the ongoing design–engineering
+            trade space as we narrow MVP scope.
+          </p>
         </section>
 
         <section className="max-w-3xl space-y-4">

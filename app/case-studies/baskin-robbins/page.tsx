@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CaseStudyAtAGlance } from "../_components/CaseStudyAtAGlance";
 import { CaseStudyScanSummary } from "../_components/CaseStudyScanSummary";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { WideFigure } from "../e-invoice-app/EInvoiceFigures";
@@ -88,6 +89,16 @@ const FINAL_PRODUCT_GROUPS: readonly FinalProductGroup[] = [
   },
 ];
 
+const AT_A_GLANCE_ITEMS = [
+  { label: "Timeline", value: "December 2024 – March 2025" },
+  { label: "Role", value: "Lead UX/UI Designer" },
+  { label: "Project type", value: "Mobile app" },
+  {
+    label: "Focus",
+    value: "Client-driven end-to-end product design",
+  },
+] as const;
+
 const SCAN_SUMMARY_LINES = [
   "Led end-to-end UX/UI for BR31 Taiwan’s first membership app (31 Club), from discovery through developer handoff.",
   "Delivered functional maps, high-fidelity mockups, annotated flows, and a build-ready UI kit aligned with engineering.",
@@ -120,35 +131,8 @@ export default function BaskinRobbinsCaseStudy() {
             stars.
           </p>
 
-          <div className="mt-8 space-y-3">
-            <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-              At a glance
-            </p>
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-              {(
-                [
-                  ["Timeline", "December 2024 – March 2025"],
-                  ["Role", "Lead UX/UI Designer"],
-                  ["Project type", "Mobile app"],
-                  [
-                    "Focus",
-                    "Client-driven end-to-end product design",
-                  ],
-                ] as const
-              ).map(([label, value]) => (
-                <div
-                  key={label}
-                  className="rounded-xl border border-zinc-800/90 bg-zinc-900/40 px-4 py-3"
-                >
-                  <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">
-                    {label}
-                  </p>
-                  <p className="mt-1 text-sm font-medium leading-snug text-zinc-100">
-                    {value}
-                  </p>
-                </div>
-              ))}
-            </div>
+          <div className="mt-8">
+            <CaseStudyAtAGlance items={AT_A_GLANCE_ITEMS} accent="baskin" />
           </div>
 
           <div className="mt-8 space-y-3">

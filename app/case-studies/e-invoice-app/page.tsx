@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CaseStudyAtAGlance } from "../_components/CaseStudyAtAGlance";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { CaseStudyScanSummary } from "../_components/CaseStudyScanSummary";
 import { PortraitTile, WideFigure } from "./EInvoiceFigures";
@@ -36,6 +37,19 @@ const M_TXT =
   "rounded-md bg-emerald-500/20 px-1.5 py-0.5 font-semibold tabular-nums text-emerald-200";
 const M_TIME =
   "rounded-md bg-amber-500/15 px-1.5 py-0.5 font-medium tabular-nums text-amber-100/95";
+
+const AT_A_GLANCE_ITEMS = [
+  { label: "Timeline", value: "Feb – Sep 2025 (8 months)" },
+  { label: "Role", value: "UX/UI Designer" },
+  {
+    label: "Project type",
+    value: "End-to-end mobile app redesign · Government service app",
+  },
+  {
+    label: "Focus",
+    value: "Research, IA, accessibility, ship-ready UI",
+  },
+] as const;
 
 /** Final solution screens — high-fidelity exports (18), filenames solution-final-01 … 18. */
 const E_INVOICE_SCAN_SUMMARY = [
@@ -89,38 +103,8 @@ export default function EInvoiceCaseStudy() {
             trustworthy.
           </p>
 
-          <div className="mt-8 space-y-3">
-            <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-              At a glance
-            </p>
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-              {(
-                [
-                  ["Timeline", "Feb – Sep 2025 (8 months)"],
-                  ["Role", "UX/UI Designer"],
-                  [
-                    "Project type",
-                    "End-to-end mobile app redesign · Government service app",
-                  ],
-                  [
-                    "Focus",
-                    "Research, IA, accessibility, ship-ready UI",
-                  ],
-                ] as const
-              ).map(([label, value]) => (
-                <div
-                  key={label}
-                  className="rounded-xl border border-zinc-800/90 bg-zinc-900/40 px-4 py-3"
-                >
-                  <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">
-                    {label}
-                  </p>
-                  <p className="mt-1 text-sm font-medium leading-snug text-zinc-100">
-                    {value}
-                  </p>
-                </div>
-              ))}
-            </div>
+          <div className="mt-8">
+            <CaseStudyAtAGlance items={AT_A_GLANCE_ITEMS} />
           </div>
 
           <div className="mt-8 space-y-3">
