@@ -31,7 +31,7 @@ export function CaseStudyAtAGlance({
         At a glance
       </p>
       <div
-        className="relative flex overflow-hidden rounded-2xl border border-zinc-800/90 bg-zinc-900/25 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)]"
+        className="relative flex overflow-hidden rounded-2xl bg-zinc-900/25"
         aria-label="Project summary at a glance"
       >
         <div className={`w-1 shrink-0 ${bar}`} aria-hidden />
