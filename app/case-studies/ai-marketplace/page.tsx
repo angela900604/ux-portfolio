@@ -1,5 +1,13 @@
 import Link from "next/link";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
+import { CaseStudyScanSummary } from "../_components/CaseStudyScanSummary";
+
+const MINA_SCAN_SUMMARY = [
+  "Zero-to-one product design for MINA—an AI-native resale marketplace for San Francisco parent communities and fast-turnover baby gear.",
+  "Core experience: a conversational AI agent as the primary interface—one-photo multi-listing, editable drafts, and lighter buyer–seller coordination.",
+  "Go-to-market is community-first: build trust in mom networks before scaling to anonymous nationwide matching.",
+  "Case study in progress—screens, flows, and outcome metrics will be added as the work ships.",
+] as const;
 
 export const metadata = {
   title: "MINA · AI Marketplace for Parents (Coming Soon) | Angela Yang",
@@ -44,27 +52,79 @@ export default function AiMarketplaceCaseStudy() {
             second job.
           </p>
 
-          <dl className="mt-8 flex flex-wrap gap-x-10 gap-y-2 text-sm">
-            <div>
-              <dt className="text-zinc-500 uppercase tracking-wider">Role</dt>
-              <dd className="text-zinc-200">Product designer · AI UX</dd>
+          <div className="mt-8 space-y-3">
+            <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+              At a glance
+            </p>
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              {(
+                [
+                  ["Timeline", "Ongoing (2025+)"],
+                  ["Role", "Product designer · AI UX"],
+                  ["Project type", "Mobile app · AI marketplace (zero-to-one)"],
+                  ["Region", "San Francisco · parent communities"],
+                ] as const
+              ).map(([label, value]) => (
+                <div
+                  key={label}
+                  className="rounded-xl border border-zinc-800/90 bg-zinc-900/40 px-4 py-3"
+                >
+                  <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">
+                    {label}
+                  </p>
+                  <p className="mt-1 text-sm font-medium leading-snug text-zinc-100">
+                    {value}
+                  </p>
+                </div>
+              ))}
             </div>
-            <div>
-              <dt className="text-zinc-500 uppercase tracking-wider">Region</dt>
-              <dd className="text-zinc-200">San Francisco · parent communities</dd>
+          </div>
+
+          <div className="mt-8 space-y-3">
+            <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+              Impact summary
+            </p>
+            <div className="grid gap-3 sm:grid-cols-2 sm:max-w-2xl">
+              <div className="rounded-xl border border-zinc-800/90 bg-zinc-900/50 px-4 py-3">
+                <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">
+                  Status
+                </p>
+                <p className="mt-1 text-sm font-medium text-zinc-100">
+                  Concept &amp; strategy — in progress
+                </p>
+              </div>
+              <div className="rounded-xl border border-zinc-800/90 bg-zinc-900/50 px-4 py-3">
+                <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">
+                  Focus
+                </p>
+                <p className="mt-1 text-sm font-medium text-zinc-100">
+                  Cut listing friction &amp; coordination drag
+                </p>
+              </div>
             </div>
-            <div>
-              <dt className="text-zinc-500 uppercase tracking-wider">Status</dt>
-              <dd className="text-zinc-200">
-                Ongoing — ship artifacts &amp; visuals later (coming soon)
-              </dd>
-            </div>
-          </dl>
+          </div>
+
+          <div className="mt-8">
+            <CaseStudyScanSummary items={MINA_SCAN_SUMMARY} />
+          </div>
+
+          <a
+            href="#why-this-exists"
+            className="mt-8 inline-flex items-center gap-2 rounded-full border border-violet-500/35 bg-violet-500/10 px-4 py-2.5 text-sm font-medium text-violet-200 transition hover:border-violet-400/45 hover:bg-violet-500/15"
+          >
+            Jump to story
+            <span aria-hidden className="text-violet-400/90">
+              {"\u2193"}
+            </span>
+          </a>
         </div>
       </header>
 
       <div className="mx-auto max-w-[1280px] px-6 sm:px-[100px] py-12 sm:py-16 space-y-20">
-        <section className="max-w-3xl space-y-4">
+        <section
+          id="why-this-exists"
+          className="max-w-3xl scroll-mt-28 space-y-4 sm:scroll-mt-32"
+        >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Why this exists
           </span>

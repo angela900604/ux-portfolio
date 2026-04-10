@@ -88,24 +88,40 @@ export default function EInvoiceCaseStudy() {
             practices so the service feels faster, more inclusive, and more
             trustworthy.
           </p>
-          <dl className="mt-8 flex flex-wrap gap-x-10 gap-y-2 text-sm">
-            <div>
-              <dt className="text-zinc-500 uppercase tracking-wider">Timeline</dt>
-              <dd className="text-zinc-200">Feb – Sep 2025 (8 months)</dd>
+
+          <div className="mt-8 space-y-3">
+            <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+              At a glance
+            </p>
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              {(
+                [
+                  ["Timeline", "Feb – Sep 2025 (8 months)"],
+                  ["Role", "UX/UI Designer"],
+                  [
+                    "Project type",
+                    "End-to-end mobile app redesign · Government service app",
+                  ],
+                  [
+                    "Focus",
+                    "Research, IA, accessibility, ship-ready UI",
+                  ],
+                ] as const
+              ).map(([label, value]) => (
+                <div
+                  key={label}
+                  className="rounded-xl border border-zinc-800/90 bg-zinc-900/40 px-4 py-3"
+                >
+                  <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">
+                    {label}
+                  </p>
+                  <p className="mt-1 text-sm font-medium leading-snug text-zinc-100">
+                    {value}
+                  </p>
+                </div>
+              ))}
             </div>
-            <div>
-              <dt className="text-zinc-500 uppercase tracking-wider">Role</dt>
-              <dd className="text-zinc-200">UX/UI Designer</dd>
-            </div>
-            <div>
-              <dt className="text-zinc-500 uppercase tracking-wider">
-                Project type
-              </dt>
-              <dd className="text-zinc-200">
-                End-to-end mobile app redesign · Government service app
-              </dd>
-            </div>
-          </dl>
+          </div>
 
           <div className="mt-8 space-y-3">
             <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">

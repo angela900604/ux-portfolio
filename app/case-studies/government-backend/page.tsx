@@ -65,31 +65,37 @@ export default function GovernmentBackendCaseStudy() {
             for <Metric>600+</Metric> government staff, enabling faster invoice
             management and reducing errors.
           </p>
-          <dl className="mt-8 flex flex-wrap gap-x-10 gap-y-2 text-sm">
-            <div>
-              <dt className="text-zinc-500 uppercase tracking-wider">Timeline</dt>
-              <dd className="text-zinc-200">
-                <Metric>July – September 2025</Metric>
-              </dd>
+
+          <div className="mt-8 space-y-3">
+            <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+              At a glance
+            </p>
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              {(
+                [
+                  ["Timeline", "July – September 2025"],
+                  ["Role", "Lead UX/UI Designer"],
+                  ["Project type", "Backend platform"],
+                  [
+                    "Focus",
+                    "Client-driven end-to-end product design · Cross-functional collaboration",
+                  ],
+                ] as const
+              ).map(([label, value]) => (
+                <div
+                  key={label}
+                  className="rounded-xl border border-zinc-800/90 bg-zinc-900/40 px-4 py-3"
+                >
+                  <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">
+                    {label}
+                  </p>
+                  <p className="mt-1 text-sm font-medium leading-snug text-zinc-100">
+                    {value}
+                  </p>
+                </div>
+              ))}
             </div>
-            <div>
-              <dt className="text-zinc-500 uppercase tracking-wider">Role</dt>
-              <dd className="text-zinc-200">Lead UX/UI Designer</dd>
-            </div>
-            <div>
-              <dt className="text-zinc-500 uppercase tracking-wider">
-                Project type
-              </dt>
-              <dd className="text-zinc-200">Backend platform</dd>
-            </div>
-            <div>
-              <dt className="text-zinc-500 uppercase tracking-wider">Focus</dt>
-              <dd className="text-zinc-200">
-                Client-driven end-to-end product design · Cross-functional
-                collaboration
-              </dd>
-            </div>
-          </dl>
+          </div>
 
           <div className="mt-8 space-y-3">
             <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
