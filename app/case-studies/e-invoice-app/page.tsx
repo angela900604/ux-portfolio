@@ -431,6 +431,11 @@ export default function EInvoiceCaseStudy() {
             invoices to charity with one tap, and reduce reliance on paper while
             supporting sustainability.
           </p>
+          <WideFigure
+            borderless
+            src={ASSET("project-background-taiwan-receipts.png")}
+            alt="Hand holding a fan of Taiwanese uniform invoices from shops such as Taipei 101 and Eslite—paper receipt culture tied to the national invoice lottery."
+          />
           <p className="text-zinc-300 leading-relaxed">
             Over time, the app showed clear pain points: slow, unstable
             performance that reduced trust; complicated steps and small text that
