@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CaseStudyAtAGlance } from "../_components/CaseStudyAtAGlance";
+import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { CaseStudyScanSummary } from "../_components/CaseStudyScanSummary";
 import { PhoneMockup, PortraitTile, WideFigure } from "./EInvoiceFigures";
@@ -37,6 +38,28 @@ const M_TXT =
   "rounded-md bg-emerald-500/20 px-1.5 py-0.5 font-semibold tabular-nums text-emerald-200";
 const M_TIME =
   "rounded-md bg-amber-500/15 px-1.5 py-0.5 font-medium tabular-nums text-amber-100/95";
+
+const E_INVOICE_TOC = [
+  { id: "project-background", label: "Project background" },
+  { id: "problem-goals", label: "Problem & goals" },
+  { id: "user-journey-map", label: "User journey map" },
+  { id: "interview-findings", label: "Interview findings" },
+  { id: "accessibility", label: "Accessibility" },
+  { id: "personas", label: "Personas" },
+  { id: "business-constraints", label: "Business constraints" },
+  { id: "competitor-insights", label: "Competitor insights" },
+  { id: "functional-map", label: "Functional map" },
+  { id: "page-flow-design", label: "Page flow & design system" },
+  { id: "testing", label: "Testing & iterations" },
+  { id: "carrier-binding-insight", label: "Carrier binding insight" },
+  { id: "donation-flow", label: "Donation flow" },
+  { id: "national-platform", label: "National platform" },
+  { id: "key-outcomes", label: "Key outcomes" },
+  { id: "final-solution-screens", label: "Final screens" },
+  { id: "impact-results", label: "Impact & results" },
+  { id: "reflection", label: "Reflection" },
+  { id: "figma-resources", label: "Figma files" },
+] as const;
 
 const AT_A_GLANCE_ITEMS = [
   { label: "Timeline", value: "Feb – Sep 2025 (8 months)" },
@@ -288,8 +311,11 @@ export default function EInvoiceCaseStudy() {
         </div>
       </header>
 
-      <div className="mx-auto max-w-[1280px] px-6 sm:px-[100px] py-12 sm:py-16 space-y-20">
-        <section className="space-y-6 max-w-3xl">
+      <CaseStudyContentLayout toc={E_INVOICE_TOC}>
+        <section
+          id="project-background"
+          className="max-w-3xl scroll-mt-28 space-y-6 sm:scroll-mt-32"
+        >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             01 · Project background
           </span>
@@ -323,7 +349,10 @@ export default function EInvoiceCaseStudy() {
           </p>
         </section>
 
-        <section className="space-y-6 max-w-3xl">
+        <section
+          id="problem-goals"
+          className="max-w-3xl scroll-mt-28 space-y-6 sm:scroll-mt-32"
+        >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Problem, client goals &amp; user goals
           </span>
@@ -373,7 +402,10 @@ export default function EInvoiceCaseStudy() {
           </div>
         </section>
 
-        <section className="space-y-6 max-w-4xl">
+        <section
+          id="user-journey-map"
+          className="max-w-4xl scroll-mt-28 space-y-6 sm:scroll-mt-32"
+        >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             User journey map
           </span>
@@ -541,7 +573,10 @@ export default function EInvoiceCaseStudy() {
           </div>
         </section>
 
-        <section className="space-y-6 max-w-3xl">
+        <section
+          id="interview-findings"
+          className="max-w-3xl scroll-mt-28 space-y-6 sm:scroll-mt-32"
+        >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             02 · Understanding the problem
           </span>
@@ -591,7 +626,10 @@ export default function EInvoiceCaseStudy() {
           />
         </section>
 
-        <section className="max-w-4xl space-y-6">
+        <section
+          id="accessibility"
+          className="max-w-4xl scroll-mt-28 space-y-6 sm:scroll-mt-32"
+        >
           <h3 className="text-lg font-semibold text-zinc-100">
             Accessibility work — VoiceOver &amp; screen reader
           </h3>
@@ -636,7 +674,10 @@ export default function EInvoiceCaseStudy() {
           </div>
         </section>
 
-        <section className="max-w-5xl space-y-10">
+        <section
+          id="personas"
+          className="max-w-5xl scroll-mt-28 space-y-10 sm:scroll-mt-32"
+        >
           <div className="space-y-3">
             <h3 className="text-lg font-semibold tracking-tight text-zinc-100">
               User personas
@@ -896,7 +937,10 @@ export default function EInvoiceCaseStudy() {
           </p>
         </section>
 
-        <section className="space-y-5 max-w-3xl">
+        <section
+          id="business-constraints"
+          className="max-w-3xl scroll-mt-28 space-y-5 sm:scroll-mt-32"
+        >
           <h3 className="text-lg font-semibold text-zinc-100">
             Business constraints
           </h3>
@@ -927,7 +971,10 @@ export default function EInvoiceCaseStudy() {
           </div>
         </section>
 
-        <section className="space-y-6 max-w-3xl">
+        <section
+          id="competitor-insights"
+          className="max-w-3xl scroll-mt-28 space-y-6 sm:scroll-mt-32"
+        >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             03 · Competitor insights &amp; design process
           </span>
@@ -990,7 +1037,10 @@ export default function EInvoiceCaseStudy() {
           </p>
         </section>
 
-        <section className="space-y-5 max-w-4xl">
+        <section
+          id="functional-map"
+          className="max-w-4xl scroll-mt-28 space-y-5 sm:scroll-mt-32"
+        >
           <h3 className="text-lg font-semibold text-zinc-100">Functional map</h3>
           <p className="text-zinc-300 leading-relaxed max-w-3xl">
             A functional map aligned the team on scope: how login, home,
@@ -1004,7 +1054,10 @@ export default function EInvoiceCaseStudy() {
           />
         </section>
 
-        <section className="max-w-5xl space-y-12">
+        <section
+          id="page-flow-design"
+          className="max-w-5xl scroll-mt-28 space-y-12 sm:scroll-mt-32"
+        >
           <div className="max-w-3xl space-y-4">
             <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
               04 · Page flow, UI direction &amp; design system
@@ -1095,7 +1148,10 @@ export default function EInvoiceCaseStudy() {
           </div>
         </section>
 
-        <section className="space-y-6 max-w-3xl">
+        <section
+          id="testing"
+          className="max-w-3xl scroll-mt-28 space-y-6 sm:scroll-mt-32"
+        >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             05 · Testing &amp; iterations
           </span>
@@ -1283,7 +1339,10 @@ export default function EInvoiceCaseStudy() {
           </div>
         </section>
 
-        <section className="space-y-4 max-w-3xl">
+        <section
+          id="donation-flow"
+          className="max-w-3xl scroll-mt-28 space-y-4 sm:scroll-mt-32"
+        >
           <h3 className="text-lg font-semibold text-zinc-100">
             Donation flow — before &amp; after
           </h3>
@@ -1304,7 +1363,10 @@ export default function EInvoiceCaseStudy() {
           </p>
         </section>
 
-        <section className="space-y-4 max-w-3xl">
+        <section
+          id="national-platform"
+          className="max-w-3xl scroll-mt-28 space-y-4 sm:scroll-mt-32"
+        >
           <h3 className="text-lg font-semibold text-zinc-100">
             National-platform challenges — home &amp; redemption iteration
           </h3>
@@ -1428,7 +1490,10 @@ export default function EInvoiceCaseStudy() {
           </div>
         </section>
 
-        <section className="space-y-6 max-w-3xl">
+        <section
+          id="impact-results"
+          className="max-w-3xl scroll-mt-28 space-y-6 sm:scroll-mt-32"
+        >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Impact &amp; results
           </span>
@@ -1473,7 +1538,10 @@ export default function EInvoiceCaseStudy() {
           </p>
         </section>
 
-        <section className="space-y-5 max-w-3xl">
+        <section
+          id="reflection"
+          className="max-w-3xl scroll-mt-28 space-y-5 sm:scroll-mt-32"
+        >
           <h2 className="text-xl font-semibold text-zinc-100">
             Reflection &amp; learnings
           </h2>
@@ -1508,7 +1576,10 @@ export default function EInvoiceCaseStudy() {
           </p>
         </section>
 
-        <section className="space-y-5 max-w-3xl rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6 sm:p-8">
+        <section
+          id="figma-resources"
+          className="max-w-3xl scroll-mt-28 space-y-5 rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6 sm:scroll-mt-32 sm:p-8"
+        >
           <p className="text-sm font-medium text-zinc-200">
             Want to review the source files directly?
           </p>
@@ -1545,7 +1616,7 @@ export default function EInvoiceCaseStudy() {
             ← Back to work
           </Link>
         </section>
-      </div>
+      </CaseStudyContentLayout>
     </article>
   );
 }

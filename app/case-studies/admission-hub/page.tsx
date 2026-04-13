@@ -1,11 +1,18 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { ReactNode } from "react";
+import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { WideFigure } from "../e-invoice-app/EInvoiceFigures";
 import { OutcomesMetricsChart } from "./OutcomesMetricsChart";
 
 const AH_ASSET = (name: string) => `/case-studies/admission-hub/${name}`;
+
+const ADMISSION_TOC = [
+  { id: "challenge", label: "Challenge" },
+  { id: "what-i-did", label: "What I did" },
+  { id: "outcomes", label: "Outcomes" },
+] as const;
 
 export const metadata = {
   title: "Admission Hub (Digital Marketing) | Angela Yang",
@@ -16,14 +23,19 @@ export const metadata = {
 function Section({
   kicker,
   title,
+  id,
   children,
 }: {
   kicker: string;
   title: string;
+  id?: string;
   children: ReactNode;
 }) {
   return (
-    <section>
+    <section
+      id={id}
+      className={id ? "scroll-mt-28 sm:scroll-mt-32" : undefined}
+    >
       <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
         {kicker}
       </span>
@@ -85,8 +97,9 @@ export default function AdmissionHubCaseStudy() {
         </div>
       </header>
 
-      <div className="mx-auto max-w-[1280px] px-6 sm:px-[100px] py-12 sm:py-16 space-y-16">
+      <CaseStudyContentLayout toc={ADMISSION_TOC} contentClassName="space-y-16">
         <Section
+          id="challenge"
           kicker="01 · Challenge"
           title="Earn attention, then convert it into trust"
         >
@@ -99,6 +112,7 @@ export default function AdmissionHubCaseStudy() {
         </Section>
 
         <Section
+          id="what-i-did"
           kicker="02 · What I did"
           title="A repeatable campaign + content system"
         >
@@ -155,7 +169,11 @@ export default function AdmissionHubCaseStudy() {
           </div>
         </Section>
 
-        <Section kicker="03 · Outcomes" title="Measurable growth in engagement and reach">
+        <Section
+          id="outcomes"
+          kicker="03 · Outcomes"
+          title="Measurable growth in engagement and reach"
+        >
           <p className="mt-4 text-zinc-300 leading-relaxed max-w-2xl">
             Reported lifts over a three-month window: audience growth on social,
             stronger engagement on content, and more organic sessions on the site.
@@ -174,7 +192,7 @@ export default function AdmissionHubCaseStudy() {
             ← Back to work
           </Link>
         </section>
-      </div>
+      </CaseStudyContentLayout>
     </article>
   );
 }

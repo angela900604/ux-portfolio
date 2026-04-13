@@ -1,5 +1,16 @@
 import Link from "next/link";
+import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
+
+const PHY_TOC = [
+  { id: "logo-concept", label: "Logo concept" },
+  { id: "mascot", label: "Brand mascot" },
+  { id: "brand-applications", label: "Brand applications" },
+  { id: "etsy-pod", label: "Etsy & print-on-demand" },
+  { id: "pod-products", label: "Magnets & stickers" },
+  { id: "canvas-tote", label: "Canvas tote" },
+  { id: "sweatshirt", label: "Crewneck sweatshirt" },
+] as const;
 
 export const metadata = {
   title: "Haphy Living (Brand IP) | Angela Yang",
@@ -92,8 +103,18 @@ export default function PhyphyyaCaseStudy() {
           </div>
         </section>
 
+        <CaseStudyContentLayout
+          toc={PHY_TOC}
+          variant="light"
+          omitOuterContainer
+          contentClassName=""
+          tocHeading="On this page"
+        >
         {/* Logo Concept - Soft & Rounded */}
-        <section className="py-[80px] px-6 sm:px-[100px] flex flex-col items-center">
+        <section
+          id="logo-concept"
+          className="scroll-mt-28 py-[80px] px-6 sm:px-[100px] sm:scroll-mt-32 flex flex-col items-center"
+        >
           <div className="text-center mb-[60px] max-w-[800px] mx-auto">
             <h2 className="text-[42px] text-[#2C3E50] mb-[20px] relative inline-block font-serif after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
               Logo Concept - Soft & Rounded
@@ -156,7 +177,10 @@ export default function PhyphyyaCaseStudy() {
         </section>
 
         {/* Mascot Section - Lop-eared Rabbit */}
-        <section className="bg-white py-[100px] px-6 sm:px-[100px]">
+        <section
+          id="mascot"
+          className="scroll-mt-28 bg-white py-[100px] px-6 sm:px-[100px] sm:scroll-mt-32"
+        >
           <div className="text-center mb-[60px] max-w-[900px] mx-auto">
             <h2 className="text-[42px] text-[#2C3E50] mb-[20px] relative inline-block font-serif after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
               Brand Mascot - Lop-eared Rabbit
@@ -225,7 +249,10 @@ export default function PhyphyyaCaseStudy() {
         </section>
 
         {/* Brand Applications */}
-        <section className="py-[80px] px-6 sm:px-[100px] flex flex-col items-center">
+        <section
+          id="brand-applications"
+          className="scroll-mt-28 py-[80px] px-6 sm:px-[100px] sm:scroll-mt-32 flex flex-col items-center"
+        >
           <div className="text-center mb-[60px] max-w-[800px] mx-auto">
             <h2 className="text-[42px] text-[#2C3E50] mb-[20px] relative inline-block font-serif after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
               Brand Applications
@@ -258,7 +285,10 @@ export default function PhyphyyaCaseStudy() {
         </section>
 
         {/* Etsy storefront & Print-on-Demand workflow */}
-        <section className="bg-white py-[80px] px-6 sm:px-[100px]">
+        <section
+          id="etsy-pod"
+          className="scroll-mt-28 bg-white py-[80px] px-6 sm:px-[100px] sm:scroll-mt-32"
+        >
           <div className="text-center max-w-[900px] mx-auto mb-[50px]">
             <h2 className="text-[42px] text-[#2C3E50] mb-[20px] relative inline-block font-serif after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
               Etsy shop &amp; Print-on-Demand
@@ -342,7 +372,10 @@ export default function PhyphyyaCaseStudy() {
         </section>
 
         {/* New POD products: magnets & stickers */}
-        <section className="bg-[#F5F3EF] py-[80px] px-6 sm:px-[100px]">
+        <section
+          id="pod-products"
+          className="scroll-mt-28 bg-[#F5F3EF] py-[80px] px-6 sm:px-[100px] sm:scroll-mt-32"
+        >
           <div className="text-center max-w-[900px] mx-auto mb-[50px]">
             <h2 className="text-[42px] text-[#2C3E50] mb-[20px] relative inline-block font-serif after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
               New products · Magnets &amp; stickers
@@ -447,7 +480,10 @@ export default function PhyphyyaCaseStudy() {
         </section>
 
         {/* Product Series - Canvas Tote Bag */}
-        <section className="bg-white py-[80px] px-6 sm:px-[100px]">
+        <section
+          id="canvas-tote"
+          className="scroll-mt-28 bg-white py-[80px] px-6 sm:px-[100px] sm:scroll-mt-32"
+        >
           <div className="text-center max-w-[800px] mx-auto mb-[50px]">
             <h2 className="text-[42px] text-[#2C3E50] mb-[20px] relative inline-block font-serif after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
               Canvas Tote Bag
@@ -498,7 +534,10 @@ export default function PhyphyyaCaseStudy() {
         </section>
 
         {/* Product Series - Sweatshirt */}
-        <section className="bg-[#F5F3EF] py-[80px] px-6 sm:px-[100px]">
+        <section
+          id="sweatshirt"
+          className="scroll-mt-28 bg-[#F5F3EF] py-[80px] px-6 sm:px-[100px] sm:scroll-mt-32"
+        >
           <div className="text-center max-w-[800px] mx-auto mb-[50px]">
             <h2 className="text-[42px] text-[#2C3E50] mb-[20px] relative inline-block font-serif after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
               Crewneck Sweatshirt
@@ -527,6 +566,8 @@ export default function PhyphyyaCaseStudy() {
             ))}
           </div>
         </section>
+
+        </CaseStudyContentLayout>
 
         <footer className="border-t border-[#E0D9CE] bg-[#F5F3EF] px-6 sm:px-[100px] py-14">
           <CaseStudyPrevNext currentSlug="phyphyya" variant="light" />

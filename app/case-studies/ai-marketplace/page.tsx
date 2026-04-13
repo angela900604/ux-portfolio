@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CaseStudyAtAGlance } from "../_components/CaseStudyAtAGlance";
+import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { CaseStudyScanSummary } from "../_components/CaseStudyScanSummary";
 
@@ -19,6 +20,16 @@ const MINA_SCAN_SUMMARY = [
   "Core experience: a conversational AI agent as the primary interface—one-photo multi-listing, editable drafts, and lighter buyer–seller coordination.",
   "Go-to-market is community-first: build trust in mom networks before scaling to anonymous nationwide matching.",
   "Case study in progress—screens, flows, and outcome metrics will be added as the work ships.",
+] as const;
+
+const MINA_TOC = [
+  { id: "why-this-exists", label: "Why this exists" },
+  { id: "pain-we-solve", label: "The pain we solve" },
+  { id: "product-strategy", label: "Product strategy" },
+  { id: "core-experience", label: "Core experience" },
+  { id: "engineering-proposal", label: "Proposal & alignment" },
+  { id: "design-principles", label: "Design principles" },
+  { id: "coming-soon", label: "Full case study (soon)" },
 ] as const;
 
 export const metadata = {
@@ -108,7 +119,7 @@ export default function AiMarketplaceCaseStudy() {
         </div>
       </header>
 
-      <div className="mx-auto max-w-[1280px] px-6 sm:px-[100px] py-12 sm:py-16 space-y-20">
+      <CaseStudyContentLayout toc={MINA_TOC}>
         <section
           id="why-this-exists"
           className="scroll-mt-28 sm:scroll-mt-32"
@@ -155,7 +166,10 @@ export default function AiMarketplaceCaseStudy() {
           </div>
         </section>
 
-        <section className="max-w-3xl space-y-4">
+        <section
+          id="pain-we-solve"
+          className="max-w-3xl scroll-mt-28 space-y-4 sm:scroll-mt-32"
+        >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             The pain we are solving
           </span>
@@ -195,7 +209,10 @@ export default function AiMarketplaceCaseStudy() {
           </div>
         </section>
 
-        <section className="max-w-3xl space-y-4">
+        <section
+          id="product-strategy"
+          className="max-w-3xl scroll-mt-28 space-y-4 sm:scroll-mt-32"
+        >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Product strategy
           </span>
@@ -214,7 +231,10 @@ export default function AiMarketplaceCaseStudy() {
           </p>
         </section>
 
-        <section className="max-w-3xl space-y-6">
+        <section
+          id="core-experience"
+          className="max-w-3xl scroll-mt-28 space-y-6 sm:scroll-mt-32"
+        >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Core experience
           </span>
@@ -350,7 +370,10 @@ export default function AiMarketplaceCaseStudy() {
           </p>
         </section>
 
-        <section className="max-w-3xl space-y-4">
+        <section
+          id="design-principles"
+          className="max-w-3xl scroll-mt-28 space-y-4 sm:scroll-mt-32"
+        >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Design principles (draft)
           </span>
@@ -383,7 +406,10 @@ export default function AiMarketplaceCaseStudy() {
           </ul>
         </section>
 
-        <section className="max-w-3xl rounded-2xl border border-dashed border-zinc-700 bg-zinc-900/30 p-8 sm:p-10">
+        <section
+          id="coming-soon"
+          className="max-w-3xl scroll-mt-28 rounded-2xl border border-dashed border-zinc-700 bg-zinc-900/30 p-8 sm:p-10 sm:scroll-mt-32"
+        >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             What will appear here later
           </span>
@@ -408,7 +434,7 @@ export default function AiMarketplaceCaseStudy() {
             ← Back to work
           </Link>
         </section>
-      </div>
+      </CaseStudyContentLayout>
     </article>
   );
 }

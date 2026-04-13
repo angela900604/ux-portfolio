@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { ReactNode } from "react";
+import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { MomiOutcomesChart } from "./MomiOutcomesChart";
 import { MomiUniformTile } from "./MomiUniformTile";
@@ -13,6 +14,12 @@ export const metadata = {
 
 const MOMI_ASSET = (n: string) => `/case-studies/momi-animal-health/${n}`;
 
+const MOMI_TOC = [
+  { id: "goal", label: "Goal" },
+  { id: "what-i-did", label: "What I did" },
+  { id: "outcomes", label: "Outcomes" },
+] as const;
+
 const WHAT_I_DID_IMAGES = Array.from({ length: 9 }, (_, i) => ({
   src: MOMI_ASSET(`what-i-did-${String(i + 1).padStart(2, "0")}.png`),
   alt: `MOMI Animal Health — campaign and product creative ${i + 1} of 9`,
@@ -21,14 +28,19 @@ const WHAT_I_DID_IMAGES = Array.from({ length: 9 }, (_, i) => ({
 function Section({
   kicker,
   title,
+  id,
   children,
 }: {
   kicker: string;
   title: string;
+  id?: string;
   children: ReactNode;
 }) {
   return (
-    <section>
+    <section
+      id={id}
+      className={id ? "scroll-mt-28 sm:scroll-mt-32" : undefined}
+    >
       <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
         {kicker}
       </span>
@@ -91,8 +103,12 @@ export default function MomiAnimalHealthCaseStudy() {
         </div>
       </header>
 
-      <div className="mx-auto max-w-[1280px] px-6 sm:px-[100px] py-12 sm:py-16 space-y-16">
-        <Section kicker="01 · Goal" title="Make product value feel clear and actionable">
+      <CaseStudyContentLayout toc={MOMI_TOC} contentClassName="space-y-16">
+        <Section
+          id="goal"
+          kicker="01 · Goal"
+          title="Make product value feel clear and actionable"
+        >
           <p className="mt-4 text-zinc-300 leading-relaxed max-w-2xl">
             MOMI Animal Health focuses on high-quality rabbit care products. The
             marketing goal was to communicate product benefits visually while
@@ -101,7 +117,11 @@ export default function MomiAnimalHealthCaseStudy() {
           </p>
         </Section>
 
-        <Section kicker="02 · What I did" title="Content system across touchpoints">
+        <Section
+          id="what-i-did"
+          kicker="02 · What I did"
+          title="Content system across touchpoints"
+        >
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
               <h3 className="text-sm font-semibold text-zinc-100">Social content</h3>
@@ -144,7 +164,11 @@ export default function MomiAnimalHealthCaseStudy() {
           </div>
         </Section>
 
-        <Section kicker="03 · Outcomes" title="A clear lift in online sales">
+        <Section
+          id="outcomes"
+          kicker="03 · Outcomes"
+          title="A clear lift in online sales"
+        >
           <p className="mt-4 text-zinc-300 leading-relaxed max-w-2xl">
             Within two months, stronger creatives and clearer messaging translated
             into measurable eCommerce lift and more consistent storytelling across
@@ -164,7 +188,7 @@ export default function MomiAnimalHealthCaseStudy() {
             ← Back to work
           </Link>
         </section>
-      </div>
+      </CaseStudyContentLayout>
     </article>
   );
 }

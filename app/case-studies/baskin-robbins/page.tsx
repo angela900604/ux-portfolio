@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CaseStudyAtAGlance } from "../_components/CaseStudyAtAGlance";
+import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { CaseStudyScanSummary } from "../_components/CaseStudyScanSummary";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { WideFigure } from "../e-invoice-app/EInvoiceFigures";
@@ -109,6 +110,22 @@ const SCAN_SUMMARY_LINES = [
 const sectionScroll =
   "scroll-mt-28 sm:scroll-mt-32";
 
+const BASKIN_TOC = [
+  { id: "team-objectives", label: "Team objectives" },
+  { id: "role-deliverables", label: "Role & deliverables" },
+  { id: "project-outcomes", label: "Project outcomes" },
+  { id: "project-background", label: "Background" },
+  { id: "design-process", label: "Design process" },
+  { id: "requirement-interviews", label: "Requirement interviews" },
+  { id: "function-difference", label: "Functional map" },
+  { id: "visual-style", label: "Visual style" },
+  { id: "challenges", label: "Challenges" },
+  { id: "learnings", label: "Learnings" },
+  { id: "annotations-flow", label: "Annotated flow" },
+  { id: "delivery-kit", label: "Delivery kit" },
+  { id: "final-product", label: "Final product" },
+] as const;
+
 export default function BaskinRobbinsCaseStudy() {
   return (
     <article className="min-h-screen bg-zinc-950 text-zinc-100">
@@ -187,7 +204,7 @@ export default function BaskinRobbinsCaseStudy() {
         </div>
       </header>
 
-      <div className="mx-auto max-w-[1280px] px-6 sm:px-[100px] py-12 sm:py-16 space-y-20">
+      <CaseStudyContentLayout toc={BASKIN_TOC}>
         <section
           id="team-objectives"
           className={`space-y-6 max-w-5xl ${sectionScroll}`}
@@ -661,7 +678,7 @@ export default function BaskinRobbinsCaseStudy() {
             ← Back to work
           </Link>
         </section>
-      </div>
+      </CaseStudyContentLayout>
     </article>
   );
 }

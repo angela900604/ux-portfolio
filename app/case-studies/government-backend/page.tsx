@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { CaseStudyAtAGlance } from "../_components/CaseStudyAtAGlance";
+import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { CaseStudyScanSummary } from "../_components/CaseStudyScanSummary";
 import { FlatAppShot, WideFigure } from "../e-invoice-app/EInvoiceFigures";
@@ -22,6 +23,15 @@ const AT_A_GLANCE_ITEMS = [
     value:
       "Client-driven end-to-end product design · Cross-functional collaboration",
   },
+] as const;
+
+const GOV_BACKEND_TOC = [
+  { id: "summary", label: "Summary" },
+  { id: "project-background", label: "Project background" },
+  { id: "rbac", label: "Role-based access" },
+  { id: "iterations", label: "Key iterations" },
+  { id: "reflection", label: "Reflection" },
+  { id: "final-result", label: "Final result" },
 ] as const;
 
 const GOV_BACKEND_SCAN_SUMMARY = [
@@ -119,8 +129,11 @@ export default function GovernmentBackendCaseStudy() {
         </div>
       </header>
 
-      <div className="mx-auto max-w-[1280px] px-6 sm:px-[100px] py-12 sm:py-16 space-y-20">
-        <section className="space-y-6 max-w-3xl">
+      <CaseStudyContentLayout toc={GOV_BACKEND_TOC}>
+        <section
+          id="summary"
+          className="scroll-mt-28 space-y-6 max-w-3xl sm:scroll-mt-32"
+        >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Summary
           </span>
@@ -158,7 +171,10 @@ export default function GovernmentBackendCaseStudy() {
           </p>
         </section>
 
-        <section className="max-w-5xl space-y-6">
+        <section
+          id="project-background"
+          className="max-w-5xl scroll-mt-28 space-y-6 sm:scroll-mt-32"
+        >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Project background
           </span>
@@ -257,7 +273,10 @@ export default function GovernmentBackendCaseStudy() {
           </div>
         </section>
 
-        <section className="space-y-5 max-w-4xl">
+        <section
+          id="rbac"
+          className="max-w-4xl scroll-mt-28 space-y-5 sm:scroll-mt-32"
+        >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Role-based access control
           </span>
@@ -472,7 +491,10 @@ export default function GovernmentBackendCaseStudy() {
           </div>
         </section>
 
-        <section className="space-y-8 max-w-3xl">
+        <section
+          id="iterations"
+          className="max-w-3xl scroll-mt-28 space-y-8 sm:scroll-mt-32"
+        >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Key design iterations
           </span>
@@ -573,7 +595,10 @@ export default function GovernmentBackendCaseStudy() {
           </div>
         </section>
 
-        <section className="space-y-5 max-w-3xl">
+        <section
+          id="reflection"
+          className="max-w-3xl scroll-mt-28 space-y-5 sm:scroll-mt-32"
+        >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Reflection
           </span>
@@ -603,7 +628,10 @@ export default function GovernmentBackendCaseStudy() {
           </p>
         </section>
 
-        <section className="space-y-5 max-w-3xl">
+        <section
+          id="final-result"
+          className="max-w-3xl scroll-mt-28 space-y-5 sm:scroll-mt-32"
+        >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Final result
           </span>
@@ -629,7 +657,7 @@ export default function GovernmentBackendCaseStudy() {
             ← Back to work
           </Link>
         </section>
-      </div>
+      </CaseStudyContentLayout>
     </article>
   );
 }
