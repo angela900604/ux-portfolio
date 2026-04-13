@@ -1,132 +1,135 @@
-/** Competitor landscape — Taiwan invoice apps (Traditional Chinese). */
+/** Competitor landscape — Taiwan invoice apps (English). */
 export function CompetitorLandscapeTable() {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-zinc-700/40 bg-zinc-900/25 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)]">
-      <table
-        className="min-w-[920px] w-full text-left text-sm"
-        lang="zh-Hant"
-      >
+    <div className="overflow-x-auto rounded-2xl border border-zinc-800/80 bg-zinc-900/30 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)]">
+      <table className="min-w-[920px] w-full text-left text-sm" lang="en">
         <thead>
-          <tr className="border-b border-zinc-700/50 bg-zinc-800/55">
-            <th className="px-4 py-3.5 text-[11px] font-semibold tracking-wide text-zinc-400">
-              研究對象
+          <tr className="border-b border-zinc-800/90 bg-zinc-800/40">
+            <th className="px-4 py-3.5 text-[11px] font-semibold tracking-wide text-zinc-300">
+              Product
             </th>
-            <th className="px-4 py-3.5 text-center text-[11px] font-semibold tracking-wide text-zinc-400 whitespace-nowrap">
-              星等／評論
+            <th className="px-4 py-3.5 text-center text-[11px] font-semibold tracking-wide text-zinc-300 whitespace-nowrap">
+              Rating / reviews
             </th>
-            <th className="px-4 py-3.5 text-[11px] font-semibold tracking-wide text-zinc-400">
-              產品定位
+            <th className="px-4 py-3.5 text-[11px] font-semibold tracking-wide text-zinc-300">
+              Positioning
             </th>
-            <th className="px-4 py-3.5 text-[11px] font-semibold tracking-wide text-zinc-400">
-              目標用戶
+            <th className="px-4 py-3.5 text-[11px] font-semibold tracking-wide text-zinc-300">
+              Who it&apos;s for
             </th>
-            <th className="px-4 py-3.5 text-[11px] font-semibold tracking-wide text-zinc-400">
-              優勢
+            <th className="px-4 py-3.5 text-[11px] font-semibold tracking-wide text-zinc-300">
+              Strengths
             </th>
-            <th className="px-4 py-3.5 text-[11px] font-semibold tracking-wide text-zinc-400">
-              劣勢
+            <th className="px-4 py-3.5 text-[11px] font-semibold tracking-wide text-zinc-300">
+              Gaps
             </th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-zinc-800/60 text-zinc-300">
-          <tr className="align-top odd:bg-zinc-950/20">
+        <tbody className="divide-y divide-zinc-800/70 text-zinc-300">
+          <tr className="align-top odd:bg-zinc-950/25">
             <td className="px-4 py-3.5 font-medium text-zinc-100">
-              統一發票兌獎
+              MoF Cloud Invoice
               <span className="mt-0.5 block text-[11px] font-normal text-zinc-500">
-                官方
+                Official
               </span>
             </td>
             <td className="px-4 py-3.5">
-              <MetricBadge score="2.5" reviews="約 9K 則評論" />
+              <MetricBadge score="2.5" reviews="~9K reviews" />
             </td>
             <td className="px-4 py-3.5 text-zinc-400 leading-relaxed">
-              官方雲端發票；強調{" "}
-              <span className="text-violet-300/95">穩定、正確、安全</span>
+              Government e-invoice hub—emphasizes{" "}
+              <span className="text-teal-300/95">stability, accuracy, security</span>
             </td>
             <td className="px-4 py-3.5 text-zinc-400 leading-relaxed">
-              在意資料安全、官方認證、基礎管理功能
+              People who want an official source, basic wallet features, and trust
+              in data handling
             </td>
             <td className="px-4 py-3.5 text-zinc-400 leading-relaxed">
-              資料安全性高；雲端基礎功能完整
+              Strong trust and core cloud-invoice features
             </td>
             <td className="px-4 py-3.5 text-zinc-400 leading-relaxed">
-              功能單一；缺少消費分析；介面待加強；系統不穩；紙本掃描受限
+              Narrow feature set; weak spending insights; UI and reliability issues;
+              limited paper scan
             </td>
           </tr>
-          <tr className="align-top odd:bg-zinc-950/20">
+          <tr className="align-top odd:bg-zinc-950/25">
             <td className="px-4 py-3.5 font-medium text-zinc-100">
-              發票存摺
+              Invoice Passbook
               <span className="mt-0.5 block text-[11px] font-normal text-zinc-500">
-                第三方
+                Third-party
               </span>
             </td>
             <td className="px-4 py-3.5">
-              <MetricBadge score="4.8" reviews="約 320K 則評論" />
+              <MetricBadge score="4.8" reviews="~320K reviews" />
             </td>
             <td className="px-4 py-3.5 text-zinc-400 leading-relaxed">
-              多功能第三方；<span className="text-violet-300/95">黏著與回流</span>{" "}
-              導向
+              Full-featured app—built for{" "}
+              <span className="text-teal-300/95">habit and repeat use</span>
             </td>
             <td className="px-4 py-3.5 text-zinc-400 leading-relaxed">
-              熟悉數位工具、在意消費管理與點數兌換
+              Digitally fluent users who care about spend tracking and rewards
             </td>
             <td className="px-4 py-3.5 text-zinc-400 leading-relaxed">
-              資料視覺化清晰；開獎音效利於無障礙；多裝置與桌面小工具
+              Clear charts; draw alerts with sound (accessibility-friendly); widgets
+              and multi-device support
             </td>
             <td className="px-4 py-3.5 text-zinc-400 leading-relaxed">
-              進階功能偏複雜；宣導活動多、介面易擁擠
+              Advanced areas feel dense; promos can crowd the UI
             </td>
           </tr>
-          <tr className="align-top odd:bg-zinc-950/20">
+          <tr className="align-top odd:bg-zinc-950/25">
             <td className="px-4 py-3.5 font-medium text-zinc-100">
-              雲端發票
+              Cloud Invoice (3rd party)
               <span className="mt-0.5 block text-[11px] font-normal text-zinc-500">
-                第三方
+                Third-party
               </span>
             </td>
             <td className="px-4 py-3.5">
-              <MetricBadge score="4.8" reviews="約 240K 則評論" />
+              <MetricBadge score="4.8" reviews="~240K reviews" />
             </td>
             <td className="px-4 py-3.5 text-zinc-400 leading-relaxed">
-              雲端管理與 <span className="text-violet-300/95">消費分析</span> 見長
+              Cloud storage plus{" "}
+              <span className="text-teal-300/95">spending analytics</span>
             </td>
             <td className="px-4 py-3.5 text-zinc-400 leading-relaxed">
-              重效率、清爽介面、進階管理需求
+              Efficiency-focused users who want a clean UI and deeper management
             </td>
             <td className="px-4 py-3.5 text-zinc-400 leading-relaxed">
-              介面乾淨、新手友善；桌面小工具快速切換條碼
+              Clean interface, gentle onboarding; desktop widgets for quick barcode
+              access
             </td>
             <td className="px-4 py-3.5 text-zinc-400 leading-relaxed">
-              部分功能缺維護或實用度不足
+              Some modules feel unmaintained or thin in daily use
             </td>
           </tr>
-          <tr className="align-top odd:bg-zinc-950/20">
+          <tr className="align-top odd:bg-zinc-950/25">
             <td className="px-4 py-3.5 font-medium text-zinc-100">
-              LINE 發票管家
+              LINE invoice
               <span className="mt-0.5 block text-[11px] font-normal text-zinc-500">
-                LINE 生態
+                LINE ecosystem
               </span>
             </td>
             <td className="px-4 py-3.5">
-              <div className="mx-auto w-fit min-w-[7rem] rounded-lg border border-zinc-600/35 bg-zinc-800/40 px-4 py-3 text-center ring-1 ring-inset ring-white/[0.03]">
+              <div className="mx-auto w-fit min-w-[7rem] rounded-lg border border-zinc-700/50 bg-zinc-800/35 px-4 py-3 text-center">
                 <span className="text-sm font-medium text-zinc-500">—</span>
                 <span className="mt-1 block text-[11px] text-zinc-500">
-                  無獨立 App Store 評分
+                  No standalone App Store listing
                 </span>
               </div>
             </td>
             <td className="px-4 py-3.5 text-zinc-400 leading-relaxed">
-              嵌入 LINE；強調{" "}
-              <span className="text-violet-300/95">無縫整合</span>
+              Lives inside LINE—wins on{" "}
+              <span className="text-teal-300/95">zero extra install</span>
             </td>
             <td className="px-4 py-3.5 text-zinc-400 leading-relaxed">
-              重度 LINE 使用者、偏好簡單操作與生態整合服務
+              Heavy LINE users who want simple flows tied to chat and pay
             </td>
             <td className="px-4 py-3.5 text-zinc-400 leading-relaxed">
-              免另下載；社交感強；整合 LINE Pay 與 LINE 點數
+              No separate download; social context; ties to LINE Pay and points
             </td>
             <td className="px-4 py-3.5 text-zinc-400 leading-relaxed">
-              核心功能偏基礎；進階依賴其他 LINE 服務；無原生桌面小工具
+              Core tasks stay basic; advanced needs lean on other LINE services; no
+              native desktop widget
             </td>
           </tr>
         </tbody>
@@ -143,8 +146,8 @@ function MetricBadge({
   reviews: string;
 }) {
   return (
-    <div className="mx-auto w-fit min-w-[7.25rem] rounded-lg border border-violet-500/20 bg-violet-950/25 px-4 py-3 text-center ring-1 ring-inset ring-violet-400/[0.06]">
-      <span className="text-[15px] leading-none text-violet-400/85" aria-hidden>
+    <div className="mx-auto w-fit min-w-[7.25rem] rounded-lg border border-teal-500/20 bg-teal-950/20 px-4 py-3 text-center ring-1 ring-inset ring-white/[0.04]">
+      <span className="text-[15px] leading-none text-teal-400/90" aria-hidden>
         {"\u2605"}
       </span>
       <span className="mt-1 block text-2xl font-semibold tabular-nums leading-none tracking-tight text-zinc-100">

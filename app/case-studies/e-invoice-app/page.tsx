@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { CaseStudyAtAGlance } from "../_components/CaseStudyAtAGlance";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
@@ -6,6 +7,7 @@ import { CaseStudyScanSummary } from "../_components/CaseStudyScanSummary";
 import { CompetitorLandscapeTable } from "./CompetitorLandscapeTable";
 import { OutcomeAutoSlideshow } from "./OutcomeAutoSlideshow";
 import { PhoneMockup, PortraitTile, WideFigure } from "./EInvoiceFigures";
+import { ImageLightbox } from "./ImageLightbox";
 
 export const metadata = {
   title: "Reimagining Taiwan’s e-Invoice Experience | Angela Yang",
@@ -44,7 +46,7 @@ const M_TIME =
 const E_INVOICE_TOC = [
   { id: "project-background", label: "Project background" },
   { id: "user-journey-map", label: "The problem" },
-  { id: "competitor-insights", label: "Competitor insights" },
+  { id: "competitor-insights", label: "Competitor insights & design process" },
   { id: "interview-findings", label: "Interview findings" },
   { id: "accessibility", label: "Accessibility" },
   { id: "personas", label: "Personas" },
@@ -411,7 +413,7 @@ export default function EInvoiceCaseStudy() {
       <CaseStudyContentLayout toc={E_INVOICE_TOC}>
         <section
           id="project-background"
-          className="max-w-3xl scroll-mt-28 space-y-6 sm:scroll-mt-32"
+          className="max-w-5xl scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             01 · Project background
@@ -419,7 +421,7 @@ export default function EInvoiceCaseStudy() {
           <h2 className="text-xl font-semibold text-zinc-100">
             Why the Cloud Invoice App needed a redesign
           </h2>
-          <p className="text-zinc-300 leading-relaxed">
+          <p className="max-w-3xl text-zinc-300 leading-relaxed">
             In Taiwan, every purchase comes with an invoice. For years, people
             collected stacks of paper receipts and checked them for the
             government&apos;s famous &quot;invoice lottery.&quot; Exciting as it was,
@@ -431,24 +433,40 @@ export default function EInvoiceCaseStudy() {
             invoices to charity with one tap, and reduce reliance on paper while
             supporting sustainability.
           </p>
-          <WideFigure
-            borderless
-            src={ASSET("project-background-taiwan-receipts.png")}
-            alt="Hand holding a fan of Taiwanese uniform invoices from shops such as Taipei 101 and Eslite—paper receipt culture tied to the national invoice lottery."
-          />
-          <p className="text-zinc-300 leading-relaxed">
-            Over time, the app showed clear pain points: slow, unstable
-            performance that reduced trust; complicated steps and small text that
-            frustrated elderly users; language and navigation issues for foreign
-            nationals; and a cluttered interface that overwhelmed younger users.
-          </p>
-          <p className="text-zinc-300 leading-relaxed">
-            This project set out to redesign the Cloud Invoice App with people at
-            the center. The goal was an app that is faster and easier to use;
-            inclusive for seniors, people with disabilities, and foreign users;
-            and reliable and trustworthy—strengthening public confidence in
-            digital government services.
-          </p>
+          <div className="flex flex-col gap-8 lg:flex-row lg:items-stretch lg:gap-10 xl:gap-12">
+            <div className="flex min-w-0 flex-1 flex-col justify-start gap-4 text-zinc-300 leading-relaxed">
+              <p>
+                Over time, the app showed clear pain points: slow, unstable
+                performance that reduced trust; complicated steps and small text
+                that frustrated elderly users; language and navigation issues for
+                foreign nationals; and a cluttered interface that overwhelmed
+                younger users.
+              </p>
+              <p>
+                This project set out to redesign the Cloud Invoice App with people
+                at the center. The goal was an app that is faster and easier to
+                use; inclusive for seniors, people with disabilities, and foreign
+                users; and reliable and trustworthy—strengthening public
+                confidence in digital government services.
+              </p>
+            </div>
+            <div className="flex min-h-[220px] w-full shrink-0 flex-col lg:min-h-0 lg:w-[42%] lg:max-w-xl">
+              <ImageLightbox
+                src={ASSET("project-background-taiwan-receipts.png")}
+                alt="Hand holding a fan of Taiwanese uniform invoices from shops such as Taipei 101 and Eslite—paper receipt culture tied to the national invoice lottery."
+                ariaLabel="View larger — Taiwanese uniform invoices (project background)"
+                className="relative h-full min-h-[220px] flex-1 overflow-hidden rounded-[20px] ring-1 ring-zinc-700/45 lg:min-h-0"
+              >
+                <Image
+                  src={ASSET("project-background-taiwan-receipts.png")}
+                  alt=""
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width: 1024px) 100vw, 520px"
+                />
+              </ImageLightbox>
+            </div>
+          </div>
         </section>
 
         <section
@@ -632,18 +650,24 @@ export default function EInvoiceCaseStudy() {
           className="max-w-6xl scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            03 · 競品洞察與設計流程
+            03 · Competitor insights &amp; design process
           </span>
           <h2 className="max-w-3xl text-xl font-semibold text-zinc-100">
-            四大發票產品比較——做 IA 與視覺前的標竿
+            Four invoice products at a glance—benchmarks before IA and UI
           </h2>
           <p className="max-w-3xl text-sm leading-relaxed text-zinc-400">
-            比較對象涵蓋財政部官方、兩款市場主流第三方 App，以及 LINE 發票管家。第二列整理 App Store 星等與評論量，對照定位、客群與優劣勢。
+            I compared the Ministry of Finance official app, two leading third-party
+            apps, and LINE&apos;s invoice mini-app. Store ratings and review volume
+            sit beside positioning, audience, strengths, and gaps—so decisions stay
+            grounded in real market behavior, not guesswork.
           </p>
           <CompetitorLandscapeTable />
           <p className="max-w-3xl text-sm leading-relaxed text-zinc-400">
-            <span className="text-zinc-200">設計流程上，</span>
-            借鑑 LINE 的新手引導、第三方在掃描／登入節奏與消費分析上的做法，以及發票存摺在數據與感官回饋上的思路——最終仍收斂於無障礙、部會法規與工程可行性。
+            <span className="text-zinc-200">How this shaped the work:</span> I
+            borrowed clear onboarding patterns from LINE, scan-and-login pacing and
+            spending views from strong third parties, and data plus sensory feedback
+            ideas from high-rated apps—then folded everything back into
+            accessibility rules, ministry policy, and what engineering could ship.
           </p>
         </section>
 
