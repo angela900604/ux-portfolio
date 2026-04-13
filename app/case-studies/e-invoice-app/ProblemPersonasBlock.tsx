@@ -1,0 +1,418 @@
+import Image from "next/image";
+import { PortraitTile, WideFigure } from "./EInvoiceFigures";
+
+const ASSET = (name: string) => `/case-studies/e-invoice/case-assets/${name}`;
+
+const PULL =
+  "border-l-2 border-amber-500/40 bg-amber-500/[0.06] pl-4 pr-4 py-3 text-sm leading-relaxed text-zinc-300";
+
+export function ProblemPersonasBlock() {
+  return (
+    <section
+      id="user-journey-map"
+      className="max-w-6xl scroll-mt-28 space-y-12 sm:scroll-mt-32"
+    >
+      <div className="space-y-4 max-w-3xl">
+        <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+          02 · The problem
+        </span>
+        <h2 className="text-xl font-semibold text-zinc-100">
+          From public reviews to interviews—why the experience was breaking down
+        </h2>
+        <p className="text-zinc-300 leading-relaxed">
+          This work started where users were already shouting: App Store reviews
+          framed the quantitative pain, and interviews explained who was stuck and
+          why. The sections below mirror that order—signal first, nuance second—then
+          two personas at the hardest extremes of the spectrum.
+        </p>
+      </div>
+
+      {/* Layer 1 — App Store */}
+      <div className="space-y-5">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-widest text-amber-400/90">
+            Layer 1 · Where the problem showed up first
+          </p>
+          <h3 className="mt-2 text-lg font-semibold text-zinc-100">
+            App Store reviews (Taiwan · ~Mar 2024–Mar 2025)
+          </h3>
+          <p className="mt-2 max-w-3xl text-sm leading-relaxed text-zinc-400">
+            The official MoF app sat around{" "}
+            <span className="font-medium text-zinc-200">2.8★</span>—not a vanity
+            metric, but a backlog of frustration in plain language. Three themes
+            drowned out everything else:{" "}
+            <span className="text-zinc-200">speed</span>,{" "}
+            <span className="text-zinc-200">findability</span>, and{" "}
+            <span className="text-zinc-200">older adults losing the thread</span>.
+          </p>
+        </div>
+
+        <div className="overflow-x-auto rounded-xl border border-zinc-800">
+          <table className="min-w-[520px] w-full text-left text-sm">
+            <thead className="bg-zinc-900/80 text-xs uppercase tracking-wider text-zinc-500">
+              <tr>
+                <th className="px-4 py-3 font-medium">Theme</th>
+                <th className="px-4 py-3 font-medium">What reviewers kept saying</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-zinc-800 text-zinc-300">
+              <tr className="align-top">
+                <td className="px-4 py-3.5 text-zinc-200 whitespace-nowrap">
+                  Speed &amp; stability
+                </td>
+                <td className="px-4 py-3.5 text-zinc-400">
+                  Slow launch, lag at checkout, freezes after updates—“I just want
+                  the barcode and it spins.”
+                </td>
+              </tr>
+              <tr className="align-top">
+                <td className="px-4 py-3.5 text-zinc-200 whitespace-nowrap">
+                  Findability
+                </td>
+                <td className="px-4 py-3.5 text-zinc-400">
+                  Prize redemption, carrier binding, and settings buried under
+                  labels that read like ministry jargon, not tasks.
+                </td>
+              </tr>
+              <tr className="align-top">
+                <td className="px-4 py-3.5 text-zinc-200 whitespace-nowrap">
+                  Older adults
+                </td>
+                <td className="px-4 py-3.5 text-zinc-400">
+                  Small type, dense screens, and no obvious “next step”—families
+                  stepping in to finish flows on someone else&apos;s phone.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div className="grid gap-4 md:grid-cols-3">
+          <blockquote className={PULL}>
+            <p className="text-[11px] font-semibold uppercase tracking-wider text-amber-200/90">
+              Review pull quote
+            </p>
+            <p className="mt-2 italic text-zinc-200">
+              “Opens forever. By the time the barcode shows the clerk is already
+              staring.”
+            </p>
+          </blockquote>
+          <blockquote className={PULL}>
+            <p className="text-[11px] font-semibold uppercase tracking-wider text-amber-200/90">
+              Review pull quote
+            </p>
+            <p className="mt-2 italic text-zinc-200">
+              “I know the feature exists—I saw it in a tutorial—but I can&apos;t find
+              it again.”
+            </p>
+          </blockquote>
+          <blockquote className={PULL}>
+            <p className="text-[11px] font-semibold uppercase tracking-wider text-amber-200/90">
+              Review pull quote
+            </p>
+            <p className="mt-2 italic text-zinc-200">
+              “My mom gives up. Too many words, too small. She only trusts paper.”
+            </p>
+          </blockquote>
+        </div>
+      </div>
+
+      {/* Layer 2 — Interviews */}
+      <div className="space-y-5">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-widest text-emerald-400/90">
+            Layer 2 · What interviews layered on top
+          </p>
+          <h3 className="mt-2 text-lg font-semibold text-zinc-100">
+            Same jobs, different constraints—one comparison table
+          </h3>
+          <p className="mt-2 max-w-3xl text-sm leading-relaxed text-zinc-400">
+            Five audience slices (including visually impaired participants) mapped
+            to a single question: what happens the moment the app opens, and what
+            breaks next?
+          </p>
+        </div>
+
+        <div className="overflow-x-auto rounded-xl border border-zinc-800">
+          <table className="min-w-[800px] w-full text-left text-sm">
+            <thead className="bg-zinc-900/80 text-xs uppercase tracking-wider text-zinc-500">
+              <tr>
+                <th className="px-3 py-3 font-medium"> </th>
+                <th className="px-3 py-3 font-medium">Younger (18–30)</th>
+                <th className="px-3 py-3 font-medium">Middle-aged (31–50)</th>
+                <th className="px-3 py-3 font-medium">Silver (51+)</th>
+                <th className="px-3 py-3 font-medium">Foreign resident</th>
+                <th className="px-3 py-3 font-medium">Low vision</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-zinc-800 text-zinc-300">
+              <tr className="align-top">
+                <th className="px-3 py-3.5 text-left text-xs font-medium uppercase tracking-wide text-zinc-400">
+                  First action on open
+                </th>
+                <td className="px-3 py-3.5 text-zinc-200" colSpan={5}>
+                  <span className="rounded bg-emerald-500/15 px-2 py-0.5 font-medium text-emerald-200/95">
+                    Scan
+                  </span>{" "}
+                  — universal: paper receipt, QR on screen, or prize check—all roads
+                  led to scan first.
+                </td>
+              </tr>
+              <tr className="align-top">
+                <th className="px-3 py-3.5 text-left text-xs font-medium uppercase tracking-wide text-zinc-400">
+                  Sharpest pain
+                </th>
+                <td className="px-3 py-3.5 text-zinc-400">
+                  Slow loads, noisy UI, hunt for wins
+                </td>
+                <td className="px-3 py-3.5 text-zinc-400">
+                  Forgot passwords / MoF verification codes
+                </td>
+                <td className="px-3 py-3.5 text-zinc-400">
+                  Don&apos;t know the next step; fear tapping wrong
+                </td>
+                <td className="px-3 py-3.5 text-zinc-400">
+                  Chinese labels &amp; icons don&apos;t read at a glance
+                </td>
+                <td className="px-3 py-3.5 text-zinc-400">
+                  Can&apos;t complete core tasks without a caregiver
+                </td>
+              </tr>
+              <tr className="align-top">
+                <th className="px-3 py-3.5 text-left text-xs font-medium uppercase tracking-wide text-zinc-400">
+                  Info density preference
+                </th>
+                <td className="px-3 py-3.5 text-zinc-400">
+                  <span className="text-zinc-200">More on home</span> — wins,
+                  charts, shortcuts
+                </td>
+                <td className="px-3 py-3.5 text-zinc-400">
+                  <span className="text-zinc-200">Balanced</span> — signal without
+                  clutter
+                </td>
+                <td className="px-3 py-3.5 text-zinc-400">
+                  <span className="text-zinc-200">As little as possible</span> — one
+                  obvious job per screen
+                </td>
+                <td className="px-3 py-3.5 text-zinc-400">
+                  <span className="text-zinc-200">Sparse</span> — language-friendly
+                  hierarchy
+                </td>
+                <td className="px-3 py-3.5 text-zinc-400">
+                  <span className="text-zinc-500">N/A</span> — predictability &amp;
+                  VoiceOver clarity beat density
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div className="rounded-xl border border-emerald-500/25 bg-emerald-500/[0.06] px-5 py-4 text-sm leading-relaxed text-zinc-300">
+          <p className="font-medium text-emerald-200/95">Shared truth</p>
+          <p className="mt-2">
+            Everyone converged on the same entry behavior:{" "}
+            <span className="text-zinc-100">scanning is the front door</span>. The
+            hardest product tension was the opposite:{" "}
+            <span className="text-zinc-100">
+              younger cohorts wanted density; silver and low-vision cohorts needed
+              air
+            </span>
+            —same home screen, incompatible defaults.
+          </p>
+        </div>
+
+        <WideFigure
+          borderless
+          src={ASSET("interview-field-20250321-1330-copy.png")}
+          alt="Field interview session with participants at a startup hub"
+          caption="Field research · Mar 2025 · startup hub session"
+        />
+      </div>
+
+      {/* Personas — thumbnails + two deep dives */}
+      <div id="personas" className="scroll-mt-28 space-y-8 sm:scroll-mt-32">
+        <div className="space-y-3 max-w-3xl">
+          <h3 className="text-lg font-semibold tracking-tight text-zinc-100">
+            Personas · two extremes, three sketches
+          </h3>
+          <p className="text-sm leading-relaxed text-zinc-400">
+            Full cards for{" "}
+            <span className="text-zinc-200">Mei-Ling</span> (silver) and{" "}
+            <span className="text-zinc-200">Alex</span> (foreign resident)—the two
+            ends of literacy, language, and tolerance for complexity. The other
+            archetypes stay visible as thumbnails so the spectrum doesn&apos;t
+            disappear.
+          </p>
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-3 max-w-4xl">
+          <div className="flex gap-3 rounded-xl border border-zinc-800/90 bg-zinc-900/30 p-3">
+            <div className="relative h-[4.5rem] w-14 shrink-0 overflow-hidden rounded-lg bg-zinc-800">
+              <Image
+                src={ASSET("persona-portrait-01.png")}
+                alt="Yi-Ting, younger user persona"
+                fill
+                className="object-cover object-center"
+                sizes="56px"
+              />
+            </div>
+            <div className="min-w-0 text-xs leading-snug">
+              <p className="font-medium text-zinc-100">Yi-Ting · 18–30</p>
+              <p className="mt-1 text-zinc-500">
+                Wants speed, aesthetics, dense shortcuts—barcode first, ads never.
+              </p>
+            </div>
+          </div>
+          <div className="flex gap-3 rounded-xl border border-zinc-800/90 bg-zinc-900/30 p-3">
+            <div className="relative h-[4.5rem] w-14 shrink-0 overflow-hidden rounded-lg bg-zinc-800">
+              <Image
+                src={ASSET("persona-portrait-02.png")}
+                alt="David, middle-aged user persona"
+                fill
+                className="object-cover object-center"
+                sizes="56px"
+              />
+            </div>
+            <div className="min-w-0 text-xs leading-snug">
+              <p className="font-medium text-zinc-100">David · 31–50</p>
+              <p className="mt-1 text-zinc-500">
+                Balanced power user—biometrics, reminders, reliable at checkout.
+              </p>
+            </div>
+          </div>
+          <div className="flex gap-3 rounded-xl border border-zinc-800/90 bg-zinc-900/30 p-3">
+            <div className="relative h-[4.5rem] w-14 shrink-0 overflow-hidden rounded-lg bg-zinc-800">
+              <Image
+                src={ASSET("persona-portrait-vi-session.png")}
+                alt="Teacher Chen, low vision persona"
+                fill
+                className="object-cover object-center"
+                sizes="56px"
+              />
+            </div>
+            <div className="min-w-0 text-xs leading-snug">
+              <p className="font-medium text-zinc-100">Teacher Chen · low vision</p>
+              <p className="mt-1 text-zinc-500">
+                Needs predictable layout, VoiceOver that doesn&apos;t shout, family
+                assist today.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid max-w-4xl grid-cols-1 gap-8">
+          <article className="flex flex-col overflow-hidden rounded-2xl border border-zinc-800/90 bg-zinc-900/35 sm:flex-row">
+            <div className="shrink-0 sm:w-[42%]">
+              <PortraitTile
+                borderless
+                src={ASSET("persona-portrait-03.png")}
+                alt="Portrait for Persona Mei-Ling, 51+ silver generation"
+                className="sm:rounded-l-2xl sm:rounded-r-none rounded-t-2xl sm:rounded-t-none"
+              />
+            </div>
+            <div className="flex min-w-0 flex-1 flex-col justify-center gap-3 p-5 text-sm">
+              <p className="text-xs font-semibold uppercase tracking-wider text-violet-400/95">
+                Persona · 51+ · Silver generation
+              </p>
+              <p className="font-medium text-zinc-100">
+                Mei-Ling · 68 · Taiwan · Retired nurse
+              </p>
+              <p className="text-zinc-400">
+                <span className="text-zinc-300">Tech:</span> Low digital literacy—
+                cash &amp; cards; long habit of donating paper invoices; prize
+                checks and in-store claims; needs guidance for anything beyond
+                basics.
+              </p>
+              <div>
+                <p className="text-xs font-semibold text-zinc-500">Pain points</p>
+                <ul className="mt-1 list-disc pl-4 text-zinc-400 marker:text-zinc-600">
+                  <li>
+                    Apps feel like a maze—unclear next step, small type &amp; taps
+                  </li>
+                  <li>Monochrome or crowded screens hide primary actions</li>
+                  <li>
+                    Wants transparency when donating—trust that help reaches people
+                  </li>
+                  <li>
+                    Forgets MoF verification code; in-store small-prize claims feel
+                    tedious
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <p className="text-xs font-semibold text-zinc-500">Goals</p>
+                <ul className="mt-1 list-disc pl-4 text-zinc-400 marker:text-zinc-600">
+                  <li>Large text, color-coded main tasks, obvious help</li>
+                  <li>Simple donation path with clear org info</li>
+                  <li>Easier prize check &amp; claim—including online tutorials</li>
+                </ul>
+              </div>
+              <p className="border-l-2 border-violet-500/50 pl-3 italic text-zinc-300">
+                &ldquo;This app is like a labyrinth—I don&apos;t know the next step
+                or how to exit. I want to donate paper invoices with confidence and
+                understand what I&apos;m tapping.&rdquo;
+              </p>
+            </div>
+          </article>
+
+          <article className="flex flex-col overflow-hidden rounded-2xl border border-zinc-800/90 bg-zinc-900/35 sm:flex-row">
+            <div className="shrink-0 sm:w-[42%]">
+              <PortraitTile
+                borderless
+                src={ASSET("persona-portrait-04.png")}
+                alt="Portrait for Persona Alex, foreign resident / animator"
+                className="sm:rounded-l-2xl sm:rounded-r-none rounded-t-2xl sm:rounded-t-none"
+              />
+            </div>
+            <div className="flex min-w-0 flex-1 flex-col justify-center gap-3 p-5 text-sm">
+              <p className="text-xs font-semibold uppercase tracking-wider text-violet-400/95">
+                Persona · Foreign resident · Heavy mobile user
+              </p>
+              <p className="font-medium text-zinc-100">
+                Alex · 29 · Malaysia / Taiwan · Animator
+              </p>
+              <p className="text-zinc-400">
+                <span className="text-zinc-300">Tech:</span> Heavy iOS use; mobile
+                payments &amp; member apps; home-screen widgets for barcodes; tracks
+                monthly categories; wants one-handed flows and clear visual
+                hierarchy (Chinese is not his first language).
+              </p>
+              <div>
+                <p className="text-xs font-semibold text-zinc-500">Pain points</p>
+                <ul className="mt-1 list-disc pl-4 text-zinc-400 marker:text-zinc-600">
+                  <li>
+                    Didn&apos;t know paper receipts could be claimed online at first
+                  </li>
+                  <li>Busy or “ugly” layouts; dense copy slows scanning</li>
+                  <li>Ambiguous icons raise cognitive load for non-native readers</li>
+                  <li>Slow cold start or noisy ads before core tasks</li>
+                </ul>
+              </div>
+              <div>
+                <p className="text-xs font-semibold text-zinc-500">Goals</p>
+                <ul className="mt-1 list-disc pl-4 text-zinc-400 marker:text-zinc-600">
+                  <li>Short tutorials highlighting online prize claim</li>
+                  <li>Cleaner visuals &amp; icon system that bridges language gaps</li>
+                  <li>Integrated bookkeeping / spend view with invoices</li>
+                  <li>Faster launch; barcode copy &amp; display in more contexts</li>
+                </ul>
+              </div>
+              <p className="border-l-2 border-violet-500/50 pl-3 italic text-zinc-300">
+                &ldquo;Classmates got me onto cloud invoices—I dislike trekking to a
+                store to claim. Give me a calm interface and obvious icons; long
+                paragraphs are exhausting when Chinese isn&apos;t my first
+                language.&rdquo;
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <p className="max-w-3xl text-sm text-zinc-400 leading-relaxed">
+          Convenience and trust pull in the same direction; density and accessibility
+          pull in opposite ones. Mei-Ling and Alex made that tension unavoidable—so
+          the later IA work had to be modular, not one static “winner” layout.
+        </p>
+      </div>
+    </section>
+  );
+}
