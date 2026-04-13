@@ -2,7 +2,7 @@ import Link from "next/link";
 import { CaseStudyAtAGlance } from "../_components/CaseStudyAtAGlance";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { CaseStudyScanSummary } from "../_components/CaseStudyScanSummary";
-import { PortraitTile, WideFigure } from "./EInvoiceFigures";
+import { PhoneMockup, PortraitTile, WideFigure } from "./EInvoiceFigures";
 
 export const metadata = {
   title: "Reimagining Taiwan’s e-Invoice Experience | Angela Yang",
@@ -58,6 +58,75 @@ const E_INVOICE_SCAN_SUMMARY = [
   "Login success improved from 68% to 92% with biometric login and in-app recovery; clearer deadlines and notifications helped cut missed prize redemptions.",
   "Aligned flows with accessibility expectations and government service constraints so the app feels faster, more inclusive, and more trustworthy for everyday use.",
 ] as const;
+
+/** Research → problem → decision → outcome; paired with final UI (solution-final-*.png). */
+const KEY_OUTCOME_ROWS: {
+  title: string;
+  assetId: string;
+  screenLabel: string;
+  screenHint: string;
+  evidence: string;
+  problem: string;
+  decision: string;
+  outcome: string;
+}[] = [
+  {
+    title: "\u{1F510} Login friction \u2192 biometric-first access",
+    assetId: "13",
+    screenLabel: "Final · Face ID / quick login",
+    screenHint: "solution-final-13 · login",
+    evidence:
+      "Across age groups, interviews kept surfacing the same failure mode: forgetting the Ministry of Finance verification code. In moderated usability tests, the login task topped out at about 75% success—almost every miss traced back to passwords or verification. Older adults and visually impaired participants often had to hand the phone to family to finish sign-in.",
+    problem:
+      "The account gate was doing its security job, but it was also blocking real people from ever reaching the tasks that mattered.",
+    decision:
+      "Ship Face ID / Touch ID as a first-class path and rebuild “forgot password” recovery entirely inside the app—no more kicking people out to external ministry pages mid-flow.",
+    outcome:
+      "Login success moved from 68% to 92%. For the 51+ cohort in particular, many could complete first-time login on their own—without a caregiver in the loop.",
+  },
+  {
+    title: "\u{1F680} Too many features, no obvious start \u2192 guided onboarding",
+    assetId: "08",
+    screenLabel: "Final · First-run tutorial",
+    screenHint: "solution-final-08 · onboarding",
+    evidence:
+      "The app already covered carrier binding, prize checks, donation, and redemption—but on first open, new users froze. Onboarding completion in tests sat around 55%, and participants routinely skipped or abandoned the intro because it felt like a wall of features with no sequence.",
+    problem:
+      "High capability on paper, low clarity in practice: people could not infer a safe first path through the product.",
+    decision:
+      "Introduce a guided first-time setup with one job per step: turn on biometrics, bind a carrier, then run a first prize check—no parallel tasks, no optional detours in the critical path.",
+    outcome:
+      "Onboarding completion rose from 55% to 85%. Foreign residents and older adults reported far less confusion during initial setup in follow-up sessions.",
+  },
+  {
+    title: "\u{1F4F7} \u201COpen app \u2192 scan receipt\u201D \u2192 scan anchored on home",
+    assetId: "12",
+    screenLabel: "Final · Home hub",
+    screenHint: "solution-final-12 · home",
+    evidence:
+      "In field interviews across four age bands, needs diverged everywhere else—but one behavior was universal: the first thing people wanted after launch was to scan a paper invoice. In the legacy layout, scan lived one or two taps away from the visual center, so users hunted before they could act.",
+    problem:
+      "The interface did not match the dominant mental model: scanning is the front door, not a buried utility.",
+    decision:
+      "Lock the scan control to the primary focal area on home—always visible, never hidden behind personalization or secondary promos.",
+    outcome:
+      "Scan & prize tasks reached 92% success—the strongest task in the battery—with a median completion time of about 40 seconds.",
+  },
+  {
+    title: "\u{2699}\u{FE0F} Opposite density needs \u2192 customizable home sections",
+    assetId: "03",
+    screenLabel: "Final · Settings / feature overview",
+    screenHint: "solution-final-03 · home sections",
+    evidence:
+      "This was the hardest tension in the whole system: silver users asked for the sparsest possible home so they could find one or two actions, while younger users wanted winning invoices and spending history surfaced immediately. Two credible audiences, mutually exclusive defaults.",
+    problem:
+      "A single static layout would always betray one segment—either “too empty” or “too noisy.”",
+    decision:
+      "Add settings toggles for optional home modules (e.g., spending analytics, win alerts, campaign tiles). Core rails—scan and the invoice passbook—stay fixed and cannot be turned off.",
+    outcome:
+      "One national app could flex to very different habits without designing a cluttered compromise—a level of end-user control that is uncommon in government-grade mobile services.",
+  },
+];
 
 const FINAL_SOLUTION_SCREENS: { id: string; title: string }[] = [
   { id: "01", title: "消費分析 · Spending insights" },
@@ -135,15 +204,26 @@ export default function EInvoiceCaseStudy() {
             <CaseStudyScanSummary items={E_INVOICE_SCAN_SUMMARY} />
           </div>
 
-          <a
-            href="#final-solution-screens"
-            className="mt-8 inline-flex items-center gap-2 rounded-full border border-violet-500/35 bg-violet-500/10 px-4 py-2.5 text-sm font-medium text-violet-200 transition hover:border-violet-400/45 hover:bg-violet-500/15"
-          >
-            Jump to final solutions
-            <span aria-hidden className="text-violet-400/90">
-              ↓
-            </span>
-          </a>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <a
+              href="#key-outcomes"
+              className="inline-flex items-center gap-2 rounded-full border border-emerald-500/35 bg-emerald-500/10 px-4 py-2.5 text-sm font-medium text-emerald-100/95 transition hover:border-emerald-400/45 hover:bg-emerald-500/15"
+            >
+              Key outcomes (research → UI)
+              <span aria-hidden className="text-emerald-300/90">
+                ↓
+              </span>
+            </a>
+            <a
+              href="#final-solution-screens"
+              className="inline-flex items-center gap-2 rounded-full border border-violet-500/35 bg-violet-500/10 px-4 py-2.5 text-sm font-medium text-violet-200 transition hover:border-violet-400/45 hover:bg-violet-500/15"
+            >
+              Jump to final solutions
+              <span aria-hidden className="text-violet-400/90">
+                ↓
+              </span>
+            </a>
+          </div>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5">
@@ -1104,6 +1184,103 @@ export default function EInvoiceCaseStudy() {
               caption="Session notes &amp; completion log (export)."
             />
           </div>
+
+          <div
+            id="carrier-binding-insight"
+            className="scroll-mt-28 border-t border-zinc-800/90 pt-12 sm:scroll-mt-32 lg:pt-14"
+          >
+            <p className="text-xs font-medium uppercase tracking-widest text-amber-400/90">
+              Lowest task score · reframed problem
+            </p>
+            <h3 className="mt-3 text-lg font-semibold leading-snug text-zinc-100 sm:text-xl">
+              <span aria-hidden>{"\u{1F517}"}</span> Carrier binding → scenario
+              explanation &amp; smart support
+            </h3>
+            <p className="mt-2 max-w-3xl text-sm text-zinc-500 leading-relaxed">
+              Carrier binding tested at{" "}
+              <span className={M_TXT}>67%</span>—the weakest of the five core tasks.
+              The fix was not primarily &quot;simpler taps&quot;; it was helping people
+              understand why the step matters.
+            </p>
+
+            <article className="mt-10 grid gap-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-start lg:gap-12">
+              <div className="min-w-0 space-y-5">
+                <div className="border-l-2 border-emerald-500/45 pl-4">
+                  <p className="text-[11px] font-semibold uppercase tracking-widest text-emerald-400/95">
+                    Before · what we saw in tests
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-zinc-300">
+                    In moderated sessions, participants rarely failed because they
+                    could not find the next button—they failed because{" "}
+                    <span className="font-medium text-zinc-100">
+                      they did not understand why they were being asked to bind a
+                      carrier at all
+                    </span>
+                    . The label read like ministry jargon, not like something tied to
+                    their daily shopping. Many abandoned the flow before attempting
+                    the mechanics.
+                  </p>
+                </div>
+
+                <div
+                  className="rounded-xl border border-amber-500/35 bg-amber-500/[0.08] px-4 py-3 sm:px-5 sm:py-4"
+                  role="note"
+                >
+                  <p className="text-[11px] font-semibold uppercase tracking-widest text-amber-200/95">
+                    Highlight
+                  </p>
+                  <p className="mt-2 text-sm font-medium leading-relaxed text-zinc-100">
+                    The bottleneck was comprehension, not dexterity: users could not
+                    connect &quot;bind carrier&quot; to &quot;this is how invoices
+                    show up from the purchases I already make.&quot;
+                  </p>
+                </div>
+
+                <div className="border-l-2 border-violet-500/45 pl-4">
+                  <p className="text-[11px] font-semibold uppercase tracking-widest text-violet-300/95">
+                    Insight
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-zinc-300">
+                    The product value of binding is{" "}
+                    <span className="text-zinc-100">
+                      automatic ingestion: link an email (or carrier), and e-invoices
+                      from merchants that use that identifier—e-commerce, subscriptions,
+                      and more—can flow into the app without a manual step each time
+                    </span>
+                    . That story was missing from the old surface; the UI assumed
+                    prior civic literacy.
+                  </p>
+                </div>
+
+                <div className="border-l-2 border-zinc-600 pl-4">
+                  <p className="text-[11px] font-semibold uppercase tracking-widest text-zinc-400">
+                    Decision
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-zinc-300">
+                    On the binding experience, add{" "}
+                    <span className="text-zinc-100">concrete scenario copy</span>{" "}
+                    (e.g. &quot;When you check out on Shopee, matching invoices can
+                    land here automatically&quot;) instead of technical wording alone;
+                    add a{" "}
+                    <span className="text-zinc-100">
+                      smart assistant / help entry
+                    </span>{" "}
+                    so uncertain users can ask in plain language without leaving the
+                    task.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex justify-center lg:justify-end lg:pt-1">
+                <PhoneMockup
+                  src={ASSET("solution-final-04.png")}
+                  alt="Final · Carrier binding screen"
+                  label="Final · Carrier binding"
+                  hint="solution-final-04 · carrier binding"
+                />
+              </div>
+            </article>
+          </div>
         </section>
 
         <section className="space-y-4 max-w-3xl">
@@ -1144,6 +1321,89 @@ export default function EInvoiceCaseStudy() {
         </section>
 
         <section
+          id="key-outcomes"
+          className="scroll-mt-28 space-y-14 sm:scroll-mt-32 max-w-6xl"
+        >
+          <div className="max-w-3xl space-y-4">
+            <span className="text-xs font-medium uppercase tracking-widest text-emerald-400/90">
+              From evidence to interface
+            </span>
+            <h2 className="text-2xl font-semibold tracking-tight text-zinc-100 sm:text-3xl">
+              Four problems we solved—end to end
+            </h2>
+            <p className="text-zinc-400 leading-relaxed">
+              Each block follows the same spine:{" "}
+              <span className="text-zinc-200">
+                real behavior &amp; pain from interviews and moderated tests
+              </span>{" "}
+              →{" "}
+              <span className="text-zinc-200">the UX failure mode I was seeing</span>{" "}
+              →{" "}
+              <span className="text-zinc-200">the product decision</span> →{" "}
+              <span className="text-zinc-200">what moved in the metrics</span>. The
+              phone on the right is the matching final screen from the shipped UI set.
+            </p>
+          </div>
+
+          <div className="space-y-16 lg:space-y-20">
+            {KEY_OUTCOME_ROWS.map((row) => (
+              <article
+                key={row.assetId}
+                className="grid gap-10 border-t border-zinc-800/90 pt-12 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-start lg:gap-12 lg:pt-14"
+              >
+                <div className="min-w-0 space-y-6">
+                  <h3 className="text-lg font-semibold leading-snug text-zinc-100 sm:text-xl">
+                    {row.title}
+                  </h3>
+                  <div className="space-y-5">
+                    <div className="border-l-2 border-emerald-500/45 pl-4">
+                      <p className="text-[11px] font-semibold uppercase tracking-widest text-emerald-400/95">
+                        Evidence · interviews &amp; tests
+                      </p>
+                      <p className="mt-2 text-sm leading-relaxed text-zinc-300">
+                        {row.evidence}
+                      </p>
+                    </div>
+                    <div className="border-l-2 border-rose-500/35 pl-4">
+                      <p className="text-[11px] font-semibold uppercase tracking-widest text-rose-300/90">
+                        Problem in the experience
+                      </p>
+                      <p className="mt-2 text-sm leading-relaxed text-zinc-300">
+                        {row.problem}
+                      </p>
+                    </div>
+                    <div className="border-l-2 border-violet-500/45 pl-4">
+                      <p className="text-[11px] font-semibold uppercase tracking-widest text-violet-300/95">
+                        Decision
+                      </p>
+                      <p className="mt-2 text-sm leading-relaxed text-zinc-300">
+                        {row.decision}
+                      </p>
+                    </div>
+                    <div className="rounded-xl border border-emerald-500/25 bg-emerald-500/[0.07] px-4 py-3 sm:px-5 sm:py-4">
+                      <p className="text-[11px] font-semibold uppercase tracking-widest text-emerald-200/95">
+                        Outcome
+                      </p>
+                      <p className="mt-2 text-sm font-medium leading-relaxed text-zinc-100">
+                        {row.outcome}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex justify-center lg:justify-end lg:pt-1">
+                  <PhoneMockup
+                    src={ASSET(`solution-final-${row.assetId}.png`)}
+                    alt={row.screenLabel}
+                    label={row.screenLabel}
+                    hint={row.screenHint}
+                  />
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section
           id="final-solution-screens"
           className="scroll-mt-28 space-y-10 max-w-6xl"
         >
@@ -1173,80 +1433,44 @@ export default function EInvoiceCaseStudy() {
             Impact &amp; results
           </span>
           <h2 className="text-xl font-semibold text-zinc-100">
-            Measurable benefits for diverse users
+            Other measurable wins
           </h2>
           <p className="text-zinc-300 leading-relaxed">
-            After implementing improvements from research, competitor analysis, and
-            testing, the app delivered measurable benefits—from tech-savvy younger
-            users to elderly and visually impaired users. Updates improved usability,
-            reduced errors, and increased satisfaction.
+            The four outcome stories above cover login, onboarding, scan-first home,
+            and modular density. Additional lifts from the same research cycle are
+            summarized here so the full picture stays in one place.
           </p>
-          <div className="space-y-6">
+          <div className="grid gap-4 sm:grid-cols-2">
             <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-5">
-              <p className="text-sm font-semibold text-emerald-400/90">
-                01 · Reduced errors &amp; frustration
+              <p className="text-xs font-semibold uppercase tracking-wider text-emerald-400/90">
+                Task success (prototype)
               </p>
-              <p className="mt-2 text-sm text-zinc-300">
-                <span className="text-zinc-200">Pain points:</span> forgotten
-                verification codes; switching to external websites for password
-                recovery.{" "}
-                <span className="text-zinc-200">Solutions:</span> biometric login
-                (Face ID, Touch ID) and in-app recovery; embedded &quot;Forgot
-                password&quot; workflow.{" "}
-                <span className="text-zinc-200">Impact:</span> login success increased
-                from <span className={M_TXT}>68%</span> →{" "}
-                <span className={M_TXT}>92%</span>; elderly and visually impaired
-                users can operate independently; fewer interruptions and frustration.
+              <p className="mt-2 text-2xl font-semibold tabular-nums text-emerald-200">
+                <span className={M_TXT}>~88%</span>
+              </p>
+              <p className="mt-2 text-sm text-zinc-400 leading-relaxed">
+                Across 12 participants and five core tasks—strongest on scan &amp;
+                prize flows after the home and guidance iterations.
               </p>
             </div>
             <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-5">
-              <p className="text-sm font-semibold text-emerald-400/90">
-                02 · Faster onboarding &amp; learning
+              <p className="text-xs font-semibold uppercase tracking-wider text-emerald-400/90">
+                Missed prize redemptions
               </p>
-              <p className="mt-2 text-sm text-zinc-300">
-                <span className="text-zinc-200">Pain points:</span> high learning
-                curve; difficulty understanding layout.{" "}
-                <span className="text-zinc-200">Solutions:</span> multi-language
-                tutorials and guided prompts; simplified workflows, visual cues,
-                contextual guidance.{" "}
-                <span className="text-zinc-200">Impact:</span> onboarding completion
-                increased from <span className={M_TXT}>55%</span> →{" "}
-                <span className={M_TXT}>85%</span>; reduced confusion for foreign
-                nationals and elderly users.
+              <p className="mt-2 text-2xl font-semibold tabular-nums text-emerald-200">
+                <span className={M_TXT}>−70%</span>
               </p>
-            </div>
-            <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-5">
-              <p className="text-sm font-semibold text-emerald-400/90">
-                03 · Improved prize redemption &amp; notifications
-              </p>
-              <p className="mt-2 text-sm text-zinc-300">
-                <span className="text-zinc-200">Pain points:</span> missed redemption
-                deadlines; no immediate win notifications.{" "}
-                <span className="text-zinc-200">Solutions:</span> countdown timers
-                and clear status indicators; real-time push and customizable alerts.{" "}
-                <span className="text-zinc-200">Impact:</span> missed redemption
-                reduced by <span className={M_TXT}>70%</span>; higher trust in the
-                official app; users know about winning invoices instantly—less
-                reliance on external sources.
-              </p>
-            </div>
-            <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-5">
-              <p className="text-sm font-semibold text-emerald-400/90">
-                04 · Higher satisfaction &amp; engagement
-              </p>
-              <p className="mt-2 text-sm text-zinc-300">
-                <span className="text-zinc-200">Features:</span> spending analysis
-                with detailed charts and category breakdowns; homepage with large
-                buttons and quick access to member barcode and loyalty cards; visual
-                &amp; accessibility updates—high-contrast colors, larger fonts,
-                multi-sensory feedback.{" "}
-                <span className="text-zinc-200">Impact:</span> easier expense
-                tracking for budgeting; daily tasks faster and simpler—improving
-                repeat engagement; enhanced usability for elderly and visually
-                impaired users.
+              <p className="mt-2 text-sm text-zinc-400 leading-relaxed">
+                Clearer deadlines, status, and push alerts so people do not learn
+                about a win too late.
               </p>
             </div>
           </div>
+          <p className="text-sm text-zinc-400 leading-relaxed">
+            Spending analysis, high-contrast visuals, and accessibility-oriented
+            patterns (e.g., VoiceOver annotations) further supported repeat use—
+            especially for younger budgeters and low-vision participants.
+          </p>
         </section>
 
         <section className="space-y-5 max-w-3xl">
