@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { CaseStudyAtAGlance } from "../_components/CaseStudyAtAGlance";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
@@ -8,7 +7,6 @@ import { CompetitorLandscapeTable } from "./CompetitorLandscapeTable";
 import { ProblemPersonasBlock } from "./ProblemPersonasBlock";
 import { OutcomeAutoSlideshow } from "./OutcomeAutoSlideshow";
 import { PhoneMockup, PortraitTile, WideFigure } from "./EInvoiceFigures";
-import { ImageLightbox } from "./ImageLightbox";
 
 export const metadata = {
   title: "Reimagining Taiwan’s e-Invoice Experience | Angela Yang",
@@ -413,7 +411,7 @@ export default function EInvoiceCaseStudy() {
       <CaseStudyContentLayout toc={E_INVOICE_TOC}>
         <section
           id="project-background"
-          className="max-w-5xl scroll-mt-28 space-y-6 sm:scroll-mt-32"
+          className="max-w-3xl scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             01 · Project background
@@ -421,7 +419,7 @@ export default function EInvoiceCaseStudy() {
           <h2 className="text-xl font-semibold text-zinc-100">
             Why the Cloud Invoice App needed a redesign
           </h2>
-          <p className="max-w-3xl text-zinc-300 leading-relaxed">
+          <p className="text-zinc-300 leading-relaxed">
             In Taiwan, every purchase comes with an invoice. For years, people
             collected stacks of paper receipts and checked them for the
             government&apos;s famous &quot;invoice lottery.&quot; Exciting as it was,
@@ -433,40 +431,21 @@ export default function EInvoiceCaseStudy() {
             invoices to charity with one tap, and reduce reliance on paper while
             supporting sustainability.
           </p>
-          <div className="flex flex-col gap-8 lg:flex-row lg:items-stretch lg:gap-10 xl:gap-12">
-            <div className="flex min-w-0 flex-1 flex-col justify-start gap-4 text-zinc-300 leading-relaxed">
-              <p>
-                Over time, the app showed clear pain points: slow, unstable
-                performance that reduced trust; complicated steps and small text
-                that frustrated elderly users; language and navigation issues for
-                foreign nationals; and a cluttered interface that overwhelmed
-                younger users.
-              </p>
-              <p>
-                This project set out to redesign the Cloud Invoice App with people
-                at the center. The goal was an app that is faster and easier to
-                use; inclusive for seniors, people with disabilities, and foreign
-                users; and reliable and trustworthy—strengthening public
-                confidence in digital government services.
-              </p>
-            </div>
-            <div className="flex min-h-[220px] w-full shrink-0 flex-col lg:min-h-0 lg:w-[42%] lg:max-w-xl">
-              <ImageLightbox
-                src={ASSET("project-background-taiwan-receipts.png")}
-                alt="Hand holding a fan of Taiwanese uniform invoices from shops such as Taipei 101 and Eslite—paper receipt culture tied to the national invoice lottery."
-                ariaLabel="View larger — Taiwanese uniform invoices (project background)"
-                className="relative h-full min-h-[220px] flex-1 overflow-hidden rounded-[20px] ring-1 ring-zinc-700/45 lg:min-h-0"
-              >
-                <Image
-                  src={ASSET("project-background-taiwan-receipts.png")}
-                  alt=""
-                  fill
-                  className="object-cover object-center"
-                  sizes="(max-width: 1024px) 100vw, 520px"
-                />
-              </ImageLightbox>
-            </div>
-          </div>
+          <p className="text-zinc-300 leading-relaxed" lang="zh-Hant">
+            台灣財政部的雲端發票 App
+            是全國約2000萬名使用者管理電子發票、參與統一發票對獎的官方工具——但 App
+            Store 評分只有 2.8 顆星。
+          </p>
+          <p className="text-zinc-300 leading-relaxed" lang="zh-Hant">
+            問題不只是 UI 老舊。訪談和測試發現，真正的障礙是：老年用戶無法獨立操作、外籍用戶看不懂中文標籤、所有人都在忘記密碼這一步放棄登入。一個全民服務，卻把最需要它的人擋在門外。
+          </p>
+          <p
+            className="border-l-2 border-emerald-500/40 pl-4 text-sm leading-relaxed text-zinc-400"
+            lang="zh-Hant"
+          >
+            <span className="font-medium text-zinc-200">設計目標：</span>
+            讓 18 歲到 70 歲、包含視障用戶，都能獨立完成核心任務——不需要教學，不需要家人幫忙。
+          </p>
         </section>
 
         <ProblemPersonasBlock />

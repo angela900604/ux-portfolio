@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { PortraitTile, WideFigure } from "./EInvoiceFigures";
+import { SketchPersonasExpandable } from "./SketchPersonasExpandable";
 
 const ASSET = (name: string) => `/case-studies/e-invoice/case-assets/${name}`;
 
@@ -23,7 +23,8 @@ export function ProblemPersonasBlock() {
           This work started where users were already shouting: App Store reviews
           framed the quantitative pain, and interviews explained who was stuck and
           why. The sections below mirror that order—signal first, nuance second—then
-          two personas at the hardest extremes of the spectrum.
+          sketch personas you can expand in Layer 2, and two full cards for the
+          hardest extremes on the page.
         </p>
       </div>
 
@@ -117,23 +118,27 @@ export function ProblemPersonasBlock() {
         </div>
       </div>
 
-      {/* Layer 2 — Interviews */}
-      <div className="space-y-5">
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-widest text-emerald-400/90">
-            Layer 2 · What interviews layered on top
-          </p>
-          <h3 className="mt-2 text-lg font-semibold text-zinc-100">
-            Same jobs, different constraints—one comparison table
-          </h3>
-          <p className="mt-2 max-w-3xl text-sm leading-relaxed text-zinc-400">
-            Five audience slices (including visually impaired participants) mapped
-            to a single question: what happens the moment the app opens, and what
-            breaks next?
-          </p>
-        </div>
+      {/* Layer 2 — Interviews + sketch personas */}
+      <div
+        id="personas"
+        className="scroll-mt-28 space-y-10 sm:scroll-mt-32"
+      >
+        <div className="space-y-5">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-widest text-emerald-400/90">
+              Layer 2 · What interviews layered on top
+            </p>
+            <h3 className="mt-2 text-lg font-semibold text-zinc-100">
+              Same jobs, different constraints—one comparison table
+            </h3>
+            <p className="mt-2 max-w-3xl text-sm leading-relaxed text-zinc-400">
+              Five audience slices (including visually impaired participants) mapped
+              to a single question: what happens the moment the app opens, and what
+              breaks next?
+            </p>
+          </div>
 
-        <div className="overflow-x-auto rounded-xl border border-zinc-800">
+          <div className="overflow-x-auto rounded-xl border border-zinc-800">
           <table className="min-w-[800px] w-full text-left text-sm">
             <thead className="bg-zinc-900/80 text-xs uppercase tracking-wider text-zinc-500">
               <tr>
@@ -221,83 +226,25 @@ export function ProblemPersonasBlock() {
           </p>
         </div>
 
+        <SketchPersonasExpandable />
+
         <WideFigure
           borderless
           src={ASSET("interview-field-20250321-1330-copy.png")}
           alt="Field interview session with participants at a startup hub"
           caption="Field research · Mar 2025 · startup hub session"
         />
-      </div>
-
-      {/* Personas — thumbnails + two deep dives */}
-      <div id="personas" className="scroll-mt-28 space-y-8 sm:scroll-mt-32">
-        <div className="space-y-3 max-w-3xl">
-          <h3 className="text-lg font-semibold tracking-tight text-zinc-100">
-            Personas · two extremes, three sketches
-          </h3>
-          <p className="text-sm leading-relaxed text-zinc-400">
-            Full cards for{" "}
-            <span className="text-zinc-200">Mei-Ling</span> (silver) and{" "}
-            <span className="text-zinc-200">Alex</span> (foreign resident)—the two
-            ends of literacy, language, and tolerance for complexity. The other
-            archetypes stay visible as thumbnails so the spectrum doesn&apos;t
-            disappear.
-          </p>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-3 max-w-4xl">
-          <div className="flex gap-3 rounded-xl border border-zinc-800/90 bg-zinc-900/30 p-3">
-            <div className="relative h-[4.5rem] w-14 shrink-0 overflow-hidden rounded-lg bg-zinc-800">
-              <Image
-                src={ASSET("persona-portrait-01.png")}
-                alt="Yi-Ting, younger user persona"
-                fill
-                className="object-cover object-center"
-                sizes="56px"
-              />
-            </div>
-            <div className="min-w-0 text-xs leading-snug">
-              <p className="font-medium text-zinc-100">Yi-Ting · 18–30</p>
-              <p className="mt-1 text-zinc-500">
-                Wants speed, aesthetics, dense shortcuts—barcode first, ads never.
-              </p>
-            </div>
-          </div>
-          <div className="flex gap-3 rounded-xl border border-zinc-800/90 bg-zinc-900/30 p-3">
-            <div className="relative h-[4.5rem] w-14 shrink-0 overflow-hidden rounded-lg bg-zinc-800">
-              <Image
-                src={ASSET("persona-portrait-02.png")}
-                alt="David, middle-aged user persona"
-                fill
-                className="object-cover object-center"
-                sizes="56px"
-              />
-            </div>
-            <div className="min-w-0 text-xs leading-snug">
-              <p className="font-medium text-zinc-100">David · 31–50</p>
-              <p className="mt-1 text-zinc-500">
-                Balanced power user—biometrics, reminders, reliable at checkout.
-              </p>
-            </div>
-          </div>
-          <div className="flex gap-3 rounded-xl border border-zinc-800/90 bg-zinc-900/30 p-3">
-            <div className="relative h-[4.5rem] w-14 shrink-0 overflow-hidden rounded-lg bg-zinc-800">
-              <Image
-                src={ASSET("persona-portrait-vi-session.png")}
-                alt="Teacher Chen, low vision persona"
-                fill
-                className="object-cover object-center"
-                sizes="56px"
-              />
-            </div>
-            <div className="min-w-0 text-xs leading-snug">
-              <p className="font-medium text-zinc-100">Teacher Chen · low vision</p>
-              <p className="mt-1 text-zinc-500">
-                Needs predictable layout, VoiceOver that doesn&apos;t shout, family
-                assist today.
-              </p>
-            </div>
-          </div>
+        <div className="space-y-3 max-w-3xl">
+          <h3 className="text-lg font-semibold tracking-tight text-zinc-100">
+            Two extremes · full personas on the page
+          </h3>
+          <p className="text-sm leading-relaxed text-zinc-400">
+            <span className="text-zinc-200">Mei-Ling</span> and{" "}
+            <span className="text-zinc-200">Alex</span> stay expanded here—the
+            hardest ends of the spectrum for literacy and language.
+          </p>
         </div>
 
         <div className="grid max-w-4xl grid-cols-1 gap-8">
