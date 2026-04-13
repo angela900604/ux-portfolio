@@ -149,6 +149,13 @@ export default function BaskinRobbinsCaseStudy() {
           </p>
 
           <div className="mt-8">
+            <WideFigure
+              src={ASSET("hero-membership.png")}
+              alt="Baskin-Robbins Taiwan membership app — hero visual"
+            />
+          </div>
+
+          <div className="mt-8">
             <CaseStudyAtAGlance items={AT_A_GLANCE_ITEMS} accent="baskin" />
           </div>
 
@@ -193,12 +200,6 @@ export default function BaskinRobbinsCaseStudy() {
                 ↓
               </span>
             </a>
-          </div>
-          <div className="mt-12">
-            <WideFigure
-              src={ASSET("hero-membership.png")}
-              alt="Baskin-Robbins Taiwan membership app — hero visual"
-            />
           </div>
           <AppStoreReviewsSection appStoreHref={APP_STORE_TW} />
         </div>

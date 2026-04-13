@@ -292,6 +292,14 @@ export default function EInvoiceCaseStudy() {
           </p>
 
           <div className="mt-8">
+            <WideFigure
+              borderless
+              src={ASSET("before-after-overview.png")}
+              alt="Before and after overview of the e-invoice app redesign"
+            />
+          </div>
+
+          <div className="mt-8">
             <CaseStudyAtAGlance items={AT_A_GLANCE_ITEMS} />
           </div>
 
@@ -396,14 +404,6 @@ export default function EInvoiceCaseStudy() {
                 redemption flows.
               </p>
             </div>
-          </div>
-
-          <div className="mt-12">
-            <WideFigure
-              borderless
-              src={ASSET("before-after-overview.png")}
-              alt="Before and after overview of the e-invoice app redesign"
-            />
           </div>
         </div>
       </header>
@@ -632,28 +632,19 @@ export default function EInvoiceCaseStudy() {
           className="max-w-6xl scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            03 · Competitor insights &amp; design process
+            03 · 競品洞察與設計流程
           </span>
           <h2 className="max-w-3xl text-xl font-semibold text-zinc-100">
-            Taiwan invoice apps — benchmarks before IA &amp; UI
+            四大發票產品比較——做 IA 與視覺前的標竿
           </h2>
           <p className="max-w-3xl text-sm leading-relaxed text-zinc-400">
-            Four Taiwan invoice products (official app, two leaders, LINE)—App Store
-            ratings in the second column—set benchmarks before IA and visual design.
+            比較對象涵蓋財政部官方、兩款市場主流第三方 App，以及 LINE 發票管家。第二列整理 App Store 星等與評論量，對照定位、客群與優劣勢。
           </p>
           <CompetitorLandscapeTable />
           <p className="max-w-3xl text-sm leading-relaxed text-zinc-400">
-            <span className="text-zinc-200">Design process:</span> onboarding
-            clarity (LINE), scan / login speed (third-party leaders), analytics +
-            sensory patterns (Invoice Locker)—filtered for accessibility, MoF
-            compliance, and engineering limits.
+            <span className="text-zinc-200">設計流程上，</span>
+            借鑑 LINE 的新手引導、第三方在掃描／登入節奏與消費分析上的做法，以及發票存摺在數據與感官回饋上的思路——最終仍收斂於無障礙、部會法規與工程可行性。
           </p>
-          <WideFigure
-            borderless
-            src={ASSET("competitor-landscape-table.png")}
-            alt="Competitor analysis table: four Taiwan invoice apps with positioning, users, strengths, and weaknesses"
-            caption="Design reference · competitor landscape board."
-          />
         </section>
 
         <section

@@ -89,6 +89,13 @@ export default function GovernmentBackendCaseStudy() {
           </p>
 
           <div className="mt-8">
+            <WideFigure
+              src={ASSET("hero-platform-overview.png")}
+              alt="Government backend platform overview — dashboards and navigation"
+            />
+          </div>
+
+          <div className="mt-8">
             <CaseStudyAtAGlance items={AT_A_GLANCE_ITEMS} />
           </div>
 
@@ -118,13 +125,6 @@ export default function GovernmentBackendCaseStudy() {
 
           <div className="mt-8">
             <CaseStudyScanSummary items={GOV_BACKEND_SCAN_SUMMARY} />
-          </div>
-
-          <div className="mt-12">
-            <WideFigure
-              src={ASSET("hero-platform-overview.png")}
-              alt="Government backend platform overview — dashboards and navigation"
-            />
           </div>
         </div>
       </header>
