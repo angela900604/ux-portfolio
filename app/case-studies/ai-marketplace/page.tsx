@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { CaseStudyAtAGlance } from "../_components/CaseStudyAtAGlance";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
@@ -110,35 +111,48 @@ export default function AiMarketplaceCaseStudy() {
       <div className="mx-auto max-w-[1280px] px-6 sm:px-[100px] py-12 sm:py-16 space-y-20">
         <section
           id="why-this-exists"
-          className="max-w-3xl scroll-mt-28 space-y-4 sm:scroll-mt-32"
+          className="scroll-mt-28 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Why this exists
-          </span>
-          <h2 className="text-xl font-semibold text-zinc-100">
-            Built from the ground up for how fast babies—and closets—change
-          </h2>
-          <p className="text-zinc-300 leading-relaxed">
-            We are designing a marketplace that starts with{" "}
-            <span className="text-zinc-100">San Francisco mom groups</span>, not a
-            generic national grid. Little ones move through stages quickly: what you
-            need at three months is not what you need at nine. Gear is expensive,
-            emotionally loaded, and often{" "}
-            <span className="text-zinc-100">only useful for a short window</span>—then
-            it sits in bins, strollers crowd hallways, and perfectly good items
-            age out of relevance.
-          </p>
-          <p className="text-zinc-300 leading-relaxed">
-            In the Bay Area, many families already care deeply about{" "}
-            <span className="text-zinc-100">sustainability</span> and conscious
-            consumption—but resale still takes time, attention, and learning curve.
-            Our bet is simple:{" "}
-            <span className="text-zinc-100">
-              if we gather demand in trusted parent networks first
-            </span>
-            , and remove the operational drag of listing and coordinating, more gear
-            circulates instead of landfilling or idling in storage.
-          </p>
+          <div className="flex flex-col gap-8 lg:flex-row lg:items-stretch lg:gap-10 xl:gap-12">
+            <div className="min-w-0 flex-1 space-y-4 lg:max-w-2xl xl:max-w-3xl">
+              <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+                Why this exists
+              </span>
+              <h2 className="text-xl font-semibold text-zinc-100">
+                Built from the ground up for how fast babies—and closets—change
+              </h2>
+              <p className="text-zinc-300 leading-relaxed">
+                We are designing a marketplace that starts with{" "}
+                <span className="text-zinc-100">San Francisco mom groups</span>, not a
+                generic national grid. Little ones move through stages quickly: what you
+                need at three months is not what you need at nine. Gear is expensive,
+                emotionally loaded, and often{" "}
+                <span className="text-zinc-100">only useful for a short window</span>
+                —then it sits in bins, strollers crowd hallways, and perfectly good
+                items age out of relevance.
+              </p>
+              <p className="text-zinc-300 leading-relaxed">
+                In the Bay Area, many families already care deeply about{" "}
+                <span className="text-zinc-100">sustainability</span> and conscious
+                consumption—but resale still takes time, attention, and learning curve.
+                Our bet is simple:{" "}
+                <span className="text-zinc-100">
+                  if we gather demand in trusted parent networks first
+                </span>
+                , and remove the operational drag of listing and coordinating, more
+                gear circulates instead of landfilling or idling in storage.
+              </p>
+            </div>
+            <div className="relative min-h-[min(52vw,22rem)] w-full shrink-0 overflow-hidden rounded-xl border border-zinc-800/50 bg-zinc-900/40 sm:min-h-[20rem] lg:h-full lg:min-h-0 lg:w-[min(100%,20rem)] xl:w-[min(100%,22.5rem)]">
+              <Image
+                src="/case-studies/mina/community-collage.png"
+                alt="MINA community event: signage, parents trying the app, and team at a local gathering"
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 1024px) 100vw, 360px"
+              />
+            </div>
+          </div>
         </section>
 
         <section className="max-w-3xl space-y-4">
