@@ -682,97 +682,99 @@ export default function EInvoiceCaseStudy() {
 
         <section
           id="testing"
-          className="max-w-3xl scroll-mt-28 space-y-6 sm:scroll-mt-32"
+          className="max-w-6xl scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            06 · Testing &amp; iterations
-          </span>
-          <h2 className="text-xl font-semibold text-zinc-100">
-            Prototype testing &amp; key refinements
-          </h2>
-          <p className="text-zinc-300 leading-relaxed">
-            I conducted usability tests using one-on-one observation. Each
-            participant completed key tasks while I tracked completion rates, errors,
-            and satisfaction. Across 12 diverse participants, we reached an{" "}
-            <span className={M_TXT}>88%</span> overall success rate. Sessions surfaced
-            pain points—especially login verification and form
-            entry—which became actionable opportunities to improve accessibility and
-            efficiency before launch.
-          </p>
-          <h3 className="text-sm font-semibold uppercase tracking-wider text-zinc-400">
-            Five core test tasks
-          </h3>
-          <ul className="list-disc pl-5 space-y-2 text-zinc-300 marker:text-zinc-500">
-            <li>Login &amp; registration — verify account creation and access.</li>
-            <li>Carrier binding — link and manage invoice carriers.</li>
-            <li>Invoice wallet &amp; donation — store invoices and test donation.</li>
-            <li>
-              Scan &amp; prize redemption — scan invoices, check results, claim
-              prizes.
-            </li>
-            <li>Spending analysis — view and interpret expense breakdowns.</li>
-          </ul>
-          <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-6">
-            <h4 className="text-sm font-semibold text-zinc-100">
-              Results summary (prototype)
-            </h4>
-            <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 text-sm">
-              <div className="flex justify-between gap-4 border-b border-zinc-800/80 py-2">
-                <span className="text-zinc-400">Overall</span>
-                <span className={M_TXT}>88%</span>
+          <div className="max-w-3xl space-y-6">
+            <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+              06 · Testing &amp; iterations
+            </span>
+            <h2 className="text-xl font-semibold text-zinc-100">
+              Prototype testing &amp; key refinements
+            </h2>
+            <p className="text-zinc-300 leading-relaxed">
+              I conducted usability tests using one-on-one observation. Each
+              participant completed key tasks while I tracked completion rates, errors,
+              and satisfaction. Across 12 diverse participants, we reached an{" "}
+              <span className={M_TXT}>88%</span> overall success rate. Sessions surfaced
+              pain points—especially login verification and form
+              entry—which became actionable opportunities to improve accessibility and
+              efficiency before launch.
+            </p>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-zinc-400">
+              Five core test tasks
+            </h3>
+            <ul className="list-disc pl-5 space-y-2 text-zinc-300 marker:text-zinc-500">
+              <li>Login &amp; registration — verify account creation and access.</li>
+              <li>Carrier binding — link and manage invoice carriers.</li>
+              <li>Invoice wallet &amp; donation — store invoices and test donation.</li>
+              <li>
+                Scan &amp; prize redemption — scan invoices, check results, claim
+                prizes.
+              </li>
+              <li>Spending analysis — view and interpret expense breakdowns.</li>
+            </ul>
+            <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-6">
+              <h4 className="text-sm font-semibold text-zinc-100">
+                Results summary (prototype)
+              </h4>
+              <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 text-sm">
+                <div className="flex justify-between gap-4 border-b border-zinc-800/80 py-2">
+                  <span className="text-zinc-400">Overall</span>
+                  <span className={M_TXT}>88%</span>
+                </div>
+                <div className="flex justify-between gap-4 border-b border-zinc-800/80 py-2">
+                  <span className="text-zinc-400">Login &amp; registration</span>
+                  <span className={M_TXT}>75%</span>
+                </div>
+                <div className="flex justify-between gap-4 border-b border-zinc-800/80 py-2">
+                  <span className="text-zinc-400">Carrier binding</span>
+                  <span className={M_TXT}>67%</span>
+                </div>
+                <div className="flex justify-between gap-4 border-b border-zinc-800/80 py-2">
+                  <span className="text-zinc-400">Invoice wallet &amp; donation</span>
+                  <span className={M_TXT}>83%</span>
+                </div>
+                <div className="flex justify-between gap-4 border-b border-zinc-800/80 py-2">
+                  <span className="text-zinc-400">Scan &amp; prize redemption</span>
+                  <span className={M_TXT}>92%</span>
+                </div>
+                <div className="flex justify-between gap-4 border-b border-zinc-800/80 py-2">
+                  <span className="text-zinc-400">Spending analysis</span>
+                  <span className={M_TXT}>100%</span>
+                </div>
               </div>
-              <div className="flex justify-between gap-4 border-b border-zinc-800/80 py-2">
-                <span className="text-zinc-400">Login &amp; registration</span>
-                <span className={M_TXT}>75%</span>
-              </div>
-              <div className="flex justify-between gap-4 border-b border-zinc-800/80 py-2">
-                <span className="text-zinc-400">Carrier binding</span>
-                <span className={M_TXT}>67%</span>
-              </div>
-              <div className="flex justify-between gap-4 border-b border-zinc-800/80 py-2">
-                <span className="text-zinc-400">Invoice wallet &amp; donation</span>
-                <span className={M_TXT}>83%</span>
-              </div>
-              <div className="flex justify-between gap-4 border-b border-zinc-800/80 py-2">
-                <span className="text-zinc-400">Scan &amp; prize redemption</span>
-                <span className={M_TXT}>92%</span>
-              </div>
-              <div className="flex justify-between gap-4 border-b border-zinc-800/80 py-2">
-                <span className="text-zinc-400">Spending analysis</span>
-                <span className={M_TXT}>100%</span>
-              </div>
+              <p className="mt-4 text-sm text-zinc-400">
+                Errors: average{" "}
+                <span className={M_TIME}>1.3</span> errors per participant—mostly form
+                entry and unclear prompts. Shortest task: scan &amp; prize redemption (
+                <span className={M_TIME}>~40s</span> avg.). Longest: carrier binding (
+                <span className={M_TIME}>~2m 20s</span> avg.).
+              </p>
+              <p className="mt-3 text-sm text-zinc-300">
+                <span className="text-zinc-200">What worked:</span> scan &amp; prize check
+                with visual/audio feedback; homepage layout (especially for elderly);
+                spending charts valued by younger users.
+              </p>
+              <p className="mt-2 text-sm text-zinc-300">
+                <span className="text-zinc-200">What didn&apos;t:</span> first-run
+                length still a tension for some (optional steps skipped); multi-language
+                prompts unclear; prize redemption steps confusing.
+              </p>
             </div>
-            <p className="mt-4 text-sm text-zinc-400">
-              Errors: average{" "}
-              <span className={M_TIME}>1.3</span> errors per participant—mostly form
-              entry and unclear prompts. Shortest task: scan &amp; prize redemption (
-              <span className={M_TIME}>~40s</span> avg.). Longest: carrier binding (
-              <span className={M_TIME}>~2m 20s</span> avg.).
-            </p>
-            <p className="mt-3 text-sm text-zinc-300">
-              <span className="text-zinc-200">What worked:</span> scan &amp; prize check
-              with visual/audio feedback; homepage layout (especially for elderly);
-              spending charts valued by younger users.
-            </p>
-            <p className="mt-2 text-sm text-zinc-300">
-              <span className="text-zinc-200">What didn&apos;t:</span> first-run
-              length still a tension for some (optional steps skipped); multi-language
-              prompts unclear; prize redemption steps confusing.
-            </p>
-          </div>
-          <div className="grid gap-6 sm:grid-cols-2 max-w-4xl">
-            <WideFigure
-              borderless
-              src={ASSET("prototype-matrix.png")}
-              alt="Prototype task success matrix spreadsheet"
-              caption="Task matrix / pass-fail by participant (export)."
-            />
-            <WideFigure
-              borderless
-              src={ASSET("prototype-task-notes.png")}
-              alt="Session notes and task completion tracking"
-              caption="Session notes &amp; completion log (export)."
-            />
+            <div className="grid gap-6 sm:grid-cols-2 max-w-4xl">
+              <WideFigure
+                borderless
+                src={ASSET("prototype-matrix.png")}
+                alt="Prototype task success matrix spreadsheet"
+                caption="Task matrix / pass-fail by participant (export)."
+              />
+              <WideFigure
+                borderless
+                src={ASSET("prototype-task-notes.png")}
+                alt="Session notes and task completion tracking"
+                caption="Session notes &amp; completion log (export)."
+              />
+            </div>
           </div>
 
           <div
@@ -786,7 +788,7 @@ export default function EInvoiceCaseStudy() {
               <span aria-hidden>{"\u{1F517}"}</span> Carrier binding → scenario
               explanation &amp; smart support
             </h3>
-            <p className="mt-2 max-w-3xl text-sm text-zinc-500 leading-relaxed">
+            <p className="mt-2 text-sm text-zinc-500 leading-relaxed">
               Carrier binding tested at{" "}
               <span className={M_TXT}>67%</span>—the weakest of the five core tasks.
               The fix was not primarily &quot;simpler taps&quot;; it was helping people
