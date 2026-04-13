@@ -3,6 +3,7 @@ import { CaseStudyAtAGlance } from "../_components/CaseStudyAtAGlance";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { CaseStudyScanSummary } from "../_components/CaseStudyScanSummary";
+import { CompetitorLandscapeTable } from "./CompetitorLandscapeTable";
 import { OutcomeAutoSlideshow } from "./OutcomeAutoSlideshow";
 import { PhoneMockup, PortraitTile, WideFigure } from "./EInvoiceFigures";
 
@@ -42,19 +43,16 @@ const M_TIME =
 
 const E_INVOICE_TOC = [
   { id: "project-background", label: "Project background" },
-  { id: "problem-goals", label: "Problem & goals" },
-  { id: "user-journey-map", label: "User journey map" },
+  { id: "user-journey-map", label: "The problem" },
+  { id: "competitor-insights", label: "Competitor insights" },
   { id: "interview-findings", label: "Interview findings" },
   { id: "accessibility", label: "Accessibility" },
   { id: "personas", label: "Personas" },
   { id: "business-constraints", label: "Business constraints" },
-  { id: "competitor-insights", label: "Competitor insights" },
   { id: "functional-map", label: "Functional map" },
   { id: "page-flow-design", label: "Page flow & design system" },
   { id: "testing", label: "Testing & iterations" },
   { id: "carrier-binding-insight", label: "Carrier binding insight" },
-  { id: "donation-flow", label: "Donation flow" },
-  { id: "national-platform", label: "National platform" },
   { id: "key-outcomes", label: "Key outcomes" },
   { id: "final-solution-screens", label: "Final screens" },
   { id: "impact-results", label: "Impact & results" },
@@ -449,76 +447,28 @@ export default function EInvoiceCaseStudy() {
         </section>
 
         <section
-          id="problem-goals"
-          className="max-w-3xl scroll-mt-28 space-y-6 sm:scroll-mt-32"
-        >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Problem, client goals &amp; user goals
-          </span>
-          <h2 className="text-xl font-semibold text-zinc-100">
-            Convenience, trust, and adoption
-          </h2>
-          <p className="text-zinc-300 leading-relaxed">
-            The Cloud Invoice App was designed to make managing receipts and
-            participating in lottery draws easier—while promoting paperless
-            transactions for environmental and efficiency benefits. However,
-            many users still found the app confusing, slow, or difficult to
-            navigate, which limited adoption and impact. The Ministry of Finance
-            faces two main challenges: ensuring citizens can easily use the app,
-            and encouraging adoption of digital receipts and donations. When users
-            struggle, the app fails to deliver on its promise of convenience and
-            trust.
-          </p>
-          <div className="grid gap-4 sm:grid-cols-2">
-            <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-5">
-              <h3 className="text-sm font-semibold text-zinc-100">Client goals</h3>
-              <ul className="mt-3 list-disc pl-5 space-y-2 text-sm text-zinc-300 marker:text-zinc-500">
-                <li>
-                  Build trust and credibility in a government digital service.
-                </li>
-                <li>
-                  Increase adoption of cloud invoices over paper receipts—supporting
-                  environmental sustainability.
-                </li>
-                <li>
-                  Deliver a seamless, inclusive experience for all citizens—
-                  regardless of age, ability, or language.
-                </li>
-              </ul>
-            </div>
-            <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-5">
-              <h3 className="text-sm font-semibold text-zinc-100">User goals</h3>
-              <ul className="mt-3 list-disc pl-5 space-y-2 text-sm text-zinc-300 marker:text-zinc-500">
-                <li>Quickly check invoice lottery results.</li>
-                <li>Track and manage receipts efficiently.</li>
-                <li>Easily donate invoices to charities.</li>
-                <li>
-                  Use an app that is simple, reliable, and intuitive—without
-                  confusion or frustration.
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <section
           id="user-journey-map"
           className="max-w-4xl scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            User journey map
+            02 · The problem
           </span>
           <h2 className="text-xl font-semibold text-zinc-100">
-            From App Store reviews to interview questions
+            The app was falling short on trust, speed, and clarity
           </h2>
           <p className="text-zinc-300 leading-relaxed max-w-3xl">
-            I used a user journey map to analyze App Store reviews, uncover pain
-            points across usage stages, and generate targeted interview questions
-            to better understand users&apos; needs with the current app.{" "}
-            <span className="text-zinc-200">
-              Data source: App Store user reviews in the past year (2024/3 –
-              2025/3).
-            </span>
+            People need a reliable way to manage e-invoices, check lottery results,
+            and donate—but the experience was slow and unstable, hard to parse for
+            seniors and low-vision users, and confusing for foreign residents.
+            Navigation and onboarding didn&apos;t match mental models, so adoption
+            stalled and MoF couldn&apos;t fully shift usage away from paper.
+          </p>
+          <p className="text-sm font-medium uppercase tracking-wider text-zinc-500">
+            User journey map · App Store reviews (2024/3 – 2025/3)
+          </p>
+          <p className="text-zinc-300 leading-relaxed max-w-3xl">
+            To make those failures concrete, I mapped review themes by stage—then
+            turned gaps into interview questions for deeper validation.
           </p>
           <div className="overflow-x-auto rounded-xl border border-zinc-800">
             <table className="min-w-[640px] w-full text-left text-sm">
@@ -673,11 +623,40 @@ export default function EInvoiceCaseStudy() {
         </section>
 
         <section
+          id="competitor-insights"
+          className="max-w-6xl scroll-mt-28 space-y-5 sm:scroll-mt-32"
+        >
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            03 · Competitor insights &amp; design process
+          </span>
+          <h2 className="max-w-3xl text-xl font-semibold text-zinc-100">
+            Taiwan invoice apps — benchmarks before IA &amp; UI
+          </h2>
+          <p className="max-w-3xl text-sm leading-relaxed text-zinc-400">
+            Four Taiwan invoice products (official app, two leaders, LINE)—App Store
+            ratings in the second column—set benchmarks before IA and visual design.
+          </p>
+          <CompetitorLandscapeTable />
+          <p className="max-w-3xl text-sm leading-relaxed text-zinc-400">
+            <span className="text-zinc-200">Design process:</span> onboarding
+            clarity (LINE), scan / login speed (third-party leaders), analytics +
+            sensory patterns (Invoice Locker)—filtered for accessibility, MoF
+            compliance, and engineering limits.
+          </p>
+          <WideFigure
+            borderless
+            src={ASSET("competitor-landscape-table.png")}
+            alt="Competitor analysis table: four Taiwan invoice apps with positioning, users, strengths, and weaknesses"
+            caption="Design reference · competitor landscape board."
+          />
+        </section>
+
+        <section
           id="interview-findings"
           className="max-w-3xl scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            02 · Understanding the problem
+            04 · Understanding the problem
           </span>
           <h2 className="text-xl font-semibold text-zinc-100">
             Interview findings across demographics
@@ -1077,72 +1056,6 @@ export default function EInvoiceCaseStudy() {
         </section>
 
         <section
-          id="competitor-insights"
-          className="max-w-3xl scroll-mt-28 space-y-6 sm:scroll-mt-32"
-        >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            03 · Competitor insights &amp; design process
-          </span>
-          <h2 className="text-xl font-semibold text-zinc-100">
-            What we learned from leading invoice apps
-          </h2>
-          <p className="text-zinc-300 leading-relaxed">
-            When redesigning the Ministry of Finance Uniform Invoice App, we looked
-            at leading invoice apps to see how they solve real user problems. Each
-            competitor offered valuable lessons—some features to emulate, others to
-            improve upon.
-          </p>
-          <div className="space-y-4">
-            <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-5">
-              <h3 className="text-sm font-semibold text-zinc-100">
-                1. LINE Invoice Manager — welcoming &amp; guided onboarding
-              </h3>
-              <p className="mt-2 text-sm text-zinc-300 leading-relaxed">
-                Illustrated onboarding, step-by-step instructions, and functional
-                hints. Pull-to-hide/expand barcode widgets save space; spending
-                records stay easy to scroll.{" "}
-                <span className="text-zinc-200">Differentiation for us:</span>{" "}
-                integrate onboarding within the official Ministry app with
-                multi-language support and real-time tips—especially for online prize
-                redemption and donation.
-              </p>
-            </div>
-            <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-5">
-              <h3 className="text-sm font-semibold text-zinc-100">
-                2. Cloud Invoice — quick access &amp; efficient scanning
-              </h3>
-              <p className="mt-2 text-sm text-zinc-300 leading-relaxed">
-                Multiple login options (Google, Facebook, Apple ID, biometrics);
-                keyword search, category/date filters, swipe navigation; lottery
-                countdown timers.{" "}
-                <span className="text-zinc-200">Differentiation for us:</span> embed
-                biometric login and password recovery directly in-app; add smart,
-                contextual guidance for prize redemption.
-              </p>
-            </div>
-            <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-5">
-              <h3 className="text-sm font-semibold text-zinc-100">
-                3. Invoice Locker — accessibility, insights &amp; multi-device
-              </h3>
-              <p className="mt-2 text-sm text-zinc-300 leading-relaxed">
-                Scan across devices, copy barcodes quickly, view spending as charts
-                over time; audio feedback for visually impaired users.{" "}
-                <span className="text-zinc-200">Differentiation for us:</span> full
-                accessibility compliance (VoiceOver/TalkBack, sensory feedback,
-                focus management); comprehensive multi-device support within the
-                Ministry app.
-              </p>
-            </div>
-          </div>
-          <p className="text-zinc-300 leading-relaxed">
-            Takeaways: welcome first-time users with guided onboarding; enable fast,
-            flexible access with multi-login and smooth scanning; support
-            accessibility and engagement through sensory feedback, analytics, and
-            rewards—within public-sector constraints.
-          </p>
-        </section>
-
-        <section
           id="functional-map"
           className="max-w-4xl scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
@@ -1166,7 +1079,7 @@ export default function EInvoiceCaseStudy() {
         >
           <div className="max-w-3xl space-y-4">
             <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-              04 · Page flow, UI direction &amp; design system
+              05 · Page flow, UI direction &amp; design system
             </span>
             <h2 className="text-xl font-semibold text-zinc-100">
               From flow logic to visual language
@@ -1260,7 +1173,7 @@ export default function EInvoiceCaseStudy() {
           className="max-w-3xl scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            05 · Testing &amp; iterations
+            06 · Testing &amp; iterations
           </span>
           <h2 className="text-xl font-semibold text-zinc-100">
             Prototype testing &amp; key refinements
@@ -1450,49 +1363,6 @@ export default function EInvoiceCaseStudy() {
         </section>
 
         <section
-          id="donation-flow"
-          className="max-w-3xl scroll-mt-28 space-y-4 sm:scroll-mt-32"
-        >
-          <h3 className="text-lg font-semibold text-zinc-100">
-            Donation flow — before &amp; after
-          </h3>
-          <p className="text-zinc-300 leading-relaxed">
-            Invoice donation had to cover in-app giving (pick invoices, choose a
-            charity) and event flows (scan a QR, meet a minimum count for a reward).
-          </p>
-          <p className="text-zinc-300 leading-relaxed">
-            <span className="text-zinc-200">Before:</span> The path favored speed—e.g.
-            quick-select shortcuts and auto-advancing when few invoices were
-            available—aligned with users who wanted one-tap completion.
-          </p>
-          <p className="text-zinc-300 leading-relaxed">
-            <span className="text-zinc-200">After:</span> When quick actions
-            couldn&apos;t match the requested batch size, we added an explicit
-            confirmation, clearer selected state, and guardrails so donors—often
-            older adults—couldn&apos;t mis-tap into an irreversible donation.
-          </p>
-        </section>
-
-        <section
-          id="national-platform"
-          className="max-w-3xl scroll-mt-28 space-y-4 sm:scroll-mt-32"
-        >
-          <h3 className="text-lg font-semibold text-zinc-100">
-            National-platform challenges — home &amp; redemption iteration
-          </h3>
-          <p className="text-zinc-300 leading-relaxed">
-            Home and prize redemption were iterated so high-frequency actions (scan,
-            donate) stayed visually prominent, while the rest of the UI stayed
-            calmer—strong anchors for older users, less noise for younger ones.
-          </p>
-          <p className="text-zinc-300 leading-relaxed">
-            Scan remained at the top of home based on usage; redemption screens were
-            tightened to reduce confusion in multi-step prize flows on a national,
-            multi-audience app.
-          </p>
-        </section>
-
-        <section
           id="key-outcomes"
           className="scroll-mt-28 space-y-14 sm:scroll-mt-32 max-w-6xl"
         >
@@ -1582,7 +1452,7 @@ export default function EInvoiceCaseStudy() {
           className="scroll-mt-28 space-y-10 max-w-6xl"
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            06 · Final solution screens
+            07 · Final solution screens
           </span>
           <h2 className="text-xl font-semibold text-zinc-100">
             High-fidelity UI across core tasks
