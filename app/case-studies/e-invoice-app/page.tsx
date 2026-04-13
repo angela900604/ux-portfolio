@@ -464,13 +464,12 @@ export default function EInvoiceCaseStudy() {
             03 · Competitor insights &amp; design process
           </span>
           <h2 className="max-w-3xl text-xl font-semibold text-zinc-100">
-            Four invoice products at a glance—benchmarks before IA and UI
+            What the market already proved—before IA and UI
           </h2>
           <p className="max-w-3xl text-sm leading-relaxed text-zinc-400">
-            I compared the Ministry of Finance official app, two leading third-party
-            apps, and LINE&apos;s invoice mini-app. Store ratings and review volume
-            sit beside positioning, audience, strengths, and gaps—so decisions stay
-            grounded in real market behavior, not guesswork.
+            Quick read across MoF, two strong third parties, and LINE: where trust
+            sits, where habit and polish live, and what we could borrow without
+            breaking ministry constraints.
           </p>
           <CompetitorLandscapeTable />
           <p className="max-w-3xl text-sm leading-relaxed text-zinc-400">

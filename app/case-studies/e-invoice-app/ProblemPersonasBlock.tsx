@@ -225,20 +225,14 @@ export function ProblemPersonasBlock() {
           </p>
         </div>
 
-        <SketchPersonasExpandable />
-
         <WideFigure
           borderless
           src={ASSET("interview-field-20250321-1330-copy.png")}
-          alt="Field interview session with participants at a startup hub"
-          caption="Field research · Mar 2025 · startup hub session"
+          alt="Older-adult focus group interview on mobile phone use and everyday spending habits"
+          caption="Older-adult focus group—how they use phones and day-to-day spending habits（與老年焦點團體訪談，了解他們的手機與消費使用習慣）"
         />
 
-        <p className="max-w-3xl text-sm text-zinc-400 leading-relaxed">
-          Convenience and trust pull in the same direction; density and accessibility
-          pull in opposite ones. Mei-Ling and Alex made that tension unavoidable—so
-          the later IA work had to be modular, not one static “winner” layout.
-        </p>
+        <SketchPersonasExpandable />
         </div>
       </div>
     </section>

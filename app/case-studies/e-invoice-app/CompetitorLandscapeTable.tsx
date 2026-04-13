@@ -1,161 +1,92 @@
-/** Competitor landscape — Taiwan invoice apps (English). */
+import type { ReactNode } from "react";
+
+/** Competitor landscape — Taiwan invoice apps (compact summary). */
 export function CompetitorLandscapeTable() {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-zinc-800/80 bg-zinc-900/30 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)]">
-      <table className="min-w-[920px] w-full text-left text-sm" lang="en">
-        <thead>
-          <tr className="border-b border-zinc-800/90 bg-zinc-800/40">
-            <th className="px-4 py-3.5 text-[11px] font-semibold tracking-wide text-zinc-300">
-              Product
-            </th>
-            <th className="px-4 py-3.5 text-center text-[11px] font-semibold tracking-wide text-zinc-300 whitespace-nowrap">
-              Rating / reviews
-            </th>
-            <th className="px-4 py-3.5 text-[11px] font-semibold tracking-wide text-zinc-300">
-              Positioning
-            </th>
-            <th className="px-4 py-3.5 text-[11px] font-semibold tracking-wide text-zinc-300">
-              Who it&apos;s for
-            </th>
-            <th className="px-4 py-3.5 text-[11px] font-semibold tracking-wide text-zinc-300">
-              Strengths
-            </th>
-            <th className="px-4 py-3.5 text-[11px] font-semibold tracking-wide text-zinc-300">
-              Gaps
-            </th>
-          </tr>
-        </thead>
-        <tbody className="divide-y divide-zinc-800/70 text-zinc-300">
-          <tr className="align-top odd:bg-zinc-950/25">
-            <td className="px-4 py-3.5 font-medium text-zinc-100">
-              MoF Cloud Invoice
-              <span className="mt-0.5 block text-[11px] font-normal text-zinc-500">
-                Official
-              </span>
-            </td>
-            <td className="px-4 py-3.5">
-              <MetricBadge score="2.5" reviews="~9K reviews" />
-            </td>
-            <td className="px-4 py-3.5 text-zinc-400 leading-relaxed">
-              Government e-invoice hub—emphasizes{" "}
-              <span className="text-teal-300/95">stability, accuracy, security</span>
-            </td>
-            <td className="px-4 py-3.5 text-zinc-400 leading-relaxed">
-              People who want an official source, basic wallet features, and trust
-              in data handling
-            </td>
-            <td className="px-4 py-3.5 text-zinc-400 leading-relaxed">
-              Strong trust and core cloud-invoice features
-            </td>
-            <td className="px-4 py-3.5 text-zinc-400 leading-relaxed">
-              Narrow feature set; weak spending insights; UI and reliability issues;
-              limited paper scan
-            </td>
-          </tr>
-          <tr className="align-top odd:bg-zinc-950/25">
-            <td className="px-4 py-3.5 font-medium text-zinc-100">
-              Invoice Passbook
-              <span className="mt-0.5 block text-[11px] font-normal text-zinc-500">
-                Third-party
-              </span>
-            </td>
-            <td className="px-4 py-3.5">
-              <MetricBadge score="4.8" reviews="~320K reviews" />
-            </td>
-            <td className="px-4 py-3.5 text-zinc-400 leading-relaxed">
-              Full-featured app—built for{" "}
-              <span className="text-teal-300/95">habit and repeat use</span>
-            </td>
-            <td className="px-4 py-3.5 text-zinc-400 leading-relaxed">
-              Digitally fluent users who care about spend tracking and rewards
-            </td>
-            <td className="px-4 py-3.5 text-zinc-400 leading-relaxed">
-              Clear charts; draw alerts with sound (accessibility-friendly); widgets
-              and multi-device support
-            </td>
-            <td className="px-4 py-3.5 text-zinc-400 leading-relaxed">
-              Advanced areas feel dense; promos can crowd the UI
-            </td>
-          </tr>
-          <tr className="align-top odd:bg-zinc-950/25">
-            <td className="px-4 py-3.5 font-medium text-zinc-100">
-              Cloud Invoice (3rd party)
-              <span className="mt-0.5 block text-[11px] font-normal text-zinc-500">
-                Third-party
-              </span>
-            </td>
-            <td className="px-4 py-3.5">
-              <MetricBadge score="4.8" reviews="~240K reviews" />
-            </td>
-            <td className="px-4 py-3.5 text-zinc-400 leading-relaxed">
-              Cloud storage plus{" "}
-              <span className="text-teal-300/95">spending analytics</span>
-            </td>
-            <td className="px-4 py-3.5 text-zinc-400 leading-relaxed">
-              Efficiency-focused users who want a clean UI and deeper management
-            </td>
-            <td className="px-4 py-3.5 text-zinc-400 leading-relaxed">
-              Clean interface, gentle onboarding; desktop widgets for quick barcode
-              access
-            </td>
-            <td className="px-4 py-3.5 text-zinc-400 leading-relaxed">
-              Some modules feel unmaintained or thin in daily use
-            </td>
-          </tr>
-          <tr className="align-top odd:bg-zinc-950/25">
-            <td className="px-4 py-3.5 font-medium text-zinc-100">
-              LINE invoice
-              <span className="mt-0.5 block text-[11px] font-normal text-zinc-500">
-                LINE ecosystem
-              </span>
-            </td>
-            <td className="px-4 py-3.5">
-              <div className="mx-auto w-fit min-w-[7rem] rounded-lg border border-zinc-700/50 bg-zinc-800/35 px-4 py-3 text-center">
-                <span className="text-sm font-medium text-zinc-500">—</span>
-                <span className="mt-1 block text-[11px] text-zinc-500">
-                  No standalone App Store listing
-                </span>
-              </div>
-            </td>
-            <td className="px-4 py-3.5 text-zinc-400 leading-relaxed">
-              Lives inside LINE—wins on{" "}
-              <span className="text-teal-300/95">zero extra install</span>
-            </td>
-            <td className="px-4 py-3.5 text-zinc-400 leading-relaxed">
-              Heavy LINE users who want simple flows tied to chat and pay
-            </td>
-            <td className="px-4 py-3.5 text-zinc-400 leading-relaxed">
-              No separate download; social context; ties to LINE Pay and points
-            </td>
-            <td className="px-4 py-3.5 text-zinc-400 leading-relaxed">
-              Core tasks stay basic; advanced needs lean on other LINE services; no
-              native desktop widget
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    <div className="grid gap-3 sm:grid-cols-2">
+      <CompetitorCard
+        name="MoF Cloud Invoice"
+        tag="Official"
+        tagClass="text-zinc-500"
+        ratingLine={
+          <>
+            <Star />{" "}
+            <span className="tabular-nums font-medium text-zinc-200">2.5</span>
+            <span className="text-zinc-500"> · ~9K reviews</span>
+          </>
+        }
+        summary="Trust and policy-complete features; weak on speed, spending insight, and approachable density for silver users."
+      />
+      <CompetitorCard
+        name="Invoice Passbook"
+        tag="Third-party"
+        tagClass="text-teal-400/80"
+        ratingLine={
+          <>
+            <Star />{" "}
+            <span className="tabular-nums font-medium text-zinc-200">4.8</span>
+            <span className="text-zinc-500"> · ~320K reviews</span>
+          </>
+        }
+        summary="Habit-forming UX—charts, widgets, draw alerts with sound; advanced corners can feel crowded."
+      />
+      <CompetitorCard
+        name="Cloud Invoice (3rd party)"
+        tag="Third-party"
+        tagClass="text-teal-400/80"
+        ratingLine={
+          <>
+            <Star />{" "}
+            <span className="tabular-nums font-medium text-zinc-200">4.8</span>
+            <span className="text-zinc-500"> · ~240K reviews</span>
+          </>
+        }
+        summary="Clean UI and gentle onboarding; strong on analytics and quick barcode access via widgets."
+      />
+      <CompetitorCard
+        name="LINE invoice"
+        tag="LINE mini-app"
+        tagClass="text-emerald-400/75"
+        ratingLine={
+          <span className="text-zinc-500">No standalone store listing</span>
+        }
+        summary="Zero extra install inside LINE; simple flows and social context—advanced needs still spill to other tools."
+      />
     </div>
   );
 }
 
-function MetricBadge({
-  score,
-  reviews,
+function Star() {
+  return (
+    <span className="text-teal-400/90" aria-hidden>
+      {"\u2605"}
+    </span>
+  );
+}
+
+function CompetitorCard({
+  name,
+  tag,
+  tagClass,
+  ratingLine,
+  summary,
 }: {
-  score: string;
-  reviews: string;
+  name: string;
+  tag: string;
+  tagClass: string;
+  ratingLine: ReactNode;
+  summary: string;
 }) {
   return (
-    <div className="mx-auto w-fit min-w-[7.25rem] rounded-lg border border-teal-500/20 bg-teal-950/20 px-4 py-3 text-center ring-1 ring-inset ring-white/[0.04]">
-      <span className="text-[15px] leading-none text-teal-400/90" aria-hidden>
-        {"\u2605"}
-      </span>
-      <span className="mt-1 block text-2xl font-semibold tabular-nums leading-none tracking-tight text-zinc-100">
-        {score}
-      </span>
-      <span className="mt-2 block text-[11px] font-medium text-zinc-500">
-        {reviews}
-      </span>
+    <div className="rounded-xl border border-zinc-800/80 bg-zinc-900/25 px-4 py-3 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)]">
+      <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+        <p className="text-sm font-medium text-zinc-100">{name}</p>
+        <span className={`text-[11px] font-medium uppercase tracking-wide ${tagClass}`}>
+          {tag}
+        </span>
+      </div>
+      <p className="mt-1.5 text-xs text-zinc-400">{ratingLine}</p>
+      <p className="mt-2 text-xs leading-relaxed text-zinc-400">{summary}</p>
     </div>
   );
 }

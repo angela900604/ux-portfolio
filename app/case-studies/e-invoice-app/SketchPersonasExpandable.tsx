@@ -28,20 +28,7 @@ export function SketchPersonasExpandable() {
   }, [open, close]);
 
   return (
-    <div className="space-y-5 pt-2">
-      <div className="space-y-3 max-w-3xl">
-        <h3 className="text-lg font-semibold tracking-tight text-zinc-100">
-          Personas · five archetypes
-        </h3>
-        <p className="text-sm leading-relaxed text-zinc-400">
-          Five archetypes from interviews—including{" "}
-          <span className="text-zinc-200">Mei-Ling</span> and{" "}
-          <span className="text-zinc-200">Alex</span> at the hardest extremes for
-          literacy and language. Each card uses the same layout; tap to open the
-          full persona.
-        </p>
-      </div>
-
+    <div className="space-y-5">
       <div className="grid max-w-5xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <button
           type="button"
