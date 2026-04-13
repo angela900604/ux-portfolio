@@ -3,6 +3,7 @@ import { CaseStudyAtAGlance } from "../_components/CaseStudyAtAGlance";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { CaseStudyScanSummary } from "../_components/CaseStudyScanSummary";
+import { OutcomeAutoSlideshow } from "./OutcomeAutoSlideshow";
 import { PhoneMockup, PortraitTile, WideFigure } from "./EInvoiceFigures";
 
 export const metadata = {
@@ -92,6 +93,8 @@ const KEY_OUTCOME_ROWS: {
   assetFile?: string;
   /** Multiple screens — shared caption from screenLabel / screenHint */
   assetFiles?: string[];
+  /** Auto-advance slideshow (e.g. guided onboarding sequence) */
+  autoSlideshow?: boolean;
   evidence: string;
   problem: string;
   decision: string;
@@ -121,6 +124,7 @@ const KEY_OUTCOME_ROWS: {
       "onboarding-google-drive.png",
       "onboarding-auto-remittance.png",
     ],
+    autoSlideshow: true,
     evidence:
       "The app already covered carrier binding, prize checks, donation, and redemption—but on first open, new users froze. Onboarding completion in tests sat around 55%, and participants routinely skipped or abandoned the intro because it felt like a wall of features with no sequence.",
     problem:
@@ -223,6 +227,19 @@ function KeyOutcomePhoneFigures({
         chromeless
         src={ASSET(files[0])}
         alt={row.screenLabel}
+        label={row.screenLabel}
+        hint={row.screenHint}
+      />
+    );
+  }
+
+  if (row.autoSlideshow) {
+    return (
+      <OutcomeAutoSlideshow
+        screens={files.map((f, i) => ({
+          src: ASSET(f),
+          alt: `${row.screenLabel} — screen ${i + 1} of ${files.length}`,
+        }))}
         label={row.screenLabel}
         hint={row.screenHint}
       />
