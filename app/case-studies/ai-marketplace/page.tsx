@@ -113,8 +113,8 @@ export default function AiMarketplaceCaseStudy() {
           id="why-this-exists"
           className="scroll-mt-28 sm:scroll-mt-32"
         >
-          <div className="flex flex-col gap-8 lg:flex-row lg:items-stretch lg:gap-10 xl:gap-12">
-            <div className="min-w-0 flex-1 space-y-4 lg:max-w-2xl xl:max-w-3xl">
+          <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_min(18rem,32vw)] lg:items-stretch lg:gap-10 xl:grid-cols-[minmax(0,1fr)_22.5rem] xl:gap-12">
+            <div className="min-w-0 space-y-4 lg:max-w-2xl xl:max-w-3xl">
               <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
                 Why this exists
               </span>
@@ -143,9 +143,9 @@ export default function AiMarketplaceCaseStudy() {
                 gear circulates instead of landfilling or idling in storage.
               </p>
             </div>
-            <div className="relative min-h-[min(52vw,22rem)] w-full shrink-0 overflow-hidden rounded-xl border border-zinc-800/50 bg-zinc-900/40 sm:min-h-[20rem] lg:h-full lg:min-h-0 lg:w-[min(100%,20rem)] xl:w-[min(100%,22.5rem)]">
+            <div className="relative min-h-[min(52vw,22rem)] w-full min-w-0 overflow-hidden rounded-xl border border-zinc-800/50 bg-zinc-900/40 sm:min-h-[20rem] lg:min-h-0">
               <Image
-                src="/case-studies/mina/community-collage.png"
+                src="/case-studies/mina/community-collage.jpg"
                 alt="MINA community event: signage, parents trying the app, and team at a local gathering"
                 fill
                 className="object-cover object-center"
