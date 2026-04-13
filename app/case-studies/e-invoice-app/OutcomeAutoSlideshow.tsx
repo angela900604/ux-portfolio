@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { PhoneMockup } from "./EInvoiceFigures";
 
-const SLIDE_MS = 5000;
+const SLIDE_MS = 3000;
 
 export function OutcomeAutoSlideshow({
   screens,
@@ -40,7 +40,7 @@ export function OutcomeAutoSlideshow({
 
   return (
     <div
-      className="w-full max-w-[320px] space-y-3 lg:ml-auto"
+      className="mx-auto w-full max-w-[320px] space-y-3 text-center"
       aria-roledescription="carousel"
       aria-label={label}
       onMouseEnter={() => setPaused(true)}
@@ -90,7 +90,7 @@ export function OutcomeAutoSlideshow({
           ))}
         </div>
       ) : null}
-      <div className="px-1 text-center lg:text-right">
+      <div className="px-1">
         <p className="text-xs font-medium text-zinc-200">{label}</p>
         {hint ? (
           <p className="mt-1 text-[11px] text-zinc-500">{hint}</p>

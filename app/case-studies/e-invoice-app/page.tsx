@@ -1563,7 +1563,13 @@ export default function EInvoiceCaseStudy() {
                     </div>
                   </div>
                 </div>
-                <div className="flex justify-center lg:justify-end lg:pt-1">
+                <div
+                  className={
+                    row.autoSlideshow
+                      ? "flex justify-center lg:pt-1"
+                      : "flex justify-center lg:justify-end lg:pt-1"
+                  }
+                >
                   <KeyOutcomePhoneFigures row={row} />
                 </div>
               </article>
