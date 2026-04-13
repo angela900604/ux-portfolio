@@ -1,4 +1,4 @@
-import { PortraitTile, WideFigure } from "./EInvoiceFigures";
+import { WideFigure } from "./EInvoiceFigures";
 import { SketchPersonasExpandable } from "./SketchPersonasExpandable";
 
 const ASSET = (name: string) => `/case-studies/e-invoice/case-assets/${name}`;
@@ -23,8 +23,7 @@ export function ProblemPersonasBlock() {
           This work started where users were already shouting: App Store reviews
           framed the quantitative pain, and interviews explained who was stuck and
           why. The sections below mirror that order—signal first, nuance second—then
-          sketch personas you can expand in Layer 2, and two full cards for the
-          hardest extremes on the page.
+          five persona cards in Layer 2—tap any to open the full detail in a modal.
         </p>
       </div>
 
@@ -234,131 +233,13 @@ export function ProblemPersonasBlock() {
           alt="Field interview session with participants at a startup hub"
           caption="Field research · Mar 2025 · startup hub session"
         />
-        </div>
-
-        <div className="space-y-3 max-w-3xl">
-          <h3 className="text-lg font-semibold tracking-tight text-zinc-100">
-            Two extremes · full personas on the page
-          </h3>
-          <p className="text-sm leading-relaxed text-zinc-400">
-            <span className="text-zinc-200">Mei-Ling</span> and{" "}
-            <span className="text-zinc-200">Alex</span> stay expanded here—the
-            hardest ends of the spectrum for literacy and language.
-          </p>
-        </div>
-
-        <div className="grid max-w-4xl grid-cols-1 gap-8">
-          <article className="flex flex-col overflow-hidden rounded-2xl border border-zinc-800/90 bg-zinc-900/35 sm:flex-row">
-            <div className="shrink-0 sm:w-[42%]">
-              <PortraitTile
-                borderless
-                src={ASSET("persona-portrait-03.png")}
-                alt="Portrait for Persona Mei-Ling, 51+ silver generation"
-                className="sm:rounded-l-2xl sm:rounded-r-none rounded-t-2xl sm:rounded-t-none"
-              />
-            </div>
-            <div className="flex min-w-0 flex-1 flex-col justify-center gap-3 p-5 text-sm">
-              <p className="text-xs font-semibold uppercase tracking-wider text-violet-400/95">
-                Persona · 51+ · Silver generation
-              </p>
-              <p className="font-medium text-zinc-100">
-                Mei-Ling · 68 · Taiwan · Retired nurse
-              </p>
-              <p className="text-zinc-400">
-                <span className="text-zinc-300">Tech:</span> Low digital literacy—
-                cash &amp; cards; long habit of donating paper invoices; prize
-                checks and in-store claims; needs guidance for anything beyond
-                basics.
-              </p>
-              <div>
-                <p className="text-xs font-semibold text-zinc-500">Pain points</p>
-                <ul className="mt-1 list-disc pl-4 text-zinc-400 marker:text-zinc-600">
-                  <li>
-                    Apps feel like a maze—unclear next step, small type &amp; taps
-                  </li>
-                  <li>Monochrome or crowded screens hide primary actions</li>
-                  <li>
-                    Wants transparency when donating—trust that help reaches people
-                  </li>
-                  <li>
-                    Forgets MoF verification code; in-store small-prize claims feel
-                    tedious
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <p className="text-xs font-semibold text-zinc-500">Goals</p>
-                <ul className="mt-1 list-disc pl-4 text-zinc-400 marker:text-zinc-600">
-                  <li>Large text, color-coded main tasks, obvious help</li>
-                  <li>Simple donation path with clear org info</li>
-                  <li>Easier prize check &amp; claim—including online tutorials</li>
-                </ul>
-              </div>
-              <p className="border-l-2 border-violet-500/50 pl-3 italic text-zinc-300">
-                &ldquo;This app is like a labyrinth—I don&apos;t know the next step
-                or how to exit. I want to donate paper invoices with confidence and
-                understand what I&apos;m tapping.&rdquo;
-              </p>
-            </div>
-          </article>
-
-          <article className="flex flex-col overflow-hidden rounded-2xl border border-zinc-800/90 bg-zinc-900/35 sm:flex-row">
-            <div className="shrink-0 sm:w-[42%]">
-              <PortraitTile
-                borderless
-                src={ASSET("persona-portrait-04.png")}
-                alt="Portrait for Persona Alex, foreign resident / animator"
-                className="sm:rounded-l-2xl sm:rounded-r-none rounded-t-2xl sm:rounded-t-none"
-              />
-            </div>
-            <div className="flex min-w-0 flex-1 flex-col justify-center gap-3 p-5 text-sm">
-              <p className="text-xs font-semibold uppercase tracking-wider text-violet-400/95">
-                Persona · Foreign resident · Heavy mobile user
-              </p>
-              <p className="font-medium text-zinc-100">
-                Alex · 29 · Malaysia / Taiwan · Animator
-              </p>
-              <p className="text-zinc-400">
-                <span className="text-zinc-300">Tech:</span> Heavy iOS use; mobile
-                payments &amp; member apps; home-screen widgets for barcodes; tracks
-                monthly categories; wants one-handed flows and clear visual
-                hierarchy (Chinese is not his first language).
-              </p>
-              <div>
-                <p className="text-xs font-semibold text-zinc-500">Pain points</p>
-                <ul className="mt-1 list-disc pl-4 text-zinc-400 marker:text-zinc-600">
-                  <li>
-                    Didn&apos;t know paper receipts could be claimed online at first
-                  </li>
-                  <li>Busy or “ugly” layouts; dense copy slows scanning</li>
-                  <li>Ambiguous icons raise cognitive load for non-native readers</li>
-                  <li>Slow cold start or noisy ads before core tasks</li>
-                </ul>
-              </div>
-              <div>
-                <p className="text-xs font-semibold text-zinc-500">Goals</p>
-                <ul className="mt-1 list-disc pl-4 text-zinc-400 marker:text-zinc-600">
-                  <li>Short tutorials highlighting online prize claim</li>
-                  <li>Cleaner visuals &amp; icon system that bridges language gaps</li>
-                  <li>Integrated bookkeeping / spend view with invoices</li>
-                  <li>Faster launch; barcode copy &amp; display in more contexts</li>
-                </ul>
-              </div>
-              <p className="border-l-2 border-violet-500/50 pl-3 italic text-zinc-300">
-                &ldquo;Classmates got me onto cloud invoices—I dislike trekking to a
-                store to claim. Give me a calm interface and obvious icons; long
-                paragraphs are exhausting when Chinese isn&apos;t my first
-                language.&rdquo;
-              </p>
-            </div>
-          </article>
-        </div>
 
         <p className="max-w-3xl text-sm text-zinc-400 leading-relaxed">
           Convenience and trust pull in the same direction; density and accessibility
           pull in opposite ones. Mei-Ling and Alex made that tension unavoidable—so
           the later IA work had to be modular, not one static “winner” layout.
         </p>
+        </div>
       </div>
     </section>
   );

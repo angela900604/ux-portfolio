@@ -9,7 +9,7 @@ const ASSET = (name: string) => `/case-studies/e-invoice/case-assets/${name}`;
 const CARD =
   "flex w-full cursor-pointer gap-3 rounded-xl border border-zinc-800/90 bg-zinc-900/30 p-3 text-left transition hover:border-emerald-500/35 hover:bg-zinc-900/45 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/70 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950";
 
-type SketchId = "yiting" | "david" | "chen";
+type SketchId = "yiting" | "david" | "chen" | "meiling" | "alex";
 
 export function SketchPersonasExpandable() {
   const [open, setOpen] = useState<SketchId | null>(null);
@@ -31,21 +31,18 @@ export function SketchPersonasExpandable() {
     <div className="space-y-5 pt-2">
       <div className="space-y-3 max-w-3xl">
         <h3 className="text-lg font-semibold tracking-tight text-zinc-100">
-          Personas · two extremes, three sketches
+          Personas · five archetypes
         </h3>
         <p className="text-sm leading-relaxed text-zinc-400">
-          Full cards for{" "}
-          <span className="text-zinc-200">Mei-Ling</span> (silver) and{" "}
-          <span className="text-zinc-200">Alex</span> (foreign resident)—the two
-          ends of literacy, language, and tolerance for complexity. Tap a sketch
-          below to open the full persona for{" "}
-          <span className="text-zinc-200">Yi-Ting</span>,{" "}
-          <span className="text-zinc-200">David</span>, or{" "}
-          <span className="text-zinc-200">Teacher Chen</span>.
+          Five archetypes from interviews—including{" "}
+          <span className="text-zinc-200">Mei-Ling</span> and{" "}
+          <span className="text-zinc-200">Alex</span> at the hardest extremes for
+          literacy and language. Each card uses the same layout; tap to open the
+          full persona.
         </p>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-3 max-w-4xl">
+      <div className="grid max-w-5xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <button
           type="button"
           className={CARD}
@@ -130,6 +127,64 @@ export function SketchPersonasExpandable() {
             </p>
           </div>
         </button>
+
+        <button
+          type="button"
+          className={CARD}
+          onClick={() => setOpen("meiling")}
+          aria-haspopup="dialog"
+          aria-expanded={open === "meiling"}
+          aria-label="Open full persona: Mei-Ling, 51+"
+        >
+          <div className="relative h-[4.5rem] w-14 shrink-0 overflow-hidden rounded-lg bg-zinc-800">
+            <Image
+              src={ASSET("persona-portrait-03.png")}
+              alt=""
+              fill
+              className="object-cover object-center"
+              sizes="56px"
+            />
+          </div>
+          <div className="min-w-0 text-xs leading-snug">
+            <p className="font-medium text-zinc-100">Mei-Ling · 51+ · Silver</p>
+            <p className="mt-1 text-zinc-500">
+              Maze-like flows, small type—needs one clear next step and trust when
+              donating.
+            </p>
+            <p className="mt-2 text-[10px] font-medium uppercase tracking-wider text-emerald-400/80">
+              Open full persona →
+            </p>
+          </div>
+        </button>
+
+        <button
+          type="button"
+          className={CARD}
+          onClick={() => setOpen("alex")}
+          aria-haspopup="dialog"
+          aria-expanded={open === "alex"}
+          aria-label="Open full persona: Alex, foreign resident"
+        >
+          <div className="relative h-[4.5rem] w-14 shrink-0 overflow-hidden rounded-lg bg-zinc-800">
+            <Image
+              src={ASSET("persona-portrait-04.png")}
+              alt=""
+              fill
+              className="object-cover object-center"
+              sizes="56px"
+            />
+          </div>
+          <div className="min-w-0 text-xs leading-snug">
+            <p className="font-medium text-zinc-100">Alex · Foreign resident</p>
+            <p className="mt-1 text-zinc-500">
+              Dense Chinese UI and icons—needs calm hierarchy and obvious paths to
+              scan and claim.
+            </p>
+            <p className="mt-2 text-[10px] font-medium uppercase tracking-wider text-emerald-400/80">
+              Open full persona →
+            </p>
+          </div>
+        </button>
       </div>
 
       {open ? (
@@ -156,6 +211,8 @@ export function SketchPersonasExpandable() {
               {open === "yiting" ? <FullPersonaYiTing /> : null}
               {open === "david" ? <FullPersonaDavid /> : null}
               {open === "chen" ? <FullPersonaChen /> : null}
+              {open === "meiling" ? <FullPersonaMeiLing /> : null}
+              {open === "alex" ? <FullPersonaAlex /> : null}
             </div>
           </div>
         </div>
@@ -266,6 +323,113 @@ function FullPersonaDavid() {
           &ldquo;My phone is my second wallet—I want payments, invoices, and
           membership in one flow. At the counter I can&apos;t afford a sluggish app;
           I also want to see where my money goes, not fight the UI.&rdquo;
+        </p>
+      </div>
+    </article>
+  );
+}
+
+function FullPersonaMeiLing() {
+  return (
+    <article className="flex flex-col overflow-hidden rounded-2xl border border-zinc-800/90 bg-zinc-900/35 sm:flex-row">
+      <div className="shrink-0 sm:w-[42%]">
+        <PortraitTile
+          borderless
+          src={ASSET("persona-portrait-03.png")}
+          alt="Portrait for Persona Mei-Ling, 51+ silver generation"
+          className="sm:rounded-l-2xl sm:rounded-r-none rounded-t-2xl sm:rounded-t-none"
+        />
+      </div>
+      <div className="flex min-w-0 flex-1 flex-col justify-center gap-3 p-5 text-sm">
+        <p className="text-xs font-semibold uppercase tracking-wider text-violet-400/95">
+          Persona · 51+ · Silver generation
+        </p>
+        <p className="font-medium text-zinc-100">
+          Mei-Ling · 68 · Taiwan · Retired nurse
+        </p>
+        <p className="text-zinc-400">
+          <span className="text-zinc-300">Tech:</span> Low digital literacy—cash
+          &amp; cards; long habit of donating paper invoices; prize checks and
+          in-store claims; needs guidance for anything beyond basics.
+        </p>
+        <div>
+          <p className="text-xs font-semibold text-zinc-500">Pain points</p>
+          <ul className="mt-1 list-disc pl-4 text-zinc-400 marker:text-zinc-600">
+            <li>Apps feel like a maze—unclear next step, small type &amp; taps</li>
+            <li>Monochrome or crowded screens hide primary actions</li>
+            <li>
+              Wants transparency when donating—trust that help reaches people
+            </li>
+            <li>
+              Forgets MoF verification code; in-store small-prize claims feel
+              tedious
+            </li>
+          </ul>
+        </div>
+        <div>
+          <p className="text-xs font-semibold text-zinc-500">Goals</p>
+          <ul className="mt-1 list-disc pl-4 text-zinc-400 marker:text-zinc-600">
+            <li>Large text, color-coded main tasks, obvious help</li>
+            <li>Simple donation path with clear org info</li>
+            <li>Easier prize check &amp; claim—including online tutorials</li>
+          </ul>
+        </div>
+        <p className="border-l-2 border-violet-500/50 pl-3 italic text-zinc-300">
+          &ldquo;This app is like a labyrinth—I don&apos;t know the next step or how
+          to exit. I want to donate paper invoices with confidence and understand
+          what I&apos;m tapping.&rdquo;
+        </p>
+      </div>
+    </article>
+  );
+}
+
+function FullPersonaAlex() {
+  return (
+    <article className="flex flex-col overflow-hidden rounded-2xl border border-zinc-800/90 bg-zinc-900/35 sm:flex-row">
+      <div className="shrink-0 sm:w-[42%]">
+        <PortraitTile
+          borderless
+          src={ASSET("persona-portrait-04.png")}
+          alt="Portrait for Persona Alex, foreign resident / animator"
+          className="sm:rounded-l-2xl sm:rounded-r-none rounded-t-2xl sm:rounded-t-none"
+        />
+      </div>
+      <div className="flex min-w-0 flex-1 flex-col justify-center gap-3 p-5 text-sm">
+        <p className="text-xs font-semibold uppercase tracking-wider text-violet-400/95">
+          Persona · Foreign resident · Heavy mobile user
+        </p>
+        <p className="font-medium text-zinc-100">
+          Alex · 29 · Malaysia / Taiwan · Animator
+        </p>
+        <p className="text-zinc-400">
+          <span className="text-zinc-300">Tech:</span> Heavy iOS use; mobile
+          payments &amp; member apps; home-screen widgets for barcodes; tracks monthly
+          categories; wants one-handed flows and clear visual hierarchy (Chinese is
+          not his first language).
+        </p>
+        <div>
+          <p className="text-xs font-semibold text-zinc-500">Pain points</p>
+          <ul className="mt-1 list-disc pl-4 text-zinc-400 marker:text-zinc-600">
+            <li>Didn&apos;t know paper receipts could be claimed online at first</li>
+            <li>Busy or “ugly” layouts; dense copy slows scanning</li>
+            <li>Ambiguous icons raise cognitive load for non-native readers</li>
+            <li>Slow cold start or noisy ads before core tasks</li>
+          </ul>
+        </div>
+        <div>
+          <p className="text-xs font-semibold text-zinc-500">Goals</p>
+          <ul className="mt-1 list-disc pl-4 text-zinc-400 marker:text-zinc-600">
+            <li>Short tutorials highlighting online prize claim</li>
+            <li>Cleaner visuals &amp; icon system that bridges language gaps</li>
+            <li>Integrated bookkeeping / spend view with invoices</li>
+            <li>Faster launch; barcode copy &amp; display in more contexts</li>
+          </ul>
+        </div>
+        <p className="border-l-2 border-violet-500/50 pl-3 italic text-zinc-300">
+          &ldquo;Classmates got me onto cloud invoices—I dislike trekking to a store
+          to claim. Give me a calm interface and obvious icons; long paragraphs are
+          exhausting when Chinese isn&apos;t my first language.&rdquo;
         </p>
       </div>
     </article>

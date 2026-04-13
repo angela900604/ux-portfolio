@@ -431,20 +431,26 @@ export default function EInvoiceCaseStudy() {
             invoices to charity with one tap, and reduce reliance on paper while
             supporting sustainability.
           </p>
-          <p className="text-zinc-300 leading-relaxed" lang="zh-Hant">
-            台灣財政部的雲端發票 App
-            是全國約2000萬名使用者管理電子發票、參與統一發票對獎的官方工具——但 App
-            Store 評分只有 2.8 顆星。
+          <p className="text-zinc-300 leading-relaxed">
+            Taiwan&apos;s Ministry of Finance Cloud Invoice App is the official
+            way roughly 20 million people manage e-invoices and join the Uniform
+            Invoice lottery—yet it sits at only about{" "}
+            <span className="font-medium text-zinc-200">2.8 stars</span> on the App
+            Store.
           </p>
-          <p className="text-zinc-300 leading-relaxed" lang="zh-Hant">
-            問題不只是 UI 老舊。訪談和測試發現，真正的障礙是：老年用戶無法獨立操作、外籍用戶看不懂中文標籤、所有人都在忘記密碼這一步放棄登入。一個全民服務，卻把最需要它的人擋在門外。
+          <p className="text-zinc-300 leading-relaxed">
+            The issue wasn&apos;t just dated UI. Interviews and testing showed the
+            real blockers: older adults couldn&apos;t use the app independently,
+            foreign residents couldn&apos;t parse Chinese labels, and people
+            abandoned sign-in at forgot-password. A service built for everyone was
+            still shutting out those who needed it most.
           </p>
-          <p
-            className="border-l-2 border-emerald-500/40 pl-4 text-sm leading-relaxed text-zinc-400"
-            lang="zh-Hant"
-          >
-            <span className="font-medium text-zinc-200">設計目標：</span>
-            讓 18 歲到 70 歲、包含視障用戶，都能獨立完成核心任務——不需要教學，不需要家人幫忙。
+          <p className="border-l-2 border-emerald-500/40 pl-4 text-sm leading-relaxed text-zinc-400">
+            <span className="font-medium text-zinc-200">Design goal:</span>{" "}
+            People
+            aged 18 through 70+, including visually impaired users, should complete
+            core tasks on their own—no walkthrough required, no need for family to
+            step in.
           </p>
         </section>
 
