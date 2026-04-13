@@ -113,9 +113,10 @@ const KEY_OUTCOME_ROWS: {
       "Login success moved from 68% to 92%. For the 51+ cohort in particular, many could complete first-time login on their own—without a caregiver in the loop.",
   },
   {
-    title: "\u{1F680} Too many features, no obvious start \u2192 guided onboarding",
+    title:
+      "\u{1F680} Automation-ready experience \u2192 guided first-time setup",
     assetId: "08",
-    screenLabel: "guided onboarding",
+    screenLabel: "guided first-time setup",
     assetFiles: [
       "onboarding-notifications.png",
       "onboarding-quick-login.png",
@@ -124,13 +125,13 @@ const KEY_OUTCOME_ROWS: {
     ],
     autoSlideshow: true,
     evidence:
-      "The app already covered carrier binding, prize checks, donation, and redemption—but on first open, new users froze. Onboarding completion in tests sat around 55%, and participants routinely skipped or abandoned the intro because it felt like a wall of features with no sequence.",
+      "To support more automated journeys—like automatic prize payout when you win—the product needed bank details on file, identity checks that did not mean retyping ministry passwords every time, timely nudges (paper scans do not auto-claim the same way as fully digital flows), and cloud backup so invoices survive a phone upgrade. Most newcomers never finished those prerequisites in a sensible order; onboarding completion in tests sat around 55%, and people who skipped early setup later hit friction at redemption or on a new device.",
     problem:
-      "High capability on paper, low clarity in practice: people could not infer a safe first path through the product.",
+      "Back-end automation only helps after the right upfront choices. Manual prize claims and sensitive settings still demanded verification—without biometrics, that meant password friction. Without a linked bank account, automatic remittance could not run and users risked missing claim windows. Paper receipts depend more on reminders, so thin notification coverage amplified missed deadlines. Local-only storage meant switching phones could erase years of passbook history.",
     decision:
-      "Introduce a guided first-time setup with one job per step: turn on biometrics, bind a carrier, then run a first prize check—no parallel tasks, no optional detours in the critical path.",
+      "Reframe first launch as guided setup with one job per step—turn on biometrics (fewer verification loops for claims and settings), connect a bank account for automatic prize transfer, configure push notifications with richer types for deadlines and paper-scan edge cases, and enable cloud backup so records are not trapped on one handset. Each step explains the outcome (automation, fewer missed wins, safe migration), not a generic feature tour.",
     outcome:
-      "Onboarding completion rose from 55% to 85%. Foreign residents and older adults reported far less confusion during initial setup in follow-up sessions.",
+      "Onboarding completion rose from 55% to 85%. In follow-up sessions—including older adults and foreign residents—people understood why each step mattered for payouts, reminders, and keeping their invoice history across devices.",
   },
   {
     title: "\u{1F4F7} \u201COpen app \u2192 scan receipt\u201D \u2192 scan anchored on home",
@@ -187,7 +188,8 @@ const FINAL_SOLUTION_SCREENS: {
   { id: "07", title: "減碳存摺分享 · Carbon passbook share" },
   {
     id: "08",
-    title: "新手教學 · guided onboarding",
+    title:
+      "首次設定 · Guided setup (biometrics, bank, notifications, cloud backup)",
     assetFiles: [
       "onboarding-notifications.png",
       "onboarding-quick-login.png",
@@ -374,9 +376,11 @@ export default function EInvoiceCaseStudy() {
                 <span className={M_HERO}>+30%</span>
               </p>
               <p className="mt-2 text-sm text-zinc-400 leading-relaxed">
-                Guided first-time onboarding introducing biometric login, prize
-                redemption, and cloud backup—reducing confusion and improving
-                initial setup completion.
+                Guided first-time setup for an automation-ready path: biometrics
+                (less password friction when claiming or changing settings), bank
+                account (automatic prize payout), richer push notifications (especially
+                when paper scans cannot auto-claim), and cloud backup when switching
+                phones.
               </p>
             </div>
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5">
@@ -751,9 +755,9 @@ export default function EInvoiceCaseStudy() {
               spending charts valued by younger users.
             </p>
             <p className="mt-2 text-sm text-zinc-300">
-              <span className="text-zinc-200">What didn&apos;t:</span> onboarding too
-              long (often skipped); multi-language prompts unclear; prize redemption
-              steps confusing.
+              <span className="text-zinc-200">What didn&apos;t:</span> first-run
+              length still a tension for some (optional steps skipped); multi-language
+              prompts unclear; prize redemption steps confusing.
             </p>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 max-w-4xl">
