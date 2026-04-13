@@ -35,7 +35,7 @@ export function CaseStudyContentLayout({
       : "w-full px-6 sm:px-[100px] py-10 sm:py-14";
 
   const grid = (
-    <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_10.25rem] xl:grid-cols-[minmax(0,1fr)_11.5rem] lg:gap-8 xl:gap-10 lg:items-start">
+    <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_10.25rem] xl:grid-cols-[minmax(0,1fr)_11.5rem] lg:gap-8 xl:gap-10">
       <div className={`min-w-0 ${contentClassName}`}>{children}</div>
       <CaseStudySideNav
         items={toc}

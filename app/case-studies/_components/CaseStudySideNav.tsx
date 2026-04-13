@@ -26,10 +26,10 @@ export function CaseStudySideNav({
 
   return (
     <aside
-      className={`hidden lg:block ${className}`}
+      className={`hidden h-full min-h-0 lg:block ${className}`}
       aria-label={heading}
     >
-      <nav className="sticky top-28 max-h-[min(100vh-7rem,32rem)] overflow-y-auto overscroll-contain pr-1 sm:top-32">
+      <nav className="sticky top-28 z-30 max-h-[calc(100vh-7.5rem)] overflow-y-auto overscroll-contain pr-1 sm:top-32">
         <p
           className={
             isDark

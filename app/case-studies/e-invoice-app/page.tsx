@@ -87,7 +87,11 @@ const KEY_OUTCOME_ROWS: {
   title: string;
   assetId: string;
   screenLabel: string;
-  screenHint: string;
+  screenHint?: string;
+  /** When set, use this file in case-assets instead of solution-final-{assetId}.png */
+  assetFile?: string;
+  /** Multiple screens — shared caption from screenLabel / screenHint */
+  assetFiles?: string[];
   evidence: string;
   problem: string;
   decision: string;
@@ -96,8 +100,8 @@ const KEY_OUTCOME_ROWS: {
   {
     title: "\u{1F510} Login friction \u2192 biometric-first access",
     assetId: "13",
-    screenLabel: "Final · Face ID / quick login",
-    screenHint: "solution-final-13 · login",
+    screenLabel: "Face ID / quick verification",
+    assetFile: "face-id-quick-verification.png",
     evidence:
       "Across age groups, interviews kept surfacing the same failure mode: forgetting the Ministry of Finance verification code. In moderated usability tests, the login task topped out at about 75% success—almost every miss traced back to passwords or verification. Older adults and visually impaired participants often had to hand the phone to family to finish sign-in.",
     problem:
@@ -110,8 +114,13 @@ const KEY_OUTCOME_ROWS: {
   {
     title: "\u{1F680} Too many features, no obvious start \u2192 guided onboarding",
     assetId: "08",
-    screenLabel: "Final · First-run tutorial",
-    screenHint: "solution-final-08 · onboarding",
+    screenLabel: "guided onboarding",
+    assetFiles: [
+      "onboarding-notifications.png",
+      "onboarding-quick-login.png",
+      "onboarding-google-drive.png",
+      "onboarding-auto-remittance.png",
+    ],
     evidence:
       "The app already covered carrier binding, prize checks, donation, and redemption—but on first open, new users froze. Onboarding completion in tests sat around 55%, and participants routinely skipped or abandoned the intro because it felt like a wall of features with no sequence.",
     problem:
@@ -124,8 +133,8 @@ const KEY_OUTCOME_ROWS: {
   {
     title: "\u{1F4F7} \u201COpen app \u2192 scan receipt\u201D \u2192 scan anchored on home",
     assetId: "12",
-    screenLabel: "Final · Home hub",
-    screenHint: "solution-final-12 · home",
+    screenLabel: "homepage",
+    assetFile: "homepage-hub.png",
     evidence:
       "In field interviews across four age bands, needs diverged everywhere else—but one behavior was universal: the first thing people wanted after launch was to scan a paper invoice. In the legacy layout, scan lived one or two taps away from the visual center, so users hunted before they could act.",
     problem:
@@ -138,8 +147,11 @@ const KEY_OUTCOME_ROWS: {
   {
     title: "\u{2699}\u{FE0F} Opposite density needs \u2192 customizable home sections",
     assetId: "03",
-    screenLabel: "Final · Settings / feature overview",
-    screenHint: "solution-final-03 · home sections",
+    screenLabel: "Settings / feature overview",
+    assetFiles: [
+      "settings-homepage-display.png",
+      "settings-membership-card.png",
+    ],
     evidence:
       "This was the hardest tension in the whole system: silver users asked for the sparsest possible home so they could find one or two actions, while younger users wanted winning invoices and spending history surfaced immediately. Two credible audiences, mutually exclusive defaults.",
     problem:
@@ -151,26 +163,95 @@ const KEY_OUTCOME_ROWS: {
   },
 ];
 
-const FINAL_SOLUTION_SCREENS: { id: string; title: string }[] = [
+const FINAL_SOLUTION_SCREENS: {
+  id: string;
+  title: string;
+  assetFile?: string;
+  assetFiles?: string[];
+}[] = [
   { id: "01", title: "消費分析 · Spending insights" },
   { id: "02", title: "會員卡管理 · Membership cards" },
-  { id: "03", title: "功能總覽 · Settings overview" },
+  {
+    id: "03",
+    title: "功能總覽 · Settings overview",
+    assetFiles: [
+      "settings-homepage-display.png",
+      "settings-membership-card.png",
+    ],
+  },
   { id: "04", title: "載具歸戶 · Carrier binding" },
   { id: "05", title: "領獎資料 · Prize claim info" },
   { id: "06", title: "捐贈發票 · Donation" },
   { id: "07", title: "減碳存摺分享 · Carbon passbook share" },
-  { id: "08", title: "新手教學 · First-run tutorial" },
+  {
+    id: "08",
+    title: "新手教學 · guided onboarding",
+    assetFiles: [
+      "onboarding-notifications.png",
+      "onboarding-quick-login.png",
+      "onboarding-google-drive.png",
+      "onboarding-auto-remittance.png",
+    ],
+  },
   { id: "09", title: "我要領獎安全驗證 · Redeem security check" },
   { id: "10", title: "發票存摺 · Invoice passbook" },
   { id: "11", title: "發票明細 · Receipt detail" },
-  { id: "12", title: "首頁 · Home hub" },
-  { id: "13", title: "登入 · Face ID / quick login" },
+  { id: "12", title: "首頁 · homepage", assetFile: "homepage-hub.png" },
+  {
+    id: "13",
+    title: "登入 · Face ID / quick verification",
+    assetFile: "face-id-quick-verification.png",
+  },
   { id: "14", title: "末三碼對獎 · Last-three-digit match" },
   { id: "15", title: "宣導專區 · Events & promos" },
   { id: "16", title: "查看中獎發票 · Winning invoices" },
   { id: "17", title: "掃描紙本發票 · Paper receipt scan" },
   { id: "18", title: "通知中心 · Notifications" },
 ];
+
+function KeyOutcomePhoneFigures({
+  row,
+}: {
+  row: (typeof KEY_OUTCOME_ROWS)[number];
+}) {
+  const files =
+    row.assetFiles ?? [row.assetFile ?? `solution-final-${row.assetId}.png`];
+
+  if (files.length === 1) {
+    return (
+      <PhoneMockup
+        chromeless
+        src={ASSET(files[0])}
+        alt={row.screenLabel}
+        label={row.screenLabel}
+        hint={row.screenHint}
+      />
+    );
+  }
+
+  return (
+    <figure className="w-full max-w-[640px] space-y-3 lg:ml-auto">
+      <div className="flex flex-wrap justify-center gap-5 lg:justify-end">
+        {files.map((f, i) => (
+          <PhoneMockup
+            key={f}
+            chromeless
+            hideCaption
+            src={ASSET(f)}
+            alt={`${row.screenLabel} — screen ${i + 1} of ${files.length}`}
+            label=""
+          />
+        ))}
+      </div>
+      <figcaption className="px-1 text-center lg:text-right">
+        <p className="text-xs font-medium text-zinc-200">{row.screenLabel}</p>
+        {row.screenHint ? (
+          <p className="mt-1 text-[11px] text-zinc-500">{row.screenHint}</p>
+        ) : null}
+      </figcaption>
+    </figure>
+  );
+}
 
 export default function EInvoiceCaseStudy() {
   return (
@@ -304,6 +385,7 @@ export default function EInvoiceCaseStudy() {
 
           <div className="mt-12">
             <WideFigure
+              borderless
               src={ASSET("before-after-overview.png")}
               alt="Before and after overview of the e-invoice app redesign"
             />
@@ -620,6 +702,7 @@ export default function EInvoiceCaseStudy() {
             unclear processes.
           </p>
           <WideFigure
+            borderless
             src={ASSET("interview-field-20250321-1330-copy.png")}
             alt="Field interview session with participants at a startup hub"
             caption="Field research · 20250321_1330 · startup hub session (file: 20250321_1330____2___copy — duplicate export)."
@@ -694,6 +777,7 @@ export default function EInvoiceCaseStudy() {
             <article className="flex flex-col overflow-hidden rounded-2xl border border-zinc-800/90 bg-zinc-900/35 sm:flex-row">
               <div className="shrink-0 sm:w-[42%]">
                 <PortraitTile
+                  borderless
                   src={ASSET("persona-portrait-01.png")}
                   alt="Portrait for Persona 01, 18–30 young professional"
                   className="sm:rounded-l-2xl sm:rounded-r-none rounded-t-2xl sm:rounded-t-none"
@@ -741,6 +825,7 @@ export default function EInvoiceCaseStudy() {
             <article className="flex flex-col overflow-hidden rounded-2xl border border-zinc-800/90 bg-zinc-900/35 sm:flex-row">
               <div className="shrink-0 sm:w-[42%]">
                 <PortraitTile
+                  borderless
                   src={ASSET("persona-portrait-02.png")}
                   alt="Portrait for Persona 02, 31–50 middle-aged professional"
                   className="sm:rounded-l-2xl sm:rounded-r-none rounded-t-2xl sm:rounded-t-none"
@@ -792,6 +877,7 @@ export default function EInvoiceCaseStudy() {
             <article className="flex flex-col overflow-hidden rounded-2xl border border-zinc-800/90 bg-zinc-900/35 sm:flex-row">
               <div className="shrink-0 sm:w-[42%]">
                 <PortraitTile
+                  borderless
                   src={ASSET("persona-portrait-03.png")}
                   alt="Portrait for Persona 03, 51+ silver generation"
                   className="sm:rounded-l-2xl sm:rounded-r-none rounded-t-2xl sm:rounded-t-none"
@@ -838,6 +924,7 @@ export default function EInvoiceCaseStudy() {
             <article className="flex flex-col overflow-hidden rounded-2xl border border-zinc-800/90 bg-zinc-900/35 sm:flex-row">
               <div className="shrink-0 sm:w-[42%]">
                 <PortraitTile
+                  borderless
                   src={ASSET("persona-portrait-04.png")}
                   alt="Portrait for Persona 04, foreign resident / animator"
                   className="sm:rounded-l-2xl sm:rounded-r-none rounded-t-2xl sm:rounded-t-none"
@@ -885,6 +972,7 @@ export default function EInvoiceCaseStudy() {
             <article className="flex flex-col overflow-hidden rounded-2xl border border-zinc-800/90 bg-zinc-900/35 sm:flex-row">
               <div className="shrink-0 sm:w-[42%]">
                 <PortraitTile
+                  borderless
                   src={ASSET("persona-portrait-vi-session.png")}
                   alt="Portrait for persona Chen, visually impaired participant in a research session"
                   className="sm:rounded-l-2xl sm:rounded-r-none rounded-t-2xl sm:rounded-t-none"
@@ -1048,6 +1136,7 @@ export default function EInvoiceCaseStudy() {
             polish.
           </p>
           <WideFigure
+            borderless
             src={ASSET("functional-map-v0.png")}
             alt="Functional map v0.0 — information architecture of the e-invoice app"
             caption="Functional map v0.0 · Functional_map_v0.0 (export)."
@@ -1130,6 +1219,7 @@ export default function EInvoiceCaseStudy() {
             </div>
             <div className="min-w-0 lg:sticky lg:top-24">
               <WideFigure
+                borderless
                 src={ASSET("moodboard-lifestyle-hero.png")}
                 alt="Person using a phone outdoors in an urban setting, sunny lifestyle context"
               />
@@ -1230,11 +1320,13 @@ export default function EInvoiceCaseStudy() {
           </div>
           <div className="grid gap-6 sm:grid-cols-2 max-w-4xl">
             <WideFigure
+              borderless
               src={ASSET("prototype-matrix.png")}
               alt="Prototype task success matrix spreadsheet"
               caption="Task matrix / pass-fail by participant (export)."
             />
             <WideFigure
+              borderless
               src={ASSET("prototype-task-notes.png")}
               alt="Session notes and task completion tracking"
               caption="Session notes &amp; completion log (export)."
@@ -1329,6 +1421,7 @@ export default function EInvoiceCaseStudy() {
 
               <div className="flex justify-center lg:justify-end lg:pt-1">
                 <PhoneMockup
+                  chromeless
                   src={ASSET("solution-final-04.png")}
                   alt="Final · Carrier binding screen"
                   label="Final · Carrier binding"
@@ -1402,8 +1495,9 @@ export default function EInvoiceCaseStudy() {
               <span className="text-zinc-200">the UX failure mode I was seeing</span>{" "}
               →{" "}
               <span className="text-zinc-200">the product decision</span> →{" "}
-              <span className="text-zinc-200">what moved in the metrics</span>. The
-              phone on the right is the matching final screen from the shipped UI set.
+              <span className="text-zinc-200">what moved in the metrics</span>. On
+              the right, final UI from the shipped set—one screen or a short sequence
+              when the flow needed more than a single frame.
             </p>
           </div>
 
@@ -1453,12 +1547,7 @@ export default function EInvoiceCaseStudy() {
                   </div>
                 </div>
                 <div className="flex justify-center lg:justify-end lg:pt-1">
-                  <PhoneMockup
-                    src={ASSET(`solution-final-${row.assetId}.png`)}
-                    alt={row.screenLabel}
-                    label={row.screenLabel}
-                    hint={row.screenHint}
-                  />
+                  <KeyOutcomePhoneFigures row={row} />
                 </div>
               </article>
             ))}
@@ -1479,14 +1568,23 @@ export default function EInvoiceCaseStudy() {
             Selected key functional screens—focused on the flows that matter most.
           </p>
           <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-            {FINAL_SOLUTION_SCREENS.map((item) => (
-              <WideFigure
-                key={item.id}
-                borderless
-                src={ASSET(`solution-final-${item.id}.png`)}
-                alt={item.title}
-              />
-            ))}
+            {FINAL_SOLUTION_SCREENS.flatMap((item) => {
+              const files =
+                item.assetFiles ??
+                [item.assetFile ?? `solution-final-${item.id}.png`];
+              return files.map((file, i) => (
+                <WideFigure
+                  key={`${item.id}-${i}`}
+                  borderless
+                  src={ASSET(file)}
+                  alt={
+                    files.length > 1
+                      ? `${item.title} (${i + 1}/${files.length})`
+                      : item.title
+                  }
+                />
+              ));
+            })}
           </div>
         </section>
 
