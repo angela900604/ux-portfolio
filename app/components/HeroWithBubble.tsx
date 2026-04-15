@@ -42,7 +42,7 @@ export function HeroWithBubble() {
         className="relative z-10 min-w-0 w-full max-w-[36rem] shrink-0"
       >
         <p className="text-xs font-medium uppercase tracking-widest text-zinc-500 mb-4">
-          Product design · Public services · AI
+          Product design · Vancouver (open to relocate)
         </p>
         <h1 className="font-semibold text-4xl sm:text-5xl md:text-6xl leading-[1.1] tracking-tight max-w-[36rem]">
           I turn ambiguous ideas into shippable digital products.

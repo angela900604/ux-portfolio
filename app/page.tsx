@@ -251,8 +251,7 @@ export default function Home() {
               <p className="mt-4 text-zinc-400 leading-relaxed">
                 I’m Angela—product designer with 2+ years shipping in public-sector
                 and startup contexts. I pair research with tools like Cursor and
-                Claude to move faster without losing rigor. Vancouver-based; open to
-                product design, UX/UI, and AI-assisted roles.
+                Claude to move faster without losing rigor.
               </p>
               <Link
                 href="/about"
@@ -280,20 +279,13 @@ export default function Home() {
       {/* Contact */}
       <section id="contact" className="border-b border-zinc-800">
         <div className="mx-auto max-w-[1280px] px-6 sm:px-[100px] py-16 sm:py-20">
-          <p className="text-xs font-medium uppercase tracking-widest text-zinc-500 mb-2">
-            Contact
-          </p>
           <h2 className="text-2xl font-semibold text-zinc-100">
-            Say hello—especially if you’re hiring for product or AI-forward design
+            Let&apos;s Build Something Together
           </h2>
-          <p className="mt-4 text-zinc-400 leading-relaxed max-w-xl">
-            I’m interested in{" "}
-            <span className="text-zinc-300">senior/lead product design</span>,{" "}
-            <span className="text-zinc-300">UX/UI</span>, and teams that treat{" "}
-            <span className="text-zinc-300">AI-assisted design</span> as a craft
-            multiplier—not a shortcut. Based in Vancouver; open to the right
-            remote or hybrid roles. I’m actively looking and can start soon—reach
-            out if this sounds like a fit.
+          <p className="mt-4 text-zinc-400 leading-relaxed max-w-2xl">
+            Currently open to Product Design roles that require an end-to-end
+            workflow. Based in Vancouver; open to relocation, remote, or hybrid
+            opportunities.
           </p>
           <div className="mt-6 flex flex-wrap gap-6 text-sm">
             <a

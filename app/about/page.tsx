@@ -28,7 +28,7 @@ function TravelPhotoTile({
 export const metadata = {
   title: "About | Angela Yang",
   description:
-    "Independent UI/UX designer in Vancouver focused on end-to-end ownership, 0→1 product building, and engineering-led collaboration.",
+    "Product designer in Vancouver (open to relocate), focused on end-to-end ownership, 0→1 product building, and engineering-led collaboration.",
 };
 
 export default function AboutPage() {
@@ -41,8 +41,8 @@ export default function AboutPage() {
         <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl max-w-2xl">
           Angela Yang
         </h1>
-        <p className="mt-3 text-zinc-400 max-w-2xl">
-          Independent UI/UX Designer · Vancouver
+        <p className="mt-3 text-xs font-medium uppercase tracking-widest text-zinc-500 max-w-2xl">
+          Product design · Vancouver (open to relocate)
         </p>
 
         {/* How I work: intro + pillars */}
