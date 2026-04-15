@@ -45,32 +45,32 @@ export default function AboutPage() {
           Independent UI/UX Designer · Vancouver
         </p>
 
-        {/* Profile visual */}
-        <div className="mt-10 grid gap-8 lg:grid-cols-2 items-start">
-          <div>
-            <Image
-              src="/about/profile-v2.png"
-              alt="Angela Yang"
-              width={768}
-              height={1024}
-              className="w-full h-auto"
-              sizes="(max-width: 1024px) 100vw, 512px"
-              priority
-            />
+        {/* How I work: intro + pillars */}
+        <section className="mt-10">
+          <div className="grid gap-8 lg:grid-cols-2 items-start">
+            <div>
+              <Image
+                src="/about/profile-v2.png"
+                alt="Angela Yang"
+                width={768}
+                height={1024}
+                className="w-full h-auto"
+                sizes="(max-width: 1024px) 100vw, 512px"
+                priority
+              />
+            </div>
+
+            <div>
+              <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+                How I work
+              </span>
+              <p className="mt-3 text-zinc-300 leading-relaxed max-w-2xl text-[15px] sm:text-base">
+                I usually own UI/UX work independently within projects, especially in 0→1 product stages. Beyond crafting screens, I focus on turning ambiguous requirements into experiences that can actually ship.
+              </p>
+            </div>
           </div>
 
-          <div>
-            <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-              How I work
-            </span>
-            <p className="mt-3 text-zinc-300 leading-relaxed max-w-2xl text-[15px] sm:text-base">
-              I usually own UI/UX work independently within projects, especially in 0→1 product stages. Beyond crafting screens, I focus on turning ambiguous requirements into experiences that can actually ship.
-            </p>
-          </div>
-        </div>
-
-        <section className="mt-14 border-t border-zinc-800 pt-12">
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="mt-8 grid gap-4 md:grid-cols-3 lg:mt-10">
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
               <h3 className="text-sm font-semibold text-zinc-100">
                 Engineering-led collaboration
