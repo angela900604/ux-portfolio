@@ -60,40 +60,39 @@ export default function AboutPage() {
               />
             </div>
 
-            <div>
+            <div className="flex min-w-0 flex-col">
               <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
                 How I work
               </span>
-              <p className="mt-3 text-zinc-300 leading-relaxed max-w-2xl text-[15px] sm:text-base">
+              <p className="mt-3 text-zinc-300 leading-relaxed text-[15px] sm:text-base">
                 I usually own UI/UX work independently within projects, especially in 0→1 product stages. Beyond crafting screens, I focus on turning ambiguous requirements into experiences that can actually ship.
               </p>
-            </div>
-          </div>
-
-          <div className="mt-8 grid gap-4 md:grid-cols-3 lg:mt-10">
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
-              <h3 className="text-sm font-semibold text-zinc-100">
-                Engineering-led collaboration
-              </h3>
-              <p className="mt-3 text-zinc-400 text-sm leading-relaxed">
-                I work very closely with frontend and backend engineers from the beginning. During early product phases, I proactively discuss implementation feasibility so innovative ideas stay practical and buildable.
-              </p>
-            </div>
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
-              <h3 className="text-sm font-semibold text-zinc-100">
-                Stakeholder alignment
-              </h3>
-              <p className="mt-3 text-zinc-400 text-sm leading-relaxed">
-                I partner directly with product/project managers, clients, and other stakeholders to translate requirements into clear design decisions that balance business goals with technical constraints.
-              </p>
-            </div>
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
-              <h3 className="text-sm font-semibold text-zinc-100">
-                AI-enhanced workflow
-              </h3>
-              <p className="mt-3 text-zinc-400 text-sm leading-relaxed">
-                I constantly test new AI tools (such as Cursor, Claude, and Figma AI), not to follow trends, but to identify what genuinely improves my workflow and increases delivery efficiency.
-              </p>
+              <div className="mt-6 flex flex-col gap-4">
+                <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
+                  <h3 className="text-sm font-semibold text-zinc-100">
+                    Engineering-led collaboration
+                  </h3>
+                  <p className="mt-3 text-zinc-400 text-sm leading-relaxed">
+                    I work very closely with frontend and backend engineers from the beginning. During early product phases, I proactively discuss implementation feasibility so innovative ideas stay practical and buildable.
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
+                  <h3 className="text-sm font-semibold text-zinc-100">
+                    Stakeholder alignment
+                  </h3>
+                  <p className="mt-3 text-zinc-400 text-sm leading-relaxed">
+                    I partner directly with product/project managers, clients, and other stakeholders to translate requirements into clear design decisions that balance business goals with technical constraints.
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
+                  <h3 className="text-sm font-semibold text-zinc-100">
+                    AI-enhanced workflow
+                  </h3>
+                  <p className="mt-3 text-zinc-400 text-sm leading-relaxed">
+                    I constantly test new AI tools (such as Cursor, Claude, and Figma AI), not to follow trends, but to identify what genuinely improves my workflow and increases delivery efficiency.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
