@@ -1,10 +1,34 @@
 import Link from "next/link";
 import Image from "next/image";
 
+function TravelPhotoTile({
+  src,
+  alt,
+  className,
+}: {
+  src: string;
+  alt: string;
+  className?: string;
+}) {
+  return (
+    <div
+      className={`relative h-full min-h-[200px] overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 ${className ?? ""}`}
+    >
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        className="object-cover"
+        sizes="(max-width: 1024px) 100vw, (max-width: 1280px) 50vw, 320px"
+      />
+    </div>
+  );
+}
+
 export const metadata = {
   title: "About | Angela Yang",
   description:
-    "Product designer in Vancouver—public services, AI products, and systems-minded UX. How I work with AI as part of the craft.",
+    "Product designer in Vancouver—0→1 products, engineering collaboration, stakeholder alignment, and an AI-enhanced workflow.",
 };
 
 export default function AboutPage() {
@@ -15,8 +39,11 @@ export default function AboutPage() {
           About
         </p>
         <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl max-w-2xl">
-          How I ended up here, and where I’m pointed
+          Angela Yang
         </h1>
+        <p className="mt-3 text-zinc-400 max-w-2xl">
+          產品設計師 · Vancouver
+        </p>
 
         {/* Profile visual */}
         <div className="mt-10 grid gap-8 lg:grid-cols-2 items-start">
@@ -33,128 +60,106 @@ export default function AboutPage() {
           </div>
 
           <div>
-            <p className="mt-4 text-zinc-300 leading-relaxed max-w-2xl">
-              I’m Angela. I became a designer because I kept bumping into the gap
-              between what teams meant to ship and what people actually
-              experienced—especially when the stakes were high and mistakes were
-              hard to undo. I wanted a practice where empathy and rigor lived in
-              the same place: where flows, language, and accessibility weren’t
-              polish added at the end, but part of how we decided what to build.
-            </p>
-            <p className="mt-4 text-zinc-300 leading-relaxed max-w-2xl">
-              Product work in public service drew me in because millions of people
-              don’t get a “beta”—they get one confusing screen and they’re gone.
-              Designing for that scale taught me to hold complexity so users
-              don’t have to, and to earn trust in small, concrete ways. AI
-              product work sharpened a different muscle: being explicit about what
-              the system can promise, where it should stay quiet, and how to
-              design for uncertainty without dumping it on the person trying to
-              get something done. Those two threads aren’t opposites for me;
-              they’re where I keep choosing to spend my time.
-            </p>
-            <p className="mt-4 text-zinc-300 leading-relaxed max-w-2xl">
-              I’m based in Vancouver and I’m building toward roles where I can
-              own meaningful slices of the experience—close to research,
-              engineering, and the real constraints—on teams that care about
-              shipping well, not just shipping fast. I want the work to show that
-              thoughtful UX isn’t a tax on velocity; it’s what keeps the first
-              release from becoming the expensive fix. If that sounds like your
-              team, I’d love to talk.
+            <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+              How I work
+            </span>
+            <p className="mt-3 text-zinc-300 leading-relaxed max-w-2xl text-[15px] sm:text-base">
+              我擅長參與產品從 0 到 1 的過程。比起單純畫圖，我更享受作為團隊的橋樑，將模糊的需求轉化為可落地的體驗。
             </p>
           </div>
         </div>
 
-        {/* What I do / Strengths / What I’m looking for */}
-        <section className="mt-14">
-          <div className="grid gap-4 sm:grid-cols-3">
+        <section className="mt-14 border-t border-zinc-800 pt-12">
+          <div className="grid gap-4 md:grid-cols-3">
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
-              <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-                What I do
-              </p>
-              <h2 className="mt-2 text-lg font-semibold">End-to-end UX</h2>
+              <h3 className="text-sm font-semibold text-zinc-100">
+                Engineering-led collaboration
+              </h3>
               <p className="mt-3 text-zinc-400 text-sm leading-relaxed">
-                Research, interaction design, and design systems — from “what’s
-                unclear?” to “what’s shippable?”
+                我習慣與前後端工程師緊密協作，在產品初期就深入探討技術可行性，確保創新想法與實踐開發達成平衡。
               </p>
             </div>
-
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
-              <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-                Where I focus
-              </p>
-              <h2 className="mt-2 text-lg font-semibold">Public-scale &amp; AI-native products</h2>
+              <h3 className="text-sm font-semibold text-zinc-100">
+                Stakeholder alignment
+              </h3>
               <p className="mt-3 text-zinc-400 text-sm leading-relaxed">
-                Services millions rely on, AI experiences that need clear guardrails,
-                and loyalty or marketplace flows where the backend is messy but the
-                UI can’t be.
+                我能直接面對 PM、客戶與利害關係人，精準對接業務需求與技術限制。
               </p>
             </div>
-
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
-              <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-                What I’m looking for
-              </p>
-              <h2 className="mt-2 text-lg font-semibold">Product teams to build with</h2>
+              <h3 className="text-sm font-semibold text-zinc-100">
+                AI-enhanced workflow
+              </h3>
               <p className="mt-3 text-zinc-400 text-sm leading-relaxed">
-                Full-time roles where I can own UX decisions, collaborate closely
-                with engineering, and ship measurable improvements.
+                我積極測試各類 AI 工具（如 Cursor、Claude、Figma AI），不為追隨潮流，而是為了找出能真正優化工作流、提升產出效率的最佳路徑。
               </p>
             </div>
           </div>
         </section>
 
-        {/* AI-assisted design as process */}
         <section className="mt-14 border-t border-zinc-800 pt-12">
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Process
+            Beyond design
           </span>
-          <h2 className="mt-2 text-2xl font-semibold text-zinc-100 max-w-2xl">
-            AI-assisted design is part of the job—not a side project
-          </h2>
-          <p className="mt-4 text-zinc-300 leading-relaxed max-w-3xl">
-            I treat AI tools the same way I treat Figma or a research plan: as
-            leverage for the work product, not a substitute for judgment. In
-            practice that means pairing with models for synthesis and variation
-            (Claude), using an agentic editor when I want to ship or prototype
-            interaction details quickly (Cursor), and staying in Figma for the
-            decisions that need pixels and systems. The outcome isn’t “I used
-            AI”—it’s faster cycles, clearer bets, and handoffs engineering can
-            build from without translating intent from screenshots.
+          <p className="mt-3 text-zinc-300 leading-relaxed max-w-2xl text-[15px] sm:text-base">
+            工作之外，我的靈感來自於對視覺與品味的持續探索。
           </p>
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 max-w-3xl">
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
               <h3 className="text-sm font-semibold text-zinc-100">
-                Faster iteration
+                Branding &amp; Esthetics
               </h3>
               <p className="mt-3 text-zinc-400 text-sm leading-relaxed">
-                I use AI to compress exploration: more layout and copy variants,
-                quicker stress-tests of edge cases, and less time stuck on
-                mechanical production—so the calendar goes to critique and
-                refinement, not busywork.
+                喜歡研究品牌背後的邏輯與視覺風格。
               </p>
             </div>
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
               <h3 className="text-sm font-semibold text-zinc-100">
-                Sharper hypotheses
+                Photography &amp; travel
               </h3>
               <p className="mt-3 text-zinc-400 text-sm leading-relaxed">
-                Models are strong at surfacing assumptions and alternate framings.
-                I use that to tighten problem statements and research questions
-                before we lock UI—so we’re testing what we actually believe, not
-                the first screen we sketched.
+                透過旅遊與攝影捕捉不同城市的細節，這是我提升審美敏銳度的方式，也讓我對「美」的理解更具實感。
               </p>
             </div>
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
-              <h3 className="text-sm font-semibold text-zinc-100">
-                Better handoffs
-              </h3>
-              <p className="mt-3 text-zinc-400 text-sm leading-relaxed">
-                When specs, annotations, and component rationale are easier to
-                produce and keep consistent, engineering gets fewer “what did the
-                designer mean?” tickets. That’s the bar I hold the toolchain to:
-                does it reduce ambiguity for the people who build?
-              </p>
-            </div>
+          </div>
+          {/* Bento-style travel gallery — asymmetric grid + gutters like reference collage */}
+          <div className="mt-10 grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-3 lg:grid-cols-4 lg:grid-rows-4 lg:gap-3">
+            <TravelPhotoTile
+              src="/about/travel/hong-kong.png"
+              alt="Hong Kong street: double-decker buses and a motion-blurred taxi"
+              className="lg:col-span-2 lg:row-span-2 lg:min-h-[min(420px,36vw)]"
+            />
+            <TravelPhotoTile
+              src="/about/travel/budapest.png"
+              alt="Budapest Parliament at night reflected on the Danube"
+              className="lg:col-span-2 lg:row-span-1 lg:min-h-[min(200px,18vw)]"
+            />
+            <TravelPhotoTile
+              src="/about/travel/hallstatt-mist.png"
+              alt="Hallstatt, Austria: lakeside village in mist below the mountains"
+              className="lg:col-span-2 lg:row-span-1 lg:min-h-[min(200px,18vw)]"
+            />
+            <TravelPhotoTile
+              src="/about/travel/hallstatt-lake.png"
+              alt="Hallstatt lakefront with swans and alpine houses"
+              className="lg:col-span-2 lg:row-span-1 lg:min-h-[min(200px,18vw)]"
+            />
+            <TravelPhotoTile
+              src="/about/travel/sf-golden-gate-beach.png"
+              alt="Golden Gate Bridge from a rocky beach in San Francisco"
+              className="lg:col-span-2 lg:row-span-2 lg:min-h-[min(420px,36vw)]"
+            />
+            <TravelPhotoTile
+              src="/about/travel/sf-cable-car.png"
+              alt="San Francisco cable car on California Street"
+              className="lg:col-span-1 lg:row-span-1 lg:min-h-[min(200px,18vw)]"
+            />
+            <TravelPhotoTile
+              src="/about/travel/sf-golden-gate-flowers.png"
+              alt="Golden Gate Bridge with purple flowers in the foreground"
+              className="lg:col-span-1 lg:row-span-1 lg:min-h-[min(200px,18vw)]"
+            />
           </div>
         </section>
 
