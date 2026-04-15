@@ -102,19 +102,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Core product design */}
+      {/* Selected projects */}
       <section id="featured" className="border-b border-zinc-800">
         <div className="mx-auto max-w-[1280px] px-6 sm:px-[100px] py-16 sm:py-20">
-          <p className="text-xs font-medium uppercase tracking-widest text-zinc-500 mb-2">
-            Core product design
-          </p>
           <h2 className="text-2xl font-semibold text-zinc-100">
-            Shipped UX for public services, AI, and consumer apps
+            Selected Projects
           </h2>
           <p className="mt-4 text-zinc-400 text-sm leading-relaxed max-w-2xl">
-            End-to-end product work—research through handoff—where outcomes are
-            measurable and stakeholders are real. This is the spine of how I
-            design.
+            0→1 products across AI-powered automation, Public Services, and
+            Consumer Loyalty.
           </p>
 
           <Link
@@ -192,20 +188,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Adjacent: brand, growth, IP */}
+      {/* Brand & storytelling */}
       <section id="selected-work" className="border-b border-zinc-800">
         <div className="mx-auto max-w-[1280px] px-6 sm:px-[100px] py-16 sm:py-20">
-          <p className="text-xs font-medium uppercase tracking-widest text-zinc-500 mb-2">
-            Adjacent work
-          </p>
           <h2 className="text-2xl font-semibold text-zinc-100">
-            Brand, growth, and storytelling
+            Brand &amp; Storytelling
           </h2>
           <p className="mt-4 text-zinc-400 text-sm leading-relaxed max-w-2xl">
-            These projects sharpen how I communicate with audiences—campaigns,
-            social, and brand systems that support launches and recognition. They
-            sit alongside product work: different surface area, same eye for
-            clarity and craft.
+            Supporting product launches through visual identity and marketing
+            design.
           </p>
 
           <ul className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

@@ -45,13 +45,13 @@ export function HeroWithBubble() {
           Product design · Public services · AI
         </p>
         <h1 className="font-semibold text-4xl sm:text-5xl md:text-6xl leading-[1.1] tracking-tight max-w-[36rem]">
-          Complex systems, clear experiences.
+          I turn ambiguous ideas into shippable digital products.
         </h1>
-        <p className="mt-6 text-lg text-zinc-400 max-w-xl leading-relaxed">
-          I design public-service and AI-native products that balance user trust,
-          operational reality, and implementation speed. I use Cursor, Claude,
-          and current AI tooling to speed exploration and handoff without
-          trading clarity for speed.
+        <p className="mt-6 text-lg text-zinc-400 max-w-2xl leading-relaxed">
+          Independent Product Designer specializing in 0→1 stages. I bridge the
+          gap between business goals and technical feasibility, leveraging
+          AI-driven workflows to deliver high-impact results with speed and
+          precision.
         </p>
         <div className="mt-10 flex flex-wrap gap-4">
           <Link

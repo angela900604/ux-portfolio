@@ -65,7 +65,7 @@ export default function AboutPage() {
                 How I work
               </span>
               <p className="mt-3 text-zinc-300 leading-relaxed text-[15px] sm:text-base">
-                I usually own UI/UX work independently within projects, especially in 0→1 product stages. Beyond crafting screens, I focus on turning ambiguous requirements into experiences that can actually ship.
+                I specialize in navigating the 0→1 product journey, turning abstract ideas into high-fidelity, shippable experiences. My approach blends aesthetic precision with a deep understanding of backend logic and technical constraints, ensuring that innovation never comes at the cost of feasibility.
               </p>
               <div className="mt-6 flex flex-col gap-4">
                 <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
