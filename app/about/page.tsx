@@ -28,7 +28,7 @@ function TravelPhotoTile({
 export const metadata = {
   title: "About | Angela Yang",
   description:
-    "Product designer in Vancouver—0→1 products, engineering collaboration, stakeholder alignment, and an AI-enhanced workflow.",
+    "Independent UI/UX designer in Vancouver focused on end-to-end ownership, 0→1 product building, and engineering-led collaboration.",
 };
 
 export default function AboutPage() {
@@ -42,7 +42,7 @@ export default function AboutPage() {
           Angela Yang
         </h1>
         <p className="mt-3 text-zinc-400 max-w-2xl">
-          產品設計師 · Vancouver
+          Independent UI/UX Designer · Vancouver
         </p>
 
         {/* Profile visual */}
@@ -64,7 +64,7 @@ export default function AboutPage() {
               How I work
             </span>
             <p className="mt-3 text-zinc-300 leading-relaxed max-w-2xl text-[15px] sm:text-base">
-              我擅長參與產品從 0 到 1 的過程。比起單純畫圖，我更享受作為團隊的橋樑，將模糊的需求轉化為可落地的體驗。
+              I usually own UI/UX work independently within projects, especially in 0→1 product stages. Beyond crafting screens, I focus on turning ambiguous requirements into experiences that can actually ship.
             </p>
           </div>
         </div>
@@ -76,7 +76,7 @@ export default function AboutPage() {
                 Engineering-led collaboration
               </h3>
               <p className="mt-3 text-zinc-400 text-sm leading-relaxed">
-                我習慣與前後端工程師緊密協作，在產品初期就深入探討技術可行性，確保創新想法與實踐開發達成平衡。
+                I work very closely with frontend and backend engineers from the beginning. During early product phases, I proactively discuss implementation feasibility so innovative ideas stay practical and buildable.
               </p>
             </div>
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
@@ -84,7 +84,7 @@ export default function AboutPage() {
                 Stakeholder alignment
               </h3>
               <p className="mt-3 text-zinc-400 text-sm leading-relaxed">
-                我能直接面對 PM、客戶與利害關係人，精準對接業務需求與技術限制。
+                I partner directly with product/project managers, clients, and other stakeholders to translate requirements into clear design decisions that balance business goals with technical constraints.
               </p>
             </div>
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
@@ -92,7 +92,7 @@ export default function AboutPage() {
                 AI-enhanced workflow
               </h3>
               <p className="mt-3 text-zinc-400 text-sm leading-relaxed">
-                我積極測試各類 AI 工具（如 Cursor、Claude、Figma AI），不為追隨潮流，而是為了找出能真正優化工作流、提升產出效率的最佳路徑。
+                I constantly test new AI tools (such as Cursor, Claude, and Figma AI), not to follow trends, but to identify what genuinely improves my workflow and increases delivery efficiency.
               </p>
             </div>
           </div>
@@ -103,15 +103,15 @@ export default function AboutPage() {
             Beyond design
           </span>
           <p className="mt-3 text-zinc-300 leading-relaxed max-w-2xl text-[15px] sm:text-base">
-            工作之外，我的靈感來自於對視覺與品味的持續探索。
+            Outside work, I keep exploring branding, visual style, and photography. Traveling helps me sharpen my aesthetic sense, and this gallery is where I share that perspective.
           </p>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 max-w-3xl">
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
               <h3 className="text-sm font-semibold text-zinc-100">
-                Branding &amp; Esthetics
+                Branding &amp; style exploration
               </h3>
               <p className="mt-3 text-zinc-400 text-sm leading-relaxed">
-                喜歡研究品牌背後的邏輯與視覺風格。
+                I enjoy studying the logic behind brands and how visual style creates recognition, trust, and emotional resonance.
               </p>
             </div>
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
@@ -119,7 +119,7 @@ export default function AboutPage() {
                 Photography &amp; travel
               </h3>
               <p className="mt-3 text-zinc-400 text-sm leading-relaxed">
-                透過旅遊與攝影捕捉不同城市的細節，這是我提升審美敏銳度的方式，也讓我對「美」的理解更具實感。
+                Through travel photography, I capture details from different cities. It is one of my ways to train visual sensitivity and build a more grounded understanding of aesthetics.
               </p>
             </div>
           </div>
