@@ -237,45 +237,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About preview */}
-      <section className="border-b border-zinc-800">
-        <div className="mx-auto max-w-[1280px] px-6 sm:px-[100px] py-16 sm:py-20">
-          <div className="flex flex-col gap-10 md:flex-row md:items-center md:justify-between md:gap-12 lg:gap-16">
-            <div className="min-w-0 max-w-2xl">
-              <p className="text-xs font-medium uppercase tracking-widest text-zinc-500 mb-2">
-                About
-              </p>
-              <h2 className="text-2xl font-semibold text-zinc-100">
-                Design with a product lens and a systems mindset
-              </h2>
-              <p className="mt-4 text-zinc-400 leading-relaxed">
-                I’m Angela—product designer with 2+ years shipping in public-sector
-                and startup contexts. I pair research with tools like Cursor and
-                Claude to move faster without losing rigor.
-              </p>
-              <Link
-                href="/about"
-                className="mt-6 inline-block text-sm font-medium text-zinc-300 hover:text-zinc-100 underline underline-offset-4"
-              >
-                More about me →
-              </Link>
-            </div>
-            <div className="mx-auto shrink-0 md:mx-0">
-              <div className="relative h-[220px] w-[220px] overflow-hidden rounded-full border border-zinc-700/60 bg-zinc-900/40 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.65)] sm:h-[260px] sm:w-[260px]">
-                <Image
-                  src="/home/about-avatar.png"
-                  alt="Angela Yang — profile"
-                  fill
-                  className="object-cover object-center"
-                  sizes="(max-width: 768px) 220px, 260px"
-                  priority={false}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Contact */}
       <section id="contact" className="border-b border-zinc-800">
         <div className="mx-auto max-w-[1280px] px-6 sm:px-[100px] py-16 sm:py-20">

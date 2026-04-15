@@ -61,7 +61,7 @@ export function HeroWithBubble() {
             See flagship case study
           </Link>
           <Link
-            href="#selected-work"
+            href="#featured"
             className="inline-flex items-center gap-2 rounded-full border border-zinc-600 px-5 py-2.5 text-sm font-medium text-zinc-300 hover:border-zinc-400 hover:text-zinc-100 transition"
           >
             View all work

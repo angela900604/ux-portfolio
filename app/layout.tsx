@@ -45,9 +45,6 @@ export default function RootLayout({
                 <a href="/about" className="hover:text-zinc-100 transition">
                   About
                 </a>
-                <a href="/#contact" className="hover:text-zinc-100 transition">
-                  Contact
-                </a>
                 <a href="/resume" className="hover:text-zinc-100 transition">
                   Resume
                 </a>
