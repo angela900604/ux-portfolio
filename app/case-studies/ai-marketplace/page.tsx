@@ -4,6 +4,13 @@ import { CaseStudyAtAGlance } from "../_components/CaseStudyAtAGlance";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { CaseStudyScanSummary } from "../_components/CaseStudyScanSummary";
+import { WideFigure } from "../e-invoice-app/EInvoiceFigures";
+
+const MINA_HERO = "/case-studies/mina/mina-ai-hero.png";
+
+/** Canada App Store — Mina - Resale for Parents */
+const MINA_APP_STORE =
+  "https://apps.apple.com/ca/app/mina-resale-for-parents/id6754006404";
 
 const AT_A_GLANCE_ITEMS = [
   { label: "Timeline", value: "Ongoing (2025+)" },
@@ -61,8 +68,8 @@ export default function AiMarketplaceCaseStudy() {
 
           <p className="text-sm text-zinc-400 max-w-2xl leading-relaxed border-l-2 border-violet-500/50 pl-4">
             This case study is <span className="text-zinc-200">in progress</span>.
-            Screens, flows, and metrics will be added when the work is ready—no image
-            placeholders until then.
+            Deeper flows, research snapshots, and metrics will be added as the work
+            ships.
           </p>
 
           <h1 className="mt-8 font-semibold text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight max-w-3xl">
@@ -76,6 +83,14 @@ export default function AiMarketplaceCaseStudy() {
           </p>
 
           <div className="mt-8">
+            <WideFigure
+              borderless
+              src={MINA_HERO}
+              alt="MINA app showcase: AI-assisted buyer chat, marketplace home with picks and events, and community events"
+            />
+          </div>
+
+          <div className="mt-8">
             <CaseStudyAtAGlance items={AT_A_GLANCE_ITEMS} />
           </div>
 
@@ -86,18 +101,18 @@ export default function AiMarketplaceCaseStudy() {
             <div className="grid gap-3 sm:grid-cols-2 sm:max-w-2xl">
               <div className="rounded-xl border border-zinc-800/90 bg-zinc-900/50 px-4 py-3">
                 <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">
-                  Status
+                  Live product
                 </p>
                 <p className="mt-1 text-sm font-medium text-zinc-100">
-                  Concept &amp; strategy — in progress
+                  Mina — iPhone · App Store (Canada)
                 </p>
               </div>
               <div className="rounded-xl border border-zinc-800/90 bg-zinc-900/50 px-4 py-3">
                 <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">
-                  Focus
+                  App Store (Canada)
                 </p>
                 <p className="mt-1 text-sm font-medium text-zinc-100">
-                  Cut listing friction &amp; coordination drag
+                  Resale marketplace for parents
                 </p>
               </div>
             </div>
@@ -116,6 +131,34 @@ export default function AiMarketplaceCaseStudy() {
               {"\u2193"}
             </span>
           </a>
+
+          <div className="mt-12 space-y-6">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+                  App Store
+                </p>
+                <h2 className="mt-1 text-lg font-semibold text-zinc-100">
+                  Live product
+                </h2>
+                <p className="mt-1 max-w-xl text-sm text-zinc-500">
+                  Mina — Resale for Parents is available on the App Store in Canada
+                  for iPhone.
+                </p>
+              </div>
+              <a
+                href={MINA_APP_STORE}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full border border-zinc-600 bg-zinc-900/50 px-5 py-2.5 text-sm font-medium text-zinc-100 transition hover:border-zinc-500 hover:bg-zinc-800/80 sm:self-start"
+              >
+                Mina · App Store (Canada)
+                <span aria-hidden className="text-zinc-500">
+                  {"\u2197"}
+                </span>
+              </a>
+            </div>
+          </div>
         </div>
       </header>
 

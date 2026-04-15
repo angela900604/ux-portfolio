@@ -84,7 +84,7 @@ const ADJACENT_WORK = [
 
 const WORK_THUMB: Record<string, string> = {
   "e-invoice-app": "/home/mofcover.png",
-  "ai-marketplace": "/home/minaaicover.png",
+  "ai-marketplace": "/case-studies/mina/mina-ai-hero.png",
   "government-backend": "/home/publicservicecover.png",
   "baskin-robbins": "/home/baskinrobbinscover.png",
   "admission-hub": "/home/admcover-v3.jpg",
