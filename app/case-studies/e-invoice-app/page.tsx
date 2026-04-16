@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { CaseStudyAtAGlance } from "../_components/CaseStudyAtAGlance";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
@@ -435,6 +436,15 @@ export default function EInvoiceCaseStudy() {
             invoices to charity with one tap, and reduce reliance on paper while
             supporting sustainability.
           </p>
+          <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+            <Image
+              src="/case-studies/e-invoice/photo-invoice-receipts.png"
+              alt="Paper receipts commonly collected for Taiwan's invoice lottery"
+              width={1200}
+              height={900}
+              className="h-auto w-full object-cover"
+            />
+          </div>
           <p className="text-zinc-300 leading-relaxed">
             Taiwan&apos;s Ministry of Finance Cloud Invoice App is the official
             way roughly 20 million people manage e-invoices and join the Uniform
@@ -1079,6 +1089,15 @@ export default function EInvoiceCaseStudy() {
             look good—it changes how people interact with technology in meaningful
             ways.
           </p>
+          <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+            <Image
+              src="/case-studies/e-invoice/photo-stakeholder-meeting.png"
+              alt="Stakeholder meeting during the e-Invoice redesign project"
+              width={1600}
+              height={900}
+              className="h-auto w-full object-cover"
+            />
+          </div>
         </section>
 
         <section
