@@ -26,6 +26,22 @@ const ADMISSION_IG_EXAMPLES = [
   { href: "https://www.instagram.com/p/Cdt1HyHOm52/", label: "Feed — seasonal / local guide" },
 ] as const;
 
+/** Long-form WordPress articles that supported SEO + trust (Taiwan site) */
+const ADMISSION_WP_ARTICLES = [
+  {
+    href: "https://taiwan.admissionhub.com/%e9%97%9c%e6%96%bc-%e5%8a%a0%e6%8b%bf%e5%a4%a7-%e6%9c%89%e8%b6%a3%e7%9a%84%e4%ba%8b%e5%af%a6-50%e5%80%8b/",
+    label: "50 interesting facts about Canada (life in Canada)",
+  },
+  {
+    href: "https://taiwan.admissionhub.com/%e5%8a%a0%e6%8b%bf%e5%a4%a7-%e7%95%99%e5%ad%b8%e7%a7%bb%e6%b0%91-%e5%b8%b8%e8%a6%8b%e5%95%8f%e9%a1%8c/",
+    label: "Study abroad & immigration — common questions",
+  },
+  {
+    href: "https://taiwan.admissionhub.com/%e5%8a%a0%e6%8b%bf%e5%a4%a7%e6%97%85%e9%81%8a%e7%b0%bd%e8%ad%89-eta-%e7%b7%9a%e4%b8%8a%e7%94%b3%e8%ab%8b/",
+    label: "Visitor visa / eTA — online application walkthrough",
+  },
+] as const;
+
 export const metadata = {
   title: "Admission Hub (Digital Marketing) | Angela Yang",
   description:
@@ -239,21 +255,30 @@ export default function AdmissionHubCaseStudy() {
           kicker="04 · What I did"
           title="A repeatable campaign + content system"
         >
-          <div className="mt-4 grid gap-4 sm:grid-cols-2">
+          <p className="mt-4 text-sm text-[#666] leading-relaxed max-w-3xl">
+            I worked in layers: long-form WordPress content for search and
+            trust, Mailchimp for sustained touchpoints, and a calendar-driven
+            Instagram lane—then tied the same brand system across social posts
+            and high-density print-style flyers when services needed to convert.
+          </p>
+
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
             <div className="rounded-2xl border border-[#E8E1D6] bg-white p-6">
               <h3 className="text-sm font-semibold text-[#2C3E50]">
                 Email campaigns
               </h3>
               <p className="mt-2 text-sm text-[#666] leading-relaxed">
-                Leveraged Mailchimp to design and execute email campaigns that
-                improved brand recognition and engagement.
+                Mailchimp execution—templates, segmentation, and cadence tied to
+                site content. Details in the email block below.
               </p>
             </div>
             <div className="rounded-2xl border border-[#E8E1D6] bg-white p-6">
-              <h3 className="text-sm font-semibold text-[#2C3E50]">SEO + WordPress</h3>
+              <h3 className="text-sm font-semibold text-[#2C3E50]">
+                SEO + WordPress
+              </h3>
               <p className="mt-2 text-sm text-[#666] leading-relaxed">
-                Wrote and optimized content on WordPress to improve SEO. This
-                contributed to an 18% increase in organic traffic.
+                Utility articles and on-page structure to support organic
+                discovery; example live URLs and a screenshot follow.
               </p>
             </div>
             <div className="rounded-2xl border border-[#E8E1D6] bg-white p-6">
@@ -261,9 +286,8 @@ export default function AdmissionHubCaseStudy() {
                 Visuals for web + social
               </h3>
               <p className="mt-2 text-sm text-[#666] leading-relaxed">
-                Used Figma to create digital graphics for the website and
-                Instagram, driving +500 social followers and +21% engagement in
-                three months.
+                Figma graphics for the site and Instagram—supporting +500
+                followers and +21% engagement over roughly three months.
               </p>
             </div>
             <div className="rounded-2xl border border-[#E8E1D6] bg-white p-6">
@@ -271,23 +295,124 @@ export default function AdmissionHubCaseStudy() {
                 Consistent brand execution
               </h3>
               <p className="mt-2 text-sm text-[#666] leading-relaxed">
-                Built campaign assets and supporting content (including posters
-                and blog-style visuals) to keep tone consistent across
-                touchpoints.
+                Campaign and blog visuals so email, web, and social pointed to
+                the same story and CTAs.
               </p>
             </div>
           </div>
 
-          <div className="mt-8 rounded-2xl border border-[#E8E1D6] bg-white p-6">
+          <div className="mt-10">
+            <h3 className="text-sm font-semibold text-[#2C3E50]">
+              WordPress &amp; SEO (utility content)
+            </h3>
+            <p className="mt-2 text-sm text-[#666] leading-relaxed max-w-3xl">
+              Long-form posts for Taiwan- and Hong Kong–based readers
+              researching Canada—clear H2/H3 structure, scannable lists, and
+              sidebar modules that match the main Admission Hub site. This lane
+              complemented Instagram: the blog earned depth and search, while
+              social earned frequency and saves.
+            </p>
+            <figure className="mt-6 bg-[#F5F3EF]">
+              <Image
+                src={AH_ASSET("wordpress-blog-life-in-canada-50-facts.png")}
+                alt="Admission Hub WordPress blog article — 50 interesting facts about Canada, desktop layout with hero image and sidebar widgets"
+                width={1024}
+                height={581}
+                className="block h-auto w-full"
+                sizes="(max-width: 896px) 100vw, 896px"
+              />
+              <figcaption className="mt-4 text-sm text-[#666] leading-relaxed max-w-3xl">
+                <span className="font-semibold text-[#2C3E50]">
+                  Featured articles (live)
+                </span>
+                <ul className="mt-2 flex flex-col gap-2">
+                  {ADMISSION_WP_ARTICLES.map((item) => (
+                    <li key={item.href}>
+                      <a
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#2C3E50] underline decoration-[#D4C5B0] underline-offset-2 hover:decoration-[#8D99AE]"
+                      >
+                        {item.label}
+                      </a>
+                      <span className="text-[#9A9288]"> · WordPress</span>
+                    </li>
+                  ))}
+                </ul>
+              </figcaption>
+            </figure>
+          </div>
+
+          <div className="mt-10 rounded-2xl border border-[#E8E1D6] bg-white p-6">
+            <h3 className="text-sm font-semibold text-[#2C3E50]">
+              Email (Mailchimp) — how sends were structured
+            </h3>
+            <p className="mt-2 text-xs text-[#8A8379] leading-relaxed max-w-3xl">
+              Original campaign screenshots weren&apos;t preserved; this section
+              documents the operating pattern instead of mock UI.
+            </p>
+            <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-[#666] leading-relaxed max-w-3xl">
+              <li>
+                <strong className="font-medium text-[#2C3E50]">Cadence:</strong>{" "}
+                Sends aligned with blog publishes and seasonal hooks so
+                newsletters weren&apos;t one-off blasts.
+              </li>
+              <li>
+                <strong className="font-medium text-[#2C3E50]">
+                  Subject + preheader:
+                </strong>{" "}
+                Clarity-first lines with Canada keywords; preheader used when it
+                added a second beat without repeating the title.
+              </li>
+              <li>
+                <strong className="font-medium text-[#2C3E50]">Template:</strong>{" "}
+                Repeatable blocks (hero, body, single primary CTA) to reduce
+                layout drift between campaigns.
+              </li>
+              <li>
+                <strong className="font-medium text-[#2C3E50]">Channel fit:</strong>{" "}
+                Email pointed back to deep pages; Instagram carried the weekly
+                habit—same story, different depth.
+              </li>
+            </ul>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {(
+                [
+                  "Mailchimp",
+                  "Templates",
+                  "Segmentation",
+                  "Cadence",
+                ] as const
+              ).map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full border border-[#E8E1D6] bg-[#FDFBF8] px-3 py-1 text-xs text-[#5C574F]"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-10 rounded-2xl border border-[#E8E1D6] bg-white p-6">
             <h3 className="text-sm font-semibold text-[#2C3E50]">
               Calendar hooks &amp; “utility” social
             </h3>
-            <p className="mt-2 text-sm text-[#666] leading-relaxed">
+            <p className="mt-2 text-sm text-[#666] leading-relaxed max-w-3xl">
               A lot of the momentum came from posts that matched how people use
               Instagram to plan a weekend—fireworks times and locations,
-              seasonal guides, and other shareable local moments. The Dragon Boat
-              Festival creative below is one strong visual in that same calendar
-              lane; the examples on the live feed show the broader pattern.
+              seasonal guides, and other shareable local moments. The composite
+              image after this list shows{" "}
+              <span className="font-medium text-[#2C3E50]">
+                culture-lane social
+              </span>{" "}
+              next to a{" "}
+              <span className="font-medium text-[#2C3E50]">
+                service-lane flyer
+              </span>{" "}
+              in the same brand frame; the links are live examples of the
+              broader calendar pattern.
             </p>
             <ul className="mt-4 flex flex-col gap-2 text-sm">
               {ADMISSION_IG_EXAMPLES.map((item) => (
@@ -306,7 +431,7 @@ export default function AdmissionHubCaseStudy() {
             </ul>
           </div>
 
-          <div className="mt-8 bg-[#F5F3EF]">
+          <figure className="mt-10 bg-[#F5F3EF]">
             <Image
               src={AH_ASSET("dragon-boat-and-coop-creative.png")}
               alt="Admission Hub — Dragon Boat Festival Instagram post mockup beside Working Holiday COOP service flyer for Canada ADM"
@@ -315,7 +440,23 @@ export default function AdmissionHubCaseStudy() {
               className="block h-auto w-full"
               sizes="(max-width: 896px) 100vw, 896px"
             />
-          </div>
+            <figcaption className="mt-4 space-y-2 text-sm text-[#666] leading-relaxed max-w-3xl">
+              <p>
+                <strong className="text-[#2C3E50]">Left (Instagram):</strong>{" "}
+                Calendar-driven cultural post engineered for saves and
+                shares—keeping the feed lively between service moments.
+              </p>
+              <p>
+                <strong className="text-[#2C3E50]">Right (flyer):</strong>{" "}
+                High-density Working Holiday COOP explainer—badges, proof
+                collage, QR—for comprehension and next-step contact.
+              </p>
+              <p className="text-xs text-[#8A8379] italic">
+                Same brand system, two jobs-to-be-done: habit on social,
+                clarity on conversion.
+              </p>
+            </figcaption>
+          </figure>
         </Section>
 
         <Section
@@ -334,6 +475,61 @@ export default function AdmissionHubCaseStudy() {
             <span className="font-medium text-[#2C3E50]">~5 likes to ~30 likes</span>
             —a concrete before/after on the same channel.
           </p>
+
+          <div className="mt-6 flex flex-wrap items-center gap-2 sm:gap-3">
+            <span className="inline-flex items-center rounded-full border border-[#E8E1D6] bg-white px-4 py-2 text-sm font-medium tabular-nums text-[#2C3E50]">
+              ~5 likes
+              <span className="ml-2 text-xs font-normal text-[#8A8379]">
+                typical post (before)
+              </span>
+            </span>
+            <span className="text-[#8A8379]" aria-hidden>
+              →
+            </span>
+            <span className="inline-flex items-center rounded-full border border-[#305E98]/30 bg-[#305E98]/08 px-4 py-2 text-sm font-semibold tabular-nums text-[#305E98]">
+              ~30 likes
+              <span className="ml-2 text-xs font-normal text-[#5C6F8A]">
+                typical post (during)
+              </span>
+            </span>
+          </div>
+
+          <div className="mt-8 grid gap-4 sm:grid-cols-3 max-w-3xl">
+            <div className="rounded-xl border border-[#E8E1D6] bg-white p-4">
+              <p className="text-xs font-medium uppercase tracking-wider text-[#8A8379]">
+                Instagram
+              </p>
+              <p className="mt-2 text-sm text-[#666] leading-relaxed">
+                Follower growth + stronger engagement from a mixed feed:
+                calendar/utility posts plus service moments.
+              </p>
+            </div>
+            <div className="rounded-xl border border-[#E8E1D6] bg-white p-4">
+              <p className="text-xs font-medium uppercase tracking-wider text-[#8A8379]">
+                Site / SEO
+              </p>
+              <p className="mt-2 text-sm text-[#666] leading-relaxed">
+                Organic sessions up—supported by long-form WordPress pages and
+                consistent on-page structure.
+              </p>
+            </div>
+            <div className="rounded-xl border border-[#E8E1D6] bg-white p-4">
+              <p className="text-xs font-medium uppercase tracking-wider text-[#8A8379]">
+                Email
+              </p>
+              <p className="mt-2 text-sm text-[#666] leading-relaxed">
+                Newsletters paired with content releases so the site and inbox
+                reinforced the same narrative week to week.
+              </p>
+            </div>
+          </div>
+
+          <p className="mt-6 text-xs text-[#8A8379] leading-relaxed max-w-3xl">
+            Figures are from the same ~three-month execution window referenced in
+            the role; percentages follow the team&apos;s internal analytics
+            definitions at the time (not a third-party benchmark study).
+          </p>
+
           <div className="mt-6 max-w-3xl">
             <OutcomesMetricsChart />
           </div>
