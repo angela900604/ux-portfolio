@@ -5,14 +5,14 @@ export function OutcomesMetricsChart() {
     <div
       className="rounded-2xl border border-[#E8E1D6] bg-white p-6 sm:p-8"
       role="img"
-      aria-label="Outcome metrics: plus 500 social followers in three months, plus 21 percent engagement, plus 18 percent organic traffic"
+      aria-label="Outcome metrics over three months: plus 500 Instagram followers net new, plus 21 percent Instagram engagement versus baseline, plus 18 percent organic site traffic in sessions"
     >
       <p className="text-xs font-medium uppercase tracking-widest text-[#7A7A7A]">
         Outcomes at a glance (3 months)
       </p>
       <div className="mt-6 space-y-7">
         <MetricRow
-          label="Social followers"
+          label="Instagram followers"
           value="+500"
           valueNote="net new"
           barWidth={100}
@@ -20,7 +20,7 @@ export function OutcomesMetricsChart() {
           valueClass="text-[#305E98]"
         />
         <MetricRow
-          label="Engagement rate"
+          label="Instagram engagement rate"
           value="+21%"
           valueNote="vs. baseline"
           barWidth={21}
@@ -28,7 +28,7 @@ export function OutcomesMetricsChart() {
           valueClass="text-[#CE1C1C]"
         />
         <MetricRow
-          label="Organic traffic"
+          label="Organic site traffic"
           value="+18%"
           valueNote="site sessions"
           barWidth={18}

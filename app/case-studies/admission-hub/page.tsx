@@ -379,7 +379,25 @@ export default function AdmissionHubCaseStudy() {
           kicker="05 · Outcomes"
           title="Measurable growth in engagement and reach"
         >
-          <div className="mt-4 flex flex-wrap items-center gap-2 sm:gap-3">
+          <p className="mt-4 max-w-3xl text-sm text-[#666] leading-relaxed">
+            The numbers below are anchored in{" "}
+            <a
+              href="https://www.instagram.com/adm.tw/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-[#2C3E50] underline decoration-[#D4C5B0] underline-offset-2 hover:decoration-[#8D99AE]"
+            >
+              @adm.tw
+            </a>{" "}
+            on Instagram—especially follower growth and typical post engagement.
+            Mailchimp sends and WordPress articles also pushed readers toward the
+            account during the same stretch.
+          </p>
+
+          <p className="mt-3 text-xs font-medium uppercase tracking-widest text-[#8A8379]">
+            Instagram · typical post likes
+          </p>
+          <div className="mt-2 flex flex-wrap items-center gap-2 sm:gap-3">
             <span className="inline-flex items-center rounded-full border border-[#E8E1D6] bg-white px-4 py-2 text-sm font-medium tabular-nums text-[#2C3E50]">
               ~5 likes
               <span className="ml-2 text-xs font-normal text-[#8A8379]">
@@ -389,9 +407,9 @@ export default function AdmissionHubCaseStudy() {
             <span className="text-[#8A8379]" aria-hidden>
               →
             </span>
-            <span className="inline-flex items-center rounded-full border border-[#305E98]/30 bg-[#305E98]/08 px-4 py-2 text-sm font-semibold tabular-nums text-[#305E98]">
+            <span className="inline-flex items-center rounded-full border border-[#E8E1D6] bg-white px-4 py-2 text-sm font-medium tabular-nums text-[#2C3E50]">
               ~30 likes
-              <span className="ml-2 text-xs font-normal text-[#5C6F8A]">
+              <span className="ml-2 text-xs font-normal text-[#8A8379]">
                 typical post (during)
               </span>
             </span>
