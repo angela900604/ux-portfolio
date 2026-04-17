@@ -274,7 +274,7 @@ export default function MomiAnimalHealthCaseStudy() {
             </div>
           </div>
 
-          <div className="mx-auto mt-10 w-full max-w-5xl space-y-12">
+          <div className="mx-auto mt-10 w-full max-w-6xl space-y-12">
             <div className="w-full max-w-xl">
               <h3 className="text-sm font-semibold text-[#2C3E50]">
                 eCommerce promotional cover variations
@@ -288,11 +288,14 @@ export default function MomiAnimalHealthCaseStudy() {
               </div>
             </div>
 
-            <div>
+            <div className="w-full">
               <h3 className="text-sm font-semibold text-[#2C3E50]">
-                Campaign &amp; mockups
+                Campaign
               </h3>
-              <div className="mt-4 grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-10 xl:grid-cols-3 xl:gap-10 lg:items-stretch">
+              <p className="mt-2 max-w-2xl text-sm text-[#666] leading-relaxed">
+                Promotional and informational printed posters.
+              </p>
+              <div className="mt-6 grid grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-12 lg:items-stretch">
                 {WHAT_I_DID_IMAGES.map((item) => (
                   <MomiUniformTile
                     key={item.key}

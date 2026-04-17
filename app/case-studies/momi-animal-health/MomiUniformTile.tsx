@@ -15,11 +15,11 @@ export function MomiUniformTile({
   emphasis?: boolean;
 }) {
   const frame = emphasis
-    ? "relative aspect-[3/4] w-full overflow-hidden rounded-[24px] bg-zinc-900/20 ring-1 ring-[#C4B8A8]/80"
+    ? "relative aspect-[5/7] w-full overflow-hidden rounded-[28px] bg-zinc-900/20 ring-1 ring-[#C4B8A8]/80"
     : "relative aspect-[4/5] w-full overflow-hidden rounded-[20px] bg-zinc-900/30 ring-1 ring-zinc-800/50";
 
   const sizes = emphasis
-    ? "(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
+    ? "(max-width: 640px) 100vw, min(50vw, 600px)"
     : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw";
 
   return (
