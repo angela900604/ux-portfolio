@@ -212,96 +212,14 @@ export default function AdmissionHubCaseStudy() {
           kicker="04 · What I did"
           title="A repeatable campaign + content system"
         >
-          <div className="mt-4 grid gap-4 sm:grid-cols-2">
-            <div className="rounded-2xl border border-[#E8E1D6] bg-white p-6">
-              <h3 className="text-sm font-semibold text-[#2C3E50]">
-                Email campaigns
-              </h3>
-            </div>
-            <div className="rounded-2xl border border-[#E8E1D6] bg-white p-6">
-              <h3 className="text-sm font-semibold text-[#2C3E50]">
-                SEO + WordPress
-              </h3>
-            </div>
-          </div>
-
-          <div className="mt-8 grid gap-6 lg:grid-cols-2 lg:items-start">
-            <div className="rounded-2xl border border-[#E8E1D6] bg-white p-6">
-              <h3 className="text-sm font-semibold text-[#2C3E50]">
-                Visuals for web + social
-              </h3>
-              <p className="mt-2 text-sm text-[#666] leading-relaxed">
-                I locked hero hierarchy and promo clarity so culture posts and
-                conversion flyers still read as one ADM system—supporting +500
-                followers and +21% engagement over roughly three months.
-              </p>
-            </div>
-            <div className="flex min-w-0 flex-col gap-6">
-              <div>
-                <p className="text-sm text-[#666] leading-relaxed">
-                  Long posts with clear outlines and sidebars so Taiwan- and
-                  Hong Kong–based readers could self-serve before consulting.
-                </p>
-                <figure className="mt-4 bg-[#F5F3EF]">
-                  <Image
-                    src={AH_ASSET("wordpress-blog-life-in-canada-50-facts.png")}
-                    alt="Admission Hub WordPress blog article — 50 interesting facts about Canada, desktop layout with hero image and sidebar widgets"
-                    width={1024}
-                    height={581}
-                    className="block h-auto w-full"
-                    sizes="(max-width: 896px) 100vw, 896px"
-                  />
-                  <figcaption className="mt-4 text-sm text-[#666] leading-relaxed">
-                    <span className="font-semibold text-[#2C3E50]">
-                      Featured articles (live)
-                    </span>
-                    <ul className="mt-2 flex flex-col gap-2">
-                      {ADMISSION_WP_ARTICLES.map((item) => (
-                        <li key={item.href}>
-                          <a
-                            href={item.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-[#2C3E50] underline decoration-[#D4C5B0] underline-offset-2 hover:decoration-[#8D99AE]"
-                          >
-                            {item.label}
-                          </a>
-                          <span className="text-[#9A9288]"> · WordPress</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </figcaption>
-                </figure>
-              </div>
-              <figure className="bg-[#F5F3EF]">
-                <Image
-                  src={AH_ASSET("dragon-boat-and-coop-creative.png")}
-                  alt="Admission Hub — Dragon Boat Festival Instagram post mockup beside Working Holiday COOP service flyer for Canada ADM"
-                  width={1024}
-                  height={556}
-                  className="block h-auto w-full"
-                  sizes="(max-width: 896px) 100vw, 896px"
-                />
-                <figcaption className="mt-4 space-y-2 text-sm text-[#666] leading-relaxed">
-                  <p>
-                    <strong className="text-[#2C3E50]">Left (Instagram):</strong>{" "}
-                    Calendar-driven cultural post engineered for saves and
-                    shares.
-                  </p>
-                  <p>
-                    <strong className="text-[#2C3E50]">Right (flyer):</strong>{" "}
-                    High-density Working Holiday COOP explainer—badges, proof
-                    collage, QR—for comprehension and next-step contact.
-                  </p>
-                </figcaption>
-              </figure>
-            </div>
-          </div>
-
-          <div className="mt-10 rounded-2xl border border-[#E8E1D6] bg-white p-6">
+          <div className="mt-4 rounded-2xl border border-[#E8E1D6] bg-white p-6">
             <h3 className="text-sm font-semibold text-[#2C3E50]">
               Email (Mailchimp) — how sends were structured
             </h3>
+            <p className="mt-2 text-sm text-[#666] leading-relaxed max-w-3xl">
+              Mailchimp execution—templates, segmentation, and cadence tied to
+              site content.
+            </p>
             <p className="mt-2 text-xs text-[#8A8379] leading-relaxed max-w-3xl">
               Original campaign screenshots weren&apos;t preserved.
             </p>
@@ -346,6 +264,91 @@ export default function AdmissionHubCaseStudy() {
                 </span>
               ))}
             </div>
+          </div>
+
+          <div className="mt-10 rounded-2xl border border-[#E8E1D6] bg-white p-6">
+            <h3 className="text-sm font-semibold text-[#2C3E50]">
+              SEO + WordPress
+            </h3>
+            <p className="mt-2 text-sm text-[#666] leading-relaxed max-w-3xl">
+              Utility articles and on-page structure to support organic
+              discovery.
+            </p>
+            <p className="mt-3 text-sm text-[#666] leading-relaxed max-w-3xl">
+              Long posts with clear outlines and sidebars so Taiwan- and Hong
+              Kong–based readers could self-serve before consulting.
+            </p>
+            <figure className="mt-6 bg-[#F5F3EF]">
+              <Image
+                src={AH_ASSET("wordpress-blog-life-in-canada-50-facts.png")}
+                alt="Admission Hub WordPress blog article — 50 interesting facts about Canada, desktop layout with hero image and sidebar widgets"
+                width={1024}
+                height={581}
+                className="block h-auto w-full"
+                sizes="(max-width: 896px) 100vw, 896px"
+              />
+              <figcaption className="mt-4 text-sm text-[#666] leading-relaxed">
+                <span className="font-semibold text-[#2C3E50]">
+                  Featured articles (live)
+                </span>
+                <ul className="mt-2 flex flex-col gap-2">
+                  {ADMISSION_WP_ARTICLES.map((item) => (
+                    <li key={item.href}>
+                      <a
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#2C3E50] underline decoration-[#D4C5B0] underline-offset-2 hover:decoration-[#8D99AE]"
+                      >
+                        {item.label}
+                      </a>
+                      <span className="text-[#9A9288]"> · WordPress</span>
+                    </li>
+                  ))}
+                </ul>
+              </figcaption>
+            </figure>
+          </div>
+
+          <div className="mt-10 grid gap-6 lg:grid-cols-2 lg:items-start">
+            <div className="rounded-2xl border border-[#E8E1D6] bg-white p-6">
+              <h3 className="text-sm font-semibold text-[#2C3E50]">
+                Visuals for web + social
+              </h3>
+              <p className="mt-2 text-sm text-[#666] leading-relaxed">
+                Figma graphics for the site and Instagram—supporting +500
+                followers and +21% engagement over roughly three months.
+              </p>
+              <p className="mt-3 text-sm text-[#666] leading-relaxed">
+                I locked hero hierarchy and promo clarity so culture posts and
+                conversion flyers still read as one ADM system.
+              </p>
+              <p className="mt-3 text-sm text-[#666] leading-relaxed">
+                Campaign and blog visuals so email, web, and social pointed to
+                the same story and CTAs.
+              </p>
+            </div>
+            <figure className="min-w-0 bg-[#F5F3EF]">
+              <Image
+                src={AH_ASSET("dragon-boat-and-coop-creative.png")}
+                alt="Admission Hub — Dragon Boat Festival Instagram post mockup beside Working Holiday COOP service flyer for Canada ADM"
+                width={1024}
+                height={556}
+                className="block h-auto w-full"
+                sizes="(max-width: 896px) 100vw, 896px"
+              />
+              <figcaption className="mt-4 space-y-2 text-sm text-[#666] leading-relaxed">
+                <p>
+                  <strong className="text-[#2C3E50]">Left (Instagram):</strong>{" "}
+                  Calendar-driven cultural post engineered for saves and shares.
+                </p>
+                <p>
+                  <strong className="text-[#2C3E50]">Right (flyer):</strong>{" "}
+                  High-density Working Holiday COOP explainer—badges, proof
+                  collage, QR—for comprehension and next-step contact.
+                </p>
+              </figcaption>
+            </figure>
           </div>
 
           <div className="mt-10 rounded-2xl border border-[#E8E1D6] bg-white p-6">
