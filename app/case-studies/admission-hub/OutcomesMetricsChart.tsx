@@ -36,10 +36,6 @@ export function OutcomesMetricsChart() {
           valueClass="text-[#DE723D]"
         />
       </div>
-      <p className="mt-5 text-xs text-[#7A7A7A]">
-        Percentage bars use a 0–100% scale; the followers row uses a full bar to
-        emphasize net volume.
-      </p>
     </div>
   );
 }
