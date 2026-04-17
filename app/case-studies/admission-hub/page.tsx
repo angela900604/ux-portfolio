@@ -160,8 +160,8 @@ export default function AdmissionHubCaseStudy() {
           <h2 className="mt-2 text-xl font-semibold text-[#2C3E50]">
             What the digital channel looked like when I joined
           </h2>
-          <div className="mt-4 rounded-2xl border border-[#E8E1D6] bg-white p-6 sm:p-8">
-            <p className="text-[#666] leading-relaxed max-w-2xl">
+          <div className="mt-4 max-w-2xl">
+            <p className="text-[#666] leading-relaxed">
               <a
                 href="https://www.instagram.com/adm.tw/"
                 target="_blank"
@@ -178,8 +178,8 @@ export default function AdmissionHubCaseStudy() {
               <span className="font-medium text-[#2C3E50]">~5 likes</span>.
             </p>
 
-            <div className="mt-8 border-t border-[#E8E1D6] pt-8">
-              <h3 className="text-lg font-semibold text-[#2C3E50] max-w-2xl leading-snug">
+            <div className="mt-8 border-t border-[#E0D9CE] pt-8">
+              <h3 className="text-lg font-semibold text-[#2C3E50] leading-snug">
                 My goal is to earn attention, then convert it into trust.
               </h3>
             </div>
