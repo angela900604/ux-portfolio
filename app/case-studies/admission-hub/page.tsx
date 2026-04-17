@@ -278,7 +278,7 @@ export default function AdmissionHubCaseStudy() {
             </div>
           </div>
 
-          <div className="mt-8 rounded-2xl border border-[#E8E1D6] bg-white p-6 max-w-2xl">
+          <div className="mt-8 rounded-2xl border border-[#E8E1D6] bg-white p-6">
             <h3 className="text-sm font-semibold text-[#2C3E50]">
               Calendar hooks &amp; “utility” social
             </h3>

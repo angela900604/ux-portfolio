@@ -16,21 +16,21 @@ export function OutcomesMetricsChart() {
           value="+500"
           valueNote="net new"
           barWidth={100}
-          barClass="bg-emerald-500/85"
+          barClass="bg-[#305E98]"
         />
         <MetricRow
           label="Engagement rate"
           value="+21%"
           valueNote="vs. baseline"
           barWidth={21}
-          barClass="bg-violet-500/80"
+          barClass="bg-[#CE1C1C]"
         />
         <MetricRow
           label="Organic traffic"
           value="+18%"
           valueNote="site sessions"
           barWidth={18}
-          barClass="bg-sky-500/75"
+          barClass="bg-[#DE723D]"
         />
       </div>
       <p className="mt-5 text-xs text-[#7A7A7A]">
