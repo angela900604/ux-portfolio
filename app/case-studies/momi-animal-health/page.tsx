@@ -30,11 +30,11 @@ const ECOMMERCE_SUPPORT_SLIDES = ["05", "04", "03", "02"].map((id, idx) => ({
 }));
 
 const ECOMMERCE_SLIDE_IDS = new Set(["02", "03", "04", "05"]);
-/** Also exclude legacy grid slots replaced by new marketing mockups */
+/** Slideshow IDs + grid slots replaced by tri-fold; 08 dropped from grid */
 const WHAT_I_DID_GRID_EXCLUDE = new Set([
   ...ECOMMERCE_SLIDE_IDS,
   "06",
-  "09",
+  "08",
 ]);
 
 const WHAT_I_DID_GRID_EXTRAS = [
@@ -42,11 +42,6 @@ const WHAT_I_DID_GRID_EXTRAS = [
     key: "tri-fold-brochure",
     src: MOMI_ASSET("marketing-tri-fold-brochure.png"),
     alt: "MOMI Animal Health — tri-fold brochure mockup for rabbit nutrition (COMPLETE-G line, hay and pellet benefits, Traditional Chinese)",
-  },
-  {
-    key: "flyer-mockup",
-    src: MOMI_ASSET("marketing-freeze-dried-flyer-mockup.png"),
-    alt: "MOMI Animal Health — freeze-dried fruit crunchy snacks flyer mockup with green brand frame and five flavor rows (Traditional Chinese)",
   },
 ] as const;
 
