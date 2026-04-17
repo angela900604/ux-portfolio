@@ -17,6 +17,7 @@ export function OutcomesMetricsChart() {
           valueNote="net new"
           barWidth={100}
           barClass="bg-[#305E98]"
+          valueClass="text-[#305E98]"
         />
         <MetricRow
           label="Engagement rate"
@@ -24,6 +25,7 @@ export function OutcomesMetricsChart() {
           valueNote="vs. baseline"
           barWidth={21}
           barClass="bg-[#CE1C1C]"
+          valueClass="text-[#CE1C1C]"
         />
         <MetricRow
           label="Organic traffic"
@@ -31,6 +33,7 @@ export function OutcomesMetricsChart() {
           valueNote="site sessions"
           barWidth={18}
           barClass="bg-[#DE723D]"
+          valueClass="text-[#DE723D]"
         />
       </div>
       <p className="mt-5 text-xs text-[#7A7A7A]">
@@ -47,19 +50,23 @@ function MetricRow({
   valueNote,
   barWidth,
   barClass,
+  valueClass,
 }: {
   label: string;
   value: string;
   valueNote: string;
   barWidth: number;
   barClass: string;
+  valueClass: string;
 }) {
   return (
     <div>
       <div className="flex flex-wrap items-baseline justify-between gap-2">
         <span className="text-sm text-[#666]">{label}</span>
         <div className="text-right">
-          <span className="text-lg font-semibold tabular-nums text-emerald-400">
+          <span
+            className={`text-lg font-semibold tabular-nums ${valueClass}`}
+          >
             {value}
           </span>
           <span className="ml-2 text-xs text-[#7A7A7A]">{valueNote}</span>
