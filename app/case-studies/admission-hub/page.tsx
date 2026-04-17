@@ -278,7 +278,7 @@ export default function AdmissionHubCaseStudy() {
               Long posts with clear outlines and sidebars so Taiwan- and Hong
               Kong–based readers could self-serve before consulting.
             </p>
-            <figure className="mt-6 bg-[#F5F3EF]">
+            <figure className="mt-6 bg-white">
               <Image
                 src={AH_ASSET("wordpress-blog-life-in-canada-50-facts.png")}
                 alt="Admission Hub WordPress blog article — 50 interesting facts about Canada, desktop layout with hero image and sidebar widgets"
