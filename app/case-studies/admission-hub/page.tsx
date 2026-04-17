@@ -3,7 +3,6 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
-import { WideFigure } from "../e-invoice-app/EInvoiceFigures";
 import { OutcomesMetricsChart } from "./OutcomesMetricsChart";
 
 const AH_ASSET = (name: string) => `/case-studies/admission-hub/${name}`;
@@ -307,16 +306,14 @@ export default function AdmissionHubCaseStudy() {
             </ul>
           </div>
 
-          <div className="mt-8 grid gap-6 sm:grid-cols-2">
-            <WideFigure
-              borderless
-              src={AH_ASSET("what-i-did-01.png")}
-              alt="Admission Hub — seasonal social post (Dragon Boat Festival) and Working Holiday COOP program flyer"
-            />
-            <WideFigure
-              borderless
-              src={AH_ASSET("what-i-did-02.png")}
-              alt="Admission Hub — print flyer for Working Holiday COOP and Canada ADM services"
+          <div className="mt-8">
+            <Image
+              src={AH_ASSET("what-i-did-hero.png")}
+              alt="Admission Hub — Dragon Boat Festival social creative paired with Working Holiday COOP poster"
+              width={1600}
+              height={900}
+              className="h-auto w-full object-contain"
+              sizes="(max-width: 1024px) 100vw, 1100px"
             />
           </div>
         </Section>
