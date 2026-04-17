@@ -10,7 +10,7 @@ import { MomiUniformTile } from "./MomiUniformTile";
 export const metadata = {
   title: "MOMI Animal Health | Angela Yang",
   description:
-    "Marketing design and eCommerce support for MOMI: clearer MOMO covers and retail promos, social giveaways, and aligned MOMO + social storytelling—supporting ~75% ecommerce sales growth from join through end of role.",
+    "MOMI Animal Health: marketing design and eCommerce support in Taiwan’s niche rabbit-care market—helped drive +75% online sales growth in two months.",
 };
 
 const MOMI_ASSET = (n: string) => `/case-studies/momi-animal-health/${n}`;
@@ -71,8 +71,6 @@ export default function MomiAnimalHealthCaseStudy() {
       <header className="border-b border-[#E0D9CE]">
         <div className="mx-auto max-w-[1280px] px-6 sm:px-[100px] py-16 sm:py-24">
           <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-[#7A7A7A] mb-6">
-            <span>Case Study</span>
-            <span className="text-[#B0B0B0]">·</span>
             <span>Digital Marketing</span>
             <span className="text-[#B0B0B0]">·</span>
             <span>Content + Growth</span>
@@ -82,9 +80,7 @@ export default function MomiAnimalHealthCaseStudy() {
             MOMI Animal Health
           </h1>
           <p className="mt-4 text-xl text-[#666] max-w-2xl">
-            Supported marketing execution and designed content for social,
-            promotions, and eCommerce—helping drive online sales growth for
-            rabbit-care products.
+            Helped drive +75% online sales growth in two months.
           </p>
 
           <dl className="mt-8 flex flex-wrap gap-x-10 gap-y-2 text-sm">
@@ -143,27 +139,10 @@ export default function MomiAnimalHealthCaseStudy() {
             </article>
             <article className="rounded-2xl border border-[#E8E1D6] bg-white p-6">
               <h3 className="text-sm font-semibold uppercase tracking-wide text-[#7B746B]">
-                My role
-              </h3>
-              <p className="mt-2 text-sm text-[#666] leading-relaxed">
-                Owned digital and printed poster design, plus social media and
-                eCommerce operations.
-              </p>
-            </article>
-            <article className="rounded-2xl border border-[#E8E1D6] bg-white p-6">
-              <h3 className="text-sm font-semibold uppercase tracking-wide text-[#7B746B]">
                 Tools
               </h3>
               <p className="mt-2 text-sm text-[#666] leading-relaxed">
                 Adobe Photoshop / Adobe Illustrator / Facebook / MOMO / Shopee
-              </p>
-            </article>
-            <article className="rounded-2xl border border-[#E8E1D6] bg-white p-6">
-              <h3 className="text-sm font-semibold uppercase tracking-wide text-[#7B746B]">
-                Timeline
-              </h3>
-              <p className="mt-2 text-sm text-[#666] leading-relaxed">
-                Feb 2021 – Sep 2021
               </p>
             </article>
           </div>
@@ -174,12 +153,22 @@ export default function MomiAnimalHealthCaseStudy() {
           kicker="01 · Goal"
           title="Make product value feel clear and actionable"
         >
-          <p className="mt-4 text-[#666] leading-relaxed max-w-2xl">
-            MOMI Animal Health focuses on high-quality rabbit care products. The
-            marketing goal was to communicate product benefits visually while
-            supporting purchase and account questions across social and
-            eCommerce channels.
-          </p>
+          <div className="mt-4 max-w-2xl space-y-4 text-[#666] leading-relaxed">
+            <p>
+              Rabbit owners are a{" "}
+              <span className="font-medium text-[#2C3E50]">
+                very small audience in Taiwan
+              </span>
+              —harder to reach at scale and with fewer category shortcuts than
+              dog- or cat-care brands.
+            </p>
+            <p>
+              MOMI Animal Health focuses on high-quality rabbit care products. The
+              marketing goal was to communicate product benefits visually while
+              supporting purchase and account questions across social and
+              eCommerce channels.
+            </p>
+          </div>
         </Section>
 
         <Section
