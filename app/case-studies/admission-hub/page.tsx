@@ -9,8 +9,7 @@ const AH_ASSET = (name: string) => `/case-studies/admission-hub/${name}`;
 
 const ADMISSION_TOC = [
   { id: "project-overview", label: "Project overview" },
-  { id: "starting-point", label: "Starting point" },
-  { id: "challenge", label: "Challenge" },
+  { id: "problem", label: "Problem" },
   { id: "strategy", label: "Strategy" },
   { id: "what-i-did", label: "What I did" },
   { id: "outcomes", label: "Outcomes" },
@@ -152,11 +151,11 @@ export default function AdmissionHubCaseStudy() {
         </Section>
 
         <section
-          id="starting-point"
+          id="problem"
           className="scroll-mt-28 sm:scroll-mt-32"
         >
           <span className="text-xs font-medium uppercase tracking-widest text-[#8D99AE]">
-            01 · Starting point
+            01 · Problem
           </span>
           <h2 className="mt-2 text-xl font-semibold text-[#2C3E50]">
             What the digital channel looked like when I joined
@@ -179,27 +178,17 @@ export default function AdmissionHubCaseStudy() {
               <span className="font-medium text-[#2C3E50]">~5 likes</span>.
             </p>
 
-            <div
-              id="challenge"
-              className="mt-8 scroll-mt-28 sm:scroll-mt-32 border-t border-[#E8E1D6] pt-8"
-            >
-              <span className="text-xs font-medium uppercase tracking-widest text-[#8D99AE]">
-                02 · Challenge
-              </span>
-              <h3 className="mt-2 text-lg font-semibold text-[#2C3E50] max-w-2xl leading-snug">
-                Earn attention, then convert it into trust
+            <div className="mt-8 border-t border-[#E8E1D6] pt-8">
+              <h3 className="text-lg font-semibold text-[#2C3E50] max-w-2xl leading-snug">
+                My goal is to earn attention, then convert it into trust.
               </h3>
-              <p className="mt-3 max-w-2xl text-sm text-[#666] leading-relaxed">
-                One @adm.tw feed still had to carry calendar and culture posts
-                alongside immigration and study touchpoints.
-              </p>
             </div>
           </div>
         </section>
 
         <Section
           id="strategy"
-          kicker="03 · Strategy"
+          kicker="02 · Strategy"
           title="My first bet: give people a reason to come back"
         >
           <div className="mt-4 max-w-2xl space-y-4 text-[#666] leading-relaxed">
@@ -226,7 +215,7 @@ export default function AdmissionHubCaseStudy() {
 
         <Section
           id="what-i-did"
-          kicker="04 · What I did"
+          kicker="03 · What I did"
           title="A repeatable campaign + content system"
         >
           <div className="mt-4 rounded-2xl border border-[#E8E1D6] bg-white p-6">
@@ -396,7 +385,7 @@ export default function AdmissionHubCaseStudy() {
 
         <Section
           id="outcomes"
-          kicker="05 · Outcomes"
+          kicker="04 · Outcomes"
           title="Measurable growth in engagement and reach"
         >
           <p className="mt-4 max-w-3xl text-sm text-[#666] leading-relaxed">
