@@ -328,53 +328,53 @@ export default function AdmissionHubCaseStudy() {
                 the same story and CTAs.
               </p>
             </div>
-            <figure className="min-w-0 bg-[#F5F3EF]">
-              <Image
-                src={AH_ASSET("dragon-boat-and-coop-creative.png")}
-                alt="Admission Hub — Dragon Boat Festival Instagram post mockup beside Working Holiday COOP service flyer for Canada ADM"
-                width={1024}
-                height={556}
-                className="block h-auto w-full"
-                sizes="(max-width: 896px) 100vw, 896px"
-              />
-              <figcaption className="mt-4 space-y-2 text-sm text-[#666] leading-relaxed">
-                <p>
-                  <strong className="text-[#2C3E50]">Left (Instagram):</strong>{" "}
-                  Calendar-driven cultural post engineered for saves and shares.
-                </p>
-                <p>
-                  <strong className="text-[#2C3E50]">Right (flyer):</strong>{" "}
-                  High-density Working Holiday COOP explainer—badges, proof
-                  collage, QR—for comprehension and next-step contact.
-                </p>
-              </figcaption>
-            </figure>
+            <div className="rounded-2xl border border-[#E8E1D6] bg-white p-6">
+              <h3 className="text-sm font-semibold text-[#2C3E50]">
+                Calendar hooks &amp; “utility” social
+              </h3>
+              <p className="mt-2 text-sm text-[#666] leading-relaxed">
+                I chased utility moments people actually search for on Instagram
+                (times, places, seasonal hooks).
+              </p>
+              <ul className="mt-4 flex flex-col gap-2 text-sm">
+                {ADMISSION_IG_EXAMPLES.map((item) => (
+                  <li key={item.href}>
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#2C3E50] underline decoration-[#D4C5B0] underline-offset-2 hover:decoration-[#8D99AE]"
+                    >
+                      {item.label}
+                    </a>
+                    <span className="text-[#9A9288]"> · Instagram</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
-          <div className="mt-10 rounded-2xl border border-[#E8E1D6] bg-white p-6">
-            <h3 className="text-sm font-semibold text-[#2C3E50]">
-              Calendar hooks &amp; “utility” social
-            </h3>
-            <p className="mt-2 text-sm text-[#666] leading-relaxed max-w-3xl">
-              I chased utility moments people actually search for on Instagram
-              (times, places, seasonal hooks).
-            </p>
-            <ul className="mt-4 flex flex-col gap-2 text-sm">
-              {ADMISSION_IG_EXAMPLES.map((item) => (
-                <li key={item.href}>
-                  <a
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#2C3E50] underline decoration-[#D4C5B0] underline-offset-2 hover:decoration-[#8D99AE]"
-                  >
-                    {item.label}
-                  </a>
-                  <span className="text-[#9A9288]"> · Instagram</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <figure className="mt-10 bg-[#F5F3EF]">
+            <Image
+              src={AH_ASSET("dragon-boat-and-coop-creative.png")}
+              alt="Admission Hub — Dragon Boat Festival Instagram post mockup beside Working Holiday COOP service flyer for Canada ADM"
+              width={1024}
+              height={556}
+              className="block h-auto w-full"
+              sizes="(max-width: 896px) 100vw, 896px"
+            />
+            <figcaption className="mt-4 space-y-2 text-sm text-[#666] leading-relaxed">
+              <p>
+                <strong className="text-[#2C3E50]">Left (Instagram):</strong>{" "}
+                Calendar-driven cultural post engineered for saves and shares.
+              </p>
+              <p>
+                <strong className="text-[#2C3E50]">Right (flyer):</strong>{" "}
+                High-density Working Holiday COOP explainer—badges, proof
+                collage, QR—for comprehension and next-step contact.
+              </p>
+            </figcaption>
+          </figure>
         </Section>
 
         <Section
