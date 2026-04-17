@@ -30,15 +30,37 @@ const ECOMMERCE_SUPPORT_SLIDES = ["05", "04", "03", "02"].map((id, idx) => ({
 }));
 
 const ECOMMERCE_SLIDE_IDS = new Set(["02", "03", "04", "05"]);
+/** Also exclude legacy grid slots replaced by new marketing mockups */
+const WHAT_I_DID_GRID_EXCLUDE = new Set([
+  ...ECOMMERCE_SLIDE_IDS,
+  "06",
+  "09",
+]);
 
-const WHAT_I_DID_IMAGES = Array.from({ length: 9 }, (_, i) => {
-  const id = String(i + 1).padStart(2, "0");
-  return {
-    id,
-    src: MOMI_ASSET(`what-i-did-${id}.png`),
-    alt: `MOMI Animal Health — campaign and product creative ${i + 1} of 9`,
-  };
-}).filter((item) => !ECOMMERCE_SLIDE_IDS.has(item.id));
+const WHAT_I_DID_GRID_EXTRAS = [
+  {
+    key: "tri-fold-brochure",
+    src: MOMI_ASSET("marketing-tri-fold-brochure.png"),
+    alt: "MOMI Animal Health — tri-fold brochure mockup for rabbit nutrition (COMPLETE-G line, hay and pellet benefits, Traditional Chinese)",
+  },
+  {
+    key: "flyer-mockup",
+    src: MOMI_ASSET("marketing-freeze-dried-flyer-mockup.png"),
+    alt: "MOMI Animal Health — freeze-dried fruit crunchy snacks flyer mockup with green brand frame and five flavor rows (Traditional Chinese)",
+  },
+] as const;
+
+const WHAT_I_DID_IMAGES = [
+  ...Array.from({ length: 9 }, (_, i) => {
+    const id = String(i + 1).padStart(2, "0");
+    return {
+      key: id,
+      src: MOMI_ASSET(`what-i-did-${id}.png`),
+      alt: `MOMI Animal Health — campaign and product creative ${id}`,
+    };
+  }).filter((item) => !WHAT_I_DID_GRID_EXCLUDE.has(item.key)),
+  ...WHAT_I_DID_GRID_EXTRAS,
+];
 
 function Section({
   kicker,
@@ -256,7 +278,11 @@ export default function MomiAnimalHealthCaseStudy() {
 
           <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:items-stretch">
             {WHAT_I_DID_IMAGES.map((item) => (
-              <MomiUniformTile key={item.src} src={item.src} alt={item.alt} />
+              <MomiUniformTile
+                key={item.key}
+                src={item.src}
+                alt={item.alt}
+              />
             ))}
           </div>
         </Section>
@@ -269,11 +295,7 @@ export default function MomiAnimalHealthCaseStudy() {
           <p className="mt-4 text-[#666] leading-relaxed max-w-2xl">
             The +75% figure is growth in ecommerce platform sales from when I
             joined through my last month—the same period when MOMO covers, retail
-            promo pieces, and social giveaways were refreshed. Without site
-            analytics, the complementary claim is checkable in the assets: for a
-            given product line, MOMO heroes and social posts share the same
-            headline structure and main visual, so the offer reads consistently
-            in-feed and on the shop.
+            promo pieces, and social giveaways were refreshed.
           </p>
           <div className="mt-6 max-w-3xl">
             <MomiOutcomesChart />
