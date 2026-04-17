@@ -296,7 +296,7 @@ export default function MomiAnimalHealthCaseStudy() {
               <h3 className="text-sm font-semibold text-[#2C3E50]">
                 Campaign &amp; mockups
               </h3>
-              <div className="mt-4 grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-10 lg:items-stretch">
+              <div className="mt-4 grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-10 xl:grid-cols-3 xl:gap-10 lg:items-stretch">
                 {WHAT_I_DID_IMAGES.map((item) => (
                   <MomiUniformTile
                     key={item.key}

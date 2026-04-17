@@ -19,7 +19,7 @@ export function MomiUniformTile({
     : "relative aspect-[4/5] w-full overflow-hidden rounded-[20px] bg-zinc-900/30 ring-1 ring-zinc-800/50";
 
   const sizes = emphasis
-    ? "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, min(42vw, 520px)"
+    ? "(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
     : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw";
 
   return (
