@@ -14,11 +14,14 @@ export function MomiImageSlideshow({
   slides,
   label,
   compact = false,
+  block = false,
 }: {
   slides: MomiSlide[];
   label: string;
   /** Small footprint for utilitarian storefront caps; mockups stay the hero elsewhere */
   compact?: boolean;
+  /** Full width of parent (e.g. same rail as heading copy) */
+  block?: boolean;
 }) {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
@@ -50,19 +53,23 @@ export function MomiImageSlideshow({
 
   const current = slides[safeIndex];
 
-  const shell = compact
-    ? "mx-0 w-full max-w-[200px] rounded-lg border border-[#E8E1D6] bg-white p-2 sm:max-w-[220px]"
-    : "mx-auto w-full max-w-md rounded-xl border border-[#E8E1D6] bg-white p-3 sm:max-w-lg sm:p-4";
+  const isCompact = compact && !block;
 
-  const frame = compact
+  const shell = block
+    ? "w-full max-w-none rounded-xl border border-[#E8E1D6] bg-white p-3 sm:p-4"
+    : isCompact
+      ? "mx-0 w-full max-w-[200px] rounded-lg border border-[#E8E1D6] bg-white p-2 sm:max-w-[220px]"
+      : "mx-auto w-full max-w-md rounded-xl border border-[#E8E1D6] bg-white p-3 sm:max-w-lg sm:p-4";
+
+  const frame = isCompact
     ? "relative aspect-square w-full overflow-hidden rounded-md border border-[#E8E1D6] bg-[#FDFBF8]"
     : "relative aspect-[4/3] w-full overflow-hidden rounded-lg border border-[#E8E1D6] bg-[#FDFBF8]";
 
-  const navBtn = compact
+  const navBtn = isCompact
     ? "pointer-events-auto rounded-full border border-[#D6CBB8] bg-white/90 px-2 py-1 text-xs text-[#4A4A4A] transition hover:bg-[#F5F0E8]"
     : "pointer-events-auto rounded-full border border-[#D6CBB8] bg-white/90 px-3 py-1.5 text-sm text-[#4A4A4A] transition hover:bg-[#F5F0E8]";
 
-  const dotWrap = compact ? "mt-2" : "mt-3";
+  const dotWrap = isCompact ? "mt-2" : "mt-3";
 
   return (
     <div
@@ -80,9 +87,11 @@ export function MomiImageSlideshow({
             fill
             className="object-contain"
             sizes={
-              compact
-                ? "(max-width: 640px) 45vw, 220px"
-                : "(max-width: 640px) 100vw, 512px"
+              block
+                ? "(max-width: 640px) 100vw, 576px"
+                : isCompact
+                  ? "(max-width: 640px) 45vw, 220px"
+                  : "(max-width: 640px) 100vw, 512px"
             }
             priority={safeIndex === 0}
           />
@@ -90,7 +99,7 @@ export function MomiImageSlideshow({
 
         {total > 1 ? (
           <div
-            className={`pointer-events-none absolute inset-y-0 left-0 right-0 flex items-center justify-between ${compact ? "px-1" : "px-2"}`}
+            className={`pointer-events-none absolute inset-y-0 left-0 right-0 flex items-center justify-between ${isCompact ? "px-1" : "px-2"}`}
           >
             <button
               type="button"
@@ -122,7 +131,7 @@ export function MomiImageSlideshow({
               aria-label={`Go to slide ${i + 1}`}
               aria-current={i === safeIndex}
               className={`rounded-full transition ${
-                compact ? "h-1.5 w-1.5" : "h-2 w-2"
+                isCompact ? "h-1.5 w-1.5" : "h-2 w-2"
               } ${
                 i === safeIndex
                   ? "bg-[#8D99AE]"
@@ -134,7 +143,7 @@ export function MomiImageSlideshow({
       ) : null}
 
       <p
-        className={`mt-1.5 text-center text-[#7A7A7A] ${compact ? "text-[10px] leading-tight" : "text-[11px]"}`}
+        className={`mt-1.5 text-center text-[#7A7A7A] ${isCompact ? "text-[10px] leading-tight" : "text-[11px]"}`}
       >
         {label} ({safeIndex + 1}/{total})
       </p>

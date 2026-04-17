@@ -275,19 +275,13 @@ export default function MomiAnimalHealthCaseStudy() {
           </div>
 
           <div className="mx-auto mt-10 w-full max-w-5xl space-y-12">
-            <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:gap-8 lg:gap-10">
-              <div className="min-w-0 flex-1">
-                <h3 className="text-sm font-semibold text-[#2C3E50]">
-                  eCommerce support slideshow
-                </h3>
-                <p className="mt-2 max-w-xl text-sm text-[#666] leading-relaxed">
-                  Featured MOMO promotional cover variations—shown small as a
-                  reference strip.
-                </p>
-              </div>
-              <div className="shrink-0">
+            <div className="w-full max-w-xl">
+              <h3 className="text-sm font-semibold text-[#2C3E50]">
+                eCommerce promotional cover variations
+              </h3>
+              <div className="mt-4 w-full">
                 <MomiImageSlideshow
-                  compact
+                  block
                   slides={ECOMMERCE_SUPPORT_SLIDES}
                   label="MOMO eCommerce cover designs"
                 />
