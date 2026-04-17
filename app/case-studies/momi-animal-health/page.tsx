@@ -15,8 +15,6 @@ export const metadata = {
 
 const MOMI_ASSET = (n: string) => `/case-studies/momi-animal-health/${n}`;
 
-const MOMI_PRODUCT_FLYER = MOMI_ASSET("product-flyer-freeze-dried-fruit.png");
-
 const MOMI_TOC = [
   { id: "project-overview", label: "Project overview" },
   { id: "goal", label: "Goal" },
@@ -276,31 +274,7 @@ export default function MomiAnimalHealthCaseStudy() {
             </div>
           </div>
 
-          <div className="mt-8 rounded-2xl border border-[#E8E1D6] bg-white p-6 sm:p-8">
-            <h3 className="text-sm font-semibold text-[#2C3E50]">
-              Before / after: one clear story
-            </h3>
-            <p className="mt-2 text-sm text-[#666] leading-relaxed max-w-2xl">
-              Earlier printed and digital banners jumped between styles, and
-              product flyers often felt bare—they didn&apos;t lead with benefits.
-              I moved the system toward a single green-forward brand frame,
-              benefit-first copy, and a repeatable layout so people could scan
-              flavors and claims in seconds. Below: freeze-dried fruit line
-              flyer I art-directed and produced.
-            </p>
-            <div className="mt-6 relative w-full max-w-xl mx-auto overflow-hidden rounded-xl border border-[#E8E1D6] bg-[#FAF7F2]">
-              <Image
-                src={MOMI_PRODUCT_FLYER}
-                alt="MOMI Animal Health product flyer for freeze-dried fruit crunchy snacks—unified green branding, fruit rows, and benefit callouts"
-                width={800}
-                height={1200}
-                className="w-full h-auto object-contain"
-                sizes="(max-width: 640px) 100vw, 480px"
-              />
-            </div>
-          </div>
-
-          <div className="mt-6">
+          <div className="mt-8">
             <h3 className="text-sm font-semibold text-[#2C3E50]">
               eCommerce support slideshow
             </h3>

@@ -49,20 +49,20 @@ export function MomiImageSlideshow({
 
   return (
     <div
-      className="rounded-2xl border border-[#E8E1D6] bg-white p-4 sm:p-5"
+      className="mx-auto w-full max-w-md rounded-xl border border-[#E8E1D6] bg-white p-3 sm:max-w-lg sm:p-4"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       aria-roledescription="carousel"
       aria-label={label}
     >
       <div className="relative">
-        <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl border border-[#E8E1D6] bg-[#FDFBF8]">
+        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg border border-[#E8E1D6] bg-[#FDFBF8]">
           <Image
             src={current.src}
             alt={current.alt}
             fill
             className="object-contain"
-            sizes="(max-width: 768px) 100vw, 960px"
+            sizes="(max-width: 640px) 100vw, 512px"
             priority={safeIndex === 0}
           />
         </div>
@@ -106,7 +106,7 @@ export function MomiImageSlideshow({
         </div>
       ) : null}
 
-      <p className="mt-3 text-center text-xs text-[#7A7A7A]">
+      <p className="mt-2 text-center text-[11px] text-[#7A7A7A]">
         {label} ({safeIndex + 1}/{total})
       </p>
     </div>
