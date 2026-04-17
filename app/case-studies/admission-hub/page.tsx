@@ -78,8 +78,6 @@ export default function AdmissionHubCaseStudy() {
       <header className="border-b border-[#E0D9CE]">
         <div className="mx-auto max-w-[1280px] px-6 sm:px-[100px] py-16 sm:py-24">
           <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-[#7A7A7A] mb-6">
-            <span>Case Study</span>
-            <span className="text-[#B0B0B0]">·</span>
             <span>Digital Marketing</span>
             <span className="text-[#B0B0B0]">·</span>
             <span>Content + Growth</span>
