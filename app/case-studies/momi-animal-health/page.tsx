@@ -274,30 +274,39 @@ export default function MomiAnimalHealthCaseStudy() {
             </div>
           </div>
 
-          <div className="mt-8">
-            <h3 className="text-sm font-semibold text-[#2C3E50]">
-              eCommerce support slideshow
-            </h3>
-            <p className="mt-2 text-sm text-[#666] leading-relaxed">
-              Featured MOMO promotional cover variations shown as a standalone
-              sequence.
-            </p>
-            <div className="mt-4">
-              <MomiImageSlideshow
-                slides={ECOMMERCE_SUPPORT_SLIDES}
-                label="MOMO eCommerce cover designs"
-              />
+          <div className="mx-auto mt-10 w-full max-w-5xl space-y-12">
+            <div>
+              <h3 className="text-sm font-semibold text-[#2C3E50]">
+                eCommerce support slideshow
+              </h3>
+              <p className="mt-2 max-w-xl text-sm text-[#666] leading-relaxed">
+                Featured MOMO promotional cover variations—shown small as a
+                reference strip.
+              </p>
+              <div className="mt-4 flex justify-start">
+                <MomiImageSlideshow
+                  compact
+                  slides={ECOMMERCE_SUPPORT_SLIDES}
+                  label="MOMO eCommerce cover designs"
+                />
+              </div>
             </div>
-          </div>
 
-          <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:items-stretch">
-            {WHAT_I_DID_IMAGES.map((item) => (
-              <MomiUniformTile
-                key={item.key}
-                src={item.src}
-                alt={item.alt}
-              />
-            ))}
+            <div>
+              <h3 className="text-sm font-semibold text-[#2C3E50]">
+                Campaign &amp; mockups
+              </h3>
+              <div className="mt-4 grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-10 lg:items-stretch">
+                {WHAT_I_DID_IMAGES.map((item) => (
+                  <MomiUniformTile
+                    key={item.key}
+                    src={item.src}
+                    alt={item.alt}
+                    emphasis
+                  />
+                ))}
+              </div>
+            </div>
           </div>
         </Section>
 

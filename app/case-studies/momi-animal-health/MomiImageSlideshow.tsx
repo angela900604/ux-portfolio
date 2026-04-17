@@ -13,9 +13,12 @@ const AUTO_MS = 3200;
 export function MomiImageSlideshow({
   slides,
   label,
+  compact = false,
 }: {
   slides: MomiSlide[];
   label: string;
+  /** Small footprint for utilitarian storefront caps; mockups stay the hero elsewhere */
+  compact?: boolean;
 }) {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
@@ -47,32 +50,52 @@ export function MomiImageSlideshow({
 
   const current = slides[safeIndex];
 
+  const shell = compact
+    ? "mx-0 w-full max-w-[200px] rounded-lg border border-[#E8E1D6] bg-white p-2 sm:max-w-[220px]"
+    : "mx-auto w-full max-w-md rounded-xl border border-[#E8E1D6] bg-white p-3 sm:max-w-lg sm:p-4";
+
+  const frame = compact
+    ? "relative aspect-square w-full overflow-hidden rounded-md border border-[#E8E1D6] bg-[#FDFBF8]"
+    : "relative aspect-[4/3] w-full overflow-hidden rounded-lg border border-[#E8E1D6] bg-[#FDFBF8]";
+
+  const navBtn = compact
+    ? "pointer-events-auto rounded-full border border-[#D6CBB8] bg-white/90 px-2 py-1 text-xs text-[#4A4A4A] transition hover:bg-[#F5F0E8]"
+    : "pointer-events-auto rounded-full border border-[#D6CBB8] bg-white/90 px-3 py-1.5 text-sm text-[#4A4A4A] transition hover:bg-[#F5F0E8]";
+
+  const dotWrap = compact ? "mt-2" : "mt-3";
+
   return (
     <div
-      className="mx-auto w-full max-w-md rounded-xl border border-[#E8E1D6] bg-white p-3 sm:max-w-lg sm:p-4"
+      className={shell}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       aria-roledescription="carousel"
       aria-label={label}
     >
       <div className="relative">
-        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg border border-[#E8E1D6] bg-[#FDFBF8]">
+        <div className={frame}>
           <Image
             src={current.src}
             alt={current.alt}
             fill
             className="object-contain"
-            sizes="(max-width: 640px) 100vw, 512px"
+            sizes={
+              compact
+                ? "(max-width: 640px) 45vw, 220px"
+                : "(max-width: 640px) 100vw, 512px"
+            }
             priority={safeIndex === 0}
           />
         </div>
 
         {total > 1 ? (
-          <div className="pointer-events-none absolute inset-y-0 left-0 right-0 flex items-center justify-between px-2">
+          <div
+            className={`pointer-events-none absolute inset-y-0 left-0 right-0 flex items-center justify-between ${compact ? "px-1" : "px-2"}`}
+          >
             <button
               type="button"
               aria-label="Previous slide"
-              className="pointer-events-auto rounded-full border border-[#D6CBB8] bg-white/90 px-3 py-1.5 text-sm text-[#4A4A4A] transition hover:bg-[#F5F0E8]"
+              className={navBtn}
               onClick={() => go(-1)}
             >
               ←
@@ -80,7 +103,7 @@ export function MomiImageSlideshow({
             <button
               type="button"
               aria-label="Next slide"
-              className="pointer-events-auto rounded-full border border-[#D6CBB8] bg-white/90 px-3 py-1.5 text-sm text-[#4A4A4A] transition hover:bg-[#F5F0E8]"
+              className={navBtn}
               onClick={() => go(1)}
             >
               →
@@ -90,7 +113,7 @@ export function MomiImageSlideshow({
       </div>
 
       {total > 1 ? (
-        <div className="mt-3 flex items-center justify-center gap-2">
+        <div className={`${dotWrap} flex items-center justify-center gap-1.5`}>
           {slides.map((_, i) => (
             <button
               key={i}
@@ -98,15 +121,21 @@ export function MomiImageSlideshow({
               onClick={() => setIndex(i)}
               aria-label={`Go to slide ${i + 1}`}
               aria-current={i === safeIndex}
-              className={`h-2 w-2 rounded-full transition ${
-                i === safeIndex ? "bg-[#8D99AE]" : "bg-[#D2C8BA] hover:bg-[#B9AE9F]"
+              className={`rounded-full transition ${
+                compact ? "h-1.5 w-1.5" : "h-2 w-2"
+              } ${
+                i === safeIndex
+                  ? "bg-[#8D99AE]"
+                  : "bg-[#D2C8BA] hover:bg-[#B9AE9F]"
               }`}
             />
           ))}
         </div>
       ) : null}
 
-      <p className="mt-2 text-center text-[11px] text-[#7A7A7A]">
+      <p
+        className={`mt-1.5 text-center text-[#7A7A7A] ${compact ? "text-[10px] leading-tight" : "text-[11px]"}`}
+      >
         {label} ({safeIndex + 1}/{total})
       </p>
     </div>
