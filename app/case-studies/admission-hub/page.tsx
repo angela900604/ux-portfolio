@@ -151,34 +151,51 @@ export default function AdmissionHubCaseStudy() {
           </div>
         </Section>
 
-        <Section
+        <section
           id="starting-point"
-          kicker="01 · Starting point"
-          title="What the digital channel looked like when I joined"
+          className="scroll-mt-28 sm:scroll-mt-32"
         >
-          <p className="mt-4 text-[#666] leading-relaxed max-w-2xl">
-            <a
-              href="https://www.instagram.com/adm.tw/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium text-[#2C3E50] underline decoration-[#D4C5B0] underline-offset-2 hover:decoration-[#8D99AE]"
-            >
-              @adm.tw
-            </a>{" "}
-            had just over{" "}
-            <span className="font-medium text-[#2C3E50]">1,200 followers</span>,
-            and typical posts landed around{" "}
-            <span className="font-medium text-[#2C3E50]">~5 likes</span>.
-          </p>
-        </Section>
+          <span className="text-xs font-medium uppercase tracking-widest text-[#8D99AE]">
+            01 · Starting point
+          </span>
+          <h2 className="mt-2 text-xl font-semibold text-[#2C3E50]">
+            What the digital channel looked like when I joined
+          </h2>
+          <div className="mt-4 rounded-2xl border border-[#E8E1D6] bg-white p-6 sm:p-8">
+            <p className="text-[#666] leading-relaxed max-w-2xl">
+              <a
+                href="https://www.instagram.com/adm.tw/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-[#2C3E50] underline decoration-[#D4C5B0] underline-offset-2 hover:decoration-[#8D99AE]"
+              >
+                @adm.tw
+              </a>{" "}
+              had just over{" "}
+              <span className="font-medium text-[#2C3E50]">
+                1,200 followers
+              </span>
+              , and typical posts landed around{" "}
+              <span className="font-medium text-[#2C3E50]">~5 likes</span>.
+            </p>
 
-        <Section
-          id="challenge"
-          kicker="02 · Challenge"
-          title="Earn attention, then convert it into trust"
-        >
-          {null}
-        </Section>
+            <div
+              id="challenge"
+              className="mt-8 scroll-mt-28 sm:scroll-mt-32 border-t border-[#E8E1D6] pt-8"
+            >
+              <span className="text-xs font-medium uppercase tracking-widest text-[#8D99AE]">
+                02 · Challenge
+              </span>
+              <h3 className="mt-2 text-lg font-semibold text-[#2C3E50] max-w-2xl leading-snug">
+                Earn attention, then convert it into trust
+              </h3>
+              <p className="mt-3 max-w-2xl text-sm text-[#666] leading-relaxed">
+                One @adm.tw feed still had to carry calendar and culture posts
+                alongside immigration and study touchpoints.
+              </p>
+            </div>
+          </div>
+        </section>
 
         <Section
           id="strategy"
