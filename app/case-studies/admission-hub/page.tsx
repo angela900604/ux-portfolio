@@ -141,9 +141,9 @@ export default function AdmissionHubCaseStudy() {
                 Brief / Background
               </h3>
               <p className="mt-2 text-sm text-[#666] leading-relaxed">
-                Admission Hub supports students preparing for study-abroad
-                pathways. This project focused on building a consistent digital
-                marketing system across email, social content, and website channels.
+                Admission Hub supports students and families evaluating Canadian
+                study and immigration paths—primarily audiences in Taiwan and Hong
+                Kong researching options before they commit.
               </p>
             </article>
             <article className="rounded-2xl border border-[#E8E1D6] bg-white p-6">
@@ -151,8 +151,7 @@ export default function AdmissionHubCaseStudy() {
                 My role
               </h3>
               <p className="mt-2 text-sm text-[#666] leading-relaxed">
-                Owned campaign execution across digital marketing, social content,
-                and WordPress-driven SEO updates.
+                Digital Marketer
               </p>
             </article>
             <article className="rounded-2xl border border-[#E8E1D6] bg-white p-6">
@@ -161,14 +160,6 @@ export default function AdmissionHubCaseStudy() {
               </h3>
               <p className="mt-2 text-sm text-[#666] leading-relaxed">
                 Mailchimp / WordPress / Figma / Instagram
-              </p>
-            </article>
-            <article className="rounded-2xl border border-[#E8E1D6] bg-white p-6">
-              <h3 className="text-sm font-semibold uppercase tracking-wide text-[#7B746B]">
-                Timeline
-              </h3>
-              <p className="mt-2 text-sm text-[#666] leading-relaxed">
-                May 2022 – Aug 2022
               </p>
             </article>
           </div>
@@ -464,19 +455,7 @@ export default function AdmissionHubCaseStudy() {
           kicker="05 · Outcomes"
           title="Measurable growth in engagement and reach"
         >
-          <p className="mt-4 text-[#666] leading-relaxed max-w-2xl">
-            These numbers reflect growth during my time in the role: about{" "}
-            <span className="font-medium text-[#2C3E50]">three months</span> of
-            execution. On top of{" "}
-            <span className="font-medium text-[#2C3E50]">+500 net new followers</span>,{" "}
-            <span className="font-medium text-[#2C3E50]">+21% engagement</span>, and{" "}
-            <span className="font-medium text-[#2C3E50]">+18% organic traffic</span>{" "}
-            on the site, typical feed posts moved from roughly{" "}
-            <span className="font-medium text-[#2C3E50]">~5 likes to ~30 likes</span>
-            —a concrete before/after on the same channel.
-          </p>
-
-          <div className="mt-6 flex flex-wrap items-center gap-2 sm:gap-3">
+          <div className="mt-4 flex flex-wrap items-center gap-2 sm:gap-3">
             <span className="inline-flex items-center rounded-full border border-[#E8E1D6] bg-white px-4 py-2 text-sm font-medium tabular-nums text-[#2C3E50]">
               ~5 likes
               <span className="ml-2 text-xs font-normal text-[#8A8379]">
