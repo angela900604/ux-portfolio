@@ -306,14 +306,14 @@ export default function AdmissionHubCaseStudy() {
             </ul>
           </div>
 
-          <div className="mt-8">
+          <div className="mt-8 bg-[#F5F3EF]">
             <Image
-              src={AH_ASSET("what-i-did-hero.png")}
-              alt="Admission Hub — Dragon Boat Festival social creative paired with Working Holiday COOP poster"
-              width={1600}
-              height={900}
-              className="h-auto w-full object-contain"
-              sizes="(max-width: 1024px) 100vw, 1100px"
+              src={AH_ASSET("dragon-boat-and-coop-creative.png")}
+              alt="Admission Hub — Dragon Boat Festival Instagram post mockup beside Working Holiday COOP service flyer for Canada ADM"
+              width={1024}
+              height={556}
+              className="block h-auto w-full"
+              sizes="(max-width: 896px) 100vw, 896px"
             />
           </div>
         </Section>
