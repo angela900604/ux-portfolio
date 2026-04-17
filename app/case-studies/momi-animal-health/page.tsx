@@ -57,6 +57,25 @@ const WHAT_I_DID_IMAGES = [
   ...WHAT_I_DID_GRID_EXTRAS,
 ];
 
+const PET_EXPO_PHOTOS = [
+  {
+    src: MOMI_ASSET("pet-expo-corner-booth.png"),
+    alt: "MOMI Animal Health — teal corner booth at a Taiwan pet exhibition with stacked product, logo wall, and floor display",
+  },
+  {
+    src: MOMI_ASSET("pet-expo-wall-display.png"),
+    alt: "MOMI Animal Health — exhibition wall with MOMI rabbit logo and backlit shelving of hay and treat lines",
+  },
+  {
+    src: MOMI_ASSET("pet-expo-rabbit-first-cut-hay.png"),
+    alt: "MOMI Animal Health — rabbit on Timothy hay at the booth with first-cut hay signage and product bags",
+  },
+  {
+    src: MOMI_ASSET("pet-expo-rabbit-alfalfa-display.png"),
+    alt: "MOMI Animal Health — rabbit on hay next to MOMI alfalfa carton and colorful treat pouches at the pet show",
+  },
+] as const;
+
 function Section({
   kicker,
   title,
@@ -230,6 +249,32 @@ export default function MomiAnimalHealthCaseStudy() {
               offer language as the storefront so expectations stayed aligned.
             </li>
           </ul>
+
+          <div className="mt-8">
+            <h3 className="text-sm font-semibold text-[#2C3E50]">
+              Pet expo — on-site
+            </h3>
+            <p className="mt-2 text-sm text-[#666] leading-relaxed max-w-2xl">
+              Photos from the pet exhibition floor: booth footprint, wall
+              display, and live rabbit on hay next to product.
+            </p>
+            <div className="mt-4 grid gap-4 sm:grid-cols-2">
+              {PET_EXPO_PHOTOS.map((photo) => (
+                <div
+                  key={photo.src}
+                  className="relative aspect-[4/3] w-full overflow-hidden rounded-xl border border-[#E8E1D6] bg-[#FAF7F2]"
+                >
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    fill
+                    className="object-cover object-center"
+                    sizes="(max-width: 640px) 100vw, 50vw"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
 
           <div className="mt-8 rounded-2xl border border-[#E8E1D6] bg-white p-6 sm:p-8">
             <h3 className="text-sm font-semibold text-[#2C3E50]">
