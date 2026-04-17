@@ -26,7 +26,7 @@ export function CaseStudyPrevNext({
 
   const base =
     theme === "light"
-      ? "rounded-xl border border-[#D4C5B0]/80 bg-white/60 px-4 py-3 text-sm text-[#4A4A4A] transition hover:border-[#B0A090] hover:bg-white/90"
+      ? "rounded-[22px] border border-[#D5C9B7] bg-[#F5F3EF] px-6 py-3 text-sm text-[#4A4A4A] transition hover:border-[#B8AA95] hover:bg-[#F8F5F0]"
       : "rounded-xl border border-zinc-700/60 bg-zinc-900/40 px-4 py-3 text-sm text-zinc-300 transition hover:border-zinc-600 hover:bg-zinc-900/60 hover:text-zinc-100";
 
   const muted =

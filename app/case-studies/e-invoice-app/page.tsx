@@ -62,7 +62,7 @@ const E_INVOICE_TOC = [
 ] as const;
 
 const AT_A_GLANCE_ITEMS = [
-  { label: "Timeline", value: "Feb – Sep 2025 (8 months)" },
+  { label: "Timeline", value: "Feb 2025 – Sep 2025 (8 months)" },
   { label: "Role", value: "UX/UI Designer" },
   {
     label: "Project type",

@@ -91,7 +91,7 @@ const FINAL_PRODUCT_GROUPS: readonly FinalProductGroup[] = [
 ];
 
 const AT_A_GLANCE_ITEMS = [
-  { label: "Timeline", value: "December 2024 – March 2025" },
+  { label: "Timeline", value: "Dec 2024 – Mar 2025" },
   { label: "Role", value: "Lead UX/UI Designer" },
   { label: "Project type", value: "Mobile app" },
   {

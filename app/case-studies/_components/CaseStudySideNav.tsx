@@ -95,9 +95,9 @@ export function CaseStudySideNav({
             const darkActive =
               "border-violet-500/80 text-zinc-100 hover:border-violet-500 hover:text-white";
             const lightInactive =
-              "border-transparent text-[#6B6B6B] hover:border-[#8D99AE] hover:text-[#2C3E50]";
+              "border-transparent text-[#6D665D] hover:border-[#5F6F89] hover:text-[#2C3E50]";
             const lightActive =
-              "border-[#8D99AE] text-[#2C3E50] font-medium";
+              "border-[#4D5F7C] bg-[#EDE8DF] text-[#2C3E50] font-semibold";
 
             const linkClass = isDark
               ? `${base} ${active ? darkActive : darkInactive}`

@@ -4,26 +4,41 @@ import type { ReactNode } from "react";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { MomiOutcomesChart } from "./MomiOutcomesChart";
+import { MomiImageSlideshow } from "./MomiImageSlideshow";
 import { MomiUniformTile } from "./MomiUniformTile";
 
 export const metadata = {
   title: "MOMI Animal Health | Angela Yang",
   description:
-    "Designed social and promotional content for rabbit-care products and supported eCommerce execution, driving a 75% increase in online sales within two months.",
+    "Marketing design and eCommerce support for MOMI: clearer MOMO covers and retail promos, social giveaways, and aligned MOMO + social storytelling—supporting ~75% ecommerce sales growth from join through end of role.",
 };
 
 const MOMI_ASSET = (n: string) => `/case-studies/momi-animal-health/${n}`;
 
+const MOMI_PRODUCT_FLYER = MOMI_ASSET("product-flyer-freeze-dried-fruit.png");
+
 const MOMI_TOC = [
+  { id: "project-overview", label: "Project overview" },
   { id: "goal", label: "Goal" },
   { id: "what-i-did", label: "What I did" },
   { id: "outcomes", label: "Outcomes" },
 ] as const;
 
-const WHAT_I_DID_IMAGES = Array.from({ length: 9 }, (_, i) => ({
-  src: MOMI_ASSET(`what-i-did-${String(i + 1).padStart(2, "0")}.png`),
-  alt: `MOMI Animal Health — campaign and product creative ${i + 1} of 9`,
+const ECOMMERCE_SUPPORT_SLIDES = ["05", "04", "03", "02"].map((id, idx) => ({
+  src: MOMI_ASSET(`what-i-did-${id}.png`),
+  alt: `MOMI Animal Health — eCommerce support creative ${idx + 1} of 4`,
 }));
+
+const ECOMMERCE_SLIDE_IDS = new Set(["02", "03", "04", "05"]);
+
+const WHAT_I_DID_IMAGES = Array.from({ length: 9 }, (_, i) => {
+  const id = String(i + 1).padStart(2, "0");
+  return {
+    id,
+    src: MOMI_ASSET(`what-i-did-${id}.png`),
+    alt: `MOMI Animal Health — campaign and product creative ${i + 1} of 9`,
+  };
+}).filter((item) => !ECOMMERCE_SLIDE_IDS.has(item.id));
 
 function Section({
   kicker,
@@ -41,10 +56,10 @@ function Section({
       id={id}
       className={id ? "scroll-mt-28 sm:scroll-mt-32" : undefined}
     >
-      <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+      <span className="text-xs font-medium uppercase tracking-widest text-[#8D99AE]">
         {kicker}
       </span>
-      <h2 className="mt-2 text-xl font-semibold text-zinc-100">{title}</h2>
+      <h2 className="mt-2 text-xl font-semibold text-[#2C3E50]">{title}</h2>
       {children}
     </section>
   );
@@ -52,21 +67,21 @@ function Section({
 
 export default function MomiAnimalHealthCaseStudy() {
   return (
-    <article className="min-h-screen bg-zinc-950 text-zinc-100">
-      <header className="border-b border-zinc-800">
+    <article className="min-h-screen bg-[#F5F3EF] text-[#4A4A4A]">
+      <header className="border-b border-[#E0D9CE]">
         <div className="mx-auto max-w-[1280px] px-6 sm:px-[100px] py-16 sm:py-24">
-          <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-zinc-500 mb-6">
+          <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-[#7A7A7A] mb-6">
             <span>Case Study</span>
-            <span className="text-zinc-600">·</span>
+            <span className="text-[#B0B0B0]">·</span>
             <span>Digital Marketing</span>
-            <span className="text-zinc-600">·</span>
+            <span className="text-[#B0B0B0]">·</span>
             <span>Content + Growth</span>
           </div>
 
-          <h1 className="font-semibold text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight max-w-3xl">
+          <h1 className="font-semibold text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight max-w-3xl text-[#2C3E50]">
             MOMI Animal Health
           </h1>
-          <p className="mt-4 text-xl text-zinc-400 max-w-2xl">
+          <p className="mt-4 text-xl text-[#666] max-w-2xl">
             Supported marketing execution and designed content for social,
             promotions, and eCommerce—helping drive online sales growth for
             rabbit-care products.
@@ -74,23 +89,25 @@ export default function MomiAnimalHealthCaseStudy() {
 
           <dl className="mt-8 flex flex-wrap gap-x-10 gap-y-2 text-sm">
             <div>
-              <dt className="text-zinc-500 uppercase tracking-wider">Role</dt>
-              <dd className="text-zinc-200">Social Media & eCommerce</dd>
+              <dt className="text-[#7A7A7A] uppercase tracking-wider">Role</dt>
+              <dd className="text-[#4A4A4A]">
+                Social media, eCommerce, and campaign design
+              </dd>
             </div>
             <div>
-              <dt className="text-zinc-500 uppercase tracking-wider">Location</dt>
-              <dd className="text-zinc-200">Taipei, Taiwan</dd>
+              <dt className="text-[#7A7A7A] uppercase tracking-wider">Location</dt>
+              <dd className="text-[#4A4A4A]">Taipei, Taiwan</dd>
             </div>
             <div>
-              <dt className="text-zinc-500 uppercase tracking-wider">
+              <dt className="text-[#7A7A7A] uppercase tracking-wider">
                 Timeline
               </dt>
-              <dd className="text-zinc-200">Mar – Aug 2021</dd>
+              <dd className="text-[#4A4A4A]">Feb 2021 – Sep 2021</dd>
             </div>
           </dl>
 
           <div className="mt-12">
-            <div className="relative w-full aspect-[21/9] overflow-hidden rounded-2xl border border-zinc-700/50 bg-zinc-900/30">
+            <div className="relative w-full aspect-[21/9] overflow-hidden rounded-2xl border border-[#D8CFC1] bg-[#FAF7F2]">
               <Image
                 src="/home/momicover.png"
                 alt="MOMI Animal Health cover"
@@ -103,13 +120,61 @@ export default function MomiAnimalHealthCaseStudy() {
         </div>
       </header>
 
-      <CaseStudyContentLayout toc={MOMI_TOC} contentClassName="space-y-16">
+      <CaseStudyContentLayout
+        toc={MOMI_TOC}
+        variant="light"
+        contentClassName="space-y-16"
+      >
+        <Section
+          id="project-overview"
+          kicker="00 · Project overview"
+          title="At a glance"
+        >
+          <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
+            <article className="rounded-2xl border border-[#E8E1D6] bg-white p-6">
+              <h3 className="text-sm font-semibold uppercase tracking-wide text-[#7B746B]">
+                Brief / Background
+              </h3>
+              <p className="mt-2 text-sm text-[#666] leading-relaxed">
+                MOMI Animal Health is a rabbit-care brand. The project focused on
+                building clearer product communication across social channels and
+                eCommerce touchpoints to support both engagement and conversion.
+              </p>
+            </article>
+            <article className="rounded-2xl border border-[#E8E1D6] bg-white p-6">
+              <h3 className="text-sm font-semibold uppercase tracking-wide text-[#7B746B]">
+                My role
+              </h3>
+              <p className="mt-2 text-sm text-[#666] leading-relaxed">
+                Owned digital and printed poster design, plus social media and
+                eCommerce operations.
+              </p>
+            </article>
+            <article className="rounded-2xl border border-[#E8E1D6] bg-white p-6">
+              <h3 className="text-sm font-semibold uppercase tracking-wide text-[#7B746B]">
+                Tools
+              </h3>
+              <p className="mt-2 text-sm text-[#666] leading-relaxed">
+                Adobe Photoshop / Adobe Illustrator / Facebook / MOMO / Shopee
+              </p>
+            </article>
+            <article className="rounded-2xl border border-[#E8E1D6] bg-white p-6">
+              <h3 className="text-sm font-semibold uppercase tracking-wide text-[#7B746B]">
+                Timeline
+              </h3>
+              <p className="mt-2 text-sm text-[#666] leading-relaxed">
+                Feb 2021 – Sep 2021
+              </p>
+            </article>
+          </div>
+        </Section>
+
         <Section
           id="goal"
           kicker="01 · Goal"
           title="Make product value feel clear and actionable"
         >
-          <p className="mt-4 text-zinc-300 leading-relaxed max-w-2xl">
+          <p className="mt-4 text-[#666] leading-relaxed max-w-2xl">
             MOMI Animal Health focuses on high-quality rabbit care products. The
             marketing goal was to communicate product benefits visually while
             supporting purchase and account questions across social and
@@ -122,38 +187,81 @@ export default function MomiAnimalHealthCaseStudy() {
           kicker="02 · What I did"
           title="Content system across touchpoints"
         >
-          <div className="mt-4 grid gap-4 sm:grid-cols-2">
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
-              <h3 className="text-sm font-semibold text-zinc-100">Social content</h3>
-              <p className="mt-2 text-sm text-zinc-400 leading-relaxed">
-                Designed user-friendly social media posts using Canva and worked
-                with Facebook campaigns to boost engagement.
-              </p>
+          <p className="mt-4 text-sm text-[#666] leading-relaxed max-w-2xl">
+            Most of this execution landed in the first ~two months of my role;
+            the +75% sales outcome in Outcomes is measured from my start date
+            through my last month. The work focused on making offers scannable
+            and consistent everywhere shoppers met the brand—especially on MOMO,
+            in pet-store displays, and on social.
+          </p>
+          <ul className="mt-4 max-w-2xl list-disc space-y-2 pl-5 text-sm text-[#666] leading-relaxed">
+            <li>
+              <strong className="font-semibold text-[#2C3E50]">
+                MOMO storefront covers:
+              </strong>{" "}
+              Redesigned covers so promo bundles and price stories read faster,
+              with clearer visual hierarchy around the deal.
+            </li>
+            <li>
+              <strong className="font-semibold text-[#2C3E50]">
+                Retail &amp; in-store promos:
+              </strong>{" "}
+              Brighter tabletop and banner-style pieces for pet-store campaigns so
+              discounts stood out on the floor.
+            </li>
+            <li>
+              <strong className="font-semibold text-[#2C3E50]">
+                Social activations:
+              </strong>{" "}
+              Giveaway / lottery-style posts to earn shares and tags beyond
+              static product shots.
+            </li>
+            <li>
+              <strong className="font-semibold text-[#2C3E50]">
+                Buyer touchpoints:
+              </strong>{" "}
+              Day-to-day chat and DM support on MOMO and social, using the same
+              offer language as the storefront so expectations stayed aligned.
+            </li>
+          </ul>
+
+          <div className="mt-8 rounded-2xl border border-[#E8E1D6] bg-white p-6 sm:p-8">
+            <h3 className="text-sm font-semibold text-[#2C3E50]">
+              Before / after: one clear story
+            </h3>
+            <p className="mt-2 text-sm text-[#666] leading-relaxed max-w-2xl">
+              Earlier printed and digital banners jumped between styles, and
+              product flyers often felt bare—they didn&apos;t lead with benefits.
+              I moved the system toward a single green-forward brand frame,
+              benefit-first copy, and a repeatable layout so people could scan
+              flavors and claims in seconds. Below: freeze-dried fruit line
+              flyer I art-directed and produced.
+            </p>
+            <div className="mt-6 relative w-full max-w-xl mx-auto overflow-hidden rounded-xl border border-[#E8E1D6] bg-[#FAF7F2]">
+              <Image
+                src={MOMI_PRODUCT_FLYER}
+                alt="MOMI Animal Health product flyer for freeze-dried fruit crunchy snacks—unified green branding, fruit rows, and benefit callouts"
+                width={800}
+                height={1200}
+                className="w-full h-auto object-contain"
+                sizes="(max-width: 640px) 100vw, 480px"
+              />
             </div>
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
-              <h3 className="text-sm font-semibold text-zinc-100">
-                Promotions & creatives
-              </h3>
-              <p className="mt-2 text-sm text-zinc-400 leading-relaxed">
-                Created print posters, banners, and flyers using Photoshop and
-                Illustrator to support exhibitions and retail advertising.
-              </p>
-            </div>
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
-              <h3 className="text-sm font-semibold text-zinc-100">eCommerce support</h3>
-              <p className="mt-2 text-sm text-zinc-400 leading-relaxed">
-                Designed promotional covers for MOMO’s eCommerce platform and
-                managed client inquiries via chat and social media.
-              </p>
-            </div>
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
-              <h3 className="text-sm font-semibold text-zinc-100">
-                Outcome-focused execution
-              </h3>
-              <p className="mt-2 text-sm text-zinc-400 leading-relaxed">
-                Partnered with the marketing team to run campaigns that improved
-                online purchase conversion.
-              </p>
+          </div>
+
+          <div className="mt-6">
+            <h3 className="text-sm font-semibold text-[#2C3E50]">
+              eCommerce support slideshow
+            </h3>
+            <p className="mt-2 text-sm text-[#666] leading-relaxed">
+              Featured MOMO promotional cover variations shown as a standalone
+              sequence.
+            </p>
+            <div className="mt-4">
+              <MomiImageSlideshow
+                slides={ECOMMERCE_SUPPORT_SLIDES}
+                label="MOMO eCommerce cover designs"
+              />
             </div>
           </div>
 
@@ -169,21 +277,25 @@ export default function MomiAnimalHealthCaseStudy() {
           kicker="03 · Outcomes"
           title="A clear lift in online sales"
         >
-          <p className="mt-4 text-zinc-300 leading-relaxed max-w-2xl">
-            Within two months, stronger creatives and clearer messaging translated
-            into measurable eCommerce lift and more consistent storytelling across
-            channels.
+          <p className="mt-4 text-[#666] leading-relaxed max-w-2xl">
+            The +75% figure is growth in ecommerce platform sales from when I
+            joined through my last month—the same period when MOMO covers, retail
+            promo pieces, and social giveaways were refreshed. Without site
+            analytics, the complementary claim is checkable in the assets: for a
+            given product line, MOMO heroes and social posts share the same
+            headline structure and main visual, so the offer reads consistently
+            in-feed and on the shop.
           </p>
           <div className="mt-6 max-w-3xl">
             <MomiOutcomesChart />
           </div>
         </Section>
 
-        <section className="border-t border-zinc-800 pt-12 space-y-8">
-          <CaseStudyPrevNext currentSlug="momi-animal-health" />
+        <section className="border-t border-[#E0D9CE] pt-12 space-y-8">
+          <CaseStudyPrevNext currentSlug="momi-animal-health" variant="light" />
           <Link
             href="/"
-            className="text-sm font-medium text-zinc-400 hover:text-zinc-100 transition"
+            className="text-sm font-medium text-[#6A6358] hover:text-[#2C3E50] transition"
           >
             ← Back to work
           </Link>

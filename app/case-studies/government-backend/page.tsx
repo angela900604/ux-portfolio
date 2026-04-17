@@ -9,13 +9,13 @@ import { FlatAppShot, WideFigure } from "../e-invoice-app/EInvoiceFigures";
 export const metadata = {
   title: "Role-Based Government Backend (600+ Staff) | Angela Yang",
   description:
-    "Backend platform for the Ministry of Finance uniform invoice lottery redemption app: role-based access, reporting, and version control for 600+ government staff (July–September 2025).",
+    "Backend platform for the Ministry of Finance uniform invoice lottery redemption app: role-based access, reporting, and version control for 600+ government staff (Jul 2025 – Sep 2025).",
 };
 
 const ASSET = (name: string) => `/case-studies/government-backend/${name}`;
 
 const AT_A_GLANCE_ITEMS = [
-  { label: "Timeline", value: "July – September 2025" },
+  { label: "Timeline", value: "Jul 2025 – Sep 2025" },
   { label: "Role", value: "Lead UX/UI Designer" },
   { label: "Project type", value: "Backend platform" },
   {
@@ -38,7 +38,7 @@ const GOV_BACKEND_SCAN_SUMMARY = [
   "Lead UX/UI for the Ministry of Finance uniform invoice lottery redemption backend—role-based access, operational reporting, and workflows for 600+ government staff.",
   "Designed a permission model that hides irrelevant features and restricts high-impact actions by role so teams can work in parallel without breaking public-facing content.",
   "Redesigned reporting into actionable dashboards with weekly/monthly views, filters, and CSV export so staff could prep meetings and audits with less reliance on engineering.",
-  "Delivered end-to-end product design with PM and engineering partners on a July–September 2025 timeline.",
+  "Delivered end-to-end product design with PM and engineering partners on a Jul 2025 – Sep 2025 timeline.",
 ] as const;
 
 function Metric({ children }: { children: ReactNode }) {
@@ -117,7 +117,7 @@ export default function GovernmentBackendCaseStudy() {
                   Shipped
                 </p>
                 <p className="mt-1 text-sm font-medium text-zinc-100">
-                  July–September 2025
+                  Jul 2025 – Sep 2025
                 </p>
               </div>
             </div>

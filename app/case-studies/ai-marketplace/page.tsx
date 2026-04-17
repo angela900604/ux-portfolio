@@ -13,7 +13,7 @@ const MINA_APP_STORE =
   "https://apps.apple.com/ca/app/mina-resale-for-parents/id6754006404";
 
 const AT_A_GLANCE_ITEMS = [
-  { label: "Timeline", value: "Ongoing (2025+)" },
+  { label: "Timeline", value: "2025 – Present (ongoing)" },
   { label: "Role", value: "Product designer · AI UX" },
   {
     label: "Project type",
