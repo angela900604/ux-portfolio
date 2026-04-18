@@ -113,9 +113,9 @@ export default function Home() {
       <section id="featured" className="border-b border-zinc-800">
         <div className="mx-auto max-w-[1280px] px-6 sm:px-[100px] py-16 sm:py-20">
           <h2 className="text-zinc-100">Selected Projects</h2>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg">
-            0→1 products across AI-powered automation, Public Services, and
-            Consumer Loyalty.
+          <p className="mt-4 max-w-2xl text-pretty text-base leading-relaxed text-zinc-400 sm:text-lg">
+            0→1 products across AI-powered automation, Public&nbsp;Services, and
+            Consumer&nbsp;Loyalty.
           </p>
 
           <Link

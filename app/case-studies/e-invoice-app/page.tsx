@@ -8,6 +8,7 @@ import { CompetitorLandscapeTable } from "./CompetitorLandscapeTable";
 import { DesignJourneyCollapsible } from "../_components/DesignJourneyCollapsible";
 import { ProblemPersonasBlock } from "./ProblemPersonasBlock";
 import { OutcomeAutoSlideshow } from "./OutcomeAutoSlideshow";
+import { FinalScreensMarquee } from "./FinalScreensMarquee";
 import { PhoneMockup, PortraitTile, WideFigure } from "./EInvoiceFigures";
 
 export const metadata = {
@@ -180,6 +181,7 @@ const KEY_OUTCOME_ROWS: {
       "settings-homepage-display.png",
       "settings-membership-card.png",
     ],
+    autoSlideshow: true,
     evidence:
       "This was the hardest tension in the whole system: silver users asked for the sparsest possible home so they could find one or two actions, while younger users wanted winning invoices and spending history surfaced immediately. Two credible audiences, mutually exclusive defaults.",
     problem:
@@ -237,6 +239,18 @@ const FINAL_SOLUTION_SCREENS: {
   { id: "17", title: "掃描紙本發票 · Paper receipt scan" },
   { id: "18", title: "通知中心 · Notifications" },
 ];
+
+const FINAL_SOLUTION_MARQUEE_SLIDES = FINAL_SOLUTION_SCREENS.flatMap((item) => {
+  const files =
+    item.assetFiles ?? [item.assetFile ?? `solution-final-${item.id}.png`];
+  return files.map((file, i) => ({
+    src: ASSET(file),
+    alt:
+      files.length > 1
+        ? `${item.title} (${i + 1}/${files.length})`
+        : item.title,
+  }));
+});
 
 function KeyOutcomePhoneFigures({
   row,
@@ -610,26 +624,9 @@ export default function EInvoiceCaseStudy() {
           </h2>
           <p className="max-w-3xl text-zinc-300 leading-relaxed">
             Selected key functional screens—focused on the flows that matter most.
+            Auto-scrolling strip; click any screen to view larger.
           </p>
-          <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-            {FINAL_SOLUTION_SCREENS.flatMap((item) => {
-              const files =
-                item.assetFiles ??
-                [item.assetFile ?? `solution-final-${item.id}.png`];
-              return files.map((file, i) => (
-                <WideFigure
-                  key={`${item.id}-${i}`}
-                  borderless
-                  src={ASSET(file)}
-                  alt={
-                    files.length > 1
-                      ? `${item.title} (${i + 1}/${files.length})`
-                      : item.title
-                  }
-                />
-              ));
-            })}
-          </div>
+          <FinalScreensMarquee slides={FINAL_SOLUTION_MARQUEE_SLIDES} />
         </section>
 
         <section

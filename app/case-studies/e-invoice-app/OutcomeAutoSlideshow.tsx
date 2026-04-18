@@ -68,10 +68,10 @@ export function OutcomeAutoSlideshow({
         ))}
       </div>
       {screens.length > 1 ? (
-        <div
+               <div
           className="flex justify-center gap-1.5"
           role="tablist"
-          aria-label="Onboarding screens"
+          aria-label={`${label} — slides`}
         >
           {screens.map((_, i) => (
             <button

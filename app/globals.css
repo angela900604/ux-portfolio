@@ -98,3 +98,35 @@ textarea,
     animation: none;
   }
 }
+
+/* E-invoice case study — 07 final screens infinite marquee */
+@keyframes final-screens-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.final-screens-marquee-viewport {
+  overflow-x: hidden;
+}
+
+.final-screens-marquee-track {
+  animation: final-screens-marquee var(--final-marquee-duration, 60s) linear
+    infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .final-screens-marquee-viewport {
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+  }
+
+  .final-screens-marquee-track {
+    animation: none;
+    will-change: auto;
+  }
+}
