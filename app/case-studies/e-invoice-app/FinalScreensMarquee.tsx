@@ -24,7 +24,7 @@ function MarqueeSlide({
       <ImageLightbox
         src={slide.src}
         alt={slide.alt}
-        className="block overflow-hidden rounded-[20px] border border-zinc-700/60 bg-zinc-900/30"
+        className="block overflow-visible bg-transparent"
       >
         <Image
           src={slide.src}
@@ -62,14 +62,6 @@ export function FinalScreensMarquee({
       role="region"
       aria-label="Final solution screens — auto-scrolling gallery. Pause with reduced motion in system settings."
     >
-      <div
-        className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-gradient-to-r from-zinc-950 to-transparent sm:w-14"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-zinc-950 to-transparent sm:w-14"
-        aria-hidden
-      />
       <div className="final-screens-marquee-viewport -mx-1 sm:-mx-2">
         <div
           className="final-screens-marquee-track flex w-max py-1"

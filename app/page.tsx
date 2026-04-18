@@ -104,14 +104,14 @@ export default function Home() {
     <div className="min-h-screen bg-zinc-950 text-zinc-100">
       {/* Hero */}
       <section className="border-b border-zinc-800">
-        <div className="mx-auto max-w-[1280px] px-6 sm:px-[100px] py-20 sm:py-28">
+        <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-20 sm:py-28">
           <HeroWithBubble />
         </div>
       </section>
 
       {/* Selected projects */}
       <section id="featured" className="border-b border-zinc-800">
-        <div className="mx-auto max-w-[1280px] px-6 sm:px-[100px] py-16 sm:py-20">
+        <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-16 sm:py-20">
           <h2 className="text-zinc-100">Selected Projects</h2>
           <p className="mt-4 max-w-2xl text-pretty text-base leading-relaxed text-zinc-400 sm:text-lg">
             0→1 products across AI-powered automation, Public&nbsp;Services, and
@@ -130,7 +130,7 @@ export default function Home() {
                   width={E_INVOICE_FLAGSHIP_COVER.width}
                   height={E_INVOICE_FLAGSHIP_COVER.height}
                   className="h-auto w-full opacity-95 transition-transform duration-300 ease-out group-hover:scale-[1.01]"
-                  sizes="(max-width: 1280px) 100vw, 1080px"
+                  sizes="(max-width: 1440px) 100vw, 1080px"
                   priority
                 />
               </div>
@@ -197,7 +197,7 @@ export default function Home() {
 
       {/* Brand & storytelling */}
       <section id="selected-work" className="border-b border-zinc-800">
-        <div className="mx-auto max-w-[1280px] px-6 sm:px-[100px] py-16 sm:py-20">
+        <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-16 sm:py-20">
           <h2 className="text-zinc-100">Brand &amp; Storytelling</h2>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg">
             Supporting product launches through visual identity and marketing
@@ -244,7 +244,7 @@ export default function Home() {
 
       {/* Contact */}
       <section id="contact" className="border-b border-zinc-800">
-        <div className="mx-auto max-w-[1280px] px-6 sm:px-[100px] py-16 sm:py-20">
+        <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-16 sm:py-20">
           <h2 className="text-zinc-100">Let&apos;s Build Something Together</h2>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg">
             Currently open to Product Design roles that require an end-to-end

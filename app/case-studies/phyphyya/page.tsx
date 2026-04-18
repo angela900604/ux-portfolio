@@ -168,9 +168,9 @@ export default function PhyphyyaCaseStudy() {
 
   return (
     <div className="min-h-screen bg-[#F5F3EF] text-[#4A4A4A]">
-      <div className="mx-auto max-w-[1280px]">
+      <div className="mx-auto max-w-[1440px]">
         <header className="border-b border-[#E0D9CE]">
-          <div className="mx-auto max-w-[1280px] px-6 sm:px-[100px] py-16 sm:py-24">
+          <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-16 sm:py-24">
             <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-[#7A7A7A] mb-6">
               <span>Brand IP</span>
               <span className="text-[#B0B0B0]">·</span>
@@ -493,7 +493,7 @@ export default function PhyphyyaCaseStudy() {
           </div>
 
           {/* Left = smaller mobile capture, right = larger desktop grid; same height on lg */}
-          <div className="flex flex-col lg:flex-row gap-6 max-w-[1280px] mx-auto mb-[40px] lg:items-stretch lg:h-[min(540px,72vh)]">
+          <div className="flex flex-col lg:flex-row gap-6 max-w-[1440px] mx-auto mb-[40px] lg:items-stretch lg:h-[min(540px,72vh)]">
             <div className="flex shrink-0 lg:w-[min(280px,32%)] items-center justify-center overflow-hidden rounded-[8px] bg-[#faf9f7] shadow-[0_5px_15px_rgba(0,0,0,0.08)] px-3 py-4 lg:py-6 min-h-[420px] lg:min-h-0">
               <img
                 src="/case-studies/phyphyya/etsy-shop-mobile.png"
@@ -670,7 +670,7 @@ export default function PhyphyyaCaseStudy() {
           </div>
 
           {/* Row 1: three cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[22px] max-w-[1280px] mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[22px] max-w-[1440px] mx-auto">
             {[
               {
                 src: "/case-studies/phyphyya/pod-magnets-fridge.png",
@@ -706,7 +706,7 @@ export default function PhyphyyaCaseStudy() {
           </div>
 
           {/* Row 2: three columns — middle = size range + laptop merged, equal height */}
-          <div className="mt-[22px] grid grid-cols-1 lg:grid-cols-3 gap-[22px] max-w-[1280px] mx-auto items-stretch lg:min-h-[520px]">
+          <div className="mt-[22px] grid grid-cols-1 lg:grid-cols-3 gap-[22px] max-w-[1440px] mx-auto items-stretch lg:min-h-[520px]">
             <div className="flex flex-col overflow-hidden rounded-[8px] bg-white shadow-[0_4px_10px_rgba(0,0,0,0.04)] h-full min-h-0">
               <div className="relative flex-1 min-h-[280px] lg:min-h-0">
                 <img
@@ -776,7 +776,7 @@ export default function PhyphyyaCaseStudy() {
           </div>
 
           {/* Big image + thumbnails (no framed UI) */}
-          <div className="w-full max-w-[1280px] mx-auto">
+          <div className="w-full max-w-[1440px] mx-auto">
             <div className="relative w-full aspect-[16/9] overflow-hidden">
               <img
                 src="/case-studies/phyphyya/gallery-14.png"
@@ -829,7 +829,7 @@ export default function PhyphyyaCaseStudy() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[30px] w-full max-w-[1280px] mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[30px] w-full max-w-[1440px] mx-auto">
             {sweatshirtSeries.map((it) => (
               <div
                 key={it.src}

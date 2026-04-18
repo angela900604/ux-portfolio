@@ -177,7 +177,7 @@ export default function BaskinRobbinsCaseStudy() {
   return (
     <article className="min-h-screen bg-zinc-950 text-zinc-100">
       <header className="border-b border-zinc-800">
-        <div className="mx-auto max-w-[1280px] px-6 sm:px-[100px] py-16 sm:py-24">
+        <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-16 sm:py-24">
           <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-zinc-500 mb-6">
             <span>Case Study</span>
             <span className="text-zinc-600">·</span>
@@ -356,7 +356,7 @@ export default function BaskinRobbinsCaseStudy() {
 
         <section
           id="final-product"
-          className={`space-y-10 max-w-6xl ${sectionScroll}`}
+          className={`space-y-10 max-w-7xl ${sectionScroll}`}
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Final product

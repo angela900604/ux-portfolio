@@ -313,7 +313,7 @@ export default function EInvoiceCaseStudy() {
   return (
     <article className="min-h-screen bg-zinc-950 text-zinc-100">
       <header className="border-b border-zinc-800">
-        <div className="mx-auto max-w-[1280px] px-6 sm:px-[100px] py-16 sm:py-24">
+        <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-16 sm:py-24">
           <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-zinc-500 mb-6">
             <span>Case Study</span>
             <span className="text-zinc-600">·</span>
@@ -529,7 +529,7 @@ export default function EInvoiceCaseStudy() {
 
         <section
           id="key-outcomes"
-          className="scroll-mt-28 space-y-14 sm:scroll-mt-32 max-w-6xl"
+          className="scroll-mt-28 space-y-14 sm:scroll-mt-32 max-w-7xl"
         >
           <div className="max-w-3xl space-y-4">
             <span className="text-xs font-medium uppercase tracking-widest text-emerald-400/90">
@@ -614,7 +614,7 @@ export default function EInvoiceCaseStudy() {
 
         <section
           id="final-solution-screens"
-          className="scroll-mt-28 space-y-10 max-w-6xl"
+          className="scroll-mt-28 space-y-10 max-w-7xl"
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             07 · Final solution screens
@@ -683,7 +683,7 @@ export default function EInvoiceCaseStudy() {
         >
         <section
           id="competitor-insights"
-          className="max-w-6xl scroll-mt-28 space-y-5 sm:scroll-mt-32"
+          className="max-w-7xl scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             03 · Competitor insights &amp; design process
@@ -903,7 +903,7 @@ export default function EInvoiceCaseStudy() {
 
         <section
           id="testing"
-          className="max-w-6xl scroll-mt-28 space-y-6 sm:scroll-mt-32"
+          className="max-w-7xl scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
           <div className="max-w-3xl space-y-6">
             <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">

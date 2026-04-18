@@ -10,7 +10,7 @@ export function ProblemPersonasBlock() {
   return (
     <section
       id="user-journey-map"
-      className="max-w-6xl scroll-mt-28 space-y-12 sm:scroll-mt-32"
+      className="max-w-7xl scroll-mt-28 space-y-12 sm:scroll-mt-32"
     >
       <div className="space-y-4 max-w-3xl">
         <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">

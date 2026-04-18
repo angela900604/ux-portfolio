@@ -64,7 +64,7 @@ export function AnnotatedFlowSlideshow({ items }: { items: SlideshowSlide[] }) {
             width={2400}
             height={1600}
             className="h-auto w-full object-contain"
-            sizes="(max-width: 1280px) 100vw, 900px"
+            sizes="(max-width: 1440px) 100vw, 900px"
             priority={safeIndex === 0}
           />
         </ImageLightbox>

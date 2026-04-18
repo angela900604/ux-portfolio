@@ -41,7 +41,7 @@ function ResumeSideNav({ className = "" }: { className?: string }) {
 export default function ResumePage() {
   return (
     <div className="min-h-screen bg-[#FCFAF7] text-stone-900">
-      <div className="mx-auto max-w-[1280px] px-6 sm:px-[100px] py-16 sm:py-24">
+      <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-16 sm:py-24">
         <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_11.5rem] lg:gap-10 xl:grid-cols-[minmax(0,1fr)_12.5rem] xl:gap-12">
           <div className="min-w-0">
             <p className="mb-3 text-sm font-medium uppercase tracking-widest text-stone-500">

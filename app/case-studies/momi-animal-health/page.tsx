@@ -103,7 +103,7 @@ export default function MomiAnimalHealthCaseStudy() {
   return (
     <article className="min-h-screen bg-[#F5F3EF] text-[#4A4A4A]">
       <header className="border-b border-[#E0D9CE]">
-        <div className="mx-auto max-w-[1280px] px-6 sm:px-[100px] py-16 sm:py-24">
+        <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-16 sm:py-24">
           <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-[#7A7A7A] mb-6">
             <span>Digital Marketing</span>
             <span className="text-[#B0B0B0]">·</span>
@@ -274,7 +274,7 @@ export default function MomiAnimalHealthCaseStudy() {
             </div>
           </div>
 
-          <div className="mx-auto mt-10 w-full max-w-6xl space-y-12">
+          <div className="mx-auto mt-10 w-full max-w-7xl space-y-12">
             <div className="w-full max-w-xl">
               <h5 className="text-[#2C3E50]">
                 eCommerce promotional cover variations
