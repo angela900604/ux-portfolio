@@ -82,8 +82,15 @@ const ADJACENT_WORK = [
   },
 ];
 
+/** Flagship card — full-bleed cover, intrinsic aspect (no crop). */
+const E_INVOICE_FLAGSHIP_COVER = {
+  src: "/home/e-invoice-flagship-cover.png",
+  width: 1024,
+  height: 566,
+} as const;
+
 const WORK_THUMB: Record<string, string> = {
-  "e-invoice-app": "/home/mofcover.png",
+  "e-invoice-app": "/home/e-invoice-flagship-cover.png",
   "ai-marketplace": "/case-studies/mina/mina-ai-hero.png",
   "government-backend": "/home/publicservicecover.png",
   "baskin-robbins": "/home/baskinrobbinscover.png",
@@ -108,7 +115,7 @@ export default function Home() {
           <h2 className="text-2xl font-semibold text-zinc-100">
             Selected Projects
           </h2>
-          <p className="mt-4 text-zinc-400 text-sm leading-relaxed max-w-2xl">
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg">
             0→1 products across AI-powered automation, Public Services, and
             Consumer Loyalty.
           </p>
@@ -118,13 +125,15 @@ export default function Home() {
             className="mt-8 block group"
           >
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 overflow-hidden hover:border-zinc-600 transition">
-              <div className="relative aspect-[2.4/1] bg-zinc-800/80 flex items-center justify-center border-b border-zinc-800 overflow-hidden sm:aspect-[2.6/1]">
+              <div className="border-b border-zinc-800 bg-zinc-900/40">
                 <Image
-                  src={WORK_THUMB[CORE_PRODUCT.flagship.slug]}
-                  alt={`${CORE_PRODUCT.flagship.title} thumbnail`}
-                  fill
-                  className="object-cover object-[center_42%] opacity-90 transition-transform duration-300 group-hover:scale-[1.03]"
-                  sizes="(max-width: 896px) 100vw, 896px"
+                  src={E_INVOICE_FLAGSHIP_COVER.src}
+                  alt={`${CORE_PRODUCT.flagship.title} — product mockup`}
+                  width={E_INVOICE_FLAGSHIP_COVER.width}
+                  height={E_INVOICE_FLAGSHIP_COVER.height}
+                  className="h-auto w-full opacity-95 transition-transform duration-300 ease-out group-hover:scale-[1.01]"
+                  sizes="(max-width: 1280px) 100vw, 1080px"
+                  priority
                 />
               </div>
               <div className="p-6 sm:p-8">
@@ -134,16 +143,16 @@ export default function Home() {
                 <h3 className="text-xl sm:text-2xl font-semibold text-zinc-100 group-hover:text-zinc-50 transition">
                   {CORE_PRODUCT.flagship.title}
                 </h3>
-                <p className="mt-1 text-sm font-medium text-emerald-400/90">
+                <p className="mt-1 text-base font-medium text-emerald-400/90 sm:text-lg">
                   {CORE_PRODUCT.flagship.outcome}
                 </p>
-                <p className="mt-3 text-zinc-400 text-sm leading-relaxed max-w-2xl">
+                <p className="mt-3 max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg">
                   {CORE_PRODUCT.flagship.description}
                 </p>
                 <p className="mt-4 text-xs text-zinc-500">
                   {CORE_PRODUCT.flagship.role} · {CORE_PRODUCT.flagship.timeline}
                 </p>
-                <span className="mt-4 inline-block text-sm font-medium text-zinc-300 group-hover:text-zinc-100">
+                <span className="mt-4 inline-block text-base font-medium text-zinc-300 group-hover:text-zinc-100">
                   Read case study →
                 </span>
               </div>
@@ -172,10 +181,10 @@ export default function Home() {
                   <h3 className="mt-2 text-lg font-semibold text-zinc-100 group-hover:text-zinc-50">
                     {item.title}
                   </h3>
-                  <p className="mt-1 text-sm text-emerald-400/80">
+                  <p className="mt-1 text-base text-emerald-400/80 sm:text-lg">
                     {item.outcome}
                   </p>
-                  <p className="mt-2 text-sm text-zinc-400 line-clamp-2">
+                  <p className="mt-2 line-clamp-2 text-base text-zinc-400 sm:text-lg">
                     {item.description}
                   </p>
                   <span className="mt-3 inline-block text-xs font-medium text-zinc-500 group-hover:text-zinc-300">
@@ -194,7 +203,7 @@ export default function Home() {
           <h2 className="text-2xl font-semibold text-zinc-100">
             Brand &amp; Storytelling
           </h2>
-          <p className="mt-4 text-zinc-400 text-sm leading-relaxed max-w-2xl">
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg">
             Supporting product launches through visual identity and marketing
             design.
           </p>
@@ -221,10 +230,10 @@ export default function Home() {
                   <h3 className="mt-2 text-lg font-semibold text-zinc-100 group-hover:text-zinc-50">
                     {item.title}
                   </h3>
-                  <p className="mt-1 text-sm text-emerald-400/80">
+                  <p className="mt-1 text-base text-emerald-400/80 sm:text-lg">
                     {item.outcome}
                   </p>
-                  <p className="mt-2 text-sm text-zinc-400 line-clamp-2">
+                  <p className="mt-2 line-clamp-2 text-base text-zinc-400 sm:text-lg">
                     {item.description}
                   </p>
                   <span className="mt-3 inline-block text-xs font-medium text-zinc-500 group-hover:text-zinc-300">
@@ -243,12 +252,12 @@ export default function Home() {
           <h2 className="text-2xl font-semibold text-zinc-100">
             Let&apos;s Build Something Together
           </h2>
-          <p className="mt-4 text-zinc-400 leading-relaxed max-w-2xl">
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg">
             Currently open to Product Design roles that require an end-to-end
             workflow. Based in Vancouver; open to relocation, remote, or hybrid
             opportunities.
           </p>
-          <div className="mt-6 flex flex-wrap gap-6 text-sm">
+          <div className="mt-6 flex flex-wrap gap-6 text-base sm:text-lg">
             <a
               href="mailto:angela900604@gmail.com"
               className="font-medium text-zinc-200 hover:text-zinc-50 underline underline-offset-4"

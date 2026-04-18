@@ -13,6 +13,10 @@ import {
   type FinalProductGroup,
 } from "./FinalProductScreens";
 import { MarketSizingCharts } from "./MarketSizingCharts";
+import {
+  BaskinHeroShowcase,
+  type BaskinHeroImage,
+} from "./BaskinHeroShowcase";
 
 export const metadata = {
   title: "Baskin-Robbins Taiwan Membership App | Angela Yang",
@@ -22,6 +26,12 @@ export const metadata = {
 
 const ASSET = (name: string) => `/case-studies/baskin-robbins/${name}`;
 
+const HERO_MEMBERSHIP: BaskinHeroImage = {
+  src: ASSET("hero-membership.png"),
+  alt: "BR31 membership app hero: member benefits and digital card on phone in café setting",
+  width: 1024,
+  height: 560,
+};
 
 const HERO_DEMO_IMAGES = [
   {
@@ -178,31 +188,17 @@ export default function BaskinRobbinsCaseStudy() {
           <h1 className="font-semibold text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight max-w-3xl">
             Baskin-Robbins Taiwan&apos;s first membership app
           </h1>
-          <p className="mt-5 max-w-3xl text-lg leading-relaxed text-zinc-200 sm:text-xl">
+          <p className="mt-5 max-w-3xl text-base leading-relaxed text-zinc-200 sm:text-lg">
             Taiwan&apos;s loyalty market was growing fast while BR31 still had no
             native app—I led end-to-end UX/UI for 31 Club, shipped the phase-one MVP
             on schedule, and early reviews on the Taiwan App Store came in at five
             stars.
           </p>
 
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {HERO_DEMO_IMAGES.map((img) => (
-              <div
-                key={img.src}
-                className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40"
-              >
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  width={img.width}
-                  height={img.height}
-                  className="h-auto w-full object-cover"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  priority
-                />
-              </div>
-            ))}
-          </div>
+          <BaskinHeroShowcase
+            primary={HERO_MEMBERSHIP}
+            secondary={HERO_DEMO_IMAGES}
+          />
 
           <div className="mt-8">
             <CaseStudyAtAGlance items={AT_A_GLANCE_ITEMS} accent="baskin" />

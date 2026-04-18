@@ -50,7 +50,7 @@ export default function ResumePage() {
             <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl md:text-6xl">
               Angela (ChiehNi) Yang
             </h1>
-            <p className="mt-4 text-lg leading-relaxed text-stone-600 sm:text-xl">
+            <p className="mt-4 text-base leading-relaxed text-stone-600 sm:text-lg">
               Vancouver, BC · Eligible to work in Canada · 778-317-5206 ·
               angela900604@gmail.com ·{" "}
               <a
@@ -97,7 +97,7 @@ export default function ResumePage() {
               <h2 className="border-b border-stone-200 pb-3 text-base font-semibold uppercase tracking-widest text-stone-600">
                 Professional summary
               </h2>
-              <p className="mt-6 text-lg leading-[1.65] text-stone-800 sm:text-xl">
+              <p className="mt-6 text-base leading-[1.65] text-stone-800 sm:text-lg">
                 Product Designer with end-to-end experience owning design systems,
                 shipping AI-powered products, and driving measurable outcomes at
                 early-stage startups and government-scale platforms. Deep expertise
@@ -131,11 +131,11 @@ export default function ResumePage() {
                       Sep 2025 – Present
                     </span>
                   </div>
-                  <p className="mt-2 text-lg text-stone-600 sm:text-xl">
+                  <p className="mt-2 text-base text-stone-600 sm:text-lg">
                     San Francisco, California (Remote) · Early-stage AI marketplace
                     startup
                   </p>
-                  <ul className="mt-4 list-disc space-y-3 pl-6 text-lg leading-[1.65] text-stone-800 marker:text-stone-400 sm:text-xl">
+                  <ul className="mt-4 list-disc space-y-3 pl-6 text-base leading-[1.65] text-stone-800 marker:text-stone-400 sm:text-lg">
                     <li>
                       Sole IC end-to-end designer at an early-stage AI startup;
                       owned full design system in Figma including component
@@ -183,11 +183,11 @@ export default function ResumePage() {
                       Jul 2024 – Nov 2025
                     </span>
                   </div>
-                  <p className="mt-2 text-lg text-stone-600 sm:text-xl">
+                  <p className="mt-2 text-base text-stone-600 sm:text-lg">
                     Taipei, Taiwan (On-site) · Cross-platform mobile &amp; web,
                     government and consumer products
                   </p>
-                  <ul className="mt-4 list-disc space-y-3 pl-6 text-lg leading-[1.65] text-stone-800 marker:text-stone-400 sm:text-xl">
+                  <ul className="mt-4 list-disc space-y-3 pl-6 text-base leading-[1.65] text-stone-800 marker:text-stone-400 sm:text-lg">
                     <li>
                       Built and maintained a 50+ component Figma design system
                       based on iOS guidelines — covering component libraries,
@@ -235,11 +235,11 @@ export default function ResumePage() {
                       Feb 2024 – Jun 2024
                     </span>
                   </div>
-                  <p className="mt-2 text-lg text-stone-600 sm:text-xl">
+                  <p className="mt-2 text-base text-stone-600 sm:text-lg">
                     Los Angeles, California (Remote) · AI-powered interview
                     preparation platform
                   </p>
-                  <ul className="mt-4 list-disc space-y-3 pl-6 text-lg leading-[1.65] text-stone-800 marker:text-stone-400 sm:text-xl">
+                  <ul className="mt-4 list-disc space-y-3 pl-6 text-base leading-[1.65] text-stone-800 marker:text-stone-400 sm:text-lg">
                     <li>
                       Increased full mock interview completion rates by 35% on
                       PerfectInterview.ai by redesigning onboarding — simplifying
@@ -272,7 +272,7 @@ export default function ResumePage() {
               <h2 className="border-b border-stone-200 pb-3 text-base font-semibold uppercase tracking-widest text-stone-600">
                 Education
               </h2>
-              <ul className="mt-6 space-y-4 text-lg leading-relaxed text-stone-800 sm:text-xl">
+              <ul className="mt-6 space-y-4 text-base leading-relaxed text-stone-800 sm:text-lg">
                 <li>
                   <span className="font-semibold text-stone-900">
                     Bachelor of Arts in New Media Studies
@@ -295,7 +295,7 @@ export default function ResumePage() {
               <h2 className="border-b border-stone-200 pb-3 text-base font-semibold uppercase tracking-widest text-stone-600">
                 Skills
               </h2>
-              <div className="mt-6 space-y-5 text-lg leading-[1.65] text-stone-800 sm:text-xl">
+              <div className="mt-6 space-y-5 text-base leading-[1.65] text-stone-800 sm:text-lg">
                 <p>
                   <span className="font-semibold text-stone-900">
                     Figma expertise:
@@ -346,7 +346,7 @@ export default function ResumePage() {
             <div className="mt-16 border-t border-stone-200 pt-10">
               <Link
                 href="/"
-                className="text-lg font-medium text-stone-600 hover:text-stone-900"
+                className="text-base font-medium text-stone-600 hover:text-stone-900 sm:text-lg"
               >
                 ← Back to work
               </Link>

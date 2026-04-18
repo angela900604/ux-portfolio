@@ -47,7 +47,7 @@ export function HeroWithBubble() {
         <h1 className="font-semibold text-4xl sm:text-5xl md:text-6xl leading-[1.1] tracking-tight max-w-[36rem]">
           I turn ambiguous ideas into shippable digital products.
         </h1>
-        <p className="mt-6 text-lg text-zinc-400 max-w-2xl leading-relaxed">
+        <p className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg">
           Independent Product Designer specializing in 0→1 stages. I bridge the
           gap between business goals and technical feasibility, leveraging
           AI-driven workflows to deliver high-impact results with speed and
