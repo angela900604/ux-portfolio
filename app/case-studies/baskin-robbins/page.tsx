@@ -253,7 +253,7 @@ export default function BaskinRobbinsCaseStudy() {
       <CaseStudyContentLayout toc={BASKIN_TOC}>
         <section
           id="project-background"
-          className={`space-y-6 max-w-5xl ${sectionScroll}`}
+          className={`space-y-6 ${sectionScroll}`}
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Project background
@@ -293,7 +293,7 @@ export default function BaskinRobbinsCaseStudy() {
 
         <section
           id="team-objectives"
-          className={`space-y-6 max-w-5xl ${sectionScroll}`}
+          className={`space-y-6 ${sectionScroll}`}
         >
           <div className="max-w-3xl space-y-5">
             <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
@@ -321,7 +321,7 @@ export default function BaskinRobbinsCaseStudy() {
 
         <section
           id="role-deliverables"
-          className={`space-y-5 max-w-3xl ${sectionScroll}`}
+          className={`space-y-5 ${sectionScroll}`}
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Role &amp; deliverables
@@ -339,7 +339,7 @@ export default function BaskinRobbinsCaseStudy() {
 
         <section
           id="project-outcomes"
-          className={`space-y-5 max-w-3xl ${sectionScroll}`}
+          className={`space-y-5 ${sectionScroll}`}
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Project outcomes
@@ -356,7 +356,7 @@ export default function BaskinRobbinsCaseStudy() {
 
         <section
           id="final-product"
-          className={`space-y-10 max-w-7xl ${sectionScroll}`}
+          className={`space-y-10 ${sectionScroll}`}
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Final product
@@ -380,7 +380,7 @@ export default function BaskinRobbinsCaseStudy() {
         >
         <section
           id="design-process"
-          className={`space-y-5 max-w-3xl ${sectionScroll}`}
+          className={`space-y-5 ${sectionScroll}`}
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Design process
@@ -446,7 +446,7 @@ export default function BaskinRobbinsCaseStudy() {
 
         <section
           id="requirement-interviews"
-          className={`space-y-5 max-w-3xl ${sectionScroll}`}
+          className={`space-y-5 ${sectionScroll}`}
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Requirement interviews
@@ -474,7 +474,7 @@ export default function BaskinRobbinsCaseStudy() {
 
         <section
           id="function-difference"
-          className={`space-y-5 max-w-3xl ${sectionScroll}`}
+          className={`space-y-5 ${sectionScroll}`}
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Function difference
@@ -499,7 +499,7 @@ export default function BaskinRobbinsCaseStudy() {
 
         <section
           id="visual-style"
-          className={`space-y-6 max-w-5xl ${sectionScroll}`}
+          className={`space-y-6 ${sectionScroll}`}
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Visual style &amp; UI design
@@ -581,7 +581,7 @@ export default function BaskinRobbinsCaseStudy() {
 
         <section
           id="challenges"
-          className={`space-y-5 max-w-3xl ${sectionScroll}`}
+          className={`space-y-5 ${sectionScroll}`}
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Challenges
@@ -611,7 +611,7 @@ export default function BaskinRobbinsCaseStudy() {
 
         <section
           id="learnings"
-          className={`space-y-5 max-w-3xl ${sectionScroll}`}
+          className={`space-y-5 ${sectionScroll}`}
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Learnings
@@ -631,7 +631,7 @@ export default function BaskinRobbinsCaseStudy() {
 
         <section
           id="annotations-flow"
-          className={`space-y-6 max-w-5xl ${sectionScroll}`}
+          className={`space-y-6 ${sectionScroll}`}
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Annotations &amp; page flow
@@ -665,7 +665,7 @@ export default function BaskinRobbinsCaseStudy() {
 
         <section
           id="delivery-kit"
-          className={`space-y-6 max-w-5xl ${sectionScroll}`}
+          className={`space-y-6 ${sectionScroll}`}
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Delivery

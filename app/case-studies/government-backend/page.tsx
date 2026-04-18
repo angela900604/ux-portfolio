@@ -136,7 +136,7 @@ export default function GovernmentBackendCaseStudy() {
       <CaseStudyContentLayout toc={GOV_BACKEND_TOC}>
         <section
           id="project-background"
-          className="max-w-5xl scroll-mt-28 space-y-6 sm:scroll-mt-32"
+          className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Project background
@@ -192,12 +192,26 @@ export default function GovernmentBackendCaseStudy() {
                     Admin console (staff-facing)
                   </span>
                 </div>
-                <WideFigure
-                  borderless
-                  src={ASSET("backend-notification-settings.png")}
-                  alt="Backend admin: notification content and scheduled publishing"
-                  caption="Backend · Notification settings (content + pre-scheduled publish time)."
-                />
+                <figure className="space-y-2">
+                  <div className="overflow-hidden rounded-[20px] border border-zinc-700/60 bg-zinc-900/30">
+                    <video
+                      className="h-auto w-full object-contain"
+                      controls
+                      playsInline
+                      preload="metadata"
+                      aria-label="Backend admin: notification content and scheduled publishing"
+                    >
+                      <source
+                        src={ASSET("backend-demo.mp4")}
+                        type="video/mp4"
+                      />
+                    </video>
+                  </div>
+                  <figcaption className="max-w-3xl text-xs text-zinc-500">
+                    Backend · Notification settings (content + pre-scheduled
+                    publish time).
+                  </figcaption>
+                </figure>
               </div>
               <div className="space-y-3">
                 <div className="flex flex-wrap items-center gap-2">
@@ -238,7 +252,7 @@ export default function GovernmentBackendCaseStudy() {
 
         <section
           id="summary"
-          className="scroll-mt-28 space-y-6 max-w-3xl sm:scroll-mt-32"
+          className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Summary
@@ -279,7 +293,7 @@ export default function GovernmentBackendCaseStudy() {
 
         <section
           id="final-result"
-          className="max-w-3xl scroll-mt-28 space-y-5 sm:scroll-mt-32"
+          className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Final result
@@ -303,7 +317,7 @@ export default function GovernmentBackendCaseStudy() {
         >
         <section
           id="rbac"
-          className="max-w-4xl scroll-mt-28 space-y-5 sm:scroll-mt-32"
+          className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Role-based access control
@@ -521,7 +535,7 @@ export default function GovernmentBackendCaseStudy() {
 
         <section
           id="iterations"
-          className="max-w-3xl scroll-mt-28 space-y-8 sm:scroll-mt-32"
+          className="scroll-mt-28 space-y-8 sm:scroll-mt-32"
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Key design iterations
@@ -626,7 +640,7 @@ export default function GovernmentBackendCaseStudy() {
 
         <section
           id="reflection"
-          className="max-w-3xl scroll-mt-28 space-y-5 sm:scroll-mt-32"
+          className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Reflection

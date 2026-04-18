@@ -29,7 +29,7 @@ export function SketchPersonasExpandable() {
 
   return (
     <div className="space-y-5">
-      <div className="grid max-w-5xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <button
           type="button"
           className={CARD}

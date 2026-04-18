@@ -473,7 +473,7 @@ export default function EInvoiceCaseStudy() {
       <CaseStudyContentLayout toc={E_INVOICE_TOC}>
         <section
           id="project-background"
-          className="max-w-3xl scroll-mt-28 space-y-6 sm:scroll-mt-32"
+          className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             01 · Project background
@@ -529,7 +529,7 @@ export default function EInvoiceCaseStudy() {
 
         <section
           id="key-outcomes"
-          className="scroll-mt-28 space-y-14 sm:scroll-mt-32 max-w-7xl"
+          className="scroll-mt-28 space-y-14 sm:scroll-mt-32"
         >
           <div className="max-w-3xl space-y-4">
             <span className="text-xs font-medium uppercase tracking-widest text-emerald-400/90">
@@ -614,7 +614,7 @@ export default function EInvoiceCaseStudy() {
 
         <section
           id="final-solution-screens"
-          className="scroll-mt-28 space-y-10 max-w-7xl"
+          className="scroll-mt-28 space-y-10"
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             07 · Final solution screens
@@ -631,7 +631,7 @@ export default function EInvoiceCaseStudy() {
 
         <section
           id="impact-results"
-          className="max-w-3xl scroll-mt-28 space-y-6 sm:scroll-mt-32"
+          className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Impact &amp; results
@@ -683,7 +683,7 @@ export default function EInvoiceCaseStudy() {
         >
         <section
           id="competitor-insights"
-          className="max-w-7xl scroll-mt-28 space-y-5 sm:scroll-mt-32"
+          className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             03 · Competitor insights &amp; design process
@@ -708,7 +708,7 @@ export default function EInvoiceCaseStudy() {
 
         <section
           id="accessibility"
-          className="max-w-4xl scroll-mt-28 space-y-6 sm:scroll-mt-32"
+          className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
                        <h3 className="text-zinc-100">
             Accessibility work — VoiceOver &amp; screen reader
@@ -756,7 +756,7 @@ export default function EInvoiceCaseStudy() {
 
         <section
           id="business-constraints"
-          className="max-w-3xl scroll-mt-28 space-y-5 sm:scroll-mt-32"
+          className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
                        <h3 className="text-zinc-100">
             Business constraints
@@ -790,7 +790,7 @@ export default function EInvoiceCaseStudy() {
 
         <section
           id="functional-map"
-          className="max-w-4xl scroll-mt-28 space-y-5 sm:scroll-mt-32"
+          className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
           <h3 className="text-zinc-100">Functional map</h3>
           <p className="text-zinc-300 leading-relaxed max-w-3xl">
@@ -808,7 +808,7 @@ export default function EInvoiceCaseStudy() {
 
         <section
           id="page-flow-design"
-          className="max-w-5xl scroll-mt-28 space-y-12 sm:scroll-mt-32"
+          className="scroll-mt-28 space-y-12 sm:scroll-mt-32"
         >
           <div className="max-w-3xl space-y-4">
             <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
@@ -903,7 +903,7 @@ export default function EInvoiceCaseStudy() {
 
         <section
           id="testing"
-          className="max-w-7xl scroll-mt-28 space-y-6 sm:scroll-mt-32"
+          className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
           <div className="max-w-3xl space-y-6">
             <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
@@ -1101,7 +1101,7 @@ export default function EInvoiceCaseStudy() {
 
         <section
           id="reflection"
-          className="max-w-3xl scroll-mt-28 space-y-5 sm:scroll-mt-32"
+          className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
           <h2 className="text-zinc-100">
             Reflection &amp; learnings
@@ -1148,7 +1148,7 @@ export default function EInvoiceCaseStudy() {
 
         <section
           id="figma-resources"
-          className="max-w-3xl scroll-mt-28 space-y-5 rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6 sm:scroll-mt-32 sm:p-8"
+          className="scroll-mt-28 space-y-5 rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6 sm:scroll-mt-32 sm:p-8"
         >
           <p className="text-sm font-medium text-zinc-200">
             Want to review the source files directly?

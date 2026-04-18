@@ -274,7 +274,7 @@ export default function MomiAnimalHealthCaseStudy() {
             </div>
           </div>
 
-          <div className="mx-auto mt-10 w-full max-w-7xl space-y-12">
+          <div className="mx-auto mt-10 w-full space-y-12">
             <div className="w-full max-w-xl">
               <h5 className="text-[#2C3E50]">
                 eCommerce promotional cover variations

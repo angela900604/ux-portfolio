@@ -172,7 +172,7 @@ export default function AiMarketplaceCaseStudy() {
           className="scroll-mt-28 sm:scroll-mt-32"
         >
           <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_min(18rem,32vw)] lg:items-stretch lg:gap-10 xl:grid-cols-[minmax(0,1fr)_22.5rem] xl:gap-12">
-            <div className="min-w-0 space-y-4 lg:max-w-2xl xl:max-w-3xl">
+            <div className="min-w-0 space-y-4">
               <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
                 Why this exists
               </span>
@@ -215,7 +215,7 @@ export default function AiMarketplaceCaseStudy() {
 
         <section
           id="pain-we-solve"
-          className="max-w-3xl scroll-mt-28 space-y-4 sm:scroll-mt-32"
+          className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             The pain we are solving
@@ -258,7 +258,7 @@ export default function AiMarketplaceCaseStudy() {
 
         <section
           id="product-strategy"
-          className="max-w-3xl scroll-mt-28 space-y-4 sm:scroll-mt-32"
+          className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Product strategy
@@ -280,7 +280,7 @@ export default function AiMarketplaceCaseStudy() {
 
         <section
           id="core-experience"
-          className="max-w-3xl scroll-mt-28 space-y-6 sm:scroll-mt-32"
+          className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Core experience
@@ -343,7 +343,7 @@ export default function AiMarketplaceCaseStudy() {
         >
         <section
           id="engineering-proposal"
-          className="max-w-3xl scroll-mt-28 space-y-5 sm:scroll-mt-32"
+          className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Proposal &amp; alignment
@@ -423,7 +423,7 @@ export default function AiMarketplaceCaseStudy() {
 
         <section
           id="design-principles"
-          className="max-w-3xl scroll-mt-28 space-y-4 sm:scroll-mt-32"
+          className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Design principles (draft)
@@ -460,7 +460,7 @@ export default function AiMarketplaceCaseStudy() {
 
         <section
           id="coming-soon"
-          className="max-w-3xl scroll-mt-28 rounded-2xl border border-dashed border-zinc-700 bg-zinc-900/30 p-8 sm:p-10 sm:scroll-mt-32"
+          className="scroll-mt-28 rounded-2xl border border-dashed border-zinc-700 bg-zinc-900/30 p-8 sm:p-10 sm:scroll-mt-32"
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             What will appear here later

@@ -292,7 +292,7 @@ export default function PhyphyyaCaseStudy() {
           id="logo-concept"
           className="scroll-mt-28 py-[80px] px-6 sm:px-[100px] sm:scroll-mt-32 flex flex-col items-center"
         >
-          <div className="text-center mb-[60px] max-w-[800px] mx-auto">
+          <div className="text-center mb-[60px] w-full">
             <h2 className="text-[#2C3E50] mb-[20px] relative inline-block font-serif after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
               Logo Concept - Soft & Rounded
             </h2>
@@ -362,7 +362,7 @@ export default function PhyphyyaCaseStudy() {
             className="pointer-events-none absolute inset-y-0 left-1/2 -z-10 w-screen -translate-x-1/2 bg-[#FFFFFF]"
             aria-hidden
           />
-          <div className="text-center mb-[60px] max-w-[900px] mx-auto">
+          <div className="text-center mb-[60px] w-full">
             <h2 className="text-[#2C3E50] mb-[20px] relative inline-block font-serif after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
               Brand Mascot - Lop-eared Rabbit
             </h2>
@@ -435,7 +435,7 @@ export default function PhyphyyaCaseStudy() {
           id="brand-applications"
           className="scroll-mt-28 py-[80px] px-6 sm:px-[100px] sm:scroll-mt-32 flex flex-col items-center"
         >
-          <div className="text-center mb-[60px] max-w-[800px] mx-auto">
+          <div className="text-center mb-[60px] w-full">
             <h2 className="text-[#2C3E50] mb-[20px] relative inline-block font-serif after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
               Brand Applications
             </h2>
@@ -471,7 +471,7 @@ export default function PhyphyyaCaseStudy() {
           id="etsy-pod"
           className="scroll-mt-28 bg-white py-[80px] px-6 sm:px-[100px] sm:scroll-mt-32"
         >
-          <div className="text-center max-w-[900px] mx-auto mb-[50px]">
+          <div className="text-center w-full mb-[50px]">
             <h2 className="text-[#2C3E50] mb-[20px] relative inline-block font-serif after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
               Etsy shop &amp; Print-on-Demand
             </h2>
@@ -493,7 +493,7 @@ export default function PhyphyyaCaseStudy() {
           </div>
 
           {/* Left = smaller mobile capture, right = larger desktop grid; same height on lg */}
-          <div className="flex flex-col lg:flex-row gap-6 max-w-[1440px] mx-auto mb-[40px] lg:items-stretch lg:h-[min(540px,72vh)]">
+          <div className="flex flex-col lg:flex-row gap-6 w-full mb-[40px] lg:items-stretch lg:h-[min(540px,72vh)]">
             <div className="flex shrink-0 lg:w-[min(280px,32%)] items-center justify-center overflow-hidden rounded-[8px] bg-[#faf9f7] shadow-[0_5px_15px_rgba(0,0,0,0.08)] px-3 py-4 lg:py-6 min-h-[420px] lg:min-h-0">
               <img
                 src="/case-studies/phyphyya/etsy-shop-mobile.png"
@@ -512,7 +512,7 @@ export default function PhyphyyaCaseStudy() {
             </div>
           </div>
 
-          <div className="max-w-[900px] mx-auto space-y-[28px] text-[16px] text-[#666] leading-relaxed">
+          <div className="w-full space-y-[28px] text-[16px] text-[#666] leading-relaxed">
             <p>
               <strong className="text-[#2C3E50] font-serif">
                 1 · Design in Procreate
@@ -571,7 +571,7 @@ export default function PhyphyyaCaseStudy() {
           id="store-performance"
           className="scroll-mt-28 bg-white py-[80px] px-6 sm:px-[100px] sm:scroll-mt-32"
         >
-          <div className="text-center max-w-[900px] mx-auto mb-[40px]">
+          <div className="text-center w-full mb-[40px]">
             <h2 className="text-[#2C3E50] mb-[20px] relative inline-block font-serif after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
               Store performance
             </h2>
@@ -582,7 +582,7 @@ export default function PhyphyyaCaseStudy() {
             </p>
           </div>
 
-          <div className="max-w-[1080px] mx-auto space-y-4">
+          <div className="w-full space-y-4">
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
               {ETSY_METRICS.map((metric) => (
                 <article
@@ -606,7 +606,7 @@ export default function PhyphyyaCaseStudy() {
           id="testing-next"
           className="scroll-mt-28 bg-[#F5F3EF] py-[80px] px-6 sm:px-[100px] sm:scroll-mt-32"
         >
-          <div className="max-w-[900px] mx-auto mb-[40px] text-center">
+          <div className="w-full mb-[40px] text-center">
             <h2 className="text-[#2C3E50] mb-[20px] relative inline-block font-serif after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
               What I&apos;m testing next
             </h2>
@@ -617,7 +617,7 @@ export default function PhyphyyaCaseStudy() {
             </p>
           </div>
 
-          <div className="max-w-[900px] mx-auto rounded-2xl border border-[#E8E1D6] bg-white p-6 sm:p-8">
+          <div className="w-full rounded-2xl border border-[#E8E1D6] bg-white p-6 sm:p-8">
             <ul className="space-y-5 text-[16px] text-[#666] leading-relaxed">
               <li>
                 <strong className="font-semibold text-[#2C3E50]">
@@ -658,7 +658,7 @@ export default function PhyphyyaCaseStudy() {
           id="pod-products"
           className="scroll-mt-28 bg-[#F5F3EF] py-[80px] px-6 sm:px-[100px] sm:scroll-mt-32"
         >
-          <div className="text-center max-w-[900px] mx-auto mb-[50px]">
+          <div className="text-center w-full mb-[50px]">
             <h2 className="text-[#2C3E50] mb-[20px] relative inline-block font-serif after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
               New products · Magnets &amp; stickers
             </h2>
@@ -670,7 +670,7 @@ export default function PhyphyyaCaseStudy() {
           </div>
 
           {/* Row 1: three cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[22px] max-w-[1440px] mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[22px] w-full">
             {[
               {
                 src: "/case-studies/phyphyya/pod-magnets-fridge.png",
@@ -706,7 +706,7 @@ export default function PhyphyyaCaseStudy() {
           </div>
 
           {/* Row 2: three columns — middle = size range + laptop merged, equal height */}
-          <div className="mt-[22px] grid grid-cols-1 lg:grid-cols-3 gap-[22px] max-w-[1440px] mx-auto items-stretch lg:min-h-[520px]">
+          <div className="mt-[22px] grid grid-cols-1 lg:grid-cols-3 gap-[22px] w-full items-stretch lg:min-h-[520px]">
             <div className="flex flex-col overflow-hidden rounded-[8px] bg-white shadow-[0_4px_10px_rgba(0,0,0,0.04)] h-full min-h-0">
               <div className="relative flex-1 min-h-[280px] lg:min-h-0">
                 <img
@@ -766,7 +766,7 @@ export default function PhyphyyaCaseStudy() {
           id="canvas-tote"
           className="scroll-mt-28 bg-white py-[80px] px-6 sm:px-[100px] sm:scroll-mt-32"
         >
-          <div className="text-center max-w-[800px] mx-auto mb-[50px]">
+          <div className="text-center w-full mb-[50px]">
             <h2 className="text-[#2C3E50] mb-[20px] relative inline-block font-serif after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
               Canvas Tote Bag
             </h2>
@@ -776,7 +776,7 @@ export default function PhyphyyaCaseStudy() {
           </div>
 
           {/* Big image + thumbnails (no framed UI) */}
-          <div className="w-full max-w-[1440px] mx-auto">
+          <div className="w-full">
             <div className="relative w-full aspect-[16/9] overflow-hidden">
               <img
                 src="/case-studies/phyphyya/gallery-14.png"
@@ -820,7 +820,7 @@ export default function PhyphyyaCaseStudy() {
           id="sweatshirt"
           className="scroll-mt-28 bg-[#F5F3EF] py-[80px] px-6 sm:px-[100px] sm:scroll-mt-32"
         >
-          <div className="text-center max-w-[800px] mx-auto mb-[50px]">
+          <div className="text-center w-full mb-[50px]">
             <h2 className="text-[#2C3E50] mb-[20px] relative inline-block font-serif after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
               Crewneck Sweatshirt
             </h2>
@@ -829,7 +829,7 @@ export default function PhyphyyaCaseStudy() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[30px] w-full max-w-[1440px] mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[30px] w-full">
             {sweatshirtSeries.map((it) => (
               <div
                 key={it.src}
