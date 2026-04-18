@@ -28,7 +28,7 @@ function TravelPhotoTile({
 export const metadata = {
   title: "About | Angela Yang",
   description:
-    "Product designer in Vancouver (open to relocate), focused on end-to-end ownership, 0→1 product building, and engineering-led collaboration.",
+    "Product designer at MINA AI, based in Vancouver. End-to-end ownership, design systems, AI-assisted product, and measurable outcomes.",
 };
 
 export default function AboutPage() {
@@ -45,54 +45,99 @@ export default function AboutPage() {
           Product design · Vancouver (open to relocate)
         </p>
 
-        {/* How I work: intro + pillars */}
         <section className="mt-10">
-          <div className="grid gap-8 lg:grid-cols-2 items-start">
+          <div className="grid items-start gap-8 lg:grid-cols-2 lg:gap-10">
             <div>
               <Image
                 src="/about/profile-v2.png"
                 alt="Angela Yang"
                 width={768}
                 height={1024}
-                className="w-full h-auto"
+                className="h-auto w-full"
                 sizes="(max-width: 1024px) 100vw, 512px"
                 priority
               />
             </div>
 
-            <div className="flex min-w-0 flex-col">
-              <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-                How I work
-              </span>
-              <p className="mt-3 text-zinc-300 leading-relaxed text-[15px] sm:text-base">
-                I specialize in navigating the 0→1 product journey, turning abstract ideas into high-fidelity, shippable experiences. My approach blends aesthetic precision with a deep understanding of backend logic and technical constraints, ensuring that innovation never comes at the cost of feasibility.
+            <div className="flex min-w-0 flex-col gap-5 text-[15px] leading-relaxed text-zinc-300 sm:text-base">
+              <p className="font-medium text-zinc-100">
+                I design products that actually ship — and measure whether they
+                work.
               </p>
-              <div className="mt-6 flex flex-col gap-4">
-                <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
-                  <h3 className="text-sm font-semibold text-zinc-100">
-                    Engineering-led collaboration
-                  </h3>
-                  <p className="mt-3 text-zinc-400 text-sm leading-relaxed">
-                    I work very closely with frontend and backend engineers from the beginning. During early product phases, I proactively discuss implementation feasibility so innovative ideas stay practical and buildable.
-                  </p>
-                </div>
-                <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
-                  <h3 className="text-sm font-semibold text-zinc-100">
-                    Stakeholder alignment
-                  </h3>
-                  <p className="mt-3 text-zinc-400 text-sm leading-relaxed">
-                    I partner directly with product/project managers, clients, and other stakeholders to translate requirements into clear design decisions that balance business goals with technical constraints.
-                  </p>
-                </div>
-                <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
-                  <h3 className="text-sm font-semibold text-zinc-100">
-                    AI-enhanced workflow
-                  </h3>
-                  <p className="mt-3 text-zinc-400 text-sm leading-relaxed">
-                    I constantly test new AI tools (such as Cursor, Claude, and Figma AI), not to follow trends, but to identify what genuinely improves my workflow and increases delivery efficiency.
-                  </p>
-                </div>
-              </div>
+              <p>
+                Currently a Product Designer at MINA AI (SF, remote), where
+                I&apos;m the sole IC designer building a design system from
+                scratch and shaping AI-assisted features like Photo-to-Publish and
+                Parenting Copilot. I work directly with co-founders and engineers
+                to move fast without losing craft.
+              </p>
+              <p>
+                Before that, I spent over a year at Turn Cloud in Taiwan working
+                on the Taiwan Ministry Invoice App — a nationwide public service
+                used by millions. I redesigned the login flow and took the success
+                rate from 68% to 92%. I also built a 50+ component Figma design
+                system, led UX for the Baskin-Robbins membership platform, and
+                designed government dashboards that had to work for everyone
+                from teenagers to seniors to visually impaired users.
+              </p>
+              <p>
+                I care about the full picture: the research that uncovers the real
+                job to be done, the Figma system that makes consistency
+                sustainable, and the vibe-coded prototype that gets engineers and
+                stakeholders aligned fast. I use tools like Claude, Lovart,
+                Framer, and Cursor to close the gap between idea and production.
+              </p>
+              <p>
+                Currently based in Vancouver, BC. Open to IC roles at
+                early-stage SaaS startups — especially teams building complex,
+                meaningful products where design has a real seat at the table.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="mt-14 border-t border-zinc-800 pt-12">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            How I work
+          </span>
+          <p className="mt-3 max-w-3xl text-[15px] leading-relaxed text-zinc-300 sm:text-base">
+            I specialize in navigating the 0→1 product journey, turning abstract
+            ideas into high-fidelity, shippable experiences. My approach blends
+            aesthetic precision with a deep understanding of backend logic and
+            technical constraints, ensuring that innovation never comes at the
+            cost of feasibility.
+          </p>
+          <div className="mt-8 flex max-w-3xl flex-col gap-4">
+            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
+              <h3 className="text-sm font-semibold text-zinc-100">
+                Engineering-led collaboration
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-zinc-400">
+                I work very closely with frontend and backend engineers from the
+                beginning. During early product phases, I proactively discuss
+                implementation feasibility so innovative ideas stay practical and
+                buildable.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
+              <h3 className="text-sm font-semibold text-zinc-100">
+                Stakeholder alignment
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-zinc-400">
+                I partner directly with product/project managers, clients, and
+                other stakeholders to translate requirements into clear design
+                decisions that balance business goals with technical constraints.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
+              <h3 className="text-sm font-semibold text-zinc-100">
+                AI-enhanced workflow
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-zinc-400">
+                I constantly test new AI tools (such as Cursor, Claude, and Figma
+                AI), not to follow trends, but to identify what genuinely improves
+                my workflow and increases delivery efficiency.
+              </p>
             </div>
           </div>
         </section>
