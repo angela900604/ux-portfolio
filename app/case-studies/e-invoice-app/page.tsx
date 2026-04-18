@@ -23,6 +23,18 @@ const FIGMA_WIREFRAME_FLOW =
 
 const ASSET = (name: string) => `/case-studies/e-invoice/case-assets/${name}`;
 
+/** Hero product demonstration stills (lifestyle + in-store carrier). */
+const HERO_DEMO_IMAGES = [
+  {
+    src: "/case-studies/e-invoice/hero-scan-paper-receipts.png",
+    alt: "Hands holding Taiwan paper uniform invoices while the phone scans QR codes in the redesigned e-invoice app",
+  },
+  {
+    src: "/case-studies/e-invoice/hero-store-barcode-carrier.png",
+    alt: "Checkout context: phone shows the e-invoice carrier barcode at a convenience store counter",
+  },
+] as const;
+
 const YOUTUBE_A11Y_EMBED = "https://www.youtube.com/embed/yfwERMFfXDM";
 const YOUTUBE_A11Y_URL =
   "https://www.youtube.com/shorts/yfwERMFfXDM?si=edcvB-xno43PtoFN";
@@ -295,6 +307,25 @@ export default function EInvoiceCaseStudy() {
             practices so the service feels faster, more inclusive, and more
             trustworthy.
           </p>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-2">
+            {HERO_DEMO_IMAGES.map((img) => (
+              <div
+                key={img.src}
+                className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40"
+              >
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  width={1024}
+                  height={571}
+                  className="h-auto w-full object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
+                />
+              </div>
+            ))}
+          </div>
 
           <div className="mt-8">
             <WideFigure

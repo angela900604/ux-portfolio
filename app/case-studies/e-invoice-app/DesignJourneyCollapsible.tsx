@@ -24,7 +24,7 @@ function hashToId(hash: string): string | null {
 }
 
 export function DesignJourneyCollapsible({ children }: { children: ReactNode }) {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
   useLayoutEffect(() => {
     const syncFromHash = () => {

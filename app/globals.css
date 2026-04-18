@@ -17,6 +17,36 @@ body {
   color: var(--foreground);
 }
 
+/* Site-wide custom cursor (19×19 asset — hotspot at center) */
+html {
+  cursor: url("/cursors/site-cursor.png") 9 9, auto;
+}
+
+a,
+button,
+[role="button"],
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+label[for],
+select,
+summary,
+.cursor-pointer {
+  cursor: url("/cursors/site-cursor.png") 9 9, pointer !important;
+}
+
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]):not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="image"]):not([type="hidden"]),
+textarea,
+[contenteditable="true"] {
+  cursor: text !important;
+}
+
+.cursor-not-allowed,
+[disabled],
+:disabled {
+  cursor: not-allowed !important;
+}
+
 @keyframes homeBubbleFloat {
   0%,
   100% {
