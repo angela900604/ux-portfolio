@@ -19,6 +19,17 @@ export default function ResumePage() {
           778-317-5206 · angela900604@gmail.com · linkedin.com/in/angelayangg/
           · ycnangelayang.com
         </p>
+        <p className="mt-5">
+          <a
+            href="/AngelaYang_Resume.pdf"
+            download="AngelaYang_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center rounded-lg border border-stone-300 bg-white px-4 py-2 text-sm font-medium text-stone-900 shadow-sm transition hover:border-stone-400 hover:bg-stone-50"
+          >
+            Download PDF resume
+          </a>
+        </p>
 
         <section className="mt-10">
           <h2 className="text-xs font-medium uppercase tracking-widest text-stone-500 border-b border-stone-200 pb-2">
@@ -146,8 +157,16 @@ export default function ResumePage() {
 
         <div className="mt-12 pt-8 border-t border-stone-200">
           <p className="text-xs text-stone-500 mb-2">
-            For a PDF version, use your existing resume file or export from this
-            page.
+            <a
+              href="/AngelaYang_Resume.pdf"
+              download="AngelaYang_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-stone-600 underline decoration-stone-300 underline-offset-2 hover:text-stone-900 hover:decoration-stone-500"
+            >
+              PDF resume
+            </a>{" "}
+            — tailored version for download or print.
           </p>
           <Link
             href="/"
