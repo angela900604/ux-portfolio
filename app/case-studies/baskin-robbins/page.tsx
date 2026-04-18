@@ -1,6 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 import { CaseStudyAtAGlance } from "../_components/CaseStudyAtAGlance";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
+import { DesignJourneyCollapsible } from "../_components/DesignJourneyCollapsible";
 import { CaseStudyScanSummary } from "../_components/CaseStudyScanSummary";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { WideFigure } from "../e-invoice-app/EInvoiceFigures";
@@ -19,6 +21,40 @@ export const metadata = {
 };
 
 const ASSET = (name: string) => `/case-studies/baskin-robbins/${name}`;
+
+
+const HERO_DEMO_IMAGES = [
+  {
+    src: ASSET("hero-product-cone.png"),
+    alt: "Hand holding a BR31 waffle cone with two scoops and branded pink sleeve",
+    width: 767,
+    height: 1024,
+  },
+  {
+    src: ASSET("hero-app-barcode-store.png"),
+    alt: "In-store context: member app showing carrier barcode at a Baskin-Robbins counter",
+    width: 1024,
+    height: 571,
+  },
+  {
+    src: ASSET("hero-app-redemption-store.png"),
+    alt: "In-store mockup: redemption details screen with BR31 shop in the background",
+    width: 1024,
+    height: 571,
+  },
+] as const;
+
+const BASKIN_JOURNEY_IDS = [
+  "design-process",
+  "requirement-interviews",
+  "function-difference",
+  "visual-style",
+  "challenges",
+  "learnings",
+  "annotations-flow",
+  "delivery-kit",
+] as const;
+
 
 /** Taiwan App Store — 31俱樂部 (Baskin-Robbins Taiwan official app) */
 const APP_STORE_TW =
@@ -111,10 +147,12 @@ const sectionScroll =
   "scroll-mt-28 sm:scroll-mt-32";
 
 const BASKIN_TOC = [
+  { id: "project-background", label: "Background" },
   { id: "team-objectives", label: "Team objectives" },
   { id: "role-deliverables", label: "Role & deliverables" },
   { id: "project-outcomes", label: "Project outcomes" },
-  { id: "project-background", label: "Background" },
+  { id: "final-product", label: "Final product" },
+  { id: "design-journey", label: "Design journey" },
   { id: "design-process", label: "Design process" },
   { id: "requirement-interviews", label: "Requirement interviews" },
   { id: "function-difference", label: "Functional map" },
@@ -123,7 +161,6 @@ const BASKIN_TOC = [
   { id: "learnings", label: "Learnings" },
   { id: "annotations-flow", label: "Annotated flow" },
   { id: "delivery-kit", label: "Delivery kit" },
-  { id: "final-product", label: "Final product" },
 ] as const;
 
 export default function BaskinRobbinsCaseStudy() {
@@ -148,11 +185,23 @@ export default function BaskinRobbinsCaseStudy() {
             stars.
           </p>
 
-          <div className="mt-8">
-            <WideFigure
-              src={ASSET("hero-membership.png")}
-              alt="Baskin-Robbins Taiwan membership app — hero visual"
-            />
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {HERO_DEMO_IMAGES.map((img) => (
+              <div
+                key={img.src}
+                className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40"
+              >
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  width={img.width}
+                  height={img.height}
+                  className="h-auto w-full object-cover"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  priority
+                />
+              </div>
+            ))}
           </div>
 
           <div className="mt-8">
@@ -206,6 +255,46 @@ export default function BaskinRobbinsCaseStudy() {
       </header>
 
       <CaseStudyContentLayout toc={BASKIN_TOC}>
+        <section
+          id="project-background"
+          className={`space-y-6 max-w-5xl ${sectionScroll}`}
+        >
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            Project background
+          </span>
+          <h2 className="text-xl font-semibold text-zinc-100">
+            From Japan&apos;s proven program to Taiwan&apos;s gap
+          </h2>
+          <p className="text-zinc-300 leading-relaxed max-w-3xl">
+            BR31 Ice Cream, known for its 31 playful flavors, had already built a
+            strong digital-first membership program in Japan that kept fans
+            engaged with rewards and exclusives. In Taiwan, however, the brand
+            lacked a dedicated loyalty experience—leaving customers with fewer ways
+            to connect and putting the company at risk of falling behind
+            competitors with established platforms. Taiwanese consumers, who were
+            increasingly drawn to mobile-first rewards and personalized offers,
+            needed a smoother way to engage with the brand. Our project set out to
+            change that by designing and developing a dedicated membership
+            app—bringing the proven success of Japan&apos;s model to Taiwan while
+            tailoring the experience to local users.
+          </p>
+          <p className="text-zinc-200 font-medium text-lg max-w-3xl pt-2">
+            The goal was simple yet powerful: transform casual customers into loyal
+            fans by offering them a fun, seamless, and rewarding digital journey
+            with every scoop.
+          </p>
+          <div className="space-y-2 pt-2">
+            <h3 className="text-sm font-semibold text-zinc-100">
+              Stakeholder alignment (Japan HQ · Taiwan)
+            </h3>
+            <WideFigure
+              borderless
+              src={ASSET("stakeholder-alignment.png")}
+              alt="Stakeholder alignment across Japan HQ and Taiwan"
+            />
+          </div>
+        </section>
+
         <section
           id="team-objectives"
           className={`space-y-6 max-w-5xl ${sectionScroll}`}
@@ -270,45 +359,29 @@ export default function BaskinRobbinsCaseStudy() {
         </section>
 
         <section
-          id="project-background"
-          className={`space-y-6 max-w-5xl ${sectionScroll}`}
+          id="final-product"
+          className={`space-y-10 max-w-6xl ${sectionScroll}`}
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Project background
+            Final product
           </span>
           <h2 className="text-xl font-semibold text-zinc-100">
-            From Japan&apos;s proven program to Taiwan&apos;s gap
+            What members experience on device
           </h2>
-          <p className="text-zinc-300 leading-relaxed max-w-3xl">
-            BR31 Ice Cream, known for its 31 playful flavors, had already built a
-            strong digital-first membership program in Japan that kept fans
-            engaged with rewards and exclusives. In Taiwan, however, the brand
-            lacked a dedicated loyalty experience—leaving customers with fewer ways
-            to connect and putting the company at risk of falling behind
-            competitors with established platforms. Taiwanese consumers, who were
-            increasingly drawn to mobile-first rewards and personalized offers,
-            needed a smoother way to engage with the brand. Our project set out to
-            change that by designing and developing a dedicated membership
-            app—bringing the proven success of Japan&apos;s model to Taiwan while
-            tailoring the experience to local users.
+          <p className="max-w-3xl text-zinc-300 leading-relaxed">
+            The final app delivers a seamless membership experience—enabling BR31
+            Taiwan users to easily accumulate points, redeem rewards, and enjoy
+            personalized offers. The design balances brand playfulness with
+            usability—ensuring consistency across iOS and Android while meeting both
+            client and user needs.
           </p>
-          <p className="text-zinc-200 font-medium text-lg max-w-3xl pt-2">
-            The goal was simple yet powerful: transform casual customers into loyal
-            fans by offering them a fun, seamless, and rewarding digital journey
-            with every scoop.
-          </p>
-          <div className="space-y-2 pt-2">
-            <h3 className="text-sm font-semibold text-zinc-100">
-              Stakeholder alignment (Japan HQ · Taiwan)
-            </h3>
-            <WideFigure
-              borderless
-              src={ASSET("stakeholder-alignment.png")}
-              alt="Stakeholder alignment across Japan HQ and Taiwan"
-            />
-          </div>
+          <FinalProductScreens asset={ASSET} groups={FINAL_PRODUCT_GROUPS} />
         </section>
 
+        <DesignJourneyCollapsible
+          journeySectionIds={BASKIN_JOURNEY_IDS}
+          panelId="baskin-design-journey-panel"
+        >
         <section
           id="design-process"
           className={`space-y-5 max-w-3xl ${sectionScroll}`}
@@ -649,26 +722,7 @@ export default function BaskinRobbinsCaseStudy() {
             </div>
           </div>
         </section>
-
-        <section
-          id="final-product"
-          className={`space-y-10 max-w-6xl ${sectionScroll}`}
-        >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Final product
-          </span>
-          <h2 className="text-xl font-semibold text-zinc-100">
-            What members experience on device
-          </h2>
-          <p className="max-w-3xl text-zinc-300 leading-relaxed">
-            The final app delivers a seamless membership experience—enabling BR31
-            Taiwan users to easily accumulate points, redeem rewards, and enjoy
-            personalized offers. The design balances brand playfulness with
-            usability—ensuring consistency across iOS and Android while meeting both
-            client and user needs.
-          </p>
-          <FinalProductScreens asset={ASSET} groups={FINAL_PRODUCT_GROUPS} />
-        </section>
+        </DesignJourneyCollapsible>
 
         <section className="border-t border-zinc-800 pt-12 space-y-8">
           <CaseStudyPrevNext currentSlug="baskin-robbins" />

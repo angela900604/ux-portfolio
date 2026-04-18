@@ -73,8 +73,8 @@ export function CaseStudySideNav({
         <p
           className={
             isDark
-              ? "mb-3 text-[10px] font-semibold uppercase tracking-widest text-zinc-500"
-              : "mb-3 text-[10px] font-semibold uppercase tracking-widest text-[#7A7A7A]"
+              ? "mb-3 text-xs font-semibold uppercase tracking-widest text-zinc-500"
+              : "mb-3 text-xs font-semibold uppercase tracking-widest text-[#7A7A7A]"
           }
         >
           {heading}
@@ -89,7 +89,7 @@ export function CaseStudySideNav({
           {items.map((item) => {
             const active = activeId === item.id;
             const base =
-              "block border-l-2 py-1 pl-3 text-left text-[12px] leading-snug transition";
+              "block border-l-2 py-1.5 pl-3 text-left text-sm leading-snug transition";
             const darkInactive =
               "border-transparent text-zinc-500 hover:border-violet-500/60 hover:text-zinc-200";
             const darkActive =

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { CaseStudyAtAGlance } from "../_components/CaseStudyAtAGlance";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
+import { DesignJourneyCollapsible } from "../_components/DesignJourneyCollapsible";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { CaseStudyScanSummary } from "../_components/CaseStudyScanSummary";
 import { WideFigure } from "../e-invoice-app/EInvoiceFigures";
@@ -29,11 +30,14 @@ const MINA_SCAN_SUMMARY = [
   "Case study in progress—screens, flows, and outcome metrics will be added as the work ships.",
 ] as const;
 
+const MINA_JOURNEY_IDS = ["engineering-proposal", "design-principles"] as const;
+
 const MINA_TOC = [
   { id: "why-this-exists", label: "Why this exists" },
   { id: "pain-we-solve", label: "The pain we solve" },
   { id: "product-strategy", label: "Product strategy" },
   { id: "core-experience", label: "Core experience" },
+  { id: "design-journey", label: "Design journey" },
   { id: "engineering-proposal", label: "Proposal & alignment" },
   { id: "design-principles", label: "Design principles" },
   { id: "coming-soon", label: "Full case study (soon)" },
@@ -333,6 +337,10 @@ export default function AiMarketplaceCaseStudy() {
           </div>
         </section>
 
+        <DesignJourneyCollapsible
+          journeySectionIds={MINA_JOURNEY_IDS}
+          panelId="mina-design-journey-panel"
+        >
         <section
           id="engineering-proposal"
           className="max-w-3xl scroll-mt-28 space-y-5 sm:scroll-mt-32"
@@ -448,6 +456,7 @@ export default function AiMarketplaceCaseStudy() {
             </li>
           </ul>
         </section>
+        </DesignJourneyCollapsible>
 
         <section
           id="coming-soon"

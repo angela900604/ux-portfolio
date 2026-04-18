@@ -3,7 +3,7 @@
 export function OutcomesMetricsChart() {
   return (
     <div
-      className="rounded-2xl border border-[#E8E1D6] bg-white p-6 sm:p-8"
+      className="cs-data-viz rounded-2xl border border-[#E8E1D6] bg-white p-6 sm:p-8"
       role="img"
       aria-label="Outcome metrics over three months: plus 500 Instagram followers net new, plus 21 percent Instagram engagement versus baseline, plus 18 percent organic site traffic in sessions"
     >

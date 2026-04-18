@@ -5,7 +5,7 @@ import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { CaseStudyScanSummary } from "../_components/CaseStudyScanSummary";
 import { CompetitorLandscapeTable } from "./CompetitorLandscapeTable";
-import { DesignJourneyCollapsible } from "./DesignJourneyCollapsible";
+import { DesignJourneyCollapsible } from "../_components/DesignJourneyCollapsible";
 import { ProblemPersonasBlock } from "./ProblemPersonasBlock";
 import { OutcomeAutoSlideshow } from "./OutcomeAutoSlideshow";
 import { PhoneMockup, PortraitTile, WideFigure } from "./EInvoiceFigures";
@@ -55,6 +55,16 @@ const M_TXT =
   "rounded-md bg-emerald-500/20 px-1.5 py-0.5 font-semibold tabular-nums text-emerald-200";
 const M_TIME =
   "rounded-md bg-amber-500/15 px-1.5 py-0.5 font-medium tabular-nums text-amber-100/95";
+
+const E_INVOICE_JOURNEY_IDS = [
+  "competitor-insights",
+  "accessibility",
+  "business-constraints",
+  "functional-map",
+  "page-flow-design",
+  "testing",
+  "carrier-binding-insight",
+] as const;
 
 const E_INVOICE_TOC = [
   { id: "project-background", label: "Project background" },
@@ -670,7 +680,10 @@ export default function EInvoiceCaseStudy() {
           </p>
         </section>
 
-        <DesignJourneyCollapsible>
+        <DesignJourneyCollapsible
+          journeySectionIds={E_INVOICE_JOURNEY_IDS}
+          panelId="e-invoice-design-journey-panel"
+        >
         <section
           id="competitor-insights"
           className="max-w-6xl scroll-mt-28 space-y-5 sm:scroll-mt-32"

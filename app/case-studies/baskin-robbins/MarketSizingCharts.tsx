@@ -14,7 +14,7 @@ export function MarketSizingCharts() {
   const sizeWidth = (MARKET_B / 2) * 100;
 
   return (
-    <figure className="space-y-8">
+    <figure className="cs-data-viz space-y-8">
       <div className="grid gap-8 lg:grid-cols-2 lg:gap-10">
         <div className="rounded-xl border border-zinc-800/90 bg-zinc-900/40 p-5 sm:p-6">
           <h3 className="text-sm font-semibold text-zinc-100">

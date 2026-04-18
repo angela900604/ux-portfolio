@@ -47,6 +47,17 @@ textarea,
   cursor: not-allowed !important;
 }
 
+/* Case study narrative: match resume body scale; layout sets text-lg / sm:text-xl on .case-study-prose */
+.case-study-prose .text-sm {
+  font-size: inherit !important;
+  line-height: inherit !important;
+}
+
+.case-study-prose .cs-data-viz .text-sm {
+  font-size: 0.875rem !important;
+  line-height: 1.25rem !important;
+}
+
 @keyframes homeBubbleFloat {
   0%,
   100% {

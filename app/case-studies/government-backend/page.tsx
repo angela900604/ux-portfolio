@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import { CaseStudyAtAGlance } from "../_components/CaseStudyAtAGlance";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
+import { DesignJourneyCollapsible } from "../_components/DesignJourneyCollapsible";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { CaseStudyScanSummary } from "../_components/CaseStudyScanSummary";
 import { FlatAppShot, WideFigure } from "../e-invoice-app/EInvoiceFigures";
@@ -25,13 +26,16 @@ const AT_A_GLANCE_ITEMS = [
   },
 ] as const;
 
+const GOV_BACKEND_JOURNEY_IDS = ["rbac", "iterations"] as const;
+
 const GOV_BACKEND_TOC = [
-  { id: "summary", label: "Summary" },
   { id: "project-background", label: "Project background" },
+  { id: "summary", label: "Summary" },
+  { id: "final-result", label: "Final result" },
+  { id: "design-journey", label: "Design journey" },
   { id: "rbac", label: "Role-based access" },
   { id: "iterations", label: "Key iterations" },
   { id: "reflection", label: "Reflection" },
-  { id: "final-result", label: "Final result" },
 ] as const;
 
 const GOV_BACKEND_SCAN_SUMMARY = [
@@ -130,47 +134,6 @@ export default function GovernmentBackendCaseStudy() {
       </header>
 
       <CaseStudyContentLayout toc={GOV_BACKEND_TOC}>
-        <section
-          id="summary"
-          className="scroll-mt-28 space-y-6 max-w-3xl sm:scroll-mt-32"
-        >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Summary
-          </span>
-          <h2 className="text-xl font-semibold text-zinc-100">
-            Supporting <Metric>600+</Metric> government staff with role-based
-            access control
-          </h2>
-          <p className="text-zinc-300 leading-relaxed">
-            I designed a role-based permission system that aligned responsibilities
-            across departments. By hiding inaccessible features and limiting
-            high-impact actions to specific roles, the platform enabled teams to
-            work independently while preventing conflicts that could affect
-            public-facing content.
-          </p>
-          <h2 className="text-xl font-semibold text-zinc-100 pt-2">
-            Enabling self-service reporting for faster decision-making
-          </h2>
-          <p className="text-zinc-300 leading-relaxed">
-            I redesigned reporting into an actionable dashboard with weekly and
-            monthly views, time-based filters, and{" "}
-            <span className="rounded-md bg-sky-500/15 px-1.5 py-0.5 font-medium text-sky-200/95">
-              CSV export
-            </span>
-            . Staff could prepare reports independently for meetings and audits,
-            reducing reliance on engineers and speeding up operational workflows.
-          </p>
-          <h2 className="text-xl font-semibold text-zinc-100 pt-2">
-            Aligning UI decisions with system logic under tight constraints
-          </h2>
-          <p className="text-zinc-300 leading-relaxed">
-            Working closely with engineers, I designed backend flows that balanced
-            flexibility and stability—such as version control with mandatory update
-            settings and build-code mapping—so critical updates could be enforced
-            quickly without risking system inconsistency.
-          </p>
-        </section>
-
         <section
           id="project-background"
           className="max-w-5xl scroll-mt-28 space-y-6 sm:scroll-mt-32"
@@ -273,6 +236,71 @@ export default function GovernmentBackendCaseStudy() {
           </div>
         </section>
 
+        <section
+          id="summary"
+          className="scroll-mt-28 space-y-6 max-w-3xl sm:scroll-mt-32"
+        >
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            Summary
+          </span>
+          <h2 className="text-xl font-semibold text-zinc-100">
+            Supporting <Metric>600+</Metric> government staff with role-based
+            access control
+          </h2>
+          <p className="text-zinc-300 leading-relaxed">
+            I designed a role-based permission system that aligned responsibilities
+            across departments. By hiding inaccessible features and limiting
+            high-impact actions to specific roles, the platform enabled teams to
+            work independently while preventing conflicts that could affect
+            public-facing content.
+          </p>
+          <h2 className="text-xl font-semibold text-zinc-100 pt-2">
+            Enabling self-service reporting for faster decision-making
+          </h2>
+          <p className="text-zinc-300 leading-relaxed">
+            I redesigned reporting into an actionable dashboard with weekly and
+            monthly views, time-based filters, and{" "}
+            <span className="rounded-md bg-sky-500/15 px-1.5 py-0.5 font-medium text-sky-200/95">
+              CSV export
+            </span>
+            . Staff could prepare reports independently for meetings and audits,
+            reducing reliance on engineers and speeding up operational workflows.
+          </p>
+          <h2 className="text-xl font-semibold text-zinc-100 pt-2">
+            Aligning UI decisions with system logic under tight constraints
+          </h2>
+          <p className="text-zinc-300 leading-relaxed">
+            Working closely with engineers, I designed backend flows that balanced
+            flexibility and stability—such as version control with mandatory update
+            settings and build-code mapping—so critical updates could be enforced
+            quickly without risking system inconsistency.
+          </p>
+        </section>
+
+        <section
+          id="final-result"
+          className="max-w-3xl scroll-mt-28 space-y-5 sm:scroll-mt-32"
+        >
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            Final result
+          </span>
+          <h2 className="text-xl font-semibold text-zinc-100">
+            One reliable platform for cross-department operations
+          </h2>
+          <p className="text-zinc-300 leading-relaxed">
+            The final backend platform unified the management of announcements,
+            promotions, push notifications, data reports, and app version updates.
+            With carefully defined role-based permissions, workflow-driven
+            reporting, and system-level consistency, the design enabled government
+            staff across multiple departments to collaborate effectively within one
+            reliable platform.
+          </p>
+        </section>
+
+        <DesignJourneyCollapsible
+          journeySectionIds={GOV_BACKEND_JOURNEY_IDS}
+          panelId="gov-backend-design-journey-panel"
+        >
         <section
           id="rbac"
           className="max-w-4xl scroll-mt-28 space-y-5 sm:scroll-mt-32"
@@ -594,6 +622,7 @@ export default function GovernmentBackendCaseStudy() {
             />
           </div>
         </section>
+        </DesignJourneyCollapsible>
 
         <section
           id="reflection"
@@ -625,26 +654,6 @@ export default function GovernmentBackendCaseStudy() {
             strengthened my ability to align system logic with human workflows,
             advocate for practical solutions, and deliver designs that enhance
             usability while driving organizational efficiency.
-          </p>
-        </section>
-
-        <section
-          id="final-result"
-          className="max-w-3xl scroll-mt-28 space-y-5 sm:scroll-mt-32"
-        >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Final result
-          </span>
-          <h2 className="text-xl font-semibold text-zinc-100">
-            One reliable platform for cross-department operations
-          </h2>
-          <p className="text-zinc-300 leading-relaxed">
-            The final backend platform unified the management of announcements,
-            promotions, push notifications, data reports, and app version updates.
-            With carefully defined role-based permissions, workflow-driven
-            reporting, and system-level consistency, the design enabled government
-            staff across multiple departments to collaborate effectively within one
-            reliable platform.
           </p>
         </section>
 

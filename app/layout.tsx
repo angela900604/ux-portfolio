@@ -34,11 +34,11 @@ export default function RootLayout({
             <div className="mx-auto flex max-w-[1280px] items-center justify-between px-6 sm:px-[100px] py-4">
               <a
                 href="/"
-                className="text-sm font-medium tracking-wide text-zinc-400 hover:text-zinc-100 transition"
+                className="text-base font-medium tracking-wide text-zinc-400 hover:text-zinc-100 transition"
               >
                 Angela Yang
               </a>
-              <nav className="flex gap-6 text-sm text-zinc-400">
+              <nav className="flex gap-8 text-base text-zinc-400">
                 <a href="/" className="hover:text-zinc-100 transition">
                   Work
                 </a>

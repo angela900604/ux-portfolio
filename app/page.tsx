@@ -118,12 +118,12 @@ export default function Home() {
             className="mt-8 block group"
           >
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 overflow-hidden hover:border-zinc-600 transition">
-              <div className="relative aspect-video bg-zinc-800/80 flex items-center justify-center border-b border-zinc-800 overflow-hidden">
+              <div className="relative aspect-[2.4/1] bg-zinc-800/80 flex items-center justify-center border-b border-zinc-800 overflow-hidden sm:aspect-[2.6/1]">
                 <Image
                   src={WORK_THUMB[CORE_PRODUCT.flagship.slug]}
                   alt={`${CORE_PRODUCT.flagship.title} thumbnail`}
                   fill
-                  className="object-cover opacity-90 transition-transform duration-300 group-hover:scale-[1.03]"
+                  className="object-cover object-[center_42%] opacity-90 transition-transform duration-300 group-hover:scale-[1.03]"
                   sizes="(max-width: 896px) 100vw, 896px"
                 />
               </div>
