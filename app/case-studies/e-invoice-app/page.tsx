@@ -5,6 +5,7 @@ import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { CaseStudyScanSummary } from "../_components/CaseStudyScanSummary";
 import { CompetitorLandscapeTable } from "./CompetitorLandscapeTable";
+import { DesignJourneyCollapsible } from "./DesignJourneyCollapsible";
 import { ProblemPersonasBlock } from "./ProblemPersonasBlock";
 import { OutcomeAutoSlideshow } from "./OutcomeAutoSlideshow";
 import { PhoneMockup, PortraitTile, WideFigure } from "./EInvoiceFigures";
@@ -46,17 +47,18 @@ const M_TIME =
 const E_INVOICE_TOC = [
   { id: "project-background", label: "Project background" },
   { id: "user-journey-map", label: "The problem" },
+  { id: "personas", label: "Personas" },
+  { id: "key-outcomes", label: "Key outcomes" },
+  { id: "final-solution-screens", label: "Final screens" },
+  { id: "impact-results", label: "Impact & results" },
+  { id: "design-journey", label: "Design journey" },
   { id: "competitor-insights", label: "Competitor insights & design process" },
   { id: "accessibility", label: "Accessibility" },
-  { id: "personas", label: "Personas" },
   { id: "business-constraints", label: "Business constraints" },
   { id: "functional-map", label: "Functional map" },
   { id: "page-flow-design", label: "Page flow & design system" },
   { id: "testing", label: "Testing & iterations" },
   { id: "carrier-binding-insight", label: "Carrier binding insight" },
-  { id: "key-outcomes", label: "Key outcomes" },
-  { id: "final-solution-screens", label: "Final screens" },
-  { id: "impact-results", label: "Impact & results" },
   { id: "reflection", label: "Reflection" },
   { id: "figma-resources", label: "Figma files" },
 ] as const;
@@ -470,6 +472,174 @@ export default function EInvoiceCaseStudy() {
 
         <ProblemPersonasBlock />
 
+        <section
+          id="key-outcomes"
+          className="scroll-mt-28 space-y-14 sm:scroll-mt-32 max-w-6xl"
+        >
+          <div className="max-w-3xl space-y-4">
+            <span className="text-xs font-medium uppercase tracking-widest text-emerald-400/90">
+              From evidence to interface
+            </span>
+            <h2 className="text-2xl font-semibold tracking-tight text-zinc-100 sm:text-3xl">
+              Four problems we solved—end to end
+            </h2>
+            <p className="text-zinc-400 leading-relaxed">
+              Each block follows the same spine:{" "}
+              <span className="text-zinc-200">
+                real behavior &amp; pain from interviews and moderated tests
+              </span>{" "}
+              →{" "}
+              <span className="text-zinc-200">the UX failure mode I was seeing</span>{" "}
+              →{" "}
+              <span className="text-zinc-200">the product decision</span> →{" "}
+              <span className="text-zinc-200">what moved in the metrics</span>. On
+              the right, final UI from the shipped set—one screen or a short sequence
+              when the flow needed more than a single frame.
+            </p>
+          </div>
+
+          <div className="space-y-16 lg:space-y-20">
+            {KEY_OUTCOME_ROWS.map((row) => (
+              <article
+                key={row.assetId}
+                className="grid gap-10 border-t border-zinc-800/90 pt-12 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-start lg:gap-12 lg:pt-14"
+              >
+                <div className="min-w-0 space-y-6">
+                  <h3 className="text-lg font-semibold leading-snug text-zinc-100 sm:text-xl">
+                    {row.title}
+                  </h3>
+                  <div className="space-y-5">
+                    <div className="border-l-2 border-emerald-500/45 pl-4">
+                      <p className="text-[11px] font-semibold uppercase tracking-widest text-emerald-400/95">
+                        Evidence · interviews &amp; tests
+                      </p>
+                      <p className="mt-2 text-sm leading-relaxed text-zinc-300">
+                        {row.evidence}
+                      </p>
+                    </div>
+                    <div className="border-l-2 border-rose-500/35 pl-4">
+                      <p className="text-[11px] font-semibold uppercase tracking-widest text-rose-300/90">
+                        Problem in the experience
+                      </p>
+                      <p className="mt-2 text-sm leading-relaxed text-zinc-300">
+                        {row.problem}
+                      </p>
+                    </div>
+                    <div className="border-l-2 border-violet-500/45 pl-4">
+                      <p className="text-[11px] font-semibold uppercase tracking-widest text-violet-300/95">
+                        Decision
+                      </p>
+                      <p className="mt-2 text-sm leading-relaxed text-zinc-300">
+                        {row.decision}
+                      </p>
+                    </div>
+                    <div className="rounded-xl border border-emerald-500/25 bg-emerald-500/[0.07] px-4 py-3 sm:px-5 sm:py-4">
+                      <p className="text-[11px] font-semibold uppercase tracking-widest text-emerald-200/95">
+                        Outcome
+                      </p>
+                      <p className="mt-2 text-sm font-medium leading-relaxed text-zinc-100">
+                        {row.outcome}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className={
+                    row.autoSlideshow
+                      ? "flex justify-center lg:pt-1"
+                      : "flex justify-center lg:justify-end lg:pt-1"
+                  }
+                >
+                  <KeyOutcomePhoneFigures row={row} />
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section
+          id="final-solution-screens"
+          className="scroll-mt-28 space-y-10 max-w-6xl"
+        >
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            07 · Final solution screens
+          </span>
+          <h2 className="text-xl font-semibold text-zinc-100">
+            High-fidelity UI across core tasks
+          </h2>
+          <p className="max-w-3xl text-zinc-300 leading-relaxed">
+            Selected key functional screens—focused on the flows that matter most.
+          </p>
+          <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+            {FINAL_SOLUTION_SCREENS.flatMap((item) => {
+              const files =
+                item.assetFiles ??
+                [item.assetFile ?? `solution-final-${item.id}.png`];
+              return files.map((file, i) => (
+                <WideFigure
+                  key={`${item.id}-${i}`}
+                  borderless
+                  src={ASSET(file)}
+                  alt={
+                    files.length > 1
+                      ? `${item.title} (${i + 1}/${files.length})`
+                      : item.title
+                  }
+                />
+              ));
+            })}
+          </div>
+        </section>
+
+        <section
+          id="impact-results"
+          className="max-w-3xl scroll-mt-28 space-y-6 sm:scroll-mt-32"
+        >
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            Impact &amp; results
+          </span>
+          <h2 className="text-xl font-semibold text-zinc-100">
+            Other measurable wins
+          </h2>
+          <p className="text-zinc-300 leading-relaxed">
+            The four outcome stories above cover login, onboarding, scan-first home,
+            and modular density. Additional lifts from the same research cycle are
+            summarized here so the full picture stays in one place.
+          </p>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-5">
+              <p className="text-xs font-semibold uppercase tracking-wider text-emerald-400/90">
+                Task success (prototype)
+              </p>
+              <p className="mt-2 text-2xl font-semibold tabular-nums text-emerald-200">
+                <span className={M_TXT}>~88%</span>
+              </p>
+              <p className="mt-2 text-sm text-zinc-400 leading-relaxed">
+                Across 12 participants and five core tasks—strongest on scan &amp;
+                prize flows after the home and guidance iterations.
+              </p>
+            </div>
+            <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-5">
+              <p className="text-xs font-semibold uppercase tracking-wider text-emerald-400/90">
+                Missed prize redemptions
+              </p>
+              <p className="mt-2 text-2xl font-semibold tabular-nums text-emerald-200">
+                <span className={M_TXT}>−70%</span>
+              </p>
+              <p className="mt-2 text-sm text-zinc-400 leading-relaxed">
+                Clearer deadlines, status, and push alerts so people do not learn
+                about a win too late.
+              </p>
+            </div>
+          </div>
+          <p className="text-sm text-zinc-400 leading-relaxed">
+            Spending analysis, high-contrast visuals, and accessibility-oriented
+            patterns (e.g., VoiceOver annotations) further supported repeat use—
+            especially for younger budgeters and low-vision participants.
+          </p>
+        </section>
+
+        <DesignJourneyCollapsible>
         <section
           id="competitor-insights"
           className="max-w-6xl scroll-mt-28 space-y-5 sm:scroll-mt-32"
@@ -886,172 +1056,7 @@ export default function EInvoiceCaseStudy() {
           </div>
         </section>
 
-        <section
-          id="key-outcomes"
-          className="scroll-mt-28 space-y-14 sm:scroll-mt-32 max-w-6xl"
-        >
-          <div className="max-w-3xl space-y-4">
-            <span className="text-xs font-medium uppercase tracking-widest text-emerald-400/90">
-              From evidence to interface
-            </span>
-            <h2 className="text-2xl font-semibold tracking-tight text-zinc-100 sm:text-3xl">
-              Four problems we solved—end to end
-            </h2>
-            <p className="text-zinc-400 leading-relaxed">
-              Each block follows the same spine:{" "}
-              <span className="text-zinc-200">
-                real behavior &amp; pain from interviews and moderated tests
-              </span>{" "}
-              →{" "}
-              <span className="text-zinc-200">the UX failure mode I was seeing</span>{" "}
-              →{" "}
-              <span className="text-zinc-200">the product decision</span> →{" "}
-              <span className="text-zinc-200">what moved in the metrics</span>. On
-              the right, final UI from the shipped set—one screen or a short sequence
-              when the flow needed more than a single frame.
-            </p>
-          </div>
-
-          <div className="space-y-16 lg:space-y-20">
-            {KEY_OUTCOME_ROWS.map((row) => (
-              <article
-                key={row.assetId}
-                className="grid gap-10 border-t border-zinc-800/90 pt-12 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-start lg:gap-12 lg:pt-14"
-              >
-                <div className="min-w-0 space-y-6">
-                  <h3 className="text-lg font-semibold leading-snug text-zinc-100 sm:text-xl">
-                    {row.title}
-                  </h3>
-                  <div className="space-y-5">
-                    <div className="border-l-2 border-emerald-500/45 pl-4">
-                      <p className="text-[11px] font-semibold uppercase tracking-widest text-emerald-400/95">
-                        Evidence · interviews &amp; tests
-                      </p>
-                      <p className="mt-2 text-sm leading-relaxed text-zinc-300">
-                        {row.evidence}
-                      </p>
-                    </div>
-                    <div className="border-l-2 border-rose-500/35 pl-4">
-                      <p className="text-[11px] font-semibold uppercase tracking-widest text-rose-300/90">
-                        Problem in the experience
-                      </p>
-                      <p className="mt-2 text-sm leading-relaxed text-zinc-300">
-                        {row.problem}
-                      </p>
-                    </div>
-                    <div className="border-l-2 border-violet-500/45 pl-4">
-                      <p className="text-[11px] font-semibold uppercase tracking-widest text-violet-300/95">
-                        Decision
-                      </p>
-                      <p className="mt-2 text-sm leading-relaxed text-zinc-300">
-                        {row.decision}
-                      </p>
-                    </div>
-                    <div className="rounded-xl border border-emerald-500/25 bg-emerald-500/[0.07] px-4 py-3 sm:px-5 sm:py-4">
-                      <p className="text-[11px] font-semibold uppercase tracking-widest text-emerald-200/95">
-                        Outcome
-                      </p>
-                      <p className="mt-2 text-sm font-medium leading-relaxed text-zinc-100">
-                        {row.outcome}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  className={
-                    row.autoSlideshow
-                      ? "flex justify-center lg:pt-1"
-                      : "flex justify-center lg:justify-end lg:pt-1"
-                  }
-                >
-                  <KeyOutcomePhoneFigures row={row} />
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section
-          id="final-solution-screens"
-          className="scroll-mt-28 space-y-10 max-w-6xl"
-        >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            07 · Final solution screens
-          </span>
-          <h2 className="text-xl font-semibold text-zinc-100">
-            High-fidelity UI across core tasks
-          </h2>
-          <p className="max-w-3xl text-zinc-300 leading-relaxed">
-            Selected key functional screens—focused on the flows that matter most.
-          </p>
-          <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-            {FINAL_SOLUTION_SCREENS.flatMap((item) => {
-              const files =
-                item.assetFiles ??
-                [item.assetFile ?? `solution-final-${item.id}.png`];
-              return files.map((file, i) => (
-                <WideFigure
-                  key={`${item.id}-${i}`}
-                  borderless
-                  src={ASSET(file)}
-                  alt={
-                    files.length > 1
-                      ? `${item.title} (${i + 1}/${files.length})`
-                      : item.title
-                  }
-                />
-              ));
-            })}
-          </div>
-        </section>
-
-        <section
-          id="impact-results"
-          className="max-w-3xl scroll-mt-28 space-y-6 sm:scroll-mt-32"
-        >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Impact &amp; results
-          </span>
-          <h2 className="text-xl font-semibold text-zinc-100">
-            Other measurable wins
-          </h2>
-          <p className="text-zinc-300 leading-relaxed">
-            The four outcome stories above cover login, onboarding, scan-first home,
-            and modular density. Additional lifts from the same research cycle are
-            summarized here so the full picture stays in one place.
-          </p>
-          <div className="grid gap-4 sm:grid-cols-2">
-            <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-5">
-              <p className="text-xs font-semibold uppercase tracking-wider text-emerald-400/90">
-                Task success (prototype)
-              </p>
-              <p className="mt-2 text-2xl font-semibold tabular-nums text-emerald-200">
-                <span className={M_TXT}>~88%</span>
-              </p>
-              <p className="mt-2 text-sm text-zinc-400 leading-relaxed">
-                Across 12 participants and five core tasks—strongest on scan &amp;
-                prize flows after the home and guidance iterations.
-              </p>
-            </div>
-            <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-5">
-              <p className="text-xs font-semibold uppercase tracking-wider text-emerald-400/90">
-                Missed prize redemptions
-              </p>
-              <p className="mt-2 text-2xl font-semibold tabular-nums text-emerald-200">
-                <span className={M_TXT}>−70%</span>
-              </p>
-              <p className="mt-2 text-sm text-zinc-400 leading-relaxed">
-                Clearer deadlines, status, and push alerts so people do not learn
-                about a win too late.
-              </p>
-            </div>
-          </div>
-          <p className="text-sm text-zinc-400 leading-relaxed">
-            Spending analysis, high-contrast visuals, and accessibility-oriented
-            patterns (e.g., VoiceOver annotations) further supported repeat use—
-            especially for younger budgeters and low-vision participants.
-          </p>
-        </section>
+        </DesignJourneyCollapsible>
 
         <section
           id="reflection"
