@@ -86,7 +86,7 @@ const ADJACENT_WORK = [
 const E_INVOICE_FLAGSHIP_COVER = {
   src: "/home/e-invoice-flagship-cover.png",
   width: 1024,
-  height: 566,
+  height: 414,
 } as const;
 
 const WORK_THUMB: Record<string, string> = {
