@@ -76,7 +76,7 @@ export default function AiMarketplaceCaseStudy() {
             ships.
           </p>
 
-          <h1 className="mt-8 font-semibold text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight max-w-3xl">
+          <h1 className="mt-8 max-w-3xl">
             MINA — an AI-native marketplace for parents who outgrow baby gear
             overnight
           </h1>
@@ -142,9 +142,9 @@ export default function AiMarketplaceCaseStudy() {
                 <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
                   App Store
                 </p>
-                <h2 className="mt-1 text-lg font-semibold text-zinc-100">
+                <h3 className="mt-1 text-zinc-100">
                   Live product
-                </h2>
+                </h3>
                 <p className="mt-1 max-w-xl text-sm text-zinc-500">
                   Mina — Resale for Parents is available on the App Store in Canada
                   for iPhone.
@@ -176,7 +176,7 @@ export default function AiMarketplaceCaseStudy() {
               <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
                 Why this exists
               </span>
-              <h2 className="text-xl font-semibold text-zinc-100">
+              <h2 className="text-zinc-100">
                 Built from the ground up for how fast babies—and closets—change
               </h2>
               <p className="text-zinc-300 leading-relaxed">
@@ -220,7 +220,7 @@ export default function AiMarketplaceCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             The pain we are solving
           </span>
-          <h2 className="text-xl font-semibold text-zinc-100">
+          <h2 className="text-zinc-100">
             Too much gear, too little time—and resale that feels like admin work
           </h2>
           <p className="text-zinc-300 leading-relaxed">
@@ -263,7 +263,7 @@ export default function AiMarketplaceCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Product strategy
           </span>
-          <h2 className="text-xl font-semibold text-zinc-100">
+          <h2 className="text-zinc-100">
             Community first, then scale—so listings find the right families faster
           </h2>
           <p className="text-zinc-300 leading-relaxed">
@@ -285,7 +285,7 @@ export default function AiMarketplaceCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Core experience
           </span>
-          <h2 className="text-xl font-semibold text-zinc-100">
+          <h2 className="text-zinc-100">
             An AI agent you talk to—not a form you fight with
           </h2>
           <p className="text-zinc-300 leading-relaxed">
@@ -301,9 +301,9 @@ export default function AiMarketplaceCaseStudy() {
           </p>
 
           <div className="rounded-2xl border border-violet-500/25 bg-violet-500/5 p-6 sm:p-8">
-            <h3 className="text-sm font-semibold text-violet-200 uppercase tracking-wider">
+            <h6 className="text-violet-200">
               One photo → many listings
-            </h3>
+            </h6>
             <p className="mt-3 text-zinc-300 leading-relaxed">
               Parents can <span className="text-zinc-100">take one photo</span> (or a
               single upload batch) and let AI propose{" "}
@@ -348,7 +348,7 @@ export default function AiMarketplaceCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Proposal &amp; alignment
           </span>
-          <h2 className="text-xl font-semibold text-zinc-100">
+          <h2 className="text-zinc-100">
             An innovative create-listing flow—and how we stress-tested it with
             engineering
           </h2>
@@ -428,7 +428,7 @@ export default function AiMarketplaceCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Design principles (draft)
           </span>
-          <h2 className="text-xl font-semibold text-zinc-100">
+          <h2 className="text-zinc-100">
             Trust, speed, and parent-grade clarity
           </h2>
           <ul className="space-y-3 text-zinc-300 leading-relaxed list-none">
@@ -465,7 +465,7 @@ export default function AiMarketplaceCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             What will appear here later
           </span>
-          <h2 className="mt-2 text-xl font-semibold text-zinc-100">
+          <h2 className="mt-2 text-zinc-100">
             Full case study — ongoing · coming soon
           </h2>
           <p className="mt-4 text-zinc-400 leading-relaxed">

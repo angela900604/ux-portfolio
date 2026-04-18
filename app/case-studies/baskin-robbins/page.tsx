@@ -185,7 +185,7 @@ export default function BaskinRobbinsCaseStudy() {
             <span className="text-zinc-600">·</span>
             <span>Zero-to-one</span>
           </div>
-          <h1 className="font-semibold text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight max-w-3xl">
+          <h1 className="max-w-3xl">
             Baskin-Robbins Taiwan&apos;s first membership app
           </h1>
           <p className="mt-5 max-w-3xl text-base leading-relaxed text-zinc-200 sm:text-lg">
@@ -258,7 +258,7 @@ export default function BaskinRobbinsCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Project background
           </span>
-          <h2 className="text-xl font-semibold text-zinc-100">
+          <h2 className="text-zinc-100">
             From Japan&apos;s proven program to Taiwan&apos;s gap
           </h2>
           <p className="text-zinc-300 leading-relaxed max-w-3xl">
@@ -280,9 +280,9 @@ export default function BaskinRobbinsCaseStudy() {
             with every scoop.
           </p>
           <div className="space-y-2 pt-2">
-            <h3 className="text-sm font-semibold text-zinc-100">
+            <h5 className="text-zinc-100">
               Stakeholder alignment (Japan HQ · Taiwan)
-            </h3>
+            </h5>
             <WideFigure
               borderless
               src={ASSET("stakeholder-alignment.png")}
@@ -299,7 +299,7 @@ export default function BaskinRobbinsCaseStudy() {
             <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
               Team objectives
             </span>
-            <h2 className="text-xl font-semibold text-zinc-100">
+            <h2 className="text-zinc-100">
               Why we built a dedicated membership surface in Taiwan
             </h2>
           </div>
@@ -326,7 +326,7 @@ export default function BaskinRobbinsCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Role &amp; deliverables
           </span>
-          <h2 className="text-xl font-semibold text-zinc-100">
+          <h2 className="text-zinc-100">
             What I owned end-to-end
           </h2>
           <p className="text-zinc-300 leading-relaxed">
@@ -344,7 +344,7 @@ export default function BaskinRobbinsCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Project outcomes
           </span>
-          <h2 className="text-xl font-semibold text-zinc-100">
+          <h2 className="text-zinc-100">
             First-phase MVP launch
           </h2>
           <p className="text-zinc-300 leading-relaxed">
@@ -361,7 +361,7 @@ export default function BaskinRobbinsCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Final product
           </span>
-          <h2 className="text-xl font-semibold text-zinc-100">
+          <h2 className="text-zinc-100">
             What members experience on device
           </h2>
           <p className="max-w-3xl text-zinc-300 leading-relaxed">
@@ -385,7 +385,7 @@ export default function BaskinRobbinsCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Design process
           </span>
-          <h2 className="text-xl font-semibold text-zinc-100">
+          <h2 className="text-zinc-100">
             A streamlined pipeline under a tight schedule
           </h2>
           <p className="text-zinc-300 leading-relaxed">
@@ -398,9 +398,9 @@ export default function BaskinRobbinsCaseStudy() {
             Finally, I confirmed Page Flow and system logic with the client so
             engineering could build with a shared map of branching and states.
           </p>
-          <h3 className="text-sm font-semibold text-zinc-100 pt-2">
+          <h5 className="text-zinc-100 pt-2">
             Functional map · Style proposal · Page flow
-          </h3>
+          </h5>
           <p className="text-sm text-zinc-400 leading-relaxed">
             Functional mapping, directional style boards, and page-flow validation
             were consolidated in Figma before high-fidelity execution (see style
@@ -413,9 +413,9 @@ export default function BaskinRobbinsCaseStudy() {
               rel="noopener noreferrer"
               className="group rounded-xl border border-zinc-800 bg-zinc-900/40 p-5 transition hover:border-zinc-600 hover:bg-zinc-900/60"
             >
-              <h3 className="text-sm font-semibold text-zinc-100">
+              <h5 className="text-zinc-100">
                 Mockup Figma file
-              </h3>
+              </h5>
               <p className="mt-2 text-sm text-zinc-300 leading-relaxed">
                 Includes complete high-fidelity page designs and slicing
                 instructions for the development team&apos;s reference.
@@ -430,9 +430,9 @@ export default function BaskinRobbinsCaseStudy() {
               rel="noopener noreferrer"
               className="group rounded-xl border border-zinc-800 bg-zinc-900/40 p-5 transition hover:border-zinc-600 hover:bg-zinc-900/60"
             >
-              <h3 className="text-sm font-semibold text-zinc-100">
+              <h5 className="text-zinc-100">
                 UI Kit Figma file
-              </h3>
+              </h5>
               <p className="mt-2 text-sm text-zinc-300 leading-relaxed">
                 Systematically organized design components, typography, and color
                 guidelines to ensure consistency and improve efficiency.
@@ -451,7 +451,7 @@ export default function BaskinRobbinsCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Requirement interviews
           </span>
-          <h2 className="text-xl font-semibold text-zinc-100">
+          <h2 className="text-zinc-100">
             Functional confirmation before high fidelity
           </h2>
           <p className="text-zinc-300 leading-relaxed">
@@ -479,7 +479,7 @@ export default function BaskinRobbinsCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Function difference
           </span>
-          <h2 className="text-xl font-semibold text-zinc-100">
+          <h2 className="text-zinc-100">
             Local rules vs Japan reference
           </h2>
           <p className="text-zinc-300 leading-relaxed">
@@ -504,7 +504,7 @@ export default function BaskinRobbinsCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Visual style &amp; UI design
           </span>
-          <h2 className="text-xl font-semibold text-zinc-100">
+          <h2 className="text-zinc-100">
             Three directions for stakeholder selection
           </h2>
           <p className="text-zinc-300 leading-relaxed max-w-3xl">
@@ -520,9 +520,9 @@ export default function BaskinRobbinsCaseStudy() {
             imagery take center stage instead of competing with UI chrome.
           </p>
           <div className="space-y-3 pt-2">
-            <h3 className="text-sm font-semibold text-zinc-100">
+            <h5 className="text-zinc-100">
               Style proposals (A / B / C)
-            </h3>
+            </h5>
             <div className="grid gap-6 md:grid-cols-3">
               <div className="space-y-4">
                 <WideFigure
@@ -531,9 +531,9 @@ export default function BaskinRobbinsCaseStudy() {
                   alt="Style proposal A — sweet and energetic"
                 />
                 <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5">
-                  <h3 className="text-sm font-semibold text-zinc-100">
+                  <h5 className="text-zinc-100">
                     Style A · Sweet &amp; energetic
-                  </h3>
+                  </h5>
                   <p className="mt-2 text-sm text-zinc-300 leading-relaxed">
                     Focused on 31 Ice Cream&apos;s signature pink—creating a lively,
                     youthful vibe for users who love vibrant colors, conveying joy
@@ -548,9 +548,9 @@ export default function BaskinRobbinsCaseStudy() {
                   alt="Style proposal — gradient and premium (Style C)"
                 />
                 <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5">
-                  <h3 className="text-sm font-semibold text-zinc-100">
+                  <h5 className="text-zinc-100">
                     Style C · Gradient &amp; premium
-                  </h3>
+                  </h5>
                   <p className="mt-2 text-sm text-zinc-300 leading-relaxed">
                     Used gradient effects to enhance sophistication—adding depth and
                     modern design elements to reflect a premium and innovative brand
@@ -565,9 +565,9 @@ export default function BaskinRobbinsCaseStudy() {
                   alt="Style proposal — minimal and fresh (Style B)"
                 />
                 <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5">
-                  <h3 className="text-sm font-semibold text-zinc-100">
+                  <h5 className="text-zinc-100">
                     Style B · Minimal &amp; fresh
-                  </h3>
+                  </h5>
                   <p className="mt-2 text-sm text-zinc-300 leading-relaxed">
                     Primarily white with pink accents—offering a clean and refreshing
                     style similar to Japan&apos;s 31 app, ideal for users seeking
@@ -586,7 +586,7 @@ export default function BaskinRobbinsCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Challenges
           </span>
-          <h2 className="text-xl font-semibold text-zinc-100">
+          <h2 className="text-zinc-100">
             What made the timeline difficult
           </h2>
           <ul className="list-disc pl-5 space-y-3 text-zinc-300 leading-relaxed marker:text-zinc-500">
@@ -616,7 +616,7 @@ export default function BaskinRobbinsCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Learnings
           </span>
-          <h2 className="text-xl font-semibold text-zinc-100">
+          <h2 className="text-zinc-100">
             What I took forward
           </h2>
           <p className="text-zinc-300 leading-relaxed">
@@ -636,7 +636,7 @@ export default function BaskinRobbinsCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Annotations &amp; page flow
           </span>
-          <h2 className="text-xl font-semibold text-zinc-100">
+          <h2 className="text-zinc-100">
             Developer handoff without guesswork
           </h2>
           <p className="text-zinc-300 leading-relaxed max-w-3xl">
@@ -656,9 +656,9 @@ export default function BaskinRobbinsCaseStudy() {
             quickly understand the design.
           </p>
           <div className="space-y-3 pt-2">
-            <h3 className="text-sm font-semibold text-zinc-100">
+            <h5 className="text-zinc-100">
               Annotated mockups · Page flow
-            </h3>
+            </h5>
             <AnnotatedFlowSlideshow items={ANNOTATED_SLIDES} />
           </div>
         </section>
@@ -670,7 +670,7 @@ export default function BaskinRobbinsCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Delivery
           </span>
-          <h2 className="text-xl font-semibold text-zinc-100">
+          <h2 className="text-zinc-100">
             UI kit, typography, color, and components
           </h2>
           <p className="text-zinc-300 leading-relaxed max-w-3xl">
@@ -696,9 +696,9 @@ export default function BaskinRobbinsCaseStudy() {
             aligned with BR31&apos;s brand identity.
           </p>
           <div className="space-y-3 pt-2">
-            <h3 className="text-sm font-semibold text-zinc-100">
+            <h5 className="text-zinc-100">
               UI kit · Components
-            </h3>
+            </h5>
             <div className="flex w-full max-w-3xl flex-col gap-10">
               <WideFigure
                 borderless

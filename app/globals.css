@@ -12,9 +12,30 @@
   --font-display: var(--font-display), system-ui, sans-serif;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
+@layer base {
+  /* Unified type scale — prefer semantic h1–h6; keep color/spacing on elements. */
+  h1 {
+    @apply font-semibold tracking-tight text-3xl leading-tight sm:text-4xl md:text-5xl;
+  }
+  h2 {
+    @apply font-semibold tracking-tight text-2xl leading-snug;
+  }
+  h3 {
+    @apply font-semibold text-lg leading-snug;
+  }
+  h4 {
+    @apply font-semibold text-base leading-snug;
+  }
+  h5 {
+    @apply font-semibold text-sm leading-snug;
+  }
+  h6 {
+    @apply font-semibold text-xs leading-snug tracking-wide;
+  }
+
+  body {
+    @apply bg-[var(--background)] text-[var(--foreground)] text-base leading-[1.65] antialiased font-sans sm:text-lg;
+  }
 }
 
 /* Site-wide custom cursor (19×19 asset — hotspot at center) */

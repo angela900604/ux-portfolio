@@ -47,9 +47,7 @@ export default function ResumePage() {
             <p className="mb-3 text-sm font-medium uppercase tracking-widest text-stone-500">
               Resume
             </p>
-            <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl md:text-6xl">
-              Angela (ChiehNi) Yang
-            </h1>
+            <h1>Angela (ChiehNi) Yang</h1>
             <p className="mt-4 text-base leading-relaxed text-stone-600 sm:text-lg">
               Vancouver, BC · Eligible to work in Canada · 778-317-5206 ·
               angela900604@gmail.com ·{" "}
@@ -94,7 +92,7 @@ export default function ResumePage() {
               id="professional-summary"
               className="mt-12 scroll-mt-28 sm:scroll-mt-32"
             >
-              <h2 className="border-b border-stone-200 pb-3 text-base font-semibold uppercase tracking-widest text-stone-600">
+              <h2 className="border-b border-stone-200 pb-3 uppercase tracking-widest text-stone-600">
                 Professional summary
               </h2>
               <p className="mt-6 text-base leading-[1.65] text-stone-800 sm:text-lg">
@@ -117,7 +115,7 @@ export default function ResumePage() {
               id="work-experience"
               className="mt-14 scroll-mt-28 sm:scroll-mt-32"
             >
-              <h2 className="border-b border-stone-200 pb-3 text-base font-semibold uppercase tracking-widest text-stone-600">
+              <h2 className="border-b border-stone-200 pb-3 uppercase tracking-widest text-stone-600">
                 Work experience
               </h2>
 
@@ -269,7 +267,7 @@ export default function ResumePage() {
               id="education"
               className="mt-14 scroll-mt-28 sm:scroll-mt-32"
             >
-              <h2 className="border-b border-stone-200 pb-3 text-base font-semibold uppercase tracking-widest text-stone-600">
+              <h2 className="border-b border-stone-200 pb-3 uppercase tracking-widest text-stone-600">
                 Education
               </h2>
               <ul className="mt-6 space-y-4 text-base leading-relaxed text-stone-800 sm:text-lg">
@@ -292,7 +290,7 @@ export default function ResumePage() {
               id="skills"
               className="mt-14 scroll-mt-28 sm:scroll-mt-32"
             >
-              <h2 className="border-b border-stone-200 pb-3 text-base font-semibold uppercase tracking-widest text-stone-600">
+              <h2 className="border-b border-stone-200 pb-3 uppercase tracking-widest text-stone-600">
                 Skills
               </h2>
               <div className="mt-6 space-y-5 text-base leading-[1.65] text-stone-800 sm:text-lg">

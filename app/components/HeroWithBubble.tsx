@@ -44,7 +44,7 @@ export function HeroWithBubble() {
         <p className="text-xs font-medium uppercase tracking-widest text-zinc-500 mb-4">
           Product design · Vancouver (open to relocate)
         </p>
-        <h1 className="font-semibold text-4xl sm:text-5xl md:text-6xl leading-[1.1] tracking-tight max-w-[36rem]">
+        <h1 className="max-w-[36rem]">
           I turn ambiguous ideas into shippable digital products.
         </h1>
         <p className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg">

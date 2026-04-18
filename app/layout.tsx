@@ -28,7 +28,7 @@ export default function RootLayout({
       lang="en"
       className={`${sans.variable} ${display.variable} scroll-smooth`}
     >
-      <body className="min-h-screen bg-zinc-950 text-zinc-100 antialiased font-sans">
+      <body className="min-h-screen">
         <div className="flex min-h-screen flex-col">
           <header className="sticky top-0 z-50 border-b border-zinc-800 bg-zinc-950/80 backdrop-blur-sm">
             <div className="mx-auto flex max-w-[1280px] items-center justify-between px-6 sm:px-[100px] py-4">

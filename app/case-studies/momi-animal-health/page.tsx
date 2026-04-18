@@ -93,7 +93,7 @@ function Section({
       <span className="text-xs font-medium uppercase tracking-widest text-[#8D99AE]">
         {kicker}
       </span>
-      <h2 className="mt-2 text-xl font-semibold text-[#2C3E50]">{title}</h2>
+      <h2 className="mt-2 text-[#2C3E50]">{title}</h2>
       {children}
     </section>
   );
@@ -110,7 +110,7 @@ export default function MomiAnimalHealthCaseStudy() {
             <span>Content + Growth</span>
           </div>
 
-          <h1 className="font-semibold text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight max-w-3xl text-[#2C3E50]">
+          <h1 className="max-w-3xl text-[#2C3E50]">
             MOMI Animal Health
           </h1>
           <p className="mt-4 text-xl text-[#666] max-w-2xl">
@@ -162,9 +162,9 @@ export default function MomiAnimalHealthCaseStudy() {
         >
           <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
             <article className="rounded-2xl border border-[#E8E1D6] bg-white p-6">
-              <h3 className="text-sm font-semibold uppercase tracking-wide text-[#7B746B]">
+              <h5 className="text-[#7B746B] uppercase tracking-wide">
                 Brief / Background
-              </h3>
+              </h5>
               <p className="mt-2 text-sm text-[#666] leading-relaxed">
                 MOMI Animal Health is a rabbit-care brand. The project focused on
                 building clearer product communication across social channels and
@@ -172,9 +172,9 @@ export default function MomiAnimalHealthCaseStudy() {
               </p>
             </article>
             <article className="rounded-2xl border border-[#E8E1D6] bg-white p-6">
-              <h3 className="text-sm font-semibold uppercase tracking-wide text-[#7B746B]">
+              <h5 className="text-[#7B746B] uppercase tracking-wide">
                 Tools
-              </h3>
+              </h5>
               <p className="mt-2 text-sm text-[#666] leading-relaxed">
                 Adobe Photoshop / Adobe Illustrator / Facebook / MOMO / Shopee
               </p>
@@ -249,9 +249,9 @@ export default function MomiAnimalHealthCaseStudy() {
           </ul>
 
           <div className="mt-8">
-            <h3 className="text-sm font-semibold text-[#2C3E50]">
+            <h5 className="text-[#2C3E50]">
               Pet expo — on-site
-            </h3>
+            </h5>
             <p className="mt-2 text-sm text-[#666] leading-relaxed max-w-2xl">
               Photos from the pet exhibition floor: booth footprint, wall
               display, and live rabbit on hay next to product.
@@ -276,9 +276,9 @@ export default function MomiAnimalHealthCaseStudy() {
 
           <div className="mx-auto mt-10 w-full max-w-6xl space-y-12">
             <div className="w-full max-w-xl">
-              <h3 className="text-sm font-semibold text-[#2C3E50]">
+              <h5 className="text-[#2C3E50]">
                 eCommerce promotional cover variations
-              </h3>
+              </h5>
               <div className="mt-4 w-full">
                 <MomiImageSlideshow
                   block
@@ -289,9 +289,9 @@ export default function MomiAnimalHealthCaseStudy() {
             </div>
 
             <div className="w-full">
-              <h3 className="text-sm font-semibold text-[#2C3E50]">
+              <h5 className="text-[#2C3E50]">
                 Campaign
-              </h3>
+              </h5>
               <p className="mt-2 max-w-2xl text-sm text-[#666] leading-relaxed">
                 Promotional and informational printed posters.
               </p>

@@ -16,7 +16,7 @@ export function ProblemPersonasBlock() {
         <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
           02 · The problem
         </span>
-        <h2 className="text-xl font-semibold text-zinc-100">
+        <h2 className="text-zinc-100">
           From public reviews to interviews—why the experience was breaking down
         </h2>
         <p className="text-zinc-300 leading-relaxed">
@@ -33,7 +33,7 @@ export function ProblemPersonasBlock() {
           <p className="text-xs font-semibold uppercase tracking-widest text-amber-400/90">
             Layer 1 · Where the problem showed up first
           </p>
-          <h3 className="mt-2 text-lg font-semibold text-zinc-100">
+          <h3 className="mt-2 text-zinc-100">
             App Store reviews (Taiwan · ~Mar 2024–Mar 2025)
           </h3>
           <p className="mt-2 max-w-3xl text-sm leading-relaxed text-zinc-400">
@@ -127,7 +127,7 @@ export function ProblemPersonasBlock() {
             <p className="text-xs font-semibold uppercase tracking-widest text-emerald-400/90">
               Layer 2 · What interviews layered on top
             </p>
-            <h3 className="mt-2 text-lg font-semibold text-zinc-100">
+            <h3 className="mt-2 text-zinc-100">
               Same jobs, different constraints—one comparison table
             </h3>
             <p className="mt-2 max-w-3xl text-sm leading-relaxed text-zinc-400">

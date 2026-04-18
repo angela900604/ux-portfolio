@@ -66,7 +66,7 @@ function Section({
       <span className="text-xs font-medium uppercase tracking-widest text-[#8D99AE]">
         {kicker}
       </span>
-      <h2 className="mt-2 text-xl font-semibold text-[#2C3E50]">{title}</h2>
+      <h2 className="mt-2 text-[#2C3E50]">{title}</h2>
       {children}
     </section>
   );
@@ -83,7 +83,7 @@ export default function AdmissionHubCaseStudy() {
             <span>Content + Growth</span>
           </div>
 
-          <h1 className="font-semibold text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight max-w-3xl text-[#2C3E50]">
+          <h1 className="max-w-3xl text-[#2C3E50]">
             Admission Hub
           </h1>
           <dl className="mt-8 flex flex-wrap gap-x-10 gap-y-2 text-sm">
@@ -129,18 +129,18 @@ export default function AdmissionHubCaseStudy() {
         >
           <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
             <article className="rounded-2xl border border-[#E8E1D6] bg-white p-6">
-              <h3 className="text-sm font-semibold uppercase tracking-wide text-[#7B746B]">
+              <h5 className="text-[#7B746B] uppercase tracking-wide">
                 Brief / Background
-              </h3>
+              </h5>
               <p className="mt-2 text-sm text-[#666] leading-relaxed">
                 Admission Hub supports students and families evaluating Canadian
                 study and immigration paths, primarily in Taiwan and Hong Kong.
               </p>
             </article>
             <article className="rounded-2xl border border-[#E8E1D6] bg-white p-6">
-              <h3 className="text-sm font-semibold uppercase tracking-wide text-[#7B746B]">
+              <h5 className="text-[#7B746B] uppercase tracking-wide">
                 Tools
-              </h3>
+              </h5>
               <p className="mt-2 text-sm text-[#666] leading-relaxed">
                 Mailchimp / WordPress / Figma / Instagram
               </p>
@@ -155,7 +155,7 @@ export default function AdmissionHubCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-[#8D99AE]">
             01 · Problem
           </span>
-          <h2 className="mt-2 text-xl font-semibold text-[#2C3E50]">
+          <h2 className="mt-2 text-[#2C3E50]">
             What the digital channel looked like when I joined
           </h2>
           <div className="mt-4 max-w-2xl">
@@ -177,7 +177,7 @@ export default function AdmissionHubCaseStudy() {
             </p>
 
             <div className="mt-8 border-t border-[#E0D9CE] pt-8">
-              <h3 className="text-lg font-semibold text-[#2C3E50] leading-snug">
+              <h3 className="text-[#2C3E50]">
                 My goal is to earn attention, then convert it into trust.
               </h3>
             </div>
@@ -217,9 +217,9 @@ export default function AdmissionHubCaseStudy() {
           title="A repeatable campaign + content system"
         >
           <div className="mt-4 rounded-2xl border border-[#E8E1D6] bg-white p-6">
-            <h3 className="text-sm font-semibold text-[#2C3E50]">
+            <h5 className="text-[#2C3E50]">
               Email (Mailchimp) — how sends were structured
-            </h3>
+            </h5>
             <p className="mt-2 text-sm text-[#666] leading-relaxed max-w-3xl">
               Mailchimp execution—templates, segmentation, and cadence tied to
               site content.
@@ -271,9 +271,9 @@ export default function AdmissionHubCaseStudy() {
           </div>
 
           <div className="mt-10 rounded-2xl border border-[#E8E1D6] bg-white p-6">
-            <h3 className="text-sm font-semibold text-[#2C3E50]">
+            <h5 className="text-[#2C3E50]">
               SEO + WordPress
-            </h3>
+            </h5>
             <p className="mt-2 text-sm text-[#666] leading-relaxed max-w-3xl">
               Utility articles and on-page structure to support organic
               discovery.
@@ -316,9 +316,9 @@ export default function AdmissionHubCaseStudy() {
 
           <div className="mt-10 grid gap-6 lg:grid-cols-2 lg:items-start">
             <div className="rounded-2xl border border-[#E8E1D6] bg-white p-6">
-              <h3 className="text-sm font-semibold text-[#2C3E50]">
+              <h5 className="text-[#2C3E50]">
                 Visuals for web + social
-              </h3>
+              </h5>
               <p className="mt-2 text-sm text-[#666] leading-relaxed">
                 Figma graphics for the site and Instagram—supporting +500
                 followers and +21% engagement over roughly three months.
@@ -333,9 +333,9 @@ export default function AdmissionHubCaseStudy() {
               </p>
             </div>
             <div className="rounded-2xl border border-[#E8E1D6] bg-white p-6">
-              <h3 className="text-sm font-semibold text-[#2C3E50]">
+              <h5 className="text-[#2C3E50]">
                 Calendar hooks &amp; “utility” social
-              </h3>
+              </h5>
               <p className="mt-2 text-sm text-[#666] leading-relaxed">
                 I chased utility moments people actually search for on Instagram
                 (times, places, seasonal hooks).

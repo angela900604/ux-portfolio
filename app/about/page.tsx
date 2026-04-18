@@ -38,7 +38,7 @@ export default function AboutPage() {
         <p className="text-xs font-medium uppercase tracking-widest text-zinc-500 mb-4">
           About
         </p>
-        <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl max-w-2xl">
+        <h1 className="max-w-2xl">
           Angela Yang
         </h1>
         <p className="mt-3 text-xs font-medium uppercase tracking-widest text-zinc-500 max-w-2xl">
@@ -109,9 +109,9 @@ export default function AboutPage() {
           </p>
           <div className="mt-8 flex max-w-3xl flex-col gap-4">
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
-              <h3 className="text-sm font-semibold text-zinc-100">
+              <h5 className="text-zinc-100 normal-case tracking-normal">
                 Engineering-led collaboration
-              </h3>
+              </h5>
               <p className="mt-3 text-base leading-relaxed text-zinc-400 sm:text-lg">
                 I work very closely with frontend and backend engineers from the
                 beginning. During early product phases, I proactively discuss
@@ -120,9 +120,9 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
-              <h3 className="text-sm font-semibold text-zinc-100">
+              <h5 className="text-zinc-100 normal-case tracking-normal">
                 Stakeholder alignment
-              </h3>
+              </h5>
               <p className="mt-3 text-base leading-relaxed text-zinc-400 sm:text-lg">
                 I partner directly with product/project managers, clients, and
                 other stakeholders to translate requirements into clear design
@@ -130,9 +130,9 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
-              <h3 className="text-sm font-semibold text-zinc-100">
+              <h5 className="text-zinc-100 normal-case tracking-normal">
                 AI-enhanced workflow
-              </h3>
+              </h5>
               <p className="mt-3 text-base leading-relaxed text-zinc-400 sm:text-lg">
                 I constantly test new AI tools (such as Cursor, Claude, and Figma
                 AI), not to follow trends, but to identify what genuinely improves
@@ -151,17 +151,17 @@ export default function AboutPage() {
           </p>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 max-w-3xl">
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
-              <h3 className="text-sm font-semibold text-zinc-100">
+              <h5 className="text-zinc-100 normal-case tracking-normal">
                 Branding &amp; style exploration
-              </h3>
+              </h5>
               <p className="mt-3 text-base leading-relaxed text-zinc-400 sm:text-lg">
                 I enjoy studying the logic behind brands and how visual style creates recognition, trust, and emotional resonance.
               </p>
             </div>
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
-              <h3 className="text-sm font-semibold text-zinc-100">
+              <h5 className="text-zinc-100 normal-case tracking-normal">
                 Photography &amp; travel
-              </h3>
+              </h5>
               <p className="mt-3 text-base leading-relaxed text-zinc-400 sm:text-lg">
                 Through travel photography, I capture details from different cities. It is one of my ways to train visual sensitivity and build a more grounded understanding of aesthetics.
               </p>

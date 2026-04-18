@@ -112,9 +112,7 @@ export default function Home() {
       {/* Selected projects */}
       <section id="featured" className="border-b border-zinc-800">
         <div className="mx-auto max-w-[1280px] px-6 sm:px-[100px] py-16 sm:py-20">
-          <h2 className="text-2xl font-semibold text-zinc-100">
-            Selected Projects
-          </h2>
+          <h2 className="text-zinc-100">Selected Projects</h2>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg">
             0→1 products across AI-powered automation, Public Services, and
             Consumer Loyalty.
@@ -140,7 +138,7 @@ export default function Home() {
                 <span className="inline-block text-[10px] font-medium uppercase tracking-widest text-amber-400/90 mb-3">
                   {CORE_PRODUCT.flagship.tag}
                 </span>
-                <h3 className="text-xl sm:text-2xl font-semibold text-zinc-100 group-hover:text-zinc-50 transition">
+                <h3 className="text-zinc-100 transition group-hover:text-zinc-50">
                   {CORE_PRODUCT.flagship.title}
                 </h3>
                 <p className="mt-1 text-base font-medium text-emerald-400/90 sm:text-lg">
@@ -178,7 +176,7 @@ export default function Home() {
                   <span className="text-[10px] font-medium uppercase tracking-widest text-zinc-500">
                     {item.tag}
                   </span>
-                  <h3 className="mt-2 text-lg font-semibold text-zinc-100 group-hover:text-zinc-50">
+                  <h3 className="mt-2 text-zinc-100 group-hover:text-zinc-50">
                     {item.title}
                   </h3>
                   <p className="mt-1 text-base text-emerald-400/80 sm:text-lg">
@@ -200,9 +198,7 @@ export default function Home() {
       {/* Brand & storytelling */}
       <section id="selected-work" className="border-b border-zinc-800">
         <div className="mx-auto max-w-[1280px] px-6 sm:px-[100px] py-16 sm:py-20">
-          <h2 className="text-2xl font-semibold text-zinc-100">
-            Brand &amp; Storytelling
-          </h2>
+          <h2 className="text-zinc-100">Brand &amp; Storytelling</h2>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg">
             Supporting product launches through visual identity and marketing
             design.
@@ -227,7 +223,7 @@ export default function Home() {
                   <span className="text-[10px] font-medium uppercase tracking-widest text-zinc-500">
                     {item.tag}
                   </span>
-                  <h3 className="mt-2 text-lg font-semibold text-zinc-100 group-hover:text-zinc-50">
+                  <h3 className="mt-2 text-zinc-100 group-hover:text-zinc-50">
                     {item.title}
                   </h3>
                   <p className="mt-1 text-base text-emerald-400/80 sm:text-lg">
@@ -249,9 +245,7 @@ export default function Home() {
       {/* Contact */}
       <section id="contact" className="border-b border-zinc-800">
         <div className="mx-auto max-w-[1280px] px-6 sm:px-[100px] py-16 sm:py-20">
-          <h2 className="text-2xl font-semibold text-zinc-100">
-            Let&apos;s Build Something Together
-          </h2>
+          <h2 className="text-zinc-100">Let&apos;s Build Something Together</h2>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg">
             Currently open to Product Design roles that require an end-to-end
             workflow. Based in Vancouver; open to relocation, remote, or hybrid

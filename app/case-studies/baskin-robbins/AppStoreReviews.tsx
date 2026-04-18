@@ -99,9 +99,9 @@ export function AppStoreReviewsSection({ appStoreHref }: { appStoreHref: string 
           <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             App Store
           </p>
-          <h2 className="mt-1 text-lg font-semibold text-zinc-100">
+          <h3 className="mt-1 text-zinc-100">
             User feedback
-          </h2>
+          </h3>
           <p className="mt-1 max-w-xl text-sm text-zinc-500">
             Excerpts from Taiwan App Store reviews (all ratings are 5 stars).
           </p>

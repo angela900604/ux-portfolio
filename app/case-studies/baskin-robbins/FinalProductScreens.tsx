@@ -18,7 +18,7 @@ export function FinalProductScreens({ asset, groups }: Props) {
       {groups.map((group) => (
         <div key={group.title} className="space-y-6">
           <div className="max-w-3xl space-y-2">
-            <h3 className="text-lg font-semibold text-zinc-100">{group.title}</h3>
+            <h3 className="text-zinc-100">{group.title}</h3>
             <p className="text-sm leading-relaxed text-zinc-400">
               {group.description}
             </p>

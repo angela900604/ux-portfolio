@@ -82,7 +82,7 @@ export default function GovernmentBackendCaseStudy() {
             <span className="text-zinc-600">·</span>
             <span>Enterprise System</span>
           </div>
-          <h1 className="font-semibold text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight max-w-3xl">
+          <h1 className="max-w-3xl">
             Role-based backend for 600+ government staff
           </h1>
           <p className="mt-4 text-xl text-zinc-400 max-w-2xl">
@@ -141,7 +141,7 @@ export default function GovernmentBackendCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Project background
           </span>
-          <h2 className="text-xl font-semibold text-zinc-100">
+          <h2 className="text-zinc-100">
             Why this platform existed
           </h2>
           <p className="text-zinc-300 leading-relaxed max-w-3xl">
@@ -172,9 +172,9 @@ export default function GovernmentBackendCaseStudy() {
           </p>
 
           <div className="space-y-3 pt-4">
-            <h3 className="text-sm font-semibold text-zinc-100">
+            <h5 className="text-zinc-100">
               Example of corresponding screens
-            </h3>
+            </h5>
             <p className="max-w-3xl text-sm text-zinc-400 leading-relaxed">
               Staff compose notification content in the backend, set publish timing,
               and schedule delivery in advance. End users receive{" "}
@@ -243,7 +243,7 @@ export default function GovernmentBackendCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Summary
           </span>
-          <h2 className="text-xl font-semibold text-zinc-100">
+          <h2 className="text-zinc-100">
             Supporting <Metric>600+</Metric> government staff with role-based
             access control
           </h2>
@@ -254,7 +254,7 @@ export default function GovernmentBackendCaseStudy() {
             work independently while preventing conflicts that could affect
             public-facing content.
           </p>
-          <h2 className="text-xl font-semibold text-zinc-100 pt-2">
+          <h2 className="text-zinc-100 pt-2">
             Enabling self-service reporting for faster decision-making
           </h2>
           <p className="text-zinc-300 leading-relaxed">
@@ -266,7 +266,7 @@ export default function GovernmentBackendCaseStudy() {
             . Staff could prepare reports independently for meetings and audits,
             reducing reliance on engineers and speeding up operational workflows.
           </p>
-          <h2 className="text-xl font-semibold text-zinc-100 pt-2">
+          <h2 className="text-zinc-100 pt-2">
             Aligning UI decisions with system logic under tight constraints
           </h2>
           <p className="text-zinc-300 leading-relaxed">
@@ -284,7 +284,7 @@ export default function GovernmentBackendCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Final result
           </span>
-          <h2 className="text-xl font-semibold text-zinc-100">
+          <h2 className="text-zinc-100">
             One reliable platform for cross-department operations
           </h2>
           <p className="text-zinc-300 leading-relaxed">
@@ -308,7 +308,7 @@ export default function GovernmentBackendCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Role-based access control
           </span>
-          <h2 className="text-xl font-semibold text-zinc-100">
+          <h2 className="text-zinc-100">
             Collaboration across departments—without stepping on each other
           </h2>
           <p className="text-zinc-300 leading-relaxed">
@@ -339,9 +339,9 @@ export default function GovernmentBackendCaseStudy() {
             credibility.
           </p>
           <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6 space-y-4 max-w-3xl">
-            <h3 className="text-sm font-semibold text-zinc-100">
+            <h5 className="text-zinc-100">
               Role &amp; permission example · Promotion Zone
-            </h3>
+            </h5>
             <p className="text-zinc-300 leading-relaxed text-sm">
               <span className="text-zinc-200 font-medium">General role</span> with
               &quot;Create Article&quot; permission: users can create and manage
@@ -362,9 +362,9 @@ export default function GovernmentBackendCaseStudy() {
           </div>
 
           <div className="space-y-3 pt-2">
-            <h3 className="text-sm font-semibold text-zinc-100">
+            <h5 className="text-zinc-100">
               RBAC in the UI · Role-based visibility
-            </h3>
+            </h5>
             <p className="text-sm text-zinc-500 max-w-3xl">
               Matrix of main vs. sub-functions by organization (from stakeholder
               definitions): checkmarks indicate access; dashes mean the feature is
@@ -526,7 +526,7 @@ export default function GovernmentBackendCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Key design iterations
           </span>
-          <h2 className="text-xl font-semibold text-zinc-100">
+          <h2 className="text-zinc-100">
             Two iterations that went through the longest discussions
           </h2>
           <p className="text-zinc-300 leading-relaxed">
@@ -536,9 +536,9 @@ export default function GovernmentBackendCaseStudy() {
           </p>
 
           <div className="space-y-4">
-            <h3 className="text-sm font-semibold text-zinc-100">
+            <h5 className="text-zinc-100">
               Design iteration 1 · Data reporting
-            </h3>
+            </h5>
             <p className="text-zinc-300 leading-relaxed">
               <span className="text-zinc-200 font-semibold">Before:</span> Reporting
               worked, but the layout made it harder to answer common questions in one
@@ -594,9 +594,9 @@ export default function GovernmentBackendCaseStudy() {
           </div>
 
           <div className="space-y-4 max-w-3xl">
-            <h3 className="text-sm font-semibold text-zinc-100">
+            <h5 className="text-zinc-100">
               Design iteration 2 · App update version control
-            </h3>
+            </h5>
             <p className="text-zinc-300 leading-relaxed">
               With engineers, I aligned how the UI should surface{" "}
               <span className="text-zinc-200">mandatory vs. optional updates</span>,{" "}
@@ -631,7 +631,7 @@ export default function GovernmentBackendCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Reflection
           </span>
-          <h2 className="text-xl font-semibold text-zinc-100">
+          <h2 className="text-zinc-100">
             Processes and interfaces, under constraints
           </h2>
           <p className="text-zinc-300 leading-relaxed">

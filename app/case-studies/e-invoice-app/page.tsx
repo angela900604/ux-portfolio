@@ -307,7 +307,7 @@ export default function EInvoiceCaseStudy() {
             <span className="text-zinc-600">·</span>
             <span>Mobile App</span>
           </div>
-          <h1 className="font-semibold text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight max-w-4xl">
+          <h1 className="max-w-4xl">
             Reimagining Taiwan&apos;s e-Invoice experience: guided onboarding,
             lottery prize redemption &amp; eco-friendly engagement
           </h1>
@@ -464,7 +464,7 @@ export default function EInvoiceCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             01 · Project background
           </span>
-          <h2 className="text-xl font-semibold text-zinc-100">
+          <h2 className="text-zinc-100">
             Why the Cloud Invoice App needed a redesign
           </h2>
           <p className="text-zinc-300 leading-relaxed">
@@ -521,7 +521,7 @@ export default function EInvoiceCaseStudy() {
             <span className="text-xs font-medium uppercase tracking-widest text-emerald-400/90">
               From evidence to interface
             </span>
-            <h2 className="text-2xl font-semibold tracking-tight text-zinc-100 sm:text-3xl">
+            <h2 className="text-zinc-100">
               Four problems we solved—end to end
             </h2>
             <p className="text-zinc-400 leading-relaxed">
@@ -546,7 +546,7 @@ export default function EInvoiceCaseStudy() {
                 className="grid gap-10 border-t border-zinc-800/90 pt-12 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-start lg:gap-12 lg:pt-14"
               >
                 <div className="min-w-0 space-y-6">
-                  <h3 className="text-lg font-semibold leading-snug text-zinc-100 sm:text-xl">
+                  <h3 className="text-zinc-100">
                     {row.title}
                   </h3>
                   <div className="space-y-5">
@@ -605,7 +605,7 @@ export default function EInvoiceCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             07 · Final solution screens
           </span>
-          <h2 className="text-xl font-semibold text-zinc-100">
+          <h2 className="text-zinc-100">
             High-fidelity UI across core tasks
           </h2>
           <p className="max-w-3xl text-zinc-300 leading-relaxed">
@@ -639,7 +639,7 @@ export default function EInvoiceCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Impact &amp; results
           </span>
-          <h2 className="text-xl font-semibold text-zinc-100">
+          <h2 className="text-zinc-100">
             Other measurable wins
           </h2>
           <p className="text-zinc-300 leading-relaxed">
@@ -691,7 +691,7 @@ export default function EInvoiceCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             03 · Competitor insights &amp; design process
           </span>
-          <h2 className="max-w-3xl text-xl font-semibold text-zinc-100">
+          <h2 className="max-w-3xl text-zinc-100">
             What the market already proved—before IA and UI
           </h2>
           <p className="max-w-3xl text-sm leading-relaxed text-zinc-400">
@@ -713,7 +713,7 @@ export default function EInvoiceCaseStudy() {
           id="accessibility"
           className="max-w-4xl scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
-          <h3 className="text-lg font-semibold text-zinc-100">
+                       <h3 className="text-zinc-100">
             Accessibility work — VoiceOver &amp; screen reader
           </h3>
           <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-10">
@@ -761,7 +761,7 @@ export default function EInvoiceCaseStudy() {
           id="business-constraints"
           className="max-w-3xl scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
-          <h3 className="text-lg font-semibold text-zinc-100">
+                       <h3 className="text-zinc-100">
             Business constraints
           </h3>
           <div className="grid gap-4 sm:grid-cols-3">
@@ -795,7 +795,7 @@ export default function EInvoiceCaseStudy() {
           id="functional-map"
           className="max-w-4xl scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
-          <h3 className="text-lg font-semibold text-zinc-100">Functional map</h3>
+          <h3 className="text-zinc-100">Functional map</h3>
           <p className="text-zinc-300 leading-relaxed max-w-3xl">
             A functional map aligned the team on scope: how login, home,
             notifications, scan-and-win, and downstream flows connect before hi-fi
@@ -817,7 +817,7 @@ export default function EInvoiceCaseStudy() {
             <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
               05 · Page flow, UI direction &amp; design system
             </span>
-            <h2 className="text-xl font-semibold text-zinc-100">
+            <h2 className="text-zinc-100">
               From flow logic to visual language
             </h2>
             <p className="text-zinc-300 leading-relaxed">
@@ -834,7 +834,7 @@ export default function EInvoiceCaseStudy() {
               <p className="text-xs font-semibold uppercase tracking-widest text-violet-400/90">
                 Concept development
               </p>
-              <h3 className="text-lg font-semibold text-zinc-100">
+                           <h3 className="text-zinc-100">
                 Moodboard &amp; style directions · 01 Friendly lifestyle
               </h3>
               <p className="text-zinc-300 leading-relaxed">
@@ -893,7 +893,7 @@ export default function EInvoiceCaseStudy() {
           </div>
 
           <div className="max-w-3xl space-y-4 pt-2">
-            <h3 className="text-lg font-semibold text-zinc-100">
+                         <h3 className="text-zinc-100">
               Mockups &amp; design system
             </h3>
             <p className="text-zinc-300 leading-relaxed">
@@ -912,7 +912,7 @@ export default function EInvoiceCaseStudy() {
             <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
               06 · Testing &amp; iterations
             </span>
-            <h2 className="text-xl font-semibold text-zinc-100">
+            <h2 className="text-zinc-100">
               Prototype testing &amp; key refinements
             </h2>
             <p className="text-zinc-300 leading-relaxed">
@@ -924,9 +924,9 @@ export default function EInvoiceCaseStudy() {
               entry—which became actionable opportunities to improve accessibility and
               efficiency before launch.
             </p>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-zinc-400">
+            <h6 className="text-zinc-400">
               Five core test tasks
-            </h3>
+            </h6>
             <ul className="list-disc pl-5 space-y-2 text-zinc-300 marker:text-zinc-500">
               <li>Login &amp; registration — verify account creation and access.</li>
               <li>Carrier binding — link and manage invoice carriers.</li>
@@ -938,7 +938,7 @@ export default function EInvoiceCaseStudy() {
               <li>Spending analysis — view and interpret expense breakdowns.</li>
             </ul>
             <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-6">
-              <h4 className="text-sm font-semibold text-zinc-100">
+              <h4 className="text-zinc-100">
                 Results summary (prototype)
               </h4>
               <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 text-sm">
@@ -1008,7 +1008,7 @@ export default function EInvoiceCaseStudy() {
             <p className="text-xs font-medium uppercase tracking-widest text-amber-400/90">
               Lowest task score · reframed problem
             </p>
-            <h3 className="mt-3 text-lg font-semibold leading-snug text-zinc-100 sm:text-xl">
+            <h3 className="mt-3 text-zinc-100">
               <span aria-hidden>{"\u{1F517}"}</span> Carrier binding → scenario
               explanation &amp; smart support
             </h3>
@@ -1106,7 +1106,7 @@ export default function EInvoiceCaseStudy() {
           id="reflection"
           className="max-w-3xl scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
-          <h2 className="text-xl font-semibold text-zinc-100">
+          <h2 className="text-zinc-100">
             Reflection &amp; learnings
           </h2>
           <p className="text-zinc-300 leading-relaxed">

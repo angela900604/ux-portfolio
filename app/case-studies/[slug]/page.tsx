@@ -32,7 +32,7 @@ export default function CaseStudySlugPage({
         <span className="text-zinc-600 mx-2">·</span>
         {slug}
       </p>
-      <h1 className="text-2xl font-semibold text-zinc-200 text-center max-w-md">
+      <h1 className="text-center text-zinc-200 max-w-md">
         This case study is coming soon.
       </h1>
       <p className="mt-3 text-sm text-zinc-500 text-center max-w-sm">
