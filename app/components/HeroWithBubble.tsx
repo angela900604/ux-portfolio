@@ -6,7 +6,9 @@ import { useCallback, useLayoutEffect, useRef, useState } from "react";
 
 const BUBBLE_SRC = "/home/header-bubble-v2.png";
 const ASPECT = 1024 / 744;
-const MAX_BUBBLE_W = 560;
+/** Cap width; height scales with text column × {@link BUBBLE_SCALE}. */
+const MAX_BUBBLE_W = 720;
+const BUBBLE_SCALE = 1.12;
 
 const HERO_KEYWORDS = [
   "Public service",
@@ -50,9 +52,12 @@ export function HeroWithBubble() {
     };
   }, [measure]);
 
-  const bubbleH = textH > 0 ? textH : undefined;
+  const bubbleH =
+    textH > 0 ? Math.round(textH * BUBBLE_SCALE) : undefined;
   const bubbleW =
-    textH > 0 ? Math.min(Math.round(textH * ASPECT), MAX_BUBBLE_W) : undefined;
+    bubbleH != null
+      ? Math.min(Math.round(bubbleH * ASPECT), MAX_BUBBLE_W)
+      : undefined;
 
   return (
     <div>
@@ -114,7 +119,7 @@ export function HeroWithBubble() {
                     width: bubbleW,
                     height: bubbleH,
                   }
-                : { minHeight: "12rem", width: "min(100%, 20rem)" }
+                : { minHeight: "13rem", width: "min(100%, 22rem)" }
             }
           >
             <BubbleBackdrop />
@@ -125,7 +130,7 @@ export function HeroWithBubble() {
                   alt=""
                   fill
                   className="object-contain object-right"
-                  sizes="560px"
+                  sizes="720px"
                   priority
                 />
               </div>
@@ -140,7 +145,7 @@ export function HeroWithBubble() {
         aria-hidden
       >
         <div
-          className="home-bubble-float relative w-[min(92vw,380px)]"
+          className="home-bubble-float relative w-[min(94vw,460px)]"
           style={{ aspectRatio: ASPECT }}
         >
           <BubbleBackdrop />
@@ -150,7 +155,7 @@ export function HeroWithBubble() {
               alt=""
               fill
               className="object-contain object-center"
-              sizes="380px"
+              sizes="460px"
               priority
             />
           </div>

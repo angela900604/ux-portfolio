@@ -143,48 +143,44 @@ export default function AboutPage() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             How I work
           </span>
-          <div className="mt-6 grid items-start gap-8 lg:grid-cols-12 lg:gap-10">
-            <div className="min-w-0 lg:col-span-5">
-              <p className="text-base leading-relaxed text-zinc-300 sm:text-lg">
-                I specialize in navigating the 0→1 product journey, turning abstract
-                ideas into high-fidelity, shippable experiences. My approach blends
-                aesthetic precision with a deep understanding of backend logic and
-                technical constraints, ensuring that innovation never comes at the
-                cost of feasibility.
+          <p className="mt-6 max-w-3xl text-base leading-relaxed text-zinc-300 sm:text-lg">
+            I specialize in navigating the 0→1 product journey, turning abstract
+            ideas into high-fidelity, shippable experiences. My approach blends
+            aesthetic precision with a deep understanding of backend logic and
+            technical constraints, ensuring that innovation never comes at the
+            cost of feasibility.
+          </p>
+          <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-5 lg:gap-6">
+            <div className="flex h-full min-w-0 flex-col rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 sm:p-7">
+              <h5 className="text-zinc-100 normal-case tracking-normal">
+                Engineering-led collaboration
+              </h5>
+              <p className="mt-3 flex-1 text-base leading-relaxed text-zinc-400 sm:text-lg">
+                I work very closely with frontend and backend engineers from the
+                beginning. During early product phases, I proactively discuss
+                implementation feasibility so innovative ideas stay practical and
+                buildable.
               </p>
             </div>
-            <div className="flex min-w-0 flex-col gap-4 lg:col-span-7">
-              <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 sm:p-7">
-                <h5 className="text-zinc-100 normal-case tracking-normal">
-                  Engineering-led collaboration
-                </h5>
-                <p className="mt-3 text-base leading-relaxed text-zinc-400 sm:text-lg">
-                  I work very closely with frontend and backend engineers from the
-                  beginning. During early product phases, I proactively discuss
-                  implementation feasibility so innovative ideas stay practical and
-                  buildable.
-                </p>
-              </div>
-              <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 sm:p-7">
-                <h5 className="text-zinc-100 normal-case tracking-normal">
-                  Stakeholder alignment
-                </h5>
-                <p className="mt-3 text-base leading-relaxed text-zinc-400 sm:text-lg">
-                  I partner directly with product/project managers, clients, and
-                  other stakeholders to translate requirements into clear design
-                  decisions that balance business goals with technical constraints.
-                </p>
-              </div>
-              <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 sm:p-7">
-                <h5 className="text-zinc-100 normal-case tracking-normal">
-                  AI-enhanced workflow
-                </h5>
-                <p className="mt-3 text-base leading-relaxed text-zinc-400 sm:text-lg">
-                  I constantly test new AI tools (such as Cursor, Claude, and Figma
-                  AI), not to follow trends, but to identify what genuinely improves
-                  my workflow and increases delivery efficiency.
-                </p>
-              </div>
+            <div className="flex h-full min-w-0 flex-col rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 sm:p-7">
+              <h5 className="text-zinc-100 normal-case tracking-normal">
+                Stakeholder alignment
+              </h5>
+              <p className="mt-3 flex-1 text-base leading-relaxed text-zinc-400 sm:text-lg">
+                I partner directly with product/project managers, clients, and
+                other stakeholders to translate requirements into clear design
+                decisions that balance business goals with technical constraints.
+              </p>
+            </div>
+            <div className="flex h-full min-w-0 flex-col rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 sm:p-7">
+              <h5 className="text-zinc-100 normal-case tracking-normal">
+                AI-enhanced workflow
+              </h5>
+              <p className="mt-3 flex-1 text-base leading-relaxed text-zinc-400 sm:text-lg">
+                I constantly test new AI tools (such as Cursor, Claude, and Figma
+                AI), not to follow trends, but to identify what genuinely improves
+                my workflow and increases delivery efficiency.
+              </p>
             </div>
           </div>
         </section>

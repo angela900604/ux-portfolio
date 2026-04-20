@@ -82,15 +82,18 @@ textarea,
 @keyframes homeBubbleFloat {
   0%,
   100% {
-    transform: translateY(0px);
+    transform: translateY(0) translateX(0);
   }
-  50% {
-    transform: translateY(-16px);
+  33% {
+    transform: translateY(-28px) translateX(10px);
+  }
+  66% {
+    transform: translateY(-12px) translateX(-8px);
   }
 }
 
 .home-bubble-float {
-  animation: homeBubbleFloat 9s ease-in-out infinite;
+  animation: homeBubbleFloat 7.5s ease-in-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
