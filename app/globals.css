@@ -38,51 +38,31 @@
   }
 }
 
-/* Site-wide custom cursor (19×19 default; 25×25 on interactive hover — hotspot at center) */
-html {
-  cursor: url("/cursors/site-cursor.png") 9 9, auto;
+/* Soft fluffy cursor — hide system cursor when SoftCursor client is active */
+html.soft-cursor,
+html.soft-cursor * {
+  cursor: none !important;
 }
 
-a,
-button,
-[role="button"],
-input[type="submit"],
-input[type="button"],
-input[type="reset"],
-label[for],
-select,
-summary,
-.cursor-pointer {
-  cursor: url("/cursors/site-cursor.png") 9 9, pointer !important;
+/* Preserve resize affordance on drag handles */
+html.soft-cursor .cursor-ew-resize {
+  cursor: ew-resize !important;
 }
 
-a:hover,
-button:hover,
-[role="button"]:hover,
-input[type="submit"]:hover,
-input[type="button"]:hover,
-input[type="reset"]:hover,
-label[for]:hover,
-select:hover,
-summary:hover,
-.cursor-pointer:hover {
-  cursor: url("/cursors/site-cursor-hover.png") 12 12, pointer !important;
-}
-
-[disabled]:hover,
-:disabled:hover {
-  cursor: not-allowed !important;
-}
-
-input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]):not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="image"]):not([type="hidden"]),
-textarea,
-[contenteditable="true"] {
+html.soft-cursor input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]):not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="image"]):not([type="hidden"]),
+html.soft-cursor textarea,
+html.soft-cursor [contenteditable="true"] {
   cursor: text !important;
 }
 
-.cursor-not-allowed,
-[disabled],
-:disabled {
+html.soft-cursor [disabled],
+html.soft-cursor :disabled,
+html.soft-cursor .cursor-not-allowed {
+  cursor: not-allowed !important;
+}
+
+html.soft-cursor [disabled]:hover,
+html.soft-cursor :disabled:hover {
   cursor: not-allowed !important;
 }
 
