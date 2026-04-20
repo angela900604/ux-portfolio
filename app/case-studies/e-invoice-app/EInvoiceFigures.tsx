@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import type { ReactNode } from "react";
 import { ImageLightbox } from "./ImageLightbox";
 
 const R_SCREEN = "rounded-[1.35rem]";
@@ -10,22 +9,7 @@ const R_SCREEN = "rounded-[1.35rem]";
 export const APP_SHOT_SLOT_W = 280;
 export const APP_SHOT_SLOT_H = 480;
 
-/** Diagrams / wide exports — hover + lightbox */
-function BleedWrap({
-  enabled,
-  children,
-}: {
-  enabled: boolean;
-  children: ReactNode;
-}) {
-  if (!enabled) return children;
-  return (
-    <div className="relative left-1/2 my-10 w-screen max-w-[100vw] -translate-x-1/2 sm:my-16">
-      {children}
-    </div>
-  );
-}
-
+/** Diagrams / wide exports — hover + lightbox (stays within case-study column; no viewport breakout). */
 export function WideFigure({
   src,
   alt,
@@ -34,8 +18,6 @@ export function WideFigure({
   frame = "default",
   borderless = false,
   cropTopBottomPx = 0,
-  /** Break out to viewport width for editorial, Luca-style layouts (avoid in multi-column grids). */
-  fullBleed = false,
 }: {
   src: string;
   alt: string;
@@ -47,7 +29,6 @@ export function WideFigure({
   borderless?: boolean;
   /** Crop this many pixels from top and bottom (e.g. hero tuning) */
   cropTopBottomPx?: number;
-  fullBleed?: boolean;
 }) {
   const imageInner = (
     <ImageLightbox
@@ -68,14 +49,10 @@ export function WideFigure({
         alt={alt}
         width={2400}
         height={1350}
-        className={`h-auto w-full object-contain ${
+        className={`h-auto w-full max-w-full object-contain ${
           frame === "white" ? "bg-white" : ""
         }`}
-        sizes={
-          fullBleed
-            ? "100vw"
-            : "(max-width: 1440px) 100vw, 1200px"
-        }
+        sizes="(max-width: 1440px) min(100vw, 72rem), 1152px"
       />
     </ImageLightbox>
   );
@@ -96,32 +73,24 @@ export function WideFigure({
 
   if (frame === "white") {
     return (
-      <BleedWrap enabled={fullBleed}>
-        <figure className={`space-y-0 ${className}`}>
-          <div className="bg-white px-4 py-6 sm:px-12 sm:py-10 md:px-20 md:py-12">
-            {image}
-          </div>
-          {caption && (
-            <figcaption className="mx-auto mt-4 max-w-3xl px-6 text-xs leading-relaxed text-zinc-500 sm:px-10">
-              {caption}
-            </figcaption>
-          )}
-        </figure>
-      </BleedWrap>
-    );
-  }
-
-  return (
-    <BleedWrap enabled={fullBleed}>
-      <figure className={`space-y-3 ${className}`}>
-        {image}
+      <figure className={`min-w-0 space-y-0 ${className}`}>
+        <div className="bg-white px-4 py-5 sm:px-6 sm:py-7">{image}</div>
         {caption && (
-          <figcaption className="mx-auto max-w-3xl px-6 text-xs text-zinc-500 sm:px-10">
+          <figcaption className="mt-3 max-w-3xl text-xs leading-relaxed text-zinc-500">
             {caption}
           </figcaption>
         )}
       </figure>
-    </BleedWrap>
+    );
+  }
+
+  return (
+    <figure className={`min-w-0 space-y-2 ${className}`}>
+      {image}
+      {caption && (
+        <figcaption className="max-w-3xl text-xs text-zinc-500">{caption}</figcaption>
+      )}
+    </figure>
   );
 }
 

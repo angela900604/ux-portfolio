@@ -124,20 +124,20 @@ export default function Home() {
           <FadeInSection className="mt-10" delay={0.05}>
             <Link
               href={`/case-studies/${CORE_PRODUCT.flagship.slug}`}
-              className="group block transition-transform duration-300 hover:-translate-y-1"
+              className="group block overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 transition duration-300 hover:-translate-y-1 hover:border-zinc-500"
             >
-              <div className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 overflow-hidden bg-zinc-900/50 ring-1 ring-zinc-800/90">
+              <div className="border-b border-zinc-800 bg-zinc-900/40">
                 <Image
                   src={E_INVOICE_FLAGSHIP_COVER.src}
                   alt={`${CORE_PRODUCT.flagship.title} — product mockup`}
                   width={E_INVOICE_FLAGSHIP_COVER.width}
                   height={E_INVOICE_FLAGSHIP_COVER.height}
-                  className="h-auto w-full opacity-95 transition duration-500 ease-out group-hover:scale-[1.02]"
-                  sizes="100vw"
+                  className="h-auto w-full max-w-full opacity-95 transition duration-500 ease-out group-hover:scale-[1.01]"
+                  sizes="(max-width: 1440px) 100vw, 1080px"
                   priority
                 />
               </div>
-              <div className="rounded-b-2xl border border-t-0 border-zinc-800 bg-zinc-900/40 px-6 py-8 transition duration-300 group-hover:border-zinc-600 sm:px-10 sm:py-10">
+              <div className="px-6 py-8 sm:px-10 sm:py-10">
                 <span className="mb-3 inline-block text-[10px] font-medium uppercase tracking-widest text-amber-400/90">
                   {CORE_PRODUCT.flagship.tag}
                 </span>
