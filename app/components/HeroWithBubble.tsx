@@ -50,7 +50,7 @@ export function HeroWithBubble() {
 
   return (
     <div>
-      <div className="relative flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-16">
+      <div className="relative flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-12">
         <div
           ref={textRef}
           className="relative z-10 min-w-0 w-full max-w-[48rem] shrink-0 lg:max-w-[min(48rem,58%)]"
@@ -103,7 +103,7 @@ export function HeroWithBubble() {
 
       {/* Mobile / tablet: centered bubble under hero copy */}
       <div
-        className="pointer-events-none mt-10 flex justify-center lg:hidden"
+        className="pointer-events-none mt-8 flex justify-center lg:hidden"
         aria-hidden
       >
         <div

@@ -91,7 +91,7 @@ export default function Home() {
     <div className="min-h-screen bg-zinc-950 text-zinc-100">
       {/* Hero */}
       <section className="border-b border-zinc-800">
-        <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-20 sm:py-28">
+        <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-14 sm:py-20">
           <HeroWithBubble />
         </div>
       </section>
