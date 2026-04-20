@@ -6,8 +6,8 @@ import { useCallback, useLayoutEffect, useRef, useState } from "react";
 const BUBBLE_SRC = "/home/header-bubble-v2.png";
 const ASPECT = 1024 / 744;
 /** Cap width; height scales with text column × {@link BUBBLE_SCALE}. */
-const MAX_BUBBLE_W = 800;
-const BUBBLE_SCALE = 1.22;
+const MAX_BUBBLE_W = 940;
+const BUBBLE_SCALE = 1.38;
 
 function BubbleBackdrop() {
   return (
@@ -81,7 +81,7 @@ export function HeroWithBubble() {
                     width: bubbleW,
                     height: bubbleH,
                   }
-                : { minHeight: "14rem", width: "min(100%, 24rem)" }
+                : { minHeight: "16rem", width: "min(100%, 28rem)" }
             }
           >
             <BubbleBackdrop />
@@ -92,7 +92,7 @@ export function HeroWithBubble() {
                   alt=""
                   fill
                   className="object-contain object-right"
-                  sizes="800px"
+                  sizes="940px"
                   priority
                 />
               </div>
@@ -107,7 +107,7 @@ export function HeroWithBubble() {
         aria-hidden
       >
         <div
-          className="home-bubble-float relative w-[min(94vw,520px)]"
+          className="home-bubble-float relative w-[min(94vw,600px)]"
           style={{ aspectRatio: ASPECT }}
         >
           <BubbleBackdrop />
@@ -117,7 +117,7 @@ export function HeroWithBubble() {
               alt=""
               fill
               className="object-contain object-center"
-              sizes="520px"
+              sizes="600px"
               priority
             />
           </div>
