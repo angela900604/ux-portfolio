@@ -38,7 +38,7 @@
   }
 }
 
-/* Site-wide custom cursor (19×19 asset — hotspot at center) */
+/* Site-wide custom cursor (19×19 default; 25×25 on interactive hover — hotspot at center) */
 html {
   cursor: url("/cursors/site-cursor.png") 9 9, auto;
 }
@@ -54,6 +54,24 @@ select,
 summary,
 .cursor-pointer {
   cursor: url("/cursors/site-cursor.png") 9 9, pointer !important;
+}
+
+a:hover,
+button:hover,
+[role="button"]:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+label[for]:hover,
+select:hover,
+summary:hover,
+.cursor-pointer:hover {
+  cursor: url("/cursors/site-cursor-hover.png") 12 12, pointer !important;
+}
+
+[disabled]:hover,
+:disabled:hover {
+  cursor: not-allowed !important;
 }
 
 input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]):not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="image"]):not([type="hidden"]),
