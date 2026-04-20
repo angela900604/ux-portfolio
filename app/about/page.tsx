@@ -35,7 +35,7 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-      <div className="min-h-screen bg-zinc-950 text-zinc-100">
+    <div className="min-h-screen bg-zinc-950 text-zinc-100">
       <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-16 sm:py-24">
         <p className="text-xs font-medium uppercase tracking-widest text-zinc-500 mb-4">
           About
@@ -102,22 +102,8 @@ export default function AboutPage() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             User interviews
           </span>
-          <div className="mt-6 grid items-start gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-10">
-            <figure className="min-w-0">
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
-                <Image
-                  src={INTERVIEW_PHOTO_SRC}
-                  alt="Collage: Angela facilitating user research—in group sessions, one-on-one interviews, and conversations with participants across ages and contexts."
-                  fill
-                  className="object-contain object-center"
-                  sizes="(max-width: 1024px) 100vw, 560px"
-                />
-              </div>
-              <figcaption className="mt-3 text-sm leading-relaxed text-zinc-500">
-                Field research, interviews, and workshops with diverse participants.
-              </figcaption>
-            </figure>
-            <div className="flex min-w-0 flex-col gap-4 text-base leading-relaxed text-zinc-300 sm:text-lg">
+          <div className="mt-6 grid items-start gap-8 lg:grid-cols-12 lg:gap-10">
+            <div className="min-w-0 lg:col-span-5 flex flex-col gap-4 text-base leading-relaxed text-zinc-300 sm:text-lg">
               <p className="font-medium text-zinc-100">
                 The part of the job where I feel most alive.
               </p>
@@ -136,6 +122,20 @@ export default function AboutPage() {
                 act on.
               </p>
             </div>
+            <figure className="min-w-0 lg:col-span-7">
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+                <Image
+                  src={INTERVIEW_PHOTO_SRC}
+                  alt="Collage: Angela facilitating user research—in group sessions, one-on-one interviews, and conversations with participants across ages and contexts."
+                  fill
+                  className="object-contain object-center"
+                  sizes="(max-width: 1024px) 100vw, 720px"
+                />
+              </div>
+              <figcaption className="mt-3 text-sm leading-relaxed text-zinc-500">
+                Field research, interviews, and workshops with diverse participants.
+              </figcaption>
+            </figure>
           </div>
         </section>
 
@@ -143,44 +143,48 @@ export default function AboutPage() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             How I work
           </span>
-          <p className="mt-3 max-w-3xl text-base leading-relaxed text-zinc-300 sm:text-lg">
-            I specialize in navigating the 0→1 product journey, turning abstract
-            ideas into high-fidelity, shippable experiences. My approach blends
-            aesthetic precision with a deep understanding of backend logic and
-            technical constraints, ensuring that innovation never comes at the
-            cost of feasibility.
-          </p>
-          <div className="mt-8 flex max-w-3xl flex-col gap-4">
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
-              <h5 className="text-zinc-100 normal-case tracking-normal">
-                Engineering-led collaboration
-              </h5>
-              <p className="mt-3 text-base leading-relaxed text-zinc-400 sm:text-lg">
-                I work very closely with frontend and backend engineers from the
-                beginning. During early product phases, I proactively discuss
-                implementation feasibility so innovative ideas stay practical and
-                buildable.
+          <div className="mt-6 grid items-start gap-8 lg:grid-cols-12 lg:gap-10">
+            <div className="min-w-0 lg:col-span-5">
+              <p className="text-base leading-relaxed text-zinc-300 sm:text-lg">
+                I specialize in navigating the 0→1 product journey, turning abstract
+                ideas into high-fidelity, shippable experiences. My approach blends
+                aesthetic precision with a deep understanding of backend logic and
+                technical constraints, ensuring that innovation never comes at the
+                cost of feasibility.
               </p>
             </div>
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
-              <h5 className="text-zinc-100 normal-case tracking-normal">
-                Stakeholder alignment
-              </h5>
-              <p className="mt-3 text-base leading-relaxed text-zinc-400 sm:text-lg">
-                I partner directly with product/project managers, clients, and
-                other stakeholders to translate requirements into clear design
-                decisions that balance business goals with technical constraints.
-              </p>
-            </div>
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
-              <h5 className="text-zinc-100 normal-case tracking-normal">
-                AI-enhanced workflow
-              </h5>
-              <p className="mt-3 text-base leading-relaxed text-zinc-400 sm:text-lg">
-                I constantly test new AI tools (such as Cursor, Claude, and Figma
-                AI), not to follow trends, but to identify what genuinely improves
-                my workflow and increases delivery efficiency.
-              </p>
+            <div className="flex min-w-0 flex-col gap-4 lg:col-span-7">
+              <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 sm:p-7">
+                <h5 className="text-zinc-100 normal-case tracking-normal">
+                  Engineering-led collaboration
+                </h5>
+                <p className="mt-3 text-base leading-relaxed text-zinc-400 sm:text-lg">
+                  I work very closely with frontend and backend engineers from the
+                  beginning. During early product phases, I proactively discuss
+                  implementation feasibility so innovative ideas stay practical and
+                  buildable.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 sm:p-7">
+                <h5 className="text-zinc-100 normal-case tracking-normal">
+                  Stakeholder alignment
+                </h5>
+                <p className="mt-3 text-base leading-relaxed text-zinc-400 sm:text-lg">
+                  I partner directly with product/project managers, clients, and
+                  other stakeholders to translate requirements into clear design
+                  decisions that balance business goals with technical constraints.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 sm:p-7">
+                <h5 className="text-zinc-100 normal-case tracking-normal">
+                  AI-enhanced workflow
+                </h5>
+                <p className="mt-3 text-base leading-relaxed text-zinc-400 sm:text-lg">
+                  I constantly test new AI tools (such as Cursor, Claude, and Figma
+                  AI), not to follow trends, but to identify what genuinely improves
+                  my workflow and increases delivery efficiency.
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -189,25 +193,29 @@ export default function AboutPage() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Beyond design
           </span>
-          <p className="mt-3 max-w-2xl text-base leading-relaxed text-zinc-300 sm:text-lg">
-            Outside work, I keep exploring branding, visual style, and photography. Traveling helps me sharpen my aesthetic sense, and this gallery is where I share that perspective.
-          </p>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 max-w-3xl">
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
-              <h5 className="text-zinc-100 normal-case tracking-normal">
-                Branding &amp; style exploration
-              </h5>
-              <p className="mt-3 text-base leading-relaxed text-zinc-400 sm:text-lg">
-                I enjoy studying the logic behind brands and how visual style creates recognition, trust, and emotional resonance.
+          <div className="mt-6 grid items-start gap-8 lg:grid-cols-12 lg:gap-10">
+            <div className="min-w-0 lg:col-span-5">
+              <p className="text-base leading-relaxed text-zinc-300 sm:text-lg">
+                Outside work, I keep exploring branding, visual style, and photography. Traveling helps me sharpen my aesthetic sense, and this gallery is where I share that perspective.
               </p>
             </div>
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
-              <h5 className="text-zinc-100 normal-case tracking-normal">
-                Photography &amp; travel
-              </h5>
-              <p className="mt-3 text-base leading-relaxed text-zinc-400 sm:text-lg">
-                Through travel photography, I capture details from different cities. It is one of my ways to train visual sensitivity and build a more grounded understanding of aesthetics.
-              </p>
+            <div className="grid min-w-0 gap-4 sm:grid-cols-2 lg:col-span-7 lg:gap-5">
+              <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 sm:p-7">
+                <h5 className="text-zinc-100 normal-case tracking-normal">
+                  Branding &amp; style exploration
+                </h5>
+                <p className="mt-3 text-base leading-relaxed text-zinc-400 sm:text-lg">
+                  I enjoy studying the logic behind brands and how visual style creates recognition, trust, and emotional resonance.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 sm:p-7">
+                <h5 className="text-zinc-100 normal-case tracking-normal">
+                  Photography &amp; travel
+                </h5>
+                <p className="mt-3 text-base leading-relaxed text-zinc-400 sm:text-lg">
+                  Through travel photography, I capture details from different cities. It is one of my ways to train visual sensitivity and build a more grounded understanding of aesthetics.
+                </p>
+              </div>
             </div>
           </div>
           {/* Bento-style travel gallery — asymmetric grid + gutters like reference collage */}
