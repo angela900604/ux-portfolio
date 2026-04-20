@@ -197,6 +197,9 @@ export default function GovernmentBackendCaseStudy() {
                     <div className="relative w-full aspect-video">
                       <video
                         className="absolute inset-0 h-full w-full bg-black object-contain"
+                        autoPlay
+                        muted
+                        loop
                         controls
                         playsInline
                         preload="metadata"
