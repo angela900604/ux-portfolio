@@ -139,13 +139,16 @@ export default function Home() {
             </Link>
           </FadeInSection>
 
-          <ul className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="mt-12 grid items-stretch gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {CORE_PRODUCT.more.map((item, i) => (
-              <li key={item.slug}>
-                <FadeInSection delay={0.04 + i * 0.05}>
+              <li key={item.slug} className="h-full min-h-0">
+                <FadeInSection
+                  className="h-full"
+                  delay={0.04 + i * 0.05}
+                >
                   <Link
                     href={`/case-studies/${item.slug}`}
-                    className="group flex h-full flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/30 transition duration-300 hover:-translate-y-1 hover:border-zinc-500 hover:shadow-[0_20px_48px_-28px_rgba(0,0,0,0.75)]"
+                    className="group flex h-full min-h-0 flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/30 transition duration-300 hover:-translate-y-1 hover:border-zinc-500 hover:shadow-[0_20px_48px_-28px_rgba(0,0,0,0.75)]"
                   >
                     <div className="relative aspect-[16/11] overflow-hidden bg-zinc-900/50">
                       <Image
@@ -170,7 +173,7 @@ export default function Home() {
                       <p className="mt-1 text-base text-emerald-400/80 sm:text-lg">
                         {item.outcome}
                       </p>
-                      <p className="mt-3 text-xs text-zinc-500">
+                      <p className="mt-auto pt-3 text-xs text-zinc-500">
                         {item.role} · {item.timeline}
                       </p>
                     </div>
@@ -193,13 +196,16 @@ export default function Home() {
             </p>
           </FadeInSection>
 
-          <ul className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="mt-12 grid items-stretch gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {ADJACENT_WORK.map((item, i) => (
-              <li key={item.slug}>
-                <FadeInSection delay={0.04 + i * 0.05}>
+              <li key={item.slug} className="h-full min-h-0">
+                <FadeInSection
+                  className="h-full"
+                  delay={0.04 + i * 0.05}
+                >
                   <Link
                     href={`/case-studies/${item.slug}`}
-                    className="group flex h-full flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/30 transition duration-300 hover:-translate-y-1 hover:border-zinc-500 hover:shadow-[0_20px_48px_-28px_rgba(0,0,0,0.75)]"
+                    className="group flex h-full min-h-0 flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/30 transition duration-300 hover:-translate-y-1 hover:border-zinc-500 hover:shadow-[0_20px_48px_-28px_rgba(0,0,0,0.75)]"
                   >
                     <div className="relative aspect-[16/11] overflow-hidden bg-zinc-900/50">
                       <Image
@@ -224,7 +230,7 @@ export default function Home() {
                       <p className="mt-1 text-base text-emerald-400/80 sm:text-lg">
                         {item.outcome}
                       </p>
-                      <p className="mt-3 text-xs text-zinc-500">
+                      <p className="mt-auto pt-3 text-xs text-zinc-500">
                         {item.role} · {item.timeline}
                       </p>
                     </div>
