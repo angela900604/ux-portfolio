@@ -8,6 +8,21 @@ const BUBBLE_SRC = "/home/header-bubble-v2.png";
 const ASPECT = 1024 / 744;
 const MAX_BUBBLE_W = 560;
 
+const HERO_KEYWORDS = [
+  "Public service",
+  "Mobile",
+  "AI automation",
+  "Branding",
+  "Digital marketing",
+  "Product thinking",
+  "End-to-end UX",
+  "Cross-functional collaboration",
+  "AI-assisted workflow",
+  "Accessibility-aware design",
+  "Design systems",
+  "User research",
+] as const;
+
 export function HeroWithBubble() {
   const textRef = useRef<HTMLDivElement>(null);
   const [textH, setTextH] = useState(0);
@@ -47,12 +62,18 @@ export function HeroWithBubble() {
         <h1 className="max-w-[36rem]">
           I turn ambiguous ideas into shippable digital products.
         </h1>
-        <p className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg">
-          Independent Product Designer specializing in 0→1 stages. I bridge the
-          gap between business goals and technical feasibility, leveraging
-          AI-driven workflows to deliver high-impact results with speed and
-          precision.
-        </p>
+        <ul className="mt-6 flex max-w-2xl flex-wrap gap-2" aria-label="Keywords">
+          {HERO_KEYWORDS.map((label) => (
+            <li key={label}>
+              <span className="inline-flex rounded-full border border-zinc-700/80 bg-zinc-900/40 px-3 py-1.5 text-[13px] leading-snug text-zinc-300">
+                <span className="text-zinc-500" aria-hidden>
+                  #
+                </span>
+                <span className="ml-0.5">{label}</span>
+              </span>
+            </li>
+          ))}
+        </ul>
         <div className="mt-10 flex flex-wrap gap-4">
           <Link
             href="/case-studies/e-invoice-app"

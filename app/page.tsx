@@ -56,7 +56,7 @@ const ADJACENT_WORK = [
     outcome: "+18% organic traffic, +21% engagement",
     tag: "Digital Marketing",
     description:
-      "Created email campaigns and SEO-friendly WordPress content, plus digital graphics for web & Instagram. Improved discovery, engagement, and brand recognition for Taiwanese audiences.",
+      "Email marketing and SEO-friendly WordPress content to attract prospective clients (lead generation), with meticulous accuracy on immigration-adjacent messaging. Digital graphics for web & Instagram; improved discovery, engagement, and trust with Taiwan- and Hong Kong–based audiences.",
     role: "Digital Marketer",
     timeline: "May – Aug 2022",
   },
@@ -66,7 +66,7 @@ const ADJACENT_WORK = [
     outcome: "+75% online sales in 2 months",
     tag: "Digital Marketing",
     description:
-      "Designed promotional and social content across Facebook and eCommerce channels, partnering with marketing to execute campaigns and improve online conversion for rabbit-care products.",
+      "Promotional and social content across Facebook and eCommerce; monthly data entry for 100+ invoices and logistics records with Excel trackers for timelines. Coordinated partners and supported pet-expo operations and tradeshow-style follow-up.",
     role: "Social Media & eCommerce",
     timeline: "Mar – Aug 2021",
   },

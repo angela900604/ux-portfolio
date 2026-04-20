@@ -176,7 +176,8 @@ export default function MomiAnimalHealthCaseStudy() {
                 Tools
               </h5>
               <p className="mt-2 text-sm text-[#666] leading-relaxed">
-                Adobe Photoshop / Adobe Illustrator / Facebook / MOMO / Shopee
+                Adobe Photoshop / Adobe Illustrator / Excel / Facebook / MOMO /
+                Shopee
               </p>
             </article>
           </div>
@@ -220,6 +221,18 @@ export default function MomiAnimalHealthCaseStudy() {
           <ul className="mt-4 max-w-2xl list-disc space-y-2 pl-5 text-sm text-[#666] leading-relaxed">
             <li>
               <strong className="font-semibold text-[#2C3E50]">
+                Data entry &amp; Excel operations:
+              </strong>{" "}
+              Managed data entry for{" "}
+              <span className="font-medium text-[#2C3E50]">
+                100+ invoices and logistics records per month
+              </span>
+              , building and maintaining Excel trackers to monitor timelines,
+              shipments, and follow-ups so marketing and fulfillment stayed in
+              sync.
+            </li>
+            <li>
+              <strong className="font-semibold text-[#2C3E50]">
                 MOMO storefront covers:
               </strong>{" "}
               Redesigned covers so promo bundles and price stories read faster,
@@ -252,6 +265,19 @@ export default function MomiAnimalHealthCaseStudy() {
             <h5 className="text-[#2C3E50]">
               Pet expo — on-site
             </h5>
+            <p className="mt-2 text-sm text-[#666] leading-relaxed max-w-2xl">
+              Coordinated{" "}
+              <span className="font-medium text-[#2C3E50]">
+                internal teams and external partners
+              </span>{" "}
+              around exhibition logistics—supporting booth build, on-site
+              operations, and{" "}
+              <span className="font-medium text-[#2C3E50]">
+                tradeshow-style follow-up
+              </span>{" "}
+              so leads and retail relationships picked up at the show could move
+              forward cleanly after the event.
+            </p>
             <p className="mt-2 text-sm text-[#666] leading-relaxed max-w-2xl">
               Photos from the pet exhibition floor: booth footprint, wall
               display, and live rabbit on hay next to product.

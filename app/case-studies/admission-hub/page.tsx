@@ -135,6 +135,13 @@ export default function AdmissionHubCaseStudy() {
               <p className="mt-2 text-sm text-[#666] leading-relaxed">
                 Admission Hub supports students and families evaluating Canadian
                 study and immigration paths, primarily in Taiwan and Hong Kong.
+                Messaging in this space has to be{" "}
+                <span className="font-medium text-[#2C3E50]">
+                  precise and audit-ready
+                </span>
+                : I kept immigration-adjacent facts, program details, and
+                stakeholder-facing language tightly aligned so families and
+                partners could trust what they read.
               </p>
             </article>
             <article className="rounded-2xl border border-[#E8E1D6] bg-white p-6">
@@ -208,6 +215,16 @@ export default function AdmissionHubCaseStudy() {
               care about on the ground—cherry blossom season, Pride, fireworks
               times and locations.
             </p>
+            <p>
+              Email marketing and long-form WordPress content worked as the
+              slower, higher-intent layer: together they helped{" "}
+              <span className="font-medium text-[#2C3E50]">
+                attract and nurture prospective clients
+              </span>{" "}
+              (lead generation) by moving curious readers from discovery into
+              consultations—with subject lines, CTAs, and article depth matched
+              to where people were in the journey.
+            </p>
           </div>
         </Section>
 
@@ -222,7 +239,12 @@ export default function AdmissionHubCaseStudy() {
             </h5>
             <p className="mt-2 text-sm text-[#666] leading-relaxed max-w-3xl">
               Mailchimp execution—templates, segmentation, and cadence tied to
-              site content.
+              site content—so sends consistently fed the pipeline of{" "}
+              <span className="font-medium text-[#2C3E50]">
+                prospective clients
+              </span>{" "}
+              researching Canada options (lead generation), not just one-off
+              announcements.
             </p>
             <p className="mt-2 text-xs text-[#8A8379] leading-relaxed max-w-3xl">
               Original campaign screenshots weren&apos;t preserved.
