@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans, Space_Grotesk } from "next/font/google";
+import { DM_Sans, Fraunces, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
 const sans = DM_Sans({
@@ -10,6 +10,11 @@ const sans = DM_Sans({
 const display = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-display",
+});
+
+const serifDisplay = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-serif-display",
 });
 
 export const metadata: Metadata = {
@@ -26,7 +31,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${sans.variable} ${display.variable} scroll-smooth`}
+      className={`${sans.variable} ${display.variable} ${serifDisplay.variable} scroll-smooth`}
     >
       <body className="min-h-screen overflow-x-hidden">
         <div className="flex min-h-screen flex-col">

@@ -9,8 +9,6 @@ const CORE_PRODUCT = {
     title: "Redesigning Taiwan's e-Invoice app for accessibility & trust",
     outcome: "~88% prototype task success (moderated)",
     tag: "Flagship",
-    description:
-      "Led end-to-end UX for a nationwide public service app. Research across 30+ sessions, clearer flows, and inclusive design for millions of citizens.",
     role: "Product Designer",
     timeline: "2024 – 2025",
   },
@@ -21,8 +19,6 @@ const CORE_PRODUCT = {
       title: "MINA · AI marketplace for SF parents",
       outcome: "Coming soon · case study in progress",
       tag: "AI · Marketplace",
-      description:
-        "Zero-to-one concept with Bay Area mom communities: AI agent-first UX, one-photo multi-listing, and seller–AI coordination for pickup—built for sustainability without the admin burden.",
       role: "Product Designer",
       timeline: "2025 – Present",
     },
@@ -31,8 +27,6 @@ const CORE_PRODUCT = {
       title: "Role-based backend for 600+ government staff",
       outcome: "~30% faster ops entry · ~99% data accuracy",
       tag: "Public Service",
-      description:
-        "RBAC, unified workflows, and dashboards for Ministry of Finance lottery redemption ops—600+ users across four departments.",
       role: "Senior Product Designer",
       timeline: "2024 – 2025",
     },
@@ -41,8 +35,6 @@ const CORE_PRODUCT = {
       title: "Baskin-Robbins Taiwan's first membership app",
       outcome: "MVP scoped · Japan-aligned, Taiwan-local rules",
       tag: "Mobile · Loyalty",
-      description:
-        "Lead UX/UI for zero-to-one loyalty: functional map, flows, UI kit, and store-ready redemption—PM + 4 engineers, client & JP HQ alignment.",
       role: "Lead UX/UI Designer",
       timeline: "2024 – 2025",
     },
@@ -56,8 +48,6 @@ const ADJACENT_WORK = [
     title: "Admission Hub (Digital Marketing)",
     outcome: "+18% organic traffic, +21% engagement",
     tag: "Digital Marketing",
-    description:
-      "Email marketing and SEO-friendly WordPress content to attract prospective clients (lead generation), with meticulous accuracy on immigration-adjacent messaging. Digital graphics for web & Instagram; improved discovery, engagement, and trust with Taiwan- and Hong Kong–based audiences.",
     role: "Digital Marketer",
     timeline: "May – Aug 2022",
   },
@@ -66,8 +56,6 @@ const ADJACENT_WORK = [
     title: "MOMI Animal Health (Digital Marketing)",
     outcome: "+75% online sales in 2 months",
     tag: "Digital Marketing",
-    description:
-      "Promotional and social content across Facebook and eCommerce; monthly data entry for 100+ invoices and logistics records with Excel trackers for timelines. Coordinated partners and supported pet-expo operations and tradeshow-style follow-up.",
     role: "Social Media & eCommerce",
     timeline: "Mar – Aug 2021",
   },
@@ -76,8 +64,6 @@ const ADJACENT_WORK = [
     title: "Haphy Living (Brand IP)",
     outcome: "Brand identity system for Instagram/eCommerce",
     tag: "Branding",
-    description:
-      "Built a visual identity and brand applications around a character-based brand IP, producing logo concepts, mascot variations, and content templates for social and eCommerce touchpoints.",
     role: "Branding & Visual Design",
     timeline: "2023 – 2024",
   },
@@ -115,9 +101,8 @@ export default function Home() {
         <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-16 sm:py-20">
           <FadeInSection>
             <h2 className="text-zinc-100">Selected Projects</h2>
-            <p className="mt-4 max-w-2xl text-pretty text-base leading-relaxed text-zinc-400 sm:text-lg">
-              0→1 products across AI-powered automation, Public&nbsp;Services, and
-              Consumer&nbsp;Loyalty.
+            <p className="mt-4 text-base leading-relaxed text-zinc-400 sm:text-lg">
+              0→1 products across AI-powered automation, Public Services, and Consumer Loyalty.
             </p>
           </FadeInSection>
 
@@ -147,15 +132,9 @@ export default function Home() {
                 <p className="mt-1 text-base font-medium text-emerald-400/90 sm:text-lg">
                   {CORE_PRODUCT.flagship.outcome}
                 </p>
-                <p className="mt-4 max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg">
-                  {CORE_PRODUCT.flagship.description}
-                </p>
-                <p className="mt-5 text-xs text-zinc-500">
+                <p className="mt-4 text-xs text-zinc-500">
                   {CORE_PRODUCT.flagship.role} · {CORE_PRODUCT.flagship.timeline}
                 </p>
-                <span className="mt-5 inline-block text-base font-medium text-zinc-300 transition group-hover:text-zinc-100">
-                  Read case study →
-                </span>
               </div>
             </Link>
           </FadeInSection>
@@ -191,12 +170,9 @@ export default function Home() {
                       <p className="mt-1 text-base text-emerald-400/80 sm:text-lg">
                         {item.outcome}
                       </p>
-                      <p className="mt-3 line-clamp-2 flex-1 text-base text-zinc-400 sm:text-lg">
-                        {item.description}
+                      <p className="mt-3 text-xs text-zinc-500">
+                        {item.role} · {item.timeline}
                       </p>
-                      <span className="mt-5 inline-block text-xs font-medium text-zinc-500 transition group-hover:text-zinc-300">
-                        Read case study →
-                      </span>
                     </div>
                   </Link>
                 </FadeInSection>
@@ -248,12 +224,9 @@ export default function Home() {
                       <p className="mt-1 text-base text-emerald-400/80 sm:text-lg">
                         {item.outcome}
                       </p>
-                      <p className="mt-3 line-clamp-2 flex-1 text-base text-zinc-400 sm:text-lg">
-                        {item.description}
+                      <p className="mt-3 text-xs text-zinc-500">
+                        {item.role} · {item.timeline}
                       </p>
-                      <span className="mt-5 inline-block text-xs font-medium text-zinc-500 transition group-hover:text-zinc-300">
-                        View project →
-                      </span>
                     </div>
                   </Link>
                 </FadeInSection>

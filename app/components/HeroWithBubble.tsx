@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 import { useCallback, useLayoutEffect, useRef, useState } from "react";
 
@@ -9,16 +8,6 @@ const ASPECT = 1024 / 744;
 /** Cap width; height scales with text column × {@link BUBBLE_SCALE}. */
 const MAX_BUBBLE_W = 800;
 const BUBBLE_SCALE = 1.22;
-
-const HERO_KEYWORDS = [
-  "Public service",
-  "0→1 products",
-  "Mobile",
-  "Design systems",
-  "Accessibility-aware design",
-  "AI automation",
-  "User interviews",
-] as const;
 
 function BubbleBackdrop() {
   return (
@@ -64,49 +53,22 @@ export function HeroWithBubble() {
       <div className="relative flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-16">
         <div
           ref={textRef}
-          className="relative z-10 min-w-0 w-full max-w-[40rem] shrink-0 lg:max-w-[min(40rem,52%)]"
+          className="relative z-10 min-w-0 w-full max-w-[48rem] shrink-0 lg:max-w-[min(48rem,58%)]"
         >
           <p className="mb-4 text-xs font-medium uppercase tracking-widest text-zinc-500">
             Product design · Vancouver (open to relocate)
           </p>
           <p
-            className="max-w-[40rem] text-[2.125rem] font-medium leading-[1.08] tracking-tight text-zinc-50 sm:text-5xl sm:leading-[1.06] md:text-6xl md:leading-[1.04]"
-            style={{ fontFamily: "var(--font-display), system-ui, sans-serif" }}
+            className="max-w-[56rem] text-[2.75rem] font-normal leading-[1.06] tracking-[-0.02em] text-zinc-50 sm:text-6xl sm:leading-[1.02] md:text-7xl md:leading-[0.99] lg:text-[4.75rem] lg:leading-[0.97]"
+            style={{
+              fontFamily: "var(--font-serif-display), Georgia, 'Times New Roman', serif",
+            }}
           >
             Complex systems, clear experiences.
           </p>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg">
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg">
             I turn ambiguous ideas into shippable digital products.
           </p>
-          <ul
-            className="mt-6 flex max-w-2xl flex-wrap gap-2"
-            aria-label="Keywords"
-          >
-            {HERO_KEYWORDS.map((label) => (
-              <li key={label}>
-                <span className="inline-flex rounded-full border border-zinc-700/80 bg-zinc-900/40 px-3 py-1.5 text-[13px] leading-snug text-zinc-300 transition-colors duration-300 hover:border-zinc-500/90 hover:bg-zinc-900/70">
-                  <span className="text-zinc-500" aria-hidden>
-                    #
-                  </span>
-                  <span className="ml-0.5">{label}</span>
-                </span>
-              </li>
-            ))}
-          </ul>
-          <div className="mt-10 flex flex-wrap gap-4">
-            <Link
-              href="/case-studies/e-invoice-app"
-              className="inline-flex items-center gap-2 rounded-full bg-zinc-100 px-5 py-2.5 text-sm font-medium text-zinc-900 transition hover:bg-white"
-            >
-              See flagship case study
-            </Link>
-            <Link
-              href="#featured"
-              className="inline-flex items-center gap-2 rounded-full border border-zinc-600 px-5 py-2.5 text-sm font-medium text-zinc-300 transition hover:border-zinc-400 hover:text-zinc-100"
-            >
-              View all work
-            </Link>
-          </div>
         </div>
 
         {/* Desktop: height-synced bubble, right-aligned */}

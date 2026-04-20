@@ -16,14 +16,13 @@ export function ProblemPersonasBlock() {
         <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
           02 · The problem
         </span>
-        <h2 className="text-zinc-100">
-          From public reviews to interviews—why the experience was breaking down
+        <h2 className="max-w-3xl text-zinc-100">
+          App Store reviews framed the quantitative pain, and interviews explained
+          what was stuck and why.
         </h2>
-        <p className="text-zinc-300 leading-relaxed">
-          This work started where users were already shouting: App Store reviews
-          framed the quantitative pain, and interviews explained who was stuck and
-          why. The sections below mirror that order—signal first, nuance second—then
-          five persona cards in Layer 2—tap any to open the full detail in a modal.
+        <p className="max-w-3xl text-sm leading-relaxed text-zinc-400">
+          The sections below follow that order—reviews first, interviews second—then
+          five persona cards in Layer 2; tap any to open the full detail in a modal.
         </p>
       </div>
 

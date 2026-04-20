@@ -479,8 +479,9 @@ export default function EInvoiceCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             01 · Project background
           </span>
-          <h2 className="text-zinc-100">
-            Why the Cloud Invoice App needed a redesign
+          <h2 className="max-w-3xl text-zinc-100">
+            Roughly 20 million people rely on the official app—yet ~2.8★ ratings
+            and broken flows were excluding elders, newcomers, and low-vision users.
           </h2>
           <p className="text-zinc-300 leading-relaxed">
             In Taiwan, every purchase comes with an invoice. For years, people
@@ -536,21 +537,14 @@ export default function EInvoiceCaseStudy() {
             <span className="text-xs font-medium uppercase tracking-widest text-emerald-400/90">
               From evidence to interface
             </span>
-            <h2 className="text-zinc-100">
-              Four problems we solved—end to end
+            <h2 className="max-w-3xl text-zinc-100">
+              Each block runs evidence to failure mode to decision to outcome—with
+              final UI on the side.
             </h2>
-            <p className="text-zinc-400 leading-relaxed">
-              Each block follows the same spine:{" "}
-              <span className="text-zinc-200">
-                real behavior &amp; pain from interviews and moderated tests
-              </span>{" "}
-              →{" "}
-              <span className="text-zinc-200">the UX failure mode I was seeing</span>{" "}
-              →{" "}
-              <span className="text-zinc-200">the product decision</span> →{" "}
-              <span className="text-zinc-200">what moved in the metrics</span>. On
-              the right, final UI from the shipped set—one screen or a short sequence
-              when the flow needed more than a single frame.
+            <p className="max-w-3xl text-sm leading-relaxed text-zinc-400">
+              The four stories cover login, onboarding, scan-first home, and modular
+              density; phones show one screen or a short sequence when the flow needed
+              more than a single frame.
             </p>
           </div>
 
@@ -622,12 +616,13 @@ export default function EInvoiceCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             07 · Final solution screens
           </span>
-          <h2 className="text-zinc-100">
-            High-fidelity UI across core tasks
+          <h2 className="max-w-3xl text-zinc-100">
+            High-fidelity screens in an auto-scrolling strip—tap any mock to enlarge
+            the flows we validated most.
           </h2>
-          <p className="max-w-3xl text-zinc-300 leading-relaxed">
-            Selected key functional screens—focused on the flows that matter most.
-            Auto-scrolling strip; click any screen to view larger.
+          <p className="max-w-3xl text-sm leading-relaxed text-zinc-400">
+            Focused on lottery, scan, redemption, and the tasks that anchor daily
+            use.
           </p>
           <FinalScreensMarquee slides={FINAL_SOLUTION_MARQUEE_SLIDES} />
         </section>
@@ -639,13 +634,13 @@ export default function EInvoiceCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Impact &amp; results
           </span>
-          <h2 className="text-zinc-100">
-            Other measurable wins
+          <h2 className="max-w-3xl text-zinc-100">
+            Beyond the four stories: ~88% prototype task success and −70% missed
+            redemptions after clearer deadlines and alerts.
           </h2>
-          <p className="text-zinc-300 leading-relaxed">
-            The four outcome stories above cover login, onboarding, scan-first home,
-            and modular density. Additional lifts from the same research cycle are
-            summarized here so the full picture stays in one place.
+          <p className="max-w-3xl text-sm leading-relaxed text-zinc-400">
+            Additional lifts from the same research cycle, kept here so the full
+            picture stays in one place.
           </p>
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-5">
@@ -692,12 +687,12 @@ export default function EInvoiceCaseStudy() {
             03 · Competitor insights &amp; design process
           </span>
           <h2 className="max-w-3xl text-zinc-100">
-            What the market already proved—before IA and UI
+            MoF, mature third parties, and LINE showed where trust and habit live—we
+            borrowed patterns that still fit ministry rules.
           </h2>
           <p className="max-w-3xl text-sm leading-relaxed text-zinc-400">
-            Quick read across MoF, two strong third parties, and LINE: where trust
-            sits, where habit and polish live, and what we could borrow without
-            breaking ministry constraints.
+            Quick competitive read before IA and UI: what to mirror, what to avoid,
+            and what stayed out of bounds.
           </p>
           <CompetitorLandscapeTable />
           <p className="max-w-3xl text-sm leading-relaxed text-zinc-400">
@@ -713,9 +708,13 @@ export default function EInvoiceCaseStudy() {
           id="accessibility"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
-                       <h3 className="text-zinc-100">
-            Accessibility work — VoiceOver &amp; screen reader
-          </h3>
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            04 · Accessibility
+          </span>
+          <h2 className="max-w-3xl text-zinc-100">
+            VoiceOver sessions on legacy exposed broken focus, roles, and copy—we
+            annotated components for engineering on the path to 2026 certification.
+          </h2>
           <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-10">
             <div className="min-w-0 flex-1 space-y-3 text-zinc-300 leading-relaxed">
               <p>
@@ -761,9 +760,13 @@ export default function EInvoiceCaseStudy() {
           id="business-constraints"
           className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
-                       <h3 className="text-zinc-100">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Business constraints
-          </h3>
+          </span>
+          <h2 className="max-w-3xl text-zinc-100">
+            Sprint timelines, MoF policy, and backend limits meant every surface had
+            to survive legal review and what engineering could actually ship.
+          </h2>
           <div className="grid gap-4 sm:grid-cols-3">
             <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-4">
               <p className="text-xs font-semibold text-violet-400">Timeline</p>
@@ -795,12 +798,14 @@ export default function EInvoiceCaseStudy() {
           id="functional-map"
           className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
-          <h3 className="text-zinc-100">Functional map</h3>
-          <p className="text-zinc-300 leading-relaxed max-w-3xl">
-            A functional map aligned the team on scope: how login, home,
-            notifications, scan-and-win, and downstream flows connect before hi-fi
-            polish.
-          </p>
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            Functional map
+          </span>
+          <h2 className="max-w-3xl text-zinc-100">
+            We mapped actors and touchpoints—login, home, notifications,
+            scan-and-win, redemptions—before hi-fi so scope stayed technically
+            plausible.
+          </h2>
           <WideFigure
             borderless
             src={ASSET("functional-map-v0.png")}
@@ -817,15 +822,14 @@ export default function EInvoiceCaseStudy() {
             <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
               05 · Page flow, UI direction &amp; design system
             </span>
-            <h2 className="text-zinc-100">
-              From flow logic to visual language
+            <h2 className="max-w-3xl text-zinc-100">
+              Figma page flows caught navigation gaps early;{" "}
+              <span className="text-zinc-200">Friendly lifestyle</span> became the
+              approved visual route from interviews and client review.
             </h2>
-            <p className="text-zinc-300 leading-relaxed">
-              Page flows in Figma mapped login, invoice management, and redemption
-              so navigation gaps surfaced before visual polish. The direction below
-              locks the first approved style route:{" "}
-              <span className="text-zinc-200">Friendly lifestyle</span>—grounded in
-              interviews and client review.
+            <p className="max-w-3xl text-sm leading-relaxed text-zinc-400">
+              Login, invoice management, and redemption were mapped before polish so
+              gaps showed up in logic—not only in pixels.
             </p>
           </div>
 
@@ -912,17 +916,14 @@ export default function EInvoiceCaseStudy() {
             <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
               06 · Testing &amp; iterations
             </span>
-            <h2 className="text-zinc-100">
-              Prototype testing &amp; key refinements
+            <h2 className="max-w-3xl text-zinc-100">
+              Twelve moderated sessions—including low-vision users—landed at{" "}
+              <span className={M_TXT}>88%</span> success and a clear fix list for login,
+              carrier binding, and prize flows.
             </h2>
-            <p className="text-zinc-300 leading-relaxed">
-              I conducted usability tests using one-on-one observation. Each
-              participant completed key tasks while I tracked completion rates, errors,
-              and satisfaction. Across 12 diverse participants, we reached an{" "}
-              <span className={M_TXT}>88%</span> overall success rate. Sessions surfaced
-              pain points—especially login verification and form
-              entry—which became actionable opportunities to improve accessibility and
-              efficiency before launch.
+            <p className="max-w-3xl text-sm leading-relaxed text-zinc-400">
+              One-on-one observation on core tasks; errors and satisfaction tracked so
+              accessibility and efficiency fixes could ship before launch.
             </p>
             <h6 className="text-zinc-400">
               Five core test tasks
@@ -1008,15 +1009,14 @@ export default function EInvoiceCaseStudy() {
             <p className="text-xs font-medium uppercase tracking-widest text-amber-400/90">
               Lowest task score · reframed problem
             </p>
-            <h3 className="mt-3 text-zinc-100">
-              <span aria-hidden>{"\u{1F517}"}</span> Carrier binding → scenario
-              explanation &amp; smart support
+            <h3 className="mt-3 max-w-3xl text-zinc-100">
+              <span aria-hidden>{"\u{1F517}"}</span> Carrier binding scored{" "}
+              <span className={M_TXT}>67%</span> because people didn&apos;t understand
+              why the step existed—not because the taps were hard.
             </h3>
-            <p className="mt-2 text-sm text-zinc-500 leading-relaxed">
-              Carrier binding tested at{" "}
-              <span className={M_TXT}>67%</span>—the weakest of the five core tasks.
-              The fix was not primarily &quot;simpler taps&quot;; it was helping people
-              understand why the step matters.
+            <p className="mt-2 max-w-3xl text-sm text-zinc-500 leading-relaxed">
+              Reframe: scenario copy and smart support so &quot;bind carrier&quot; reads
+              as automatic invoice capture, not ministry jargon.
             </p>
 
             <article className="mt-10 grid gap-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-start lg:gap-12">
@@ -1106,8 +1106,12 @@ export default function EInvoiceCaseStudy() {
           id="reflection"
           className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
-          <h2 className="text-zinc-100">
-            Reflection &amp; learnings
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            Reflection
+          </span>
+          <h2 className="max-w-3xl text-zinc-100">
+            This project sharpened how I pair public-sector governance with inclusive
+            UX—evidence first, then design that survives stakeholder review.
           </h2>
           <p className="text-zinc-300 leading-relaxed">
             I learned how differently diverse users interact with the app—from
@@ -1153,13 +1157,13 @@ export default function EInvoiceCaseStudy() {
           id="figma-resources"
           className="scroll-mt-28 space-y-5 rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6 sm:scroll-mt-32 sm:p-8"
         >
-          <p className="text-sm font-medium text-zinc-200">
-            Want to review the source files directly?
-          </p>
-          <p className="mt-2 text-sm text-zinc-400 max-w-3xl">
-            Open the Figma files below to see full wireflows, page logic, and
-            high-fidelity mockups in one place.
-          </p>
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            Figma files
+          </span>
+          <h2 className="max-w-3xl text-zinc-100">
+            Open the source files for wireflows, page logic, and hi-fi mocks in one
+            place.
+          </h2>
           <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <a
               href={FIGMA_MOCKUP_PAGE}
