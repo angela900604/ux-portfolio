@@ -617,13 +617,9 @@ export default function EInvoiceCaseStudy() {
             07 · Final solution screens
           </span>
           <h2 className="max-w-3xl text-zinc-100">
-            High-fidelity screens in an auto-scrolling strip—tap any mock to enlarge
-            the flows we validated most.
+            High-fidelity mocks for lottery, scan, and redemption—the flows we
+            stress-tested hardest before ship.
           </h2>
-          <p className="max-w-3xl text-sm leading-relaxed text-zinc-400">
-            Focused on lottery, scan, redemption, and the tasks that anchor daily
-            use.
-          </p>
           <FinalScreensMarquee slides={FINAL_SOLUTION_MARQUEE_SLIDES} />
         </section>
 

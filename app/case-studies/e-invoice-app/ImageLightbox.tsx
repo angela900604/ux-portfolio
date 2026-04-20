@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback, useEffect } from "react";
+import { createPortal } from "react-dom";
 
 export function ImageLightbox({
   src,
@@ -52,24 +53,27 @@ export function ImageLightbox({
       >
         {children}
       </div>
-      {open && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
-          onClick={handleBackdropClick}
-          role="dialog"
-          aria-modal="true"
-          aria-label="Enlarged image"
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={src}
-            alt={alt}
-            className="max-h-[90vh] max-w-[90vw] object-contain rounded-[20px] shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
-            draggable={false}
-          />
-        </div>
-      )}
+      {open &&
+        typeof document !== "undefined" &&
+        createPortal(
+          <div
+            className="fixed inset-0 z-[11000] flex items-center justify-center bg-black/90 p-4"
+            onClick={handleBackdropClick}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Enlarged image"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={src}
+              alt={alt}
+              className="max-h-[90vh] max-w-[90vw] object-contain rounded-[20px] shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+              draggable={false}
+            />
+          </div>,
+          document.body,
+        )}
     </>
   );
 }
