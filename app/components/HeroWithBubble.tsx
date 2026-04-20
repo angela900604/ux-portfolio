@@ -10,17 +10,11 @@ const MAX_BUBBLE_W = 560;
 
 const HERO_KEYWORDS = [
   "Public service",
+  "0→1 products",
   "Mobile",
-  "AI automation",
-  "Branding",
-  "Digital marketing",
-  "Product thinking",
-  "End-to-end UX",
-  "Cross-functional collaboration",
-  "AI-assisted workflow",
-  "Accessibility-aware design",
   "Design systems",
-  "User research",
+  "Accessibility-aware design",
+  "AI automation",
   "User interviews",
 ] as const;
 
