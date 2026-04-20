@@ -9,6 +9,7 @@ import { DesignJourneyCollapsible } from "../_components/DesignJourneyCollapsibl
 import { ProblemPersonasBlock } from "./ProblemPersonasBlock";
 import { OutcomeAutoSlideshow } from "./OutcomeAutoSlideshow";
 import { FinalScreensMarquee } from "./FinalScreensMarquee";
+import { HomeBeforeAfterSlider } from "./HomeBeforeAfterSlider";
 import { PhoneMockup, PortraitTile, WideFigure } from "./EInvoiceFigures";
 
 export const metadata = {
@@ -552,6 +553,8 @@ export default function EInvoiceCaseStudy() {
               when the flow needed more than a single frame.
             </p>
           </div>
+
+          <HomeBeforeAfterSlider />
 
           <div className="space-y-16 lg:space-y-20">
             {KEY_OUTCOME_ROWS.map((row) => (
