@@ -194,18 +194,20 @@ export default function GovernmentBackendCaseStudy() {
                 </div>
                 <figure className="space-y-2">
                   <div className="overflow-hidden rounded-[20px] border border-zinc-700/60 bg-zinc-900/30">
-                    <video
-                      className="h-auto w-full object-contain"
-                      controls
-                      playsInline
-                      preload="metadata"
-                      aria-label="Backend admin: notification content and scheduled publishing"
-                    >
-                      <source
-                        src={ASSET("backend-demo.mp4")}
-                        type="video/mp4"
-                      />
-                    </video>
+                    <div className="relative w-full aspect-video">
+                      <video
+                        className="absolute inset-0 h-full w-full bg-black object-contain"
+                        controls
+                        playsInline
+                        preload="metadata"
+                        aria-label="Backend admin: notification content and scheduled publishing"
+                      >
+                        <source
+                          src={ASSET("backend-demo.mp4")}
+                          type="video/mp4"
+                        />
+                      </video>
+                    </div>
                   </div>
                   <figcaption className="max-w-3xl text-xs text-zinc-500">
                     Backend · Notification settings (content + pre-scheduled
