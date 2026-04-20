@@ -5,8 +5,8 @@ import { useEffect, useRef } from "react";
 const HTML_CLASS = "soft-cursor";
 
 /** Cursor tint — solid core reads larger; outer layers stay soft */
-const CURSOR = "#7F97C7";
-const CURSOR_RGB = "127,151,199";
+const CURSOR = "#7186B9";
+const CURSOR_RGB = "113,134,185";
 
 function isInteractiveTarget(node: EventTarget | null): boolean {
   if (!(node instanceof Element)) return false;
@@ -31,7 +31,7 @@ function isInteractiveTarget(node: EventTarget | null): boolean {
 }
 
 /**
- * Fluffy circular cursor (#7F97C7 — solid center, soft edge). Scales up on interactive targets.
+ * Fluffy circular cursor (#7186B9 — solid center, soft edge). Scales up on interactive targets.
  * Desktop / fine pointer only; respects prefers-reduced-motion.
  */
 export function SoftCursor() {

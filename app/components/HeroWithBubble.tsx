@@ -6,8 +6,8 @@ import { useCallback, useLayoutEffect, useRef, useState } from "react";
 const BUBBLE_SRC = "/home/header-bubble-v2.png";
 const ASPECT = 1024 / 744;
 /** Cap width; height scales with text column × {@link BUBBLE_SCALE}. */
-const MAX_BUBBLE_W = 1360;
-const BUBBLE_SCALE = 2.0;
+const MAX_BUBBLE_W = 1520;
+const BUBBLE_SCALE = 2.22;
 
 function BubbleBackdrop() {
   return (
@@ -71,8 +71,8 @@ export function HeroWithBubble() {
           </p>
         </div>
 
-        {/* Desktop: height-synced bubble, right-aligned */}
-        <div className="pointer-events-none relative z-0 hidden min-h-0 min-w-0 flex-1 justify-end lg:flex lg:items-center">
+        {/* Desktop: behind headline (z-0); pull left so blob kisses the “s” in “experiences.” */}
+        <div className="pointer-events-none relative z-0 hidden min-h-0 min-w-0 flex-1 justify-end lg:-ml-10 lg:flex lg:items-center xl:-ml-16 2xl:-ml-20">
           <div
             className="home-bubble-float relative shrink-0"
             style={
@@ -81,7 +81,7 @@ export function HeroWithBubble() {
                     width: bubbleW,
                     height: bubbleH,
                   }
-                : { minHeight: "23rem", width: "min(100%, 40rem)" }
+                : { minHeight: "26rem", width: "min(100%, 44rem)" }
             }
           >
             <BubbleBackdrop />
@@ -92,7 +92,7 @@ export function HeroWithBubble() {
                   alt=""
                   fill
                   className="object-contain object-right"
-                  sizes="1360px"
+                  sizes="1520px"
                   priority
                 />
               </div>
@@ -107,7 +107,7 @@ export function HeroWithBubble() {
         aria-hidden
       >
         <div
-          className="home-bubble-float relative w-[min(94vw,900px)]"
+          className="home-bubble-float relative w-[min(94vw,970px)]"
           style={{ aspectRatio: ASPECT }}
         >
           <BubbleBackdrop />
@@ -117,7 +117,7 @@ export function HeroWithBubble() {
               alt=""
               fill
               className="object-contain object-center"
-              sizes="900px"
+              sizes="970px"
               priority
             />
           </div>
