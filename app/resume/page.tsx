@@ -58,15 +58,6 @@ export default function ResumePage() {
                 className="text-stone-800 underline decoration-stone-300 underline-offset-[3px] hover:text-stone-950"
               >
                 LinkedIn
-              </a>{" "}
-              ·{" "}
-              <a
-                href="https://www.ycnangelayang.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-stone-800 underline decoration-stone-300 underline-offset-[3px] hover:text-stone-950"
-              >
-                Portfolio
               </a>
             </p>
 
@@ -99,14 +90,14 @@ export default function ResumePage() {
                 Product Designer with end-to-end experience owning design systems,
                 shipping AI-powered products, and driving measurable outcomes at
                 early-stage startups and government-scale platforms. Deep expertise
-                in Figma — component libraries, variables/tokens, auto-layout,
+                in Figma, component libraries, variables/tokens, auto-layout,
                 variants, and full design system architecture. Fluent with modern
                 vibe-coding tools (Claude, Lovart, Framer, Cursor, Stitch) to
                 produce realistic, production-like prototypes that accelerate
                 engineer collaboration. Grounded in Jobs-to-Be-Done thinking,
                 hypothesis-driven discovery, and analytics-connected iteration
                 (PostHog, Google Analytics). Comfortable as a sole IC designer in
-                ambiguous, fast-moving environments — balancing craft with
+                ambiguous, fast-moving environments, balancing craft with
                 speed-to-market.
               </p>
             </section>
@@ -247,12 +238,6 @@ export default function ResumePage() {
                       performance.
                     </li>
                     <li>
-                      Applied outcome-driven design methods: defined hypotheses
-                      before each design iteration, measured results
-                      quantitatively, and documented findings clearly for product
-                      stakeholders.
-                    </li>
-                    <li>
                       Designed and launched a responsive marketing website in
                       Framer using code-adjacent rapid prototyping, improving
                       product clarity and pre-signup conversion by helping
@@ -296,47 +281,46 @@ export default function ResumePage() {
               <div className="mt-6 space-y-5 text-base leading-[1.65] text-stone-800 sm:text-lg">
                 <p>
                   <span className="font-semibold text-stone-900">
-                    Figma expertise:
+                    Figma Expertise:
                   </span>{" "}
                   Component libraries, variables/tokens, auto-layout, variants,
                   file architecture, design system ownership &amp; maintenance
                 </p>
                 <p>
                   <span className="font-semibold text-stone-900">
-                    Vibe coding tools:
+                    Vibe Coding Tools:
                   </span>{" "}
-                  Claude, Lovart, Cursor, Stitch, Framer — rapid prototyping with
+                  Claude, Lovart, Cursor, Stitch, Framer, rapid prototyping with
                   realistic data and production-like interactions
                 </p>
                 <p>
-                  <span className="font-semibold text-stone-900">UX methods:</span>{" "}
-                  End-to-end product design, Jobs-to-Be-Done framing,
-                  hypothesis-driven experiments, user research (interviews, focus
-                  groups, usability testing), journey mapping, personas,
-                  information architecture, wireframing, A/B testing, competitor
-                  analysis
+                  <span className="font-semibold text-stone-900">UX Methods:</span>{" "}
+                  End-to-End Product Design, Hypothesis-Driven Experiments, User
+                  Research (interviews, focus groups, usability testing), Journey
+                  Mapping, Personas, Information Architecture, Wireframing, A/B
+                  Testing, Competitor Analysis
                 </p>
                 <p>
                   <span className="font-semibold text-stone-900">Analytics:</span>{" "}
-                  PostHog, Google Analytics, conversion optimization, funnel
-                  analysis, outcome-driven iteration
+                  PostHog, Google Analytics, Conversion Optimization, Funnel
+                  Analysis, Outcome-Driven Iteration
                 </p>
                 <p>
                   <span className="font-semibold text-stone-900">
-                    Design tools:
+                    Design Tools:
                   </span>{" "}
                   Figma, FigJam, Adobe Illustrator, Adobe Photoshop, Canva, Framer,
                   WordPress, Notion, Miro
                 </p>
                 <p>
                   <span className="font-semibold text-stone-900">Platforms:</span>{" "}
-                  Mobile UX (iOS), responsive web, design systems, accessibility
-                  (WCAG), B2B dashboards, government platforms
+                  Mobile UX (iOS), Responsive Web, Design Systems, Accessibility
+                  (WCAG), B2B Dashboards, Government Platforms
                 </p>
                 <p>
                   <span className="font-semibold text-stone-900">Workflow:</span>{" "}
-                  Agile, IC / solo designer, cross-functional collaboration, sprint
-                  planning, stakeholder communication, documentation
+                  Agile, IC / Solo Designer, Cross-functional Collaboration,
+                  Sprint Planning, Stakeholder Communication, Documentation
                 </p>
               </div>
             </section>
