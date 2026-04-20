@@ -24,7 +24,7 @@ export function CaseStudyContentLayout({
   toc,
   children,
   variant = "dark",
-  contentClassName = "space-y-20",
+  contentClassName = "space-y-24 sm:space-y-28",
   containerClassName = "",
   tocHeading,
   omitOuterContainer = false,
@@ -37,7 +37,7 @@ export function CaseStudyContentLayout({
   const grid = (
     <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_11.5rem] xl:grid-cols-[minmax(0,1fr)_12.75rem] lg:gap-8 xl:gap-10">
       <div
-        className={`case-study-prose min-w-0 w-full max-w-5xl ${contentClassName}`}
+        className={`case-study-prose min-w-0 w-full max-w-6xl ${contentClassName}`}
       >
         {children}
       </div>

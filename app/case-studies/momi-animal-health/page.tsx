@@ -153,7 +153,7 @@ export default function MomiAnimalHealthCaseStudy() {
       <CaseStudyContentLayout
         toc={MOMI_TOC}
         variant="light"
-        contentClassName="space-y-16"
+        contentClassName="space-y-20 sm:space-y-24"
       >
         <Section
           id="project-overview"

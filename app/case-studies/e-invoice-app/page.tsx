@@ -354,6 +354,7 @@ export default function EInvoiceCaseStudy() {
           <div className="mt-8">
             <WideFigure
               borderless
+              fullBleed
               src={ASSET("before-after-overview.png")}
               alt="Before and after overview of the e-invoice app redesign"
             />
@@ -800,6 +801,7 @@ export default function EInvoiceCaseStudy() {
           </p>
           <WideFigure
             borderless
+            fullBleed
             src={ASSET("functional-map-v0.png")}
             alt="Functional map v0.0 — information architecture of the e-invoice app"
             caption="Functional map v0.0 · Functional_map_v0.0 (export)."

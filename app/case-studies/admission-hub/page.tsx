@@ -120,7 +120,7 @@ export default function AdmissionHubCaseStudy() {
       <CaseStudyContentLayout
         toc={ADMISSION_TOC}
         variant="light"
-        contentClassName="space-y-16"
+        contentClassName="space-y-20 sm:space-y-24"
       >
         <Section
           id="project-overview"

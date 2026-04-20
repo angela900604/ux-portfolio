@@ -94,6 +94,7 @@ export default function GovernmentBackendCaseStudy() {
 
           <div className="mt-8">
             <WideFigure
+              fullBleed
               src={ASSET("hero-platform-overview.png")}
               alt="Government backend platform overview — dashboards and navigation"
             />

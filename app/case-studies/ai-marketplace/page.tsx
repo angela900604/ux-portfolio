@@ -89,6 +89,7 @@ export default function AiMarketplaceCaseStudy() {
           <div className="mt-8">
             <WideFigure
               borderless
+              fullBleed
               src={MINA_HERO}
               alt="MINA app showcase: AI-assisted buyer chat, marketplace home with picks and events, and community events"
             />
