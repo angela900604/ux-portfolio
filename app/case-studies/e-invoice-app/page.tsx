@@ -9,8 +9,8 @@ import { DesignJourneyCollapsible } from "../_components/DesignJourneyCollapsibl
 import { ProblemPersonasBlock } from "./ProblemPersonasBlock";
 import { OutcomeAutoSlideshow } from "./OutcomeAutoSlideshow";
 import { FinalScreensMarquee } from "./FinalScreensMarquee";
-import { HomeBeforeAfterSlider } from "./HomeBeforeAfterSlider";
 import { PhoneMockup, PortraitTile, WideFigure } from "./EInvoiceFigures";
+import { HomeBeforeAfterSlider } from "./HomeBeforeAfterSlider";
 
 export const metadata = {
   title: "Reimagining Taiwan’s e-Invoice Experience | Angela Yang",
