@@ -25,6 +25,7 @@ export function HomeBeforeAfterSlider() {
         ref={containerRef}
         className="relative w-full cursor-ew-resize overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/50 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.04)] touch-none select-none outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950"
         style={{ aspectRatio: ASPECT }}
+        onDragStartCapture={(e) => e.preventDefault()}
         onPointerDown={(e) => {
           e.currentTarget.setPointerCapture(e.pointerId);
           setFromClientX(e.clientX);
@@ -73,7 +74,8 @@ export function HomeBeforeAfterSlider() {
           src={AFTER_SRC}
           alt="Cloud Invoice app home — after redesign"
           fill
-          className="object-cover"
+          draggable={false}
+          className="pointer-events-none object-cover select-none [-webkit-user-drag:none]"
           sizes="(max-width: 1152px) 100vw, 960px"
         />
 
@@ -88,7 +90,8 @@ export function HomeBeforeAfterSlider() {
             src={BEFORE_SRC}
             alt="Cloud Invoice app home — before redesign"
             fill
-            className="object-cover"
+            draggable={false}
+            className="pointer-events-none object-cover select-none [-webkit-user-drag:none]"
             sizes="(max-width: 1152px) 100vw, 960px"
           />
         </div>
