@@ -4,6 +4,10 @@ import { useEffect, useRef } from "react";
 
 const HTML_CLASS = "soft-cursor";
 
+/** Cursor tint — solid core reads larger; outer layers stay soft */
+const CURSOR = "#7F97C7";
+const CURSOR_RGB = "127,151,199";
+
 function isInteractiveTarget(node: EventTarget | null): boolean {
   if (!(node instanceof Element)) return false;
   const el = node.closest(
@@ -27,7 +31,7 @@ function isInteractiveTarget(node: EventTarget | null): boolean {
 }
 
 /**
- * Fluffy circular cursor (#5A78B3, radial fade + blur). Scales up on interactive targets.
+ * Fluffy circular cursor (#7F97C7 — solid center, soft edge). Scales up on interactive targets.
  * Desktop / fine pointer only; respects prefers-reduced-motion.
  */
 export function SoftCursor() {
@@ -105,28 +109,25 @@ export function SoftCursor() {
         className="relative size-[52px] transition-transform duration-300 ease-out will-change-transform"
         style={{ transform: "translate(-50%, -50%) scale(1)" }}
       >
-        {/* Outer halo — soft, fluffy falloff */}
+        {/* Outer — short soft fringe only (less “all fade”) */}
         <div
-          className="absolute -inset-6 rounded-full opacity-[0.55] blur-[18px]"
+          className="absolute -inset-4 rounded-full opacity-[0.42] blur-[11px]"
           style={{
-            background:
-              "radial-gradient(circle closest-side, #5A78B3 0%, rgba(90,120,179,0.35) 45%, transparent 72%)",
+            background: `radial-gradient(circle closest-side, rgba(${CURSOR_RGB},0.55) 38%, transparent 72%)`,
           }}
         />
-        {/* Mid feathered ring */}
+        {/* Mid — narrow transition band */}
         <div
-          className="absolute -inset-2 rounded-full opacity-[0.65] blur-[10px]"
+          className="absolute inset-0 rounded-full opacity-[0.88] blur-[5px]"
           style={{
-            background:
-              "radial-gradient(circle closest-side, rgba(90,120,179,0.85) 0%, rgba(90,120,179,0.25) 52%, transparent 70%)",
+            background: `radial-gradient(circle closest-side, rgba(${CURSOR_RGB},0.75) 42%, rgba(${CURSOR_RGB},0.22) 62%, transparent 78%)`,
           }}
         />
-        {/* Inner core — slightly sharper center */}
+        {/* Core — larger flat-color region, then quick edge falloff */}
         <div
-          className="absolute inset-[10px] rounded-full blur-[3px]"
+          className="absolute inset-[2px] rounded-full blur-[0.5px]"
           style={{
-            background:
-              "radial-gradient(circle closest-side, rgba(90,120,179,0.92) 0%, rgba(90,120,179,0.2) 62%, transparent 78%)",
+            background: `radial-gradient(circle closest-side, ${CURSOR} 0%, ${CURSOR} 46%, rgba(${CURSOR_RGB},0.42) 66%, transparent 84%)`,
           }}
         />
       </div>
