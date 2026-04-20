@@ -2,6 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { CaseStudyAtAGlance } from "../_components/CaseStudyAtAGlance";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
+import { CaseStudyExpandable } from "../_components/CaseStudyExpandable";
+import { CaseStudyImpactBanner } from "../_components/CaseStudyImpactBanner";
+import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { CaseStudyScanSummary } from "../_components/CaseStudyScanSummary";
 import { CompetitorLandscapeTable } from "./CompetitorLandscapeTable";
@@ -25,17 +28,17 @@ const FIGMA_WIREFRAME_FLOW =
 
 const ASSET = (name: string) => `/case-studies/e-invoice/case-assets/${name}`;
 
-/** Hero product demonstration stills (lifestyle + in-store carrier). */
-const HERO_DEMO_IMAGES = [
-  {
-    src: "/case-studies/e-invoice/hero-scan-paper-receipts.png",
-    alt: "Hands holding Taiwan paper uniform invoices while the phone scans QR codes in the redesigned e-invoice app",
-  },
-  {
-    src: "/case-studies/e-invoice/hero-store-barcode-carrier.png",
-    alt: "Checkout context: phone shows the e-invoice carrier barcode at a convenience store counter",
-  },
-] as const;
+/** First hero frame — full-bleed first screen (invoice + scan). */
+const HERO_FULL_BLEED = {
+  src: "/case-studies/e-invoice/hero-scan-paper-receipts.png",
+  alt: "Hands holding Taiwan paper uniform invoices while the phone scans QR codes in the redesigned e-invoice app",
+} as const;
+
+/** Second lifestyle still — below the fold, in content width. */
+const HERO_SECOND_STILL = {
+  src: "/case-studies/e-invoice/hero-store-barcode-carrier.png",
+  alt: "Checkout context: phone shows the e-invoice carrier barcode at a convenience store counter",
+} as const;
 
 const YOUTUBE_A11Y_EMBED = "https://www.youtube.com/embed/yfwERMFfXDM";
 const YOUTUBE_A11Y_URL =
@@ -102,10 +105,10 @@ const AT_A_GLANCE_ITEMS = [
 
 /** Final solution screens — high-fidelity exports (18), filenames solution-final-01 … 18. */
 const E_INVOICE_SCAN_SUMMARY = [
-  "End-to-end UX/UI redesign of Taiwan’s Ministry of Finance Cloud Invoice App—from discovery and competitive research through wireframes, mockups, and documented final screens.",
-  "Usability testing with participants aged 18–70+ (including visually impaired users) reached about 88% task success; iterations focused on IA, onboarding, scanning, donation, and redemption.",
-  "Login success improved from 68% to 92% with biometric login and in-app recovery; clearer deadlines and notifications helped cut missed prize redemptions.",
-  "Aligned flows with accessibility expectations and government service constraints so the app feels faster, more inclusive, and more trustworthy for everyday use.",
+  "MoF Cloud Invoice App: discovery → shipped UI, documented final screens.",
+  "~88% task success (18–70+, including low vision); IA, onboarding, scan, donation, redemption.",
+  "Login 68%→92% (biometrics + in-app recovery); fewer missed wins via deadlines + push.",
+  "Accessibility + public-sector constraints baked in—faster, inclusive, trustworthy daily use.",
 ] as const;
 
 /** Research → problem → decision → outcome; paired with final UI (solution-final-*.png). */
@@ -314,45 +317,57 @@ export default function EInvoiceCaseStudy() {
   return (
     <article className="min-h-screen bg-zinc-950 text-zinc-100">
       <header className="border-b border-zinc-800">
-        <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-16 sm:py-24">
-          <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-zinc-500 mb-6">
-            <span>Case Study</span>
-            <span className="text-zinc-600">·</span>
-            <span>Public Service</span>
-            <span className="text-zinc-600">·</span>
-            <span>Mobile App</span>
-          </div>
-          <h1 className="max-w-4xl">
-            Reimagining Taiwan&apos;s e-Invoice experience: guided onboarding,
-            lottery prize redemption &amp; eco-friendly engagement
-          </h1>
-          <p className="mt-4 text-xl text-zinc-400 max-w-3xl">
-            End-to-end redesign of the Ministry of Finance Cloud Invoice App—
-            combining research, accessibility standards, and modern design
-            practices so the service feels faster, more inclusive, and more
-            trustworthy.
-          </p>
-
-          <div className="mt-8 grid gap-4 md:grid-cols-2">
-            {HERO_DEMO_IMAGES.map((img) => (
-              <div
-                key={img.src}
-                className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40"
-              >
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  width={1024}
-                  height={571}
-                  className="h-auto w-full object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  priority
-                />
+        {/* Full-bleed first screen — invoice + scan; title in white on image */}
+        <div className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2">
+          <div className="relative h-[min(90vh,56rem)] min-h-[80vh] w-full">
+            <Image
+              src={HERO_FULL_BLEED.src}
+              alt={HERO_FULL_BLEED.alt}
+              fill
+              priority
+              className="object-cover object-[center_35%]"
+              sizes="100vw"
+            />
+            <div
+              className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/55 to-zinc-950/25"
+              aria-hidden
+            />
+            <div className="absolute inset-0 flex flex-col justify-end px-6 pb-14 pt-28 sm:px-[100px] sm:pb-20 sm:pt-36">
+              <div className="mx-auto w-full max-w-[1440px]">
+                <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-white/75">
+                  <span>Case Study</span>
+                  <span className="text-white/45">·</span>
+                  <span>Public Service</span>
+                  <span className="text-white/45">·</span>
+                  <span>Mobile App</span>
+                </div>
+                <h1 className="mt-5 max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
+                  Reimagining Taiwan&apos;s e-Invoice experience: guided onboarding,
+                  lottery prize redemption &amp; eco-friendly engagement
+                </h1>
+                <p className="mt-5 max-w-3xl text-lg leading-relaxed text-zinc-200 sm:text-xl">
+                  End-to-end redesign of the Ministry of Finance Cloud Invoice App—
+                  research, accessibility, and ship-ready UI for a faster, more
+                  inclusive service.
+                </p>
               </div>
-            ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-12 sm:py-16">
+          <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+            <Image
+              src={HERO_SECOND_STILL.src}
+              alt={HERO_SECOND_STILL.alt}
+              width={1024}
+              height={571}
+              className="h-auto w-full object-cover"
+              sizes="(max-width: 768px) 100vw, 1080px"
+            />
           </div>
 
-          <div className="mt-8">
+          <div className="mt-10">
             <WideFigure
               borderless
               src={ASSET("before-after-overview.png")}
@@ -360,35 +375,30 @@ export default function EInvoiceCaseStudy() {
             />
           </div>
 
-          <div className="mt-8">
+          <div className="mt-10">
             <CaseStudyAtAGlance items={AT_A_GLANCE_ITEMS} />
           </div>
 
-          <div className="mt-8 space-y-3">
-            <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-              Impact summary
-            </p>
-            <div className="grid gap-3 sm:grid-cols-2 sm:max-w-2xl">
-              <div className="rounded-xl border border-zinc-800/90 bg-zinc-900/50 px-4 py-3">
-                <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">
-                  Usability testing
-                </p>
-                <p className="mt-1 text-sm font-medium text-zinc-100">
-                  ~88% task success · ages 18–70+
-                </p>
-              </div>
-              <div className="rounded-xl border border-zinc-800/90 bg-zinc-900/50 px-4 py-3">
-                <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">
-                  Login success
-                </p>
-                <p className="mt-1 text-sm font-medium text-zinc-100">
-                  68% → 92%
-                </p>
-              </div>
-            </div>
+          <div className="mt-10">
+            <CaseStudyImpactBanner
+              primary={{
+                label: "Login success",
+                value: (
+                  <>
+                    68% <span className="text-emerald-400/80">→</span> 92%
+                  </>
+                ),
+                hint: "Biometric-first sign-in and in-app recovery replaced ministry-only verification loops—especially for 51+ and low-vision users.",
+              }}
+              secondary={{
+                label: "Prototype task success",
+                value: "~88%",
+                hint: "12 participants, five core tasks; strongest after home + guidance iterations.",
+              }}
+            />
           </div>
 
-          <div className="mt-8">
+          <div className="mt-10">
             <CaseStudyScanSummary items={E_INVOICE_SCAN_SUMMARY} />
           </div>
 
@@ -421,11 +431,13 @@ export default function EInvoiceCaseStudy() {
               <p className="mt-2">
                 <span className={M_HERO}>68% → 92%</span>
               </p>
-              <p className="mt-2 text-sm text-zinc-400 leading-relaxed">
-                Biometric login and in-app password recovery to reduce login
-                friction—helping elderly and visually impaired users log in
-                independently.
-              </p>
+              <CaseStudyExpandable label="What we shipped">
+                <p className="text-sm text-zinc-400 leading-relaxed">
+                  Biometric login and in-app password recovery to reduce login
+                  friction—helping elderly and visually impaired users log in
+                  independently.
+                </p>
+              </CaseStudyExpandable>
             </div>
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5">
               <p className="text-xs font-semibold uppercase tracking-widest text-emerald-400/90">
@@ -434,13 +446,14 @@ export default function EInvoiceCaseStudy() {
               <p className="mt-2">
                 <span className={M_HERO}>+30%</span>
               </p>
-              <p className="mt-2 text-sm text-zinc-400 leading-relaxed">
-                Guided first-time setup for an automation-ready path: biometrics
-                (less password friction when claiming or changing settings), bank
-                account (automatic prize payout), richer push notifications (especially
-                when paper scans cannot auto-claim), and cloud backup when switching
-                phones.
-              </p>
+              <CaseStudyExpandable label="Guided setup detail">
+                <p className="text-sm text-zinc-400 leading-relaxed">
+                  Guided first-time setup for an automation-ready path: biometrics,
+                  bank account for automatic prize payout, richer push notifications
+                  (paper scans don&apos;t auto-claim), and cloud backup when switching
+                  phones.
+                </p>
+              </CaseStudyExpandable>
             </div>
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5">
               <p className="text-xs font-semibold uppercase tracking-widest text-emerald-400/90">
@@ -449,10 +462,13 @@ export default function EInvoiceCaseStudy() {
               <p className="mt-2">
                 <span className={M_HERO}>−70%</span>
               </p>
-              <p className="mt-2 text-sm text-zinc-400 leading-relaxed">
-                Clear countdown timers, prize status, and redemption deadlines—
-                plus real-time push notifications—to reduce missed redemptions.
-              </p>
+              <CaseStudyExpandable label="Mechanisms">
+                <p className="text-sm text-zinc-400 leading-relaxed">
+                  Clear countdown timers, prize status, redemption deadlines, and
+                  real-time push notifications so people don&apos;t learn about a win
+                  too late.
+                </p>
+              </CaseStudyExpandable>
             </div>
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5">
               <p className="text-xs font-semibold uppercase tracking-widest text-emerald-400/90">
@@ -461,18 +477,20 @@ export default function EInvoiceCaseStudy() {
               <p className="mt-2">
                 <span className={M_HERO}>88%</span>
               </p>
-              <p className="mt-2 text-sm text-zinc-400 leading-relaxed">
-                Usability testing with users aged 18–70+, including visually
-                impaired participants—refining scanning, donation, and
-                redemption flows.
-              </p>
+              <CaseStudyExpandable label="Testing scope">
+                <p className="text-sm text-zinc-400 leading-relaxed">
+                  Usability testing with users aged 18–70+, including visually
+                  impaired participants—refining scanning, donation, and redemption
+                  flows.
+                </p>
+              </CaseStudyExpandable>
             </div>
           </div>
         </div>
       </header>
 
       <CaseStudyContentLayout toc={E_INVOICE_TOC}>
-        <section
+        <CaseStudyInViewSection
           id="project-background"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
@@ -484,16 +502,10 @@ export default function EInvoiceCaseStudy() {
             and broken flows were excluding elders, newcomers, and low-vision users.
           </h2>
           <p className="text-zinc-300 leading-relaxed">
-            In Taiwan, every purchase comes with an invoice. For years, people
-            collected stacks of paper receipts and checked them for the
-            government&apos;s famous &quot;invoice lottery.&quot; Exciting as it was,
-            the system also created paper waste and made finances harder to
-            manage. To address this, the Ministry of Finance (MoF) launched the
-            Cloud Invoice App—a mobile tool for citizens to manage invoices
-            digitally. The app makes it possible to store and organize electronic
-            invoices, check government lottery numbers instantly, donate
-            invoices to charity with one tap, and reduce reliance on paper while
-            supporting sustainability.
+            Taiwan runs on invoices and a national lottery—MoF&apos;s Cloud Invoice
+            App is how ~20M people go digital, yet it sat at{" "}
+            <span className="font-medium text-zinc-200">~2.8★</span> with sign-in and
+            language barriers excluding elders, newcomers, and low-vision users.
           </p>
           <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
             <Image
@@ -504,32 +516,31 @@ export default function EInvoiceCaseStudy() {
               className="h-auto w-full object-cover"
             />
           </div>
-          <p className="text-zinc-300 leading-relaxed">
-            Taiwan&apos;s Ministry of Finance Cloud Invoice App is the official
-            way roughly 20 million people manage e-invoices and join the Uniform
-            Invoice lottery—yet it sits at only about{" "}
-            <span className="font-medium text-zinc-200">2.8 stars</span> on the App
-            Store.
-          </p>
-          <p className="text-zinc-300 leading-relaxed">
-            The issue wasn&apos;t just dated UI. Interviews and testing showed the
-            real blockers: older adults couldn&apos;t use the app independently,
-            foreign residents couldn&apos;t parse Chinese labels, and people
-            abandoned sign-in at forgot-password. A service built for everyone was
-            still shutting out those who needed it most.
-          </p>
-          <p className="border-l-2 border-emerald-500/40 pl-4 text-sm leading-relaxed text-zinc-400">
-            <span className="font-medium text-zinc-200">Design goal:</span>{" "}
-            People
-            aged 18 through 70+, including visually impaired users, should complete
-            core tasks on their own—no walkthrough required, no need for family to
-            step in.
-          </p>
-        </section>
+          <CaseStudyExpandable label="Context, constraints, and design goal">
+            <p className="text-zinc-300">
+              In Taiwan, every purchase comes with an invoice. For years, people
+              collected stacks of paper receipts and checked them for the
+              government&apos;s famous &quot;invoice lottery.&quot; To address waste
+              and friction, the Ministry of Finance (MoF) launched the Cloud Invoice
+              App—store e-invoices, check lottery numbers, donate with one tap, and
+              cut paper while supporting sustainability.
+            </p>
+            <p className="mt-3 text-zinc-300">
+              The issue wasn&apos;t just dated UI: older adults couldn&apos;t use the
+              app alone, foreign residents couldn&apos;t parse Chinese labels, and
+              people abandoned sign-in at forgot-password.
+            </p>
+            <p className="mt-4 border-l-2 border-emerald-500/40 pl-4 text-sm text-zinc-400">
+              <span className="font-medium text-zinc-200">Design goal:</span> users
+              18–70+, including visually impaired, complete core tasks independently—
+              no hand-holding or family takeover.
+            </p>
+          </CaseStudyExpandable>
+        </CaseStudyInViewSection>
 
         <ProblemPersonasBlock />
 
-        <section
+        <CaseStudyInViewSection
           id="key-outcomes"
           className="scroll-mt-28 space-y-14 sm:scroll-mt-32"
         >
@@ -538,14 +549,9 @@ export default function EInvoiceCaseStudy() {
               From evidence to interface
             </span>
             <h2 className="max-w-3xl text-zinc-100">
-              Each block runs evidence to failure mode to decision to outcome—with
-              final UI on the side.
+              Four tracks—login, onboarding, scan-first home, modular density—with
+              evidence → decision → outcome and UI on the side.
             </h2>
-            <p className="max-w-3xl text-sm leading-relaxed text-zinc-400">
-              The four stories cover login, onboarding, scan-first home, and modular
-              density; phones show one screen or a short sequence when the flow needed
-              more than a single frame.
-            </p>
           </div>
 
           <HomeBeforeAfterSlider />
@@ -560,40 +566,42 @@ export default function EInvoiceCaseStudy() {
                   <h3 className="text-zinc-100">
                     {row.title}
                   </h3>
-                  <div className="space-y-5">
-                    <div className="border-l-2 border-emerald-500/45 pl-4">
-                      <p className="text-[11px] font-semibold uppercase tracking-widest text-emerald-400/95">
-                        Evidence · interviews &amp; tests
-                      </p>
-                      <p className="mt-2 text-sm leading-relaxed text-zinc-300">
-                        {row.evidence}
-                      </p>
-                    </div>
-                    <div className="border-l-2 border-rose-500/35 pl-4">
-                      <p className="text-[11px] font-semibold uppercase tracking-widest text-rose-300/90">
-                        Problem in the experience
-                      </p>
-                      <p className="mt-2 text-sm leading-relaxed text-zinc-300">
-                        {row.problem}
-                      </p>
-                    </div>
-                    <div className="border-l-2 border-violet-500/45 pl-4">
-                      <p className="text-[11px] font-semibold uppercase tracking-widest text-violet-300/95">
-                        Decision
-                      </p>
-                      <p className="mt-2 text-sm leading-relaxed text-zinc-300">
-                        {row.decision}
-                      </p>
-                    </div>
-                    <div className="rounded-xl border border-emerald-500/25 bg-emerald-500/[0.07] px-4 py-3 sm:px-5 sm:py-4">
-                      <p className="text-[11px] font-semibold uppercase tracking-widest text-emerald-200/95">
-                        Outcome
-                      </p>
-                      <p className="mt-2 text-sm font-medium leading-relaxed text-zinc-100">
-                        {row.outcome}
-                      </p>
-                    </div>
+                  <div className="rounded-xl border border-emerald-500/25 bg-emerald-500/[0.07] px-4 py-3 sm:px-5 sm:py-4">
+                    <p className="text-[11px] font-semibold uppercase tracking-widest text-emerald-200/95">
+                      Outcome
+                    </p>
+                    <p className="mt-2 text-sm font-medium leading-relaxed text-zinc-100">
+                      {row.outcome}
+                    </p>
                   </div>
+                  <CaseStudyExpandable label="Evidence → problem → decision (full)">
+                    <div className="space-y-5">
+                      <div className="border-l-2 border-emerald-500/45 pl-4">
+                        <p className="text-[11px] font-semibold uppercase tracking-widest text-emerald-400/95">
+                          Evidence · interviews &amp; tests
+                        </p>
+                        <p className="mt-2 text-sm leading-relaxed text-zinc-300">
+                          {row.evidence}
+                        </p>
+                      </div>
+                      <div className="border-l-2 border-rose-500/35 pl-4">
+                        <p className="text-[11px] font-semibold uppercase tracking-widest text-rose-300/90">
+                          Problem in the experience
+                        </p>
+                        <p className="mt-2 text-sm leading-relaxed text-zinc-300">
+                          {row.problem}
+                        </p>
+                      </div>
+                      <div className="border-l-2 border-violet-500/45 pl-4">
+                        <p className="text-[11px] font-semibold uppercase tracking-widest text-violet-300/95">
+                          Decision
+                        </p>
+                        <p className="mt-2 text-sm leading-relaxed text-zinc-300">
+                          {row.decision}
+                        </p>
+                      </div>
+                    </div>
+                  </CaseStudyExpandable>
                 </div>
                 <div
                   className={
@@ -607,9 +615,9 @@ export default function EInvoiceCaseStudy() {
               </article>
             ))}
           </div>
-        </section>
+        </CaseStudyInViewSection>
 
-        <section
+        <CaseStudyInViewSection
           id="final-solution-screens"
           className="scroll-mt-28 space-y-10"
         >
@@ -621,9 +629,9 @@ export default function EInvoiceCaseStudy() {
             stress-tested hardest before ship.
           </h2>
           <FinalScreensMarquee slides={FINAL_SOLUTION_MARQUEE_SLIDES} />
-        </section>
+        </CaseStudyInViewSection>
 
-        <section
+        <CaseStudyInViewSection
           id="impact-results"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
@@ -631,13 +639,9 @@ export default function EInvoiceCaseStudy() {
             Impact &amp; results
           </span>
           <h2 className="max-w-3xl text-zinc-100">
-            Beyond the four stories: ~88% prototype task success and −70% missed
-            redemptions after clearer deadlines and alerts.
+            Same research cycle: ~88% prototype tasks; −70% missed redemptions
+            after clearer deadlines and alerts.
           </h2>
-          <p className="max-w-3xl text-sm leading-relaxed text-zinc-400">
-            Additional lifts from the same research cycle, kept here so the full
-            picture stays in one place.
-          </p>
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-5">
               <p className="text-xs font-semibold uppercase tracking-wider text-emerald-400/90">
@@ -646,10 +650,12 @@ export default function EInvoiceCaseStudy() {
               <p className="mt-2 text-2xl font-semibold tabular-nums text-emerald-200">
                 <span className={M_TXT}>~88%</span>
               </p>
-              <p className="mt-2 text-sm text-zinc-400 leading-relaxed">
-                Across 12 participants and five core tasks—strongest on scan &amp;
-                prize flows after the home and guidance iterations.
-              </p>
+              <CaseStudyExpandable label="What drove the score">
+                <p className="text-sm text-zinc-400 leading-relaxed">
+                  Across 12 participants and five core tasks—strongest on scan &amp;
+                  prize flows after the home and guidance iterations.
+                </p>
+              </CaseStudyExpandable>
             </div>
             <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-5">
               <p className="text-xs font-semibold uppercase tracking-wider text-emerald-400/90">
@@ -658,24 +664,28 @@ export default function EInvoiceCaseStudy() {
               <p className="mt-2 text-2xl font-semibold tabular-nums text-emerald-200">
                 <span className={M_TXT}>−70%</span>
               </p>
-              <p className="mt-2 text-sm text-zinc-400 leading-relaxed">
-                Clearer deadlines, status, and push alerts so people do not learn
-                about a win too late.
-              </p>
+              <CaseStudyExpandable label="What changed">
+                <p className="text-sm text-zinc-400 leading-relaxed">
+                  Clearer deadlines, status, and push alerts so people do not learn
+                  about a win too late.
+                </p>
+              </CaseStudyExpandable>
             </div>
           </div>
-          <p className="text-sm text-zinc-400 leading-relaxed">
-            Spending analysis, high-contrast visuals, and accessibility-oriented
-            patterns (e.g., VoiceOver annotations) further supported repeat use—
-            especially for younger budgeters and low-vision participants.
-          </p>
-        </section>
+          <CaseStudyExpandable label="Other supporting lifts (spend view, a11y patterns)">
+            <p className="text-sm text-zinc-400 leading-relaxed">
+              Spending analysis, high-contrast visuals, and accessibility-oriented
+              patterns (e.g., VoiceOver annotations) further supported repeat use—
+              especially for younger budgeters and low-vision participants.
+            </p>
+          </CaseStudyExpandable>
+        </CaseStudyInViewSection>
 
         <DesignJourneyCollapsible
           journeySectionIds={E_INVOICE_JOURNEY_IDS}
           panelId="e-invoice-design-journey-panel"
         >
-        <section
+        <CaseStudyInViewSection
           id="competitor-insights"
           className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
@@ -691,16 +701,18 @@ export default function EInvoiceCaseStudy() {
             and what stayed out of bounds.
           </p>
           <CompetitorLandscapeTable />
-          <p className="max-w-3xl text-sm leading-relaxed text-zinc-400">
-            <span className="text-zinc-200">How this shaped the work:</span> I
-            borrowed clear onboarding patterns from LINE, scan-and-login pacing and
-            spending views from strong third parties, and data plus sensory feedback
-            ideas from high-rated apps—then folded everything back into
-            accessibility rules, ministry policy, and what engineering could ship.
-          </p>
-        </section>
+          <CaseStudyExpandable label="How benchmarks shaped shipped UI">
+            <p className="max-w-3xl text-sm leading-relaxed text-zinc-400">
+              <span className="text-zinc-200">How this shaped the work:</span> I
+              borrowed clear onboarding patterns from LINE, scan-and-login pacing and
+              spending views from strong third parties, and data plus sensory feedback
+              ideas from high-rated apps—then folded everything back into
+              accessibility rules, ministry policy, and what engineering could ship.
+            </p>
+          </CaseStudyExpandable>
+        </CaseStudyInViewSection>
 
-        <section
+        <CaseStudyInViewSection
           id="accessibility"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
@@ -712,18 +724,20 @@ export default function EInvoiceCaseStudy() {
             annotated components for engineering on the path to 2026 certification.
           </h2>
           <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-10">
-            <div className="min-w-0 flex-1 space-y-3 text-zinc-300 leading-relaxed">
-              <p>
-                I interviewed blind participants and recorded VoiceOver sessions
-                on the legacy app—unclear focus feedback, controls not exposed as
-                buttons, and static copy read as interactive.
-              </p>
-              <p>
-                I annotated components for alt text, reading order, and action vs.
-                information, and paired with engineering for implementation. The
-                revised build is planned for Taiwan&apos;s accessibility
-                certification pathway (2026).
-              </p>
+            <div className="min-w-0 flex-1 text-zinc-300 leading-relaxed">
+              <CaseStudyExpandable label="VoiceOver findings &amp; engineering handoff">
+                <p>
+                  I interviewed blind participants and recorded VoiceOver sessions
+                  on the legacy app—unclear focus feedback, controls not exposed as
+                  buttons, and static copy read as interactive.
+                </p>
+                <p className="mt-3">
+                  I annotated components for alt text, reading order, and action vs.
+                  information, and paired with engineering for implementation. The
+                  revised build is planned for Taiwan&apos;s accessibility
+                  certification pathway (2026).
+                </p>
+              </CaseStudyExpandable>
             </div>
             <div className="mx-auto w-full max-w-[280px] shrink-0 lg:mx-0">
               <div
@@ -750,9 +764,9 @@ export default function EInvoiceCaseStudy() {
               </p>
             </div>
           </div>
-        </section>
+        </CaseStudyInViewSection>
 
-        <section
+        <CaseStudyInViewSection
           id="business-constraints"
           className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
@@ -788,9 +802,9 @@ export default function EInvoiceCaseStudy() {
               </p>
             </div>
           </div>
-        </section>
+        </CaseStudyInViewSection>
 
-        <section
+        <CaseStudyInViewSection
           id="functional-map"
           className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
@@ -808,9 +822,9 @@ export default function EInvoiceCaseStudy() {
             alt="Functional map v0.0 — information architecture of the e-invoice app"
             caption="Functional map v0.0 · Functional_map_v0.0 (export)."
           />
-        </section>
+        </CaseStudyInViewSection>
 
-        <section
+        <CaseStudyInViewSection
           id="page-flow-design"
           className="scroll-mt-28 space-y-12 sm:scroll-mt-32"
         >
@@ -902,9 +916,9 @@ export default function EInvoiceCaseStudy() {
               quickly to production constraints.
             </p>
           </div>
-        </section>
+        </CaseStudyInViewSection>
 
-        <section
+        <CaseStudyInViewSection
           id="testing"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
@@ -1094,11 +1108,11 @@ export default function EInvoiceCaseStudy() {
               </div>
             </article>
           </div>
-        </section>
+        </CaseStudyInViewSection>
 
         </DesignJourneyCollapsible>
 
-        <section
+        <CaseStudyInViewSection
           id="reflection"
           className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
@@ -1109,35 +1123,37 @@ export default function EInvoiceCaseStudy() {
             This project sharpened how I pair public-sector governance with inclusive
             UX—evidence first, then design that survives stakeholder review.
           </h2>
-          <p className="text-zinc-300 leading-relaxed">
-            I learned how differently diverse users interact with the app—from
-            tech-savvy younger users to elderly users with accessibility needs.
-            Prioritizing core functions like quick barcode access, scanning, and prize
-            redemption is essential. Multi-sensory feedback and guided onboarding help
-            users feel confident and independent.
-          </p>
-          <p className="text-zinc-300 leading-relaxed">
-            If I had more time, I would explore deeper personalization—adaptive
-            interfaces for different ages, tech skills, and accessibility needs—and
-            expand testing with more diverse users to catch edge cases and optimize
-            every interaction.
-          </p>
-          <p className="text-zinc-300 leading-relaxed">
-            This project strengthened my skills in user research, empathy-driven
-            design, and iterative prototyping. Good UX/UI doesn&apos;t only make
-            apps usable—it makes them inclusive, trustworthy, and enjoyable for
-            everyone.
-          </p>
-          <p className="text-zinc-300 leading-relaxed">
-            We saw firsthand how small frustrations—forgotten passwords, complex
-            redemption, unclear navigation—shape daily life. By redesigning with
-            simplicity, accessibility, and guidance at the core, the experience
-            became smoother and faster. Looking forward, deeper backend integration
-            and connections with other financial and loyalty systems could make the
-            app even smarter and more efficient. Thoughtful design doesn&apos;t only
-            look good—it changes how people interact with technology in meaningful
-            ways.
-          </p>
+          <CaseStudyExpandable label="Reflections &amp; next steps">
+            <p className="text-zinc-300 leading-relaxed">
+              I learned how differently diverse users interact with the app—from
+              tech-savvy younger users to elderly users with accessibility needs.
+              Prioritizing core functions like quick barcode access, scanning, and prize
+              redemption is essential. Multi-sensory feedback and guided onboarding help
+              users feel confident and independent.
+            </p>
+            <p className="mt-3 text-zinc-300 leading-relaxed">
+              If I had more time, I would explore deeper personalization—adaptive
+              interfaces for different ages, tech skills, and accessibility needs—and
+              expand testing with more diverse users to catch edge cases and optimize
+              every interaction.
+            </p>
+            <p className="mt-3 text-zinc-300 leading-relaxed">
+              This project strengthened my skills in user research, empathy-driven
+              design, and iterative prototyping. Good UX/UI doesn&apos;t only make
+              apps usable—it makes them inclusive, trustworthy, and enjoyable for
+              everyone.
+            </p>
+            <p className="mt-3 text-zinc-300 leading-relaxed">
+              We saw firsthand how small frustrations—forgotten passwords, complex
+              redemption, unclear navigation—shape daily life. By redesigning with
+              simplicity, accessibility, and guidance at the core, the experience
+              became smoother and faster. Looking forward, deeper backend integration
+              and connections with other financial and loyalty systems could make the
+              app even smarter and more efficient. Thoughtful design doesn&apos;t only
+              look good—it changes how people interact with technology in meaningful
+              ways.
+            </p>
+          </CaseStudyExpandable>
           <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
             <Image
               src="/case-studies/e-invoice/photo-stakeholder-meeting.png"
@@ -1147,9 +1163,9 @@ export default function EInvoiceCaseStudy() {
               className="h-auto w-full object-cover"
             />
           </div>
-        </section>
+        </CaseStudyInViewSection>
 
-        <section
+        <CaseStudyInViewSection
           id="figma-resources"
           className="scroll-mt-28 space-y-5 rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6 sm:scroll-mt-32 sm:p-8"
         >
@@ -1178,9 +1194,9 @@ export default function EInvoiceCaseStudy() {
               Wireframe &amp; wireflow →
             </a>
           </div>
-        </section>
+        </CaseStudyInViewSection>
 
-        <section className="border-t border-zinc-800 pt-12 space-y-8">
+        <CaseStudyInViewSection className="border-t border-zinc-800 pt-12 space-y-8">
           <CaseStudyPrevNext currentSlug="e-invoice-app" />
           <Link
             href="/"
@@ -1188,7 +1204,7 @@ export default function EInvoiceCaseStudy() {
           >
             ← Back to work
           </Link>
-        </section>
+        </CaseStudyInViewSection>
       </CaseStudyContentLayout>
     </article>
   );

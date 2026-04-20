@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import type { ReactNode } from "react";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
+import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { OutcomesMetricsChart } from "./OutcomesMetricsChart";
 
@@ -59,7 +60,7 @@ function Section({
   children: ReactNode;
 }) {
   return (
-    <section
+    <CaseStudyInViewSection
       id={id}
       className={id ? "scroll-mt-28 sm:scroll-mt-32" : undefined}
     >
@@ -68,7 +69,7 @@ function Section({
       </span>
       <h2 className="mt-2 text-[#2C3E50]">{title}</h2>
       {children}
-    </section>
+    </CaseStudyInViewSection>
   );
 }
 
@@ -155,7 +156,7 @@ export default function AdmissionHubCaseStudy() {
           </div>
         </Section>
 
-        <section
+        <CaseStudyInViewSection
           id="problem"
           className="scroll-mt-28 sm:scroll-mt-32"
         >
@@ -189,7 +190,7 @@ export default function AdmissionHubCaseStudy() {
               </h3>
             </div>
           </div>
-        </section>
+        </CaseStudyInViewSection>
 
         <Section
           id="strategy"
@@ -449,7 +450,7 @@ export default function AdmissionHubCaseStudy() {
           </div>
         </Section>
 
-        <section className="border-t border-[#E0D9CE] pt-12 space-y-8">
+        <CaseStudyInViewSection className="border-t border-[#E0D9CE] pt-12 space-y-8">
           <CaseStudyPrevNext currentSlug="admission-hub" variant="light" />
           <Link
             href="/"
@@ -457,7 +458,7 @@ export default function AdmissionHubCaseStudy() {
           >
             ← Back to work
           </Link>
-        </section>
+        </CaseStudyInViewSection>
       </CaseStudyContentLayout>
     </article>
   );

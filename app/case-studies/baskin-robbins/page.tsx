@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { CaseStudyAtAGlance } from "../_components/CaseStudyAtAGlance";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
+import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { DesignJourneyCollapsible } from "../_components/DesignJourneyCollapsible";
 import { CaseStudyScanSummary } from "../_components/CaseStudyScanSummary";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
@@ -251,7 +252,7 @@ export default function BaskinRobbinsCaseStudy() {
       </header>
 
       <CaseStudyContentLayout toc={BASKIN_TOC}>
-        <section
+        <CaseStudyInViewSection
           id="project-background"
           className={`space-y-6 ${sectionScroll}`}
         >
@@ -289,9 +290,9 @@ export default function BaskinRobbinsCaseStudy() {
               alt="Stakeholder alignment across Japan HQ and Taiwan"
             />
           </div>
-        </section>
+        </CaseStudyInViewSection>
 
-        <section
+        <CaseStudyInViewSection
           id="team-objectives"
           className={`space-y-6 ${sectionScroll}`}
         >
@@ -317,9 +318,9 @@ export default function BaskinRobbinsCaseStudy() {
             experience in Japan, but built for how people expect to engage on
             mobile in Taiwan.
           </p>
-        </section>
+        </CaseStudyInViewSection>
 
-        <section
+        <CaseStudyInViewSection
           id="role-deliverables"
           className={`space-y-5 ${sectionScroll}`}
         >
@@ -335,9 +336,9 @@ export default function BaskinRobbinsCaseStudy() {
             and UI design process—including requirement interviews, user flow
             planning, and final visual design.
           </p>
-        </section>
+        </CaseStudyInViewSection>
 
-        <section
+        <CaseStudyInViewSection
           id="project-outcomes"
           className={`space-y-5 ${sectionScroll}`}
         >
@@ -352,9 +353,9 @@ export default function BaskinRobbinsCaseStudy() {
             September 2025—providing BR31 Ice Cream members in Taiwan with a
             seamless point accumulation and redemption experience.
           </p>
-        </section>
+        </CaseStudyInViewSection>
 
-        <section
+        <CaseStudyInViewSection
           id="final-product"
           className={`space-y-10 ${sectionScroll}`}
         >
@@ -372,13 +373,13 @@ export default function BaskinRobbinsCaseStudy() {
             client and user needs.
           </p>
           <FinalProductScreens asset={ASSET} groups={FINAL_PRODUCT_GROUPS} />
-        </section>
+        </CaseStudyInViewSection>
 
         <DesignJourneyCollapsible
           journeySectionIds={BASKIN_JOURNEY_IDS}
           panelId="baskin-design-journey-panel"
         >
-        <section
+        <CaseStudyInViewSection
           id="design-process"
           className={`space-y-5 ${sectionScroll}`}
         >
@@ -442,9 +443,9 @@ export default function BaskinRobbinsCaseStudy() {
               </p>
             </a>
           </div>
-        </section>
+        </CaseStudyInViewSection>
 
-        <section
+        <CaseStudyInViewSection
           id="requirement-interviews"
           className={`space-y-5 ${sectionScroll}`}
         >
@@ -470,9 +471,9 @@ export default function BaskinRobbinsCaseStudy() {
             The Functional Map helped identify features as web views or external
             URLs—ensuring client alignment and reducing development errors.
           </p>
-        </section>
+        </CaseStudyInViewSection>
 
-        <section
+        <CaseStudyInViewSection
           id="function-difference"
           className={`space-y-5 ${sectionScroll}`}
         >
@@ -495,9 +496,9 @@ export default function BaskinRobbinsCaseStudy() {
             proposals and mockups—making minor adjustments only after client
             agreement.
           </p>
-        </section>
+        </CaseStudyInViewSection>
 
-        <section
+        <CaseStudyInViewSection
           id="visual-style"
           className={`space-y-6 ${sectionScroll}`}
         >
@@ -577,9 +578,9 @@ export default function BaskinRobbinsCaseStudy() {
               </div>
             </div>
           </div>
-        </section>
+        </CaseStudyInViewSection>
 
-        <section
+        <CaseStudyInViewSection
           id="challenges"
           className={`space-y-5 ${sectionScroll}`}
         >
@@ -607,9 +608,9 @@ export default function BaskinRobbinsCaseStudy() {
               experience.
             </li>
           </ul>
-        </section>
+        </CaseStudyInViewSection>
 
-        <section
+        <CaseStudyInViewSection
           id="learnings"
           className={`space-y-5 ${sectionScroll}`}
         >
@@ -627,9 +628,9 @@ export default function BaskinRobbinsCaseStudy() {
             sense of when to advocate for UX and when to adapt to technical
             feasibility.
           </p>
-        </section>
+        </CaseStudyInViewSection>
 
-        <section
+        <CaseStudyInViewSection
           id="annotations-flow"
           className={`space-y-6 ${sectionScroll}`}
         >
@@ -661,9 +662,9 @@ export default function BaskinRobbinsCaseStudy() {
             </h5>
             <AnnotatedFlowSlideshow items={ANNOTATED_SLIDES} />
           </div>
-        </section>
+        </CaseStudyInViewSection>
 
-        <section
+        <CaseStudyInViewSection
           id="delivery-kit"
           className={`space-y-6 ${sectionScroll}`}
         >
@@ -717,10 +718,10 @@ export default function BaskinRobbinsCaseStudy() {
               />
             </div>
           </div>
-        </section>
+        </CaseStudyInViewSection>
         </DesignJourneyCollapsible>
 
-        <section className="border-t border-zinc-800 pt-12 space-y-8">
+        <CaseStudyInViewSection className="border-t border-zinc-800 pt-12 space-y-8">
           <CaseStudyPrevNext currentSlug="baskin-robbins" />
           <Link
             href="/"
@@ -728,7 +729,7 @@ export default function BaskinRobbinsCaseStudy() {
           >
             ← Back to work
           </Link>
-        </section>
+        </CaseStudyInViewSection>
       </CaseStudyContentLayout>
     </article>
   );

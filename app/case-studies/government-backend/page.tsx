@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { CaseStudyAtAGlance } from "../_components/CaseStudyAtAGlance";
+import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { DesignJourneyCollapsible } from "../_components/DesignJourneyCollapsible";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
@@ -134,7 +135,7 @@ export default function GovernmentBackendCaseStudy() {
       </header>
 
       <CaseStudyContentLayout toc={GOV_BACKEND_TOC}>
-        <section
+        <CaseStudyInViewSection
           id="project-background"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
@@ -253,9 +254,9 @@ export default function GovernmentBackendCaseStudy() {
               </div>
             </div>
           </div>
-        </section>
+        </CaseStudyInViewSection>
 
-        <section
+        <CaseStudyInViewSection
           id="summary"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
@@ -294,9 +295,9 @@ export default function GovernmentBackendCaseStudy() {
             settings and build-code mapping—so critical updates could be enforced
             quickly without risking system inconsistency.
           </p>
-        </section>
+        </CaseStudyInViewSection>
 
-        <section
+        <CaseStudyInViewSection
           id="final-result"
           className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
@@ -314,13 +315,13 @@ export default function GovernmentBackendCaseStudy() {
             staff across multiple departments to collaborate effectively within one
             reliable platform.
           </p>
-        </section>
+        </CaseStudyInViewSection>
 
         <DesignJourneyCollapsible
           journeySectionIds={GOV_BACKEND_JOURNEY_IDS}
           panelId="gov-backend-design-journey-panel"
         >
-        <section
+        <CaseStudyInViewSection
           id="rbac"
           className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
@@ -536,9 +537,9 @@ export default function GovernmentBackendCaseStudy() {
               </table>
             </div>
           </div>
-        </section>
+        </CaseStudyInViewSection>
 
-        <section
+        <CaseStudyInViewSection
           id="iterations"
           className="scroll-mt-28 space-y-8 sm:scroll-mt-32"
         >
@@ -640,10 +641,10 @@ export default function GovernmentBackendCaseStudy() {
               caption="Iteration 2 · Version control — UI flows and system judgment (add / view, validation, confirmation)."
             />
           </div>
-        </section>
+        </CaseStudyInViewSection>
         </DesignJourneyCollapsible>
 
-        <section
+        <CaseStudyInViewSection
           id="reflection"
           className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
@@ -674,9 +675,9 @@ export default function GovernmentBackendCaseStudy() {
             advocate for practical solutions, and deliver designs that enhance
             usability while driving organizational efficiency.
           </p>
-        </section>
+        </CaseStudyInViewSection>
 
-        <section className="border-t border-zinc-800 pt-12 space-y-8">
+        <CaseStudyInViewSection className="border-t border-zinc-800 pt-12 space-y-8">
           <CaseStudyPrevNext currentSlug="government-backend" />
           <Link
             href="/"
@@ -684,7 +685,7 @@ export default function GovernmentBackendCaseStudy() {
           >
             ← Back to work
           </Link>
-        </section>
+        </CaseStudyInViewSection>
       </CaseStudyContentLayout>
     </article>
   );

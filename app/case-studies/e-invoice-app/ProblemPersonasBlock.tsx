@@ -1,3 +1,4 @@
+import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { WideFigure } from "./EInvoiceFigures";
 import { SketchPersonasExpandable } from "./SketchPersonasExpandable";
 
@@ -8,7 +9,7 @@ const PULL =
 
 export function ProblemPersonasBlock() {
   return (
-    <section
+    <CaseStudyInViewSection
       id="user-journey-map"
       className="scroll-mt-28 space-y-12 sm:scroll-mt-32"
     >
@@ -234,6 +235,6 @@ export function ProblemPersonasBlock() {
         <SketchPersonasExpandable />
         </div>
       </div>
-    </section>
+    </CaseStudyInViewSection>
   );
 }

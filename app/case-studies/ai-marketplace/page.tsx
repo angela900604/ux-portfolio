@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CaseStudyAtAGlance } from "../_components/CaseStudyAtAGlance";
+import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { DesignJourneyCollapsible } from "../_components/DesignJourneyCollapsible";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
@@ -167,7 +168,7 @@ export default function AiMarketplaceCaseStudy() {
       </header>
 
       <CaseStudyContentLayout toc={MINA_TOC}>
-        <section
+        <CaseStudyInViewSection
           id="why-this-exists"
           className="scroll-mt-28 sm:scroll-mt-32"
         >
@@ -211,9 +212,9 @@ export default function AiMarketplaceCaseStudy() {
               />
             </div>
           </div>
-        </section>
+        </CaseStudyInViewSection>
 
-        <section
+        <CaseStudyInViewSection
           id="pain-we-solve"
           className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
         >
@@ -254,9 +255,9 @@ export default function AiMarketplaceCaseStudy() {
               </p>
             </div>
           </div>
-        </section>
+        </CaseStudyInViewSection>
 
-        <section
+        <CaseStudyInViewSection
           id="product-strategy"
           className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
         >
@@ -276,9 +277,9 @@ export default function AiMarketplaceCaseStudy() {
             should recognize the product in seconds and complete a sale without
             reading a manual.
           </p>
-        </section>
+        </CaseStudyInViewSection>
 
-        <section
+        <CaseStudyInViewSection
           id="core-experience"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
@@ -335,13 +336,13 @@ export default function AiMarketplaceCaseStudy() {
               </p>
             </div>
           </div>
-        </section>
+        </CaseStudyInViewSection>
 
         <DesignJourneyCollapsible
           journeySectionIds={MINA_JOURNEY_IDS}
           panelId="mina-design-journey-panel"
         >
-        <section
+        <CaseStudyInViewSection
           id="engineering-proposal"
           className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
@@ -419,9 +420,9 @@ export default function AiMarketplaceCaseStudy() {
             That question stays open; it is part of the ongoing design–engineering
             trade space as we narrow MVP scope.
           </p>
-        </section>
+        </CaseStudyInViewSection>
 
-        <section
+        <CaseStudyInViewSection
           id="design-principles"
           className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
         >
@@ -455,10 +456,10 @@ export default function AiMarketplaceCaseStudy() {
               </span>
             </li>
           </ul>
-        </section>
+        </CaseStudyInViewSection>
         </DesignJourneyCollapsible>
 
-        <section
+        <CaseStudyInViewSection
           id="coming-soon"
           className="scroll-mt-28 rounded-2xl border border-dashed border-zinc-700 bg-zinc-900/30 p-8 sm:p-10 sm:scroll-mt-32"
         >
@@ -475,9 +476,9 @@ export default function AiMarketplaceCaseStudy() {
             If you are reviewing this in recruiting: the narrative above is the
             current product direction; visuals are still in progress.
           </p>
-        </section>
+        </CaseStudyInViewSection>
 
-        <section className="border-t border-zinc-800 pt-12 space-y-8">
+        <CaseStudyInViewSection className="border-t border-zinc-800 pt-12 space-y-8">
           <CaseStudyPrevNext currentSlug="ai-marketplace" />
           <Link
             href="/"
@@ -485,7 +486,7 @@ export default function AiMarketplaceCaseStudy() {
           >
             ← Back to work
           </Link>
-        </section>
+        </CaseStudyInViewSection>
       </CaseStudyContentLayout>
     </article>
   );

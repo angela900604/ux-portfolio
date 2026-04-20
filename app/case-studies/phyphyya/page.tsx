@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
+import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 
 const PHY_TOC = [
@@ -234,7 +235,7 @@ export default function PhyphyyaCaseStudy() {
           contentClassName=""
           tocHeading="On this page"
         >
-        <section
+        <CaseStudyInViewSection
           id="project-overview"
           className="scroll-mt-28 py-[80px] px-6 sm:px-[100px] sm:scroll-mt-32"
         >
@@ -285,10 +286,10 @@ export default function PhyphyyaCaseStudy() {
               </p>
             </article>
           </div>
-        </section>
+        </CaseStudyInViewSection>
         
         {/* Logo Concept - Soft & Rounded */}
-        <section
+        <CaseStudyInViewSection
           id="logo-concept"
           className="scroll-mt-28 py-[80px] px-6 sm:px-[100px] sm:scroll-mt-32 flex flex-col items-center"
         >
@@ -351,10 +352,10 @@ export default function PhyphyyaCaseStudy() {
               </div>
             </div>
           </div>
-        </section>
+        </CaseStudyInViewSection>
 
         {/* Mascot Section - Lop-eared Rabbit */}
-        <section
+        <CaseStudyInViewSection
           id="mascot"
           className="relative scroll-mt-28 bg-white py-[100px] px-6 sm:px-[100px] sm:scroll-mt-32"
         >
@@ -428,10 +429,10 @@ export default function PhyphyyaCaseStudy() {
               relaxation and peaceful rest,' perfectly suited for the warm positioning of pet daily essentials."
             </div>
           </div>
-        </section>
+        </CaseStudyInViewSection>
 
         {/* Brand Applications */}
-        <section
+        <CaseStudyInViewSection
           id="brand-applications"
           className="scroll-mt-28 py-[80px] px-6 sm:px-[100px] sm:scroll-mt-32 flex flex-col items-center"
         >
@@ -464,10 +465,10 @@ export default function PhyphyyaCaseStudy() {
               </div>
             ))}
           </div>
-        </section>
+        </CaseStudyInViewSection>
 
         {/* Etsy storefront & Print-on-Demand workflow */}
-        <section
+        <CaseStudyInViewSection
           id="etsy-pod"
           className="scroll-mt-28 bg-white py-[80px] px-6 sm:px-[100px] sm:scroll-mt-32"
         >
@@ -565,9 +566,9 @@ export default function PhyphyyaCaseStudy() {
               continue evaluating alternative POD partners.
             </p>
           </div>
-        </section>
+        </CaseStudyInViewSection>
 
-        <section
+        <CaseStudyInViewSection
           id="store-performance"
           className="scroll-mt-28 bg-white py-[80px] px-6 sm:px-[100px] sm:scroll-mt-32"
         >
@@ -600,9 +601,9 @@ export default function PhyphyyaCaseStudy() {
             </div>
             <EtsyVisitsChart />
           </div>
-        </section>
+        </CaseStudyInViewSection>
 
-        <section
+        <CaseStudyInViewSection
           id="testing-next"
           className="scroll-mt-28 bg-[#F5F3EF] py-[80px] px-6 sm:px-[100px] sm:scroll-mt-32"
         >
@@ -651,10 +652,10 @@ export default function PhyphyyaCaseStudy() {
               </li>
             </ul>
           </div>
-        </section>
+        </CaseStudyInViewSection>
 
         {/* New POD products: magnets & stickers */}
-        <section
+        <CaseStudyInViewSection
           id="pod-products"
           className="scroll-mt-28 bg-[#F5F3EF] py-[80px] px-6 sm:px-[100px] sm:scroll-mt-32"
         >
@@ -759,10 +760,10 @@ export default function PhyphyyaCaseStudy() {
               </p>
             </div>
           </div>
-        </section>
+        </CaseStudyInViewSection>
 
         {/* Product Series - Canvas Tote Bag */}
-        <section
+        <CaseStudyInViewSection
           id="canvas-tote"
           className="scroll-mt-28 bg-white py-[80px] px-6 sm:px-[100px] sm:scroll-mt-32"
         >
@@ -813,10 +814,10 @@ export default function PhyphyyaCaseStudy() {
               </div>
             </div>
           </div>
-        </section>
+        </CaseStudyInViewSection>
 
         {/* Product Series - Sweatshirt */}
-        <section
+        <CaseStudyInViewSection
           id="sweatshirt"
           className="scroll-mt-28 bg-[#F5F3EF] py-[80px] px-6 sm:px-[100px] sm:scroll-mt-32"
         >
@@ -847,7 +848,7 @@ export default function PhyphyyaCaseStudy() {
               </div>
             ))}
           </div>
-        </section>
+        </CaseStudyInViewSection>
 
         </CaseStudyContentLayout>
 
