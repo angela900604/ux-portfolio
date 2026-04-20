@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
-  <title id="title">Interview photo placeholder</title>
-  <desc id="desc">Replace this file with your user interview photo, or swap the image path in about/page.tsx</desc>
-  <rect width="1200" height="900" fill="#18181b"/>
-  <rect x="2" y="2" width="1196" height="896" fill="none" stroke="#52525b" stroke-width="4" stroke-dasharray="16 12"/>
-  <text x="600" y="430" fill="#a1a1aa" font-family="system-ui, sans-serif" font-size="28" text-anchor="middle">Interview photo</text>
-  <text x="600" y="475" fill="#71717a" font-family="system-ui, sans-serif" font-size="18" text-anchor="middle">Replace public/about/interview-photo-placeholder.svg</text>
-</svg>

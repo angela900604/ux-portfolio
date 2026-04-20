@@ -25,8 +25,7 @@ function TravelPhotoTile({
   );
 }
 
-/** Swap to your photo (e.g. `/about/interview.jpg`) after adding the file under `public/about/`. */
-const INTERVIEW_PHOTO_SRC = "/about/interview-photo-placeholder.svg";
+const INTERVIEW_PHOTO_SRC = "/about/user-interviews-collage.png";
 
 export const metadata = {
   title: "About | Angela Yang",
@@ -108,14 +107,14 @@ export default function AboutPage() {
               <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
                 <Image
                   src={INTERVIEW_PHOTO_SRC}
-                  alt="Angela facilitating a user interview — replace with your photo in public/about/"
+                  alt="Collage: Angela facilitating user research—in group sessions, one-on-one interviews, and conversations with participants across ages and contexts."
                   fill
-                  className="object-cover"
+                  className="object-contain object-center"
                   sizes="(max-width: 1024px) 100vw, 560px"
                 />
               </div>
               <figcaption className="mt-3 text-sm leading-relaxed text-zinc-500">
-                Field research &amp; conversations with participants.
+                Field research, interviews, and workshops with diverse participants.
               </figcaption>
             </figure>
             <div className="flex min-w-0 flex-col gap-4 text-base leading-relaxed text-zinc-300 sm:text-lg">
