@@ -10,4 +10,5 @@ yarn-error.log*
 pnpm-debug.log*
 **/*.mov
 **/*.mp4
+!public/case-studies/**/*.mp4
 **/*.heic
