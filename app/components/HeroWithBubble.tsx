@@ -21,6 +21,7 @@ const HERO_KEYWORDS = [
   "Accessibility-aware design",
   "Design systems",
   "User research",
+  "User interviews",
 ] as const;
 
 function BubbleBackdrop() {

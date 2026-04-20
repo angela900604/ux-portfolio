@@ -25,10 +25,13 @@ function TravelPhotoTile({
   );
 }
 
+/** Swap to your photo (e.g. `/about/interview.jpg`) after adding the file under `public/about/`. */
+const INTERVIEW_PHOTO_SRC = "/about/interview-photo-placeholder.svg";
+
 export const metadata = {
   title: "About | Angela Yang",
   description:
-    "Product designer at MINA AI, based in Vancouver. End-to-end ownership, design systems, AI-assisted product, and measurable outcomes.",
+    "Product designer at MINA AI, based in Vancouver. End-to-end ownership, design systems, user interviews, AI-assisted product, and measurable outcomes.",
 };
 
 export default function AboutPage() {
@@ -91,6 +94,47 @@ export default function AboutPage() {
                 Currently based in Vancouver, BC. Open to IC roles at
                 early-stage SaaS startups — especially teams building complex,
                 meaningful products where design has a real seat at the table.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="mt-14 border-t border-zinc-800 pt-12">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            User interviews
+          </span>
+          <div className="mt-6 grid items-start gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-10">
+            <figure className="min-w-0">
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+                <Image
+                  src={INTERVIEW_PHOTO_SRC}
+                  alt="Angela facilitating a user interview — replace with your photo in public/about/"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 560px"
+                />
+              </div>
+              <figcaption className="mt-3 text-sm leading-relaxed text-zinc-500">
+                Field research &amp; conversations with participants.
+              </figcaption>
+            </figure>
+            <div className="flex min-w-0 flex-col gap-4 text-base leading-relaxed text-zinc-300 sm:text-lg">
+              <p className="font-medium text-zinc-100">
+                The part of the job where I feel most alive.
+              </p>
+              <p>
+                I genuinely love{" "}
+                <span className="text-zinc-100">user interviews</span>—sitting
+                down with people from different fields, backgrounds, and age
+                groups, and listening until the real motivations and constraints
+                surface. That curiosity-driven conversation is where I&apos;m most
+                energized; it&apos;s when I feel I&apos;m doing my best work.
+              </p>
+              <p>
+                Whether it&apos;s a focus group, a 1:1 usability session, or a
+                contextual chat, I care about making participants feel respected
+                and heard, then turning what we learn into something the team can
+                act on.
               </p>
             </div>
           </div>
