@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { FadeInSection } from "./components/FadeInSection";
 import { HeroWithBubble } from "./components/HeroWithBubble";
+import { PortfolioFocus } from "./components/PortfolioFocus";
 
 const CORE_PRODUCT = {
   flagship: {
@@ -96,13 +97,18 @@ export default function Home() {
         </div>
       </section>
 
+      <PortfolioFocus />
+
       {/* Selected projects */}
       <section id="featured" className="border-b border-zinc-800">
         <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-16 sm:py-20">
           <FadeInSection>
-            <h2 className="text-zinc-100">Selected Projects</h2>
-            <p className="mt-4 text-base leading-relaxed text-zinc-400 sm:text-lg">
-              0→1 products across AI-powered automation, Public Services, and Consumer Loyalty.
+            <h2 className="text-2xl font-semibold tracking-tight text-zinc-100 sm:text-3xl md:text-[2rem]">
+              Selected projects
+            </h2>
+            <p className="mt-4 max-w-3xl text-base leading-relaxed text-zinc-400 sm:text-lg">
+              Mobile services, AI marketplaces, and national-scale backends—same
+              playbook: research, IA, and UI that holds up under real constraints.
             </p>
           </FadeInSection>
 
@@ -248,9 +254,8 @@ export default function Home() {
           <FadeInSection>
             <h2 className="text-zinc-100">Let&apos;s Build Something Together</h2>
             <p className="mt-4 max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg">
-              Currently open to Product Design roles that require an end-to-end
-              workflow. Based in Vancouver; open to relocation, remote, or hybrid
-              opportunities.
+              Open to product design roles with strong research and mobile /
+              enterprise surfaces. Vancouver · relocation, remote, or hybrid.
             </p>
             <div className="mt-6 flex flex-wrap gap-6 text-base sm:text-lg">
               <a

@@ -55,6 +55,10 @@ export function HeroWithBubble() {
           ref={textRef}
           className="relative z-10 min-w-0 w-full max-w-[48rem] shrink-0 lg:max-w-[min(48rem,58%)]"
         >
+          <p className="mb-2 text-xs font-medium uppercase tracking-widest text-emerald-400/85">
+            iOS mobile apps · AI &amp; enterprise products · User research &amp;
+            interviews
+          </p>
           <p className="mb-4 text-xs font-medium uppercase tracking-widest text-zinc-500">
             Product design · Vancouver (open to relocate)
           </p>
@@ -67,7 +71,8 @@ export function HeroWithBubble() {
             Complex systems, clear experiences.
           </p>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg">
-            I turn ambiguous ideas into shippable digital products.
+            End-to-end UX for regulated and AI-heavy products—discovery through
+            ship-ready UI—so teams move from opinions to evidence.
           </p>
         </div>
 

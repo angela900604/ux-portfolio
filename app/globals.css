@@ -77,6 +77,21 @@ html.soft-cursor :disabled:hover {
   line-height: 1.25rem !important;
 }
 
+/* Case studies: larger section titles; body stays secondary to headlines */
+.case-study-prose h2 {
+  font-size: clamp(1.625rem, 1.15rem + 1.65vw, 2.625rem);
+  line-height: 1.12;
+  letter-spacing: -0.028em;
+  font-weight: 600;
+}
+
+.case-study-prose h3 {
+  font-size: clamp(1.2rem, 1.02rem + 0.75vw, 1.75rem);
+  line-height: 1.2;
+  letter-spacing: -0.022em;
+  font-weight: 600;
+}
+
 @keyframes homeBubbleFloat {
   0%,
   100% {

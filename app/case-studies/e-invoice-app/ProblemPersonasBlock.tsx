@@ -22,8 +22,7 @@ export function ProblemPersonasBlock() {
           what was stuck and why.
         </h2>
         <p className="max-w-3xl text-sm leading-relaxed text-zinc-400">
-          The sections below follow that order—reviews first, interviews second—then
-          five persona cards in Layer 2; tap any to open the full detail in a modal.
+          Reviews → interviews → five personas (tap a card for detail).
         </p>
       </div>
 

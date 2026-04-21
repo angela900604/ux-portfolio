@@ -112,10 +112,8 @@ const AT_A_GLANCE_ITEMS = [
 
 /** Final solution screens — high-fidelity exports (18), filenames solution-final-01 … 18. */
 const E_INVOICE_SCAN_SUMMARY = [
-  "MoF Cloud Invoice App: discovery → shipped UI, documented final screens.",
-  "~88% task success (18–70+, including low vision); IA, onboarding, scan, donation, redemption.",
-  "Login 68%→92% (biometrics + in-app recovery); fewer missed wins via deadlines + push.",
-  "Accessibility + public-sector constraints baked in—faster, inclusive, trustworthy daily use.",
+  "MoF Cloud Invoice App: research through ship—~88% moderated task success (18–70+, low vision); login 68%→92% with biometrics + in-app recovery.",
+  "IA, onboarding, scan-first home, and accessibility baked in for a national, paper-to-digital service.",
 ] as const;
 
 /** Research → problem → decision → outcome; paired with final UI (solution-final-*.png). */
@@ -499,12 +497,6 @@ export default function EInvoiceCaseStudy() {
             Roughly 20 million people rely on the official app—yet ~2.8★ ratings
             and broken flows were excluding elders, newcomers, and low-vision users.
           </h2>
-          <p className="text-zinc-300 leading-relaxed">
-            Taiwan runs on invoices and a national lottery—MoF&apos;s Cloud Invoice
-            App is how ~20M people go digital, yet it sat at{" "}
-            <span className="font-medium text-zinc-200">~2.8★</span> with sign-in and
-            language barriers excluding elders, newcomers, and low-vision users.
-          </p>
           <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
             <Image
               src="/case-studies/e-invoice/photo-invoice-receipts.png"

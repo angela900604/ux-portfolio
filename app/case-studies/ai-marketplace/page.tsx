@@ -25,10 +25,8 @@ const AT_A_GLANCE_ITEMS = [
 ] as const;
 
 const MINA_SCAN_SUMMARY = [
-  "Zero-to-one product design for MINA—an AI-native resale marketplace for San Francisco parent communities and fast-turnover baby gear.",
-  "Core experience: a conversational AI agent as the primary interface—one-photo multi-listing, editable drafts, and lighter buyer–seller coordination.",
-  "Go-to-market is community-first: build trust in mom networks before scaling to anonymous nationwide matching.",
-  "Case study in progress—screens, flows, and outcome metrics will be added as the work ships.",
+  "Zero-to-one iOS marketplace: AI-native listing and chat for SF parent communities—community-first GTM, case study grows as we ship.",
+  "Live on the App Store (Canada); flows and metrics will expand here.",
 ] as const;
 
 const MINA_JOURNEY_IDS = ["engineering-proposal", "design-principles"] as const;
@@ -177,25 +175,12 @@ export default function AiMarketplaceCaseStudy() {
                 Built from the ground up for how fast babies—and closets—change
               </h2>
               <p className="text-zinc-300 leading-relaxed">
-                We are designing a marketplace that starts with{" "}
-                <span className="text-zinc-100">San Francisco mom groups</span>, not a
-                generic national grid. Little ones move through stages quickly: what you
-                need at three months is not what you need at nine. Gear is expensive,
-                emotionally loaded, and often{" "}
-                <span className="text-zinc-100">only useful for a short window</span>
-                —then it sits in bins, strollers crowd hallways, and perfectly good
-                items age out of relevance.
-              </p>
-              <p className="text-zinc-300 leading-relaxed">
-                In the Bay Area, many families already care deeply about{" "}
-                <span className="text-zinc-100">sustainability</span> and conscious
-                consumption—but resale still takes time, attention, and learning curve.
-                Our bet is simple:{" "}
-                <span className="text-zinc-100">
-                  if we gather demand in trusted parent networks first
-                </span>
-                , and remove the operational drag of listing and coordinating, more
-                gear circulates instead of landfilling or idling in storage.
+                A marketplace rooted in{" "}
+                <span className="text-zinc-100">SF mom networks</span>, not a generic
+                grid: short-use baby gear, high emotional load, and resale that today
+                feels like admin. We pair trusted demand with an{" "}
+                <span className="text-zinc-100">AI-first listing path</span> so more
+                gear circulates with less friction.
               </p>
             </div>
             <div className="relative min-h-[min(52vw,22rem)] w-full min-w-0 overflow-hidden rounded-xl border border-zinc-800/50 bg-zinc-900/40 sm:min-h-[20rem] lg:min-h-0">
@@ -221,15 +206,10 @@ export default function AiMarketplaceCaseStudy() {
             Too much gear, too little time—and resale that feels like admin work
           </h2>
           <p className="text-zinc-300 leading-relaxed">
-            Traditional marketplaces assume sellers behave like micro-retailers:
-            write titles, pick categories, price competitively, answer the same DM
-            questions, and negotiate pickup. For sleep-deprived parents, that is
-            exactly why good intentions stall. The problem is not only
-            &quot;clutter&quot;—it is{" "}
-            <span className="text-zinc-100">
-              the recurring cost of attention
-            </span>{" "}
-            every time a stage ends and a new pile appears.
+            Classic resale asks parents to behave like shops—listings, DMs, pickup
+            logistics. The pain is the{" "}
+            <span className="text-zinc-100">attention tax</span> every time a stage
+            ends and a new pile appears.
           </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5">

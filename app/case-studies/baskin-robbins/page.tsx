@@ -266,25 +266,14 @@ export default function BaskinRobbinsCaseStudy() {
             Project background
           </span>
           <h2 className="text-zinc-100">
-            From Japan&apos;s proven program to Taiwan&apos;s gap
+            Japan had a proven loyalty app—Taiwan needed the same muscle, localized
+            for mobile-first rewards
           </h2>
           <p className="text-zinc-300 leading-relaxed max-w-3xl">
-            BR31 Ice Cream, known for its 31 playful flavors, had already built a
-            strong digital-first membership program in Japan that kept fans
-            engaged with rewards and exclusives. In Taiwan, however, the brand
-            lacked a dedicated loyalty experience—leaving customers with fewer ways
-            to connect and putting the company at risk of falling behind
-            competitors with established platforms. Taiwanese consumers, who were
-            increasingly drawn to mobile-first rewards and personalized offers,
-            needed a smoother way to engage with the brand. Our project set out to
-            change that by designing and developing a dedicated membership
-            app—bringing the proven success of Japan&apos;s model to Taiwan while
-            tailoring the experience to local users.
-          </p>
-          <p className="text-zinc-200 font-medium text-lg max-w-3xl pt-2">
-            The goal was simple yet powerful: transform casual customers into loyal
-            fans by offering them a fun, seamless, and rewarding digital journey
-            with every scoop.
+            BR31&apos;s Japan program already drove engagement; Taiwan had no
+            dedicated surface—risking the shift to mobile rewards and personalized
+            offers. We shipped a membership app aligned with HQ, tuned for how
+            people expect to redeem and browse on the phone.
           </p>
           <div className="space-y-2 pt-2">
             <h5 className="text-zinc-100">
@@ -312,17 +301,10 @@ export default function BaskinRobbinsCaseStudy() {
           </div>
           <MarketSizingCharts />
           <p className="max-w-3xl text-zinc-300 leading-relaxed">
-            The category was scaling fast—and BR31 still had no dedicated app,
-            which meant risking absence during a critical growth window for digital
-            loyalty (market sizing via{" "}
+            Digital loyalty in the category was accelerating; BR31 needed a Taiwan
+            app for points, rewards, and redemption in one place—Japan-aligned,
+            mobile-native (sizing via{" "}
             <span className="text-zinc-400">Business Wire</span>).
-          </p>
-          <p className="max-w-3xl text-zinc-300 leading-relaxed">
-            Our objective was to create that surface: a membership app for BR31
-            Ice Cream in Taiwan so consumers could access points, rewards, and
-            redemption in one place—aligned with the 31 Ice Cream membership
-            experience in Japan, but built for how people expect to engage on
-            mobile in Taiwan.
           </p>
         </CaseStudyInViewSection>
 

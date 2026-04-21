@@ -38,7 +38,7 @@ const AT_A_GLANCE_ITEMS = [
 const GOV_BACKEND_JOURNEY_IDS = ["rbac", "iterations"] as const;
 
 const GOV_BACKEND_TOC = [
-  { id: "project-background", label: "Project background" },
+  { id: "project-background", label: "Opportunity" },
   { id: "summary", label: "Summary" },
   { id: "final-result", label: "Final result" },
   { id: "design-journey", label: "Design journey" },
@@ -48,10 +48,8 @@ const GOV_BACKEND_TOC = [
 ] as const;
 
 const GOV_BACKEND_SCAN_SUMMARY = [
-  "Lead UX/UI for the Ministry of Finance uniform invoice lottery redemption backend—role-based access, operational reporting, and workflows for 600+ government staff.",
-  "Designed a permission model that hides irrelevant features and restricts high-impact actions by role so teams can work in parallel without breaking public-facing content.",
-  "Redesigned reporting into actionable dashboards with weekly/monthly views, filters, and CSV export so staff could prep meetings and audits with less reliance on engineering.",
-  "Delivered end-to-end product design with PM and engineering partners on a Jul 2025 – Sep 2025 timeline.",
+  "Backend for MoF’s lottery app: RBAC, reporting, and workflows for 600+ staff—permission model that hides noise and protects high-impact actions.",
+  "Dashboards, filters, and CSV export so ops could prep audits without engineering; shipped Jul–Sep 2025 with PM and eng.",
 ] as const;
 
 function Metric({ children }: { children: ReactNode }) {
@@ -161,36 +159,24 @@ export default function GovernmentBackendCaseStudy() {
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Project background
+            Opportunity
           </span>
           <h2 className="text-zinc-100">
-            Why this platform existed
+            One admin hub for campaigns, reporting, and releases—before 600+ staff
+            outgrew spreadsheets and one-off tools
           </h2>
           <p className="text-zinc-300 leading-relaxed max-w-3xl">
-            After completing the Uniform Invoice Lottery Redemption App, I also took
-            on designing an entirely new backend management platform. Government
-            staff needed a unified system to manage announcements, promotion
-            campaigns, push notifications, data reporting, and app version updates.
+            After the public lottery app shipped, MoF needed a{" "}
+            <span className="text-zinc-100">single backend</span> for
+            announcements, promos, push rules, reporting, and app versions—used by{" "}
+            <Metric>600+</Metric> people who expect the same familiarity as other
+            government systems.
           </p>
           <p className="text-zinc-300 leading-relaxed max-w-3xl">
-            With over <Metric>600</Metric> staff members relying on national
-            platforms, consistency and alignment were critical. During early
-            discovery, staff repeatedly emphasized their need for workflows to
-            feel familiar with the systems they were already using. To clarify
-            their expectations, I conducted{" "}
-            <Metric>3</Metric> rounds of needs interviews. These sessions helped
-            me identify
-            feature priorities and validate user flows before diving into design.
-          </p>
-          <p className="text-zinc-300 leading-relaxed max-w-3xl">
-            As the sole UX/UI designer, I collaborated closely with engineers.
-            Because our team had also built the app itself, we could strategically
-            decide which elements should remain editable in the backend and which
-            needed to stay hard-coded to maintain stability during updates. Given
-            the tight timeline, I validated requirements through mockups and page
-            flows rather than full functional maps. This approach sped up
-            collaboration and allowed us to refine details iteratively during
-            ongoing discussions with stakeholders and engineers.
+            <Metric>3</Metric> rounds of needs interviews set priorities and flows.
+            As sole UX/UI, I paired with engineering on what should stay editable vs.
+            hard-coded, and used mockups + page flows (not giant specs) to match a
+            tight Jul–Sep window.
           </p>
 
           <div className="space-y-3 pt-4">
