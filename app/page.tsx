@@ -97,8 +97,6 @@ export default function Home() {
         </div>
       </section>
 
-      <PortfolioFocus />
-
       {/* Selected projects */}
       <section id="featured" className="border-b border-zinc-800">
         <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-16 sm:py-20">
@@ -106,10 +104,6 @@ export default function Home() {
             <h2 className="text-2xl font-semibold tracking-tight text-zinc-100 sm:text-3xl md:text-[2rem]">
               Selected projects
             </h2>
-            <p className="mt-4 max-w-3xl text-base leading-relaxed text-zinc-400 sm:text-lg">
-              Mobile services, AI marketplaces, and national-scale backends—same
-              playbook: research, IA, and UI that holds up under real constraints.
-            </p>
           </FadeInSection>
 
           <FadeInSection className="mt-10" delay={0.05}>
@@ -129,15 +123,12 @@ export default function Home() {
                 />
               </div>
               <div className="px-6 py-8 sm:px-10 sm:py-10">
-                <span className="mb-3 inline-block text-[10px] font-medium uppercase tracking-widest text-amber-400/90">
-                  {CORE_PRODUCT.flagship.tag}
-                </span>
-                <h3 className="text-zinc-100 transition group-hover:text-zinc-50">
+                <h3 className="text-xl font-semibold tracking-tight text-zinc-100 transition group-hover:text-zinc-50 sm:text-2xl">
                   {CORE_PRODUCT.flagship.title}
+                  <span className="mt-2 block text-base font-normal text-zinc-400 sm:text-lg">
+                    {CORE_PRODUCT.flagship.outcome}
+                  </span>
                 </h3>
-                <p className="mt-1 text-base font-medium text-emerald-400/90 sm:text-lg">
-                  {CORE_PRODUCT.flagship.outcome}
-                </p>
                 <p className="mt-4 text-xs text-zinc-500">
                   {CORE_PRODUCT.flagship.role} · {CORE_PRODUCT.flagship.timeline}
                 </p>
@@ -170,16 +161,13 @@ export default function Home() {
                       />
                     </div>
                     <div className="flex flex-1 flex-col p-6 sm:p-8">
-                      <span className="text-[10px] font-medium uppercase tracking-widest text-zinc-500">
-                        {item.tag}
-                      </span>
-                      <h3 className="mt-3 text-zinc-100 group-hover:text-zinc-50">
+                      <h3 className="text-lg font-semibold tracking-tight text-zinc-100 group-hover:text-zinc-50 sm:text-xl">
                         {item.title}
+                        <span className="mt-2 block text-sm font-normal text-zinc-400 sm:text-base">
+                          {item.outcome}
+                        </span>
                       </h3>
-                      <p className="mt-1 text-base text-emerald-400/80 sm:text-lg">
-                        {item.outcome}
-                      </p>
-                      <p className="mt-auto pt-3 text-xs text-zinc-500">
+                      <p className="mt-auto pt-4 text-xs text-zinc-500">
                         {item.role} · {item.timeline}
                       </p>
                     </div>
@@ -191,15 +179,15 @@ export default function Home() {
         </div>
       </section>
 
+      <PortfolioFocus />
+
       {/* Brand & storytelling */}
       <section id="selected-work" className="border-b border-zinc-800">
         <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-16 sm:py-20">
           <FadeInSection>
-            <h2 className="text-zinc-100">Brand &amp; Storytelling</h2>
-            <p className="mt-4 max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg">
-              Supporting product launches through visual identity and marketing
-              design.
-            </p>
+            <h2 className="text-2xl font-semibold tracking-tight text-zinc-100 sm:text-3xl md:text-[2rem]">
+              Brand &amp; storytelling
+            </h2>
           </FadeInSection>
 
           <ul className="mt-12 grid items-stretch gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -227,16 +215,13 @@ export default function Home() {
                       />
                     </div>
                     <div className="flex flex-1 flex-col p-6 sm:p-8">
-                      <span className="text-[10px] font-medium uppercase tracking-widest text-zinc-500">
-                        {item.tag}
-                      </span>
-                      <h3 className="mt-3 text-zinc-100 group-hover:text-zinc-50">
+                      <h3 className="text-lg font-semibold tracking-tight text-zinc-100 group-hover:text-zinc-50 sm:text-xl">
                         {item.title}
+                        <span className="mt-2 block text-sm font-normal text-zinc-400 sm:text-base">
+                          {item.outcome}
+                        </span>
                       </h3>
-                      <p className="mt-1 text-base text-emerald-400/80 sm:text-lg">
-                        {item.outcome}
-                      </p>
-                      <p className="mt-auto pt-3 text-xs text-zinc-500">
+                      <p className="mt-auto pt-4 text-xs text-zinc-500">
                         {item.role} · {item.timeline}
                       </p>
                     </div>
@@ -252,10 +237,11 @@ export default function Home() {
       <section id="contact" className="border-b border-zinc-800">
         <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-16 sm:py-20">
           <FadeInSection>
-            <h2 className="text-zinc-100">Let&apos;s Build Something Together</h2>
-            <p className="mt-4 max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg">
-              Open to product design roles with strong research and mobile /
-              enterprise surfaces. Vancouver · relocation, remote, or hybrid.
+            <h2 className="text-2xl font-semibold tracking-tight text-zinc-100 sm:text-3xl md:text-[2rem]">
+              Let&apos;s talk
+            </h2>
+            <p className="mt-4 max-w-2xl text-zinc-400">
+              Product design · Vancouver · open to relocate, remote, or hybrid.
             </p>
             <div className="mt-6 flex flex-wrap gap-6 text-base sm:text-lg">
               <a
