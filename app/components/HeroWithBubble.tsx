@@ -2,13 +2,13 @@
 
 import Image from "next/image";
 import { useCallback, useLayoutEffect, useRef, useState } from "react";
-import { heroHeadline, specializeEyebrow } from "../content/specialize";
+import { heroHeadline } from "../content/specialize";
 
 const BUBBLE_SRC = "/home/header-bubble-v2.png";
 const ASPECT = 1024 / 744;
 /** Cap width; height scales with text column × {@link BUBBLE_SCALE}. */
-const MAX_BUBBLE_W = Math.round(1520 * 1.05);
-const BUBBLE_SCALE = 2.22 * 1.05;
+const MAX_BUBBLE_W = 1380;
+const BUBBLE_SCALE = 1.92;
 
 function BubbleBackdrop() {
   return (
@@ -57,9 +57,6 @@ export function HeroWithBubble() {
           className="relative z-10 min-w-0 w-full max-w-[48rem] shrink-0 lg:max-w-[min(48rem,58%)]"
         >
           <h1 className="sr-only">Angela Yang</h1>
-          <p className="mb-4 text-xs font-medium uppercase tracking-widest text-zinc-500">
-            {specializeEyebrow}
-          </p>
           <p
             className="max-w-[56rem] text-[1.65rem] font-normal leading-[1.12] tracking-[-0.02em] text-zinc-50 sm:text-4xl sm:leading-[1.08] md:text-5xl md:leading-[1.05] lg:text-[3.15rem] lg:leading-[1.03] xl:text-[3.45rem]"
             style={{
@@ -81,8 +78,8 @@ export function HeroWithBubble() {
                     height: bubbleH,
                   }
                 : {
-                    minHeight: "27.3rem",
-                    width: "min(100%, 46.2rem)",
+                    minHeight: "22rem",
+                    width: "min(100%, 38rem)",
                   }
             }
           >
@@ -94,7 +91,7 @@ export function HeroWithBubble() {
                   alt=""
                   fill
                   className="object-contain object-right"
-                  sizes="1520px"
+                  sizes="1380px"
                   priority
                 />
               </div>
@@ -109,7 +106,7 @@ export function HeroWithBubble() {
         aria-hidden
       >
         <div
-          className="home-bubble-float relative w-[min(98.7vw,1018px)]"
+          className="home-bubble-float relative w-[min(88vw,880px)]"
           style={{ aspectRatio: ASPECT }}
         >
           <BubbleBackdrop />
