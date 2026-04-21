@@ -175,20 +175,21 @@ export default function PhyphyyaCaseStudy() {
           imageSrc="/case-studies/phyphyya/gallery-14.png"
           imageAlt="Haphy Living brand applications overview"
           imageClassName="object-cover object-[center_40%]"
+          overlay="none"
           eyebrow={
-            <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-white/80">
+            <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-[#5c6570] [text-shadow:0_1px_2px_rgba(255,255,255,0.85)]">
               <span>Brand IP</span>
-              <span className="text-white/45">·</span>
+              <span className="text-[#9ca3af]">·</span>
               <span>Illustration + Product</span>
             </div>
           }
           title={
-            <h1 className="mt-5 max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl">
+            <h1 className="mt-5 max-w-4xl text-4xl font-semibold tracking-tight text-[#2C3E50] sm:text-5xl md:text-6xl [text-shadow:0_1px_2px_rgba(255,255,255,0.9)]">
               Haphy Living
             </h1>
           }
           subtitle={
-            <p className="max-w-2xl text-lg text-zinc-100 sm:text-xl">
+            <p className="max-w-2xl text-lg text-[#4A4A4A] sm:text-xl [text-shadow:0_1px_2px_rgba(255,255,255,0.85)]">
               A live ecommerce experiment built from a personal rabbit-inspired
               IP—illustration to POD production and Etsy storefront operations.
             </p>

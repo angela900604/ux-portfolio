@@ -106,23 +106,24 @@ export default function MomiAnimalHealthCaseStudy() {
     <article className="min-h-screen bg-[#F5F3EF] text-[#4A4A4A]">
       <header className="border-b border-[#E0D9CE]">
         <CaseStudyHeroFullBleed
-          imageSrc={MOMI_ASSET("pet-expo-wall-display.png")}
-          imageAlt="MOMI Animal Health — rabbit care brand marketing"
+          imageSrc={MOMI_ASSET("home-cover.png")}
+          imageAlt="MOMI Animal Health — freeze-dried fruit treats product flyer"
           imageClassName="object-cover object-center"
+          overlay="none"
           eyebrow={
-            <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-white/80">
+            <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-[#5c6570] [text-shadow:0_1px_2px_rgba(255,255,255,0.85)]">
               <span>Digital Marketing</span>
-              <span className="text-white/45">·</span>
+              <span className="text-[#9ca3af]">·</span>
               <span>Content + Growth</span>
             </div>
           }
           title={
-            <h1 className="mt-5 max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl">
+            <h1 className="mt-5 max-w-4xl text-4xl font-semibold tracking-tight text-[#2C3E50] sm:text-5xl md:text-6xl [text-shadow:0_1px_2px_rgba(255,255,255,0.9)]">
               MOMI Animal Health
             </h1>
           }
           subtitle={
-            <p className="text-xl text-zinc-100 max-w-2xl">
+            <p className="max-w-2xl text-xl text-[#4A4A4A] [text-shadow:0_1px_2px_rgba(255,255,255,0.85)]">
               Helped drive +75% online sales growth in two months.
             </p>
           }
