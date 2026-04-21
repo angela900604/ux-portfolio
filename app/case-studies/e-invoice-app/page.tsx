@@ -29,16 +29,22 @@ const FIGMA_WIREFRAME_FLOW =
 
 const ASSET = (name: string) => `/case-studies/e-invoice/case-assets/${name}`;
 
-/** First hero frame — full-bleed first screen (paper invoices + scan on phone). */
+/** Full-bleed hero behind the project title (café context, scan / invoice UI). */
 const HERO_FULL_BLEED = {
-  src: "/case-studies/e-invoice/hero-scan-paper-receipts.png",
-  alt: "Hands holding a fan of Taiwan uniform invoices next to a phone showing scanned receipt QR codes in the e-invoice app",
+  src: "/case-studies/e-invoice/hero-fullbleed.png",
+  alt: "Hand holding a phone in a bright café: e-invoice app shows paper receipt scanning with QR codes and tab navigation",
 } as const;
 
-/** Lifestyle still directly under the hero title — scan flow in context. */
-const HERO_SECOND_STILL = {
-  src: "/case-studies/e-invoice/hero-store-barcode-carrier.png",
-  alt: "Hand holding a phone in a café: e-invoice app shows the paper-receipt scan view with QR codes and tab navigation",
+/** First image below the title block — paper receipts + phone. */
+const HERO_BELOW_01 = {
+  src: "/case-studies/e-invoice/hero-below-01.png",
+  alt: "Hands holding Taiwan uniform paper invoices beside a phone displaying the scanned digital receipt in the e-invoice app",
+} as const;
+
+/** Second image below the title block — lifestyle product context. */
+const HERO_BELOW_02 = {
+  src: "/case-studies/e-invoice/hero-below-02.png",
+  alt: "Person using the e-invoice mobile app: lottery and carrier barcode screen in a warm indoor setting",
 } as const;
 
 const YOUTUBE_A11Y_EMBED = "https://www.youtube.com/embed/yfwERMFfXDM";
@@ -321,7 +327,7 @@ export default function EInvoiceCaseStudy() {
         <CaseStudyHeroFullBleed
           imageSrc={HERO_FULL_BLEED.src}
           imageAlt={HERO_FULL_BLEED.alt}
-          imageClassName="object-cover object-[center_35%]"
+          imageClassName="object-cover object-center sm:object-[center_45%]"
           eyebrow={
             <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-white/75">
               <span>Case Study</span>
@@ -347,8 +353,8 @@ export default function EInvoiceCaseStudy() {
         >
           <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
             <Image
-              src={HERO_SECOND_STILL.src}
-              alt={HERO_SECOND_STILL.alt}
+              src={HERO_BELOW_01.src}
+              alt={HERO_BELOW_01.alt}
               width={1024}
               height={571}
               className="h-auto w-full object-cover"
@@ -356,11 +362,14 @@ export default function EInvoiceCaseStudy() {
             />
           </div>
 
-          <div className="mt-10">
-            <WideFigure
-              borderless
-              src={ASSET("before-after-overview.png")}
-              alt="Before and after overview of the e-invoice app redesign"
+          <div className="mt-10 overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+            <Image
+              src={HERO_BELOW_02.src}
+              alt={HERO_BELOW_02.alt}
+              width={1024}
+              height={552}
+              className="h-auto w-full object-cover"
+              sizes="(max-width: 768px) 100vw, 1080px"
             />
           </div>
 
