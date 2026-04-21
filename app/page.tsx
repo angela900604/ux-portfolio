@@ -97,16 +97,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Selected projects */}
+      {/* Selected projects — no visible section blurb (sr-only for outline) */}
       <section id="featured" className="border-b border-zinc-800">
         <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-16 sm:py-20">
-          <FadeInSection>
-            <h2 className="text-2xl font-semibold tracking-tight text-zinc-100 sm:text-3xl md:text-[2rem]">
-              Selected projects
-            </h2>
-          </FadeInSection>
-
-          <FadeInSection className="mt-10" delay={0.05}>
+          <h2 className="sr-only">Selected projects</h2>
+          <FadeInSection delay={0.05}>
             <Link
               href={`/case-studies/${CORE_PRODUCT.flagship.slug}`}
               className="group block overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 transition duration-300 hover:-translate-y-1 hover:border-zinc-500"
@@ -181,16 +176,11 @@ export default function Home() {
 
       <PortfolioFocus />
 
-      {/* Brand & storytelling */}
+      {/* Brand & storytelling — no visible section blurb */}
       <section id="selected-work" className="border-b border-zinc-800">
         <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-16 sm:py-20">
-          <FadeInSection>
-            <h2 className="text-2xl font-semibold tracking-tight text-zinc-100 sm:text-3xl md:text-[2rem]">
-              Brand &amp; storytelling
-            </h2>
-          </FadeInSection>
-
-          <ul className="mt-12 grid items-stretch gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <h2 className="sr-only">Brand &amp; storytelling</h2>
+          <ul className="grid items-stretch gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {ADJACENT_WORK.map((item, i) => (
               <li key={item.slug} className="h-full min-h-0">
                 <FadeInSection
