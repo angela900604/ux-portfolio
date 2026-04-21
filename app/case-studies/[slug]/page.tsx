@@ -6,6 +6,7 @@ const KNOWN_SLUGS = [
   "e-invoice-app",
   "ai-marketplace",
   "government-backend",
+  "design-system",
   "baskin-robbins",
   "moi-mock-interview",
   "admission-hub",
