@@ -1,11 +1,8 @@
 import { FadeInSection } from "./FadeInSection";
-
-/** One line each — no category labels or body copy */
-const LINES = [
-  "iOS & mobile — native flows, accessibility, handoff engineering can build.",
-  "AI & enterprise — dense admin, permissions, and UI that stays calm at scale.",
-  "Research — interviews and moderated tests that turn debate into decisions.",
-] as const;
+import {
+  SPECIALIZE_PILLARS,
+  specializeSectionIntro,
+} from "../content/specialize";
 
 export function PortfolioFocus() {
   return (
@@ -21,11 +18,17 @@ export function PortfolioFocus() {
           >
             What I specialize in
           </h2>
-          <ul className="mt-8 max-w-3xl space-y-4 text-base leading-relaxed text-zinc-300 sm:text-lg">
-            {LINES.map((line) => (
-              <li key={line} className="flex gap-3">
+          <p className="mt-5 max-w-3xl text-base leading-relaxed text-zinc-400 sm:text-lg">
+            {specializeSectionIntro}
+          </p>
+          <ul className="mt-10 max-w-3xl space-y-8 text-base leading-relaxed text-zinc-300 sm:text-lg">
+            {SPECIALIZE_PILLARS.map((pillar) => (
+              <li key={pillar.title} className="flex gap-3">
                 <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500/80" />
-                <span>{line}</span>
+                <div className="min-w-0">
+                  <p className="font-semibold text-zinc-100">{pillar.title}</p>
+                  <p className="mt-2 text-zinc-300">{pillar.summary}</p>
+                </div>
               </li>
             ))}
           </ul>

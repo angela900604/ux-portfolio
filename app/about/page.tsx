@@ -1,5 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
+import {
+  SPECIALIZE_PILLARS,
+  specializeSectionIntro,
+} from "../content/specialize";
 
 function TravelPhotoTile({
   src,
@@ -30,7 +34,7 @@ const INTERVIEW_PHOTO_SRC = "/about/user-interviews-collage.png";
 export const metadata = {
   title: "About | Angela Yang",
   description:
-    "Product designer at MINA AI, based in Vancouver. End-to-end ownership, design systems, user interviews, AI-assisted product, and measurable outcomes.",
+    "Product designer in Vancouver. B2B and complex systems—CRM, backend and government platforms, multi-role admin UX. Multi-segment research; ownership with engineering, PMs, and clients.",
 };
 
 export default function AboutPage() {
@@ -44,7 +48,8 @@ export default function AboutPage() {
           Angela Yang
         </h1>
         <p className="mt-3 text-xs font-medium uppercase tracking-widest text-zinc-500 max-w-2xl">
-          Product design · Vancouver (open to relocate)
+          B2B &amp; complex systems · Multi-segment research · Vancouver (open
+          to relocate)
         </p>
 
         <section className="mt-10">
@@ -63,8 +68,21 @@ export default function AboutPage() {
 
             <div className="flex min-w-0 flex-col gap-5 text-base leading-relaxed text-zinc-300 sm:text-lg">
               <p className="font-medium text-zinc-100">
-                I design products that actually ship — and measure whether they
-                work.
+                I specialize in{" "}
+                <span className="text-zinc-100">
+                  B2B and complex systems product design
+                </span>
+                —backend platforms, government-scale services, and dense admin UX
+                where information architecture, multi-role flows, and edge cases
+                matter as much as craft. I pair that with{" "}
+                <span className="text-zinc-100">
+                  cross-audience research
+                </span>{" "}
+                and{" "}
+                <span className="text-zinc-100">
+                  end-to-end ownership
+                </span>{" "}
+                with engineers, PMs, and clients.
               </p>
               <p>
                 Currently a Product Designer at MINA AI (SF, remote), where
@@ -74,27 +92,61 @@ export default function AboutPage() {
                 to move fast without losing craft.
               </p>
               <p>
-                Before that, I spent over a year at Turn Cloud in Taiwan working
-                on the Taiwan Ministry Invoice App — a nationwide public service
-                used by millions. I redesigned the login flow and took the success
-                rate from 68% to 92%. I also built a 50+ component Figma design
-                system, led UX for the Baskin-Robbins membership platform, and
-                designed government dashboards that had to work for everyone
-                from teenagers to seniors to visually impaired users.
+                Before that, I spent over a year at Turn Cloud in Taiwan on the
+                Taiwan e-Invoice app—a nationwide public service used by millions.
+                I redesigned the login flow and raised task success from 68% to
+                92%. I also built a 50+ component Figma system, led UX for the
+                Baskin-Robbins membership platform, and designed government
+                dashboards for staff across roles—always with an eye on how data
+                and APIs show up in the UI.
               </p>
               <p>
-                I care about the full picture: the research that uncovers the real
-                job to be done, the Figma system that makes consistency
-                sustainable, and the vibe-coded prototype that gets engineers and
-                stakeholders aligned fast. I use tools like Claude, Lovart,
+                I care about research that surfaces the real job to be done,
+                systems that keep quality sustainable, and prototypes that align
+                engineering and stakeholders. I use tools like Claude, Lovart,
                 Framer, and Cursor to close the gap between idea and production.
               </p>
               <p>
-                Currently based in Vancouver, BC. Open to IC roles at
-                early-stage SaaS startups — especially teams building complex,
-                meaningful products where design has a real seat at the table.
+                Based in Vancouver, BC. Open to roles where design owns complex
+                product surfaces and partners tightly with product and
+                engineering—especially enterprise, gov-tech, or multi-sided
+                platforms.
               </p>
             </div>
+          </div>
+        </section>
+
+        <section
+          className="mt-14 border-t border-zinc-800 pt-12"
+          aria-labelledby="about-specialize-heading"
+        >
+          <h2
+            id="about-specialize-heading"
+            className="text-2xl font-semibold tracking-tight text-zinc-100 sm:text-3xl md:text-[2rem]"
+          >
+            What I specialize in
+          </h2>
+          <p className="mt-5 max-w-3xl text-base leading-relaxed text-zinc-400 sm:text-lg">
+            {specializeSectionIntro}
+          </p>
+          <div className="mt-10 space-y-10 max-w-3xl">
+            {SPECIALIZE_PILLARS.map((pillar) => (
+              <div key={pillar.title}>
+                <h3 className="text-lg font-semibold text-zinc-100 sm:text-xl">
+                  {pillar.title}
+                </h3>
+                <p className="mt-3 text-base leading-relaxed text-zinc-300 sm:text-lg">
+                  {pillar.summary}
+                </p>
+                {pillar.details.length > 0 ? (
+                  <ul className="mt-4 list-disc space-y-2 pl-5 text-base leading-relaxed text-zinc-400 sm:text-lg">
+                    {pillar.details.map((d) => (
+                      <li key={d}>{d}</li>
+                    ))}
+                  </ul>
+                ) : null}
+              </div>
+            ))}
           </div>
         </section>
 
@@ -109,11 +161,12 @@ export default function AboutPage() {
               </p>
               <p>
                 I genuinely love{" "}
-                <span className="text-zinc-100">user interviews</span>—sitting
-                down with people from different fields, backgrounds, and age
-                groups, and listening until the real motivations and constraints
-                surface. That curiosity-driven conversation is where I&apos;m most
-                energized; it&apos;s when I feel I&apos;m doing my best work.
+                <span className="text-zinc-100">user interviews</span>—from
+                teenagers and seniors to foreign-language users and people who
+                rely on accessibility settings, across consumer, B2B, and
+                government contexts. I listen until motivations and constraints
+                surface; that&apos;s where I&apos;m most energized and where the
+                best product bets show up.
               </p>
               <p>
                 Whether it&apos;s a focus group, a 1:1 usability session, or a
@@ -133,7 +186,8 @@ export default function AboutPage() {
                 />
               </div>
               <figcaption className="mt-3 text-sm leading-relaxed text-zinc-500">
-                Field research, interviews, and workshops with diverse participants.
+                Field research and sessions across ages, languages, and
+                contexts—multi-segment UX, not a single persona repeated.
               </figcaption>
             </figure>
           </div>
@@ -144,11 +198,10 @@ export default function AboutPage() {
             How I work
           </span>
           <p className="mt-6 max-w-3xl text-base leading-relaxed text-zinc-300 sm:text-lg">
-            I specialize in navigating the 0→1 product journey, turning abstract
-            ideas into high-fidelity, shippable experiences. My approach blends
-            aesthetic precision with a deep understanding of backend logic and
-            technical constraints, ensuring that innovation never comes at the
-            cost of feasibility.
+            From 0→1 through scale, I turn abstract problems into shippable
+            flows—especially when backend logic, permissions, and data models
+            drive what the UI can honestly promise. Craft matters, but
+            feasibility with engineering is non-negotiable.
           </p>
           <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-5 lg:gap-6">
             <div className="flex h-full min-w-0 flex-col rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 sm:p-7">
@@ -164,12 +217,12 @@ export default function AboutPage() {
             </div>
             <div className="flex h-full min-w-0 flex-col rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 sm:p-7">
               <h5 className="text-zinc-100 normal-case tracking-normal">
-                Stakeholder alignment
+                PMs, clients &amp; delivery
               </h5>
               <p className="mt-3 flex-1 text-base leading-relaxed text-zinc-400 sm:text-lg">
-                I partner directly with product/project managers, clients, and
-                other stakeholders to translate requirements into clear design
-                decisions that balance business goals with technical constraints.
+                I&apos;m comfortable helping lead a thread: aligning with PMs on
+                scope and timeline, clarifying requirements with clients, and
+                keeping design decisions legible so the team ships on schedule.
               </p>
             </div>
             <div className="flex h-full min-w-0 flex-col rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 sm:p-7">

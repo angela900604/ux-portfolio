@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useCallback, useLayoutEffect, useRef, useState } from "react";
+import { specializeEyebrow } from "../content/specialize";
 
 const BUBBLE_SRC = "/home/header-bubble-v2.png";
 const ASPECT = 1024 / 744;
@@ -56,8 +57,7 @@ export function HeroWithBubble() {
           className="relative z-10 min-w-0 w-full max-w-[48rem] shrink-0 lg:max-w-[min(48rem,58%)]"
         >
           <p className="mb-4 text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Product design · iOS, AI enterprise, research · Vancouver (open to
-            relocate)
+            {specializeEyebrow}
           </p>
           <p
             className="max-w-[56rem] text-[2.75rem] font-normal leading-[1.06] tracking-[-0.02em] text-zinc-50 sm:text-6xl sm:leading-[1.02] md:text-7xl md:leading-[0.99] lg:text-[4.75rem] lg:leading-[0.97]"
