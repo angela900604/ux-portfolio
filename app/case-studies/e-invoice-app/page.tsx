@@ -127,16 +127,37 @@ const KEY_OUTCOME_ROWS: {
   assetFiles?: string[];
   /** Auto-advance slideshow (e.g. guided onboarding sequence) */
   autoSlideshow?: boolean;
+  /** Side-by-side before/after (files in case-assets/) — use instead of assetFile(s) */
+  beforeAfter?: {
+    before: string;
+    after: string;
+    beforeAlt: string;
+    afterAlt: string;
+    beforeCaption: string;
+    afterCaption: string;
+  };
   evidence: string;
   problem: string;
   decision: string;
   outcome: string;
 }[] = [
   {
-    title: "\u{1F510} Login friction \u2192 biometric-first access",
+    title:
+      "Password-only verification was failing seniors—we shipped Face ID, Touch ID (incl. Android), and pattern unlock",
     assetId: "13",
-    screenLabel: "Face ID / quick verification",
-    assetFile: "face-id-quick-verification.png",
+    screenLabel: "",
+    beforeAfter: {
+      before: "login-before-password-only.png",
+      after: "login-after-biometric-pattern.png",
+      beforeAlt:
+        "Before: system settings with modal asking for mobile barcode verification password—manual entry only",
+      afterAlt:
+        "After: Face ID, fingerprint (Touch ID / Android), and 3x3 pattern unlock alongside legacy password path",
+      beforeCaption:
+        "Before: only remembering and typing the ministry verification code—hard on older adults who forget or mistype.",
+      afterCaption:
+        "After: Face ID, Touch ID / fingerprint (including Android), plus dot-pattern unlock so users are not stuck on text passwords.",
+    },
     evidence:
       "Across age groups, interviews kept surfacing the same failure mode: forgetting the Ministry of Finance verification code. In moderated usability tests, the login task topped out at about 75% success—almost every miss traced back to passwords or verification. Older adults and visually impaired participants often had to hand the phone to family to finish sign-in.",
     problem:
@@ -238,8 +259,8 @@ const FINAL_SOLUTION_SCREENS: {
   { id: "12", title: "首頁 · homepage", assetFile: "homepage-hub.png" },
   {
     id: "13",
-    title: "登入 · Face ID / quick verification",
-    assetFile: "face-id-quick-verification.png",
+    title: "登入 · Face ID, Touch ID, pattern unlock",
+    assetFile: "login-after-biometric-pattern.png",
   },
   { id: "14", title: "末三碼對獎 · Last-three-digit match" },
   { id: "15", title: "宣導專區 · Events & promos" },
@@ -265,6 +286,52 @@ function KeyOutcomePhoneFigures({
 }: {
   row: (typeof KEY_OUTCOME_ROWS)[number];
 }) {
+  if (row.beforeAfter) {
+    const ba = row.beforeAfter;
+    return (
+      <figure className="w-full max-w-[min(100%,1120px)] space-y-1 lg:ml-auto">
+        <div className="grid gap-10 lg:grid-cols-2 lg:gap-8">
+          <div className="min-w-0 space-y-3">
+            <p className="text-[11px] font-semibold uppercase tracking-widest text-rose-300/90">
+              Before
+            </p>
+            <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+              <Image
+                src={ASSET(ba.before)}
+                alt={ba.beforeAlt}
+                width={900}
+                height={1200}
+                className="h-auto w-full object-contain"
+                sizes="(max-width: 1024px) 100vw, 48vw"
+              />
+            </div>
+            <p className="text-xs leading-relaxed text-zinc-500">
+              {ba.beforeCaption}
+            </p>
+          </div>
+          <div className="min-w-0 space-y-3">
+            <p className="text-[11px] font-semibold uppercase tracking-widest text-emerald-300/90">
+              After
+            </p>
+            <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+              <Image
+                src={ASSET(ba.after)}
+                alt={ba.afterAlt}
+                width={1600}
+                height={900}
+                className="h-auto w-full object-contain"
+                sizes="(max-width: 1024px) 100vw, 48vw"
+              />
+            </div>
+            <p className="text-xs leading-relaxed text-zinc-500">
+              {ba.afterCaption}
+            </p>
+          </div>
+        </div>
+      </figure>
+    );
+  }
+
   const files =
     row.assetFiles ?? [row.assetFile ?? `solution-final-${row.assetId}.png`];
 
