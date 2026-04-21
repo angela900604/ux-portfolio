@@ -2,9 +2,9 @@
  * Shared positioning for homepage + About — recruiter-facing, consistent story.
  * Lead with B2C iOS / AI-driven mobile; B2B appears as portfolio breadth, not the headline specialty.
  */
-/** Homepage hero — one line recruiters can scan */
+/** Homepage hero — primary headline under the name line */
 export const heroHeadline =
-  "Product design for AI-driven B2C mobile—iOS-native flows, consumer experiences, and research-led delivery.";
+  "Product design for AI-driven & B2B SaaS across mobile and web, with a focus on multi-role systems and cross-functional leadership.";
 
 export const specializeEyebrow =
   "B2C iOS · AI-driven products · Multi-segment research · Vancouver (open to relocate)";
