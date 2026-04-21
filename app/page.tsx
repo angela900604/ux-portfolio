@@ -118,6 +118,9 @@ export default function Home() {
                 />
               </div>
               <div className="px-6 py-8 sm:px-10 sm:py-10">
+                <span className="mb-3 inline-block text-[10px] font-medium uppercase tracking-widest text-amber-400/90">
+                  {CORE_PRODUCT.flagship.tag}
+                </span>
                 <h3 className="text-xl font-semibold tracking-tight text-zinc-100 transition group-hover:text-zinc-50 sm:text-2xl">
                   {CORE_PRODUCT.flagship.title}
                   <span className="mt-2 block text-base font-normal text-zinc-400 sm:text-lg">
@@ -156,7 +159,10 @@ export default function Home() {
                       />
                     </div>
                     <div className="flex flex-1 flex-col p-6 sm:p-8">
-                      <h3 className="text-lg font-semibold tracking-tight text-zinc-100 group-hover:text-zinc-50 sm:text-xl">
+                      <span className="text-[10px] font-medium uppercase tracking-widest text-zinc-500">
+                        {item.tag}
+                      </span>
+                      <h3 className="mt-3 text-lg font-semibold tracking-tight text-zinc-100 group-hover:text-zinc-50 sm:text-xl">
                         {item.title}
                         <span className="mt-2 block text-sm font-normal text-zinc-400 sm:text-base">
                           {item.outcome}
@@ -173,8 +179,6 @@ export default function Home() {
           </ul>
         </div>
       </section>
-
-      <PortfolioFocus />
 
       {/* Brand & storytelling — no visible section blurb */}
       <section id="selected-work" className="border-b border-zinc-800">
@@ -205,7 +209,10 @@ export default function Home() {
                       />
                     </div>
                     <div className="flex flex-1 flex-col p-6 sm:p-8">
-                      <h3 className="text-lg font-semibold tracking-tight text-zinc-100 group-hover:text-zinc-50 sm:text-xl">
+                      <span className="text-[10px] font-medium uppercase tracking-widest text-zinc-500">
+                        {item.tag}
+                      </span>
+                      <h3 className="mt-3 text-lg font-semibold tracking-tight text-zinc-100 group-hover:text-zinc-50 sm:text-xl">
                         {item.title}
                         <span className="mt-2 block text-sm font-normal text-zinc-400 sm:text-base">
                           {item.outcome}
@@ -222,6 +229,8 @@ export default function Home() {
           </ul>
         </div>
       </section>
+
+      <PortfolioFocus />
 
       {/* Contact */}
       <section id="contact" className="border-b border-zinc-800">

@@ -2,13 +2,13 @@
 
 import Image from "next/image";
 import { useCallback, useLayoutEffect, useRef, useState } from "react";
-import { specializeEyebrow } from "../content/specialize";
+import { heroHeadline, specializeEyebrow } from "../content/specialize";
 
 const BUBBLE_SRC = "/home/header-bubble-v2.png";
 const ASPECT = 1024 / 744;
 /** Cap width; height scales with text column × {@link BUBBLE_SCALE}. */
-const MAX_BUBBLE_W = 1520;
-const BUBBLE_SCALE = 2.22;
+const MAX_BUBBLE_W = Math.round(1520 * 1.05);
+const BUBBLE_SCALE = 2.22 * 1.05;
 
 function BubbleBackdrop() {
   return (
@@ -60,12 +60,12 @@ export function HeroWithBubble() {
             {specializeEyebrow}
           </p>
           <p
-            className="max-w-[56rem] text-[2.75rem] font-normal leading-[1.06] tracking-[-0.02em] text-zinc-50 sm:text-6xl sm:leading-[1.02] md:text-7xl md:leading-[0.99] lg:text-[4.75rem] lg:leading-[0.97]"
+            className="max-w-[56rem] text-[1.65rem] font-normal leading-[1.12] tracking-[-0.02em] text-zinc-50 sm:text-4xl sm:leading-[1.08] md:text-5xl md:leading-[1.05] lg:text-[3.15rem] lg:leading-[1.03] xl:text-[3.45rem]"
             style={{
               fontFamily: "var(--font-serif-display), Georgia, 'Times New Roman', serif",
             }}
           >
-            Complex systems, clear experiences.
+            {heroHeadline}
           </p>
         </div>
 
@@ -79,7 +79,10 @@ export function HeroWithBubble() {
                     width: bubbleW,
                     height: bubbleH,
                   }
-                : { minHeight: "26rem", width: "min(100%, 44rem)" }
+                : {
+                    minHeight: "27.3rem",
+                    width: "min(100%, 46.2rem)",
+                  }
             }
           >
             <BubbleBackdrop />
@@ -105,7 +108,7 @@ export function HeroWithBubble() {
         aria-hidden
       >
         <div
-          className="home-bubble-float relative w-[min(94vw,970px)]"
+          className="home-bubble-float relative w-[min(98.7vw,1018px)]"
           style={{ aspectRatio: ASPECT }}
         >
           <BubbleBackdrop />

@@ -1,6 +1,10 @@
 /**
  * Shared positioning for homepage + About — recruiter-facing, consistent story.
  */
+/** Homepage hero — one line recruiters can scan (distills the full positioning pitch). */
+export const heroHeadline =
+  "Product design for AI & B2B SaaS—complex systems, multi-role workflows, research-led teams.";
+
 export const specializeEyebrow =
   "B2B & complex systems · Multi-segment research · Vancouver (open to relocate)";
 
