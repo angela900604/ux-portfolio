@@ -42,8 +42,10 @@ export function CaseStudyHeroFullBleed({
             className={imageClassName}
             sizes="100vw"
           />
+          {/* Base dim + bottom-heavy gradient so titles stay readable on bright photos */}
+          <div className="absolute inset-0 bg-black/35" aria-hidden />
           <div
-            className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/55 to-zinc-950/25"
+            className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/82 to-zinc-950/55"
             aria-hidden
           />
           <div className="absolute inset-0 flex flex-col justify-end px-6 pb-14 pt-28 sm:px-[100px] sm:pb-20 sm:pt-36">

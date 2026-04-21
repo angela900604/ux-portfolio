@@ -29,16 +29,16 @@ const FIGMA_WIREFRAME_FLOW =
 
 const ASSET = (name: string) => `/case-studies/e-invoice/case-assets/${name}`;
 
-/** First hero frame — full-bleed first screen (invoice + scan). */
+/** First hero frame — full-bleed first screen (paper invoices + scan on phone). */
 const HERO_FULL_BLEED = {
   src: "/case-studies/e-invoice/hero-scan-paper-receipts.png",
-  alt: "Hands holding Taiwan paper uniform invoices while the phone scans QR codes in the redesigned e-invoice app",
+  alt: "Hands holding a fan of Taiwan uniform invoices next to a phone showing scanned receipt QR codes in the e-invoice app",
 } as const;
 
-/** Second lifestyle still — below the fold, in content width. */
+/** Lifestyle still directly under the hero title — scan flow in context. */
 const HERO_SECOND_STILL = {
   src: "/case-studies/e-invoice/hero-store-barcode-carrier.png",
-  alt: "Checkout context: phone shows the e-invoice carrier barcode at a convenience store counter",
+  alt: "Hand holding a phone in a café: e-invoice app shows the paper-receipt scan view with QR codes and tab navigation",
 } as const;
 
 const YOUTUBE_A11Y_EMBED = "https://www.youtube.com/embed/yfwERMFfXDM";
