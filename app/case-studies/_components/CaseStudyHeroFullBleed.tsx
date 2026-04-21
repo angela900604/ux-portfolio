@@ -30,6 +30,10 @@ type Props = {
   children?: ReactNode;
 };
 
+/** Below-meta hero strip: same width/height math as Haphy Living (1024×571 artwork at full bleed). */
+const BELOW_META_HERO_INNER =
+  "relative w-full h-[clamp(18rem,min(90vh,56rem,calc(100vw*571/1024)),56rem)]";
+
 function FullBleedImageOnly({
   imageSrc,
   imageAlt,
@@ -38,7 +42,7 @@ function FullBleedImageOnly({
 }: Pick<Props, "imageSrc" | "imageAlt" | "imageClassName" | "priority">) {
   return (
     <div className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2">
-      <div className="relative h-[min(90vh,56rem)] min-h-[80vh] w-full">
+      <div className={BELOW_META_HERO_INNER}>
         <Image
           src={imageSrc}
           alt={imageAlt}
