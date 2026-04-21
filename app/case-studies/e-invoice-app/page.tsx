@@ -4,7 +4,6 @@ import { CaseStudyAtAGlance } from "../_components/CaseStudyAtAGlance";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { CaseStudyExpandable } from "../_components/CaseStudyExpandable";
 import { CaseStudyHeroFullBleed } from "../_components/CaseStudyHeroFullBleed";
-import { CaseStudyImpactBanner } from "../_components/CaseStudyImpactBanner";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { CaseStudyScanSummary } from "../_components/CaseStudyScanSummary";
@@ -373,25 +372,6 @@ export default function EInvoiceCaseStudy() {
 
           <div className="mt-10">
             <CaseStudyAtAGlance items={AT_A_GLANCE_ITEMS} />
-          </div>
-
-          <div className="mt-10">
-            <CaseStudyImpactBanner
-              primary={{
-                label: "Login success",
-                value: (
-                  <>
-                    68% <span className="text-emerald-400/80">→</span> 92%
-                  </>
-                ),
-                hint: "Biometric-first sign-in and in-app recovery replaced ministry-only verification loops—especially for 51+ and low-vision users.",
-              }}
-              secondary={{
-                label: "Prototype task success",
-                value: "~88%",
-                hint: "12 participants, five core tasks; strongest after home + guidance iterations.",
-              }}
-            />
           </div>
 
           <div className="mt-10">
