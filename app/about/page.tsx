@@ -31,7 +31,7 @@ const INTERVIEW_PHOTO_SRC = "/about/user-interviews-collage.png";
 export const metadata = {
   title: "About | Angela Yang",
   description:
-    "Product Designer focused on AI-driven and B2B SaaS—complex systems, multi-role workflows, design systems on mobile and web. Multi-segment research; leads cross-functional teams to ship high-impact features.",
+    "Product Designer: AI, B2B SaaS, government platforms—startups to public systems. MINA AI; previously Taiwan e-Invoice. Complex systems, design systems, multi-segment research. Vancouver.",
 };
 
 export default function AboutPage() {
@@ -65,36 +65,33 @@ export default function AboutPage() {
 
             <div className="flex min-w-0 flex-col gap-5 text-base leading-relaxed text-zinc-300 sm:text-lg">
               <p className="font-medium text-zinc-100">
-                Product Designer focused on AI-driven and B2B SaaS products,
-                designing complex systems, multi-role workflows, and scalable
-                design systems across mobile and web. Strong in multi-segment
-                user research and comfortable leading cross-functional teams to
-                drive product decisions and deliver high-impact features.
+                Product Designer with experience across AI-driven products, B2B
+                SaaS, and government platforms — spanning early-stage startups
+                and large-scale public systems. Currently at MINA AI (SF,
+                remote), I&apos;m the sole designer building the product from
+                0→1, shaping AI-assisted features like Photo-to-Publish and
+                Parenting Copilot, while owning the design system and working
+                closely with founders and engineers.
               </p>
               <p>
-                Currently a Product Designer at MINA AI (SF, remote), where
-                I&apos;m the sole IC designer building a design system from
-                scratch and shaping AI-assisted features like Photo-to-Publish and
-                Parenting Copilot. I work directly with co-founders and engineers
-                to move fast without losing craft.
+                Before that, I worked at Turn Cloud in Taiwan on the Taiwan
+                e-Invoice app, a nationwide service used by millions. I
+                redesigned the login flow, increasing success rate from 68% to
+                92%, and built a 50+ component design system to scale product
+                consistency. I also led UX for a Baskin-Robbins membership
+                platform and designed internal government dashboards across
+                multi-role workflows.
               </p>
               <p>
-                Before that, I spent over a year at Turn Cloud in Taiwan on the
-                Taiwan e-Invoice app—a nationwide public service used by millions.
-                I redesigned the login flow and raised task success from 68% to
-                92%. I also built a 50+ component Figma system, led UX for the
-                Baskin-Robbins membership platform, and designed government
-                dashboards for staff across roles—always with an eye on how data
-                and APIs show up in the UI.
+                My work focuses on complex systems, multi-role experiences, and
+                design systems that scale. I&apos;m especially interested in
+                multi-segment user research — from teens to seniors to internal
+                staff — and how different user needs shape product decisions. I
+                work closely with PMs and engineers, and I&apos;m comfortable
+                leading projects end-to-end in fast-moving environments.
               </p>
               <p>
-                I care about systems that keep quality sustainable and
-                prototypes that make intent concrete early. I use tools like
-                Claude, Lovart, Framer, and Cursor to close the gap between idea
-                and production.
-              </p>
-              <p>
-                Based in Vancouver, BC. Open to relocate, remote, or hybrid.
+                Based in Vancouver, BC. Open to relocation, remote, or hybrid.
               </p>
             </div>
           </div>
