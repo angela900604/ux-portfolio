@@ -80,8 +80,11 @@ export default function AdmissionHubCaseStudy() {
       <header className="border-b border-[#E0D9CE]">
         <CaseStudyHeroFullBleed
           imagePlacement="below-meta"
-          imageSrc={AH_ASSET("what-i-did-hero.png")}
-          imageAlt="Admission Hub — digital marketing and content"
+          belowMetaImageMode="contain"
+          belowMetaIntrinsicWidth={1024}
+          belowMetaIntrinsicHeight={768}
+          imageSrc={AH_ASSET("case-hero-cover.png")}
+          imageAlt="Admission Hub promotional flyer mockup — Working Holiday COOP and Canada study messaging"
           imageClassName="object-cover object-center"
           eyebrow={
             <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-[#7A7A7A]">

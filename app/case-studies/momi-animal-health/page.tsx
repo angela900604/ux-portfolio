@@ -107,8 +107,11 @@ export default function MomiAnimalHealthCaseStudy() {
       <header className="border-b border-[#E0D9CE]">
         <CaseStudyHeroFullBleed
           imagePlacement="below-meta"
-          imageSrc={MOMI_ASSET("pet-expo-wall-display.png")}
-          imageAlt="MOMI Animal Health — rabbit care brand marketing"
+          belowMetaImageMode="contain"
+          belowMetaIntrinsicWidth={1024}
+          belowMetaIntrinsicHeight={768}
+          imageSrc={MOMI_ASSET("case-hero-cover.png")}
+          imageAlt="MOMI Animal Health flyer mockup — freeze dried fruit treats for rabbits"
           imageClassName="object-cover object-center"
           eyebrow={
             <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-[#7A7A7A]">

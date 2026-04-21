@@ -9,9 +9,17 @@ type Props = {
   priority?: boolean;
   /**
    * `overlay` — title on the image with dark scrim (default).
-   * `below-meta` — title on light band, then children (e.g. Role / Location / Timeline), then full-bleed image only.
+   * `below-meta` — title on light band, then children (e.g. Role / Location / Timeline), then hero image.
    */
   imagePlacement?: "overlay" | "below-meta";
+  /**
+   * When `imagePlacement` is `below-meta`: `fullBleedCover` fills ~80–90vh (may crop).
+   * `contain` keeps aspect ratio inside a max width/height (no stretch / crop).
+   */
+  belowMetaImageMode?: "fullBleedCover" | "contain";
+  /** Intrinsic size for `contain` mode (used by next/image width/height). */
+  belowMetaIntrinsicWidth?: number;
+  belowMetaIntrinsicHeight?: number;
   /** Small caps line(s) above the title — e.g. Case Study · tags */
   eyebrow: ReactNode;
   /** Main project title — use <h1 className="...">…</h1> with white text classes. */
@@ -44,6 +52,36 @@ function FullBleedImageOnly({
   );
 }
 
+function BelowMetaImageContained({
+  imageSrc,
+  imageAlt,
+  priority,
+  width,
+  height,
+}: {
+  imageSrc: string;
+  imageAlt: string;
+  priority: boolean;
+  width: number;
+  height: number;
+}) {
+  return (
+    <div className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 bg-[#F5F3EF]">
+      <div className="mx-auto flex max-w-[1440px] justify-center px-6 py-10 sm:px-[100px] sm:py-12">
+        <Image
+          src={imageSrc}
+          alt={imageAlt}
+          width={width}
+          height={height}
+          priority={priority}
+          className="h-auto max-h-[min(85vh,48rem)] w-auto max-w-full object-contain"
+          sizes="(max-width: 1200px) 100vw, 1200px"
+        />
+      </div>
+    </div>
+  );
+}
+
 /**
  * 100vw full-bleed first screen (~80–90vh) with title in large white type on a dark gradient,
  * or (below-meta) title on a light band, meta, then image only.
@@ -54,6 +92,9 @@ export function CaseStudyHeroFullBleed({
   imageClassName = "object-cover object-center",
   priority = true,
   imagePlacement = "overlay",
+  belowMetaImageMode = "fullBleedCover",
+  belowMetaIntrinsicWidth = 1024,
+  belowMetaIntrinsicHeight = 768,
   eyebrow,
   title,
   subtitle,
@@ -72,12 +113,22 @@ export function CaseStudyHeroFullBleed({
             {children}
           </div>
         ) : null}
-        <FullBleedImageOnly
-          imageSrc={imageSrc}
-          imageAlt={imageAlt}
-          imageClassName={imageClassName}
-          priority={priority}
-        />
+        {belowMetaImageMode === "contain" ? (
+          <BelowMetaImageContained
+            imageSrc={imageSrc}
+            imageAlt={imageAlt}
+            priority={priority}
+            width={belowMetaIntrinsicWidth}
+            height={belowMetaIntrinsicHeight}
+          />
+        ) : (
+          <FullBleedImageOnly
+            imageSrc={imageSrc}
+            imageAlt={imageAlt}
+            imageClassName={imageClassName}
+            priority={priority}
+          />
+        )}
       </>
     );
   }
