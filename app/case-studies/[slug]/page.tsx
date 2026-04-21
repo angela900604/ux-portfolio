@@ -8,7 +8,6 @@ const KNOWN_SLUGS = [
   "government-backend",
   "design-system",
   "baskin-robbins",
-  "moi-mock-interview",
   "admission-hub",
   "momi-animal-health",
   "phyphyya",

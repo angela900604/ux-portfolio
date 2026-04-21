@@ -47,14 +47,6 @@ const CORE_PRODUCT = {
       role: "Lead Product Designer",
       timeline: "2024 – 2025",
     },
-    {
-      slug: "moi-mock-interview",
-      title: "MoI — AI mock interview app for job seekers",
-      outcome: "End-to-end iOS concept · research, testing, hi-fi prototype",
-      tag: "Mobile · AI",
-      role: "Sole UX/UI Designer",
-      timeline: "Apr – Jun 2023",
-    },
   ],
 };
 
@@ -99,7 +91,6 @@ const WORK_THUMB: Record<string, string> = {
   "government-backend": "/case-studies/government-backend/home-cover.png",
   "design-system": "/case-studies/design-system/hero-cover.png",
   "baskin-robbins": "/case-studies/baskin-robbins/home-cover.png",
-  "moi-mock-interview": "/case-studies/moi-mock-interview/hero-cover.png",
   "admission-hub": "/case-studies/admission-hub/home-cover.png",
   "momi-animal-health": "/case-studies/momi-animal-health/home-cover.png",
   "phyphyya": "/case-studies/phyphyya/gallery-14.png",

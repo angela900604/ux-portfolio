@@ -7,7 +7,6 @@ export const CASE_STUDY_NAV: { slug: string; label: string }[] = [
   { slug: "government-backend", label: "Government backend" },
   { slug: "design-system", label: "Enterprise design system" },
   { slug: "baskin-robbins", label: "Baskin-Robbins Taiwan" },
-  { slug: "moi-mock-interview", label: "MoI · Mock Interview AI" },
   { slug: "admission-hub", label: "Admission Hub" },
   { slug: "momi-animal-health", label: "MOMI Animal Health" },
   { slug: "phyphyya", label: "Haphy Living" },
