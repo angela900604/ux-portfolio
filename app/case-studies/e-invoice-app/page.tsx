@@ -14,6 +14,7 @@ import { OutcomeAutoSlideshow } from "./OutcomeAutoSlideshow";
 import { FinalScreensMarquee } from "./FinalScreensMarquee";
 import { PhoneMockup, PortraitTile, WideFigure } from "./EInvoiceFigures";
 import { HomeBeforeAfterSlider } from "./HomeBeforeAfterSlider";
+import { LoginBeforeAfterSlider } from "./LoginBeforeAfterSlider";
 
 export const metadata = {
   title: "Reimagining Taiwan’s e-Invoice Experience | Angela Yang",
@@ -127,15 +128,8 @@ const KEY_OUTCOME_ROWS: {
   assetFiles?: string[];
   /** Auto-advance slideshow (e.g. guided onboarding sequence) */
   autoSlideshow?: boolean;
-  /** Side-by-side before/after (files in case-assets/) — use instead of assetFile(s) */
-  beforeAfter?: {
-    before: string;
-    after: string;
-    beforeAlt: string;
-    afterAlt: string;
-    beforeCaption: string;
-    afterCaption: string;
-  };
+  /** Draggable before/after (login) — text first, slider below */
+  beforeAfterLoginSlider?: boolean;
   evidence: string;
   problem: string;
   decision: string;
@@ -143,21 +137,10 @@ const KEY_OUTCOME_ROWS: {
 }[] = [
   {
     title:
-      "Password-only verification was failing seniors—we shipped Face ID, Touch ID (incl. Android), and pattern unlock",
+      "\u{1F510} Login: password-only path (hard for seniors who forgot codes) \u2192 Face ID, Touch ID (Android) & pattern unlock",
     assetId: "13",
-    screenLabel: "",
-    beforeAfter: {
-      before: "login-before-password-only.png",
-      after: "login-after-biometric-pattern.png",
-      beforeAlt:
-        "Before: system settings with modal asking for mobile barcode verification password—manual entry only",
-      afterAlt:
-        "After: Face ID, fingerprint (Touch ID / Android), and 3x3 pattern unlock alongside legacy password path",
-      beforeCaption:
-        "Before: only remembering and typing the ministry verification code—hard on older adults who forget or mistype.",
-      afterCaption:
-        "After: Face ID, Touch ID / fingerprint (including Android), plus dot-pattern unlock so users are not stuck on text passwords.",
-    },
+    screenLabel: "Login verification",
+    beforeAfterLoginSlider: true,
     evidence:
       "Across age groups, interviews kept surfacing the same failure mode: forgetting the Ministry of Finance verification code. In moderated usability tests, the login task topped out at about 75% success—almost every miss traced back to passwords or verification. Older adults and visually impaired participants often had to hand the phone to family to finish sign-in.",
     problem:
@@ -259,8 +242,8 @@ const FINAL_SOLUTION_SCREENS: {
   { id: "12", title: "首頁 · homepage", assetFile: "homepage-hub.png" },
   {
     id: "13",
-    title: "登入 · Face ID, Touch ID, pattern unlock",
-    assetFile: "login-after-biometric-pattern.png",
+    title: "登入 · Face ID / quick verification",
+    assetFile: "face-id-quick-verification.png",
   },
   { id: "14", title: "末三碼對獎 · Last-three-digit match" },
   { id: "15", title: "宣導專區 · Events & promos" },
@@ -286,51 +269,7 @@ function KeyOutcomePhoneFigures({
 }: {
   row: (typeof KEY_OUTCOME_ROWS)[number];
 }) {
-  if (row.beforeAfter) {
-    const ba = row.beforeAfter;
-    return (
-      <figure className="w-full max-w-[min(100%,1120px)] space-y-1 lg:ml-auto">
-        <div className="grid gap-10 lg:grid-cols-2 lg:gap-8">
-          <div className="min-w-0 space-y-3">
-            <p className="text-[11px] font-semibold uppercase tracking-widest text-rose-300/90">
-              Before
-            </p>
-            <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
-              <Image
-                src={ASSET(ba.before)}
-                alt={ba.beforeAlt}
-                width={900}
-                height={1200}
-                className="h-auto w-full object-contain"
-                sizes="(max-width: 1024px) 100vw, 48vw"
-              />
-            </div>
-            <p className="text-xs leading-relaxed text-zinc-500">
-              {ba.beforeCaption}
-            </p>
-          </div>
-          <div className="min-w-0 space-y-3">
-            <p className="text-[11px] font-semibold uppercase tracking-widest text-emerald-300/90">
-              After
-            </p>
-            <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
-              <Image
-                src={ASSET(ba.after)}
-                alt={ba.afterAlt}
-                width={1600}
-                height={900}
-                className="h-auto w-full object-contain"
-                sizes="(max-width: 1024px) 100vw, 48vw"
-              />
-            </div>
-            <p className="text-xs leading-relaxed text-zinc-500">
-              {ba.afterCaption}
-            </p>
-          </div>
-        </div>
-      </figure>
-    );
-  }
+  if (row.beforeAfterLoginSlider) return null;
 
   const files =
     row.assetFiles ?? [row.assetFile ?? `solution-final-${row.assetId}.png`];
@@ -597,7 +536,11 @@ export default function EInvoiceCaseStudy() {
             {KEY_OUTCOME_ROWS.map((row) => (
               <article
                 key={row.assetId}
-                className="grid gap-10 border-t border-zinc-800/90 pt-12 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-start lg:gap-12 lg:pt-14"
+                className={
+                  row.beforeAfterLoginSlider
+                    ? "space-y-10 border-t border-zinc-800/90 pt-12 lg:pt-14"
+                    : "grid gap-10 border-t border-zinc-800/90 pt-12 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-start lg:gap-12 lg:pt-14"
+                }
               >
                 <div className="min-w-0 space-y-6">
                   <h3 className="text-zinc-100">
@@ -640,15 +583,19 @@ export default function EInvoiceCaseStudy() {
                     </div>
                   </CaseStudyExpandable>
                 </div>
-                <div
-                  className={
-                    row.autoSlideshow
-                      ? "flex justify-center lg:pt-1"
-                      : "flex justify-center lg:justify-end lg:pt-1"
-                  }
-                >
-                  <KeyOutcomePhoneFigures row={row} />
-                </div>
+                {row.beforeAfterLoginSlider ? (
+                  <LoginBeforeAfterSlider />
+                ) : (
+                  <div
+                    className={
+                      row.autoSlideshow
+                        ? "flex justify-center lg:pt-1"
+                        : "flex justify-center lg:justify-end lg:pt-1"
+                    }
+                  >
+                    <KeyOutcomePhoneFigures row={row} />
+                  </div>
+                )}
               </article>
             ))}
           </div>
