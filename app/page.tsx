@@ -31,15 +31,6 @@ const CORE_PRODUCT = {
       timeline: "2024 – 2025",
     },
     {
-      slug: "design-system",
-      title: "Enterprise ERP design system — foundations to components",
-      outcome:
-        "Tokens, docs, and heuristic-driven patterns for a complex admin product",
-      tag: "Design System · B2B",
-      role: "Product Designer",
-      timeline: "2024",
-    },
-    {
       slug: "baskin-robbins",
       title: "Baskin-Robbins Taiwan's first membership app",
       outcome: "MVP scoped · Japan-aligned, Taiwan-local rules",
@@ -89,7 +80,6 @@ const WORK_THUMB: Record<string, string> = {
   "e-invoice-app": "/home/e-invoice-flagship-cover.png",
   "ai-marketplace": "/case-studies/mina/mina-ai-hero.png",
   "government-backend": "/case-studies/government-backend/home-cover.png",
-  "design-system": "/case-studies/design-system/hero-cover.png",
   "baskin-robbins": "/case-studies/baskin-robbins/home-cover.png",
   "admission-hub": "/case-studies/admission-hub/home-cover.png",
   "momi-animal-health": "/case-studies/momi-animal-health/home-cover.png",
