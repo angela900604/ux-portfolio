@@ -23,7 +23,7 @@ const AT_A_GLANCE_ITEMS = [
   },
   {
     label: "Focus",
-    value: "Foundations, tokens, components, heuristic patterns",
+    value: "Foundations, tokens, components, judgment-driven patterns",
   },
 ] as const;
 
@@ -31,16 +31,14 @@ const SCAN_SUMMARY = [
   "Three designers and engineering were shipping fast—but handoff kept stalling on the same questions: which blue is primary, which gray is the table border, and why does this modal look different from the last one?",
   "I helped define a shared language: primitives and semantic tokens, spacing and grid rules, and documented components with states that map to real ERP screens.",
   "Scope was tracked openly in Figma (including honest notes like “Card — no tokens”) so the team could prioritize engineering work without pretending the system was finished.",
-  "Nielsen’s heuristics became concrete patterns—destructive confirmations, consistent button rails, opt-out for repetitive dialogs, and field-level error copy—so usability lived in the system, not in one-off opinions.",
+  "Concrete patterns—destructive confirmations, consistent button rails, opt-out for repetitive dialogs, and field-level error copy—let usability live in the system, not in one-off opinions.",
 ] as const;
 
 const TOC = [
   { id: "problem", label: "Problem" },
-  { id: "strategy", label: "Strategy" },
   { id: "scope-foundations", label: "Scope & foundations" },
   { id: "components", label: "Components" },
   { id: "heuristics", label: "Heuristics" },
-  { id: "deep-dives", label: "Principles in depth" },
   { id: "impact", label: "Impact" },
 ] as const;
 
@@ -100,36 +98,10 @@ function SectionEyebrow({ children }: { children: ReactNode }) {
   );
 }
 
-function PrincipleFigure({
-  src,
-  alt,
-  caption,
-}: {
-  src: string;
-  alt: string;
-  caption: string;
-}) {
-  return (
-    <figure className="space-y-3">
-      <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
-        <Image
-          src={src}
-          alt={alt}
-          width={1024}
-          height={371}
-          className="h-auto w-full"
-          sizes="(max-width: 768px) 100vw, min(72rem, 100vw)"
-        />
-      </div>
-      <figcaption className="text-sm leading-relaxed text-zinc-400">{caption}</figcaption>
-    </figure>
-  );
-}
-
 export const metadata = {
   title: "Enterprise design system | Angela Yang",
   description:
-    "Design system case study: tokens, foundations, documented components, and Nielsen heuristic patterns for a complex enterprise admin product (2024).",
+    "Design system case study: tokens, foundations, documented components, and patterns for a complex enterprise admin product (2024).",
 };
 
 export default function DesignSystemCaseStudyPage() {
@@ -156,9 +128,9 @@ export default function DesignSystemCaseStudyPage() {
           }
           subtitle={
             <p className="text-lg leading-relaxed text-zinc-200 sm:text-xl">
-              From recurring handoff questions to a single source of truth:
-              foundations, tokens, documented components, and heuristic-driven
-              patterns—scoped honestly and built to scale.
+              How I gave three designers and an engineering team a shared
+              vocabulary — tokens, documented components, and judgment-driven
+              patterns built for a dense ERP product.
             </p>
           }
         >
@@ -195,36 +167,14 @@ export default function DesignSystemCaseStudyPage() {
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection
-          id="strategy"
-          className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
-        >
-          <SectionEyebrow>Chapter 2</SectionEyebrow>
-          <h2 className="text-zinc-100">Strategy: foundations → styles → components</h2>
-          <p className="max-w-3xl leading-relaxed text-zinc-300">
-            Work was sequenced so primitives and semantic tokens landed before
-            high-variance components. Atomic structure (atoms → molecules →
-            organisms) kept complex tables and dialogs from becoming one-off
-            illustrations.
-          </p>
-          <ScrollableDocFrame
-            src={ASSET("storytelling-framework.png")}
-            alt="Case study narrative framework: problem, strategy, build, heuristics, impact"
-            width={994}
-            height={1024}
-          />
-        </CaseStudyInViewSection>
-
-        <CaseStudyInViewSection
           id="scope-foundations"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
           <SectionEyebrow>Chapter 3</SectionEyebrow>
           <h2 className="text-zinc-100">Scope and foundations</h2>
           <p className="max-w-3xl leading-relaxed text-zinc-300">
-            A living checklist tracked design vs. code status. Calling out gaps—
-            <span className="text-zinc-100">e.g. Card without tokens yet</span>
-            —kept prioritization grounded and made unfinished work visible instead
-            of hidden.
+            Foundations and tokens first — so every component had something
+            consistent to build on.
           </p>
           <ScrollableDocFrame
             src={ASSET("foundation-icons-checklist.png")}
@@ -232,50 +182,54 @@ export default function DesignSystemCaseStudyPage() {
             width={154}
             height={1024}
             imageClassName="mx-auto max-w-[min(100%,20rem)]"
+            caption='Why: Tracking design vs. code status openly meant unfinished work stayed visible instead of silently drifting.'
           />
 
-          <h3 className="pt-4 text-lg font-medium text-zinc-100">Visual foundations</h3>
-          <p className="max-w-3xl text-sm leading-relaxed text-zinc-400">
-            Color scales and semantic roles, bilingual type, spacing tokens, grid,
-            breakpoints, elevation, and responsive examples—documented so
-            engineering could implement without reverse-engineering a frame.
-          </p>
+          <h3 className="pt-4 text-lg font-medium text-zinc-100">
+            Visual foundations
+          </h3>
           <div className="space-y-10">
             <ScrollableDocFrame
               src={ASSET("foundation-color.png")}
               alt="Color foundations: primitives and semantic token tables"
               width={321}
               height={1024}
+              caption="Why: Primitive tokens first, semantic roles second — so engineers could implement without reverse-engineering every frame."
             />
             <ScrollableDocFrame
               src={ASSET("foundation-typography.png")}
               alt="Typography: Noto Sans TC, Montserrat, Mulish scales"
               width={571}
               height={1024}
+              caption="Why: Three typefaces for bilingual content needed clear hierarchy rules, or every designer would make different calls."
             />
             <ScrollableDocFrame
               src={ASSET("foundation-space.png")}
               alt="Spacing tokens on a 4px base with rem and pixel mapping"
               width={660}
               height={1024}
+              caption="Why: 4px base gave finer control for dense admin tables where 8px increments created too much visual noise."
             />
             <ScrollableDocFrame
               src={ASSET("foundation-grid.png")}
               alt="Grid system across desktop, laptop, tablet, and mobile"
               width={251}
               height={1024}
+              caption="Why: Grid had to be defined before components — admin users work on large monitors but the product needed to survive tablet handoffs."
             />
             <ScrollableDocFrame
               src={ASSET("foundation-breakpoints.png")}
               alt="Breakpoints and responsive layout examples"
               width={531}
               height={1024}
+              caption="Why: Breakpoints documented alongside components so responsive behaviour wasn't left to engineering to guess."
             />
             <ScrollableDocFrame
               src={ASSET("foundation-elevation.png")}
               alt="Elevation and shadow scale for light and dark surfaces"
               width={542}
               height={1024}
+              caption="Why: Modals and drawers stack heavily in ERP flows — a defined elevation scale stopped designers inventing new shadow values every sprint."
             />
           </div>
         </CaseStudyInViewSection>
@@ -284,7 +238,9 @@ export default function DesignSystemCaseStudyPage() {
           id="components"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
-          <h3 className="text-lg font-medium text-zinc-100">Components in production context</h3>
+          <h3 className="text-lg font-medium text-zinc-100">
+            Components in production context
+          </h3>
           <p className="max-w-3xl text-sm leading-relaxed text-zinc-400">
             High-variance patterns—data tables, dropdowns, alerts, inputs—received
             redline specs, token hooks, and states that match how administrators
@@ -321,12 +277,22 @@ export default function DesignSystemCaseStudyPage() {
               width={173}
               height={1024}
             />
+            <p className="max-w-3xl text-sm leading-relaxed text-zinc-400">
+              Error prevention: a warning icon alone invites muscle-memory clicks.
+              Requiring typed confirmation blocks accidental data loss in high-stakes
+              admin tasks.
+            </p>
             <ScrollableDocFrame
               src={ASSET("component-button.png")}
               alt="Button consistency and placement standards"
               width={145}
               height={1024}
             />
+            <p className="max-w-3xl text-sm leading-relaxed text-zinc-400">
+              Consistency: keeping primary and secondary actions in the same
+              position across all dialogs reduces hesitation when users switch
+              between modules.
+            </p>
           </div>
         </CaseStudyInViewSection>
 
@@ -334,55 +300,11 @@ export default function DesignSystemCaseStudyPage() {
           id="heuristics"
           className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
-          <SectionEyebrow>Chapter 4</SectionEyebrow>
-          <h2 className="text-zinc-100">Heuristics as patterns, not posters</h2>
-          <p className="max-w-3xl leading-relaxed text-zinc-300">
-            Each principle became a concrete do/don’t pair the team could reuse.
-            Below is a full set in carousel form; the next section zooms in on a few
-            decisions where judgment mattered as much as the rule.
-          </p>
+          <h2 className="text-zinc-100">Heuristics as do / don&apos;t patterns</h2>
           <HeuristicSlideshow
             slides={[...HEURISTIC_SLIDES]}
             ariaLabel="Nielsen usability heuristics: do versus don’t examples"
           />
-        </CaseStudyInViewSection>
-
-        <CaseStudyInViewSection
-          id="deep-dives"
-          className="scroll-mt-28 space-y-10 sm:scroll-mt-32"
-        >
-          <h3 className="text-lg font-medium text-zinc-100">Where judgment met the heuristic</h3>
-          <div className="space-y-12">
-            <PrincipleFigure
-              src={ASSET("heuristic-error-prevention.png")}
-              alt="Error prevention: typed confirmation for destructive actions"
-              caption="Error prevention: a warning icon alone invites muscle-memory clicks. Requiring explicit confirmation copy blocks accidental data loss in high-stakes admin tasks."
-            />
-            <PrincipleFigure
-              src={ASSET("heuristic-consistency.png")}
-              alt="Consistency: aligned primary and secondary actions"
-              caption="Consistency and standards: keeping destructive and confirming actions in the same rail across dialogs reduces hesitation and mistakes when users switch modules."
-            />
-            <PrincipleFigure
-              src={ASSET("heuristic-user-control.png")}
-              alt="User control: optional do not show again for repeated confirmations"
-              caption="User control and freedom: power users can opt out of repetitive confirmations without removing safeguards for newcomers—friction becomes a choice, not a trap."
-            />
-            <div className="space-y-3">
-              <ScrollableDocFrame
-                src={ASSET("component-input.png")}
-                alt="Input error copy and recovery patterns"
-                width={173}
-                height={1024}
-                maxHeightClass="max-h-[min(70vh,42rem)]"
-              />
-              <p className="text-sm leading-relaxed text-zinc-400">
-                Recognition and recovery: specific field guidance beats a generic
-                “Error” label—users see what failed, why it matters, and how to fix
-                it without opening a separate doc.
-              </p>
-            </div>
-          </div>
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection
@@ -408,11 +330,17 @@ export default function DesignSystemCaseStudyPage() {
             />
           </div>
           <ul className="max-w-3xl list-disc space-y-2 pl-5 text-zinc-300 leading-relaxed">
-            <li>Fewer one-off color and spacing decisions in handoff reviews.</li>
-            <li>Onboarding for new designers shortened with named tokens and grids.</li>
             <li>
-              Open notes on unfinished token coverage (e.g. cards) prevented silent
-              drift between design and code.
+              Semantic token naming → engineers stopped asking which blue is primary
+              during every handoff review.
+            </li>
+            <li>
+              Shared component states → new designers onboarded without needing a
+              walkthrough session.
+            </li>
+            <li>
+              Open scope notes → gaps like &quot;Card — no tokens&quot; stayed
+              visible so nothing silently drifted between Figma and code.
             </li>
           </ul>
         </CaseStudyInViewSection>

@@ -9,6 +9,8 @@ type Props = {
   maxHeightClass?: string;
   /** Optional classes on the image (e.g. narrow docs: mx-auto max-w-md). */
   imageClassName?: string;
+  /** Optional caption below the frame (e.g. “Why: …”). */
+  caption?: string;
 };
 
 /**
@@ -22,9 +24,10 @@ export function ScrollableDocFrame({
   height,
   maxHeightClass = "max-h-[min(88vh,56rem)]",
   imageClassName = "",
+  caption,
 }: Props) {
   return (
-    <figure className="my-0">
+    <figure className="my-0 space-y-3">
       <div
         className={`overflow-y-auto overflow-x-hidden rounded-2xl border border-zinc-800/90 bg-zinc-900/35 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)] ${maxHeightClass}`}
       >
@@ -37,6 +40,11 @@ export function ScrollableDocFrame({
           sizes="(max-width: 768px) 100vw, min(72rem, 100vw)"
         />
       </div>
+      {caption ? (
+        <figcaption className="text-sm leading-relaxed text-zinc-400">
+          {caption}
+        </figcaption>
+      ) : null}
     </figure>
   );
 }
