@@ -7,6 +7,7 @@ const KNOWN_SLUGS = [
   "ai-marketplace",
   "government-backend",
   "baskin-robbins",
+  "moi-mock-interview",
   "admission-hub",
   "momi-animal-health",
   "phyphyya",
