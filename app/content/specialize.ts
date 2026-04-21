@@ -1,45 +1,45 @@
 /**
  * Shared positioning for homepage + About — recruiter-facing, consistent story.
+ * Lead with B2C iOS / AI-driven mobile; B2B appears as portfolio breadth, not the headline specialty.
  */
-/** Homepage hero — one line recruiters can scan (distills the full positioning pitch). */
+/** Homepage hero — one line recruiters can scan */
 export const heroHeadline =
-  "Product design for AI-driven & B2B SaaS across mobile and web, with a focus on multi-role systems and cross-functional leadership.";
+  "Product design for AI-driven B2C mobile—iOS-native flows, consumer experiences, and research-led delivery.";
 
 export const specializeEyebrow =
-  "B2B & complex systems · Multi-segment research · Vancouver (open to relocate)";
+  "B2C iOS · AI-driven products · Multi-segment research · Vancouver (open to relocate)";
 
 export const specializeSectionIntro =
-  "My deepest work is complex product and enterprise UX—platforms that have to hold up under real constraints, not just look polished in a deck.";
+  "I lead with consumer-facing mobile work—especially AI-assisted experiences on iOS. My portfolio also includes B2B and government projects, but my specialty is B2C iOS and AI-driven product craft.";
 
 export const SPECIALIZE_PILLARS = [
   {
-    title: "B2B & complex systems product design",
-    /** About page cards — short scan line */
+    title: "B2C iOS & AI-driven mobile product design",
     aboutShort:
-      "Enterprise and government UX: admin dashboards, multi-role flows, IA, and UI aligned with APIs and data.",
+      "Consumer apps on iOS—AI-assisted features, native patterns, accessibility, and UI engineering can ship.",
     summary:
-      "Most of my depth is in CRM, backend platforms, and government systems—admin and dashboards, multi-role permissions, information architecture, flows, and edge cases. That's classic complex / enterprise UX: the hard part is structure and behavior, not decoration.",
+      "Most of my craft and shipped work sits in consumer mobile: AI-assisted flows (copilots, photo-to-publish, parenting tools), native iOS patterns, and clarity for everyday users—from AI marketplaces to nationwide public apps and loyalty programs on the phone.",
     details: [
-      "0→1 backend platforms; cross-role journeys (staff, seller, end user).",
-      "I design UI that reflects how APIs and data models actually behave—constraints included.",
+      "AI-assisted surfaces on mobile; prototypes and specs that align with eng.",
+      "Public-facing apps and loyalty programs—not just one internal dashboard story.",
     ],
   },
   {
-    title: "Cross-audience & multi-segment research",
+    title: "Multi-segment user research",
     aboutShort:
-      "Research across segments—age, language, accessibility, B2B, consumer, and public—grounding what ships.",
+      "Teens to seniors; multilingual and accessibility needs—evidence that picks what ships.",
     summary:
-      "I run research across teenagers, seniors, foreign-language users, and people with accessibility needs—often spanning B2B operators, consumers, and government in the same program of work. That's multi-segment UX: fewer teams are comfortable across contexts this wide.",
+      "I run research across ages, languages, and accessibility needs—often alongside consumer, B2B, or public-sector contexts in the same career arc. The through-line is multi-segment UX: fewer designers are comfortable across that spread.",
     details: [
-      "Interviews, moderated tests, and field work that turn mixed evidence into what ships.",
+      "Interviews, moderated tests, and field work that resolve conflicting signals.",
     ],
   },
   {
     title: "Ownership & cross-functional leadership",
     aboutShort:
-      "Leading work with engineering, PMs, and clients—feasibility, scope, and requirements through delivery.",
+      "Engineering, PMs, and stakeholders—feasibility, scope, and delivery without losing the user.",
     summary:
-      "I'm comfortable owning a thread or workstream: partnering with engineers on feasibility, with PMs on scope and pace, and with clients on requirements so decisions stick through delivery.",
+      "I’m comfortable owning a thread or workstream: partnering with engineers on feasibility, with PMs on scope and pace, and with clients or founders on requirements so decisions stick through release.",
     details: [] as const,
   },
 ] as const;

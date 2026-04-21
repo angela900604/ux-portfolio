@@ -31,7 +31,7 @@ const INTERVIEW_PHOTO_SRC = "/about/user-interviews-collage.png";
 export const metadata = {
   title: "About | Angela Yang",
   description:
-    "Product Designer: AI, B2B SaaS, government platforms—startups to public systems. MINA AI; previously Taiwan e-Invoice. Complex systems, design systems, multi-segment research. Vancouver.",
+    "Product Designer: AI-driven B2C mobile & iOS, consumer experiences. MINA AI; Taiwan e-Invoice; Baskin-Robbins. Multi-segment research; B2B/gov as portfolio breadth. Vancouver.",
 };
 
 export default function AboutPage() {
@@ -45,7 +45,7 @@ export default function AboutPage() {
           Angela Yang
         </h1>
         <p className="mt-3 text-xs font-medium uppercase tracking-widest text-zinc-500 max-w-2xl">
-          B2B &amp; complex systems · Multi-segment research · Vancouver (open
+          B2C iOS · AI-driven products · Multi-segment research · Vancouver (open
           to relocate)
         </p>
 
@@ -65,9 +65,9 @@ export default function AboutPage() {
 
             <div className="flex min-w-0 flex-col gap-5 text-base leading-relaxed text-zinc-300 sm:text-lg">
               <p className="font-medium text-zinc-100">
-                Product Designer with experience across AI-driven products, B2B
-                SaaS, and government platforms — spanning early-stage startups
-                and large-scale public systems. Currently at MINA AI (SF,
+                Product Designer with experience across AI-driven B2C mobile and
+                iOS, B2B SaaS, and government platforms — spanning early-stage
+                startups and large-scale public systems. Currently at MINA AI (SF,
                 remote), I&apos;m the sole designer building the product from
                 0→1, shaping AI-assisted features like Photo-to-Publish and
                 Parenting Copilot, while owning the design system and working
@@ -83,8 +83,9 @@ export default function AboutPage() {
                 multi-role workflows.
               </p>
               <p>
-                My work focuses on complex systems, multi-role experiences, and
-                design systems that scale. I&apos;m especially interested in
+                My work centers on consumer mobile and AI-assisted experiences,
+                multi-role flows when the product demands them, and design
+                systems that scale. I&apos;m especially interested in
                 multi-segment user research — from teens to seniors to internal
                 staff — and how different user needs shape product decisions. I
                 work closely with PMs and engineers, and I&apos;m comfortable
