@@ -175,27 +175,24 @@ export default function PhyphyyaCaseStudy() {
           imageSrc="/case-studies/phyphyya/gallery-14.png"
           imageAlt="Haphy Living brand applications overview"
           imageClassName="object-cover object-[center_40%]"
-          overlay="none"
           eyebrow={
-            <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-[#5c6570] [text-shadow:0_1px_2px_rgba(255,255,255,0.85)]">
+            <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-white/80">
               <span>Brand IP</span>
-              <span className="text-[#9ca3af]">·</span>
+              <span className="text-white/45">·</span>
               <span>Illustration + Product</span>
             </div>
           }
           title={
-            <h1 className="mt-5 max-w-4xl text-4xl font-semibold tracking-tight text-[#2C3E50] sm:text-5xl md:text-6xl [text-shadow:0_1px_2px_rgba(255,255,255,0.9)]">
+            <h1 className="mt-5 max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl">
               Haphy Living
             </h1>
           }
-          subtitle={
-            <p className="max-w-2xl text-lg text-[#4A4A4A] sm:text-xl [text-shadow:0_1px_2px_rgba(255,255,255,0.85)]">
-              A live ecommerce experiment built from a personal rabbit-inspired
-              IP—illustration to POD production and Etsy storefront operations.
-            </p>
-          }
         >
-          <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+          <p className="max-w-2xl text-base leading-relaxed text-[#4A4A4A] sm:text-lg">
+            A live ecommerce experiment built from a personal rabbit-inspired
+            IP—illustration to POD production and Etsy storefront operations.
+          </p>
+          <div className="mt-8 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
             <a
               href="https://www.instagram.com/phyphya__/"
               target="_blank"
