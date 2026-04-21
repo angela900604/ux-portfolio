@@ -19,9 +19,23 @@ const serifDisplay = Fraunces({
 });
 
 export const metadata: Metadata = {
-  title: "Angela Yang — Product Designer",
+  /** Short title for link previews (iMessage, LINE, Slack, etc.) */
+  title: "Angela Yang",
   description:
     "Product designer: government-scale digital services (Taiwan), AI products (Vancouver). Research, systems, ship-ready UX—Cursor & Claude in the workflow.",
+  openGraph: {
+    title: "Angela Yang",
+    description:
+      "Product designer: government-scale digital services (Taiwan), AI products (Vancouver). Research, systems, ship-ready UX.",
+    type: "website",
+    siteName: "Angela Yang",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Angela Yang",
+    description:
+      "Product designer: government-scale digital services (Taiwan), AI products (Vancouver). Research, systems, ship-ready UX.",
+  },
 };
 
 export default function RootLayout({

@@ -56,6 +56,7 @@ export function HeroWithBubble() {
           ref={textRef}
           className="relative z-10 min-w-0 w-full max-w-[48rem] shrink-0 lg:max-w-[min(48rem,58%)]"
         >
+          <h1 className="sr-only">Angela Yang</h1>
           <p className="mb-4 text-xs font-medium uppercase tracking-widest text-zinc-500">
             {specializeEyebrow}
           </p>
