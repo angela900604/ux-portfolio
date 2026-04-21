@@ -14,6 +14,9 @@ export const specializeSectionIntro =
 export const SPECIALIZE_PILLARS = [
   {
     title: "B2B & complex systems product design",
+    /** About page cards — short scan line */
+    aboutShort:
+      "Enterprise and government UX: admin dashboards, multi-role flows, IA, and UI aligned with APIs and data.",
     summary:
       "Most of my depth is in CRM, backend platforms, and government systems—admin and dashboards, multi-role permissions, information architecture, flows, and edge cases. That's classic complex / enterprise UX: the hard part is structure and behavior, not decoration.",
     details: [
@@ -23,6 +26,8 @@ export const SPECIALIZE_PILLARS = [
   },
   {
     title: "Cross-audience & multi-segment research",
+    aboutShort:
+      "Research across segments—age, language, accessibility, B2B, consumer, and public—grounding what ships.",
     summary:
       "I run research across teenagers, seniors, foreign-language users, and people with accessibility needs—often spanning B2B operators, consumers, and government in the same program of work. That's multi-segment UX: fewer teams are comfortable across contexts this wide.",
     details: [
@@ -31,6 +36,8 @@ export const SPECIALIZE_PILLARS = [
   },
   {
     title: "Ownership & cross-functional leadership",
+    aboutShort:
+      "Leading work with engineering, PMs, and clients—feasibility, scope, and requirements through delivery.",
     summary:
       "I'm comfortable owning a thread or workstream: partnering with engineers on feasibility, with PMs on scope and pace, and with clients on requirements so decisions stick through delivery.",
     details: [] as const,

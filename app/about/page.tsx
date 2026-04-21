@@ -107,22 +107,18 @@ export default function AboutPage() {
           >
             What I specialize in
           </h2>
-          <div className="mt-10 space-y-10 max-w-3xl">
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
             {SPECIALIZE_PILLARS.map((pillar) => (
-              <div key={pillar.title}>
-                <h3 className="text-lg font-semibold text-zinc-100 sm:text-xl">
+              <div
+                key={pillar.title}
+                className="flex min-h-0 flex-col rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 sm:p-7"
+              >
+                <h3 className="text-base font-semibold tracking-tight text-zinc-100 sm:text-lg">
                   {pillar.title}
                 </h3>
-                <p className="mt-3 text-base leading-relaxed text-zinc-300 sm:text-lg">
-                  {pillar.summary}
+                <p className="mt-3 text-sm leading-relaxed text-zinc-400 sm:text-base">
+                  {pillar.aboutShort}
                 </p>
-                {pillar.details.length > 0 ? (
-                  <ul className="mt-4 list-disc space-y-2 pl-5 text-base leading-relaxed text-zinc-400 sm:text-lg">
-                    {pillar.details.map((d) => (
-                      <li key={d}>{d}</li>
-                    ))}
-                  </ul>
-                ) : null}
               </div>
             ))}
           </div>
