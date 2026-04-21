@@ -3,6 +3,7 @@ import Link from "next/link";
 import { CaseStudyAtAGlance } from "../_components/CaseStudyAtAGlance";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { CaseStudyExpandable } from "../_components/CaseStudyExpandable";
+import { CaseStudyHeroFullBleed } from "../_components/CaseStudyHeroFullBleed";
 import { CaseStudyImpactBanner } from "../_components/CaseStudyImpactBanner";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
@@ -317,45 +318,33 @@ export default function EInvoiceCaseStudy() {
   return (
     <article className="min-h-screen bg-zinc-950 text-zinc-100">
       <header className="border-b border-zinc-800">
-        {/* Full-bleed first screen — invoice + scan; title in white on image */}
-        <div className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2">
-          <div className="relative h-[min(90vh,56rem)] min-h-[80vh] w-full">
-            <Image
-              src={HERO_FULL_BLEED.src}
-              alt={HERO_FULL_BLEED.alt}
-              fill
-              priority
-              className="object-cover object-[center_35%]"
-              sizes="100vw"
-            />
-            <div
-              className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/55 to-zinc-950/25"
-              aria-hidden
-            />
-            <div className="absolute inset-0 flex flex-col justify-end px-6 pb-14 pt-28 sm:px-[100px] sm:pb-20 sm:pt-36">
-              <div className="mx-auto w-full max-w-[1440px]">
-                <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-white/75">
-                  <span>Case Study</span>
-                  <span className="text-white/45">·</span>
-                  <span>Public Service</span>
-                  <span className="text-white/45">·</span>
-                  <span>Mobile App</span>
-                </div>
-                <h1 className="mt-5 max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
-                  Reimagining Taiwan&apos;s e-Invoice experience: guided onboarding,
-                  lottery prize redemption &amp; eco-friendly engagement
-                </h1>
-                <p className="mt-5 max-w-3xl text-lg leading-relaxed text-zinc-200 sm:text-xl">
-                  End-to-end redesign of the Ministry of Finance Cloud Invoice App—
-                  research, accessibility, and ship-ready UI for a faster, more
-                  inclusive service.
-                </p>
-              </div>
+        <CaseStudyHeroFullBleed
+          imageSrc={HERO_FULL_BLEED.src}
+          imageAlt={HERO_FULL_BLEED.alt}
+          imageClassName="object-cover object-[center_35%]"
+          eyebrow={
+            <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-white/75">
+              <span>Case Study</span>
+              <span className="text-white/45">·</span>
+              <span>Public Service</span>
+              <span className="text-white/45">·</span>
+              <span>Mobile App</span>
             </div>
-          </div>
-        </div>
-
-        <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-12 sm:py-16">
+          }
+          title={
+            <h1 className="mt-5 max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
+              Reimagining Taiwan&apos;s e-Invoice experience: guided onboarding,
+              lottery prize redemption &amp; eco-friendly engagement
+            </h1>
+          }
+          subtitle={
+            <p className="text-lg leading-relaxed text-zinc-200 sm:text-xl">
+              End-to-end redesign of the Ministry of Finance Cloud Invoice App—
+              research, accessibility, and ship-ready UI for a faster, more
+              inclusive service.
+            </p>
+          }
+        >
           <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
             <Image
               src={HERO_SECOND_STILL.src}
@@ -486,7 +475,7 @@ export default function EInvoiceCaseStudy() {
               </CaseStudyExpandable>
             </div>
           </div>
-        </div>
+        </CaseStudyHeroFullBleed>
       </header>
 
       <CaseStudyContentLayout toc={E_INVOICE_TOC}>

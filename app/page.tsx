@@ -79,11 +79,11 @@ const E_INVOICE_FLAGSHIP_COVER = {
 const WORK_THUMB: Record<string, string> = {
   "e-invoice-app": "/home/e-invoice-flagship-cover.png",
   "ai-marketplace": "/case-studies/mina/mina-ai-hero.png",
-  "government-backend": "/home/publicservicecover.png",
-  "baskin-robbins": "/home/baskinrobbinscover.png",
-  "admission-hub": "/home/admcover-v3.jpg",
-  "momi-animal-health": "/home/momicover-v3.png",
-  "phyphyya": "/home/phyphyyaCover-v3.jpg",
+  "government-backend": "/case-studies/government-backend/hero-platform-overview.png",
+  "baskin-robbins": "/case-studies/baskin-robbins/hero-app-redemption-store.png",
+  "admission-hub": "/case-studies/admission-hub/what-i-did-hero.png",
+  "momi-animal-health": "/case-studies/momi-animal-health/pet-expo-wall-display.png",
+  "phyphyya": "/case-studies/phyphyya/gallery-14.png",
 };
 
 export default function Home() {

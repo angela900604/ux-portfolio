@@ -14,27 +14,30 @@ export function BaskinHeroShowcase({
   primary,
   secondary,
 }: {
-  primary: BaskinHeroImage;
+  /** Omit when the primary hero is used as the full-bleed first screen. */
+  primary?: BaskinHeroImage | null;
   secondary: readonly BaskinHeroImage[];
 }) {
   return (
     <div className="mt-8 grid gap-4">
-      <ImageLightbox
-        src={primary.src}
-        alt={primary.alt}
-        className="block w-full rounded-2xl border border-zinc-800 bg-zinc-900/40"
-      >
-        <div className="relative aspect-[256/140] w-full overflow-hidden sm:aspect-[1024/560]">
-          <Image
-            src={primary.src}
-            alt={primary.alt}
-            fill
-            className="object-cover"
-            sizes="(max-width: 1440px) 100vw, 1080px"
-            priority
-          />
-        </div>
-      </ImageLightbox>
+      {primary ? (
+        <ImageLightbox
+          src={primary.src}
+          alt={primary.alt}
+          className="block w-full rounded-2xl border border-zinc-800 bg-zinc-900/40"
+        >
+          <div className="relative aspect-[256/140] w-full overflow-hidden sm:aspect-[1024/560]">
+            <Image
+              src={primary.src}
+              alt={primary.alt}
+              fill
+              className="object-cover"
+              sizes="(max-width: 1440px) 100vw, 1080px"
+              priority
+            />
+          </div>
+        </ImageLightbox>
+      ) : null}
 
       <div className="grid gap-4 sm:grid-cols-3">
         {secondary.map((img) => (

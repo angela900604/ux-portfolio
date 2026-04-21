@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CaseStudyAtAGlance } from "../_components/CaseStudyAtAGlance";
+import { CaseStudyHeroFullBleed } from "../_components/CaseStudyHeroFullBleed";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { DesignJourneyCollapsible } from "../_components/DesignJourneyCollapsible";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { CaseStudyScanSummary } from "../_components/CaseStudyScanSummary";
-import { WideFigure } from "../e-invoice-app/EInvoiceFigures";
 
 const MINA_HERO = "/case-studies/mina/mina-ai-hero.png";
 
@@ -53,47 +53,43 @@ export const metadata = {
 export default function AiMarketplaceCaseStudy() {
   return (
     <article className="min-h-screen bg-zinc-950 text-zinc-100">
-      <header className="border-b border-zinc-800 relative overflow-hidden">
-        <div
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(120,119,198,0.22),transparent)]"
-          aria-hidden
-        />
-        <div className="relative mx-auto max-w-[1440px] px-6 sm:px-[100px] py-16 sm:py-24">
-          <div className="flex flex-wrap items-center gap-3 mb-6">
-            <span className="inline-flex items-center rounded-full border border-violet-500/40 bg-violet-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-widest text-violet-200">
-              Coming soon
-            </span>
-            <span className="inline-flex items-center rounded-full border border-amber-500/35 bg-amber-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-widest text-amber-100/90">
-              Ongoing project
-            </span>
-            <span className="text-xs uppercase tracking-widest text-zinc-500">
-              Case study · AI marketplace · Zero to one
-            </span>
-          </div>
-
+      <header className="border-b border-zinc-800">
+        <CaseStudyHeroFullBleed
+          imageSrc={MINA_HERO}
+          imageAlt="MINA app showcase: AI-assisted buyer chat, marketplace home with picks and events, and community events"
+          imageClassName="object-cover object-[center_45%]"
+          eyebrow={
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="inline-flex items-center rounded-full border border-violet-400/50 bg-violet-500/20 px-3 py-1 text-[11px] font-semibold uppercase tracking-widest text-violet-100">
+                Coming soon
+              </span>
+              <span className="inline-flex items-center rounded-full border border-amber-400/45 bg-amber-500/20 px-3 py-1 text-[11px] font-semibold uppercase tracking-widest text-amber-50">
+                Ongoing project
+              </span>
+              <span className="text-xs uppercase tracking-widest text-white/70">
+                Case study · AI marketplace · Zero to one
+              </span>
+            </div>
+          }
+          title={
+            <h1 className="mt-5 max-w-4xl text-3xl font-semibold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
+              MINA — an AI-native marketplace for parents who outgrow baby gear
+              overnight
+            </h1>
+          }
+          subtitle={
+            <p className="text-lg leading-relaxed text-zinc-200 sm:text-xl">
+              Starting from zero with San Francisco mom communities: reduce waste,
+              reclaim space, and make resale feel as light as a conversation—not a
+              second job.
+            </p>
+          }
+        >
           <p className="text-sm text-zinc-400 max-w-2xl leading-relaxed border-l-2 border-violet-500/50 pl-4">
             This case study is <span className="text-zinc-200">in progress</span>.
             Deeper flows, research snapshots, and metrics will be added as the work
             ships.
           </p>
-
-          <h1 className="mt-8 max-w-3xl">
-            MINA — an AI-native marketplace for parents who outgrow baby gear
-            overnight
-          </h1>
-          <p className="mt-4 text-xl text-zinc-400 max-w-2xl">
-            Starting from zero with San Francisco mom communities: reduce waste,
-            reclaim space, and make resale feel as light as a conversation—not a
-            second job.
-          </p>
-
-          <div className="mt-8">
-            <WideFigure
-              borderless
-              src={MINA_HERO}
-              alt="MINA app showcase: AI-assisted buyer chat, marketplace home with picks and events, and community events"
-            />
-          </div>
 
           <div className="mt-8">
             <CaseStudyAtAGlance items={AT_A_GLANCE_ITEMS} />
@@ -164,7 +160,7 @@ export default function AiMarketplaceCaseStudy() {
               </a>
             </div>
           </div>
-        </div>
+        </CaseStudyHeroFullBleed>
       </header>
 
       <CaseStudyContentLayout toc={MINA_TOC}>

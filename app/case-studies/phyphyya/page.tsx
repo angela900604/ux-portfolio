@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
+import { CaseStudyHeroFullBleed } from "../_components/CaseStudyHeroFullBleed";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 
@@ -169,35 +170,40 @@ export default function PhyphyyaCaseStudy() {
 
   return (
     <div className="min-h-screen bg-[#F5F3EF] text-[#4A4A4A]">
-      <div className="mx-auto max-w-[1440px]">
-        <header className="border-b border-[#E0D9CE]">
-          <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-16 sm:py-24">
-            <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-[#7A7A7A] mb-6">
+      <header className="border-b border-[#E0D9CE]">
+        <CaseStudyHeroFullBleed
+          imageSrc="/case-studies/phyphyya/gallery-14.png"
+          imageAlt="Haphy Living brand applications overview"
+          imageClassName="object-cover object-[center_40%]"
+          eyebrow={
+            <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-white/80">
               <span>Brand IP</span>
-              <span className="text-[#B0B0B0]">·</span>
+              <span className="text-white/45">·</span>
               <span>Illustration + Product</span>
             </div>
-
-            <h1 className="max-w-3xl text-[#2C3E50]">
+          }
+          title={
+            <h1 className="mt-5 max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl">
               Haphy Living
             </h1>
-            <p className="mt-4 max-w-2xl text-[#666]">
+          }
+          subtitle={
+            <p className="max-w-2xl text-lg text-zinc-100 sm:text-xl">
               A live ecommerce experiment built from a personal rabbit-inspired
-              IP—taken from illustration to POD production and Etsy storefront
-              operations.
+              IP—illustration to POD production and Etsy storefront operations.
             </p>
-            <div className="mt-6">
-              <a
-                href="https://www.instagram.com/phyphya__/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-full border border-[#D4C5B0] px-[18px] py-[10px] text-[#4A4A4A] text-[14px] transition hover:bg-[#D4C5B0]/20"
-              >
-                Instagram · @phyphya__
-              </a>
-            </div>
-
-            <dl className="mt-8 flex flex-wrap gap-x-10 gap-y-2 text-sm">
+          }
+        >
+          <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+            <a
+              href="https://www.instagram.com/phyphya__/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex w-fit items-center justify-center rounded-full border border-[#D4C5B0] bg-white/90 px-[18px] py-[10px] text-[#4A4A4A] text-[14px] transition hover:bg-[#D4C5B0]/30"
+            >
+              Instagram · @phyphya__
+            </a>
+            <dl className="flex flex-wrap gap-x-10 gap-y-2 text-sm">
               <div>
                 <dt className="text-[#7A7A7A] uppercase tracking-wider">Role</dt>
                 <dd className="text-[#4A4A4A]">Solo creator</dd>
@@ -213,21 +219,11 @@ export default function PhyphyyaCaseStudy() {
                 <dd className="text-[#4A4A4A]">2022 – present</dd>
               </div>
             </dl>
-
-            <div className="mt-12">
-              <div className="relative w-full aspect-[21/9] overflow-hidden rounded-2xl border border-[#D8CFC1] bg-[#FAF7F2]">
-                <Image
-                  src="/case-studies/phyphyya/gallery-14.png"
-                  alt="Haphy Living brand applications overview"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 896px) 100vw, 896px"
-                />
-              </div>
-            </div>
           </div>
-        </header>
+        </CaseStudyHeroFullBleed>
+      </header>
 
+      <div className="mx-auto max-w-[1440px]">
         <CaseStudyContentLayout
           toc={PHY_TOC}
           variant="light"

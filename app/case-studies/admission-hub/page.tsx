@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import type { ReactNode } from "react";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
+import { CaseStudyHeroFullBleed } from "../_components/CaseStudyHeroFullBleed";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { OutcomesMetricsChart } from "./OutcomesMetricsChart";
@@ -77,17 +78,24 @@ export default function AdmissionHubCaseStudy() {
   return (
     <article className="min-h-screen bg-[#F5F3EF] text-[#4A4A4A]">
       <header className="border-b border-[#E0D9CE]">
-        <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-16 sm:py-24">
-          <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-[#7A7A7A] mb-6">
-            <span>Digital Marketing</span>
-            <span className="text-[#B0B0B0]">·</span>
-            <span>Content + Growth</span>
-          </div>
-
-          <h1 className="max-w-3xl text-[#2C3E50]">
-            Admission Hub
-          </h1>
-          <dl className="mt-8 flex flex-wrap gap-x-10 gap-y-2 text-sm">
+        <CaseStudyHeroFullBleed
+          imageSrc={AH_ASSET("what-i-did-hero.png")}
+          imageAlt="Admission Hub — digital marketing and content"
+          imageClassName="object-cover object-center"
+          eyebrow={
+            <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-white/80">
+              <span>Digital Marketing</span>
+              <span className="text-white/45">·</span>
+              <span>Content + Growth</span>
+            </div>
+          }
+          title={
+            <h1 className="mt-5 max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl">
+              Admission Hub
+            </h1>
+          }
+        >
+          <dl className="flex flex-wrap gap-x-10 gap-y-2 text-sm">
             <div>
               <dt className="text-[#7A7A7A] uppercase tracking-wider">Role</dt>
               <dd className="text-[#4A4A4A]">Digital Marketer</dd>
@@ -103,19 +111,7 @@ export default function AdmissionHubCaseStudy() {
               <dd className="text-[#4A4A4A]">May 2022 – Aug 2022</dd>
             </div>
           </dl>
-
-          <div className="mt-12">
-            <div className="relative w-full aspect-[21/9] overflow-hidden rounded-2xl border border-[#D8CFC1] bg-[#FAF7F2]">
-              <Image
-                src="/home/admcover.jpg"
-                alt="Admission Hub cover"
-                fill
-                className="object-cover"
-                sizes="(max-width: 896px) 100vw, 896px"
-              />
-            </div>
-          </div>
-        </div>
+        </CaseStudyHeroFullBleed>
       </header>
 
       <CaseStudyContentLayout

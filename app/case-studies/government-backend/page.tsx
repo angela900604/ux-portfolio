@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { CaseStudyAtAGlance } from "../_components/CaseStudyAtAGlance";
+import { CaseStudyHeroFullBleed } from "../_components/CaseStudyHeroFullBleed";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { DesignJourneyCollapsible } from "../_components/DesignJourneyCollapsible";
@@ -75,32 +76,34 @@ export default function GovernmentBackendCaseStudy() {
   return (
     <article className="min-h-screen bg-zinc-950 text-zinc-100">
       <header className="border-b border-zinc-800">
-        <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-16 sm:py-24">
-          <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-zinc-500 mb-6">
-            <span>Case Study</span>
-            <span className="text-zinc-600">·</span>
-            <span>Public Service</span>
-            <span className="text-zinc-600">·</span>
-            <span>Enterprise System</span>
-          </div>
-          <h1 className="max-w-3xl">
-            Role-based backend for 600+ government staff
-          </h1>
-          <p className="mt-4 text-xl text-zinc-400 max-w-2xl">
-            Backend platform for the Ministry of Finance&apos;s Uniform Invoice
-            Lottery Redemption App—designed role-based access and reporting tools
-            for <Metric>600+</Metric> government staff, enabling faster invoice
-            management and reducing errors.
-          </p>
-
-          <div className="mt-8">
-            <WideFigure
-              src={ASSET("hero-platform-overview.png")}
-              alt="Government backend platform overview — dashboards and navigation"
-            />
-          </div>
-
-          <div className="mt-8">
+        <CaseStudyHeroFullBleed
+          imageSrc={ASSET("hero-platform-overview.png")}
+          imageAlt="Government backend platform overview — dashboards and navigation"
+          imageClassName="object-cover object-[center_40%]"
+          eyebrow={
+            <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-white/75">
+              <span>Case Study</span>
+              <span className="text-white/45">·</span>
+              <span>Public Service</span>
+              <span className="text-white/45">·</span>
+              <span>Enterprise System</span>
+            </div>
+          }
+          title={
+            <h1 className="mt-5 max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-6xl">
+              Role-based backend for 600+ government staff
+            </h1>
+          }
+          subtitle={
+            <p className="text-lg leading-relaxed text-zinc-200 sm:text-xl">
+              Backend platform for the Ministry of Finance&apos;s Uniform Invoice
+              Lottery Redemption App—role-based access and reporting for{" "}
+              <Metric>600+</Metric> staff, faster invoice management and fewer
+              errors.
+            </p>
+          }
+        >
+          <div className="mt-0">
             <CaseStudyAtAGlance items={AT_A_GLANCE_ITEMS} />
           </div>
 
@@ -131,7 +134,7 @@ export default function GovernmentBackendCaseStudy() {
           <div className="mt-8">
             <CaseStudyScanSummary items={GOV_BACKEND_SCAN_SUMMARY} />
           </div>
-        </div>
+        </CaseStudyHeroFullBleed>
       </header>
 
       <CaseStudyContentLayout toc={GOV_BACKEND_TOC}>

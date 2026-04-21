@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CaseStudyAtAGlance } from "../_components/CaseStudyAtAGlance";
+import { CaseStudyHeroFullBleed } from "../_components/CaseStudyHeroFullBleed";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { DesignJourneyCollapsible } from "../_components/DesignJourneyCollapsible";
@@ -178,28 +179,33 @@ export default function BaskinRobbinsCaseStudy() {
   return (
     <article className="min-h-screen bg-zinc-950 text-zinc-100">
       <header className="border-b border-zinc-800">
-        <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-16 sm:py-24">
-          <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-zinc-500 mb-6">
-            <span>Case Study</span>
-            <span className="text-zinc-600">·</span>
-            <span>Mobile · Loyalty</span>
-            <span className="text-zinc-600">·</span>
-            <span>Zero-to-one</span>
-          </div>
-          <h1 className="max-w-3xl">
-            Baskin-Robbins Taiwan&apos;s first membership app
-          </h1>
-          <p className="mt-5 max-w-3xl text-base leading-relaxed text-zinc-200 sm:text-lg">
-            Taiwan&apos;s loyalty market was growing fast while BR31 still had no
-            native app—I led end-to-end UX/UI for 31 Club, shipped the phase-one MVP
-            on schedule, and early reviews on the Taiwan App Store came in at five
-            stars.
-          </p>
-
-          <BaskinHeroShowcase
-            primary={HERO_MEMBERSHIP}
-            secondary={HERO_DEMO_IMAGES}
-          />
+        <CaseStudyHeroFullBleed
+          imageSrc={HERO_MEMBERSHIP.src}
+          imageAlt={HERO_MEMBERSHIP.alt}
+          imageClassName="object-cover object-[center_30%]"
+          eyebrow={
+            <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-white/75">
+              <span>Case Study</span>
+              <span className="text-white/45">·</span>
+              <span>Mobile · Loyalty</span>
+              <span className="text-white/45">·</span>
+              <span>Zero-to-one</span>
+            </div>
+          }
+          title={
+            <h1 className="mt-5 max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
+              Baskin-Robbins Taiwan&apos;s first membership app
+            </h1>
+          }
+          subtitle={
+            <p className="text-base leading-relaxed text-zinc-200 sm:text-lg">
+              Taiwan&apos;s loyalty market was growing fast while BR31 still had no
+              native app—I led end-to-end UX/UI for 31 Club, shipped the phase-one MVP
+              on schedule, and early Taiwan App Store reviews came in at five stars.
+            </p>
+          }
+        >
+          <BaskinHeroShowcase primary={null} secondary={HERO_DEMO_IMAGES} />
 
           <div className="mt-8">
             <CaseStudyAtAGlance items={AT_A_GLANCE_ITEMS} accent="baskin" />
@@ -248,7 +254,7 @@ export default function BaskinRobbinsCaseStudy() {
             </a>
           </div>
           <AppStoreReviewsSection appStoreHref={APP_STORE_TW} />
-        </div>
+        </CaseStudyHeroFullBleed>
       </header>
 
       <CaseStudyContentLayout toc={BASKIN_TOC}>
