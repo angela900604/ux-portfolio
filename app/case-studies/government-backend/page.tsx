@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { CaseStudyAtAGlance } from "../_components/CaseStudyAtAGlance";
 import { CaseStudyHeroFullBleed } from "../_components/CaseStudyHeroFullBleed";
@@ -16,6 +17,12 @@ export const metadata = {
 };
 
 const ASSET = (name: string) => `/case-studies/government-backend/${name}`;
+
+/** Homepage + in-page cover — MacBook on desk showing the admin backend UI */
+const BACKEND_COVER = {
+  src: ASSET("home-cover.png"),
+  alt: "MacBook on a desk displaying the role-based government backend admin dashboard with data tables and filters",
+} as const;
 
 const AT_A_GLANCE_ITEMS = [
   { label: "Timeline", value: "Jul 2025 – Sep 2025" },
@@ -103,7 +110,18 @@ export default function GovernmentBackendCaseStudy() {
             </p>
           }
         >
-          <div className="mt-0">
+          <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+            <Image
+              src={BACKEND_COVER.src}
+              alt={BACKEND_COVER.alt}
+              width={1024}
+              height={764}
+              className="h-auto w-full object-cover"
+              sizes="(max-width: 768px) 100vw, 1080px"
+            />
+          </div>
+
+          <div className="mt-10">
             <CaseStudyAtAGlance items={AT_A_GLANCE_ITEMS} />
           </div>
 
