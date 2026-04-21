@@ -1,9 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import {
-  SPECIALIZE_PILLARS,
-  specializeSectionIntro,
-} from "../content/specialize";
+import { SPECIALIZE_PILLARS } from "../content/specialize";
 
 function TravelPhotoTile({
   src,
@@ -34,7 +31,7 @@ const INTERVIEW_PHOTO_SRC = "/about/user-interviews-collage.png";
 export const metadata = {
   title: "About | Angela Yang",
   description:
-    "Product designer in Vancouver. B2B and complex systems—CRM, backend and government platforms, multi-role admin UX. Multi-segment research; ownership with engineering, PMs, and clients.",
+    "Product Designer focused on AI-driven and B2B SaaS—complex systems, multi-role workflows, design systems on mobile and web. Multi-segment research; leads cross-functional teams to ship high-impact features.",
 };
 
 export default function AboutPage() {
@@ -68,21 +65,11 @@ export default function AboutPage() {
 
             <div className="flex min-w-0 flex-col gap-5 text-base leading-relaxed text-zinc-300 sm:text-lg">
               <p className="font-medium text-zinc-100">
-                I specialize in{" "}
-                <span className="text-zinc-100">
-                  B2B and complex systems product design
-                </span>
-                —backend platforms, government-scale services, and dense admin UX
-                where information architecture, multi-role flows, and edge cases
-                matter as much as craft. I pair that with{" "}
-                <span className="text-zinc-100">
-                  cross-audience research
-                </span>{" "}
-                and{" "}
-                <span className="text-zinc-100">
-                  end-to-end ownership
-                </span>{" "}
-                with engineers, PMs, and clients.
+                Product Designer focused on AI-driven and B2B SaaS products,
+                designing complex systems, multi-role workflows, and scalable
+                design systems across mobile and web. Strong in multi-segment
+                user research and comfortable leading cross-functional teams to
+                drive product decisions and deliver high-impact features.
               </p>
               <p>
                 Currently a Product Designer at MINA AI (SF, remote), where
@@ -101,16 +88,13 @@ export default function AboutPage() {
                 and APIs show up in the UI.
               </p>
               <p>
-                I care about research that surfaces the real job to be done,
-                systems that keep quality sustainable, and prototypes that align
-                engineering and stakeholders. I use tools like Claude, Lovart,
-                Framer, and Cursor to close the gap between idea and production.
+                I care about systems that keep quality sustainable and
+                prototypes that make intent concrete early. I use tools like
+                Claude, Lovart, Framer, and Cursor to close the gap between idea
+                and production.
               </p>
               <p>
-                Based in Vancouver, BC. Open to roles where design owns complex
-                product surfaces and partners tightly with product and
-                engineering—especially enterprise, gov-tech, or multi-sided
-                platforms.
+                Based in Vancouver, BC. Open to relocate, remote, or hybrid.
               </p>
             </div>
           </div>
@@ -126,9 +110,6 @@ export default function AboutPage() {
           >
             What I specialize in
           </h2>
-          <p className="mt-5 max-w-3xl text-base leading-relaxed text-zinc-400 sm:text-lg">
-            {specializeSectionIntro}
-          </p>
           <div className="mt-10 space-y-10 max-w-3xl">
             {SPECIALIZE_PILLARS.map((pillar) => (
               <div key={pillar.title}>
