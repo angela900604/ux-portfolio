@@ -79,18 +79,19 @@ export default function AdmissionHubCaseStudy() {
     <article className="min-h-screen bg-[#F5F3EF] text-[#4A4A4A]">
       <header className="border-b border-[#E0D9CE]">
         <CaseStudyHeroFullBleed
+          imagePlacement="below-meta"
           imageSrc={AH_ASSET("what-i-did-hero.png")}
           imageAlt="Admission Hub — digital marketing and content"
           imageClassName="object-cover object-center"
           eyebrow={
-            <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-white/80">
+            <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-[#7A7A7A]">
               <span>Digital Marketing</span>
-              <span className="text-white/45">·</span>
+              <span className="text-[#B0B0B0]">·</span>
               <span>Content + Growth</span>
             </div>
           }
           title={
-            <h1 className="mt-5 max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl">
+            <h1 className="mt-5 max-w-4xl text-4xl font-semibold tracking-tight text-[#2C3E50] sm:text-5xl md:text-6xl">
               Admission Hub
             </h1>
           }

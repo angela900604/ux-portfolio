@@ -106,26 +106,29 @@ export default function MomiAnimalHealthCaseStudy() {
     <article className="min-h-screen bg-[#F5F3EF] text-[#4A4A4A]">
       <header className="border-b border-[#E0D9CE]">
         <CaseStudyHeroFullBleed
+          imagePlacement="below-meta"
           imageSrc={MOMI_ASSET("pet-expo-wall-display.png")}
           imageAlt="MOMI Animal Health — rabbit care brand marketing"
           imageClassName="object-cover object-center"
           eyebrow={
-            <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-white/80">
+            <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-[#7A7A7A]">
               <span>Digital Marketing</span>
-              <span className="text-white/45">·</span>
+              <span className="text-[#B0B0B0]">·</span>
               <span>Content + Growth</span>
             </div>
           }
           title={
-            <h1 className="mt-5 max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl">
+            <h1 className="mt-5 max-w-4xl text-4xl font-semibold tracking-tight text-[#2C3E50] sm:text-5xl md:text-6xl">
               MOMI Animal Health
             </h1>
           }
+          subtitle={
+            <p className="max-w-2xl text-xl leading-relaxed text-[#666]">
+              Helped drive +75% online sales growth in two months.
+            </p>
+          }
         >
-          <p className="max-w-2xl text-lg font-medium leading-relaxed text-[#2C3E50] sm:text-xl">
-            Helped drive +75% online sales growth in two months.
-          </p>
-          <dl className="mt-8 flex flex-wrap gap-x-10 gap-y-2 text-sm">
+          <dl className="flex flex-wrap gap-x-10 gap-y-2 text-sm">
             <div>
               <dt className="text-[#7A7A7A] uppercase tracking-wider">Role</dt>
               <dd className="text-[#4A4A4A]">
