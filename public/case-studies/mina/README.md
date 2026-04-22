@@ -22,3 +22,10 @@ Source files you provided:
 
 Once those files exist, the page at `/case-studies/ai-marketplace` will render them automatically.
 
+## Prototype video
+
+| File | Used for |
+|------|----------|
+| `mina-ai-prototype.mp4` | Core experience: one photo → AI item detection → listing draft (autoplay on case study) |
+| `mina-ai-prototype.webm` | Optional smaller source for Chrome/Firefox; add with e.g. `ffmpeg -i mina-ai-prototype.mp4 -c:v libvpx-vp9 -crf 32 -an mina-ai-prototype.webm` |
+
