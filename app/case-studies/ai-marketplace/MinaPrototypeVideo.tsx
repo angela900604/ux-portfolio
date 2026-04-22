@@ -15,13 +15,14 @@ export function MinaPrototypeVideo() {
           preload="metadata"
           aria-label="Screen recording: take one photo; AI detects how many items are in frame and drafts listings."
         >
-          <source
-            src="/case-studies/mina/mina-ai-prototype.webm"
-            type="video/webm"
-          />
+          {/* MP4 first (shipped); add mina-ai-prototype.webm above when available for lighter playback */}
           <source
             src="/case-studies/mina/mina-ai-prototype.mp4"
             type="video/mp4"
+          />
+          <source
+            src="/case-studies/mina/mina-ai-prototype.webm"
+            type="video/webm"
           />
         </video>
       </div>
