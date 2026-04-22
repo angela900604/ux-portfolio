@@ -25,10 +25,6 @@ export function ProblemPersonasBlock() {
           older adults who could not finish core tasks without a family member
           taking over the phone.
         </h2>
-        <p className="max-w-3xl text-sm leading-relaxed text-zinc-400">
-          Below: App Store evidence → interview layer → five personas (tap a card
-          for detail).
-        </p>
       </div>
 
       {/* Layer 1 — App Store */}
@@ -38,17 +34,8 @@ export function ProblemPersonasBlock() {
             Layer 1 · Where the problem showed up first
           </p>
           <h3 className="mt-2 text-zinc-100">
-            App Store reviews (Taiwan · ~Mar 2024–Mar 2025)
+            2.8★ App Store reviews (Taiwan · ~Mar 2024–Mar 2025)
           </h3>
-          <p className="mt-2 max-w-3xl text-sm leading-relaxed text-zinc-400">
-            The official MoF app sat around{" "}
-            <span className="font-medium text-zinc-200">2.8★</span>—not a vanity
-            metric, but a backlog of frustration in plain language. Three themes
-            drowned out everything else:{" "}
-            <span className="text-zinc-200">speed</span>,{" "}
-            <span className="text-zinc-200">findability</span>, and{" "}
-            <span className="text-zinc-200">older adults losing the thread</span>.
-          </p>
         </div>
 
         <div className="overflow-x-auto rounded-xl border border-zinc-800">
