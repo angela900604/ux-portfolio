@@ -354,26 +354,27 @@ export default function EInvoiceCaseStudy() {
             </p>
           }
         >
-          <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
-            <Image
-              src={HERO_BELOW_01.src}
-              alt={HERO_BELOW_01.alt}
-              width={1024}
-              height={571}
-              className="h-auto w-full object-cover"
-              sizes="(max-width: 768px) 100vw, 1080px"
-            />
-          </div>
-
-          <div className="mt-10 overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
-            <Image
-              src={HERO_BELOW_02.src}
-              alt={HERO_BELOW_02.alt}
-              width={1024}
-              height={552}
-              className="h-auto w-full object-cover"
-              sizes="(max-width: 768px) 100vw, 1080px"
-            />
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
+            <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+              <Image
+                src={HERO_BELOW_01.src}
+                alt={HERO_BELOW_01.alt}
+                width={1024}
+                height={571}
+                className="h-auto w-full object-cover"
+                sizes="(max-width: 640px) 100vw, 50vw"
+              />
+            </div>
+            <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+              <Image
+                src={HERO_BELOW_02.src}
+                alt={HERO_BELOW_02.alt}
+                width={1024}
+                height={552}
+                className="h-auto w-full object-cover"
+                sizes="(max-width: 640px) 100vw, 50vw"
+              />
+            </div>
           </div>
 
           <div className="mt-10">

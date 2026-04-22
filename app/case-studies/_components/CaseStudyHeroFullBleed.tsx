@@ -1,18 +1,33 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
 
+/** Matches {@link CaseStudyContentLayout} two-column shell (main + TOC width). */
+const CASE_STUDY_HERO_GRID =
+  "lg:grid lg:grid-cols-[minmax(0,1fr)_11.5rem] xl:grid-cols-[minmax(0,1fr)_12.75rem] lg:gap-8 xl:gap-10";
+
 /**
- * Same main-column width as {@link CaseStudyContentLayout}: `max-w-6xl` in the
- * first grid track, second track reserves TOC width (lg+) so hero title + hero
- * children align with the narrative column below.
+ * Overlay / below-meta title band: left edge matches narrative column; reserves
+ * TOC track so title aligns with body h1 column.
  */
-function HeroAlignedMainColumn({ children }: { children: ReactNode }) {
+function HeroTitleInGrid({ children }: { children: ReactNode }) {
   return (
-    <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_11.5rem] xl:grid-cols-[minmax(0,1fr)_12.75rem] lg:gap-8 xl:gap-10">
+    <div className={CASE_STUDY_HERO_GRID}>
       <div className="case-study-prose min-w-0 w-full max-w-6xl overflow-x-hidden">
         {children}
       </div>
       <aside className="hidden min-w-0 lg:block" aria-hidden />
+    </div>
+  );
+}
+
+/**
+ * Below-fold hero block (at-a-glance, scan summary, etc.): spans main + gap + TOC
+ * column so right edge lines up with the sticky sidebar below.
+ */
+function HeroBelowFoldFullGrid({ children }: { children: ReactNode }) {
+  return (
+    <div className={CASE_STUDY_HERO_GRID}>
+      <div className="min-w-0 lg:col-span-2">{children}</div>
     </div>
   );
 }
@@ -88,7 +103,7 @@ function BelowMetaImageContained({
   return (
     <div className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 bg-[#F5F3EF]">
       <div className="mx-auto max-w-[1440px] px-6 py-10 sm:px-[100px] sm:py-12">
-        <HeroAlignedMainColumn>
+        <HeroBelowFoldFullGrid>
           <div className="flex justify-center">
             <Image
               src={imageSrc}
@@ -100,7 +115,7 @@ function BelowMetaImageContained({
               sizes="(max-width: 1200px) 100vw, 1200px"
             />
           </div>
-        </HeroAlignedMainColumn>
+        </HeroBelowFoldFullGrid>
       </div>
     </div>
   );
@@ -128,15 +143,15 @@ export function CaseStudyHeroFullBleed({
     return (
       <>
         <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] pt-14 pb-6 sm:pt-20 sm:pb-8">
-          <HeroAlignedMainColumn>
+          <HeroTitleInGrid>
             {eyebrow}
             {title}
             {subtitle ? <div className="mt-5 max-w-3xl">{subtitle}</div> : null}
-          </HeroAlignedMainColumn>
+          </HeroTitleInGrid>
         </div>
         {children ? (
           <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] pb-10 sm:pb-12">
-            <HeroAlignedMainColumn>{children}</HeroAlignedMainColumn>
+            <HeroBelowFoldFullGrid>{children}</HeroBelowFoldFullGrid>
           </div>
         ) : null}
         {belowMetaImageMode === "contain" ? (
@@ -179,20 +194,20 @@ export function CaseStudyHeroFullBleed({
           />
           <div className="absolute inset-0 flex flex-col justify-end px-6 pb-14 pt-28 sm:px-[100px] sm:pb-20 sm:pt-36">
             <div className="mx-auto w-full max-w-[1440px]">
-              <HeroAlignedMainColumn>
+              <HeroTitleInGrid>
                 {eyebrow}
                 {title}
                 {subtitle ? (
                   <div className="mt-5 max-w-3xl">{subtitle}</div>
                 ) : null}
-              </HeroAlignedMainColumn>
+              </HeroTitleInGrid>
             </div>
           </div>
         </div>
       </div>
       {children ? (
         <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-12 sm:py-16">
-          <HeroAlignedMainColumn>{children}</HeroAlignedMainColumn>
+          <HeroBelowFoldFullGrid>{children}</HeroBelowFoldFullGrid>
         </div>
       ) : null}
     </>
