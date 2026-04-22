@@ -34,7 +34,6 @@ const MINA_JOURNEY_IDS = ["engineering-proposal", "design-principles"] as const;
 
 const MINA_TOC = [
   { id: "why-this-exists", label: "Opportunity" },
-  { id: "pain-we-solve", label: "The pain we solve" },
   { id: "outcome-impact", label: "Outcome & impact" },
   { id: "core-experience", label: "Core experience" },
   { id: "design-journey", label: "Design journey" },
@@ -151,28 +150,23 @@ export default function AiMarketplaceCaseStudy() {
                 SF parents burn through baby gear fast, but resale is still too slow
                 and too much admin
               </h2>
+              <p className="max-w-3xl text-zinc-300 leading-relaxed">
+                Classic resale asks parents to behave like shops—listings, DMs, pickup
+                logistics. The pain is the attention tax every time a stage ends and a
+                new pile appears.
+              </p>
             </div>
-            <div className="relative min-h-[min(52vw,22rem)] w-full min-w-0 overflow-hidden rounded-xl border border-zinc-800/50 bg-zinc-900/40 sm:min-h-[20rem] lg:min-h-0">
+            <div className="min-w-0 overflow-hidden rounded-xl border border-zinc-800/50 bg-zinc-900/40">
               <Image
                 src="/case-studies/mina/community-collage.jpg"
                 alt="MINA community event: signage, parents trying the app, and team at a local gathering"
-                fill
-                className="object-cover object-center"
-                sizes="(max-width: 1024px) 100vw, 360px"
+                width={768}
+                height={1024}
+                className="h-auto w-full object-contain"
+                sizes="(max-width: 1024px) 100vw, min(480px, 45vw)"
               />
             </div>
           </div>
-        </CaseStudyInViewSection>
-
-        <CaseStudyInViewSection
-          id="pain-we-solve"
-          className="scroll-mt-28 sm:scroll-mt-32"
-        >
-          <h2 className="max-w-3xl text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
-            Classic resale asks parents to behave like shops—listings, DMs, pickup
-            logistics. The pain is the attention tax every time a stage ends and a
-            new pile appears.
-          </h2>
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection
