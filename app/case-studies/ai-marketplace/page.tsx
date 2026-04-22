@@ -26,17 +26,18 @@ const AT_A_GLANCE_ITEMS = [
 ] as const;
 
 const MINA_SCAN_SUMMARY = [
-  "Seller research (jobs-to-be-done, not just “this button is bad”) plus PostHog funnel drop-offs → listing & checkout redesign; listing completion up ~30%.",
-  "Zero-to-one iOS marketplace for SF parents—live on the App Store (Canada); flows and metrics expand as we ship.",
+  "Zero-to-one iOS marketplace: AI-native listing and chat for SF parent communities—community-first GTM, case study grows as we ship.",
+  "Live on the App Store (Canada); flows and metrics will expand here.",
 ] as const;
 
 const MINA_JOURNEY_IDS = ["engineering-proposal", "design-principles"] as const;
 
 const MINA_TOC = [
-  { id: "opportunity", label: "Opportunity" },
+  { id: "why-this-exists", label: "Opportunity" },
   { id: "pain-we-solve", label: "The pain we solve" },
   { id: "product-strategy", label: "Product strategy" },
   { id: "core-experience", label: "Core experience" },
+  { id: "outcome-impact", label: "Outcome & impact" },
   { id: "design-journey", label: "Design journey" },
   { id: "engineering-proposal", label: "Proposal & alignment" },
   { id: "design-principles", label: "Design principles" },
@@ -46,7 +47,7 @@ const MINA_TOC = [
 export const metadata = {
   title: "MINA · AI Marketplace for Parents (Coming Soon) | Angela Yang",
   description:
-    "MINA AI: seller research + PostHog funnels informed listing & checkout redesign (~30% listing completion). SF parent marketplace—one-photo AI listings, agent chat, App Store (Canada).",
+    "Zero-to-one concept: a San Francisco mom-first marketplace for fast-turnover baby gear—AI agent chat, one-photo multi-listing, and seller-led coordination to cut listing time and buyer management.",
 };
 
 export default function AiMarketplaceCaseStudy() {
@@ -71,18 +72,15 @@ export default function AiMarketplaceCaseStudy() {
             </div>
           }
           title={
-            <h1 className="mt-5 max-w-4xl text-2xl font-semibold tracking-tight text-white sm:text-3xl md:text-4xl lg:text-[2.65rem] lg:leading-[1.12]">
-              MINA — I researched sellers for real jobs-to-be-done (e.g. “sell baby
-              gear fast without living in the app”), not just surface complaints like
-              “this button is bad.” I paired that with PostHog (where people dropped
-              most), redesigned listing &amp; checkout—and listing completion rose
-              ~30%.
+            <h1 className="mt-5 max-w-4xl text-3xl font-semibold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
+              MINA — an AI-native marketplace for parents who outgrow baby gear
+              overnight
             </h1>
           }
           subtitle={
             <p className="text-lg leading-relaxed text-zinc-200 sm:text-xl">
-              Zero-to-one AI marketplace with San Francisco parent communities: less
-              waste, reclaimed space, and resale that feels like a conversation—not a
+              Starting from zero with San Francisco mom communities: reduce waste,
+              reclaim space, and make resale feel as light as a conversation—not a
               second job.
             </p>
           }
@@ -101,7 +99,7 @@ export default function AiMarketplaceCaseStudy() {
             <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
               Impact summary
             </p>
-            <div className="grid gap-3 md:grid-cols-3 md:max-w-4xl">
+            <div className="grid gap-3 sm:grid-cols-2 sm:max-w-2xl">
               <div className="rounded-xl border border-zinc-800/90 bg-zinc-900/50 px-4 py-3">
                 <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">
                   Live product
@@ -118,14 +116,6 @@ export default function AiMarketplaceCaseStudy() {
                   Resale marketplace for parents
                 </p>
               </div>
-              <div className="rounded-xl border border-emerald-500/25 bg-emerald-500/10 px-4 py-3 sm:col-span-1">
-                <p className="text-xs font-medium uppercase tracking-wider text-emerald-300/90">
-                  Outcome
-                </p>
-                <p className="mt-1 text-sm font-medium text-zinc-100">
-                  ~30% higher listing completion after research + PostHog-led flow work
-                </p>
-              </div>
             </div>
           </div>
 
@@ -134,7 +124,7 @@ export default function AiMarketplaceCaseStudy() {
           </div>
 
           <a
-            href="#opportunity"
+            href="#why-this-exists"
             className="mt-8 inline-flex items-center gap-2 rounded-full border border-violet-500/35 bg-violet-500/10 px-4 py-2.5 text-sm font-medium text-violet-200 transition hover:border-violet-400/45 hover:bg-violet-500/15"
           >
             Jump to story
@@ -175,7 +165,7 @@ export default function AiMarketplaceCaseStudy() {
 
       <CaseStudyContentLayout toc={MINA_TOC}>
         <CaseStudyInViewSection
-          id="opportunity"
+          id="why-this-exists"
           className="scroll-mt-28 sm:scroll-mt-32"
         >
           <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_min(18rem,32vw)] lg:items-stretch lg:gap-10 xl:grid-cols-[minmax(0,1fr)_22.5rem] xl:gap-12">
@@ -183,23 +173,17 @@ export default function AiMarketplaceCaseStudy() {
               <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
                 Opportunity
               </span>
-              <h2 className="text-zinc-100">
-                The problem: resale is built for patient sellers, not parents
-                drowning in short-use baby gear—SF communities have demand, but the
-                experience is still too slow and too much like running a shop
+              <h2 className="max-w-3xl text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
+                SF parents burn through baby gear fast, but resale is still too
+                slow and too much admin—so great items stall in closets instead of
+                reaching the next family.
               </h2>
               <p className="text-zinc-300 leading-relaxed">
-                The opportunity came from{" "}
-                <span className="text-zinc-100">
-                  dense, trust-rich mom networks in San Francisco
-                </span>
-                —where gear turns over fast, storage hurts, and parents already help
-                each other offline. Generic marketplaces optimize for scale; here the
-                wedge is{" "}
-                <span className="text-zinc-100">
-                  speed + trust + AI-assisted listing
-                </span>{" "}
-                so circulation keeps up with how quickly closets change.
+                The opening came from{" "}
+                <span className="text-zinc-100">dense, trust-based mom networks</span>{" "}
+                where demand is real—if we could remove the listing and coordination
+                tax with an{" "}
+                <span className="text-zinc-100">AI-first path</span>.
               </p>
             </div>
             <div className="relative min-h-[min(52vw,22rem)] w-full min-w-0 overflow-hidden rounded-xl border border-zinc-800/50 bg-zinc-900/40 sm:min-h-[20rem] lg:min-h-0">
@@ -311,8 +295,6 @@ export default function AiMarketplaceCaseStudy() {
             </p>
           </div>
 
-          <MinaPrototypeVideo />
-
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900/35 p-5">
               <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500">
@@ -333,6 +315,26 @@ export default function AiMarketplaceCaseStudy() {
               </p>
             </div>
           </div>
+        </CaseStudyInViewSection>
+
+        <CaseStudyInViewSection
+          id="outcome-impact"
+          className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
+        >
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            Outcome &amp; impact
+          </span>
+          <h2 className="max-w-4xl text-lg font-semibold leading-snug tracking-tight text-zinc-100 sm:text-xl md:text-2xl md:leading-snug">
+            I researched sellers on MINA to understand the jobs they actually want
+            done—for example, &quot;I want to sell baby gear we don&apos;t need,
+            quickly, without spending a ton of time&quot;—not just surface feedback
+            like &quot;this button is hard to use.&quot; I combined that with PostHog
+            (where the funnel lost the most people), redesigned checkout and
+            listing, and{" "}
+            <span className="text-emerald-200/95">listing completion rose ~30%</span>
+            .
+          </h2>
+          <MinaPrototypeVideo />
         </CaseStudyInViewSection>
 
         <DesignJourneyCollapsible

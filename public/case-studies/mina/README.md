@@ -1,4 +1,15 @@
-# MINA Parenting Copilot — images
+# MINA case study assets
+
+## Video
+
+| File | Notes |
+|------|--------|
+| `mina-ai-prototype.mp4` | Prototype: one photo → AI item count → listings (autoplay on case study page). |
+| `mina-ai-prototype.webm` | **Optional** — add for smaller files; the page lists WebM first, then MP4. |
+
+---
+
+# MINA Parenting Copilot — images (legacy notes)
 
 This case study page expects these images in this folder:
 
@@ -21,11 +32,4 @@ Source files you provided:
 - `Flow 2- Ask follow up question-ad30c7a3-da4f-417e-b08a-afc135abb5c7.png` → `flow-2.png`
 
 Once those files exist, the page at `/case-studies/ai-marketplace` will render them automatically.
-
-## Prototype video
-
-| File | Used for |
-|------|----------|
-| `mina-ai-prototype.mp4` | Core experience: one photo → AI item detection → listing draft (autoplay on case study) |
-| `mina-ai-prototype.webm` | Optional smaller source for Chrome/Firefox; add with e.g. `ffmpeg -i mina-ai-prototype.mp4 -c:v libvpx-vp9 -crf 32 -an mina-ai-prototype.webm` |
 

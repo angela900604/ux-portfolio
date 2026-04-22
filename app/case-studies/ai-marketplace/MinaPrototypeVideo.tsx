@@ -1,19 +1,19 @@
 /**
- * One-photo listing prototype — autoplay for inline demo (muted + playsInline for iOS).
- * WebM optional: add mina-ai-prototype.webm alongside the MP4 for smaller files on Chrome/Firefox.
+ * One-photo → AI item detection → listing prototype (hero clip for case study).
+ * Optional WebM: add `mina-ai-prototype.webm` beside the MP4; browsers skip missing sources.
  */
 export function MinaPrototypeVideo() {
   return (
-    <figure className="mx-auto w-full max-w-3xl">
-      <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.04)]">
+    <figure className="mt-8 w-full min-w-0">
+      <div className="overflow-hidden rounded-xl border border-zinc-800/90 bg-zinc-950 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.04)]">
         <video
-          className="h-auto w-full max-h-[min(85vh,720px)] object-contain"
+          className="block h-auto w-full object-contain"
           autoPlay
           loop
           muted
           playsInline
           preload="metadata"
-          aria-label="Prototype: one photo is analyzed to detect multiple items and draft listings"
+          aria-label="Screen recording: take one photo; AI detects how many items are in frame and drafts listings."
         >
           <source
             src="/case-studies/mina/mina-ai-prototype.webm"
@@ -25,8 +25,9 @@ export function MinaPrototypeVideo() {
           />
         </video>
       </div>
-      <figcaption className="mt-3 text-center text-xs leading-relaxed text-zinc-500 sm:text-left">
-        Prototype flow: one photo → AI estimates items in frame → listing drafts you can edit before publishing.
+      <figcaption className="mt-3 text-sm leading-relaxed text-zinc-500">
+        Prototype: one photo → AI analyzes item count in-frame → generated
+        listings—minimal taps for busy parents.
       </figcaption>
     </figure>
   );
