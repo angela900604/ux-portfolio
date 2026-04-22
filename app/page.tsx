@@ -114,7 +114,7 @@ export default function Home() {
                   width={E_INVOICE_FLAGSHIP_COVER.width}
                   height={E_INVOICE_FLAGSHIP_COVER.height}
                   className="h-auto w-full max-w-full opacity-95 transition duration-500 ease-out group-hover:scale-[1.01]"
-                  sizes="(max-width: 1680px) 100vw, 1200px"
+                  sizes="(max-width: 1480px) 100vw, 1200px"
                   priority
                 />
               </div>

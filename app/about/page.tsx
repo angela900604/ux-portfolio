@@ -21,7 +21,7 @@ function TravelPhotoTile({
         alt={alt}
         fill
         className="object-cover"
-        sizes="(max-width: 1024px) 100vw, (max-width: 1680px) 50vw, 320px"
+        sizes="(max-width: 1024px) 100vw, (max-width: 1480px) 50vw, 320px"
       />
     </div>
   );

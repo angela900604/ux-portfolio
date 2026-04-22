@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SITE_SHELL_CONTAINER } from "@/lib/site-shell";
+import { CASE_STUDY_BODY_GRID, SITE_SHELL_CONTAINER } from "@/lib/site-shell";
 
 export const metadata = {
   title: "Resume | Angela Yang",
@@ -43,7 +43,7 @@ export default function ResumePage() {
   return (
     <div className="min-h-screen bg-[#FCFAF7] text-stone-900">
       <div className={`${SITE_SHELL_CONTAINER} py-16 sm:py-24`}>
-        <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_11.5rem] lg:gap-10 xl:grid-cols-[minmax(0,1fr)_12.5rem] xl:gap-12">
+        <div className={CASE_STUDY_BODY_GRID}>
           <div className="min-w-0">
             <p className="mb-3 text-sm font-medium uppercase tracking-widest text-stone-500">
               Resume

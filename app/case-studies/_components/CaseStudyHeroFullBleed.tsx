@@ -1,11 +1,6 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
-import {
-  CASE_STUDY_BODY_GRID,
-  SITE_GUTTER_CLASS,
-  SITE_MAX_WIDTH_CLASS,
-  SITE_SHELL_CONTAINER,
-} from "@/lib/site-shell";
+import { CASE_STUDY_BODY_GRID, SITE_SHELL_CONTAINER } from "@/lib/site-shell";
 
 /**
  * Overlay / below-meta title band: left edge matches narrative column; reserves
@@ -194,10 +189,8 @@ export function CaseStudyHeroFullBleed({
             className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/82 to-zinc-950/55"
             aria-hidden
           />
-          <div
-            className={`absolute inset-0 flex flex-col justify-end ${SITE_GUTTER_CLASS} pb-14 pt-28 sm:pb-20 sm:pt-36`}
-          >
-            <div className={`mx-auto w-full ${SITE_MAX_WIDTH_CLASS}`}>
+          <div className="absolute inset-0 flex flex-col justify-end pb-14 pt-28 sm:pb-20 sm:pt-36">
+            <div className={SITE_SHELL_CONTAINER}>
               <HeroTitleInGrid>
                 {eyebrow}
                 {title}

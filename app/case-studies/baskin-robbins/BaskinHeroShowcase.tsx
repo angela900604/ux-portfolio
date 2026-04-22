@@ -32,7 +32,7 @@ export function BaskinHeroShowcase({
               alt={primary.alt}
               fill
               className="object-cover"
-              sizes="(max-width: 1680px) 100vw, 1200px"
+              sizes="(max-width: 1480px) 100vw, 1200px"
               priority
             />
           </div>
