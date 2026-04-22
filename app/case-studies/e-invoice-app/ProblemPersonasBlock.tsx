@@ -116,12 +116,8 @@ export function ProblemPersonasBlock() {
         <div className="space-y-5">
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-emerald-400/90">
-              Layer 2 · What interviews layered on top
+              Layer 2 · Interviews across five audiences—including low vision
             </p>
-            <h3 className="mt-2 text-zinc-100">
-              Moderated interviews across five audiences—including low vision—from
-              first open to where each group stalls
-            </h3>
           </div>
 
           <div className="overflow-x-auto rounded-xl border border-zinc-800">
@@ -154,7 +150,7 @@ export function ProblemPersonasBlock() {
                   Sharpest pain
                 </th>
                 <td className="px-3 py-3.5 text-zinc-400">
-                  Slow loads, noisy UI, hunt for wins
+                  Slow loads; hard to find the features you need
                 </td>
                 <td className="px-3 py-3.5 text-zinc-400">
                   Forgot passwords / MoF verification codes
