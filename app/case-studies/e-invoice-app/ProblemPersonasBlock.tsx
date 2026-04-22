@@ -18,7 +18,7 @@ export function ProblemPersonasBlock() {
           02 · The problem
         </span>
         <h2 className="max-w-3xl text-zinc-100">
-          The pain was functional, not cosmetic: the official app stayed near{" "}
+          The official app stayed near{" "}
           <span className="font-semibold tabular-nums text-zinc-50">~2.8★</span>{" "}
           while reviews and interviews kept circling the same failures—slow launch
           at checkout, prize and carrier flows buried under jargon-like labels, and
