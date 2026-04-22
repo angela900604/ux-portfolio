@@ -52,7 +52,7 @@ export function WideFigure({
         className={`h-auto w-full max-w-full object-contain ${
           frame === "white" ? "bg-white" : ""
         }`}
-        sizes="(max-width: 1440px) min(100vw, 72rem), 1152px"
+        sizes="(max-width: 1680px) min(100vw, 72rem), 1280px"
       />
     </ImageLightbox>
   );

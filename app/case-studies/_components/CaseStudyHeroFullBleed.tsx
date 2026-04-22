@@ -14,7 +14,7 @@ import {
 function HeroTitleInGrid({ children }: { children: ReactNode }) {
   return (
     <div className={CASE_STUDY_BODY_GRID}>
-      <div className="case-study-prose min-w-0 w-full max-w-6xl overflow-x-hidden">
+      <div className="case-study-prose min-w-0 w-full overflow-x-hidden">
         {children}
       </div>
       <aside className="hidden min-w-0 lg:block" aria-hidden />

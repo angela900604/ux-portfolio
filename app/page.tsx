@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { SITE_SHELL_CONTAINER } from "@/lib/site-shell";
 import { FadeInSection } from "./components/FadeInSection";
 import { HeroWithBubble } from "./components/HeroWithBubble";
 import { PortfolioFocus } from "./components/PortfolioFocus";
@@ -92,14 +93,14 @@ export default function Home() {
     <div className="min-h-screen bg-zinc-950 text-zinc-100">
       {/* Hero */}
       <section className="border-b border-zinc-800">
-        <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-14 sm:py-20">
+        <div className={`${SITE_SHELL_CONTAINER} py-14 sm:py-20`}>
           <HeroWithBubble />
         </div>
       </section>
 
       {/* Selected projects — no visible section blurb (sr-only for outline) */}
       <section id="featured" className="border-b border-zinc-800">
-        <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-16 sm:py-20">
+        <div className={`${SITE_SHELL_CONTAINER} py-16 sm:py-20`}>
           <h2 className="sr-only">Selected projects</h2>
           <FadeInSection delay={0.05}>
             <Link
@@ -113,7 +114,7 @@ export default function Home() {
                   width={E_INVOICE_FLAGSHIP_COVER.width}
                   height={E_INVOICE_FLAGSHIP_COVER.height}
                   className="h-auto w-full max-w-full opacity-95 transition duration-500 ease-out group-hover:scale-[1.01]"
-                  sizes="(max-width: 1440px) 100vw, 1080px"
+                  sizes="(max-width: 1680px) 100vw, 1200px"
                   priority
                 />
               </div>
@@ -182,7 +183,7 @@ export default function Home() {
 
       {/* Brand & storytelling — no visible section blurb */}
       <section id="selected-work" className="border-b border-zinc-800">
-        <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-16 sm:py-20">
+        <div className={`${SITE_SHELL_CONTAINER} py-16 sm:py-20`}>
           <h2 className="sr-only">Brand &amp; storytelling</h2>
           <ul className="grid items-stretch gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {ADJACENT_WORK.map((item, i) => (
@@ -234,7 +235,7 @@ export default function Home() {
 
       {/* Contact */}
       <section id="contact" className="border-b border-zinc-800">
-        <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-16 sm:py-20">
+        <div className={`${SITE_SHELL_CONTAINER} py-16 sm:py-20`}>
           <FadeInSection>
             <h2 className="text-2xl font-semibold tracking-tight text-zinc-100 sm:text-3xl md:text-[2rem]">
               Let&apos;s talk

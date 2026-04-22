@@ -1,3 +1,4 @@
+import { SITE_SHELL_CONTAINER } from "@/lib/site-shell";
 import { FadeInSection } from "./FadeInSection";
 import {
   SPECIALIZE_PILLARS,
@@ -10,7 +11,7 @@ export function PortfolioFocus() {
       className="border-b border-zinc-800"
       aria-labelledby="portfolio-focus-heading"
     >
-      <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-12 sm:py-16">
+      <div className={`${SITE_SHELL_CONTAINER} py-12 sm:py-16`}>
         <FadeInSection>
           <h2
             id="portfolio-focus-heading"

@@ -88,7 +88,7 @@ export default function RootLayout({
                     <span className="sm:text-left">
                       © {new Date().getFullYear()} Angela Yang
                     </span>
-                    <span className="text-[11px] leading-relaxed text-zinc-600 sm:text-center">
+                    <span className="sm:text-center">
                       This website was vibe-coded by me.
                     </span>
                     <span className="sm:text-right">

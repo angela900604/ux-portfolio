@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { SITE_SHELL_CONTAINER } from "@/lib/site-shell";
 import { SPECIALIZE_PILLARS } from "../content/specialize";
 
 function TravelPhotoTile({
@@ -20,7 +21,7 @@ function TravelPhotoTile({
         alt={alt}
         fill
         className="object-cover"
-        sizes="(max-width: 1024px) 100vw, (max-width: 1440px) 50vw, 320px"
+        sizes="(max-width: 1024px) 100vw, (max-width: 1680px) 50vw, 320px"
       />
     </div>
   );
@@ -37,7 +38,7 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-100">
-      <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-16 sm:py-24">
+      <div className={`${SITE_SHELL_CONTAINER} py-16 sm:py-24`}>
         <p className="text-xs font-medium uppercase tracking-widest text-zinc-500 mb-4">
           About
         </p>

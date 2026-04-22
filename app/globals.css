@@ -72,6 +72,20 @@ html.soft-cursor :disabled:hover {
   line-height: inherit !important;
 }
 
+/* Narrative uses full main column; ~16px to TOC comes from grid gap (see lib/site-shell). */
+.case-study-prose .max-w-xl,
+.case-study-prose .max-w-2xl,
+.case-study-prose .max-w-3xl,
+.case-study-prose .max-w-4xl {
+  max-width: 100% !important;
+}
+
+@media (min-width: 640px) {
+  .case-study-prose .sm\:max-w-2xl {
+    max-width: 100% !important;
+  }
+}
+
 .case-study-prose .cs-data-viz .text-sm {
   font-size: 0.875rem !important;
   line-height: 1.25rem !important;

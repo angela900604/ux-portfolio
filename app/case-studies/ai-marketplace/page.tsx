@@ -41,7 +41,6 @@ const MINA_TOC = [
   { id: "design-journey", label: "Design journey" },
   { id: "engineering-proposal", label: "Proposal & alignment" },
   { id: "design-principles", label: "Design principles" },
-  { id: "coming-soon", label: "Full case study (soon)" },
 ] as const;
 
 export const metadata = {
@@ -455,25 +454,6 @@ export default function AiMarketplaceCaseStudy() {
           </ul>
         </CaseStudyInViewSection>
         </DesignJourneyCollapsible>
-
-        <CaseStudyInViewSection
-          id="coming-soon"
-          className="scroll-mt-28 rounded-2xl border border-dashed border-zinc-700 bg-zinc-900/30 p-8 sm:p-10 sm:scroll-mt-32"
-        >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            What will appear here later
-          </span>
-          <h2 className="mt-2 text-zinc-100">
-            Full case study — ongoing · coming soon
-          </h2>
-          <p className="mt-4 text-zinc-400 leading-relaxed">
-            The next version of this page will include end-to-end flows, research
-            snapshots from mom communities, prototype learnings, and UI captures—
-            <span className="text-zinc-300">when the project is ready to show</span>.
-            If you are reviewing this in recruiting: the narrative above is the
-            current product direction; visuals are still in progress.
-          </p>
-        </CaseStudyInViewSection>
 
         <CaseStudyInViewSection className="border-t border-zinc-800 pt-12 space-y-8">
           <CaseStudyPrevNext currentSlug="ai-marketplace" />
