@@ -119,13 +119,9 @@ export function ProblemPersonasBlock() {
               Layer 2 · What interviews layered on top
             </p>
             <h3 className="mt-2 text-zinc-100">
-              Same jobs, different constraints—one comparison table
+              Moderated interviews across five audiences—including low vision—from
+              first open to where each group stalls
             </h3>
-            <p className="mt-2 max-w-3xl text-sm leading-relaxed text-zinc-400">
-              Five audience slices (including visually impaired participants) mapped
-              to a single question: what happens the moment the app opens, and what
-              breaks next?
-            </p>
           </div>
 
           <div className="overflow-x-auto rounded-xl border border-zinc-800">
@@ -204,15 +200,22 @@ export function ProblemPersonasBlock() {
 
         <div className="rounded-xl border border-emerald-500/25 bg-emerald-500/[0.06] px-5 py-4 text-sm leading-relaxed text-zinc-300">
           <p className="font-medium text-emerald-200/95">Shared truth</p>
-          <p className="mt-2">
-            Everyone converged on the same entry behavior:{" "}
-            <span className="text-zinc-100">scanning is the front door</span>. The
-            hardest product tension was the opposite:{" "}
+          <p className="mt-2 text-zinc-100">
+            Everyone converged on the same entry behavior: show the carrier barcode
+            and scan paper invoices.
+          </p>
+          <p className="mt-3">
+            On the home screen,{" "}
             <span className="text-zinc-100">
-              younger cohorts wanted density; silver and low-vision cohorts needed
-              air
+              older and low-vision groups wanted fewer items, more whitespace, and
+              vivid color for fast recognition
             </span>
-            —same home screen, incompatible defaults.
+            —while{" "}
+            <span className="text-zinc-100">
+              younger groups wanted a denser dashboard—more modules, promos, and
+              shortcuts—and a cooler, minimal palette
+            </span>
+            . One layout; two incompatible defaults.
           </p>
         </div>
 
