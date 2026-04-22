@@ -57,6 +57,9 @@ const HERO_DEMO_IMAGES = [
 ] as const;
 
 const BASKIN_JOURNEY_IDS = [
+  "team-objectives",
+  "role-deliverables",
+  "project-outcomes",
   "design-process",
   "requirement-interviews",
   "function-difference",
@@ -160,11 +163,11 @@ const sectionScroll =
 
 const BASKIN_TOC = [
   { id: "project-background", label: "Background" },
+  { id: "final-product", label: "Final product" },
+  { id: "design-journey", label: "Design journey" },
   { id: "team-objectives", label: "Team objectives" },
   { id: "role-deliverables", label: "Role & deliverables" },
   { id: "project-outcomes", label: "Project outcomes" },
-  { id: "final-product", label: "Final product" },
-  { id: "design-journey", label: "Design journey" },
   { id: "design-process", label: "Design process" },
   { id: "requirement-interviews", label: "Requirement interviews" },
   { id: "function-difference", label: "Functional map" },
@@ -209,30 +212,6 @@ export default function BaskinRobbinsCaseStudy() {
 
           <div className="mt-8">
             <CaseStudyAtAGlance items={AT_A_GLANCE_ITEMS} accent="baskin" />
-          </div>
-
-          <div className="mt-8 space-y-3">
-            <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-              Impact summary
-            </p>
-            <div className="grid gap-3 sm:grid-cols-2 sm:max-w-2xl">
-              <div className="rounded-xl border border-zinc-800/90 bg-zinc-900/50 px-4 py-3">
-                <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">
-                  Launched
-                </p>
-                <p className="mt-1 text-sm font-medium text-zinc-100">
-                  Phase-one MVP · Sept 2025
-                </p>
-              </div>
-              <div className="rounded-xl border border-zinc-800/90 bg-zinc-900/50 px-4 py-3">
-                <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">
-                  App Store (Taiwan)
-                </p>
-                <p className="mt-1 text-sm font-medium text-zinc-100">
-                  5★ user reviews at launch
-                </p>
-              </div>
-            </div>
           </div>
 
           <div className="mt-8">
@@ -287,6 +266,32 @@ export default function BaskinRobbinsCaseStudy() {
           </div>
         </CaseStudyInViewSection>
 
+        <CaseStudyInViewSection
+          id="final-product"
+          className={`space-y-10 ${sectionScroll}`}
+        >
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            Final product
+          </span>
+          <h2 className="text-zinc-100">
+            Points wallet, in-store visit check-in, and digital e-vouchers—one
+            membership app so BR31 Taiwan members can earn, redeem, and track perks
+            on the phone
+          </h2>
+          <p className="max-w-3xl text-zinc-300 leading-relaxed">
+            The shipped MVP centers on a clear points balance, flows for collecting
+            stamps when you visit a shop, and ticket-style digital coupons—paired with
+            sign-in, catalog, and store locator so the whole loyalty loop stays in
+            one place. Visual language stays playful for the brand while patterns stay
+            consistent across iOS and Android for handoff and QA.
+          </p>
+          <FinalProductScreens asset={ASSET} groups={FINAL_PRODUCT_GROUPS} />
+        </CaseStudyInViewSection>
+
+        <DesignJourneyCollapsible
+          journeySectionIds={BASKIN_JOURNEY_IDS}
+          panelId="baskin-design-journey-panel"
+        >
         <CaseStudyInViewSection
           id="team-objectives"
           className={`space-y-6 ${sectionScroll}`}
@@ -343,30 +348,6 @@ export default function BaskinRobbinsCaseStudy() {
           </p>
         </CaseStudyInViewSection>
 
-        <CaseStudyInViewSection
-          id="final-product"
-          className={`space-y-10 ${sectionScroll}`}
-        >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Final product
-          </span>
-          <h2 className="text-zinc-100">
-            What members experience on device
-          </h2>
-          <p className="max-w-3xl text-zinc-300 leading-relaxed">
-            The final app delivers a seamless membership experience—enabling BR31
-            Taiwan users to easily accumulate points, redeem rewards, and enjoy
-            personalized offers. The design balances brand playfulness with
-            usability—ensuring consistency across iOS and Android while meeting both
-            client and user needs.
-          </p>
-          <FinalProductScreens asset={ASSET} groups={FINAL_PRODUCT_GROUPS} />
-        </CaseStudyInViewSection>
-
-        <DesignJourneyCollapsible
-          journeySectionIds={BASKIN_JOURNEY_IDS}
-          panelId="baskin-design-journey-panel"
-        >
         <CaseStudyInViewSection
           id="design-process"
           className={`space-y-5 ${sectionScroll}`}

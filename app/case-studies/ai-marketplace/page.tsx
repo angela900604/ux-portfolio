@@ -94,30 +94,6 @@ export default function AiMarketplaceCaseStudy() {
             <CaseStudyAtAGlance items={AT_A_GLANCE_ITEMS} />
           </div>
 
-          <div className="mt-8 space-y-3">
-            <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-              Impact summary
-            </p>
-            <div className="grid gap-3 sm:grid-cols-2 sm:max-w-2xl">
-              <div className="rounded-xl border border-zinc-800/90 bg-zinc-900/50 px-4 py-3">
-                <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">
-                  Live product
-                </p>
-                <p className="mt-1 text-sm font-medium text-zinc-100">
-                  Mina — iPhone · App Store (Canada)
-                </p>
-              </div>
-              <div className="rounded-xl border border-zinc-800/90 bg-zinc-900/50 px-4 py-3">
-                <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">
-                  App Store (Canada)
-                </p>
-                <p className="mt-1 text-sm font-medium text-zinc-100">
-                  Resale marketplace for parents
-                </p>
-              </div>
-            </div>
-          </div>
-
           <div className="mt-8">
             <CaseStudyScanSummary items={MINA_SCAN_SUMMARY} />
           </div>

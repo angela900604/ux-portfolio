@@ -80,7 +80,7 @@ const E_INVOICE_JOURNEY_IDS = [
 
 const E_INVOICE_TOC = [
   { id: "project-background", label: "Project background" },
-  { id: "user-journey-map", label: "The problem" },
+  { id: "user-journey-map", label: "Problem · ~2.8★, speed, findability" },
   { id: "personas", label: "Personas" },
   { id: "key-outcomes", label: "Key outcomes" },
   { id: "final-solution-screens", label: "Final screens" },

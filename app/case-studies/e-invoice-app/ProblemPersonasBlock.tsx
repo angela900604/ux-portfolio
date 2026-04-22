@@ -18,11 +18,16 @@ export function ProblemPersonasBlock() {
           02 · The problem
         </span>
         <h2 className="max-w-3xl text-zinc-100">
-          App Store reviews framed the quantitative pain, and interviews explained
-          what was stuck and why.
+          The pain was functional, not cosmetic: the official app stayed near{" "}
+          <span className="font-semibold tabular-nums text-zinc-50">~2.8★</span>{" "}
+          while reviews and interviews kept circling the same failures—slow launch
+          at checkout, prize and carrier flows buried under jargon-like labels, and
+          older adults who could not finish core tasks without a family member
+          taking over the phone.
         </h2>
         <p className="max-w-3xl text-sm leading-relaxed text-zinc-400">
-          Reviews → interviews → five personas (tap a card for detail).
+          Below: App Store evidence → interview layer → five personas (tap a card
+          for detail).
         </p>
       </div>
 

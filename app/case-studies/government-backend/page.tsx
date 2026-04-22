@@ -123,30 +123,6 @@ export default function GovernmentBackendCaseStudy() {
             <CaseStudyAtAGlance items={AT_A_GLANCE_ITEMS} />
           </div>
 
-          <div className="mt-8 space-y-3">
-            <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-              Impact summary
-            </p>
-            <div className="grid gap-3 sm:grid-cols-2 sm:max-w-2xl">
-              <div className="rounded-xl border border-zinc-800/90 bg-zinc-900/50 px-4 py-3">
-                <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">
-                  Coverage
-                </p>
-                <p className="mt-1 text-sm font-medium text-zinc-100">
-                  600+ staff · role-based access
-                </p>
-              </div>
-              <div className="rounded-xl border border-zinc-800/90 bg-zinc-900/50 px-4 py-3">
-                <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">
-                  Shipped
-                </p>
-                <p className="mt-1 text-sm font-medium text-zinc-100">
-                  Jul 2025 – Sep 2025
-                </p>
-              </div>
-            </div>
-          </div>
-
           <div className="mt-8">
             <CaseStudyScanSummary items={GOV_BACKEND_SCAN_SUMMARY} />
           </div>
