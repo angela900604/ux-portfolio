@@ -1,9 +1,11 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
-
-/** Matches {@link CaseStudyContentLayout} two-column shell (main + TOC width). */
-const CASE_STUDY_HERO_GRID =
-  "lg:grid lg:grid-cols-[minmax(0,1fr)_11.5rem] xl:grid-cols-[minmax(0,1fr)_12.75rem] lg:gap-8 xl:gap-10";
+import {
+  CASE_STUDY_BODY_GRID,
+  SITE_GUTTER_CLASS,
+  SITE_MAX_WIDTH_CLASS,
+  SITE_SHELL_CONTAINER,
+} from "@/lib/site-shell";
 
 /**
  * Overlay / below-meta title band: left edge matches narrative column; reserves
@@ -11,7 +13,7 @@ const CASE_STUDY_HERO_GRID =
  */
 function HeroTitleInGrid({ children }: { children: ReactNode }) {
   return (
-    <div className={CASE_STUDY_HERO_GRID}>
+    <div className={CASE_STUDY_BODY_GRID}>
       <div className="case-study-prose min-w-0 w-full max-w-6xl overflow-x-hidden">
         {children}
       </div>
@@ -26,7 +28,7 @@ function HeroTitleInGrid({ children }: { children: ReactNode }) {
  */
 function HeroBelowFoldFullGrid({ children }: { children: ReactNode }) {
   return (
-    <div className={CASE_STUDY_HERO_GRID}>
+    <div className={CASE_STUDY_BODY_GRID}>
       <div className="min-w-0 lg:col-span-2">{children}</div>
     </div>
   );
@@ -102,7 +104,7 @@ function BelowMetaImageContained({
 }) {
   return (
     <div className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 bg-[#F5F3EF]">
-      <div className="mx-auto max-w-[1440px] px-6 py-10 sm:px-[100px] sm:py-12">
+      <div className={`${SITE_SHELL_CONTAINER} py-10 sm:py-12`}>
         <HeroBelowFoldFullGrid>
           <div className="flex justify-center">
             <Image
@@ -142,7 +144,7 @@ export function CaseStudyHeroFullBleed({
   if (imagePlacement === "below-meta") {
     return (
       <>
-        <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] pt-14 pb-6 sm:pt-20 sm:pb-8">
+        <div className={`${SITE_SHELL_CONTAINER} pt-14 pb-6 sm:pt-20 sm:pb-8`}>
           <HeroTitleInGrid>
             {eyebrow}
             {title}
@@ -150,7 +152,7 @@ export function CaseStudyHeroFullBleed({
           </HeroTitleInGrid>
         </div>
         {children ? (
-          <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] pb-10 sm:pb-12">
+          <div className={`${SITE_SHELL_CONTAINER} pb-10 sm:pb-12`}>
             <HeroBelowFoldFullGrid>{children}</HeroBelowFoldFullGrid>
           </div>
         ) : null}
@@ -192,8 +194,10 @@ export function CaseStudyHeroFullBleed({
             className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/82 to-zinc-950/55"
             aria-hidden
           />
-          <div className="absolute inset-0 flex flex-col justify-end px-6 pb-14 pt-28 sm:px-[100px] sm:pb-20 sm:pt-36">
-            <div className="mx-auto w-full max-w-[1440px]">
+          <div
+            className={`absolute inset-0 flex flex-col justify-end ${SITE_GUTTER_CLASS} pb-14 pt-28 sm:pb-20 sm:pt-36`}
+          >
+            <div className={`mx-auto w-full ${SITE_MAX_WIDTH_CLASS}`}>
               <HeroTitleInGrid>
                 {eyebrow}
                 {title}
@@ -206,7 +210,7 @@ export function CaseStudyHeroFullBleed({
         </div>
       </div>
       {children ? (
-        <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-12 sm:py-16">
+        <div className={`${SITE_SHELL_CONTAINER} py-12 sm:py-16`}>
           <HeroBelowFoldFullGrid>{children}</HeroBelowFoldFullGrid>
         </div>
       ) : null}

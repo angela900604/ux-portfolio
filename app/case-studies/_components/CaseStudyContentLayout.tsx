@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { CASE_STUDY_BODY_GRID, SITE_SHELL_CONTAINER } from "@/lib/site-shell";
 import { CaseStudySideNav, type CaseStudyTocItem } from "./CaseStudySideNav";
 
 type Props = {
@@ -31,11 +32,11 @@ export function CaseStudyContentLayout({
 }: Props) {
   const baseContainer =
     variant === "dark"
-      ? "mx-auto max-w-[1440px] px-6 sm:px-[100px] py-12 sm:py-16"
-      : "mx-auto max-w-[1440px] w-full px-6 sm:px-[100px] py-10 sm:py-14";
+      ? `${SITE_SHELL_CONTAINER} py-12 sm:py-16`
+      : `${SITE_SHELL_CONTAINER} w-full py-10 sm:py-14`;
 
   const grid = (
-    <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_11.5rem] xl:grid-cols-[minmax(0,1fr)_12.75rem] lg:gap-8 xl:gap-10">
+    <div className={CASE_STUDY_BODY_GRID}>
       <div
         className={`case-study-prose min-w-0 w-full max-w-6xl overflow-x-hidden ${contentClassName}`}
       >

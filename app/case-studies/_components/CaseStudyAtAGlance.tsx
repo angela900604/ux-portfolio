@@ -47,7 +47,7 @@ export function CaseStudyAtAGlance({
               <p className="text-[11px] font-semibold uppercase tracking-wider text-zinc-500">
                 {item.label}
               </p>
-              <p className="mt-0.5 text-sm font-medium leading-snug text-zinc-100">
+              <p className="mt-0.5 text-base font-medium leading-[1.65] text-zinc-100 sm:text-lg">
                 {item.value}
               </p>
             </div>

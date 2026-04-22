@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { SITE_SHELL_CONTAINER } from "@/lib/site-shell";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { CaseStudyHeroFullBleed } from "../_components/CaseStudyHeroFullBleed";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
@@ -224,7 +225,7 @@ export default function PhyphyyaCaseStudy() {
         </CaseStudyHeroFullBleed>
       </header>
 
-      <div className="mx-auto max-w-[1440px]">
+      <div className={SITE_SHELL_CONTAINER}>
         <CaseStudyContentLayout
           toc={PHY_TOC}
           variant="light"
@@ -234,7 +235,7 @@ export default function PhyphyyaCaseStudy() {
         >
         <CaseStudyInViewSection
           id="project-overview"
-          className="scroll-mt-28 py-[80px] px-6 sm:px-[100px] sm:scroll-mt-32"
+          className="scroll-mt-28 py-[80px] sm:scroll-mt-32"
         >
           <span className="text-xs font-medium uppercase tracking-widest text-[#8D99AE]">
             00 · Project overview
@@ -288,7 +289,7 @@ export default function PhyphyyaCaseStudy() {
         {/* Logo Concept - Soft & Rounded */}
         <CaseStudyInViewSection
           id="logo-concept"
-          className="scroll-mt-28 py-[80px] px-6 sm:px-[100px] sm:scroll-mt-32 flex flex-col items-center"
+          className="scroll-mt-28 py-[80px] sm:scroll-mt-32 flex flex-col items-center"
         >
           <div className="text-center mb-[60px] w-full">
             <h2 className="text-[#2C3E50] mb-[20px] relative inline-block font-serif after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
@@ -354,7 +355,7 @@ export default function PhyphyyaCaseStudy() {
         {/* Mascot Section - Lop-eared Rabbit */}
         <CaseStudyInViewSection
           id="mascot"
-          className="relative scroll-mt-28 bg-white py-[100px] px-6 sm:px-[100px] sm:scroll-mt-32"
+          className="relative scroll-mt-28 bg-white py-[100px] sm:scroll-mt-32"
         >
           <div
             className="pointer-events-none absolute inset-y-0 left-1/2 -z-10 w-screen -translate-x-1/2 bg-[#FFFFFF]"
@@ -431,7 +432,7 @@ export default function PhyphyyaCaseStudy() {
         {/* Brand Applications */}
         <CaseStudyInViewSection
           id="brand-applications"
-          className="scroll-mt-28 py-[80px] px-6 sm:px-[100px] sm:scroll-mt-32 flex flex-col items-center"
+          className="scroll-mt-28 py-[80px] sm:scroll-mt-32 flex flex-col items-center"
         >
           <div className="text-center mb-[60px] w-full">
             <h2 className="text-[#2C3E50] mb-[20px] relative inline-block font-serif after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
@@ -467,7 +468,7 @@ export default function PhyphyyaCaseStudy() {
         {/* Etsy storefront & Print-on-Demand workflow */}
         <CaseStudyInViewSection
           id="etsy-pod"
-          className="scroll-mt-28 bg-white py-[80px] px-6 sm:px-[100px] sm:scroll-mt-32"
+          className="scroll-mt-28 bg-white py-[80px] sm:scroll-mt-32"
         >
           <div className="text-center w-full mb-[50px]">
             <h2 className="text-[#2C3E50] mb-[20px] relative inline-block font-serif after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
@@ -567,7 +568,7 @@ export default function PhyphyyaCaseStudy() {
 
         <CaseStudyInViewSection
           id="store-performance"
-          className="scroll-mt-28 bg-white py-[80px] px-6 sm:px-[100px] sm:scroll-mt-32"
+          className="scroll-mt-28 bg-white py-[80px] sm:scroll-mt-32"
         >
           <div className="text-center w-full mb-[40px]">
             <h2 className="text-[#2C3E50] mb-[20px] relative inline-block font-serif after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
@@ -602,7 +603,7 @@ export default function PhyphyyaCaseStudy() {
 
         <CaseStudyInViewSection
           id="testing-next"
-          className="scroll-mt-28 bg-[#F5F3EF] py-[80px] px-6 sm:px-[100px] sm:scroll-mt-32"
+          className="scroll-mt-28 bg-[#F5F3EF] py-[80px] sm:scroll-mt-32"
         >
           <div className="w-full mb-[40px] text-center">
             <h2 className="text-[#2C3E50] mb-[20px] relative inline-block font-serif after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
@@ -654,7 +655,7 @@ export default function PhyphyyaCaseStudy() {
         {/* New POD products: magnets & stickers */}
         <CaseStudyInViewSection
           id="pod-products"
-          className="scroll-mt-28 bg-[#F5F3EF] py-[80px] px-6 sm:px-[100px] sm:scroll-mt-32"
+          className="scroll-mt-28 bg-[#F5F3EF] py-[80px] sm:scroll-mt-32"
         >
           <div className="text-center w-full mb-[50px]">
             <h2 className="text-[#2C3E50] mb-[20px] relative inline-block font-serif after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
@@ -762,7 +763,7 @@ export default function PhyphyyaCaseStudy() {
         {/* Product Series - Canvas Tote Bag */}
         <CaseStudyInViewSection
           id="canvas-tote"
-          className="scroll-mt-28 bg-white py-[80px] px-6 sm:px-[100px] sm:scroll-mt-32"
+          className="scroll-mt-28 bg-white py-[80px] sm:scroll-mt-32"
         >
           <div className="text-center w-full mb-[50px]">
             <h2 className="text-[#2C3E50] mb-[20px] relative inline-block font-serif after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
@@ -816,7 +817,7 @@ export default function PhyphyyaCaseStudy() {
         {/* Product Series - Sweatshirt */}
         <CaseStudyInViewSection
           id="sweatshirt"
-          className="scroll-mt-28 bg-[#F5F3EF] py-[80px] px-6 sm:px-[100px] sm:scroll-mt-32"
+          className="scroll-mt-28 bg-[#F5F3EF] py-[80px] sm:scroll-mt-32"
         >
           <div className="text-center w-full mb-[50px]">
             <h2 className="text-[#2C3E50] mb-[20px] relative inline-block font-serif after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
@@ -849,7 +850,7 @@ export default function PhyphyyaCaseStudy() {
 
         </CaseStudyContentLayout>
 
-        <footer className="border-t border-[#E0D9CE] bg-[#F5F3EF] px-6 sm:px-[100px] py-14">
+        <footer className="border-t border-[#E0D9CE] bg-[#F5F3EF] py-14">
           <CaseStudyPrevNext currentSlug="phyphyya" variant="light" />
           <Link
             href="/"

@@ -16,7 +16,7 @@ export function CaseStudyScanSummary({
       <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
         {title}
       </p>
-      <ul className="mt-4 list-none space-y-3 text-sm leading-relaxed text-zinc-300">
+      <ul className="mt-4 list-none space-y-3 text-base leading-[1.65] text-zinc-300 sm:text-lg">
         {items.map((line) => (
           <li key={line} className="flex gap-3">
             <span
