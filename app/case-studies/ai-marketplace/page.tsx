@@ -35,9 +35,9 @@ const MINA_JOURNEY_IDS = ["engineering-proposal", "design-principles"] as const;
 const MINA_TOC = [
   { id: "why-this-exists", label: "Opportunity" },
   { id: "pain-we-solve", label: "The pain we solve" },
+  { id: "outcome-impact", label: "Outcome & impact" },
   { id: "product-strategy", label: "Product strategy" },
   { id: "core-experience", label: "Core experience" },
-  { id: "outcome-impact", label: "Outcome & impact" },
   { id: "design-journey", label: "Design journey" },
   { id: "engineering-proposal", label: "Proposal & alignment" },
   { id: "design-principles", label: "Design principles" },
@@ -237,6 +237,24 @@ export default function AiMarketplaceCaseStudy() {
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection
+          id="outcome-impact"
+          className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
+        >
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            Outcome &amp; impact
+          </span>
+          <h2 className="max-w-3xl text-lg font-semibold leading-snug tracking-tight text-zinc-100 sm:text-xl md:text-2xl md:leading-snug">
+            Seller research on MINA prioritized real jobs—e.g. move outgrown
+            baby gear fast, with minimal time—not just &quot;this button is
+            annoying.&quot; Layering that with PostHog drop-offs, I redesigned
+            checkout and listing;{" "}
+            <span className="text-emerald-200/95">listing completion rose ~30%</span>
+            .
+          </h2>
+          <MinaPrototypeVideo />
+        </CaseStudyInViewSection>
+
+        <CaseStudyInViewSection
           id="product-strategy"
           className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
         >
@@ -315,26 +333,6 @@ export default function AiMarketplaceCaseStudy() {
               </p>
             </div>
           </div>
-        </CaseStudyInViewSection>
-
-        <CaseStudyInViewSection
-          id="outcome-impact"
-          className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
-        >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Outcome &amp; impact
-          </span>
-          <h2 className="max-w-4xl text-lg font-semibold leading-snug tracking-tight text-zinc-100 sm:text-xl md:text-2xl md:leading-snug">
-            I researched sellers on MINA to understand the jobs they actually want
-            done—for example, &quot;I want to sell baby gear we don&apos;t need,
-            quickly, without spending a ton of time&quot;—not just surface feedback
-            like &quot;this button is hard to use.&quot; I combined that with PostHog
-            (where the funnel lost the most people), redesigned checkout and
-            listing, and{" "}
-            <span className="text-emerald-200/95">listing completion rose ~30%</span>
-            .
-          </h2>
-          <MinaPrototypeVideo />
         </CaseStudyInViewSection>
 
         <DesignJourneyCollapsible

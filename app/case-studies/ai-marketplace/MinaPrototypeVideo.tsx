@@ -1,32 +1,51 @@
 /**
- * One-photo → AI item detection → listing prototype (hero clip for case study).
- * Optional WebM: add `mina-ai-prototype.webm` beside the MP4; browsers skip missing sources.
+ * One-photo → AI item detection → listing prototype inside an iPhone-style frame.
+ * Optional WebM: add `mina-ai-prototype.webm` beside the MP4.
  */
 export function MinaPrototypeVideo() {
   return (
-    <figure className="mt-8 w-full min-w-0">
-      <div className="overflow-hidden rounded-xl border border-zinc-800/90 bg-zinc-950 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.04)]">
-        <video
-          className="block h-auto w-full object-contain"
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="metadata"
-          aria-label="Screen recording: take one photo; AI detects how many items are in frame and drafts listings."
-        >
-          {/* MP4 first (shipped); add mina-ai-prototype.webm above when available for lighter playback */}
-          <source
-            src="/case-studies/mina/mina-ai-prototype.mp4"
-            type="video/mp4"
+    <figure className="mx-auto mt-8 w-full max-w-[300px] min-w-0">
+      <div className="relative mx-auto rounded-[3rem] bg-gradient-to-b from-zinc-600 via-zinc-800 to-zinc-950 p-[11px] shadow-[0_28px_56px_-16px_rgba(0,0,0,0.75)] ring-1 ring-white/[0.12]">
+        <div
+          className="absolute -left-[3px] top-[22%] h-9 w-[3px] rounded-l-md bg-zinc-500/90 shadow-sm"
+          aria-hidden
+        />
+        <div
+          className="absolute -left-[3px] top-[30%] h-14 w-[3px] rounded-l-md bg-zinc-500/90 shadow-sm"
+          aria-hidden
+        />
+        <div
+          className="absolute -right-[3px] top-[26%] h-20 w-[3px] rounded-r-md bg-zinc-500/90 shadow-sm"
+          aria-hidden
+        />
+        <div className="relative rounded-[2.4rem] bg-black p-[10px] pt-[14px]">
+          <div
+            className="pointer-events-none absolute left-1/2 top-[10px] z-10 h-[27px] w-[92px] -translate-x-1/2 rounded-full bg-black ring-1 ring-zinc-800"
+            aria-hidden
           />
-          <source
-            src="/case-studies/mina/mina-ai-prototype.webm"
-            type="video/webm"
-          />
-        </video>
+          <div className="aspect-[9/19.5] overflow-hidden rounded-[1.35rem] bg-zinc-950 ring-1 ring-zinc-800/90">
+            <video
+              className="h-full w-full object-cover object-top"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              aria-label="Screen recording: take one photo; AI detects how many items are in frame and drafts listings."
+            >
+              <source
+                src="/case-studies/mina/mina-ai-prototype.mp4"
+                type="video/mp4"
+              />
+              <source
+                src="/case-studies/mina/mina-ai-prototype.webm"
+                type="video/webm"
+              />
+            </video>
+          </div>
+        </div>
       </div>
-      <figcaption className="mt-3 text-sm leading-relaxed text-zinc-500">
+      <figcaption className="mt-4 max-w-md text-center text-sm leading-relaxed text-zinc-500 sm:mx-auto">
         Prototype: one photo → AI analyzes item count in-frame → generated
         listings—minimal taps for busy parents.
       </figcaption>
