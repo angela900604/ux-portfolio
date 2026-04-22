@@ -77,13 +77,15 @@ export default function RootLayout({
 
           <footer className="border-t border-zinc-800">
             <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-5 text-xs text-zinc-500">
-              <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                <span>© {new Date().getFullYear()} Angela Yang</span>
-                <span>Product Design · UX · Vancouver</span>
+              <div className="grid grid-cols-1 gap-3 text-center sm:grid-cols-3 sm:items-center sm:gap-4 sm:text-left">
+                <span className="sm:text-left">
+                  © {new Date().getFullYear()} Angela Yang
+                </span>
+                <span className="text-[11px] leading-relaxed text-zinc-600 sm:text-center">
+                  This website was vibe-coded by me.
+                </span>
+                <span className="sm:text-right">Product Design · UX · Vancouver</span>
               </div>
-              <p className="mt-4 text-center text-[11px] leading-relaxed text-zinc-600 sm:text-left">
-                This website was vibe-coded by me.
-              </p>
             </div>
           </footer>
         </div>
