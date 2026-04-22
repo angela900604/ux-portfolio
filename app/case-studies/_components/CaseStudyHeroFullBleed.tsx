@@ -1,6 +1,22 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
 
+/**
+ * Same main-column width as {@link CaseStudyContentLayout}: `max-w-6xl` in the
+ * first grid track, second track reserves TOC width (lg+) so hero title + hero
+ * children align with the narrative column below.
+ */
+function HeroAlignedMainColumn({ children }: { children: ReactNode }) {
+  return (
+    <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_11.5rem] xl:grid-cols-[minmax(0,1fr)_12.75rem] lg:gap-8 xl:gap-10">
+      <div className="case-study-prose min-w-0 w-full max-w-6xl overflow-x-hidden">
+        {children}
+      </div>
+      <aside className="hidden min-w-0 lg:block" aria-hidden />
+    </div>
+  );
+}
+
 type Props = {
   imageSrc: string;
   imageAlt: string;
@@ -71,16 +87,20 @@ function BelowMetaImageContained({
 }) {
   return (
     <div className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 bg-[#F5F3EF]">
-      <div className="mx-auto flex max-w-[1440px] justify-center px-6 py-10 sm:px-[100px] sm:py-12">
-        <Image
-          src={imageSrc}
-          alt={imageAlt}
-          width={width}
-          height={height}
-          priority={priority}
-          className="h-auto max-h-[min(85vh,48rem)] w-auto max-w-full object-contain"
-          sizes="(max-width: 1200px) 100vw, 1200px"
-        />
+      <div className="mx-auto max-w-[1440px] px-6 py-10 sm:px-[100px] sm:py-12">
+        <HeroAlignedMainColumn>
+          <div className="flex justify-center">
+            <Image
+              src={imageSrc}
+              alt={imageAlt}
+              width={width}
+              height={height}
+              priority={priority}
+              className="h-auto max-h-[min(85vh,48rem)] w-auto max-w-full object-contain"
+              sizes="(max-width: 1200px) 100vw, 1200px"
+            />
+          </div>
+        </HeroAlignedMainColumn>
       </div>
     </div>
   );
@@ -108,13 +128,15 @@ export function CaseStudyHeroFullBleed({
     return (
       <>
         <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] pt-14 pb-6 sm:pt-20 sm:pb-8">
-          {eyebrow}
-          {title}
-          {subtitle ? <div className="mt-5 max-w-3xl">{subtitle}</div> : null}
+          <HeroAlignedMainColumn>
+            {eyebrow}
+            {title}
+            {subtitle ? <div className="mt-5 max-w-3xl">{subtitle}</div> : null}
+          </HeroAlignedMainColumn>
         </div>
         {children ? (
           <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] pb-10 sm:pb-12">
-            {children}
+            <HeroAlignedMainColumn>{children}</HeroAlignedMainColumn>
           </div>
         ) : null}
         {belowMetaImageMode === "contain" ? (
@@ -157,16 +179,20 @@ export function CaseStudyHeroFullBleed({
           />
           <div className="absolute inset-0 flex flex-col justify-end px-6 pb-14 pt-28 sm:px-[100px] sm:pb-20 sm:pt-36">
             <div className="mx-auto w-full max-w-[1440px]">
-              {eyebrow}
-              {title}
-              {subtitle ? <div className="mt-5 max-w-3xl">{subtitle}</div> : null}
+              <HeroAlignedMainColumn>
+                {eyebrow}
+                {title}
+                {subtitle ? (
+                  <div className="mt-5 max-w-3xl">{subtitle}</div>
+                ) : null}
+              </HeroAlignedMainColumn>
             </div>
           </div>
         </div>
       </div>
       {children ? (
         <div className="mx-auto max-w-[1440px] px-6 sm:px-[100px] py-12 sm:py-16">
-          {children}
+          <HeroAlignedMainColumn>{children}</HeroAlignedMainColumn>
         </div>
       ) : null}
     </>

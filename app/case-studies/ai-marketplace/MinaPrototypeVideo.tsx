@@ -45,9 +45,8 @@ export function MinaPrototypeVideo() {
           </div>
         </div>
       </div>
-      <figcaption className="mt-4 max-w-md text-center text-sm leading-relaxed text-zinc-500 sm:mx-auto">
-        Prototype: one photo → AI analyzes item count in-frame → generated
-        listings—minimal taps for busy parents.
+      <figcaption className="mt-4 w-full max-w-full text-center text-[11px] leading-snug text-zinc-500 sm:mx-auto sm:text-xs sm:leading-normal md:text-sm md:whitespace-nowrap md:overflow-x-auto">
+        Prototype: one photo → AI analyzes item count in-frame → generated listings—minimal taps for busy parents.
       </figcaption>
     </figure>
   );
