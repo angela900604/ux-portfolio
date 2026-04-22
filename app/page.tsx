@@ -267,10 +267,6 @@ export default function Home() {
           </FadeInSection>
         </div>
       </section>
-
-      <p className="mx-auto max-w-[1440px] px-6 pb-10 pt-0 text-center text-[10px] font-normal leading-relaxed tracking-wide text-zinc-600 sm:px-[100px]">
-        This site was vibe-coded—mostly in Cursor, a line at a time.
-      </p>
     </div>
   );
 }
