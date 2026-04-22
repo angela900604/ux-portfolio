@@ -36,7 +36,6 @@ const MINA_TOC = [
   { id: "why-this-exists", label: "Opportunity" },
   { id: "pain-we-solve", label: "The pain we solve" },
   { id: "outcome-impact", label: "Outcome & impact" },
-  { id: "product-strategy", label: "Product strategy" },
   { id: "core-experience", label: "Core experience" },
   { id: "design-journey", label: "Design journey" },
   { id: "engineering-proposal", label: "Proposal & alignment" },
@@ -149,17 +148,9 @@ export default function AiMarketplaceCaseStudy() {
                 Opportunity
               </span>
               <h2 className="max-w-3xl text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
-                SF parents burn through baby gear fast, but resale is still too
-                slow and too much admin—so great items stall in closets instead of
-                reaching the next family.
+                SF parents burn through baby gear fast, but resale is still too slow
+                and too much admin
               </h2>
-              <p className="text-zinc-300 leading-relaxed">
-                The opening came from{" "}
-                <span className="text-zinc-100">dense, trust-based mom networks</span>{" "}
-                where demand is real—if we could remove the listing and coordination
-                tax with an{" "}
-                <span className="text-zinc-100">AI-first path</span>.
-              </p>
             </div>
             <div className="relative min-h-[min(52vw,22rem)] w-full min-w-0 overflow-hidden rounded-xl border border-zinc-800/50 bg-zinc-900/40 sm:min-h-[20rem] lg:min-h-0">
               <Image
@@ -175,40 +166,13 @@ export default function AiMarketplaceCaseStudy() {
 
         <CaseStudyInViewSection
           id="pain-we-solve"
-          className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
+          className="scroll-mt-28 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            The pain we are solving
-          </span>
-          <h2 className="text-zinc-100">
-            Too much gear, too little time—and resale that feels like admin work
-          </h2>
-          <p className="text-zinc-300 leading-relaxed">
+          <h2 className="max-w-3xl text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
             Classic resale asks parents to behave like shops—listings, DMs, pickup
-            logistics. The pain is the{" "}
-            <span className="text-zinc-100">attention tax</span> every time a stage
-            ends and a new pile appears.
-          </p>
-          <div className="mt-6 grid gap-4 sm:grid-cols-2">
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5">
-              <p className="text-xs font-semibold uppercase tracking-widest text-rose-400/90">
-                Short use cycles
-              </p>
-              <p className="mt-2 text-sm text-zinc-300 leading-relaxed">
-                Items serve a phase, then become obsolete for{" "}
-                <em>your</em> family—while still valuable for the next parent in line.
-              </p>
-            </div>
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5">
-              <p className="text-xs font-semibold uppercase tracking-widest text-emerald-400/90">
-                Sustainability without guilt trips
-              </p>
-              <p className="mt-2 text-sm text-zinc-300 leading-relaxed">
-                SF audiences respond to reuse when the path is credible and
-                low-friction—not when it adds another chore.
-              </p>
-            </div>
-          </div>
+            logistics. The pain is the attention tax every time a stage ends and a
+            new pile appears.
+          </h2>
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection
@@ -218,93 +182,41 @@ export default function AiMarketplaceCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Outcome &amp; impact
           </span>
-          <h2 className="max-w-3xl text-lg font-semibold leading-snug tracking-tight text-zinc-100 sm:text-xl md:text-2xl md:leading-snug">
-            Seller research on MINA prioritized real jobs—e.g. move outgrown
-            baby gear fast, with minimal time—not just &quot;this button is
-            annoying.&quot; Layering that with PostHog drop-offs, I redesigned
-            checkout and listing;{" "}
-            <span className="text-emerald-200/95">listing completion rose ~30%</span>
-            .
+          <h2 className="max-w-3xl text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
+            Shipped a chat listing agent:{" "}
+            <span className="text-zinc-100">take one photo</span>,{" "}
+            <span className="text-zinc-100">AI drafts the listing</span>
+            —listing completion rose{" "}
+            <span className="text-emerald-200/95">~30%</span> after we tightened that
+            flow.
           </h2>
           <MinaPrototypeVideo />
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection
-          id="product-strategy"
-          className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
-        >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Product strategy
-          </span>
-          <h2 className="text-zinc-100">
-            Community first, then scale—so listings find the right families faster
-          </h2>
-          <p className="text-zinc-300 leading-relaxed">
-            We are intentionally{" "}
-            <span className="text-zinc-100">aggregating mom communities</span> early:
-            shared norms, mutual trust, and local pickup density beat anonymous
-            nationwide matching for this category. The goal is to{" "}
-            <span className="text-zinc-100">decrease listing time</span> and{" "}
-            <span className="text-zinc-100">decrease learning time</span>—parents
-            should recognize the product in seconds and complete a sale without
-            reading a manual.
-          </p>
-        </CaseStudyInViewSection>
-
-        <CaseStudyInViewSection
           id="core-experience"
-          className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
+          className="scroll-mt-28 space-y-10 sm:scroll-mt-32"
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Core experience
           </span>
-          <h2 className="text-zinc-100">
-            An AI agent you talk to—not a form you fight with
-          </h2>
-          <p className="text-zinc-300 leading-relaxed">
-            The app is centered on{" "}
-            <span className="text-zinc-100">conversation with an AI agent</span> as
-            the primary interface. Instead of navigating dense settings, sellers
-            describe what they are passing on, confirm details in plain language,
-            and let the system handle the busywork. The same agent helps with{" "}
-            <span className="text-zinc-100">transactions</span>: suggesting fair
-            pricing language, surfacing next steps, and coordinating{" "}
-            <span className="text-zinc-100">location and time</span> through dialogue
-            so sellers spend less energy managing individual buyers.
-          </p>
-
-          <div className="rounded-2xl border border-violet-500/25 bg-violet-500/5 p-6 sm:p-8">
-            <h6 className="text-violet-200">
-              One photo → many listings
-            </h6>
-            <p className="mt-3 text-zinc-300 leading-relaxed">
-              Parents can <span className="text-zinc-100">take one photo</span> (or a
-              single upload batch) and let AI propose{" "}
-              <span className="text-zinc-100">multiple listings at once</span>
-              —titles, categories, condition notes, and bundle suggestions—ready to
-              edit before anything goes live. The objective is to make batching
-              outgrown gear feel closer to &quot;showing a friend what is on the
-              floor&quot; than &quot;opening a spreadsheet.&quot;
-            </p>
-          </div>
-
-          <div className="grid gap-4 sm:grid-cols-2">
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/35 p-5">
-              <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500">
-                Seller ↔ AI
-              </p>
-              <p className="mt-2 text-sm text-zinc-300 leading-relaxed">
-                Pickup windows, handoff spots, and buyer communication are steered
-                through chat so sellers are not juggling five threads per item.
+          <div className="space-y-10">
+            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6 sm:p-8">
+              <h3 className="text-lg font-semibold leading-snug tracking-tight text-zinc-100 sm:text-xl md:text-2xl md:leading-snug">
+                Selling agent—helps you manage pickups, buyer threads, and handoff
+                status in one place
+              </h3>
+              <p className="mt-3 text-sm font-medium uppercase tracking-wider text-zinc-500">
+                Screens coming soon · ongoing
               </p>
             </div>
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/35 p-5">
-              <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500">
-                Less buyer management
-              </p>
-              <p className="mt-2 text-sm text-zinc-300 leading-relaxed">
-                The agent carries routine coordination and status updates—parents
-                intervene when judgment matters, not for every ping.
+            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6 sm:p-8">
+              <h3 className="text-lg font-semibold leading-snug tracking-tight text-zinc-100 sm:text-xl md:text-2xl md:leading-snug">
+                Buying agent—helps you compare listings, ask questions, and
+                coordinate a purchase without bouncing across apps
+              </h3>
+              <p className="mt-3 text-sm font-medium uppercase tracking-wider text-zinc-500">
+                Screens coming soon · ongoing
               </p>
             </div>
           </div>
