@@ -6,6 +6,8 @@ import {
   motion,
 } from "framer-motion";
 import { useEffect, useState } from "react";
+import { FadeUp } from "./FadeUp";
+import { SectionHeader } from "./SectionHeader";
 
 export type Service = {
   id: string;
@@ -102,10 +104,10 @@ function ServiceRow({
 }) {
   return (
     <div
-      className={`border-b border-zinc-800 transition-colors duration-300 ${
+      className={`border-b border-[rgba(255,255,255,0.08)] transition-colors duration-300 ${
         expanded
-          ? "bg-zinc-900/50"
-          : "hover:bg-zinc-900/30"
+          ? "bg-[#161616]/80"
+          : "hover:bg-[#1A1A1A]"
       }`}
       onMouseEnter={onHoverStart}
       onMouseLeave={onHoverEnd}
@@ -121,7 +123,6 @@ function ServiceRow({
       aria-expanded={expanded}
     >
       <div className="mx-auto max-w-[1280px] px-[5vw]">
-        {/* Desktop / lg: spec grid */}
         <div
           className={`hidden gap-6 lg:grid ${
             expanded
@@ -130,7 +131,7 @@ function ServiceRow({
           }`}
         >
           <div className="flex h-[72px] items-center lg:h-auto lg:items-start lg:pt-1">
-            <div className="relative h-11 w-11 shrink-0 text-zinc-400">
+            <div className="relative h-11 w-11 shrink-0 text-[#888580]">
               <Image
                 src={service.icon}
                 alt=""
@@ -142,7 +143,7 @@ function ServiceRow({
           </div>
 
           <div className="min-w-0 pt-1">
-            <h3 className="text-[18px] font-medium uppercase tracking-wide text-zinc-100">
+            <h3 className="text-[18px] font-medium uppercase tracking-wide text-[#F0EDE6]">
               {service.title}
             </h3>
             <AnimatePresence initial={false}>
@@ -158,7 +159,7 @@ function ServiceRow({
                   }}
                   className="overflow-hidden"
                 >
-                  <p className="mt-3 line-clamp-3 text-[14px] leading-relaxed text-zinc-500">
+                  <p className="mt-3 line-clamp-3 text-[14px] leading-relaxed text-[#888580]">
                     {service.description}
                   </p>
                 </motion.div>
@@ -179,7 +180,7 @@ function ServiceRow({
                     delay: 0.05,
                     ease: [0.16, 1, 0.3, 1],
                   }}
-                  className="relative h-[140px] w-[260px] shrink-0 overflow-hidden rounded-lg bg-zinc-800"
+                  className="relative h-[140px] w-[260px] shrink-0 overflow-hidden rounded-lg bg-[#121212]"
                 >
                   {service.mediaType === "video" ? (
                     <video
@@ -204,7 +205,7 @@ function ServiceRow({
               ) : null}
             </AnimatePresence>
             <motion.span
-              className="inline-flex text-lg leading-none text-zinc-400"
+              className="inline-flex text-lg leading-none text-[#E8C9A0]"
               animate={{ rotate: expanded ? 90 : 0 }}
               transition={{ duration: 0.25, ease: "easeInOut" }}
               aria-hidden
@@ -214,14 +215,13 @@ function ServiceRow({
           </div>
         </div>
 
-        {/* Mobile / tablet: stack */}
         <div
           className={`flex flex-col gap-4 lg:hidden ${
             expanded ? "py-5" : "min-h-[72px] justify-center py-3"
           }`}
         >
           <div className="flex items-center gap-4">
-            <div className="relative h-11 w-11 shrink-0 text-zinc-400">
+            <div className="relative h-11 w-11 shrink-0 text-[#888580]">
               <Image
                 src={service.icon}
                 alt=""
@@ -230,11 +230,11 @@ function ServiceRow({
                 className="object-contain"
               />
             </div>
-            <h3 className="min-w-0 flex-1 text-[16px] font-medium uppercase tracking-wide text-zinc-100 sm:text-[17px]">
+            <h3 className="min-w-0 flex-1 text-[16px] font-medium uppercase tracking-wide text-[#F0EDE6] sm:text-[17px]">
               {service.title}
             </h3>
             <motion.span
-              className="inline-flex shrink-0 text-lg text-zinc-400"
+              className="inline-flex shrink-0 text-lg text-[#E8C9A0]"
               animate={{ rotate: expanded ? 90 : 0 }}
               transition={{ duration: 0.25, ease: "easeInOut" }}
               aria-hidden
@@ -255,7 +255,7 @@ function ServiceRow({
                 }}
                 className="overflow-hidden"
               >
-                <p className="line-clamp-3 text-[14px] leading-relaxed text-zinc-500">
+                <p className="line-clamp-3 text-[14px] leading-relaxed text-[#888580]">
                   {service.description}
                 </p>
                 <motion.div
@@ -266,7 +266,7 @@ function ServiceRow({
                     delay: 0.05,
                     ease: [0.16, 1, 0.3, 1],
                   }}
-                  className="relative mx-auto mt-4 aspect-video w-full max-w-[280px] overflow-hidden rounded-lg bg-zinc-800"
+                  className="relative mx-auto mt-4 aspect-video w-full max-w-[280px] overflow-hidden rounded-lg bg-[#121212]"
                 >
                   {service.mediaType === "video" ? (
                     <video
@@ -297,23 +297,22 @@ function ServiceRow({
   );
 }
 
-export function ServicesOverview() {
+export function ServicesOverview({ sectionLabel }: { sectionLabel: string }) {
   const fineHover = useFinePointerHover();
   const [hoverId, setHoverId] = useState<string | null>(null);
   const [touchId, setTouchId] = useState<string | null>(null);
 
   return (
     <section
-      className="border-b border-zinc-800 bg-zinc-950"
+      className="border-b border-[rgba(255,255,255,0.08)] bg-[#0D0D0D]"
       aria-labelledby="services-overview-heading"
     >
       <div className="mx-auto max-w-[1280px] px-[5vw] pt-16 pb-2 sm:pt-20 lg:pt-[100px] lg:pb-4">
-        <p
-          id="services-overview-heading"
-          className="text-left text-[10px] font-semibold uppercase tracking-widest text-zinc-500"
-        >
-          Services overview
-        </p>
+        <FadeUp>
+          <SectionHeader label={sectionLabel}>
+            <span id="services-overview-heading">Services overview</span>
+          </SectionHeader>
+        </FadeUp>
       </div>
       <div className="flex flex-col">
         {SERVICES.map((service) => {

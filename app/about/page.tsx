@@ -14,7 +14,7 @@ function TravelPhotoTile({
 }) {
   return (
     <div
-      className={`relative h-full min-h-[200px] overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 ${className ?? ""}`}
+      className={`relative h-full min-h-[200px] overflow-hidden rounded-2xl border border-[rgba(255,255,255,0.08)] bg-[#161616] ${className ?? ""}`}
     >
       <Image
         src={src}
@@ -37,15 +37,15 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-zinc-950 text-zinc-100">
+    <div className="min-h-screen bg-[#0D0D0D] text-[#F0EDE6]">
       <div className={`${SITE_SHELL_CONTAINER} py-16 sm:py-24`}>
-        <p className="text-xs font-medium uppercase tracking-widest text-zinc-500 mb-4">
+        <p className="mb-4 text-xs font-medium uppercase tracking-widest text-[#888580]">
           About
         </p>
-        <h1 className="max-w-2xl">
+        <h1 className="max-w-2xl font-[family-name:var(--font-serif-display)] text-[clamp(2.5rem,5vw,3.75rem)] font-normal leading-[1.05] tracking-[-0.03em]">
           Angela Yang
         </h1>
-        <p className="mt-3 text-xs font-medium uppercase tracking-widest text-zinc-500 max-w-2xl">
+        <p className="mt-3 max-w-2xl text-xs font-medium uppercase tracking-widest text-[#888580]">
           B2C iOS · AI-driven products · Multi-segment research · Vancouver (open
           to relocate)
         </p>
@@ -64,16 +64,16 @@ export default function AboutPage() {
               />
             </div>
 
-            <div className="flex min-w-0 flex-col gap-5 text-base leading-relaxed text-zinc-300 sm:text-lg">
-              <p className="font-medium text-zinc-100">
+            <div className="flex min-w-0 flex-col gap-5 text-base leading-relaxed text-[#C9C4BC] sm:text-lg">
+              <p className="font-medium text-[#F0EDE6]">
                 Product designer with experience across{" "}
-                <span className="text-zinc-50">
+                <span className="text-[#F0EDE6]">
                   B2C iOS and Android mobile, membership systems, government
                   platforms, AI-driven features, and B2B SaaS,
                 </span>{" "}
                 spanning early-stage startups and large-scale tech companies.
               </p>
-              <p className="font-medium text-zinc-100">
+              <p className="font-medium text-[#F0EDE6]">
                 Currently at MINA AI as a sole designer building AI-driven
                 logistic marketplace product from 0→1, while owning the design
                 system and working closely with founders and engineers.
@@ -87,12 +87,12 @@ export default function AboutPage() {
               </p>
               <p>
                 My work centers on{" "}
-                <span className="text-zinc-100">consumer mobile</span> and{" "}
-                <span className="text-zinc-100">AI-assisted experiences</span>,{" "}
-                <span className="text-zinc-100">multi-role flows</span> when the
+                <span className="text-[#F0EDE6]">consumer mobile</span> and{" "}
+                <span className="text-[#F0EDE6]">AI-assisted experiences</span>,{" "}
+                <span className="text-[#F0EDE6]">multi-role flows</span> when the
                 product demands them, and design systems that scale. I&apos;m
                 especially interested in{" "}
-                <span className="text-zinc-100">multi-segment user research</span>{" "}
+                <span className="text-[#F0EDE6]">multi-segment user research</span>{" "}
                 from teens to seniors to internal staff, and how different user
                 needs shape product decisions. I work closely with PMs and
                 engineers, and I&apos;m comfortable leading projects end-to-end in
@@ -106,12 +106,12 @@ export default function AboutPage() {
         </section>
 
         <section
-          className="mt-14 border-t border-zinc-800 pt-12"
+          className="mt-14 border-t border-[rgba(255,255,255,0.08)] pt-12"
           aria-labelledby="about-specialize-heading"
         >
           <h2
             id="about-specialize-heading"
-            className="text-2xl font-semibold tracking-tight text-zinc-100 sm:text-3xl md:text-[2rem]"
+            className="text-2xl font-semibold tracking-tight text-[#F0EDE6] sm:text-3xl md:text-[2rem]"
           >
             What I specialize in
           </h2>
@@ -119,12 +119,12 @@ export default function AboutPage() {
             {SPECIALIZE_PILLARS.map((pillar) => (
               <div
                 key={pillar.title}
-                className="flex min-h-0 flex-col rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 sm:p-7"
+                className="flex min-h-0 flex-col rounded-2xl border border-[rgba(255,255,255,0.08)] bg-[#161616] p-6 sm:p-7"
               >
-                <h3 className="text-base font-semibold tracking-tight text-zinc-100 sm:text-lg">
+                <h3 className="text-base font-semibold tracking-tight text-[#F0EDE6] sm:text-lg">
                   {pillar.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-zinc-400 sm:text-base">
+                <p className="mt-3 text-sm leading-relaxed text-[#888580] sm:text-base">
                   {pillar.aboutShort}
                 </p>
               </div>
@@ -132,18 +132,18 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="mt-14 border-t border-zinc-800 pt-12">
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+        <section className="mt-14 border-t border-[rgba(255,255,255,0.08)] pt-12">
+          <span className="text-xs font-medium uppercase tracking-widest text-[#F0EDE6]0">
             User interviews
           </span>
           <div className="mt-6 grid items-start gap-8 lg:grid-cols-12 lg:gap-10">
-            <div className="min-w-0 lg:col-span-5 flex flex-col gap-4 text-base leading-relaxed text-zinc-300 sm:text-lg">
-              <p className="font-medium text-zinc-100">
+            <div className="min-w-0 lg:col-span-5 flex flex-col gap-4 text-base leading-relaxed text-[#C9C4BC] sm:text-lg">
+              <p className="font-medium text-[#F0EDE6]">
                 The part of the job where I feel most alive.
               </p>
               <p>
                 I genuinely love{" "}
-                <span className="text-zinc-100">user interviews</span>—from
+                <span className="text-[#F0EDE6]">user interviews</span>—from
                 teenagers and seniors to foreign-language users and people who
                 rely on accessibility settings, across consumer, B2B, and
                 government contexts. I listen until motivations and constraints
@@ -158,7 +158,7 @@ export default function AboutPage() {
               </p>
             </div>
             <figure className="min-w-0 lg:col-span-7">
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-[rgba(255,255,255,0.08)] bg-[#161616]">
                 <Image
                   src={INTERVIEW_PHOTO_SRC}
                   alt="Collage: Angela facilitating user research—in group sessions, one-on-one interviews, and conversations with participants across ages and contexts."
@@ -167,7 +167,7 @@ export default function AboutPage() {
                   sizes="(max-width: 1024px) 100vw, 720px"
                 />
               </div>
-              <figcaption className="mt-3 text-sm leading-relaxed text-zinc-500">
+              <figcaption className="mt-3 text-sm leading-relaxed text-[#F0EDE6]0">
                 Field research and sessions across ages, languages, and
                 contexts—multi-segment UX, not a single persona repeated.
               </figcaption>
@@ -175,37 +175,37 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="mt-14 border-t border-zinc-800 pt-12">
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+        <section className="mt-14 border-t border-[rgba(255,255,255,0.08)] pt-12">
+          <span className="text-xs font-medium uppercase tracking-widest text-[#F0EDE6]0">
             How I work
           </span>
           <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-5 lg:gap-6">
-            <div className="flex h-full min-w-0 flex-col rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 sm:p-7">
-              <h5 className="text-zinc-100 normal-case tracking-normal">
+            <div className="flex h-full min-w-0 flex-col rounded-2xl border border-[rgba(255,255,255,0.08)] bg-[#161616] p-6 sm:p-7">
+              <h5 className="text-[#F0EDE6] normal-case tracking-normal">
                 Engineering-led collaboration
               </h5>
-              <p className="mt-3 flex-1 text-base leading-relaxed text-zinc-400 sm:text-lg">
+              <p className="mt-3 flex-1 text-base leading-relaxed text-[#888580] sm:text-lg">
                 I work very closely with frontend and backend engineers from the
                 beginning. During early product phases, I proactively discuss
                 implementation feasibility so innovative ideas stay practical and
                 buildable.
               </p>
             </div>
-            <div className="flex h-full min-w-0 flex-col rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 sm:p-7">
-              <h5 className="text-zinc-100 normal-case tracking-normal">
+            <div className="flex h-full min-w-0 flex-col rounded-2xl border border-[rgba(255,255,255,0.08)] bg-[#161616] p-6 sm:p-7">
+              <h5 className="text-[#F0EDE6] normal-case tracking-normal">
                 PMs, clients &amp; delivery
               </h5>
-              <p className="mt-3 flex-1 text-base leading-relaxed text-zinc-400 sm:text-lg">
+              <p className="mt-3 flex-1 text-base leading-relaxed text-[#888580] sm:text-lg">
                 I&apos;m comfortable helping lead a thread: aligning with PMs on
                 scope and timeline, clarifying requirements with clients, and
                 keeping design decisions legible so the team ships on schedule.
               </p>
             </div>
-            <div className="flex h-full min-w-0 flex-col rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 sm:p-7">
-              <h5 className="text-zinc-100 normal-case tracking-normal">
+            <div className="flex h-full min-w-0 flex-col rounded-2xl border border-[rgba(255,255,255,0.08)] bg-[#161616] p-6 sm:p-7">
+              <h5 className="text-[#F0EDE6] normal-case tracking-normal">
                 AI-enhanced workflow
               </h5>
-              <p className="mt-3 flex-1 text-base leading-relaxed text-zinc-400 sm:text-lg">
+              <p className="mt-3 flex-1 text-base leading-relaxed text-[#888580] sm:text-lg">
                 I constantly test new AI tools (such as Cursor, Claude, and Figma
                 AI), not to follow trends, but to identify what genuinely improves
                 my workflow and increases delivery efficiency.
@@ -214,24 +214,24 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="mt-14 border-t border-zinc-800 pt-12">
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+        <section className="mt-14 border-t border-[rgba(255,255,255,0.08)] pt-12">
+          <span className="text-xs font-medium uppercase tracking-widest text-[#F0EDE6]0">
             Beyond design
           </span>
           <div className="mt-6 grid min-w-0 gap-4 sm:grid-cols-2 lg:gap-6">
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 sm:p-7">
-              <h5 className="text-zinc-100 normal-case tracking-normal">
+            <div className="rounded-2xl border border-[rgba(255,255,255,0.08)] bg-[#161616] p-6 sm:p-7">
+              <h5 className="text-[#F0EDE6] normal-case tracking-normal">
                 Branding &amp; style exploration
               </h5>
-              <p className="mt-3 text-base leading-relaxed text-zinc-400 sm:text-lg">
+              <p className="mt-3 text-base leading-relaxed text-[#888580] sm:text-lg">
                 I enjoy studying the logic behind brands and how visual style creates recognition, trust, and emotional resonance.
               </p>
             </div>
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 sm:p-7">
-              <h5 className="text-zinc-100 normal-case tracking-normal">
+            <div className="rounded-2xl border border-[rgba(255,255,255,0.08)] bg-[#161616] p-6 sm:p-7">
+              <h5 className="text-[#F0EDE6] normal-case tracking-normal">
                 Photography &amp; travel
               </h5>
-              <p className="mt-3 text-base leading-relaxed text-zinc-400 sm:text-lg">
+              <p className="mt-3 text-base leading-relaxed text-[#888580] sm:text-lg">
                 Through travel photography, I capture details from different cities. It is one of my ways to train visual sensitivity and build a more grounded understanding of aesthetics.
               </p>
             </div>
@@ -281,17 +281,17 @@ export default function AboutPage() {
             href="https://linkedin.com/in/angelayangg/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-medium text-zinc-300 hover:text-zinc-100"
+            className="text-sm font-medium text-[#C9C4BC] hover:text-[#F0EDE6]"
           >
             LinkedIn
           </a>
           <a
             href="mailto:angela900604@gmail.com?subject=Resume%20request"
-            className="text-sm font-medium text-zinc-300 hover:text-zinc-100"
+            className="text-sm font-medium text-[#C9C4BC] hover:text-[#F0EDE6]"
           >
             Resume (email)
           </a>
-          <Link href="/" className="text-sm font-medium text-zinc-300 hover:text-zinc-100">
+          <Link href="/" className="text-sm font-medium text-[#C9C4BC] hover:text-[#F0EDE6]">
             Work
           </Link>
         </div>

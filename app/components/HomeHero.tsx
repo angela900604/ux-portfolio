@@ -1,56 +1,79 @@
 "use client";
 
-import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
-import { heroHook } from "../content/specialize";
+import { heroHook, specializeEyebrow } from "../content/specialize";
 
-const BUBBLE_SRC = "/home/header-bubble-v2.png";
 const DISPLAY_NAME = "Angela Yang";
+const words = DISPLAY_NAME.split(" ");
 
 export function HomeHero() {
   const reduceMotion = useReducedMotion();
-  const chars = [...DISPLAY_NAME];
 
   return (
-    <div className="flex min-h-[72vh] flex-col gap-8 sm:min-h-[78vh] sm:flex-row sm:items-center sm:justify-between sm:gap-8 md:min-h-[80vh] lg:gap-12">
-      <div className="relative z-10 min-w-0 flex-1 sm:max-w-[min(52rem,58%)]">
+    <section className="relative flex min-h-[calc(100svh-4.5rem)] flex-col justify-center pb-16 pt-10 sm:pb-20 sm:pt-14">
+      {/* Decorative ghost word */}
+      <div
+        className="pointer-events-none absolute left-1/2 top-1/2 z-0 -translate-x-1/2 -translate-y-[55%] select-none font-[family-name:var(--font-serif-display)] text-[clamp(8rem,22vw,20rem)] font-normal leading-none tracking-[-0.04em] text-[#F0EDE6] opacity-[0.025]"
+        aria-hidden
+      >
+        DESIGN
+      </div>
+
+      {/* Film grain */}
+      <div
+        className="pointer-events-none absolute inset-0 z-[1] opacity-[0.03] mix-blend-overlay grain-overlay"
+        aria-hidden
+      />
+
+      <div className="relative z-10 mx-auto w-full max-w-[1100px] px-1 sm:px-0">
+        <motion.p
+          className="text-[12px] font-medium uppercase tracking-[0.2em] text-[#E8C9A0]"
+          initial={reduceMotion ? false : { opacity: 0 }}
+          animate={reduceMotion ? undefined : { opacity: 1 }}
+          transition={{ duration: 0.45, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+        >
+          {specializeEyebrow}
+        </motion.p>
+
         <h1
-          className="font-[family-name:var(--font-display)] font-semibold leading-[0.95] tracking-[-0.03em] text-zinc-50"
+          className="mt-5 font-[family-name:var(--font-serif-display)] font-normal leading-[0.95] tracking-[-0.03em] text-[#F0EDE6]"
           style={{
-            fontSize: "clamp(4.5rem, 8vw, 7.5rem)",
+            fontSize: "clamp(4rem, 10vw, 8rem)",
           }}
         >
           <span className="sr-only">{DISPLAY_NAME}</span>
           {reduceMotion ? (
             <span aria-hidden="true">{DISPLAY_NAME}</span>
           ) : (
-            <span className="inline-block" aria-hidden="true">
-              {chars.map((ch, i) => (
-                <motion.span
-                  key={`${ch}-${i}`}
-                  className="inline-block"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.22,
-                    delay: i * 0.05,
-                    ease: [0.22, 1, 0.36, 1],
-                  }}
-                >
-                  {ch === " " ? "\u00A0" : ch}
-                </motion.span>
+            <span className="inline-flex flex-wrap gap-x-[0.25em]" aria-hidden="true">
+              {words.map((word, wi) => (
+                <span key={word} className="inline-block overflow-hidden pb-[0.06em]">
+                  <motion.span
+                    className="inline-block"
+                    initial={{ clipPath: "inset(0 0 100% 0)" }}
+                    animate={{ clipPath: "inset(0 0 0% 0)" }}
+                    transition={{
+                      duration: 0.65,
+                      delay: wi === 0 ? 0.4 : 0.6,
+                      ease: [0.16, 1, 0.3, 1],
+                    }}
+                  >
+                    {word}
+                  </motion.span>
+                </span>
               ))}
             </span>
           )}
         </h1>
+
         <motion.p
-          className="mt-6 max-w-xl text-pretty text-[15px] leading-relaxed text-zinc-400 sm:text-[16px] md:mt-8"
-          initial={reduceMotion ? false : { opacity: 0 }}
-          animate={reduceMotion ? undefined : { opacity: 1 }}
+          className="mt-8 max-w-2xl text-pretty text-[15px] font-normal leading-relaxed text-[#888580] sm:text-[16px]"
+          initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+          animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
           transition={{
-            delay: 0.3,
-            duration: 0.45,
-            ease: [0.22, 1, 0.36, 1],
+            delay: 0.9,
+            duration: 0.65,
+            ease: [0.16, 1, 0.3, 1],
           }}
         >
           {heroHook}
@@ -58,29 +81,26 @@ export function HomeHero() {
       </div>
 
       <div
-        className="relative mx-auto w-full max-w-[min(100%,20rem)] shrink-0 sm:mx-0 sm:w-[38%] sm:max-w-none md:w-[min(42%,28rem)] lg:w-[min(40%,32rem)]"
+        className="pointer-events-none absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center text-[#888580]"
         aria-hidden
       >
-        <div
-          className="home-bubble-float relative mx-auto w-full"
-          style={{ aspectRatio: 1024 / 744, maxWidth: 520 }}
+        <motion.span
+          className="inline-block text-[#E8C9A0]"
+          animate={
+            reduceMotion
+              ? undefined
+              : { y: [0, 6, 0] }
+          }
+          transition={{
+            duration: 1.6,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          style={{ fontSize: "1.1rem", lineHeight: 1 }}
         >
-          <div
-            className="absolute inset-0 rounded-full bg-zinc-950/25 blur-3xl"
-            aria-hidden
-          />
-          <div className="relative h-full w-full">
-            <Image
-              src={BUBBLE_SRC}
-              alt=""
-              fill
-              className="object-contain object-center md:object-right"
-              sizes="(max-width: 768px) 90vw, 520px"
-              priority
-            />
-          </div>
-        </div>
+          ↓
+        </motion.span>
       </div>
-    </div>
+    </section>
   );
 }
