@@ -6,13 +6,6 @@ import { useEffect, useState } from "react";
 
 const BUBBLE_SRC = "/home/header-bubble-v2.png";
 const ASPECT = 1024 / 744;
-const MAX_BUBBLE_W = 1380;
-/** Fixed desktop bubble size (larger; overlaps hero copy; text stays above via z-index). */
-const DESKTOP_BUBBLE_H = 468;
-const DESKTOP_BUBBLE_W = Math.min(
-  Math.round(DESKTOP_BUBBLE_H * ASPECT),
-  MAX_BUBBLE_W,
-);
 
 const DISPLAY_FONT =
   "var(--font-serif-display), Georgia, 'Times New Roman', serif";
@@ -53,10 +46,8 @@ export function HeroWithBubble() {
 
   return (
     <div>
-      <div className="relative isolate flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-6">
-        <div
-          className="relative z-10 flex min-w-0 w-full max-w-[54rem] shrink-0 flex-col items-start gap-3 text-left lg:max-w-[min(54rem,62%)]"
-        >
+      <div className="relative isolate flex flex-col gap-8 lg:flex-row lg:items-stretch lg:gap-6">
+        <div className="relative z-10 flex min-w-0 w-full max-w-[54rem] shrink-0 flex-col items-start gap-3 text-left lg:max-w-[min(50rem,54%)]">
           <h1 className="sr-only">Angela Yang — product designer</h1>
           <p
             className={`${headlineClass} text-white`}
@@ -101,14 +92,11 @@ export function HeroWithBubble() {
           </div>
         </div>
 
-        {/* Desktop: behind headline; larger blob overlaps copy; text column stays on top. */}
-        <div className="pointer-events-none relative z-0 hidden min-h-0 min-w-0 flex-1 justify-end lg:-ml-6 lg:flex lg:items-center xl:-ml-10 2xl:-ml-12">
+        {/* Desktop: right edge aligns with shell (same as sections below); extends slightly left over copy. */}
+        <div className="relative z-0 hidden min-h-[min(22rem,36vh)] flex-1 lg:block">
           <div
-            className="home-bubble-float relative shrink-0 -translate-x-8 xl:-translate-x-14 2xl:-translate-x-20"
-            style={{
-              width: DESKTOP_BUBBLE_W,
-              height: DESKTOP_BUBBLE_H,
-            }}
+            className="home-bubble-float pointer-events-none absolute right-0 top-1/2 max-h-[min(540px,52vh)] w-[min(742px,calc(100%+2.5rem))] -translate-y-1/2"
+            style={{ aspectRatio: ASPECT }}
           >
             <BubbleBackdrop />
             <div className="relative h-full w-full">
@@ -117,7 +105,7 @@ export function HeroWithBubble() {
                 alt=""
                 fill
                 className="object-contain object-right"
-                sizes="1380px"
+                sizes="(max-width: 1480px) 80vw, 760px"
                 priority
               />
             </div>
