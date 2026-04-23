@@ -82,18 +82,29 @@ function GalleryTile({
   item: BeyondGalleryItem;
   onOpen: () => void;
 }) {
+  const fit = item.imageFit ?? "cover";
+  const isContain = fit === "contain";
+
   return (
     <button
       type="button"
       onClick={onOpen}
       className={`group relative block w-full min-w-0 cursor-zoom-in text-left ${item.gridClass}`}
     >
-      <div className="relative h-full min-h-[200px] w-full overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+      <div
+        className={`relative h-full min-h-[200px] w-full overflow-hidden rounded-2xl border border-zinc-800 ${
+          isContain ? item.containBg ?? "bg-[#ece6dc]" : "bg-zinc-900/40"
+        }`}
+      >
         <Image
           src={item.src}
           alt={item.alt}
           fill
-          className="object-cover opacity-95 transition duration-500 ease-out group-hover:scale-[1.04]"
+          className={
+            isContain
+              ? "object-contain object-center p-3 opacity-95 transition duration-500 ease-out group-hover:scale-[1.02] sm:p-4"
+              : "object-cover opacity-95 transition duration-500 ease-out group-hover:scale-[1.04]"
+          }
           sizes="(max-width: 1024px) 100vw, 400px"
         />
         <div

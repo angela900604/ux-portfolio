@@ -186,10 +186,11 @@ export default function AboutPage() {
           <div className="mt-6 grid min-w-0 gap-4 sm:grid-cols-2 lg:gap-6">
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 sm:p-7">
               <h3 className={ABOUT_CARD_TITLE_CLASS}>
-                Branding &amp; style exploration
+                Graphic design, drawing style exploration
               </h3>
               <p className={ABOUT_CARD_BODY_CLASS}>
-                I enjoy studying the logic behind brands and how visual style creates recognition, trust, and emotional resonance.
+                I love work where I can be creative—illustration, graphic design,
+                branding, and hands-on DIY.
               </p>
             </div>
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 sm:p-7">
