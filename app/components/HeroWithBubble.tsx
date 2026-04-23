@@ -18,7 +18,7 @@ const CYCLING_PHRASES = [
   "I love traveling across Europe and capturing scenic moments",
 ] as const;
 
-const CYCLE_MS = 2000;
+const CYCLE_MS = 2500;
 
 function BubbleBackdrop() {
   return (
@@ -47,16 +47,16 @@ export function HeroWithBubble() {
   return (
     <div>
       <div className="relative isolate flex flex-col gap-8 lg:flex-row lg:items-stretch lg:gap-6">
-        <div className="relative z-10 flex min-w-0 w-full max-w-[54rem] shrink-0 flex-col items-start gap-3 text-left lg:max-w-[min(50rem,54%)]">
+        <div className="relative z-10 flex min-w-0 w-full max-w-[72rem] shrink-0 flex-col items-start gap-3 text-left lg:max-w-[min(72rem,65%)]">
           <h1 className="sr-only">Angela Yang — product designer</h1>
           <p
-            className={`${headlineClass} text-white`}
+            className={`${headlineClass} max-w-[min(56rem,58vw)] text-white`}
             style={{ fontFamily: DISPLAY_FONT }}
           >
             Hello, I&apos;m Angela
           </p>
           <div
-            className="relative w-full min-h-[2.75em] overflow-hidden"
+            className="relative w-full max-w-[72rem] min-h-[2.75em] overflow-hidden"
             aria-live="polite"
             aria-atomic="true"
           >
@@ -93,9 +93,9 @@ export function HeroWithBubble() {
         </div>
 
         {/* Desktop: right edge aligns with shell (same as sections below); extends slightly left over copy. */}
-        <div className="relative z-0 hidden min-h-[min(22rem,36vh)] flex-1 lg:block">
+        <div className="relative z-0 hidden min-h-[min(26rem,40vh)] flex-1 lg:block">
           <div
-            className="home-bubble-float pointer-events-none absolute right-0 top-1/2 max-h-[min(540px,52vh)] w-[min(742px,calc(100%+2.5rem))] -translate-y-1/2"
+            className="home-bubble-float pointer-events-none absolute right-0 top-1/2 max-h-[min(600px,56vh)] w-[min(826px,calc(100%+2.5rem))] -translate-y-1/2"
             style={{ aspectRatio: ASPECT }}
           >
             <BubbleBackdrop />
@@ -105,7 +105,7 @@ export function HeroWithBubble() {
                 alt=""
                 fill
                 className="object-contain object-right"
-                sizes="(max-width: 1480px) 80vw, 760px"
+                sizes="(max-width: 1480px) 85vw, 860px"
                 priority
               />
             </div>
@@ -119,7 +119,7 @@ export function HeroWithBubble() {
         aria-hidden
       >
         <div
-          className="home-bubble-float relative w-[min(92vw,960px)]"
+          className="home-bubble-float relative w-[min(94vw,1040px)]"
           style={{ aspectRatio: ASPECT }}
         >
           <BubbleBackdrop />
