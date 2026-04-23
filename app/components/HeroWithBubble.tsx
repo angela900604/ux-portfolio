@@ -7,8 +7,8 @@ import { useEffect, useState } from "react";
 const BUBBLE_SRC = "/home/header-bubble-v2.png";
 const ASPECT = 1024 / 744;
 const MAX_BUBBLE_W = 1380;
-/** Fixed desktop bubble size so it does not grow when hero copy gains a second row. */
-const DESKTOP_BUBBLE_H = 380;
+/** Fixed desktop bubble size (larger; overlaps hero copy; text stays above via z-index). */
+const DESKTOP_BUBBLE_H = 468;
 const DESKTOP_BUBBLE_W = Math.min(
   Math.round(DESKTOP_BUBBLE_H * ASPECT),
   MAX_BUBBLE_W,
@@ -53,7 +53,7 @@ export function HeroWithBubble() {
 
   return (
     <div>
-      <div className="relative flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-12">
+      <div className="relative isolate flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-6">
         <div
           className="relative z-10 flex min-w-0 w-full max-w-[54rem] shrink-0 flex-col items-start gap-3 text-left lg:max-w-[min(54rem,62%)]"
         >
@@ -65,7 +65,7 @@ export function HeroWithBubble() {
             Hello, I&apos;m Angela
           </p>
           <div
-            className="relative w-full min-h-[2.75em]"
+            className="relative w-full min-h-[2.75em] overflow-hidden"
             aria-live="polite"
             aria-atomic="true"
           >
@@ -77,13 +77,18 @@ export function HeroWithBubble() {
                     : CYCLING_PHRASES[phraseIndex]
                 }
                 role="status"
-                initial={reduceMotion ? false : { opacity: 0, y: 8 }}
+                initial={
+                  reduceMotion ? false : { opacity: 0, y: "-100%" }
+                }
                 animate={{ opacity: 1, y: 0 }}
-                exit={reduceMotion ? undefined : { opacity: 0, y: -8 }}
+                exit={reduceMotion ? undefined : { opacity: 0, y: "100%" }}
                 transition={
                   reduceMotion
                     ? { duration: 0 }
-                    : { duration: 0.35, ease: [0.22, 1, 0.36, 1] }
+                    : {
+                        duration: 0.48,
+                        ease: [0.22, 1, 0.36, 1],
+                      }
                 }
                 className={`${headlineClass} text-zinc-400`}
                 style={{ fontFamily: DISPLAY_FONT }}
@@ -96,10 +101,10 @@ export function HeroWithBubble() {
           </div>
         </div>
 
-        {/* Desktop: behind headline; size fixed (not tied to text block height). */}
-        <div className="pointer-events-none relative z-0 hidden min-h-0 min-w-0 flex-1 justify-end lg:-ml-10 lg:flex lg:items-center xl:-ml-16 2xl:-ml-20">
+        {/* Desktop: behind headline; larger blob overlaps copy; text column stays on top. */}
+        <div className="pointer-events-none relative z-0 hidden min-h-0 min-w-0 flex-1 justify-end lg:-ml-6 lg:flex lg:items-center xl:-ml-10 2xl:-ml-12">
           <div
-            className="home-bubble-float relative shrink-0"
+            className="home-bubble-float relative shrink-0 -translate-x-8 xl:-translate-x-14 2xl:-translate-x-20"
             style={{
               width: DESKTOP_BUBBLE_W,
               height: DESKTOP_BUBBLE_H,
@@ -126,7 +131,7 @@ export function HeroWithBubble() {
         aria-hidden
       >
         <div
-          className="home-bubble-float relative w-[min(88vw,880px)]"
+          className="home-bubble-float relative w-[min(92vw,960px)]"
           style={{ aspectRatio: ASPECT }}
         >
           <BubbleBackdrop />
