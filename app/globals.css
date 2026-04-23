@@ -1,27 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0d0d0d;
-  --foreground: #f0ede6;
-  --surface: #161616;
-  --muted: #888580;
-  --accent: #e8c9a0;
-  --accent-2: #d4856a;
-  --border: rgba(255, 255, 255, 0.08);
+  --background: #09090b;
+  --foreground: #fafafa;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-surface: var(--surface);
-  --color-muted: var(--muted);
-  --color-accent: var(--accent);
-  --color-accent-2: var(--accent-2);
   --font-sans: var(--font-sans), system-ui, sans-serif;
-  --font-serif-display: var(--font-serif-display), ui-serif, Georgia, serif;
+  --font-display: var(--font-display), system-ui, sans-serif;
 }
 
 @layer base {
+  /* Unified type scale — prefer semantic h1–h6; keep color/spacing on elements. */
   h1 {
     @apply font-semibold tracking-tight text-3xl leading-tight sm:text-4xl md:text-5xl;
   }
@@ -42,88 +34,45 @@
   }
 
   body {
-    @apply bg-[#0D0D0D] text-[#F0EDE6] text-base leading-[1.65] antialiased font-sans sm:text-lg;
-  }
-
-  ::selection {
-    background: rgba(232, 201, 160, 0.25);
-    color: #f0ede6;
-  }
-
-  :focus-visible {
-    outline: 2px solid rgba(232, 201, 160, 0.65);
-    outline-offset: 3px;
+    @apply bg-[var(--background)] text-[var(--foreground)] text-base leading-[1.65] antialiased font-sans sm:text-lg;
   }
 }
 
-/* Editorial cursor — hide system cursor when active */
-html.editorial-cursor,
-html.editorial-cursor * {
+/* Soft fluffy cursor — hide system cursor when SoftCursor client is active */
+html.soft-cursor,
+html.soft-cursor * {
   cursor: none !important;
 }
 
-html.editorial-cursor .cursor-ew-resize {
+/* Preserve resize affordance on drag handles */
+html.soft-cursor .cursor-ew-resize {
   cursor: ew-resize !important;
 }
 
-html.editorial-cursor input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]):not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="image"]):not([type="hidden"]),
-html.editorial-cursor textarea,
-html.editorial-cursor [contenteditable="true"] {
+html.soft-cursor input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]):not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="image"]):not([type="hidden"]),
+html.soft-cursor textarea,
+html.soft-cursor [contenteditable="true"] {
   cursor: text !important;
 }
 
-html.editorial-cursor [disabled],
-html.editorial-cursor :disabled,
-html.editorial-cursor .cursor-not-allowed {
+html.soft-cursor [disabled],
+html.soft-cursor :disabled,
+html.soft-cursor .cursor-not-allowed {
   cursor: not-allowed !important;
 }
 
-html.editorial-cursor [disabled]:hover,
-html.editorial-cursor :disabled:hover {
+html.soft-cursor [disabled]:hover,
+html.soft-cursor :disabled:hover {
   cursor: not-allowed !important;
 }
 
-/* Subtle film grain overlay (fixed; pointer-events none via utility on element) */
-.grain-overlay {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
-}
-
-@keyframes contact-question-wiggle {
-  0%,
-  100% {
-    transform: rotate(0deg);
-  }
-  25% {
-    transform: rotate(-6deg);
-  }
-  75% {
-    transform: rotate(6deg);
-  }
-}
-
-.contact-question-wiggle {
-  display: inline-block;
-  animation: contact-question-wiggle 2.8s ease-in-out infinite;
-  transform-origin: 60% 70%;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .contact-question-wiggle {
-    animation: none;
-  }
-
-  * {
-    animation: none !important;
-    transition: none !important;
-  }
-}
-
-/* Case study narrative */
+/* Case study narrative: layout sets text-base / sm:text-lg on .case-study-prose (resume-aligned body) */
 .case-study-prose .text-sm {
   font-size: inherit !important;
   line-height: inherit !important;
 }
 
+/* Narrative uses full main column; 32px to TOC comes from grid gap (see lib/site-shell). */
 .case-study-prose .max-w-xl,
 .case-study-prose .max-w-2xl,
 .case-study-prose .max-w-3xl,
@@ -142,12 +91,12 @@ html.editorial-cursor :disabled:hover {
   line-height: 1.25rem !important;
 }
 
+/* Case studies: larger section titles; body stays secondary to headlines */
 .case-study-prose h2 {
   font-size: clamp(1.625rem, 1.15rem + 1.65vw, 2.625rem);
   line-height: 1.12;
   letter-spacing: -0.028em;
   font-weight: 600;
-  color: #f0ede6;
 }
 
 .case-study-prose h3 {
@@ -155,15 +104,32 @@ html.editorial-cursor :disabled:hover {
   line-height: 1.2;
   letter-spacing: -0.022em;
   font-weight: 600;
-  color: #f0ede6;
 }
 
-.case-study-prose p,
-.case-study-prose li {
-  color: #c9c4bc;
+@keyframes homeBubbleFloat {
+  0%,
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+  33% {
+    transform: translateY(-28px) translateX(10px);
+  }
+  66% {
+    transform: translateY(-12px) translateX(-8px);
+  }
 }
 
-/* E-invoice case study — final screens marquee */
+.home-bubble-float {
+  animation: homeBubbleFloat 7.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-bubble-float {
+    animation: none;
+  }
+}
+
+/* E-invoice case study — 07 final screens infinite marquee */
 @keyframes final-screens-marquee {
   0% {
     transform: translateX(0);
