@@ -19,16 +19,18 @@ const serifDisplay = Fraunces({
   variable: "--font-serif-display",
 });
 
-const heroPlayful = Nunito({
+/** Homepage hero — playful greeting (Nunito Black) */
+const heroRound = Nunito({
   subsets: ["latin"],
+  variable: "--font-hero-round",
   weight: ["900"],
-  variable: "--font-hero-playful",
 });
 
+/** Homepage hero — cycling taglines (Inter ExtraBold) */
 const heroCycling = Inter({
   subsets: ["latin"],
-  weight: ["800"],
   variable: "--font-hero-cycling",
+  weight: ["800"],
 });
 
 export const metadata: Metadata = {
@@ -59,7 +61,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${sans.variable} ${display.variable} ${serifDisplay.variable} ${heroPlayful.variable} ${heroCycling.variable} scroll-smooth`}
+      className={`${sans.variable} ${display.variable} ${serifDisplay.variable} ${heroRound.variable} ${heroCycling.variable} scroll-smooth`}
     >
       <body className="min-h-screen overflow-x-hidden">
         <SoftCursor />

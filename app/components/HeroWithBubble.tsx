@@ -1,12 +1,12 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
-import { specializeEyebrow } from "../content/specialize";
 
 const BUBBLE_SRC = "/home/header-bubble-v2.png";
 const ASPECT = 1024 / 744;
+/** Cap width; height scales with text column × {@link BUBBLE_SCALE}. */
 const MAX_BUBBLE_W = 1380;
 const BUBBLE_SCALE = 1.92;
 
@@ -18,82 +18,65 @@ const HERO_CYCLING_PHRASES = [
   "I love traveling across Europe and capturing scenic moments",
 ] as const;
 
-const inkMask = {
-  WebkitMaskImage:
-    "linear-gradient(to bottom, black 0%, black 30%, transparent 42%)",
-  maskImage:
-    "linear-gradient(to bottom, black 0%, black 30%, transparent 42%)",
-} as const;
+const CYCLING_INTERVAL_MS = 2500;
 
 function BubbleBackdrop() {
   return (
     <div
-      className="absolute inset-0 rounded-full bg-zinc-400/15 blur-3xl"
+      className="absolute inset-0 rounded-full bg-zinc-950/25 blur-3xl"
       aria-hidden
     />
   );
 }
 
-function HeroCyclingSubtitle() {
+function HeroCyclingTagline() {
   const [index, setIndex] = useState(0);
+  const reduceMotion = useReducedMotion();
 
   useEffect(() => {
-    const id = window.setInterval(() => {
-      setIndex((i) => (i + 1) % HERO_CYCLING_PHRASES.length);
-    }, 2500);
+    const id = window.setInterval(
+      () => setIndex((i) => (i + 1) % HERO_CYCLING_PHRASES.length),
+      CYCLING_INTERVAL_MS,
+    );
     return () => window.clearInterval(id);
   }, []);
 
+  const phrase = HERO_CYCLING_PHRASES[index];
+
+  if (reduceMotion) {
+    return (
+      <p
+        className="max-w-[56rem] text-[clamp(1.75rem,6vw,5rem)] font-extrabold leading-[1.12] tracking-tight text-[#888888]"
+        style={{
+          fontFamily: "var(--font-hero-cycling), system-ui, sans-serif",
+        }}
+      >
+        {phrase}
+      </p>
+    );
+  }
+
   return (
     <div
-      className="min-h-[2.85em] w-full max-w-[56rem]"
+      className="w-full max-w-[56rem] min-h-[clamp(6rem,20vw,12rem)]"
       aria-live="polite"
-      aria-atomic="true"
     >
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="wait" initial={false}>
         <motion.p
-          key={index}
+          key={phrase}
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-          className="text-left text-[clamp(1.75rem,8vw,5rem)] font-extrabold leading-[1.06] tracking-[-0.035em] text-[#888]"
+          className="max-w-[56rem] text-left text-[clamp(1.75rem,6vw,5rem)] font-extrabold leading-[1.12] tracking-tight text-[#888888]"
           style={{
-            fontFamily:
-              "var(--font-hero-cycling), var(--font-sans), system-ui, sans-serif",
-            fontWeight: 800,
+            fontFamily: "var(--font-hero-cycling), system-ui, sans-serif",
           }}
         >
-          {HERO_CYCLING_PHRASES[index]}
+          {phrase}
         </motion.p>
       </AnimatePresence>
     </div>
-  );
-}
-
-function HelloInkHeading() {
-  const name = "Hello, I'm Angela";
-  return (
-    <h1
-      className="relative m-0 text-left font-black tracking-[-0.02em] text-[#111] text-[clamp(2.25rem,9vw,4.5rem)] leading-[1.05]"
-      style={{
-        fontFamily:
-          "var(--font-hero-playful), 'Nunito', 'Varela Round', system-ui, sans-serif",
-      }}
-    >
-      <span className="relative inline-block">
-        {/* Sharp base */}
-        <span className="relative z-0">{name}</span>
-        {/* Soft ink-bleed on upper portion of glyphs */}
-        <span
-          className="pointer-events-none absolute left-0 top-0 z-[1] inline-block blur-[3px] opacity-[0.72] saturate-110"
-          style={inkMask}
-          aria-hidden
-        >
-          {name}
-        </span>
-      </span>
-    </h1>
   );
 }
 
@@ -134,15 +117,21 @@ export function HeroWithBubble() {
           ref={textRef}
           className="relative z-10 min-w-0 w-full max-w-[48rem] shrink-0 lg:max-w-[min(48rem,58%)]"
         >
-          <div className="flex flex-col items-start gap-4 sm:gap-5">
-            <HelloInkHeading />
-            <HeroCyclingSubtitle />
-            <p className="mt-2 max-w-[56rem] border-t border-zinc-300/80 pt-4 text-left text-sm font-medium uppercase tracking-widest text-[#666] sm:text-[0.8125rem]">
-              {specializeEyebrow}
+          <h1 className="sr-only">Angela Yang — product designer</h1>
+          <div className="flex flex-col items-start gap-3 sm:gap-4">
+            <p
+              className="text-left text-[clamp(2.25rem,7vw,4.5rem)] font-black leading-[1.05] tracking-tight text-white"
+              style={{
+                fontFamily: "var(--font-hero-round), system-ui, sans-serif",
+              }}
+            >
+              Hello, I&apos;m Angela
             </p>
+            <HeroCyclingTagline />
           </div>
         </div>
 
+        {/* Desktop: behind headline (z-0); pull left so blob kisses the “s” in “experiences.” */}
         <div className="pointer-events-none relative z-0 hidden min-h-0 min-w-0 flex-1 justify-end lg:-ml-10 lg:flex lg:items-center xl:-ml-16 2xl:-ml-20">
           <div
             className="home-bubble-float relative shrink-0"
@@ -175,6 +164,7 @@ export function HeroWithBubble() {
         </div>
       </div>
 
+      {/* Mobile / tablet: centered bubble under hero copy */}
       <div
         className="pointer-events-none mt-8 flex justify-center lg:hidden"
         aria-hidden

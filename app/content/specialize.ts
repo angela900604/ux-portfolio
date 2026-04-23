@@ -2,9 +2,6 @@
  * Shared positioning for homepage + About — recruiter-facing, consistent story.
  * Lead with B2C iOS / AI-driven mobile; B2B appears as portfolio breadth, not the headline specialty.
  */
-/** Legacy / meta — homepage hero is now stacked name + cycling lines in HeroWithBubble */
-export const heroHeadline =
-  "Product design for AI-driven products and B2B systems—mobile, web, and multi-role workflows.";
 
 export const specializeEyebrow =
   "B2C iOS · AI-driven products · Multi-segment research · Vancouver (open to relocate)";
