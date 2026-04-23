@@ -94,20 +94,24 @@ export function HeroWithBubble() {
 
         {/* Desktop: right edge aligns with shell (same as sections below); extends slightly left over copy. */}
         <div className="relative z-0 hidden min-h-[min(26rem,40vh)] flex-1 lg:block">
-          <div
-            className="home-bubble-float pointer-events-none absolute right-0 top-1/2 max-h-[min(600px,56vh)] w-[min(826px,calc(100%+2.5rem))] -translate-y-1/2"
-            style={{ aspectRatio: ASPECT }}
-          >
-            <BubbleBackdrop />
-            <div className="relative h-full w-full">
-              <Image
-                src={BUBBLE_SRC}
-                alt=""
-                fill
-                className="object-contain object-right"
-                sizes="(max-width: 1480px) 85vw, 860px"
-                priority
-              />
+          <div className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2">
+            <div
+              className="home-bubble-float max-h-[min(600px,56vh)] w-[min(826px,calc(100%+2.5rem))]"
+              style={{ aspectRatio: ASPECT }}
+            >
+              <div className="relative h-full w-full origin-right scale-150">
+                <BubbleBackdrop />
+                <div className="relative h-full w-full">
+                  <Image
+                    src={BUBBLE_SRC}
+                    alt=""
+                    fill
+                    className="object-contain object-right"
+                    sizes="(max-width: 1480px) 85vw, 860px"
+                    priority
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -122,16 +126,18 @@ export function HeroWithBubble() {
           className="home-bubble-float relative w-[min(94vw,1040px)]"
           style={{ aspectRatio: ASPECT }}
         >
-          <BubbleBackdrop />
-          <div className="relative h-full w-full">
-            <Image
-              src={BUBBLE_SRC}
-              alt=""
-              fill
-              className="object-contain object-center"
-              sizes="970px"
-              priority
-            />
+          <div className="relative h-full w-full origin-center scale-150">
+            <BubbleBackdrop />
+            <div className="relative h-full w-full">
+              <Image
+                src={BUBBLE_SRC}
+                alt=""
+                fill
+                className="object-contain object-center"
+                sizes="970px"
+                priority
+              />
+            </div>
           </div>
         </div>
       </div>

@@ -3,7 +3,8 @@ import Image from "next/image";
 import { SITE_SHELL_CONTAINER } from "@/lib/site-shell";
 import { FadeInSection } from "./components/FadeInSection";
 import { HeroWithBubble } from "./components/HeroWithBubble";
-import { PortfolioFocus } from "./components/PortfolioFocus";
+import { ProjectCardTag } from "./components/ProjectCardTag";
+import { ServiceOverview } from "./components/ServiceOverview";
 
 const CORE_PRODUCT = {
   flagship: {
@@ -98,6 +99,8 @@ export default function Home() {
         </div>
       </section>
 
+      <ServiceOverview />
+
       {/* Selected projects — no visible section blurb (sr-only for outline) */}
       <section id="featured" className="border-b border-zinc-800">
         <div className={`${SITE_SHELL_CONTAINER} py-16 sm:py-20`}>
@@ -119,9 +122,9 @@ export default function Home() {
                 />
               </div>
               <div className="px-6 py-8 sm:px-10 sm:py-10">
-                <span className="mb-3 inline-block text-[10px] font-medium uppercase tracking-widest text-amber-400/90">
+                <ProjectCardTag variant="flagship" className="mb-3">
                   {CORE_PRODUCT.flagship.tag}
-                </span>
+                </ProjectCardTag>
                 <h3 className="text-xl font-semibold tracking-tight text-zinc-100 transition group-hover:text-zinc-50 sm:text-2xl">
                   {CORE_PRODUCT.flagship.title}
                   <span className="mt-2 block text-base font-normal text-zinc-400 sm:text-lg">
@@ -160,9 +163,7 @@ export default function Home() {
                       />
                     </div>
                     <div className="flex flex-1 flex-col p-6 sm:p-8">
-                      <span className="text-[10px] font-medium uppercase tracking-widest text-zinc-500">
-                        {item.tag}
-                      </span>
+                      <ProjectCardTag>{item.tag}</ProjectCardTag>
                       <h3 className="mt-3 text-lg font-semibold tracking-tight text-zinc-100 group-hover:text-zinc-50 sm:text-xl">
                         {item.title}
                         <span className="mt-2 block text-sm font-normal text-zinc-400 sm:text-base">
@@ -210,9 +211,7 @@ export default function Home() {
                       />
                     </div>
                     <div className="flex flex-1 flex-col p-6 sm:p-8">
-                      <span className="text-[10px] font-medium uppercase tracking-widest text-zinc-500">
-                        {item.tag}
-                      </span>
+                      <ProjectCardTag>{item.tag}</ProjectCardTag>
                       <h3 className="mt-3 text-lg font-semibold tracking-tight text-zinc-100 group-hover:text-zinc-50 sm:text-xl">
                         {item.title}
                         <span className="mt-2 block text-sm font-normal text-zinc-400 sm:text-base">
@@ -230,8 +229,6 @@ export default function Home() {
           </ul>
         </div>
       </section>
-
-      <PortfolioFocus />
 
       {/* Contact */}
       <section id="contact" className="border-b border-zinc-800">
