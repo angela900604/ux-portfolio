@@ -89,10 +89,10 @@ export default function AiMarketplaceCaseStudy() {
             </p>
           }
         >
-          <figure className="mb-8 w-full max-w-3xl min-w-0">
-            <div className="overflow-hidden rounded-xl border border-zinc-800/80 bg-zinc-950 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.65)]">
+          <figure className="mb-8 w-full min-w-0">
+            <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-zinc-800/80 bg-black shadow-[0_20px_50px_-20px_rgba(0,0,0,0.65)]">
               <video
-                className="block h-auto w-full max-w-full rounded-lg bg-black object-contain"
+                className="absolute inset-0 h-full w-full object-cover object-center"
                 autoPlay
                 loop
                 muted
@@ -108,9 +108,6 @@ export default function AiMarketplaceCaseStudy() {
                 />
               </video>
             </div>
-            <figcaption className="mt-2 text-xs font-medium uppercase tracking-widest text-zinc-500">
-              3 demo
-            </figcaption>
           </figure>
 
           <div className="mt-8">

@@ -76,12 +76,9 @@ export default function AboutPage() {
               </p>
               <p>
                 Before that, I worked at Turn Cloud in Taiwan on the Taiwan
-                e-Invoice app, a nationwide service used by millions. I
-                redesigned the login flow, increasing success rate from 68% to
-                92%, and built a 50+ component design system to scale product
-                consistency. I also led UX for a Baskin-Robbins membership
-                platform and designed internal government dashboards across
-                multi-role workflows.
+                e-Invoice app, a nationwide service used by millions. I also
+                led UX for a Baskin-Robbins membership platform and designed
+                internal government dashboards across multi-role workflows.
               </p>
               <p>
                 My work centers on consumer mobile and AI-assisted experiences,
@@ -173,13 +170,7 @@ export default function AboutPage() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             How I work
           </span>
-          <p className="mt-6 max-w-3xl text-base leading-relaxed text-zinc-300 sm:text-lg">
-            From 0→1 through scale, I turn abstract problems into shippable
-            flows—especially when backend logic, permissions, and data models
-            drive what the UI can honestly promise. Craft matters, but
-            feasibility with engineering is non-negotiable.
-          </p>
-          <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-5 lg:gap-6">
+          <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-5 lg:gap-6">
             <div className="flex h-full min-w-0 flex-col rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 sm:p-7">
               <h5 className="text-zinc-100 normal-case tracking-normal">
                 Engineering-led collaboration
@@ -218,29 +209,22 @@ export default function AboutPage() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Beyond design
           </span>
-          <div className="mt-6 grid items-start gap-8 lg:grid-cols-12 lg:gap-10">
-            <div className="min-w-0 lg:col-span-5">
-              <p className="text-base leading-relaxed text-zinc-300 sm:text-lg">
-                Outside work, I keep exploring branding, visual style, and photography. Traveling helps me sharpen my aesthetic sense, and this gallery is where I share that perspective.
+          <div className="mt-6 grid min-w-0 gap-4 sm:grid-cols-2 lg:gap-6">
+            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 sm:p-7">
+              <h5 className="text-zinc-100 normal-case tracking-normal">
+                Branding &amp; style exploration
+              </h5>
+              <p className="mt-3 text-base leading-relaxed text-zinc-400 sm:text-lg">
+                I enjoy studying the logic behind brands and how visual style creates recognition, trust, and emotional resonance.
               </p>
             </div>
-            <div className="grid min-w-0 gap-4 sm:grid-cols-2 lg:col-span-7 lg:gap-5">
-              <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 sm:p-7">
-                <h5 className="text-zinc-100 normal-case tracking-normal">
-                  Branding &amp; style exploration
-                </h5>
-                <p className="mt-3 text-base leading-relaxed text-zinc-400 sm:text-lg">
-                  I enjoy studying the logic behind brands and how visual style creates recognition, trust, and emotional resonance.
-                </p>
-              </div>
-              <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 sm:p-7">
-                <h5 className="text-zinc-100 normal-case tracking-normal">
-                  Photography &amp; travel
-                </h5>
-                <p className="mt-3 text-base leading-relaxed text-zinc-400 sm:text-lg">
-                  Through travel photography, I capture details from different cities. It is one of my ways to train visual sensitivity and build a more grounded understanding of aesthetics.
-                </p>
-              </div>
+            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 sm:p-7">
+              <h5 className="text-zinc-100 normal-case tracking-normal">
+                Photography &amp; travel
+              </h5>
+              <p className="mt-3 text-base leading-relaxed text-zinc-400 sm:text-lg">
+                Through travel photography, I capture details from different cities. It is one of my ways to train visual sensitivity and build a more grounded understanding of aesthetics.
+              </p>
             </div>
           </div>
           {/* Bento-style travel gallery — asymmetric grid + gutters like reference collage */}
