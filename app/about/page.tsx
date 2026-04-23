@@ -66,31 +66,37 @@ export default function AboutPage() {
 
             <div className="flex min-w-0 flex-col gap-5 text-base leading-relaxed text-zinc-300 sm:text-lg">
               <p className="font-medium text-zinc-100">
-                Product designer with experience across B2C iOS and Android
-                mobile, membership systems, government platforms, AI-driven
-                features, and B2B SaaS—spanning early-stage startups and
-                large-scale tech companies.
+                Product designer with experience across{" "}
+                <span className="text-zinc-50">
+                  B2C iOS and Android mobile, membership systems, government
+                  platforms, AI-driven features, and B2B SaaS,
+                </span>{" "}
+                spanning early-stage startups and large-scale tech companies.
               </p>
               <p className="font-medium text-zinc-100">
-                Currently at MINA AI (SF, remote), I&apos;m the sole designer
-                building the product from 0→1, shaping AI-assisted features like
-                Photo-to-Publish and Parenting Copilot, while owning the design
+                Currently at MINA AI as a sole designer building AI-driven
+                logistic marketplace product from 0→1, while owning the design
                 system and working closely with founders and engineers.
               </p>
               <p>
                 Before that, I worked at Turn Cloud in Taiwan on the Taiwan
-                e-Invoice app, a nationwide service used by millions. I also
-                led UX for a Baskin-Robbins membership platform and designed
-                internal government dashboards across multi-role workflows.
+                e-Invoice app, a nationwide service used by millions, and
+                designed internal government dashboards across multi-role
+                workflows. I also led design for the Taiwan&apos;s Baskin-Robbins
+                membership platform and worked with stakeholders in Japan.
               </p>
               <p>
-                My work centers on consumer mobile and AI-assisted experiences,
-                multi-role flows when the product demands them, and design
-                systems that scale. I&apos;m especially interested in
-                multi-segment user research — from teens to seniors to internal
-                staff — and how different user needs shape product decisions. I
-                work closely with PMs and engineers, and I&apos;m comfortable
-                leading projects end-to-end in fast-moving environments.
+                My work centers on{" "}
+                <span className="text-zinc-100">consumer mobile</span> and{" "}
+                <span className="text-zinc-100">AI-assisted experiences</span>,{" "}
+                <span className="text-zinc-100">multi-role flows</span> when the
+                product demands them, and design systems that scale. I&apos;m
+                especially interested in{" "}
+                <span className="text-zinc-100">multi-segment user research</span>{" "}
+                from teens to seniors to internal staff, and how different user
+                needs shape product decisions. I work closely with PMs and
+                engineers, and I&apos;m comfortable leading projects end-to-end in
+                fast-moving environments.
               </p>
               <p>
                 Based in Vancouver, BC. Open to relocation, remote, or hybrid.

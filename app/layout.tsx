@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans, Fraunces, Space_Grotesk } from "next/font/google";
 import { CASE_STUDY_BODY_GRID, SITE_SHELL_CONTAINER } from "@/lib/site-shell";
+import { SiteHeader } from "./components/SiteHeader";
 import { SoftCursor } from "./components/SoftCursor";
 import "./globals.css";
 
@@ -52,31 +53,7 @@ export default function RootLayout({
       <body className="min-h-screen overflow-x-hidden">
         <SoftCursor />
         <div className="flex min-h-screen flex-col">
-          <header className="sticky top-0 z-50 border-b border-zinc-800 bg-zinc-950/80 backdrop-blur-sm">
-            <div className={`${SITE_SHELL_CONTAINER} py-4`}>
-              <div className={CASE_STUDY_BODY_GRID}>
-                <div className="flex min-w-0 items-center justify-between gap-6 lg:col-span-2">
-                  <a
-                    href="/"
-                    className="text-base font-medium tracking-wide text-zinc-400 transition hover:text-zinc-100"
-                  >
-                    Angela Yang
-                  </a>
-                  <nav className="flex shrink-0 gap-6 text-base text-zinc-400 sm:gap-8">
-                    <a href="/" className="transition hover:text-zinc-100">
-                      Work
-                    </a>
-                    <a href="/about" className="transition hover:text-zinc-100">
-                      About
-                    </a>
-                    <a href="/resume" className="transition hover:text-zinc-100">
-                      Resume
-                    </a>
-                  </nav>
-                </div>
-              </div>
-            </div>
-          </header>
+          <SiteHeader />
 
           <main className="flex-1">{children}</main>
 

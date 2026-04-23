@@ -489,32 +489,6 @@ export default function BaskinRobbinsCaseStudy() {
             Japan, while the minimal layout lets promotional content and product
             imagery take center stage instead of competing with UI chrome.
           </p>
-          <div className="space-y-4 pt-4">
-            <div>
-              <h5 className="text-zinc-100">UI foundations (portfolio board)</h5>
-              <p className="mt-2 max-w-3xl text-sm leading-relaxed text-zinc-400">
-                A single overview board for the case study—colors, type scale,
-                components, and elevation aligned to the selected minimal + pink
-                direction. High-fidelity UI kit and screens live in{" "}
-                <a
-                  href={FIGMA_BR31_UI_KIT}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-medium text-violet-300 underline decoration-violet-500/40 underline-offset-2 hover:text-violet-200"
-                >
-                  Figma (App UI v02)
-                </a>
-                .
-              </p>
-            </div>
-            <WideFigure
-              borderless
-              frame="white"
-              src={ASSET("styleguide-portfolio-board.png")}
-              alt="BR31 membership app UI foundations: color palette, typography samples in Chinese and Latin, primary and secondary buttons, chips, and card elevation examples on a light canvas."
-              caption="Portfolio-ready style guide board summarizing the white + pink accent system and core components."
-            />
-          </div>
           <div className="space-y-3 pt-2">
             <h5 className="text-zinc-100">
               Style proposals (A / B / C)

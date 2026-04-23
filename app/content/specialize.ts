@@ -2,15 +2,23 @@
  * Shared positioning for homepage + About — recruiter-facing, consistent story.
  * Lead with B2C iOS / AI-driven mobile; B2B appears as portfolio breadth, not the headline specialty.
  */
-/** Homepage hero — primary headline under the name line */
-export const heroHeadline =
-  "Product design for AI-driven & B2B SaaS across mobile and web, with a focus on multi-role systems and cross-functional leadership.";
+/** Homepage hero — short hook (scroll prompt), ~8–12 words */
+export const heroHook =
+  "Research-led product design for iOS, AI, and public-scale systems.";
 
 export const specializeEyebrow =
   "B2C iOS · AI-driven products · Multi-segment research · Vancouver (open to relocate)";
 
 export const specializeSectionIntro =
   "I lead with consumer-facing mobile work—especially AI-assisted experiences on iOS. My portfolio also includes B2B and government projects, but my specialty is B2C iOS and AI-driven product craft.";
+
+/** Homepage interlude between featured case and project grid */
+export const homeWorkInterlude =
+  "A mix of zero-to-one product, complex permissions, and research across ages—what ships has to hold up in the real world.";
+
+/** Homepage — intro line above brand / marketing grid */
+export const homeBrandSectionIntro =
+  "Campaign work, growth, and brand systems—adjacent to core product, still craft-forward.";
 
 export const SPECIALIZE_PILLARS = [
   {
