@@ -11,6 +11,31 @@ import { MinaPrototypeVideo } from "./MinaPrototypeVideo";
 
 const MINA_HERO = "/case-studies/mina/mina-ai-hero.png";
 
+/** Hero strip: all raster demos currently shipped under `public/case-studies/mina/`. */
+const MINA_HERO_DEMOS = [
+  {
+    src: "/case-studies/mina/mina-ai-hero.png",
+    width: 1024,
+    height: 768,
+    label: "Product overview",
+    alt: "MINA app: AI-assisted buyer chat, marketplace home with picks and events, and community events",
+  },
+  {
+    src: `/case-studies/mina/${encodeURIComponent("image 6.png")}`,
+    width: 375,
+    height: 332,
+    label: "Flow detail",
+    alt: "MINA mobile UI: screen detail from the shipped prototype",
+  },
+  {
+    src: "/case-studies/mina/community-collage.jpg",
+    width: 768,
+    height: 1024,
+    label: "Community",
+    alt: "MINA community event: signage, parents trying the app, and team at a local gathering",
+  },
+] as const;
+
 /** Canada App Store — Mina - Resale for Parents */
 const MINA_APP_STORE =
   "https://apps.apple.com/ca/app/mina-resale-for-parents/id6754006404";
@@ -82,6 +107,30 @@ export default function AiMarketplaceCaseStudy() {
             </p>
           }
         >
+          <div
+            className="mb-10 grid gap-4 sm:grid-cols-3 sm:gap-5"
+            role="group"
+            aria-label="Product demos"
+          >
+            {MINA_HERO_DEMOS.map((demo) => (
+              <figure key={demo.src} className="min-w-0">
+                <div className="flex min-h-[11rem] items-center justify-center overflow-hidden rounded-xl border border-zinc-800/60 bg-zinc-900/50 p-3 sm:min-h-[12.5rem]">
+                  <Image
+                    src={demo.src}
+                    alt={demo.alt}
+                    width={demo.width}
+                    height={demo.height}
+                    className="h-auto max-h-[min(42vh,17rem)] w-full object-contain sm:max-h-[min(38vh,15rem)]"
+                    sizes="(max-width: 640px) 100vw, 33vw"
+                  />
+                </div>
+                <figcaption className="mt-2 text-center text-[11px] font-medium uppercase tracking-wider text-zinc-500">
+                  {demo.label}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+
           <p className="text-sm text-zinc-400 max-w-2xl leading-relaxed border-l-2 border-violet-500/50 pl-4">
             This case study is <span className="text-zinc-200">in progress</span>.
             Deeper flows, research snapshots, and metrics will be added as the work
