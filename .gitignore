@@ -50,5 +50,6 @@ dist
 *.zip
 .DS_Store
 
-# Embedded case study demos in public/ (default *.mp4 rule above would skip them)
+# Embedded case study demos in public/ (default *.mp4 / *.mov rules above would skip them)
 !public/case-studies/**/*.mp4
+!public/case-studies/**/*.mov
