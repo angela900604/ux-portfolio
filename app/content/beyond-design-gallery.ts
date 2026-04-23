@@ -63,18 +63,25 @@ export const BEYOND_PHOTOGRAPHY_GALLERY: BeyondGalleryItem[] = [
 /** Graphic design & illustration — aspect-aware bento on large screens */
 export const BEYOND_GRAPHIC_GALLERY: BeyondGalleryItem[] = [
   {
-    src: "/about/beyond-design/graphic/01.png",
-    alt: "Poster-style digital piece: astronaut and aurora-like color streaks",
-    width: 682,
+    src: "/about/beyond-design/graphic/12.png",
+    alt: "Flat vector city illustration: parliament and bridge at sunset",
+    width: 1024,
     height: 1024,
-    gridClass: "lg:col-span-2 lg:row-span-2 lg:min-h-[min(420px,36vw)]",
+    gridClass: "lg:col-span-2 lg:row-span-1 lg:min-h-[min(220px,18vw)]",
+  },
+  {
+    src: "/about/beyond-design/graphic/13.png",
+    alt: "Flat illustration: Taipei skyline and hills at sunset",
+    width: 1024,
+    height: 768,
+    gridClass: "lg:col-span-2 lg:row-span-1 lg:min-h-[min(200px,18vw)]",
   },
   {
     src: "/about/beyond-design/graphic/02.png",
     alt: "Double-exposure style portrait: city avenue inside a silhouetted profile",
     width: 997,
     height: 997,
-    gridClass: "lg:col-span-2 lg:row-span-1 lg:min-h-[min(220px,18vw)]",
+    gridClass: "lg:col-span-2 lg:row-span-2 lg:min-h-[min(420px,36vw)]",
   },
   {
     src: "/about/beyond-design/graphic/03.png",
@@ -88,28 +95,7 @@ export const BEYOND_GRAPHIC_GALLERY: BeyondGalleryItem[] = [
     alt: "Mobile UI concept: BakeConnect splash and profile screens with palette",
     width: 400,
     height: 300,
-    gridClass: "lg:col-span-1 lg:row-span-1 lg:min-h-[min(200px,18vw)]",
-  },
-  {
-    src: "/about/beyond-design/graphic/05.png",
-    alt: "Mobile checkout flow: soft gradient UI with cart and payment",
-    width: 400,
-    height: 300,
-    gridClass: "lg:col-span-1 lg:row-span-1 lg:min-h-[min(200px,18vw)]",
-  },
-  {
-    src: "/about/beyond-design/graphic/06.png",
-    alt: "Smartphone mockup showing a social feed interface",
-    width: 400,
-    height: 300,
-    gridClass: "lg:col-span-1 lg:row-span-1 lg:min-h-[min(200px,18vw)]",
-  },
-  {
-    src: "/about/beyond-design/graphic/07.png",
-    alt: "Sidewalk A-frame sign mockup with campaign layout",
-    width: 400,
-    height: 300,
-    gridClass: "lg:col-span-1 lg:row-span-1 lg:min-h-[min(200px,18vw)]",
+    gridClass: "lg:col-span-2 lg:row-span-1 lg:min-h-[min(200px,18vw)]",
   },
   {
     src: "/about/beyond-design/graphic/08.png",
@@ -138,19 +124,5 @@ export const BEYOND_GRAPHIC_GALLERY: BeyondGalleryItem[] = [
     width: 558,
     height: 1024,
     gridClass: "lg:col-span-1 lg:row-span-1 lg:min-h-[min(280px,24vw)]",
-  },
-  {
-    src: "/about/beyond-design/graphic/12.png",
-    alt: "Flat vector city illustration: parliament and bridge at sunset",
-    width: 1024,
-    height: 1024,
-    gridClass: "lg:col-span-2 lg:row-span-1 lg:min-h-[min(220px,18vw)]",
-  },
-  {
-    src: "/about/beyond-design/graphic/13.png",
-    alt: "Flat illustration: Taipei skyline and hills at sunset",
-    width: 1024,
-    height: 768,
-    gridClass: "lg:col-span-2 lg:row-span-1 lg:min-h-[min(200px,18vw)]",
   },
 ];

@@ -6,7 +6,6 @@ import {
   BEYOND_GRAPHIC_GALLERY,
   BEYOND_PHOTOGRAPHY_GALLERY,
 } from "../content/beyond-design-gallery";
-import { SPECIALIZE_PILLARS } from "../content/specialize";
 
 const INTERVIEW_PHOTO_SRC = "/about/user-interviews-collage.png";
 
@@ -95,29 +94,6 @@ export default function AboutPage() {
                 Based in Vancouver, BC. Open to relocation, remote, or hybrid.
               </p>
             </div>
-          </div>
-        </section>
-
-        <section
-          className="mt-14 border-t border-zinc-800 pt-12"
-          aria-labelledby="about-specialize-heading"
-        >
-          <h2
-            id="about-specialize-heading"
-            className="text-2xl font-semibold tracking-tight text-zinc-100 sm:text-3xl md:text-[2rem]"
-          >
-            What I specialize in
-          </h2>
-          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-            {SPECIALIZE_PILLARS.map((pillar) => (
-              <div
-                key={pillar.title}
-                className="flex min-h-0 flex-col rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 sm:p-7"
-              >
-                <h3 className={ABOUT_CARD_TITLE_CLASS}>{pillar.title}</h3>
-                <p className={ABOUT_CARD_BODY_CLASS}>{pillar.aboutShort}</p>
-              </div>
-            ))}
           </div>
         </section>
 
