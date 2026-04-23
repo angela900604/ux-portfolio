@@ -66,13 +66,16 @@ export default function AboutPage() {
 
             <div className="flex min-w-0 flex-col gap-5 text-base leading-relaxed text-zinc-300 sm:text-lg">
               <p className="font-medium text-zinc-100">
-                Product Designer with experience across AI-driven B2C mobile and
-                iOS, B2B SaaS, and government platforms — spanning early-stage
-                startups and large-scale public systems. Currently at MINA AI (SF,
-                remote), I&apos;m the sole designer building the product from
-                0→1, shaping AI-assisted features like Photo-to-Publish and
-                Parenting Copilot, while owning the design system and working
-                closely with founders and engineers.
+                Product designer with experience across B2C iOS and Android
+                mobile, membership systems, government platforms, AI-driven
+                features, and B2B SaaS—spanning early-stage startups and
+                large-scale tech companies.
+              </p>
+              <p className="font-medium text-zinc-100">
+                Currently at MINA AI (SF, remote), I&apos;m the sole designer
+                building the product from 0→1, shaping AI-assisted features like
+                Photo-to-Publish and Parenting Copilot, while owning the design
+                system and working closely with founders and engineers.
               </p>
               <p>
                 Before that, I worked at Turn Cloud in Taiwan on the Taiwan
