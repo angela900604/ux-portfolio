@@ -285,9 +285,12 @@ export default function AboutPage() {
           >
             LinkedIn
           </a>
-          <Link href="/resume" className="text-sm font-medium text-zinc-300 hover:text-zinc-100">
-            Resume
-          </Link>
+          <a
+            href="mailto:angela900604@gmail.com?subject=Resume%20request"
+            className="text-sm font-medium text-zinc-300 hover:text-zinc-100"
+          >
+            Resume (email)
+          </a>
           <Link href="/" className="text-sm font-medium text-zinc-300 hover:text-zinc-100">
             Work
           </Link>

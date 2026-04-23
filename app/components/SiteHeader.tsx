@@ -47,7 +47,6 @@ export function SiteHeader() {
             >
               <NavItem href="/">Work</NavItem>
               <NavItem href="/about">About</NavItem>
-              <NavItem href="/resume">Resume</NavItem>
             </nav>
           </div>
         </div>

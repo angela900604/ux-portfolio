@@ -4,6 +4,7 @@ import { SITE_SHELL_CONTAINER } from "@/lib/site-shell";
 import { FadeInSection } from "./components/FadeInSection";
 import { HomeHero } from "./components/HomeHero";
 import { PortfolioFocus } from "./components/PortfolioFocus";
+import { ServicesOverview } from "./components/ServicesOverview";
 import {
   homeBrandSectionIntro,
   homeWorkInterlude,
@@ -284,6 +285,8 @@ export default function Home() {
         </div>
       </section>
 
+      <ServicesOverview />
+
       <PortfolioFocus />
 
       {/* Footer CTA — emotional close */}
@@ -318,12 +321,6 @@ export default function Home() {
               >
                 LinkedIn
               </a>
-              <Link
-                href="/resume"
-                className="text-[15px] font-medium text-zinc-500 transition hover:text-zinc-300"
-              >
-                Resume
-              </Link>
             </div>
           </FadeInSection>
         </div>
