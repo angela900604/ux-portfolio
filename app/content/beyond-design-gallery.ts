@@ -5,10 +5,6 @@ export type BeyondGalleryItem = {
   height: number;
   /** lg+ bento placement — mirrors travel collage grid */
   gridClass: string;
-  /** `contain` = show full image in tile (no crop); default `cover` */
-  imageFit?: "cover" | "contain";
-  /** Background behind `contain` images (Tailwind classes) */
-  containBg?: string;
 };
 
 /** Photography & travel — same assets + layout as the original Beyond design travel grid */
@@ -100,7 +96,6 @@ export const BEYOND_GRAPHIC_GALLERY: BeyondGalleryItem[] = [
     width: 511,
     height: 416,
     gridClass: "lg:col-span-2 lg:row-span-1 lg:min-h-[min(260px,24vw)]",
-    imageFit: "contain",
   },
   {
     src: "/about/beyond-design/graphic/08.png",
@@ -136,7 +131,5 @@ export const BEYOND_GRAPHIC_GALLERY: BeyondGalleryItem[] = [
     width: 819,
     height: 1024,
     gridClass: "lg:col-span-4 lg:row-span-1 lg:min-h-[min(340px,42vw)]",
-    imageFit: "contain",
-    containBg: "bg-[#eae8e4]",
   },
 ];

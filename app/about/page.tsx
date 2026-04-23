@@ -218,9 +218,6 @@ export default function AboutPage() {
           >
             LinkedIn
           </a>
-          <Link href="/resume" className="text-sm font-medium text-zinc-300 hover:text-zinc-100">
-            Resume
-          </Link>
           <Link href="/" className="text-sm font-medium text-zinc-300 hover:text-zinc-100">
             Work
           </Link>

@@ -69,7 +69,7 @@ html.soft-cursor :disabled:hover {
   cursor: not-allowed !important;
 }
 
-/* Case study narrative: layout sets text-base / sm:text-lg on .case-study-prose (resume-aligned body) */
+/* Case study narrative: layout sets text-base / sm:text-lg on .case-study-prose */
 .case-study-prose .text-sm {
   font-size: inherit !important;
   line-height: inherit !important;

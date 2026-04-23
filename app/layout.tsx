@@ -69,9 +69,6 @@ export default function RootLayout({
                     <a href="/about" className="transition hover:text-zinc-100">
                       About
                     </a>
-                    <a href="/resume" className="transition hover:text-zinc-100">
-                      Resume
-                    </a>
                   </nav>
                 </div>
               </div>

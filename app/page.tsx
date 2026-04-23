@@ -255,12 +255,6 @@ export default function Home() {
               >
                 LinkedIn
               </a>
-              <a
-                href="/resume"
-                className="text-zinc-400 hover:text-zinc-200"
-              >
-                Resume
-              </a>
             </div>
           </FadeInSection>
         </div>
