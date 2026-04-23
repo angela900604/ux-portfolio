@@ -1,10 +1,10 @@
 /**
- * One-photo → AI item detection → listing prototype inside an iPhone-style frame.
+ * One-photo → AI item detection → listing clip inside an iPhone-style frame.
  * Optional WebM: add `mina-ai-prototype.webm` beside the MP4.
  */
 export function MinaPrototypeVideo() {
   return (
-    <figure className="mx-auto mt-8 w-full max-w-[300px] min-w-0">
+    <div className="w-full max-w-[300px] min-w-0 shrink-0">
       <div className="relative mx-auto rounded-[3rem] bg-gradient-to-b from-zinc-600 via-zinc-800 to-zinc-950 p-[11px] shadow-[0_28px_56px_-16px_rgba(0,0,0,0.75)] ring-1 ring-white/[0.12]">
         <div
           className="absolute -left-[3px] top-[22%] h-9 w-[3px] rounded-l-md bg-zinc-500/90 shadow-sm"
@@ -45,9 +45,6 @@ export function MinaPrototypeVideo() {
           </div>
         </div>
       </div>
-      <figcaption className="mt-4 w-full max-w-full text-center text-[11px] leading-snug text-zinc-500 sm:mx-auto sm:text-xs sm:leading-normal md:text-sm md:whitespace-nowrap md:overflow-x-auto">
-        Prototype: one photo → AI analyzes item count in-frame → generated listings—minimal taps for busy parents.
-      </figcaption>
-    </figure>
+    </div>
   );
 }

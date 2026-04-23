@@ -188,15 +188,19 @@ export default function AiMarketplaceCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Outcome &amp; impact
           </span>
-          <h2 className="max-w-3xl text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
-            Shipped a chat listing agent:{" "}
-            <span className="text-zinc-100">take one photo</span>,{" "}
-            <span className="text-zinc-100">AI drafts the listing</span>
-            —listing completion rose{" "}
-            <span className="text-emerald-200/95">~30%</span> after we tightened that
-            flow.
-          </h2>
-          <MinaPrototypeVideo />
+          <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-10 xl:gap-12">
+            <h2 className="max-w-3xl text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
+              Shipped a chat listing agent:{" "}
+              <span className="text-zinc-100">take one photo</span>,{" "}
+              <span className="text-zinc-100">AI drafts the listing</span>
+              —listing completion rose{" "}
+              <span className="text-emerald-200/95">~30%</span> after we tightened
+              that flow.
+            </h2>
+            <div className="flex justify-center lg:justify-end lg:pt-1">
+              <MinaPrototypeVideo />
+            </div>
+          </div>
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection
