@@ -99,8 +99,6 @@ export default function Home() {
         </div>
       </section>
 
-      <ServiceOverview />
-
       {/* Selected projects — no visible section blurb (sr-only for outline) */}
       <section id="featured" className="border-b border-zinc-800">
         <div className={`${SITE_SHELL_CONTAINER} py-16 sm:py-20`}>
@@ -229,6 +227,8 @@ export default function Home() {
           </ul>
         </div>
       </section>
+
+      <ServiceOverview />
 
       {/* Contact */}
       <section id="contact" className="border-b border-zinc-800">

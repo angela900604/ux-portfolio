@@ -57,13 +57,6 @@ export default function ResumePage() {
               >
                 LinkedIn
               </a>
-              {" · "}
-              <Link
-                href="/"
-                className="text-zinc-200 underline decoration-zinc-600 underline-offset-[3px] hover:text-white"
-              >
-                Portfolio
-              </Link>
             </p>
 
             <div className="mt-8 border-b border-zinc-800 pb-6 lg:hidden">

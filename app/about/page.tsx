@@ -1,33 +1,20 @@
 import Link from "next/link";
 import Image from "next/image";
 import { SITE_SHELL_CONTAINER } from "@/lib/site-shell";
+import { BeyondDesignGallery } from "../components/BeyondDesignGallery";
+import {
+  BEYOND_GRAPHIC_GALLERY,
+  BEYOND_PHOTOGRAPHY_GALLERY,
+} from "../content/beyond-design-gallery";
 import { SPECIALIZE_PILLARS } from "../content/specialize";
 
-function TravelPhotoTile({
-  src,
-  alt,
-  className,
-}: {
-  src: string;
-  alt: string;
-  className?: string;
-}) {
-  return (
-    <div
-      className={`relative h-full min-h-[200px] overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 ${className ?? ""}`}
-    >
-      <Image
-        src={src}
-        alt={alt}
-        fill
-        className="object-cover"
-        sizes="(max-width: 1024px) 100vw, (max-width: 1480px) 50vw, 320px"
-      />
-    </div>
-  );
-}
-
 const INTERVIEW_PHOTO_SRC = "/about/user-interviews-collage.png";
+
+/** Shared typography for all About page content cards */
+const ABOUT_CARD_TITLE_CLASS =
+  "text-lg font-semibold tracking-tight text-zinc-100 sm:text-xl";
+const ABOUT_CARD_BODY_CLASS =
+  "mt-3 text-base leading-relaxed text-zinc-400 sm:text-lg";
 
 export const metadata = {
   title: "About | Angela Yang",
@@ -65,7 +52,7 @@ export default function AboutPage() {
             </div>
 
             <div className="flex min-w-0 flex-col gap-5 text-base leading-relaxed text-zinc-300 sm:text-lg">
-              <p className="font-medium text-zinc-100">
+              <p className="max-w-3xl text-lg font-medium leading-snug tracking-[-0.015em] text-zinc-100 sm:text-xl sm:leading-snug md:text-2xl md:leading-[1.35]">
                 Product designer with experience across{" "}
                 <span className="font-semibold text-zinc-50">
                   B2C iOS and Android mobile, membership systems, government
@@ -127,12 +114,8 @@ export default function AboutPage() {
                 key={pillar.title}
                 className="flex min-h-0 flex-col rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 sm:p-7"
               >
-                <h3 className="text-base font-semibold tracking-tight text-zinc-100 sm:text-lg">
-                  {pillar.title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-zinc-400 sm:text-base">
-                  {pillar.aboutShort}
-                </p>
+                <h3 className={ABOUT_CARD_TITLE_CLASS}>{pillar.title}</h3>
+                <p className={ABOUT_CARD_BODY_CLASS}>{pillar.aboutShort}</p>
               </div>
             ))}
           </div>
@@ -187,10 +170,10 @@ export default function AboutPage() {
           </span>
           <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-5 lg:gap-6">
             <div className="flex h-full min-w-0 flex-col rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 sm:p-7">
-              <h5 className="text-zinc-100 normal-case tracking-normal">
+              <h3 className={ABOUT_CARD_TITLE_CLASS}>
                 Engineering-led collaboration
-              </h5>
-              <p className="mt-3 flex-1 text-base leading-relaxed text-zinc-400 sm:text-lg">
+              </h3>
+              <p className={`${ABOUT_CARD_BODY_CLASS} flex-1`}>
                 I work very closely with frontend and backend engineers from the
                 beginning. During early product phases, I proactively discuss
                 implementation feasibility so innovative ideas stay practical and
@@ -198,20 +181,20 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="flex h-full min-w-0 flex-col rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 sm:p-7">
-              <h5 className="text-zinc-100 normal-case tracking-normal">
+              <h3 className={ABOUT_CARD_TITLE_CLASS}>
                 PMs, clients &amp; delivery
-              </h5>
-              <p className="mt-3 flex-1 text-base leading-relaxed text-zinc-400 sm:text-lg">
+              </h3>
+              <p className={`${ABOUT_CARD_BODY_CLASS} flex-1`}>
                 I&apos;m comfortable helping lead a thread: aligning with PMs on
                 scope and timeline, clarifying requirements with clients, and
                 keeping design decisions legible so the team ships on schedule.
               </p>
             </div>
             <div className="flex h-full min-w-0 flex-col rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 sm:p-7">
-              <h5 className="text-zinc-100 normal-case tracking-normal">
+              <h3 className={ABOUT_CARD_TITLE_CLASS}>
                 AI-enhanced workflow
-              </h5>
-              <p className="mt-3 flex-1 text-base leading-relaxed text-zinc-400 sm:text-lg">
+              </h3>
+              <p className={`${ABOUT_CARD_BODY_CLASS} flex-1`}>
                 I constantly test new AI tools (such as Cursor, Claude, and Figma
                 AI), not to follow trends, but to identify what genuinely improves
                 my workflow and increases delivery efficiency.
@@ -226,60 +209,27 @@ export default function AboutPage() {
           </span>
           <div className="mt-6 grid min-w-0 gap-4 sm:grid-cols-2 lg:gap-6">
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 sm:p-7">
-              <h5 className="text-zinc-100 normal-case tracking-normal">
+              <h3 className={ABOUT_CARD_TITLE_CLASS}>
                 Branding &amp; style exploration
-              </h5>
-              <p className="mt-3 text-base leading-relaxed text-zinc-400 sm:text-lg">
+              </h3>
+              <p className={ABOUT_CARD_BODY_CLASS}>
                 I enjoy studying the logic behind brands and how visual style creates recognition, trust, and emotional resonance.
               </p>
             </div>
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 sm:p-7">
-              <h5 className="text-zinc-100 normal-case tracking-normal">
+              <h3 className={ABOUT_CARD_TITLE_CLASS}>
                 Photography &amp; travel
-              </h5>
-              <p className="mt-3 text-base leading-relaxed text-zinc-400 sm:text-lg">
+              </h3>
+              <p className={ABOUT_CARD_BODY_CLASS}>
                 Through travel photography, I capture details from different cities. It is one of my ways to train visual sensitivity and build a more grounded understanding of aesthetics.
               </p>
             </div>
           </div>
-          {/* Bento-style travel gallery — asymmetric grid + gutters like reference collage */}
-          <div className="mt-10 grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-3 lg:grid-cols-4 lg:grid-rows-4 lg:gap-3">
-            <TravelPhotoTile
-              src="/about/travel/hong-kong.png"
-              alt="Hong Kong street: double-decker buses and a motion-blurred taxi"
-              className="lg:col-span-2 lg:row-span-2 lg:min-h-[min(420px,36vw)]"
-            />
-            <TravelPhotoTile
-              src="/about/travel/budapest.png"
-              alt="Budapest Parliament at night reflected on the Danube"
-              className="lg:col-span-2 lg:row-span-1 lg:min-h-[min(200px,18vw)]"
-            />
-            <TravelPhotoTile
-              src="/about/travel/hallstatt-mist.png"
-              alt="Hallstatt, Austria: lakeside village in mist below the mountains"
-              className="lg:col-span-2 lg:row-span-1 lg:min-h-[min(200px,18vw)]"
-            />
-            <TravelPhotoTile
-              src="/about/travel/hallstatt-lake.png"
-              alt="Hallstatt lakefront with swans and alpine houses"
-              className="lg:col-span-2 lg:row-span-1 lg:min-h-[min(200px,18vw)]"
-            />
-            <TravelPhotoTile
-              src="/about/travel/sf-golden-gate-beach.png"
-              alt="Golden Gate Bridge from a rocky beach in San Francisco"
-              className="lg:col-span-2 lg:row-span-2 lg:min-h-[min(420px,36vw)]"
-            />
-            <TravelPhotoTile
-              src="/about/travel/sf-cable-car.png"
-              alt="San Francisco cable car on California Street"
-              className="lg:col-span-1 lg:row-span-1 lg:min-h-[min(200px,18vw)]"
-            />
-            <TravelPhotoTile
-              src="/about/travel/sf-golden-gate-flowers.png"
-              alt="Golden Gate Bridge with purple flowers in the foreground"
-              className="lg:col-span-1 lg:row-span-1 lg:min-h-[min(200px,18vw)]"
-            />
-          </div>
+
+          <BeyondDesignGallery
+            photography={BEYOND_PHOTOGRAPHY_GALLERY}
+            graphic={BEYOND_GRAPHIC_GALLERY}
+          />
         </section>
 
         <div className="mt-10 flex flex-wrap gap-4">

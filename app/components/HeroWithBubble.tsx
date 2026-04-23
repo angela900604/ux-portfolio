@@ -46,7 +46,7 @@ export function HeroWithBubble() {
 
   return (
     <div>
-      <div className="relative isolate flex flex-col gap-8 lg:flex-row lg:items-stretch lg:gap-6">
+      <div className="relative isolate flex flex-col gap-8 lg:flex-row lg:items-center lg:gap-8">
         <div className="relative z-10 flex min-w-0 w-full max-w-[72rem] shrink-0 flex-col items-start gap-3 text-left lg:max-w-[min(72rem,65%)]">
           <h1 className="sr-only">Angela Yang — product designer</h1>
           <p
@@ -92,25 +92,23 @@ export function HeroWithBubble() {
           </div>
         </div>
 
-        {/* Desktop: right edge aligns with shell (same as sections below); extends slightly left over copy. */}
-        <div className="relative z-0 hidden min-h-[min(26rem,40vh)] flex-1 lg:block">
-          <div className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2">
+        {/* Desktop: large orb — ~58vh tall (~40–46vw wide), right-aligned; overlaps headline area (text stays z-10). */}
+        <div className="relative z-0 hidden min-h-[min(28rem,50vh)] flex-1 lg:block">
+          <div className="pointer-events-none absolute inset-y-0 right-0 flex w-full items-center justify-end">
             <div
-              className="home-bubble-float max-h-[min(600px,56vh)] w-[min(826px,calc(100%+2.5rem))]"
+              className="home-bubble-float relative h-auto w-[min(46vw,56rem,calc(62vh*1024/744))] shrink-0"
               style={{ aspectRatio: ASPECT }}
             >
-              <div className="relative h-full w-full origin-right scale-150">
-                <BubbleBackdrop />
-                <div className="relative h-full w-full">
-                  <Image
-                    src={BUBBLE_SRC}
-                    alt=""
-                    fill
-                    className="object-contain object-right"
-                    sizes="(max-width: 1480px) 85vw, 860px"
-                    priority
-                  />
-                </div>
+              <BubbleBackdrop />
+              <div className="relative h-full w-full">
+                <Image
+                  src={BUBBLE_SRC}
+                  alt=""
+                  fill
+                  className="object-contain object-right"
+                  sizes="(max-width: 1280px) 50vw, 720px"
+                  priority
+                />
               </div>
             </div>
           </div>
@@ -123,21 +121,19 @@ export function HeroWithBubble() {
         aria-hidden
       >
         <div
-          className="home-bubble-float relative w-[min(94vw,1040px)]"
+          className="home-bubble-float relative h-auto w-[min(92vw,36rem,calc(48vh*1024/744))]"
           style={{ aspectRatio: ASPECT }}
         >
-          <div className="relative h-full w-full origin-center scale-150">
-            <BubbleBackdrop />
-            <div className="relative h-full w-full">
-              <Image
-                src={BUBBLE_SRC}
-                alt=""
-                fill
-                className="object-contain object-center"
-                sizes="970px"
-                priority
-              />
-            </div>
+          <BubbleBackdrop />
+          <div className="relative h-full w-full">
+            <Image
+              src={BUBBLE_SRC}
+              alt=""
+              fill
+              className="object-contain object-center"
+              sizes="(max-width: 1024px) 92vw, 640px"
+              priority
+            />
           </div>
         </div>
       </div>
