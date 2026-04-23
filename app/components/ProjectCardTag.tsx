@@ -12,11 +12,11 @@ export function ProjectCardTag({
   const base =
     "inline-flex w-fit max-w-full items-center rounded-full border bg-gradient-to-r px-2.5 py-1 text-[10px] font-medium uppercase tracking-widest shadow-[inset_0_1px_0_0_rgba(255,255,255,0.07)] transition duration-300";
 
-  /** Cursor-adjacent: violet ↔ cyan wash, soft outer glow on hover */
+  /** Cursor brand gold (cursor.com accent) — subtle gradient + warm glow */
   const variantClass =
     variant === "flagship"
-      ? "border-violet-400/50 from-violet-500/[0.22] via-fuchsia-500/10 to-cyan-400/[0.16] text-violet-50 group-hover:border-violet-300/55 group-hover:from-violet-500/[0.28] group-hover:via-fuchsia-500/[0.14] group-hover:to-cyan-400/[0.2] group-hover:shadow-[0_0_28px_-8px_rgba(139,92,246,0.45)]"
-      : "border-violet-500/35 from-violet-500/[0.12] via-transparent to-cyan-500/[0.1] text-violet-200/95 group-hover:border-cyan-400/35 group-hover:from-violet-500/[0.18] group-hover:to-cyan-500/[0.14] group-hover:text-violet-100 group-hover:shadow-[0_0_22px_-10px_rgba(34,211,238,0.2)]";
+      ? "border-cursor-accent-bright/55 from-cursor-accent/25 via-amber-800/15 to-cursor-accent-bright/20 text-amber-50 group-hover:border-cursor-accent-bright/70 group-hover:from-cursor-accent/32 group-hover:via-amber-700/18 group-hover:to-cursor-accent-bright/25 group-hover:shadow-[0_0_28px_-8px_rgba(192,133,50,0.45)]"
+      : "border-cursor-accent/40 from-cursor-accent/[0.14] via-transparent to-cursor-accent-bright/10 text-amber-100/95 group-hover:border-cursor-accent-bright/45 group-hover:from-cursor-accent/22 group-hover:to-cursor-accent-bright/16 group-hover:text-amber-50 group-hover:shadow-[0_0_22px_-10px_rgba(192,133,50,0.28)]";
 
   return (
     <span className={`${base} ${variantClass} ${className}`.trim()}>

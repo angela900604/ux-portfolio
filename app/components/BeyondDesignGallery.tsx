@@ -140,7 +140,7 @@ export function BeyondDesignGallery({
               onClick={() => setTab(t.id)}
               className={`max-w-full pb-3 text-left text-sm font-medium leading-snug transition sm:max-w-[min(100%,28rem)] sm:text-base ${
                 selected
-                  ? "border-b-2 border-violet-400 text-zinc-100"
+                  ? "border-b-2 border-cursor-accent-bright text-zinc-100"
                   : "border-b-2 border-transparent text-zinc-500 hover:text-zinc-300"
               }`}
             >

@@ -25,7 +25,7 @@ function ResumeSideNav({ className = "" }: { className?: string }) {
           <li key={item.id}>
             <a
               href={`#${item.id}`}
-              className="block border-l-2 border-transparent py-1 pl-3 text-left text-[13px] leading-snug text-zinc-400 transition hover:border-violet-500/50 hover:text-zinc-100"
+              className="block border-l-2 border-transparent py-1 pl-3 text-left text-[13px] leading-snug text-zinc-400 transition hover:border-cursor-accent/55 hover:text-zinc-100"
             >
               {item.label}
             </a>
@@ -68,7 +68,7 @@ export default function ResumePage() {
                   <li key={item.id}>
                     <a
                       href={`#${item.id}`}
-                      className="inline-flex rounded-full border border-zinc-700 bg-zinc-900/50 px-3 py-1.5 text-sm font-medium text-zinc-300 transition hover:border-violet-500/40 hover:text-zinc-100"
+                      className="inline-flex rounded-full border border-zinc-700 bg-zinc-900/50 px-3 py-1.5 text-sm font-medium text-zinc-300 transition hover:border-cursor-accent/45 hover:text-zinc-100"
                     >
                       {item.label}
                     </a>

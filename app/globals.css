@@ -8,6 +8,9 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  /** Cursor marketing accent (cursor.com — warm gold, not IDE purple) */
+  --color-cursor-accent: #c08532;
+  --color-cursor-accent-bright: #d4a14a;
   --font-sans: var(--font-sans), system-ui, sans-serif;
   --font-display: var(--font-display), system-ui, sans-serif;
 }
