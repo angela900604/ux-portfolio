@@ -11,30 +11,12 @@ import { MinaPrototypeVideo } from "./MinaPrototypeVideo";
 
 const MINA_HERO = "/case-studies/mina/mina-ai-hero.png";
 
-/** Hero strip: all raster demos currently shipped under `public/case-studies/mina/`. */
-const MINA_HERO_DEMOS = [
-  {
-    src: "/case-studies/mina/mina-ai-hero.png",
-    width: 1024,
-    height: 768,
-    label: "Product overview",
-    alt: "MINA app: AI-assisted buyer chat, marketplace home with picks and events, and community events",
-  },
-  {
-    src: `/case-studies/mina/${encodeURIComponent("image 6.png")}`,
-    width: 375,
-    height: 332,
-    label: "Flow detail",
-    alt: "MINA mobile UI: screen detail from the shipped prototype",
-  },
-  {
-    src: "/case-studies/mina/community-collage.jpg",
-    width: 768,
-    height: 1024,
-    label: "Community",
-    alt: "MINA community event: signage, parents trying the app, and team at a local gathering",
-  },
-] as const;
+/** Hero “3 demo” clip — WebM (smaller) then H.264 MP4; MOV fallback if a source fails. */
+const MINA_THREE_DEMO_SOURCES = {
+  webm: "/case-studies/mina/3-demo.webm",
+  mp4: "/case-studies/mina/3-demo.mp4",
+  movFallback: `/case-studies/mina/${encodeURIComponent("3 demo.mov")}`,
+} as const;
 
 /** Canada App Store — Mina - Resale for Parents */
 const MINA_APP_STORE =
@@ -107,41 +89,21 @@ export default function AiMarketplaceCaseStudy() {
             </p>
           }
         >
-          <div
-            className="mb-10 grid gap-4 sm:grid-cols-3 sm:gap-5"
-            role="group"
-            aria-label="Product demos"
-          >
-            {MINA_HERO_DEMOS.map((demo) => (
-              <figure key={demo.src} className="min-w-0">
-                <div className="flex min-h-[11rem] items-center justify-center overflow-hidden rounded-xl border border-zinc-800/60 bg-zinc-900/50 p-3 sm:min-h-[12.5rem]">
-                  <Image
-                    src={demo.src}
-                    alt={demo.alt}
-                    width={demo.width}
-                    height={demo.height}
-                    className="h-auto max-h-[min(42vh,17rem)] w-full object-contain sm:max-h-[min(38vh,15rem)]"
-                    sizes="(max-width: 640px) 100vw, 33vw"
-                  />
-                </div>
-                <figcaption className="mt-2 text-center text-[11px] font-medium uppercase tracking-wider text-zinc-500">
-                  {demo.label}
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-
           <figure className="mb-8 w-full max-w-3xl min-w-0">
             <div className="overflow-hidden rounded-xl border border-zinc-800/80 bg-zinc-950 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.65)]">
               <video
-                className="h-auto w-full bg-black object-contain"
-                controls
+                className="block h-auto w-full max-w-full rounded-lg bg-black object-contain"
+                autoPlay
+                loop
+                muted
                 playsInline
-                preload="metadata"
+                preload="auto"
                 aria-label="MINA app demo: three flows screen recording."
               >
+                <source src={MINA_THREE_DEMO_SOURCES.webm} type="video/webm" />
+                <source src={MINA_THREE_DEMO_SOURCES.mp4} type="video/mp4" />
                 <source
-                  src={`/case-studies/mina/${encodeURIComponent("3 demo.mov")}`}
+                  src={MINA_THREE_DEMO_SOURCES.movFallback}
                   type="video/quicktime"
                 />
               </video>
@@ -150,12 +112,6 @@ export default function AiMarketplaceCaseStudy() {
               3 demo
             </figcaption>
           </figure>
-
-          <p className="text-sm text-zinc-400 max-w-2xl leading-relaxed border-l-2 border-violet-500/50 pl-4">
-            This case study is <span className="text-zinc-200">in progress</span>.
-            Deeper flows, research snapshots, and metrics will be added as the work
-            ships.
-          </p>
 
           <div className="mt-8">
             <CaseStudyAtAGlance items={AT_A_GLANCE_ITEMS} />
