@@ -2,7 +2,6 @@
  * Shared positioning for homepage + About — recruiter-facing, consistent story.
  * Lead with B2C iOS / AI-driven mobile; B2B appears as portfolio breadth, not the headline specialty.
  */
-
 export const specializeEyebrow =
   "B2C iOS · AI-driven products · Multi-segment research · Vancouver (open to relocate)";
 

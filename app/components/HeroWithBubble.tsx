@@ -1,16 +1,23 @@
 "use client";
 
-import Image from "next/image";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 
 const BUBBLE_SRC = "/home/header-bubble-v2.png";
 const ASPECT = 1024 / 744;
-/** Cap width; height scales with text column × {@link BUBBLE_SCALE}. */
 const MAX_BUBBLE_W = 1380;
-const BUBBLE_SCALE = 1.92;
+/** Fixed desktop bubble size so it does not grow when hero copy gains a second row. */
+const DESKTOP_BUBBLE_H = 380;
+const DESKTOP_BUBBLE_W = Math.min(
+  Math.round(DESKTOP_BUBBLE_H * ASPECT),
+  MAX_BUBBLE_W,
+);
 
-const HERO_CYCLING_PHRASES = [
+const DISPLAY_FONT =
+  "var(--font-serif-display), Georgia, 'Times New Roman', serif";
+
+const CYCLING_PHRASES = [
   "I design AI-driven products across mobile and web experiences",
   "I build scalable B2B systems with multi-role workflows in mind",
   "I studied new media and user experience design in Toronto",
@@ -18,7 +25,7 @@ const HERO_CYCLING_PHRASES = [
   "I love traveling across Europe and capturing scenic moments",
 ] as const;
 
-const CYCLING_INTERVAL_MS = 2500;
+const CYCLE_MS = 2000;
 
 function BubbleBackdrop() {
   return (
@@ -29,137 +36,86 @@ function BubbleBackdrop() {
   );
 }
 
-function HeroCyclingTagline() {
-  const [index, setIndex] = useState(0);
+export function HeroWithBubble() {
   const reduceMotion = useReducedMotion();
+  const [phraseIndex, setPhraseIndex] = useState(0);
 
   useEffect(() => {
-    const id = window.setInterval(
-      () => setIndex((i) => (i + 1) % HERO_CYCLING_PHRASES.length),
-      CYCLING_INTERVAL_MS,
-    );
+    if (reduceMotion) return;
+    const id = window.setInterval(() => {
+      setPhraseIndex((i) => (i + 1) % CYCLING_PHRASES.length);
+    }, CYCLE_MS);
     return () => window.clearInterval(id);
-  }, []);
+  }, [reduceMotion]);
 
-  const phrase = HERO_CYCLING_PHRASES[index];
-
-  if (reduceMotion) {
-    return (
-      <p
-        className="max-w-[56rem] text-[clamp(1.75rem,6vw,5rem)] font-extrabold leading-[1.12] tracking-tight text-[#888888]"
-        style={{
-          fontFamily: "var(--font-hero-cycling), system-ui, sans-serif",
-        }}
-      >
-        {phrase}
-      </p>
-    );
-  }
-
-  return (
-    <div
-      className="w-full max-w-[56rem] min-h-[clamp(6rem,20vw,12rem)]"
-      aria-live="polite"
-    >
-      <AnimatePresence mode="wait" initial={false}>
-        <motion.p
-          key={phrase}
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
-          transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-[56rem] text-left text-[clamp(1.75rem,6vw,5rem)] font-extrabold leading-[1.12] tracking-tight text-[#888888]"
-          style={{
-            fontFamily: "var(--font-hero-cycling), system-ui, sans-serif",
-          }}
-        >
-          {phrase}
-        </motion.p>
-      </AnimatePresence>
-    </div>
-  );
-}
-
-export function HeroWithBubble() {
-  const textRef = useRef<HTMLDivElement>(null);
-  const [textH, setTextH] = useState(0);
-
-  const measure = useCallback(() => {
-    const el = textRef.current;
-    if (!el) return;
-    setTextH(el.offsetHeight);
-  }, []);
-
-  useLayoutEffect(() => {
-    measure();
-    const el = textRef.current;
-    if (!el) return;
-    const ro = new ResizeObserver(() => measure());
-    ro.observe(el);
-    window.addEventListener("resize", measure);
-    return () => {
-      ro.disconnect();
-      window.removeEventListener("resize", measure);
-    };
-  }, [measure]);
-
-  const bubbleH =
-    textH > 0 ? Math.round(textH * BUBBLE_SCALE) : undefined;
-  const bubbleW =
-    bubbleH != null
-      ? Math.min(Math.round(bubbleH * ASPECT), MAX_BUBBLE_W)
-      : undefined;
+  const headlineClass =
+    "max-w-none text-left text-[clamp(1.85rem,4.5vw,4rem)] font-normal leading-[1.08] tracking-[-0.02em]";
 
   return (
     <div>
       <div className="relative flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-12">
         <div
-          ref={textRef}
-          className="relative z-10 min-w-0 w-full max-w-[48rem] shrink-0 lg:max-w-[min(48rem,58%)]"
+          className="relative z-10 flex min-w-0 w-full max-w-[54rem] shrink-0 flex-col items-start gap-3 text-left lg:max-w-[min(54rem,62%)]"
         >
           <h1 className="sr-only">Angela Yang — product designer</h1>
-          <div className="flex flex-col items-start gap-3 sm:gap-4">
-            <p
-              className="text-left text-[clamp(2.25rem,7vw,4.5rem)] font-black leading-[1.05] tracking-tight text-white"
-              style={{
-                fontFamily: "var(--font-hero-round), system-ui, sans-serif",
-              }}
-            >
-              Hello, I&apos;m Angela
-            </p>
-            <HeroCyclingTagline />
+          <p
+            className={`${headlineClass} text-white`}
+            style={{ fontFamily: DISPLAY_FONT }}
+          >
+            Hello, I&apos;m Angela
+          </p>
+          <div
+            className="relative w-full min-h-[2.75em]"
+            aria-live="polite"
+            aria-atomic="true"
+          >
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.p
+                key={
+                  reduceMotion
+                    ? "static-hero-sub"
+                    : CYCLING_PHRASES[phraseIndex]
+                }
+                role="status"
+                initial={reduceMotion ? false : { opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={reduceMotion ? undefined : { opacity: 0, y: -8 }}
+                transition={
+                  reduceMotion
+                    ? { duration: 0 }
+                    : { duration: 0.35, ease: [0.22, 1, 0.36, 1] }
+                }
+                className={`${headlineClass} text-zinc-400`}
+                style={{ fontFamily: DISPLAY_FONT }}
+              >
+                {reduceMotion
+                  ? CYCLING_PHRASES[0]
+                  : CYCLING_PHRASES[phraseIndex]}
+              </motion.p>
+            </AnimatePresence>
           </div>
         </div>
 
-        {/* Desktop: behind headline (z-0); pull left so blob kisses the “s” in “experiences.” */}
+        {/* Desktop: behind headline; size fixed (not tied to text block height). */}
         <div className="pointer-events-none relative z-0 hidden min-h-0 min-w-0 flex-1 justify-end lg:-ml-10 lg:flex lg:items-center xl:-ml-16 2xl:-ml-20">
           <div
             className="home-bubble-float relative shrink-0"
-            style={
-              bubbleH && bubbleW
-                ? {
-                    width: bubbleW,
-                    height: bubbleH,
-                  }
-                : {
-                    minHeight: "22rem",
-                    width: "min(100%, 38rem)",
-                  }
-            }
+            style={{
+              width: DESKTOP_BUBBLE_W,
+              height: DESKTOP_BUBBLE_H,
+            }}
           >
             <BubbleBackdrop />
-            {bubbleH && bubbleW ? (
-              <div className="relative h-full w-full">
-                <Image
-                  src={BUBBLE_SRC}
-                  alt=""
-                  fill
-                  className="object-contain object-right"
-                  sizes="1380px"
-                  priority
-                />
-              </div>
-            ) : null}
+            <div className="relative h-full w-full">
+              <Image
+                src={BUBBLE_SRC}
+                alt=""
+                fill
+                className="object-contain object-right"
+                sizes="1380px"
+                priority
+              />
+            </div>
           </div>
         </div>
       </div>

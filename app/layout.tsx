@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans, Fraunces, Inter, Nunito, Space_Grotesk } from "next/font/google";
+import { DM_Sans, Fraunces, Space_Grotesk } from "next/font/google";
 import { CASE_STUDY_BODY_GRID, SITE_SHELL_CONTAINER } from "@/lib/site-shell";
 import { SoftCursor } from "./components/SoftCursor";
 import "./globals.css";
@@ -17,20 +17,6 @@ const display = Space_Grotesk({
 const serifDisplay = Fraunces({
   subsets: ["latin"],
   variable: "--font-serif-display",
-});
-
-/** Homepage hero — playful greeting (Nunito Black) */
-const heroRound = Nunito({
-  subsets: ["latin"],
-  variable: "--font-hero-round",
-  weight: ["900"],
-});
-
-/** Homepage hero — cycling taglines (Inter ExtraBold) */
-const heroCycling = Inter({
-  subsets: ["latin"],
-  variable: "--font-hero-cycling",
-  weight: ["800"],
 });
 
 export const metadata: Metadata = {
@@ -61,7 +47,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${sans.variable} ${display.variable} ${serifDisplay.variable} ${heroRound.variable} ${heroCycling.variable} scroll-smooth`}
+      className={`${sans.variable} ${display.variable} ${serifDisplay.variable} scroll-smooth`}
     >
       <body className="min-h-screen overflow-x-hidden">
         <SoftCursor />
