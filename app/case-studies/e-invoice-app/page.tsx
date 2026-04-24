@@ -155,7 +155,7 @@ const KEY_OUTCOME_ROWS: {
   },
   {
     title:
-      "Automation-ready experience \u2192 guided first-time setup",
+      "Prepare new users and new feature settings with guided onboarding",
     assetId: "08",
     screenLabel: "guided first-time setup",
     onboardingDemoVideo: true,
