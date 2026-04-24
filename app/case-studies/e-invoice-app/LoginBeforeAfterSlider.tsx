@@ -5,7 +5,7 @@ import { useCallback, useRef, useState } from "react";
 
 const BEFORE_SRC = "/case-studies/e-invoice/login-before-after-before.png";
 const AFTER_SRC = "/case-studies/e-invoice/login-before-after-after.png";
-/** 1024×576 — matches exported comparison frames */
+/** Exported comparison frames (legacy password modal · multi-method auth), 1024×576 */
 const ASPECT = 1024 / 576;
 
 export function LoginBeforeAfterSlider() {
