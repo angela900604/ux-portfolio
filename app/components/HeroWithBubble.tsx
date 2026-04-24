@@ -20,8 +20,9 @@ const CYCLING_PHRASES = [
 
 const HERO_LOGOS = [
   { src: "/home/logos/gemini.png", alt: "Gemini" },
-  { src: "/home/logos/frame.png", alt: "Frame" },
+  { src: "/home/logos/cursor.png", alt: "Cursor" },
   { src: "/home/logos/claude.png", alt: "Claude" },
+  { src: "/home/logos/chatgpt.png", alt: "ChatGPT" },
   { src: "/home/logos/github.png", alt: "GitHub" },
   { src: "/home/logos/vercel.png", alt: "Vercel" },
 ] as const;
@@ -146,7 +147,7 @@ export function HeroWithBubble() {
         </div>
       </div>
 
-      <div className="mt-10 border-t border-zinc-800/80 pt-6">
+      <div className="mt-10 pb-1">
         <ul className="flex flex-wrap items-center justify-start gap-x-3 gap-y-3 sm:gap-x-4">
           {HERO_LOGOS.map((logo) => (
             <li
@@ -158,7 +159,7 @@ export function HeroWithBubble() {
                 src={logo.src}
                 alt={logo.alt}
                 fill
-                className="object-contain opacity-65 [filter:grayscale(1)_brightness(1.65)_contrast(1.08)]"
+                className="object-contain opacity-85 [filter:grayscale(1)]"
                 sizes="124px"
               />
             </li>
