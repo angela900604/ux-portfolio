@@ -99,6 +99,25 @@ const SCAN_SHARED_TRUTH_OUTCOME = {
     "Scan & check prize tasks reached 92% success—the strongest task in the battery—with a median completion time of about 40 seconds.",
 } as const;
 
+/** Density / modules — second homepage story (after scan before/after). */
+const DENSITY_HOME_MODULES_ROW = {
+  assetId: "03",
+  screenLabel: "Settings / feature overview",
+  assetFiles: [
+    "settings-homepage-display.png",
+    "settings-membership-card.png",
+  ],
+  autoSlideshow: true,
+  evidence:
+    "This was the hardest tension in the whole system: silver users asked for the sparsest possible home so they could find one or two actions, while younger users wanted winning invoices and spending history surfaced immediately. Two credible audiences, mutually exclusive defaults.",
+  problem:
+    "A single static layout would always betray one segment—either “too empty” or “too noisy.”",
+  decision:
+    "Add settings toggles for optional home modules (e.g., spending analytics, win alerts, campaign tiles). Core rails—scan and the invoice passbook—stay fixed and cannot be turned off.",
+  outcome:
+    "One national app could flex to very different habits without designing a cluttered compromise—a level of end-user control that is uncommon in government-grade mobile services.",
+} as const;
+
 /** Research → problem → decision → outcome; paired with final UI (solution-final-*.png). */
 const KEY_OUTCOME_ROWS: {
   title: string;
@@ -153,24 +172,6 @@ const KEY_OUTCOME_ROWS: {
       "Reframe first launch as guided setup with one job per step—turn on biometrics (fewer verification loops for claims and settings), connect a bank account for automatic prize transfer, configure push notifications with richer types for deadlines and paper-scan edge cases, and enable cloud backup so records are not trapped on one handset. Each step explains the outcome (automation, fewer missed wins, safe migration), not a generic feature tour.",
     outcome:
       "Onboarding completion rose from 55% to 85%. In follow-up sessions—including older adults and foreign residents—people understood why each step mattered for payouts, reminders, and keeping their invoice history across devices.",
-  },
-  {
-    title: "\u{2699}\u{FE0F} Opposite density needs \u2192 customizable home sections",
-    assetId: "03",
-    screenLabel: "Settings / feature overview",
-    assetFiles: [
-      "settings-homepage-display.png",
-      "settings-membership-card.png",
-    ],
-    autoSlideshow: true,
-    evidence:
-      "This was the hardest tension in the whole system: silver users asked for the sparsest possible home so they could find one or two actions, while younger users wanted winning invoices and spending history surfaced immediately. Two credible audiences, mutually exclusive defaults.",
-    problem:
-      "A single static layout would always betray one segment—either “too empty” or “too noisy.”",
-    decision:
-      "Add settings toggles for optional home modules (e.g., spending analytics, win alerts, campaign tiles). Core rails—scan and the invoice passbook—stay fixed and cannot be turned off.",
-    outcome:
-      "One national app could flex to very different habits without designing a cluttered compromise—a level of end-user control that is uncommon in government-grade mobile services.",
   },
 ];
 
@@ -233,15 +234,22 @@ const FINAL_SOLUTION_MARQUEE_SLIDES = FINAL_SOLUTION_SCREENS.flatMap((item) => {
   }));
 });
 
-function KeyOutcomePhoneFigures({
-  row,
-}: {
-  row: (typeof KEY_OUTCOME_ROWS)[number];
-}) {
-  if (row.beforeAfterLoginSlider) return null;
+type KeyOutcomeRowWithUi =
+  | (typeof KEY_OUTCOME_ROWS)[number]
+  | typeof DENSITY_HOME_MODULES_ROW;
+
+function KeyOutcomePhoneFigures({ row }: { row: KeyOutcomeRowWithUi }) {
+  if ("beforeAfterLoginSlider" in row && row.beforeAfterLoginSlider) return null;
+
+  const screenHint = "screenHint" in row ? row.screenHint : undefined;
 
   const files =
-    row.assetFiles ?? [row.assetFile ?? `solution-final-${row.assetId}.png`];
+    row.assetFiles ??
+    [
+      "assetFile" in row && row.assetFile
+        ? row.assetFile
+        : `solution-final-${row.assetId}.png`,
+    ];
 
   if (files.length === 1) {
     return (
@@ -250,7 +258,7 @@ function KeyOutcomePhoneFigures({
         src={ASSET(files[0])}
         alt={row.screenLabel}
         label={row.screenLabel}
-        hint={row.screenHint}
+        hint={screenHint}
       />
     );
   }
@@ -263,7 +271,7 @@ function KeyOutcomePhoneFigures({
           alt: `${row.screenLabel} — screen ${i + 1} of ${files.length}`,
         }))}
         label={row.screenLabel}
-        hint={row.screenHint}
+        hint={screenHint}
       />
     );
   }
@@ -284,8 +292,8 @@ function KeyOutcomePhoneFigures({
       </div>
       <figcaption className="px-1 text-center lg:text-right">
         <p className="text-xs font-medium text-zinc-200">{row.screenLabel}</p>
-        {row.screenHint ? (
-          <p className="mt-1 text-[11px] text-zinc-500">{row.screenHint}</p>
+        {screenHint ? (
+          <p className="mt-1 text-[11px] text-zinc-500">{screenHint}</p>
         ) : null}
       </figcaption>
     </figure>
@@ -320,6 +328,14 @@ export default function EInvoiceCaseStudy() {
               visual impairments.
             </p>
           }
+          leadBelowSubtitle={
+            <CaseStudyAtAGlance
+              items={AT_A_GLANCE_ITEMS}
+              hideTitle
+              labelClassName="text-[11px] font-semibold uppercase tracking-wider text-zinc-400"
+              valueClassName="mt-0.5 text-base font-medium leading-[1.65] text-zinc-300 sm:text-lg sm:text-zinc-200"
+            />
+          }
         >
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
             <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
@@ -342,10 +358,6 @@ export default function EInvoiceCaseStudy() {
                 sizes="(max-width: 640px) 100vw, 50vw"
               />
             </div>
-          </div>
-
-          <div className="mt-10">
-            <CaseStudyAtAGlance items={AT_A_GLANCE_ITEMS} hideTitle />
           </div>
 
           <div className="mt-10">
@@ -412,6 +424,59 @@ export default function EInvoiceCaseStudy() {
             </div>
 
             <HomeBeforeAfterSlider />
+
+            <div className="mt-12 space-y-5 border-t border-zinc-800/90 pt-12 sm:mt-14 sm:space-y-6 sm:pt-14">
+              <div className="max-w-4xl">
+                <h2 className="text-2xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-3xl md:text-4xl md:leading-snug">
+                  Opposite density needs on one home—we kept scan and the invoice
+                  passbook fixed, and made optional home modules configurable so calmer
+                  and richer layouts could coexist.
+                </h2>
+              </div>
+              <article className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-start lg:gap-12">
+                <div className="min-w-0 space-y-6">
+                  <div className="rounded-xl border border-emerald-500/25 bg-emerald-500/[0.07] px-4 py-3 sm:px-5 sm:py-4">
+                    <p className="text-[11px] font-semibold uppercase tracking-widest text-emerald-200/95">
+                      Outcome
+                    </p>
+                    <p className="mt-2 text-sm font-medium leading-relaxed text-zinc-100">
+                      {DENSITY_HOME_MODULES_ROW.outcome}
+                    </p>
+                  </div>
+                  <CaseStudyExpandable label="Evidence → problem → decision (full)">
+                    <div className="space-y-5">
+                      <div className="border-l-2 border-emerald-500/45 pl-4">
+                        <p className="text-[11px] font-semibold uppercase tracking-widest text-emerald-400/95">
+                          Evidence · interviews &amp; tests
+                        </p>
+                        <p className="mt-2 text-sm leading-relaxed text-zinc-300">
+                          {DENSITY_HOME_MODULES_ROW.evidence}
+                        </p>
+                      </div>
+                      <div className="border-l-2 border-rose-500/35 pl-4">
+                        <p className="text-[11px] font-semibold uppercase tracking-widest text-rose-300/90">
+                          Problem in the experience
+                        </p>
+                        <p className="mt-2 text-sm leading-relaxed text-zinc-300">
+                          {DENSITY_HOME_MODULES_ROW.problem}
+                        </p>
+                      </div>
+                      <div className="border-l-2 border-violet-500/45 pl-4">
+                        <p className="text-[11px] font-semibold uppercase tracking-widest text-violet-300/95">
+                          Decision
+                        </p>
+                        <p className="mt-2 text-sm leading-relaxed text-zinc-300">
+                          {DENSITY_HOME_MODULES_ROW.decision}
+                        </p>
+                      </div>
+                    </div>
+                  </CaseStudyExpandable>
+                </div>
+                <div className="flex justify-center lg:justify-end lg:pt-1">
+                  <KeyOutcomePhoneFigures row={DENSITY_HOME_MODULES_ROW} />
+                </div>
+              </article>
+            </div>
           </div>
 
           <div className="space-y-16 lg:space-y-20">

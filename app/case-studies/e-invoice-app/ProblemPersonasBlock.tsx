@@ -48,14 +48,6 @@ export function ProblemPersonasBlock() {
         </div>
       </div>
 
-      <div className="max-w-3xl space-y-4">
-        <h3 className="max-w-3xl text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl sm:leading-snug">
-          Slow launch at checkout, prize and carrier flows buried under jargon-like
-          labels, and older adults who could not finish core tasks without a family
-          member taking over the phone.
-        </h3>
-      </div>
-
       <EInvoiceMultisegmentResearchSections />
     </CaseStudyInViewSection>
   );

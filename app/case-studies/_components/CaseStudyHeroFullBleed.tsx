@@ -45,6 +45,11 @@ type Props = {
   title: ReactNode;
   /** Optional lead line under the title. */
   subtitle?: ReactNode;
+  /**
+   * Renders in the title band immediately under `subtitle` (e.g. at-a-glance on
+   * the hero scrim). Omit when meta should only appear in `children` below.
+   */
+  leadBelowSubtitle?: ReactNode;
   /** Everything below the fold: meta, at-a-glance, etc. */
   children?: ReactNode;
 };
@@ -125,6 +130,7 @@ export function CaseStudyHeroFullBleed({
   eyebrow,
   title,
   subtitle,
+  leadBelowSubtitle,
   children,
 }: Props) {
   if (imagePlacement === "below-meta") {
@@ -135,6 +141,9 @@ export function CaseStudyHeroFullBleed({
             {eyebrow}
             {title}
             {subtitle ? <div className="mt-5 max-w-3xl">{subtitle}</div> : null}
+            {leadBelowSubtitle ? (
+              <div className="mt-8 max-w-4xl">{leadBelowSubtitle}</div>
+            ) : null}
           </HeroTitleInGrid>
         </div>
         {children ? (
@@ -187,6 +196,9 @@ export function CaseStudyHeroFullBleed({
                 {title}
                 {subtitle ? (
                   <div className="mt-5 max-w-3xl">{subtitle}</div>
+                ) : null}
+                {leadBelowSubtitle ? (
+                  <div className="mt-8 max-w-4xl">{leadBelowSubtitle}</div>
                 ) : null}
               </HeroTitleInGrid>
             </div>

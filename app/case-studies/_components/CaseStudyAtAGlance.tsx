@@ -9,6 +9,10 @@ type Props = {
   accent?: "default" | "baskin";
   /** Omit the “At a glance” heading (e.g. e-invoice hero). */
   hideTitle?: boolean;
+  /** Override label row typography (default: zinc-500 caps). */
+  labelClassName?: string;
+  /** Override value typography (default: white/90 on dark). */
+  valueClassName?: string;
 };
 
 const ACCENT_BAR = {
@@ -25,6 +29,8 @@ export function CaseStudyAtAGlance({
   items,
   accent = "default",
   hideTitle = false,
+  labelClassName = "text-[11px] font-semibold uppercase tracking-wider text-zinc-500",
+  valueClassName = "mt-0.5 text-base font-medium leading-[1.65] text-white/90 sm:text-lg",
 }: Props) {
   const bar = ACCENT_BAR[accent];
 
@@ -43,10 +49,10 @@ export function CaseStudyAtAGlance({
               key={item.label}
               className="min-w-0 flex-1 px-0 py-1 sm:py-1.5 lg:px-0"
             >
-              <p className="text-[11px] font-semibold uppercase tracking-wider text-zinc-500">
+              <p className={labelClassName}>
                 {item.label}
               </p>
-              <p className="mt-0.5 text-base font-medium leading-[1.65] text-white/90 sm:text-lg">
+              <p className={valueClassName}>
                 {item.value}
               </p>
             </div>
