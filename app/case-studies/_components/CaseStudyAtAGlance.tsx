@@ -7,6 +7,8 @@ type Props = {
   items: readonly CaseStudyAtAGlanceItem[];
   /** Left accent stripe — Baskin-Robbins uses brand pink; others default to violet. */
   accent?: "default" | "baskin";
+  /** When false, hide the accent bar and lay out items in an even grid (e.g. e-invoice hero). */
+  showAccent?: boolean;
   /** Omit the “At a glance” heading (e.g. e-invoice hero). */
   hideTitle?: boolean;
   /** Override label row typography (default: zinc-500 caps). */
@@ -28,37 +30,48 @@ const ACCENT_BAR = {
 export function CaseStudyAtAGlance({
   items,
   accent = "default",
+  showAccent = true,
   hideTitle = false,
   labelClassName = "text-[11px] font-semibold uppercase tracking-wider text-zinc-500",
   valueClassName = "mt-0.5 text-base font-medium leading-[1.65] text-white/90 sm:text-lg",
 }: Props) {
   const bar = ACCENT_BAR[accent];
 
-  const body = (
+  const columnsClass = showAccent
+    ? "flex min-w-0 flex-1 flex-col gap-y-2 lg:flex-row lg:gap-x-6 lg:gap-y-0 xl:gap-x-8"
+    : "grid min-w-0 w-full grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-8";
+
+  const columns = (
+    <div className={columnsClass}>
+      {items.map((item) => (
+        <div
+          key={item.label}
+          className={
+            showAccent
+              ? "min-w-0 flex-1 px-0 py-1 sm:py-1.5 lg:px-0"
+              : "min-w-0"
+          }
+        >
+          <p className={labelClassName}>{item.label}</p>
+          <p className={valueClassName}>{item.value}</p>
+        </div>
+      ))}
+    </div>
+  );
+
+  const body = showAccent ? (
     <div
       className="relative flex items-start gap-2.5 sm:gap-3"
       aria-label="Project summary at a glance"
     >
-        <div
-          className={`mt-0.5 h-8 w-1 shrink-0 rounded-sm sm:h-9 ${bar}`}
-          aria-hidden
-        />
-        <div className="flex min-w-0 flex-1 flex-col gap-y-2 lg:flex-row lg:gap-x-6 lg:gap-y-0 xl:gap-x-8">
-          {items.map((item) => (
-            <div
-              key={item.label}
-              className="min-w-0 flex-1 px-0 py-1 sm:py-1.5 lg:px-0"
-            >
-              <p className={labelClassName}>
-                {item.label}
-              </p>
-              <p className={valueClassName}>
-                {item.value}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
+      <div
+        className={`mt-0.5 h-8 w-1 shrink-0 rounded-sm sm:h-9 ${bar}`}
+        aria-hidden
+      />
+      {columns}
+    </div>
+  ) : (
+    <div aria-label="Project summary at a glance">{columns}</div>
   );
 
   if (hideTitle) {

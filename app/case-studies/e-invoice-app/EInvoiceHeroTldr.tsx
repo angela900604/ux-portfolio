@@ -58,8 +58,9 @@ export function EInvoiceHeroTldr() {
           TL;DR
         </span>
         <h2 className="mt-5 max-w-3xl text-pretty text-2xl font-bold leading-[1.15] tracking-tight sm:text-3xl md:text-[2rem] md:leading-[1.12]">
-          The flows people abandoned became the ones they could finish—login,
-          setup, prizes, and core tasks backed by research.
+          From research to ship-ready UI, the redesign improves navigation and
+          delivers a more inclusive experience for older adults and people with
+          visual impairments.
         </h2>
       </div>
 
@@ -82,19 +83,6 @@ export function EInvoiceHeroTldr() {
           </div>
         ))}
       </div>
-
-      <figure className="mt-6 rounded-2xl border border-zinc-200/90 bg-white p-6 shadow-sm sm:p-8">
-        <blockquote className="text-center text-lg font-medium leading-snug text-zinc-800 sm:text-xl sm:leading-snug">
-          &ldquo;National-scale service, same bar as consumer apps: ship clarity on the
-          journeys that decide trust—especially sign-in, first setup, and prize
-          redemption.&rdquo;
-        </blockquote>
-        <figcaption className="mt-5 text-center text-sm text-zinc-500">
-          <span className="font-medium text-zinc-700">Outcome focus</span>
-          <span className="text-zinc-400"> · </span>
-          MoF Cloud Invoice App redesign
-        </figcaption>
-      </figure>
     </div>
   );
 }

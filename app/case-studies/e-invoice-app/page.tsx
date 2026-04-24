@@ -309,17 +309,11 @@ export default function EInvoiceCaseStudy() {
               Redemption App
             </h1>
           }
-          subtitle={
-            <p className="text-lg leading-relaxed text-zinc-200 sm:text-xl">
-              From research to ship-ready UI, the redesign improves navigation and
-              delivers a more inclusive experience for older adults and people with
-              visual impairments.
-            </p>
-          }
           leadBelowSubtitle={
             <CaseStudyAtAGlance
               items={AT_A_GLANCE_ITEMS}
               hideTitle
+              showAccent={false}
               labelClassName="text-[11px] font-semibold uppercase tracking-wider text-zinc-400"
               valueClassName="mt-0.5 text-base font-medium leading-[1.65] text-zinc-300 sm:text-lg sm:text-zinc-200"
             />
