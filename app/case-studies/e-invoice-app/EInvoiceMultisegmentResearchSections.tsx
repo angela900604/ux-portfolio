@@ -75,10 +75,6 @@ export function EInvoiceMultisegmentResearchSections() {
           <h3 className="text-2xl font-semibold tracking-tight text-zinc-100 sm:text-3xl">
             2.8★ App Store reviews (Taiwan · ~Mar 2024–Mar 2025)
           </h3>
-          <p className="text-sm leading-relaxed text-zinc-500">
-            Public feedback surfaced findability and older-adult friction before we
-            went deep in moderated research.
-          </p>
         </header>
 
         <div className="space-y-8 sm:space-y-10">
@@ -110,13 +106,18 @@ export function EInvoiceMultisegmentResearchSections() {
           <p className="text-xs font-semibold uppercase tracking-widest text-emerald-400/90">
             Layer 2 · Interviews across five audiences—including low vision
           </p>
-          <p className="text-sm leading-relaxed text-zinc-500">
-            Five segments agreed on opening with scan—but diverged sharply on sign-in,
-            density, and independence.
-          </p>
         </header>
 
         <div className="space-y-8 sm:space-y-10">
+          <PainBlock
+            badge="Interview signal · Younger (18–30)"
+            badgeClassName={BADGE_INTERVIEW}
+            title="UI felt too bare—couldn&apos;t see what I wanted right after open"
+            body="Younger participants wanted a richer first screen: the layout read as sparse next to consumer apps they use daily, so lottery status, spending, and shortcuts didn&apos;t show up where they expected."
+            quote="On open, I still have to dig—I want the important stuff visible immediately, not a home that feels empty next to the apps I use every day."
+            quoteSource="— Interview synthesis · younger (18–30)"
+            quoteStyle="synthesis"
+          />
           <PainBlock
             badge="Interview signal · Middle-aged (31–50)"
             badgeClassName={BADGE_INTERVIEW}
@@ -124,6 +125,15 @@ export function EInvoiceMultisegmentResearchSections() {
             body="The account gate did its security job—but verification codes and password recovery became the wall people hit before lottery, carrier, or scan tasks."
             quote="Sharpest pain in moderated sessions: forgot passwords and MoF verification codes blocked access before core tasks—not lack of features."
             quoteSource="— Interview synthesis · middle-aged (31–50)"
+            quoteStyle="synthesis"
+          />
+          <PainBlock
+            badge="Interview signal · Silver (51+)"
+            badgeClassName={BADGE_INTERVIEW}
+            title="Don&apos;t know the next step; fear tapping wrong"
+            body="Older participants froze at ambiguous controls: without an obvious next step, they worried about triggering the wrong action on an official app—so they slowed down or passed the phone to family."
+            quote="Sharpest pain for silver users: uncertainty about what to tap next and anxiety about mistakes—not lack of motivation to use the service."
+            quoteSource="— Interview synthesis · silver (51+)"
             quoteStyle="synthesis"
           />
           <PainBlock
@@ -144,22 +154,20 @@ export function EInvoiceMultisegmentResearchSections() {
           Shared truth
         </p>
         <h3 className="mt-4 max-w-4xl text-2xl font-semibold leading-snug tracking-tight text-zinc-50 sm:text-3xl sm:leading-snug">
-          Everyone converged on the same entry behavior: show the carrier barcode
-          and scan paper invoices.
+          Everyone has the same entry behavior of showing the carrier barcode and
+          scanning paper invoices.
         </h3>
-        <p className="mt-5 max-w-3xl text-base leading-relaxed text-zinc-200/95 sm:text-lg">
-          On the home screen,{" "}
-          <span className="font-medium text-white">
-            older and low-vision groups wanted fewer items, more whitespace, and vivid
-            color for fast recognition
-          </span>
-          —while{" "}
-          <span className="font-medium text-white">
-            younger groups wanted a denser dashboard—more modules, promos, and
-            shortcuts—and a cooler, minimal palette
-          </span>
-          . One layout; two incompatible defaults.
-        </p>
+        <div className="mt-6 rounded-2xl border border-zinc-700/80 bg-zinc-950/40 p-6 sm:p-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-amber-400/90">
+            Conflict insights
+          </p>
+          <p className="mt-4 max-w-4xl text-base font-semibold leading-relaxed text-zinc-100 sm:text-lg">
+            On the home screen, older and low-vision groups wanted fewer items, more
+            whitespace, and vivid color for fast recognition—while younger groups
+            wanted a denser dashboard—more modules, promos, and shortcuts—and a
+            cooler, minimal palette. One layout; two incompatible defaults.
+          </p>
+        </div>
       </section>
     </div>
   );

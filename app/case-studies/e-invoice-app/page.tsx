@@ -87,6 +87,18 @@ const AT_A_GLANCE_ITEMS = [
   },
 ] as const;
 
+/** Everyone agreed on scan-first; rendered above the other outcome rows (text only). */
+const SCAN_SHARED_TRUTH_OUTCOME = {
+  evidence:
+    "In field interviews across four age bands, needs diverged everywhere else—but one behavior was universal: the first thing people wanted after launch was to scan a paper invoice. In the legacy layout, scan lived one or two taps away from the visual center, so users hunted before they could act.",
+  problem:
+    "The interface did not match the dominant mental model: scanning is the front door, not a buried utility.",
+  decision:
+    "Lock the scan control to the primary focal area on home—always visible, never hidden behind personalization or secondary promos.",
+  outcome:
+    "Scan & prize tasks reached 92% success—the strongest task in the battery—with a median completion time of about 40 seconds.",
+} as const;
+
 /** Research → problem → decision → outcome; paired with final UI (solution-final-*.png). */
 const KEY_OUTCOME_ROWS: {
   title: string;
@@ -141,20 +153,6 @@ const KEY_OUTCOME_ROWS: {
       "Reframe first launch as guided setup with one job per step—turn on biometrics (fewer verification loops for claims and settings), connect a bank account for automatic prize transfer, configure push notifications with richer types for deadlines and paper-scan edge cases, and enable cloud backup so records are not trapped on one handset. Each step explains the outcome (automation, fewer missed wins, safe migration), not a generic feature tour.",
     outcome:
       "Onboarding completion rose from 55% to 85%. In follow-up sessions—including older adults and foreign residents—people understood why each step mattered for payouts, reminders, and keeping their invoice history across devices.",
-  },
-  {
-    title: "\u{1F4F7} \u201COpen app \u2192 scan receipt\u201D \u2192 scan anchored on home",
-    assetId: "12",
-    screenLabel: "homepage",
-    assetFile: "homepage-hub.png",
-    evidence:
-      "In field interviews across four age bands, needs diverged everywhere else—but one behavior was universal: the first thing people wanted after launch was to scan a paper invoice. In the legacy layout, scan lived one or two taps away from the visual center, so users hunted before they could act.",
-    problem:
-      "The interface did not match the dominant mental model: scanning is the front door, not a buried utility.",
-    decision:
-      "Lock the scan control to the primary focal area on home—always visible, never hidden behind personalization or secondary promos.",
-    outcome:
-      "Scan & prize tasks reached 92% success—the strongest task in the battery—with a median completion time of about 40 seconds.",
   },
   {
     title: "\u{2699}\u{FE0F} Opposite density needs \u2192 customizable home sections",
@@ -365,15 +363,59 @@ export default function EInvoiceCaseStudy() {
         >
           <FinalScreensMarquee slides={FINAL_SOLUTION_MARQUEE_SLIDES} />
 
-          <div className="max-w-3xl space-y-4">
-            <span className="text-xs font-medium uppercase tracking-widest text-emerald-400/90">
-              From evidence to interface
-            </span>
-            <h2 className="max-w-3xl text-zinc-100">
-              Four tracks—login, onboarding, scan-first home, modular density—with
-              evidence → decision → outcome and UI on the side.
+          <div className="max-w-4xl space-y-5">
+            <h2 className="text-2xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-3xl md:text-4xl md:leading-snug">
+              One home for four audiences—we combined each group&apos;s needs on a
+              single surface and put the shared-truth action, scanning, at the very
+              top of the homepage.
             </h2>
+            <p className="max-w-3xl text-base leading-relaxed text-zinc-400 sm:text-lg">
+              Research agreed on the first job after launch; everything else—login,
+              guided setup, and optional home modules—layers underneath without
+              hiding that anchor.
+            </p>
           </div>
+
+          <article className="space-y-6 border-t border-zinc-800/90 pt-12 lg:pt-14">
+            <div className="min-w-0 max-w-3xl space-y-6">
+              <div className="rounded-xl border border-emerald-500/25 bg-emerald-500/[0.07] px-4 py-3 sm:px-5 sm:py-4">
+                <p className="text-[11px] font-semibold uppercase tracking-widest text-emerald-200/95">
+                  Outcome
+                </p>
+                <p className="mt-2 text-sm font-medium leading-relaxed text-zinc-100">
+                  {SCAN_SHARED_TRUTH_OUTCOME.outcome}
+                </p>
+              </div>
+              <CaseStudyExpandable label="Evidence → problem → decision (full)">
+                <div className="space-y-5">
+                  <div className="border-l-2 border-emerald-500/45 pl-4">
+                    <p className="text-[11px] font-semibold uppercase tracking-widest text-emerald-400/95">
+                      Evidence · interviews &amp; tests
+                    </p>
+                    <p className="mt-2 text-sm leading-relaxed text-zinc-300">
+                      {SCAN_SHARED_TRUTH_OUTCOME.evidence}
+                    </p>
+                  </div>
+                  <div className="border-l-2 border-rose-500/35 pl-4">
+                    <p className="text-[11px] font-semibold uppercase tracking-widest text-rose-300/90">
+                      Problem in the experience
+                    </p>
+                    <p className="mt-2 text-sm leading-relaxed text-zinc-300">
+                      {SCAN_SHARED_TRUTH_OUTCOME.problem}
+                    </p>
+                  </div>
+                  <div className="border-l-2 border-violet-500/45 pl-4">
+                    <p className="text-[11px] font-semibold uppercase tracking-widest text-violet-300/95">
+                      Decision
+                    </p>
+                    <p className="mt-2 text-sm leading-relaxed text-zinc-300">
+                      {SCAN_SHARED_TRUTH_OUTCOME.decision}
+                    </p>
+                  </div>
+                </div>
+              </CaseStudyExpandable>
+            </div>
+          </article>
 
           <HomeBeforeAfterSlider />
 
