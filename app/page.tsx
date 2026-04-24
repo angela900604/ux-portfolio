@@ -72,6 +72,24 @@ const ADJACENT_WORK = [
   },
 ];
 
+const USER_RESEARCH_SKILLS = [
+  {
+    title: "Competitor analysis",
+    summary:
+      "Benchmarking product patterns, positioning, and UX decisions to find realistic opportunities and differentiation.",
+  },
+  {
+    title: "Multisegment interviews",
+    summary:
+      "Running interviews across different user groups to surface conflicts, shared needs, and decision-ready insights.",
+  },
+  {
+    title: "Accessibility",
+    summary:
+      "Identifying barriers early and validating inclusive flows for users with different abilities, contexts, and constraints.",
+  },
+] as const;
+
 /** Flagship card — full-bleed cover, intrinsic aspect (no crop). */
 const E_INVOICE_FLAGSHIP_COVER = {
   src: "/home/e-invoice-flagship-cover.png",
@@ -123,15 +141,12 @@ export default function Home() {
                 <ProjectCardTag variant="flagship" className="mb-3">
                   {CORE_PRODUCT.flagship.tag}
                 </ProjectCardTag>
-                <h3 className="text-xl font-semibold tracking-tight text-zinc-100 transition group-hover:text-zinc-50 sm:text-2xl">
+                <h3 className="text-2xl font-semibold tracking-tight text-zinc-100 transition group-hover:text-zinc-50 sm:text-3xl">
                   {CORE_PRODUCT.flagship.title}
                   <span className="mt-2 block text-base font-normal text-zinc-400 sm:text-lg">
                     {CORE_PRODUCT.flagship.outcome}
                   </span>
                 </h3>
-                <p className="mt-4 text-xs text-zinc-500">
-                  {CORE_PRODUCT.flagship.role} · {CORE_PRODUCT.flagship.timeline}
-                </p>
               </div>
             </Link>
           </FadeInSection>
@@ -162,17 +177,40 @@ export default function Home() {
                     </div>
                     <div className="flex flex-1 flex-col p-6 sm:p-8">
                       <ProjectCardTag>{item.tag}</ProjectCardTag>
-                      <h3 className="mt-3 text-lg font-semibold tracking-tight text-zinc-100 group-hover:text-zinc-50 sm:text-xl">
+                      <h3 className="mt-3 text-xl font-semibold tracking-tight text-zinc-100 group-hover:text-zinc-50 sm:text-2xl">
                         {item.title}
                         <span className="mt-2 block text-sm font-normal text-zinc-400 sm:text-base">
                           {item.outcome}
                         </span>
                       </h3>
-                      <p className="mt-auto pt-4 text-xs text-zinc-500">
-                        {item.role} · {item.timeline}
-                      </p>
                     </div>
                   </Link>
+                </FadeInSection>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="border-b border-zinc-800">
+        <div className={`${SITE_SHELL_CONTAINER} py-16 sm:py-20`}>
+          <FadeInSection>
+            <h2 className="text-2xl font-semibold tracking-tight text-zinc-100 sm:text-3xl md:text-[2rem]">
+              My user research skills
+            </h2>
+          </FadeInSection>
+          <ul className="mt-8 grid items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+            {USER_RESEARCH_SKILLS.map((item, i) => (
+              <li key={item.title} className="h-full min-h-0">
+                <FadeInSection className="h-full" delay={0.04 + i * 0.05}>
+                  <div className="flex h-full min-h-0 flex-col rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 sm:p-8">
+                    <h3 className="text-xl font-semibold tracking-tight text-zinc-100 sm:text-2xl">
+                      {item.title}
+                    </h3>
+                    <p className="mt-4 text-base leading-relaxed text-zinc-300 sm:text-lg">
+                      {item.summary}
+                    </p>
+                  </div>
                 </FadeInSection>
               </li>
             ))}
@@ -183,8 +221,12 @@ export default function Home() {
       {/* Brand & storytelling — no visible section blurb */}
       <section id="selected-work" className="border-b border-zinc-800">
         <div className={`${SITE_SHELL_CONTAINER} py-16 sm:py-20`}>
-          <h2 className="sr-only">Brand &amp; storytelling</h2>
-          <ul className="grid items-stretch gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <FadeInSection>
+            <h2 className="text-2xl font-semibold tracking-tight text-zinc-100 sm:text-3xl md:text-[2rem]">
+              How I Connect Brand &amp; Users
+            </h2>
+          </FadeInSection>
+          <ul className="mt-8 grid items-stretch gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {ADJACENT_WORK.map((item, i) => (
               <li key={item.slug} className="h-full min-h-0">
                 <FadeInSection
@@ -210,15 +252,12 @@ export default function Home() {
                     </div>
                     <div className="flex flex-1 flex-col p-6 sm:p-8">
                       <ProjectCardTag>{item.tag}</ProjectCardTag>
-                      <h3 className="mt-3 text-lg font-semibold tracking-tight text-zinc-100 group-hover:text-zinc-50 sm:text-xl">
+                      <h3 className="mt-3 text-xl font-semibold tracking-tight text-zinc-100 group-hover:text-zinc-50 sm:text-2xl">
                         {item.title}
                         <span className="mt-2 block text-sm font-normal text-zinc-400 sm:text-base">
                           {item.outcome}
                         </span>
                       </h3>
-                      <p className="mt-auto pt-4 text-xs text-zinc-500">
-                        {item.role} · {item.timeline}
-                      </p>
                     </div>
                   </Link>
                 </FadeInSection>

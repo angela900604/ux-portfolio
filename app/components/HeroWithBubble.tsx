@@ -11,11 +11,19 @@ const DISPLAY_FONT =
   "var(--font-serif-display), Georgia, 'Times New Roman', serif";
 
 const CYCLING_PHRASES = [
-  "I design AI-driven products across mobile and web experiences",
-  "I build scalable B2B systems with multi-role workflows in mind",
-  "I studied new media and user experience design in Toronto",
+  "I design consumer-facing, AI-driven mobile applications",
+  "I build scalable B2B Internal system with multi-role workflows",
   "I value empathy and curiosity in how I approach every problem",
+  "I studied new media and user experience design",
   "I love traveling across Europe and capturing scenic moments",
+] as const;
+
+const HERO_LOGOS = [
+  { src: "/home/logos/gemini.png", alt: "Gemini" },
+  { src: "/home/logos/frame.png", alt: "Frame" },
+  { src: "/home/logos/claude.png", alt: "Claude" },
+  { src: "/home/logos/github.png", alt: "GitHub" },
+  { src: "/home/logos/vercel.png", alt: "Vercel" },
 ] as const;
 
 const CYCLE_MS = 2500;
@@ -136,6 +144,26 @@ export function HeroWithBubble() {
             />
           </div>
         </div>
+      </div>
+
+      <div className="mt-10 border-t border-zinc-800/80 pt-6">
+        <ul className="flex flex-wrap items-center justify-start gap-x-3 gap-y-3 sm:gap-x-4">
+          {HERO_LOGOS.map((logo) => (
+            <li
+              key={logo.src}
+              className="relative h-8 w-[124px] shrink-0"
+              aria-label={logo.alt}
+            >
+              <Image
+                src={logo.src}
+                alt={logo.alt}
+                fill
+                className="object-contain opacity-65 [filter:grayscale(1)_brightness(1.65)_contrast(1.08)]"
+                sizes="124px"
+              />
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
