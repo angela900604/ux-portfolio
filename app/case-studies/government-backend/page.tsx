@@ -37,16 +37,6 @@ const AT_A_GLANCE_ITEMS = [
 
 const GOV_BACKEND_JOURNEY_IDS = ["rbac", "iterations"] as const;
 
-const GOV_BACKEND_TOC = [
-  { id: "project-background", label: "Opportunity" },
-  { id: "summary", label: "Summary" },
-  { id: "final-result", label: "Final result" },
-  { id: "design-journey", label: "Design journey" },
-  { id: "rbac", label: "Role-based access" },
-  { id: "iterations", label: "Key iterations" },
-  { id: "reflection", label: "Reflection" },
-] as const;
-
 const GOV_BACKEND_SCAN_SUMMARY = [
   "Backend for MoF’s lottery app: RBAC, reporting, and workflows for 600+ staff—permission model that hides noise and protects high-impact actions.",
   "Dashboards, filters, and CSV export so ops could prep audits without engineering; shipped Jul–Sep 2025 with PM and eng.",
@@ -129,7 +119,7 @@ export default function GovernmentBackendCaseStudy() {
         </CaseStudyHeroFullBleed>
       </header>
 
-      <CaseStudyContentLayout toc={GOV_BACKEND_TOC}>
+      <CaseStudyContentLayout>
         <CaseStudyInViewSection
           id="project-background"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"

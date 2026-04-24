@@ -6,19 +6,6 @@ import { CaseStudyHeroFullBleed } from "../_components/CaseStudyHeroFullBleed";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 
-const PHY_TOC = [
-  { id: "project-overview", label: "Project overview" },
-  { id: "logo-concept", label: "Logo concept" },
-  { id: "mascot", label: "Brand mascot" },
-  { id: "brand-applications", label: "Brand applications" },
-  { id: "etsy-pod", label: "Etsy & print-on-demand" },
-  { id: "store-performance", label: "Store performance" },
-  { id: "testing-next", label: "What I'm testing next" },
-  { id: "pod-products", label: "Magnets & stickers" },
-  { id: "canvas-tote", label: "Canvas tote" },
-  { id: "sweatshirt", label: "Crewneck sweatshirt" },
-] as const;
-
 export const metadata = {
   title: "Haphy Living (Brand IP) | Angela Yang",
   description:
@@ -227,11 +214,9 @@ export default function PhyphyyaCaseStudy() {
 
       <div className={SITE_SHELL_CONTAINER}>
         <CaseStudyContentLayout
-          toc={PHY_TOC}
           variant="light"
           omitOuterContainer
           contentClassName=""
-          tocHeading="On this page"
         >
         <CaseStudyInViewSection
           id="project-overview"

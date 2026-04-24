@@ -55,7 +55,7 @@ export default function RootLayout({
           <header className="sticky top-0 z-50 border-b border-zinc-800 bg-zinc-950/80 backdrop-blur-sm">
             <div className={`${SITE_SHELL_CONTAINER} py-4`}>
               <div className={CASE_STUDY_BODY_GRID}>
-                <div className="flex min-w-0 items-center justify-between gap-6 lg:col-span-2">
+                <div className="flex min-w-0 items-center justify-between gap-6">
                   <a
                     href="/"
                     className="text-base font-medium tracking-wide text-zinc-400 transition hover:text-zinc-100"
@@ -80,7 +80,7 @@ export default function RootLayout({
           <footer className="border-t border-zinc-800">
             <div className={`${SITE_SHELL_CONTAINER} py-5 text-xs text-zinc-500`}>
               <div className={CASE_STUDY_BODY_GRID}>
-                <div className="lg:col-span-2">
+                <div>
                   <div className="grid grid-cols-1 gap-3 text-center sm:grid-cols-3 sm:items-center sm:gap-4 sm:text-left">
                     <span className="sm:text-left">
                       © {new Date().getFullYear()} Angela Yang

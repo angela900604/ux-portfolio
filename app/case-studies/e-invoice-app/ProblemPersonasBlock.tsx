@@ -73,56 +73,28 @@ export function ProblemPersonasBlock() {
           </h3>
         </div>
 
-        <div className="overflow-x-auto rounded-xl border border-zinc-800">
-          <table className="min-w-[520px] w-full text-left text-sm">
-            <thead className="bg-zinc-900/80 text-xs uppercase tracking-wider text-zinc-500">
-              <tr>
-                <th className="px-4 py-3 font-medium">Theme</th>
-                <th className="px-4 py-3 font-medium">What reviewers kept saying</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-zinc-800 text-zinc-300">
-              <tr className="align-top">
-                <td className="px-4 py-3.5 text-zinc-200 whitespace-nowrap">
-                  Speed &amp; stability
-                </td>
-                <td className="px-4 py-3.5 text-zinc-400">
-                  Slow launch, lag at checkout, freezes after updates—“I just want
-                  the barcode and it spins.”
-                </td>
-              </tr>
-              <tr className="align-top">
-                <td className="px-4 py-3.5 text-zinc-200 whitespace-nowrap">
-                  Findability
-                </td>
-                <td className="px-4 py-3.5 text-zinc-400">
-                  Prize redemption, carrier binding, and settings buried under
-                  labels that read like ministry jargon, not tasks.
-                </td>
-              </tr>
-              <tr className="align-top">
-                <td className="px-4 py-3.5 text-zinc-200 whitespace-nowrap">
-                  Older adults
-                </td>
-                <td className="px-4 py-3.5 text-zinc-400">
-                  Small type, dense screens, and no obvious “next step”—families
-                  stepping in to finish flows on someone else&apos;s phone.
-                </td>
-              </tr>
-            </tbody>
-          </table>
+        <div className="grid gap-4 sm:gap-5 lg:grid-cols-2 lg:gap-6">
+          <div className="rounded-2xl bg-amber-400 p-6 shadow-sm sm:p-8">
+            <h4 className="text-lg font-semibold tracking-tight text-zinc-950 sm:text-xl">
+              Findability
+            </h4>
+            <p className="mt-3 text-base leading-relaxed text-zinc-900 sm:text-[1.05rem] sm:leading-relaxed">
+              Prize redemption, carrier binding, and settings buried under labels
+              that read like ministry jargon, not tasks.
+            </p>
+          </div>
+          <div className="rounded-2xl bg-amber-400 p-6 shadow-sm sm:p-8">
+            <h4 className="text-lg font-semibold tracking-tight text-zinc-950 sm:text-xl">
+              Older adults
+            </h4>
+            <p className="mt-3 text-base leading-relaxed text-zinc-900 sm:text-[1.05rem] sm:leading-relaxed">
+              Small type, dense screens, and no obvious “next step”—families
+              stepping in to finish flows on someone else&apos;s phone.
+            </p>
+          </div>
         </div>
 
-        <div className="grid gap-4 md:grid-cols-3">
-          <blockquote className={PULL}>
-            <p className="text-[11px] font-semibold uppercase tracking-wider text-amber-200/90">
-              Review pull quote
-            </p>
-            <p className="mt-2 italic text-zinc-200">
-              “Opens forever. By the time the barcode shows the clerk is already
-              staring.”
-            </p>
-          </blockquote>
+        <div className="grid gap-4 md:grid-cols-2">
           <blockquote className={PULL}>
             <p className="text-[11px] font-semibold uppercase tracking-wider text-amber-200/90">
               Review pull quote

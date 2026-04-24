@@ -78,24 +78,6 @@ const E_INVOICE_JOURNEY_IDS = [
   "carrier-binding-insight",
 ] as const;
 
-const E_INVOICE_TOC = [
-  { id: "user-journey-map", label: "Problem · ~2.8★, speed, findability" },
-  { id: "personas", label: "Personas" },
-  { id: "key-outcomes", label: "Key outcomes" },
-  { id: "final-solution-screens", label: "Final screens" },
-  { id: "impact-results", label: "Impact & results" },
-  { id: "design-journey", label: "Design journey" },
-  { id: "competitor-insights", label: "Competitor insights & design process" },
-  { id: "accessibility", label: "Accessibility" },
-  { id: "business-constraints", label: "Business constraints" },
-  { id: "functional-map", label: "Functional map" },
-  { id: "page-flow-design", label: "Page flow & design system" },
-  { id: "testing", label: "Testing & iterations" },
-  { id: "carrier-binding-insight", label: "Carrier binding insight" },
-  { id: "reflection", label: "Reflection" },
-  { id: "figma-resources", label: "Figma files" },
-] as const;
-
 const AT_A_GLANCE_ITEMS = [
   { label: "Timeline", value: "Feb 2025 – Sep 2025 (8 months)" },
   { label: "Role", value: "UX/UI Designer" },
@@ -471,7 +453,7 @@ export default function EInvoiceCaseStudy() {
         </CaseStudyHeroFullBleed>
       </header>
 
-      <CaseStudyContentLayout toc={E_INVOICE_TOC}>
+      <CaseStudyContentLayout>
         <ProblemPersonasBlock />
 
         <CaseStudyInViewSection

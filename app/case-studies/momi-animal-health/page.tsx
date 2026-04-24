@@ -17,13 +17,6 @@ export const metadata = {
 
 const MOMI_ASSET = (n: string) => `/case-studies/momi-animal-health/${n}`;
 
-const MOMI_TOC = [
-  { id: "project-overview", label: "Project overview" },
-  { id: "goal", label: "Goal" },
-  { id: "what-i-did", label: "What I did" },
-  { id: "outcomes", label: "Outcomes" },
-] as const;
-
 const ECOMMERCE_SUPPORT_SLIDES = ["05", "04", "03", "02"].map((id, idx) => ({
   src: MOMI_ASSET(`what-i-did-${id}.png`),
   alt: `MOMI Animal Health — eCommerce support creative ${idx + 1} of 4`,
@@ -150,7 +143,6 @@ export default function MomiAnimalHealthCaseStudy() {
       </header>
 
       <CaseStudyContentLayout
-        toc={MOMI_TOC}
         variant="light"
         contentClassName="space-y-20 sm:space-y-24"
       >

@@ -161,23 +161,6 @@ const SCAN_SUMMARY_LINES = [
 const sectionScroll =
   "scroll-mt-28 sm:scroll-mt-32";
 
-const BASKIN_TOC = [
-  { id: "project-background", label: "Background" },
-  { id: "final-product", label: "Final product" },
-  { id: "design-journey", label: "Design journey" },
-  { id: "team-objectives", label: "Team objectives" },
-  { id: "role-deliverables", label: "Role & deliverables" },
-  { id: "project-outcomes", label: "Project outcomes" },
-  { id: "design-process", label: "Design process" },
-  { id: "requirement-interviews", label: "Requirement interviews" },
-  { id: "function-difference", label: "Functional map" },
-  { id: "visual-style", label: "Visual style" },
-  { id: "challenges", label: "Challenges" },
-  { id: "learnings", label: "Learnings" },
-  { id: "annotations-flow", label: "Annotated flow" },
-  { id: "delivery-kit", label: "Delivery kit" },
-] as const;
-
 export default function BaskinRobbinsCaseStudy() {
   return (
     <article className="min-h-screen bg-zinc-950 text-zinc-100">
@@ -236,7 +219,7 @@ export default function BaskinRobbinsCaseStudy() {
         </CaseStudyHeroFullBleed>
       </header>
 
-      <CaseStudyContentLayout toc={BASKIN_TOC}>
+      <CaseStudyContentLayout>
         <CaseStudyInViewSection
           id="project-background"
           className={`space-y-6 ${sectionScroll}`}

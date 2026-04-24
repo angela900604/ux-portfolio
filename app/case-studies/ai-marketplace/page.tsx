@@ -39,15 +39,6 @@ const MINA_SCAN_SUMMARY = [
 
 const MINA_JOURNEY_IDS = ["engineering-proposal", "design-principles"] as const;
 
-const MINA_TOC = [
-  { id: "why-this-exists", label: "Opportunity" },
-  { id: "outcome-impact", label: "Outcome & impact" },
-  { id: "core-experience", label: "Core experience" },
-  { id: "design-journey", label: "Design journey" },
-  { id: "engineering-proposal", label: "Proposal & alignment" },
-  { id: "design-principles", label: "Design principles" },
-] as const;
-
 export const metadata = {
   title: "MINA · AI Marketplace for Parents (Coming Soon) | Angela Yang",
   description:
@@ -148,7 +139,7 @@ export default function AiMarketplaceCaseStudy() {
         </CaseStudyHeroFullBleed>
       </header>
 
-      <CaseStudyContentLayout toc={MINA_TOC}>
+      <CaseStudyContentLayout>
         <CaseStudyInViewSection
           id="why-this-exists"
           className="scroll-mt-28 sm:scroll-mt-32"

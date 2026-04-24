@@ -2,29 +2,20 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 import { CASE_STUDY_BODY_GRID, SITE_SHELL_CONTAINER } from "@/lib/site-shell";
 
-/**
- * Overlay / below-meta title band: left edge matches narrative column; reserves
- * TOC track so title aligns with body h1 column.
- */
+/** Title band: same full-width narrative track as {@link CaseStudyContentLayout}. */
 function HeroTitleInGrid({ children }: { children: ReactNode }) {
   return (
-    <div className={CASE_STUDY_BODY_GRID}>
-      <div className="case-study-prose min-w-0 w-full overflow-x-hidden">
-        {children}
-      </div>
-      <aside className="hidden min-w-0 lg:block" aria-hidden />
+    <div className={`${CASE_STUDY_BODY_GRID} case-study-prose overflow-x-hidden`}>
+      {children}
     </div>
   );
 }
 
-/**
- * Below-fold hero block (at-a-glance, scan summary, etc.): spans main + gap + TOC
- * column so right edge lines up with the sticky sidebar below.
- */
+/** Below-fold hero block (at-a-glance, scan summary, etc.). */
 function HeroBelowFoldFullGrid({ children }: { children: ReactNode }) {
   return (
-    <div className={CASE_STUDY_BODY_GRID}>
-      <div className="min-w-0 lg:col-span-2">{children}</div>
+    <div className={`${CASE_STUDY_BODY_GRID} min-w-0 overflow-x-hidden`}>
+      {children}
     </div>
   );
 }

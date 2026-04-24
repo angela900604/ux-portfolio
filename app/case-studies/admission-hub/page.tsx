@@ -9,14 +9,6 @@ import { OutcomesMetricsChart } from "./OutcomesMetricsChart";
 
 const AH_ASSET = (name: string) => `/case-studies/admission-hub/${name}`;
 
-const ADMISSION_TOC = [
-  { id: "project-overview", label: "Project overview" },
-  { id: "problem", label: "Problem" },
-  { id: "strategy", label: "Strategy" },
-  { id: "what-i-did", label: "What I did" },
-  { id: "outcomes", label: "Outcomes" },
-] as const;
-
 /** Live posts that illustrate the “Canada life + calendar hooks” content shift */
 const ADMISSION_IG_EXAMPLES = [
   { href: "https://www.instagram.com/p/ChTR-c8px82/", label: "Feed — Canada life / calendar hook" },
@@ -116,7 +108,6 @@ export default function AdmissionHubCaseStudy() {
       </header>
 
       <CaseStudyContentLayout
-        toc={ADMISSION_TOC}
         variant="light"
         contentClassName="space-y-20 sm:space-y-24"
       >
