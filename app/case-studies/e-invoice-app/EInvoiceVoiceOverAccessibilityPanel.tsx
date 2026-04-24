@@ -7,7 +7,7 @@ export const YOUTUBE_A11Y_URL =
 
 /**
  * VoiceOver research narrative + YouTube clip (MoF Cloud Invoice legacy app).
- * Used on `/accessibility-voiceover` and referenced from the e-invoice case study.
+ * Used on `/accessibility-voiceover` (linked from the site home research skills).
  */
 export function EInvoiceVoiceOverAccessibilityPanel() {
   return (

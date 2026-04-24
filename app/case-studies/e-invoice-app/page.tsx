@@ -68,8 +68,6 @@ const M_TIME =
   "rounded-md bg-amber-500/15 px-1.5 py-0.5 font-medium tabular-nums text-amber-100/95";
 
 const E_INVOICE_JOURNEY_IDS = [
-  "accessibility",
-  "business-constraints",
   "functional-map",
   "page-flow-design",
   "testing",
@@ -109,8 +107,6 @@ const DENSITY_HOME_MODULES_ROW = {
     "A single static layout would always betray one segment—either “too empty” or “too noisy.”",
   decision:
     "Add settings toggles for optional home modules (e.g., spending analytics, win alerts, campaign tiles). Core rails—scan and the invoice passbook—stay fixed and cannot be turned off.",
-  outcome:
-    "One national app could flex to very different habits without designing a cluttered compromise—a level of end-user control that is uncommon in government-grade mobile services.",
 } as const;
 
 /** Research → problem → decision → outcome; paired with final UI (solution-final-*.png). */
@@ -356,9 +352,8 @@ export default function EInvoiceCaseStudy() {
           <div className="space-y-5 sm:space-y-6">
             <div className="max-w-4xl">
               <h2 className={KEY_OUTCOME_STORY_TITLE_CLASS}>
-                One home for four audiences—we combined each group&apos;s needs on a
-                single surface and put the shared-truth action, scanning, at the very
-                top of the homepage.
+                I combined each group&apos;s needs on a single surface and put the
+                shared-truth action, scanning, at the very top of the homepage.
               </h2>
             </div>
 
@@ -406,21 +401,14 @@ export default function EInvoiceCaseStudy() {
             <div className="mt-12 space-y-5 border-t border-zinc-800/90 pt-12 sm:mt-14 sm:space-y-6 sm:pt-14">
               <div className="max-w-4xl">
                 <h2 className={KEY_OUTCOME_STORY_TITLE_CLASS}>
-                  Opposite density needs on one home—we kept scan and the invoice
-                  passbook fixed, and made optional home modules configurable so calmer
-                  and richer layouts could coexist.
+                  I designed optional home modules to be configurable so (older and
+                  low-vision users wanted a sparse home with bold color cues; younger
+                  users wanted a denser dashboard and a cooler, minimal palette—one
+                  layout; two incompatible defaults).
                 </h2>
               </div>
               <article className="min-w-0 space-y-6">
                 <div className="max-w-3xl space-y-6">
-                  <div className="rounded-xl border border-emerald-500/25 bg-emerald-500/[0.07] px-4 py-3 sm:px-5 sm:py-4">
-                    <p className="text-[11px] font-semibold uppercase tracking-widest text-emerald-200/95">
-                      Outcome
-                    </p>
-                    <p className="mt-2 text-sm font-medium leading-relaxed text-zinc-100">
-                      {DENSITY_HOME_MODULES_ROW.outcome}
-                    </p>
-                  </div>
                   <CaseStudyExpandable label="Evidence → problem → decision (full)">
                     <div className="space-y-5">
                       <div className="border-l-2 border-emerald-500/45 pl-4">
@@ -543,8 +531,8 @@ export default function EInvoiceCaseStudy() {
             Impact &amp; results
           </span>
           <h2 className="max-w-3xl text-zinc-100">
-            Same research cycle: ~88% prototype tasks; −70% missed redemptions
-            after clearer deadlines and alerts.
+            In the same research cycle, prototype tasks reached ~88% success;
+            missed redemptions dropped ~70% after clearer deadlines and alerts.
           </h2>
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-5">
@@ -589,67 +577,6 @@ export default function EInvoiceCaseStudy() {
           journeySectionIds={E_INVOICE_JOURNEY_IDS}
           panelId="e-invoice-design-journey-panel"
         >
-        <CaseStudyInViewSection
-          id="accessibility"
-          className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
-        >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            03 · Accessibility
-          </span>
-          <h2 className="max-w-3xl text-zinc-100">
-            VoiceOver sessions on legacy exposed broken focus, roles, and copy—we
-            annotated components for engineering on the path to 2026 certification.
-          </h2>
-          <p className="max-w-2xl text-sm leading-relaxed text-zinc-400">
-            Findings, engineering handoff notes, and a short VoiceOver research clip
-            are on a dedicated page.
-          </p>
-          <Link
-            href="/accessibility-voiceover"
-            className="inline-flex w-fit items-center gap-1.5 text-sm font-medium text-emerald-400/95 underline decoration-emerald-500/35 underline-offset-4 transition hover:text-emerald-300"
-          >
-            Accessibility &amp; VoiceOver research →
-          </Link>
-        </CaseStudyInViewSection>
-
-        <CaseStudyInViewSection
-          id="business-constraints"
-          className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
-        >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Business constraints
-          </span>
-          <h2 className="max-w-3xl text-zinc-100">
-            Sprint timelines, MoF policy, and backend limits meant every surface had
-            to survive legal review and what engineering could actually ship.
-          </h2>
-          <div className="grid gap-4 sm:grid-cols-3">
-            <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-4">
-              <p className="text-xs font-semibold text-violet-400">Timeline</p>
-              <p className="mt-2 text-sm text-zinc-300">
-                Tight deadlines for research, design, and testing—solutions needed
-                to ship in sprints without delaying release schedules.
-              </p>
-            </div>
-            <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-4">
-              <p className="text-xs font-semibold text-violet-400">Stakeholders</p>
-              <p className="mt-2 text-sm text-zinc-300">
-                As a Ministry of Finance government service, features must follow
-                official regulations and public-sector standards—no commercial
-                partnerships or private-business campaigns.
-              </p>
-            </div>
-            <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-4">
-              <p className="text-xs font-semibold text-violet-400">Technical</p>
-              <p className="mt-2 text-sm text-zinc-300">
-                Existing backends limit real-time integration for spending analysis
-                and multi-language support. Performance must stay smooth despite
-                biometric login, push notifications, and donation batch processing.
-              </p>
-            </div>
-          </div>
-        </CaseStudyInViewSection>
-
         <CaseStudyInViewSection
           id="functional-map"
           className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
@@ -969,6 +896,45 @@ export default function EInvoiceCaseStudy() {
             This project sharpened how I pair public-sector governance with inclusive
             UX—evidence first, then design that survives stakeholder review.
           </h2>
+
+          <div
+            id="business-constraints"
+            className="scroll-mt-28 space-y-5 border-t border-zinc-800/90 pt-10 sm:scroll-mt-32 sm:pt-12"
+          >
+            <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+              Business constraints
+            </span>
+            <h3 className="max-w-3xl text-xl font-semibold tracking-tight text-zinc-100 sm:text-2xl">
+              Sprint timelines, MoF policy, and backend limits meant every surface had
+              to survive legal review and what engineering could actually ship.
+            </h3>
+            <div className="grid gap-4 sm:grid-cols-3">
+              <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-4">
+                <p className="text-xs font-semibold text-violet-400">Timeline</p>
+                <p className="mt-2 text-sm text-zinc-300">
+                  Tight deadlines for research, design, and testing—solutions needed
+                  to ship in sprints without delaying release schedules.
+                </p>
+              </div>
+              <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-4">
+                <p className="text-xs font-semibold text-violet-400">Stakeholders</p>
+                <p className="mt-2 text-sm text-zinc-300">
+                  As a Ministry of Finance government service, features must follow
+                  official regulations and public-sector standards—no commercial
+                  partnerships or private-business campaigns.
+                </p>
+              </div>
+              <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-4">
+                <p className="text-xs font-semibold text-violet-400">Technical</p>
+                <p className="mt-2 text-sm text-zinc-300">
+                  Existing backends limit real-time integration for spending analysis
+                  and multi-language support. Performance must stay smooth despite
+                  biometric login, push notifications, and donation batch processing.
+                </p>
+              </div>
+            </div>
+          </div>
+
           <CaseStudyExpandable label="Reflections &amp; next steps">
             <p className="text-zinc-300 leading-relaxed">
               I learned how differently diverse users interact with the app—from

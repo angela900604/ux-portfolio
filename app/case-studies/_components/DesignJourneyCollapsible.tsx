@@ -32,7 +32,7 @@ export function DesignJourneyCollapsible({
     [journeySectionIds],
   );
 
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   useLayoutEffect(() => {
     const syncFromHash = () => {
@@ -75,7 +75,7 @@ export function DesignJourneyCollapsible({
           aria-controls={panelId}
           className="inline-flex items-center gap-2 rounded-full border border-zinc-600 bg-zinc-900/50 px-4 py-2.5 text-sm font-medium text-zinc-200 transition hover:border-zinc-400 hover:text-zinc-50"
         >
-          {open ? "Hide" : "Show"} design journey
+          {open ? "Hide" : "View"} design journey
         </button>
       </div>
       <div
