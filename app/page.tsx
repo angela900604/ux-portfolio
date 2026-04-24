@@ -90,6 +90,7 @@ const USER_RESEARCH_SKILLS = [
     title: "Accessibility",
     summary:
       "Identifying barriers early and validating inclusive flows for users with different abilities, contexts, and constraints.",
+    href: "/accessibility-voiceover",
   },
 ] as const;
 
@@ -208,28 +209,17 @@ export default function Home() {
             {USER_RESEARCH_SKILLS.map((item, i) => (
               <li key={item.title} className="h-full min-h-0">
                 <FadeInSection className="h-full" delay={0.04 + i * 0.05}>
-                  {"href" in item ? (
-                    <Link
-                      href={item.href}
-                      className="group flex h-full min-h-0 flex-col rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 transition duration-300 hover:-translate-y-0.5 hover:border-zinc-500 hover:shadow-[0_20px_48px_-28px_rgba(0,0,0,0.75)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-400 sm:p-8"
-                    >
-                      <h3 className="text-xl font-semibold tracking-tight text-zinc-100 transition group-hover:text-zinc-50 sm:text-2xl">
-                        {item.title}
-                      </h3>
-                      <p className="mt-4 text-base leading-relaxed text-zinc-300 sm:text-lg">
-                        {item.summary}
-                      </p>
-                    </Link>
-                  ) : (
-                    <div className="flex h-full min-h-0 flex-col rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 sm:p-8">
-                      <h3 className="text-xl font-semibold tracking-tight text-zinc-100 sm:text-2xl">
-                        {item.title}
-                      </h3>
-                      <p className="mt-4 text-base leading-relaxed text-zinc-300 sm:text-lg">
-                        {item.summary}
-                      </p>
-                    </div>
-                  )}
+                  <Link
+                    href={item.href}
+                    className="group flex h-full min-h-0 flex-col rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 transition duration-300 hover:-translate-y-0.5 hover:border-zinc-500 hover:shadow-[0_20px_48px_-28px_rgba(0,0,0,0.75)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-400 sm:p-8"
+                  >
+                    <h3 className="text-xl font-semibold tracking-tight text-zinc-100 transition group-hover:text-zinc-50 sm:text-2xl">
+                      {item.title}
+                    </h3>
+                    <p className="mt-4 text-base leading-relaxed text-zinc-300 sm:text-lg">
+                      {item.summary}
+                    </p>
+                  </Link>
                 </FadeInSection>
               </li>
             ))}

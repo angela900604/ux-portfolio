@@ -3,24 +3,18 @@ function PainBlock({
   badgeClassName,
   title,
   body,
-  quote,
-  quoteSource,
-  quoteStyle = "review",
+  quotes,
 }: {
   badge: string;
   badgeClassName: string;
   title: string;
   body: string;
-  quote: string;
-  quoteSource?: string;
-  /** `review` = italic + curly quotes; `synthesis` = factual pull line below body */
-  quoteStyle?: "review" | "synthesis";
+  quotes: {
+    quote: string;
+    quoteSource?: string;
+    quoteStyle?: "review" | "synthesis";
+  }[];
 }) {
-  const quoteClasses =
-    quoteStyle === "review"
-      ? "text-sm italic leading-relaxed text-zinc-400 sm:text-base"
-      : "text-sm leading-relaxed text-zinc-400 sm:text-base";
-
   return (
     <div className="rounded-2xl border border-zinc-800/90 bg-zinc-900/35 p-6 sm:p-8">
       <div className="min-w-0 max-w-3xl space-y-4">
@@ -35,27 +29,38 @@ function PainBlock({
         <p className="text-base leading-relaxed text-zinc-300 sm:text-[1.05rem]">
           {body}
         </p>
-        <figure className="border-l-2 border-amber-500/45 pl-4 pt-1">
-          <blockquote className={quoteClasses}>
-            {quoteStyle === "review" ? (
-              <>
-                &ldquo;{quote}&rdquo;
-              </>
-            ) : (
-              quote
-            )}
-          </blockquote>
-          {quoteSource ? (
-            <figcaption className="mt-2 text-xs text-zinc-500">{quoteSource}</figcaption>
-          ) : null}
-        </figure>
+        {quotes.map((q, i) => {
+          const quoteClasses =
+            q.quoteStyle === "synthesis"
+              ? "text-sm leading-relaxed text-zinc-400 sm:text-base"
+              : "text-sm italic leading-relaxed text-zinc-400 sm:text-base";
+          return (
+            <figure
+              key={i}
+              className="border-l-2 border-amber-500/45 pl-4 pt-1"
+            >
+              <blockquote className={quoteClasses}>
+                {q.quoteStyle === "synthesis" ? (
+                  q.quote
+                ) : (
+                  <>
+                    &ldquo;{q.quote}&rdquo;
+                  </>
+                )}
+              </blockquote>
+              {q.quoteSource ? (
+                <figcaption className="mt-2 text-xs text-zinc-500">
+                  {q.quoteSource}
+                </figcaption>
+              ) : null}
+            </figure>
+          );
+        })}
       </div>
     </div>
   );
 }
 
-const BADGE_APP =
-  "bg-amber-500/15 text-amber-200/95 ring-1 ring-amber-500/25";
 const BADGE_INTERVIEW =
   "bg-emerald-500/12 text-emerald-200/95 ring-1 ring-emerald-500/25";
 
@@ -66,84 +71,78 @@ const BADGE_INTERVIEW =
 export function EInvoiceMultisegmentResearchSections() {
   return (
     <div className="space-y-12 sm:space-y-16">
-      {/* Layer 1 */}
-      <section className="space-y-8 sm:space-y-10">
-        <header className="max-w-3xl space-y-2">
-          <p className="text-xs font-semibold uppercase tracking-widest text-amber-400/90">
-            Layer 1 · Where the problem showed up first
-          </p>
-          <h3 className="text-2xl font-semibold tracking-tight text-zinc-100 sm:text-3xl">
-            2.8★ App Store reviews (Taiwan · ~Mar 2024–Mar 2025)
-          </h3>
-        </header>
-
-        <div className="space-y-8 sm:space-y-10">
-          <PainBlock
-            badge="User pain · Findability"
-            badgeClassName={BADGE_APP}
-            title="Findability"
-            body="Prize redemption, carrier binding, and settings buried under labels that read like ministry jargon, not tasks."
-            quote="I know the feature exists—I saw it in a tutorial—but I can't find it again."
-            quoteSource="— App Store review (Taiwan)"
-          />
-          <PainBlock
-            badge="User pain · Older adults"
-            badgeClassName={BADGE_APP}
-            title="Older adults"
-            body='Small type, dense screens, and no obvious "next step"—families stepping in to finish flows on someone else&apos;s phone.'
-            quote="My mom gives up. Too many words, too small. She only trusts paper."
-            quoteSource="— App Store review (Taiwan)"
-          />
-        </div>
-      </section>
-
-      {/* Layer 2 */}
       <section
         id="personas"
         className="scroll-mt-28 space-y-8 sm:scroll-mt-32 sm:space-y-10"
       >
-        <header className="max-w-3xl space-y-2">
-          <p className="text-xs font-semibold uppercase tracking-widest text-emerald-400/90">
-            Layer 2 · Interviews across five audiences—including low vision
-          </p>
-        </header>
-
         <div className="space-y-8 sm:space-y-10">
           <PainBlock
             badge="Interview signal · Younger (18–30)"
             badgeClassName={BADGE_INTERVIEW}
             title="UI felt too bare—couldn&apos;t see what I wanted right after open"
-            body="Younger participants wanted a richer first screen: the layout read as sparse next to consumer apps they use daily, so lottery status, spending, and shortcuts didn&apos;t show up where they expected."
-            quote="On open, I still have to dig—I want the important stuff visible immediately, not a home that feels empty next to the apps I use every day."
-            quoteSource="— Interview synthesis · younger (18–30)"
-            quoteStyle="synthesis"
+            body="App Store reviews flagged findability first: prize redemption, carrier binding, and settings buried under labels that read like ministry jargon, not tasks. Younger participants wanted a richer first screen too—the layout read as sparse next to consumer apps they use daily, so lottery status, spending, and shortcuts didn&apos;t show up where they expected."
+            quotes={[
+              {
+                quote:
+                  "I know the feature exists—I saw it in a tutorial—but I can't find it again.",
+                quoteSource: "— App Store review (Taiwan)",
+                quoteStyle: "review",
+              },
+              {
+                quote:
+                  "On open, I still have to dig—I want the important stuff visible immediately, not a home that feels empty next to the apps I use every day.",
+                quoteSource: "— Interview synthesis · younger (18–30)",
+                quoteStyle: "synthesis",
+              },
+            ]}
           />
           <PainBlock
             badge="Interview signal · Middle-aged (31–50)"
             badgeClassName={BADGE_INTERVIEW}
             title="Forgot passwords / MoF verification codes"
             body="The account gate did its security job—but verification codes and password recovery became the wall people hit before lottery, carrier, or scan tasks."
-            quote="Sharpest pain in moderated sessions: forgot passwords and MoF verification codes blocked access before core tasks—not lack of features."
-            quoteSource="— Interview synthesis · middle-aged (31–50)"
-            quoteStyle="synthesis"
+            quotes={[
+              {
+                quote:
+                  "Sharpest pain in moderated sessions: forgot passwords and MoF verification codes blocked access before core tasks—not lack of features.",
+                quoteSource: "— Interview synthesis · middle-aged (31–50)",
+                quoteStyle: "synthesis",
+              },
+            ]}
           />
           <PainBlock
             badge="Interview signal · Silver (51+)"
             badgeClassName={BADGE_INTERVIEW}
             title="Don&apos;t know the next step; fear tapping wrong"
-            body="Older participants froze at ambiguous controls: without an obvious next step, they worried about triggering the wrong action on an official app—so they slowed down or passed the phone to family."
-            quote="Sharpest pain for silver users: uncertainty about what to tap next and anxiety about mistakes—not lack of motivation to use the service."
-            quoteSource="— Interview synthesis · silver (51+)"
-            quoteStyle="synthesis"
+            body='Reviews also described small type, dense screens, and no obvious "next step"—families stepping in to finish flows on someone else&apos;s phone. In sessions, older participants froze at ambiguous controls: without an obvious next step, they worried about triggering the wrong action on an official app—so they slowed down or passed the phone to family.'
+            quotes={[
+              {
+                quote:
+                  "My mom gives up. Too many words, too small. She only trusts paper.",
+                quoteSource: "— App Store review (Taiwan)",
+                quoteStyle: "review",
+              },
+              {
+                quote:
+                  "Sharpest pain for silver users: uncertainty about what to tap next and anxiety about mistakes—not lack of motivation to use the service.",
+                quoteSource: "— Interview synthesis · silver (51+)",
+                quoteStyle: "synthesis",
+              },
+            ]}
           />
           <PainBlock
             badge="Interview signal · Low vision"
             badgeClassName={BADGE_INTERVIEW}
             title="Can&apos;t complete core tasks without a caregiver"
             body="Blind and low-vision participants relied on family to finish flows: unclear focus, weak roles, and copy that sounded interactive when it wasn&apos;t."
-            quote="Low-vision and blind participants often needed help to complete the same tasks younger users did alone—VoiceOver and visual hierarchy were not yet carrying the load."
-            quoteSource="— Interview & VoiceOver synthesis · low vision"
-            quoteStyle="synthesis"
+            quotes={[
+              {
+                quote:
+                  "Low-vision and blind participants often needed help to complete the same tasks younger users did alone—VoiceOver and visual hierarchy were not yet carrying the load.",
+                quoteSource: "— Interview & VoiceOver synthesis · low vision",
+                quoteStyle: "synthesis",
+              },
+            ]}
           />
         </div>
       </section>

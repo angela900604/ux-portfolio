@@ -57,7 +57,7 @@ export function EInvoiceHeroTldr() {
           <TldrTargetIcon className="h-3.5 w-3.5 opacity-90" />
           TL;DR
         </span>
-        <h2 className="mt-5 max-w-3xl text-pretty text-2xl font-bold leading-[1.15] tracking-tight sm:text-3xl md:text-[2rem] md:leading-[1.12]">
+        <h2 className="mt-5 w-full max-w-5xl text-pretty text-2xl font-bold leading-[1.15] tracking-tight sm:text-3xl md:max-w-6xl md:text-[2rem] md:leading-[1.12]">
           From research to ship-ready UI, the redesign improves navigation and
           delivers a more inclusive experience for older adults and people with
           visual impairments.
