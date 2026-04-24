@@ -22,20 +22,20 @@ export function MultisegmentInterviewsResearchBody() {
         </div>
 
         <div className="grid gap-4 sm:gap-5 lg:grid-cols-2 lg:gap-6">
-          <div className="rounded-2xl bg-amber-700/95 p-6 shadow-sm ring-1 ring-amber-950/15 sm:p-8">
-            <h4 className="text-lg font-semibold tracking-tight text-amber-50 sm:text-xl">
+          <div className="rounded-2xl border border-zinc-700/80 bg-zinc-900/45 p-6 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)] ring-1 ring-white/[0.03] sm:p-8">
+            <h4 className="text-lg font-semibold tracking-tight text-zinc-100 sm:text-xl">
               Findability
             </h4>
-            <p className="mt-3 text-base leading-relaxed text-amber-100/90 sm:text-[1.05rem] sm:leading-relaxed">
+            <p className="mt-3 text-base leading-relaxed text-zinc-300 sm:text-[1.05rem] sm:leading-relaxed">
               Prize redemption, carrier binding, and settings buried under labels
               that read like ministry jargon, not tasks.
             </p>
           </div>
-          <div className="rounded-2xl bg-amber-700/95 p-6 shadow-sm ring-1 ring-amber-950/15 sm:p-8">
-            <h4 className="text-lg font-semibold tracking-tight text-amber-50 sm:text-xl">
+          <div className="rounded-2xl border border-zinc-700/80 bg-zinc-900/45 p-6 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)] ring-1 ring-white/[0.03] sm:p-8">
+            <h4 className="text-lg font-semibold tracking-tight text-zinc-100 sm:text-xl">
               Older adults
             </h4>
-            <p className="mt-3 text-base leading-relaxed text-amber-100/90 sm:text-[1.05rem] sm:leading-relaxed">
+            <p className="mt-3 text-base leading-relaxed text-zinc-300 sm:text-[1.05rem] sm:leading-relaxed">
               Small type, dense screens, and no obvious “next step”—families
               stepping in to finish flows on someone else&apos;s phone.
             </p>

@@ -78,19 +78,19 @@ const USER_RESEARCH_SKILLS = [
     title: "Competitor analysis",
     summary:
       "Benchmarking product patterns, positioning, and UX decisions to find realistic opportunities and differentiation.",
-    href: "/competitor-analysis",
+    href: "/user-research-journey#competitor-analysis",
   },
   {
     title: "Multisegment interviews",
     summary:
       "Running interviews across different user groups to surface conflicts, shared needs, and decision-ready insights.",
-    href: "/multisegment-interviews",
+    href: "/user-research-journey#multisegment-interviews",
   },
   {
     title: "Accessibility",
     summary:
       "Identifying barriers early and validating inclusive flows for users with different abilities, contexts, and constraints.",
-    href: "/accessibility-voiceover",
+    href: "/user-research-journey#accessibility",
   },
 ] as const;
 

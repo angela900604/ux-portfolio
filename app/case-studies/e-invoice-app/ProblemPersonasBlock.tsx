@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { CaseStudyExpandable } from "../_components/CaseStudyExpandable";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { EInvoiceMultisegmentResearchSections } from "./EInvoiceMultisegmentResearchSections";
@@ -49,6 +50,15 @@ export function ProblemPersonasBlock() {
       </div>
 
       <EInvoiceMultisegmentResearchSections />
+
+      <div className="pt-4">
+        <Link
+          href="/user-research-journey"
+          className="inline-flex items-center justify-center rounded-full border border-emerald-500/45 bg-emerald-500/15 px-7 py-3 text-base font-semibold text-emerald-100 transition hover:border-emerald-400/70 hover:bg-emerald-500/25 hover:text-white"
+        >
+          View research journey
+        </Link>
+      </div>
     </CaseStudyInViewSection>
   );
 }

@@ -78,15 +78,15 @@ function CompetitorCard({
   summary: string;
 }) {
   return (
-    <div className="rounded-xl border border-zinc-800/80 bg-zinc-900/25 px-4 py-3 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)]">
+    <div className="rounded-xl border border-zinc-800/80 bg-zinc-900/25 px-4 py-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)] sm:px-5 sm:py-4">
       <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-        <p className="text-sm font-medium text-zinc-100">{name}</p>
+        <p className="text-base font-semibold tracking-tight text-zinc-100">{name}</p>
         <span className={`text-[11px] font-medium uppercase tracking-wide ${tagClass}`}>
           {tag}
         </span>
       </div>
-      <p className="mt-1.5 text-xs text-zinc-400">{ratingLine}</p>
-      <p className="mt-2 text-xs leading-relaxed text-zinc-400">{summary}</p>
+      <p className="mt-2 text-sm leading-snug text-zinc-400">{ratingLine}</p>
+      <p className="mt-2 text-sm leading-relaxed text-zinc-300">{summary}</p>
     </div>
   );
 }
