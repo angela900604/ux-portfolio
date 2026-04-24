@@ -420,8 +420,8 @@ export default function EInvoiceCaseStudy() {
                   and richer layouts could coexist.
                 </h2>
               </div>
-              <article className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,28rem)] lg:items-start lg:gap-12">
-                <div className="min-w-0 space-y-6">
+              <article className="min-w-0 space-y-6">
+                <div className="max-w-3xl space-y-6">
                   <div className="rounded-xl border border-emerald-500/25 bg-emerald-500/[0.07] px-4 py-3 sm:px-5 sm:py-4">
                     <p className="text-[11px] font-semibold uppercase tracking-widest text-emerald-200/95">
                       Outcome
@@ -459,9 +459,7 @@ export default function EInvoiceCaseStudy() {
                     </div>
                   </CaseStudyExpandable>
                 </div>
-                <div className="min-w-0 w-full max-lg:max-w-md max-lg:mx-auto lg:max-w-none lg:justify-self-end">
-                  <SettingHomeModulesVideo className="w-full" />
-                </div>
+                <SettingHomeModulesVideo className="w-full" />
               </article>
             </div>
           </div>
