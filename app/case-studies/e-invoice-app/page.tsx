@@ -16,7 +16,8 @@ import { HomeBeforeAfterSlider } from "./HomeBeforeAfterSlider";
 import { LoginBeforeAfterSlider } from "./LoginBeforeAfterSlider";
 
 export const metadata = {
-  title: "Reimagining Taiwan’s e-Invoice Experience | Angela Yang",
+  title:
+    "Redesigning Taiwan Ministry of Finance's Uniform Invoice Award Redemption App | Angela Yang",
   description:
     "End-to-end mobile app redesign for the Ministry of Finance Cloud Invoice App: research, competitors, IA, testing (~88% task success), accessibility, and measurable outcomes.",
 };
@@ -303,8 +304,6 @@ export default function EInvoiceCaseStudy() {
           imageClassName="object-cover object-center sm:object-[center_45%]"
           eyebrow={
             <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-white/75">
-              <span>Case Study</span>
-              <span className="text-white/45">·</span>
               <span>Public Service</span>
               <span className="text-white/45">·</span>
               <span>Mobile App</span>
@@ -312,15 +311,15 @@ export default function EInvoiceCaseStudy() {
           }
           title={
             <h1 className="mt-5 max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
-              Reimagining Taiwan&apos;s e-Invoice experience: guided onboarding,
-              lottery prize redemption &amp; eco-friendly engagement
+              Redesigning Taiwan Ministry of Finance&apos;s Uniform Invoice Award
+              Redemption App
             </h1>
           }
           subtitle={
             <p className="text-lg leading-relaxed text-zinc-200 sm:text-xl">
-              End-to-end redesign of the Ministry of Finance Cloud Invoice App—
-              research, accessibility, and ship-ready UI for a faster, more
-              inclusive service.
+              From research to ship-ready UI, the redesign improves navigation and
+              delivers a more inclusive experience for older adults and people with
+              visual impairments.
             </p>
           }
         >

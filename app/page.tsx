@@ -9,7 +9,8 @@ import { ServiceOverview } from "./components/ServiceOverview";
 const CORE_PRODUCT = {
   flagship: {
     slug: "e-invoice-app",
-    title: "Redesigning Taiwan's e-Invoice app for accessibility & trust",
+    title:
+      "Redesigning Taiwan Ministry of Finance's Uniform Invoice Award Redemption App",
     outcome: "~88% prototype task success (moderated)",
     tag: "Public Service · Mobile App",
     role: "Product Designer",
