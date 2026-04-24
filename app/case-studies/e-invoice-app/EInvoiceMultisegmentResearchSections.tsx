@@ -1,16 +1,3 @@
-function ImagePlaceholder({ label }: { label: string }) {
-  return (
-    <div
-      className="flex aspect-[4/3] w-full max-w-xl shrink-0 items-center justify-center rounded-2xl border border-dashed border-zinc-600/90 bg-zinc-950/40 px-4 text-center lg:max-w-md xl:max-w-lg"
-      aria-hidden
-    >
-      <span className="text-[11px] font-medium uppercase tracking-wider text-zinc-500">
-        {label}
-      </span>
-    </div>
-  );
-}
-
 function PainBlock({
   badge,
   badgeClassName,
@@ -18,8 +5,6 @@ function PainBlock({
   body,
   quote,
   quoteSource,
-  placeholderLabel,
-  imageFirst = false,
   quoteStyle = "review",
 }: {
   badge: string;
@@ -28,8 +13,6 @@ function PainBlock({
   body: string;
   quote: string;
   quoteSource?: string;
-  placeholderLabel: string;
-  imageFirst?: boolean;
   /** `review` = italic + curly quotes; `synthesis` = factual pull line below body */
   quoteStyle?: "review" | "synthesis";
 }) {
@@ -39,10 +22,8 @@ function PainBlock({
       : "text-sm leading-relaxed text-zinc-400 sm:text-base";
 
   return (
-    <div
-      className={`flex flex-col gap-8 rounded-2xl border border-zinc-800/90 bg-zinc-900/35 p-6 sm:p-8 lg:flex-row lg:items-center lg:gap-12 ${imageFirst ? "lg:flex-row-reverse" : ""}`}
-    >
-      <div className="min-w-0 flex-1 space-y-4">
+    <div className="rounded-2xl border border-zinc-800/90 bg-zinc-900/35 p-6 sm:p-8">
+      <div className="min-w-0 max-w-3xl space-y-4">
         <span
           className={`inline-flex rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] ${badgeClassName}`}
         >
@@ -69,7 +50,6 @@ function PainBlock({
           ) : null}
         </figure>
       </div>
-      <ImagePlaceholder label={placeholderLabel} />
     </div>
   );
 }
@@ -109,7 +89,6 @@ export function EInvoiceMultisegmentResearchSections() {
             body="Prize redemption, carrier binding, and settings buried under labels that read like ministry jargon, not tasks."
             quote="I know the feature exists—I saw it in a tutorial—but I can't find it again."
             quoteSource="— App Store review (Taiwan)"
-            placeholderLabel="Image placeholder · Findability & IA"
           />
           <PainBlock
             badge="User pain · Older adults"
@@ -118,8 +97,6 @@ export function EInvoiceMultisegmentResearchSections() {
             body='Small type, dense screens, and no obvious "next step"—families stepping in to finish flows on someone else&apos;s phone.'
             quote="My mom gives up. Too many words, too small. She only trusts paper."
             quoteSource="— App Store review (Taiwan)"
-            placeholderLabel="Image placeholder · Older adults & density"
-            imageFirst
           />
         </div>
       </section>
@@ -147,7 +124,6 @@ export function EInvoiceMultisegmentResearchSections() {
             body="The account gate did its security job—but verification codes and password recovery became the wall people hit before lottery, carrier, or scan tasks."
             quote="Sharpest pain in moderated sessions: forgot passwords and MoF verification codes blocked access before core tasks—not lack of features."
             quoteSource="— Interview synthesis · middle-aged (31–50)"
-            placeholderLabel="Image placeholder · Sign-in & verification"
             quoteStyle="synthesis"
           />
           <PainBlock
@@ -157,8 +133,6 @@ export function EInvoiceMultisegmentResearchSections() {
             body="Blind and low-vision participants relied on family to finish flows: unclear focus, weak roles, and copy that sounded interactive when it wasn&apos;t."
             quote="Low-vision and blind participants often needed help to complete the same tasks younger users did alone—VoiceOver and visual hierarchy were not yet carrying the load."
             quoteSource="— Interview & VoiceOver synthesis · low vision"
-            placeholderLabel="Image placeholder · Low vision & VoiceOver"
-            imageFirst
             quoteStyle="synthesis"
           />
         </div>
