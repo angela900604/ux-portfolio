@@ -1,7 +1,10 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { CaseStudyAtAGlance } from "../_components/CaseStudyAtAGlance";
+import {
+  CaseStudyAtAGlance,
+  CASE_STUDY_AT_A_GLANCE_DARK_HERO_PROPS,
+} from "../_components/CaseStudyAtAGlance";
 import { CaseStudyHeroFullBleed } from "../_components/CaseStudyHeroFullBleed";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
@@ -9,6 +12,7 @@ import { DesignJourneyCollapsible } from "../_components/DesignJourneyCollapsibl
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { CaseStudyScanSummary } from "../_components/CaseStudyScanSummary";
 import { FlatAppShot, WideFigure } from "../e-invoice-app/EInvoiceFigures";
+import { GovernmentBackendHeroTldr } from "./GovernmentBackendHeroTldr";
 
 export const metadata = {
   title: "Role-Based Government Backend (600+ Staff) | Angela Yang",
@@ -25,13 +29,15 @@ const BACKEND_COVER = {
 } as const;
 
 const AT_A_GLANCE_ITEMS = [
-  { label: "Timeline", value: "Jul 2025 – Sep 2025" },
+  { label: "Timeline", value: "Jul 2025 – Sep 2025 (3 months)" },
   { label: "Role", value: "Lead UX/UI Designer" },
-  { label: "Project type", value: "Backend platform" },
+  {
+    label: "Project type",
+    value: "Backend admin platform · Government service (MoF)",
+  },
   {
     label: "Focus",
-    value:
-      "Client-driven end-to-end product design · Cross-functional collaboration",
+    value: "RBAC, reporting, version workflows · Ship-ready UI",
   },
 ] as const;
 
@@ -97,6 +103,12 @@ export default function GovernmentBackendCaseStudy() {
               errors.
             </p>
           }
+          leadBelowSubtitle={
+            <CaseStudyAtAGlance
+              items={AT_A_GLANCE_ITEMS}
+              {...CASE_STUDY_AT_A_GLANCE_DARK_HERO_PROPS}
+            />
+          }
         >
           <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
             <Image
@@ -110,7 +122,7 @@ export default function GovernmentBackendCaseStudy() {
           </div>
 
           <div className="mt-10">
-            <CaseStudyAtAGlance items={AT_A_GLANCE_ITEMS} />
+            <GovernmentBackendHeroTldr />
           </div>
 
           <div className="mt-8">

@@ -1,6 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { CaseStudyAtAGlance } from "../_components/CaseStudyAtAGlance";
+import {
+  CaseStudyAtAGlance,
+  CASE_STUDY_AT_A_GLANCE_DARK_HERO_PROPS,
+} from "../_components/CaseStudyAtAGlance";
 import { CaseStudyHeroFullBleed } from "../_components/CaseStudyHeroFullBleed";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
@@ -29,7 +32,10 @@ const AT_A_GLANCE_ITEMS = [
     label: "Project type",
     value: "Mobile app · AI marketplace (zero-to-one)",
   },
-  { label: "Region", value: "San Francisco · parent communities" },
+  {
+    label: "Focus",
+    value: "Community-first GTM · AI-native listing & chat",
+  },
 ] as const;
 
 const MINA_SCAN_SUMMARY = [
@@ -79,6 +85,12 @@ export default function AiMarketplaceCaseStudy() {
               second job.
             </p>
           }
+          leadBelowSubtitle={
+            <CaseStudyAtAGlance
+              items={AT_A_GLANCE_ITEMS}
+              {...CASE_STUDY_AT_A_GLANCE_DARK_HERO_PROPS}
+            />
+          }
         >
           <figure className="mb-8 w-full min-w-0">
             <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-zinc-800/80 bg-black shadow-[0_20px_50px_-20px_rgba(0,0,0,0.65)]">
@@ -100,10 +112,6 @@ export default function AiMarketplaceCaseStudy() {
               </video>
             </div>
           </figure>
-
-          <div className="mt-8">
-            <CaseStudyAtAGlance items={AT_A_GLANCE_ITEMS} />
-          </div>
 
           <div className="mt-8">
             <CaseStudyScanSummary items={MINA_SCAN_SUMMARY} />

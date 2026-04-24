@@ -1,6 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { ReactNode } from "react";
+import {
+  CaseStudyAtAGlance,
+  CASE_STUDY_AT_A_GLANCE_LIGHT_HERO_PROPS,
+} from "../_components/CaseStudyAtAGlance";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { CaseStudyHeroFullBleed } from "../_components/CaseStudyHeroFullBleed";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
@@ -16,6 +20,22 @@ export const metadata = {
 };
 
 const MOMI_ASSET = (n: string) => `/case-studies/momi-animal-health/${n}`;
+
+const AT_A_GLANCE_ITEMS = [
+  { label: "Timeline", value: "Feb 2021 – Sep 2021 (8 months)" },
+  {
+    label: "Role",
+    value: "Social media, eCommerce, and campaign design",
+  },
+  {
+    label: "Project type",
+    value: "Digital marketing · Taipei, Taiwan · Rabbit-care niche brand",
+  },
+  {
+    label: "Focus",
+    value: "Campaign creative, tri-fold & expo, online sales lift",
+  },
+] as const;
 
 const ECOMMERCE_SUPPORT_SLIDES = ["05", "04", "03", "02"].map((id, idx) => ({
   src: MOMI_ASSET(`what-i-did-${id}.png`),
@@ -120,26 +140,13 @@ export default function MomiAnimalHealthCaseStudy() {
               Helped drive +75% online sales growth in two months.
             </p>
           }
-        >
-          <dl className="flex flex-wrap gap-x-10 gap-y-2 text-sm">
-            <div>
-              <dt className="text-[#7A7A7A] uppercase tracking-wider">Role</dt>
-              <dd className="text-[#4A4A4A]">
-                Social media, eCommerce, and campaign design
-              </dd>
-            </div>
-            <div>
-              <dt className="text-[#7A7A7A] uppercase tracking-wider">Location</dt>
-              <dd className="text-[#4A4A4A]">Taipei, Taiwan</dd>
-            </div>
-            <div>
-              <dt className="text-[#7A7A7A] uppercase tracking-wider">
-                Timeline
-              </dt>
-              <dd className="text-[#4A4A4A]">Feb 2021 – Sep 2021</dd>
-            </div>
-          </dl>
-        </CaseStudyHeroFullBleed>
+          leadBelowSubtitle={
+            <CaseStudyAtAGlance
+              items={AT_A_GLANCE_ITEMS}
+              {...CASE_STUDY_AT_A_GLANCE_LIGHT_HERO_PROPS}
+            />
+          }
+        />
       </header>
 
       <CaseStudyContentLayout

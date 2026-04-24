@@ -18,7 +18,7 @@ export function ProblemPersonasBlock() {
           Roughly 20 million people rely on the official app—yet ~2.8★ ratings and
           broken flows were excluding elders, newcomers, and low-vision users.
         </h2>
-        <CaseStudyExpandable label="Context, constraints, and design goal">
+        <CaseStudyExpandable label="Context and design goal">
           <p className="text-zinc-300">
             In Taiwan, every purchase comes with an invoice. For years, people
             collected stacks of paper receipts and checked them for the

@@ -3,6 +3,29 @@ export type CaseStudyAtAGlanceItem = {
   value: string;
 };
 
+/**
+ * Match e-invoice hero: four-column grid meta on the scrim, no “At a glance” title,
+ * no accent stripe (zinc label / value).
+ */
+export const CASE_STUDY_AT_A_GLANCE_DARK_HERO_PROPS = {
+  hideTitle: true,
+  showAccent: false,
+  labelClassName:
+    "text-[11px] font-semibold uppercase tracking-wider text-zinc-400",
+  valueClassName:
+    "mt-0.5 text-base font-medium leading-[1.65] text-zinc-300 sm:text-lg sm:text-zinc-200",
+} as const;
+
+/** Cream / light `below-meta` hero band (Admission Hub, MOMI, Haphy Living). */
+export const CASE_STUDY_AT_A_GLANCE_LIGHT_HERO_PROPS = {
+  hideTitle: true,
+  showAccent: false,
+  labelClassName:
+    "text-[11px] font-semibold uppercase tracking-wider text-[#7A7A7A]",
+  valueClassName:
+    "mt-0.5 text-base font-medium leading-[1.65] text-[#2C3E50] sm:text-lg",
+} as const;
+
 type Props = {
   items: readonly CaseStudyAtAGlanceItem[];
   /** Left accent stripe — Baskin-Robbins uses brand pink; others default to violet. */

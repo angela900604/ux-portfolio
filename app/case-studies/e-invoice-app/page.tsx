@@ -1,6 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { CaseStudyAtAGlance } from "../_components/CaseStudyAtAGlance";
+import {
+  CaseStudyAtAGlance,
+  CASE_STUDY_AT_A_GLANCE_DARK_HERO_PROPS,
+} from "../_components/CaseStudyAtAGlance";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { CaseStudyExpandable } from "../_components/CaseStudyExpandable";
 import { CaseStudyHeroFullBleed } from "../_components/CaseStudyHeroFullBleed";
@@ -304,10 +307,7 @@ export default function EInvoiceCaseStudy() {
           leadBelowSubtitle={
             <CaseStudyAtAGlance
               items={AT_A_GLANCE_ITEMS}
-              hideTitle
-              showAccent={false}
-              labelClassName="text-[11px] font-semibold uppercase tracking-wider text-zinc-400"
-              valueClassName="mt-0.5 text-base font-medium leading-[1.65] text-zinc-300 sm:text-lg sm:text-zinc-200"
+              {...CASE_STUDY_AT_A_GLANCE_DARK_HERO_PROPS}
             />
           }
         >
@@ -352,8 +352,8 @@ export default function EInvoiceCaseStudy() {
           <div className="space-y-5 sm:space-y-6">
             <div className="max-w-4xl">
               <h2 className={KEY_OUTCOME_STORY_TITLE_CLASS}>
-                I combined each group&apos;s needs on a single surface and put the
-                shared-truth action, scanning, at the very top of the homepage.
+                I brought all user groups&apos; needs into one place and made scanning
+                the first thing they see.
               </h2>
             </div>
 

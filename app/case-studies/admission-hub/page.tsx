@@ -1,6 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { ReactNode } from "react";
+import {
+  CaseStudyAtAGlance,
+  CASE_STUDY_AT_A_GLANCE_LIGHT_HERO_PROPS,
+} from "../_components/CaseStudyAtAGlance";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { CaseStudyHeroFullBleed } from "../_components/CaseStudyHeroFullBleed";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
@@ -8,6 +12,19 @@ import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { OutcomesMetricsChart } from "./OutcomesMetricsChart";
 
 const AH_ASSET = (name: string) => `/case-studies/admission-hub/${name}`;
+
+const AT_A_GLANCE_ITEMS = [
+  { label: "Timeline", value: "May 2022 – Aug 2022 (4 months)" },
+  { label: "Role", value: "Digital Marketer" },
+  {
+    label: "Project type",
+    value: "Digital marketing internship · Toronto, ON · Study-abroad brand",
+  },
+  {
+    label: "Focus",
+    value: "Instagram content cadence, SEO articles, funnel analytics",
+  },
+] as const;
 
 /** Live posts that illustrate the “Canada life + calendar hooks” content shift */
 const ADMISSION_IG_EXAMPLES = [
@@ -87,24 +104,13 @@ export default function AdmissionHubCaseStudy() {
               Admission Hub
             </h1>
           }
-        >
-          <dl className="flex flex-wrap gap-x-10 gap-y-2 text-sm">
-            <div>
-              <dt className="text-[#7A7A7A] uppercase tracking-wider">Role</dt>
-              <dd className="text-[#4A4A4A]">Digital Marketer</dd>
-            </div>
-            <div>
-              <dt className="text-[#7A7A7A] uppercase tracking-wider">Location</dt>
-              <dd className="text-[#4A4A4A]">Toronto, ON</dd>
-            </div>
-            <div>
-              <dt className="text-[#7A7A7A] uppercase tracking-wider">
-                Timeline
-              </dt>
-              <dd className="text-[#4A4A4A]">May 2022 – Aug 2022</dd>
-            </div>
-          </dl>
-        </CaseStudyHeroFullBleed>
+          leadBelowSubtitle={
+            <CaseStudyAtAGlance
+              items={AT_A_GLANCE_ITEMS}
+              {...CASE_STUDY_AT_A_GLANCE_LIGHT_HERO_PROPS}
+            />
+          }
+        />
       </header>
 
       <CaseStudyContentLayout

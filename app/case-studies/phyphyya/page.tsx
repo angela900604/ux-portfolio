@@ -1,6 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import { SITE_SHELL_CONTAINER } from "@/lib/site-shell";
+import {
+  CaseStudyAtAGlance,
+  CASE_STUDY_AT_A_GLANCE_LIGHT_HERO_PROPS,
+} from "../_components/CaseStudyAtAGlance";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { CaseStudyHeroFullBleed } from "../_components/CaseStudyHeroFullBleed";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
@@ -11,6 +15,19 @@ export const metadata = {
   description:
     "Haphy Living: a live commercial experiment and personal brand IP built from bunny-inspired design to POD production and Etsy operations.",
 };
+
+const AT_A_GLANCE_ITEMS = [
+  { label: "Timeline", value: "2022 – present (ongoing)" },
+  { label: "Role", value: "Solo creator" },
+  {
+    label: "Project type",
+    value: "Brand IP · Illustration, POD, Etsy storefront",
+  },
+  {
+    label: "Focus",
+    value: "Rabbit-inspired IP · low-inventory ecommerce validation",
+  },
+] as const;
 
 const ETSY_METRICS = [
   { label: "Visits", value: "117" },
@@ -182,6 +199,12 @@ export default function PhyphyyaCaseStudy() {
               IP—illustration to POD production and Etsy storefront operations.
             </p>
           }
+          leadBelowSubtitle={
+            <CaseStudyAtAGlance
+              items={AT_A_GLANCE_ITEMS}
+              {...CASE_STUDY_AT_A_GLANCE_LIGHT_HERO_PROPS}
+            />
+          }
         >
           <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
             <a
@@ -192,22 +215,6 @@ export default function PhyphyyaCaseStudy() {
             >
               Instagram · @phyphya__
             </a>
-            <dl className="flex flex-wrap gap-x-10 gap-y-2 text-sm">
-              <div>
-                <dt className="text-[#7A7A7A] uppercase tracking-wider">Role</dt>
-                <dd className="text-[#4A4A4A]">Solo creator</dd>
-              </div>
-              <div>
-                <dt className="text-[#7A7A7A] uppercase tracking-wider">Location</dt>
-                <dd className="text-[#4A4A4A]">Self-initiated project</dd>
-              </div>
-              <div>
-                <dt className="text-[#7A7A7A] uppercase tracking-wider">
-                  Timeline
-                </dt>
-                <dd className="text-[#4A4A4A]">2022 – present</dd>
-              </div>
-            </dl>
           </div>
         </CaseStudyHeroFullBleed>
       </header>

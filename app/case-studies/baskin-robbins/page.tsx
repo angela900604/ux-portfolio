@@ -1,6 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { CaseStudyAtAGlance } from "../_components/CaseStudyAtAGlance";
+import {
+  CaseStudyAtAGlance,
+  CASE_STUDY_AT_A_GLANCE_DARK_HERO_PROPS,
+} from "../_components/CaseStudyAtAGlance";
 import { CaseStudyHeroFullBleed } from "../_components/CaseStudyHeroFullBleed";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
@@ -142,12 +145,15 @@ const FINAL_PRODUCT_GROUPS: readonly FinalProductGroup[] = [
 ];
 
 const AT_A_GLANCE_ITEMS = [
-  { label: "Timeline", value: "Dec 2024 – Mar 2025" },
+  { label: "Timeline", value: "Dec 2024 – Mar 2025 (4 months)" },
   { label: "Role", value: "Lead UX/UI Designer" },
-  { label: "Project type", value: "Mobile app" },
+  {
+    label: "Project type",
+    value: "Mobile membership app · Loyalty & rewards (Taiwan)",
+  },
   {
     label: "Focus",
-    value: "Client-driven end-to-end product design",
+    value: "Discovery through handoff · MVP with engineering",
   },
 ] as const;
 
@@ -190,12 +196,14 @@ export default function BaskinRobbinsCaseStudy() {
               on schedule, and early Taiwan App Store reviews came in at five stars.
             </p>
           }
+          leadBelowSubtitle={
+            <CaseStudyAtAGlance
+              items={AT_A_GLANCE_ITEMS}
+              {...CASE_STUDY_AT_A_GLANCE_DARK_HERO_PROPS}
+            />
+          }
         >
           <BaskinHeroShowcase primary={null} secondary={HERO_DEMO_IMAGES} />
-
-          <div className="mt-8">
-            <CaseStudyAtAGlance items={AT_A_GLANCE_ITEMS} accent="baskin" />
-          </div>
 
           <div className="mt-8">
             <CaseStudyScanSummary
