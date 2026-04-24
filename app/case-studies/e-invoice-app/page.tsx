@@ -6,9 +6,9 @@ import { CaseStudyExpandable } from "../_components/CaseStudyExpandable";
 import { CaseStudyHeroFullBleed } from "../_components/CaseStudyHeroFullBleed";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
-import { CaseStudyScanSummary } from "../_components/CaseStudyScanSummary";
 import { DesignJourneyCollapsible } from "../_components/DesignJourneyCollapsible";
 import { ProblemPersonasBlock } from "./ProblemPersonasBlock";
+import { EInvoiceHeroTldr } from "./EInvoiceHeroTldr";
 import { OutcomeAutoSlideshow } from "./OutcomeAutoSlideshow";
 import { FinalScreensMarquee } from "./FinalScreensMarquee";
 import { PhoneMockup, PortraitTile, WideFigure } from "./EInvoiceFigures";
@@ -59,9 +59,6 @@ const STYLE_SWATCHES: { hex: string; name: string }[] = [
   { hex: "#F8D364", name: "Warm yellow" },
 ];
 
-/** Key metrics — emerald chip (hero stats, inline %, deltas) */
-const M_HERO =
-  "inline-block rounded-lg bg-emerald-500/15 px-3 py-1 text-2xl font-semibold tabular-nums text-emerald-200";
 const M_TXT =
   "rounded-md bg-emerald-500/20 px-1.5 py-0.5 font-semibold tabular-nums text-emerald-200";
 const M_TIME =
@@ -87,12 +84,6 @@ const AT_A_GLANCE_ITEMS = [
     label: "Focus",
     value: "Research, IA, accessibility, ship-ready UI",
   },
-] as const;
-
-/** Final solution screens — high-fidelity exports (18), filenames solution-final-01 … 18. */
-const E_INVOICE_SCAN_SUMMARY = [
-  "MoF Cloud Invoice App: research through ship—~88% moderated task success (18–70+, low vision); login 68%→92% with biometrics + in-app recovery.",
-  "IA, onboarding, scan-first home, and accessibility baked in for a national, paper-to-digital service.",
 ] as const;
 
 /** Research → problem → decision → outcome; paired with final UI (solution-final-*.png). */
@@ -361,83 +352,7 @@ export default function EInvoiceCaseStudy() {
           </div>
 
           <div className="mt-10">
-            <CaseStudyScanSummary items={E_INVOICE_SCAN_SUMMARY} />
-          </div>
-
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a
-              href="#key-outcomes"
-              className="inline-flex items-center gap-2 rounded-full border border-emerald-500/35 bg-emerald-500/10 px-4 py-2.5 text-sm font-medium text-emerald-100/95 transition hover:border-emerald-400/45 hover:bg-emerald-500/15"
-            >
-              Key outcomes (research → UI)
-              <span aria-hidden className="text-emerald-300/90">
-                ↓
-              </span>
-            </a>
-          </div>
-
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5">
-              <p className="text-xs font-semibold uppercase tracking-widest text-emerald-400/90">
-                Increasing login success
-              </p>
-              <p className="mt-2">
-                <span className={M_HERO}>68% → 92%</span>
-              </p>
-              <CaseStudyExpandable label="What we shipped">
-                <p className="text-sm text-zinc-400 leading-relaxed">
-                  Biometric login and in-app password recovery to reduce login
-                  friction—helping elderly and visually impaired users log in
-                  independently.
-                </p>
-              </CaseStudyExpandable>
-            </div>
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5">
-              <p className="text-xs font-semibold uppercase tracking-widest text-emerald-400/90">
-                Boosting onboarding completion
-              </p>
-              <p className="mt-2">
-                <span className={M_HERO}>+30%</span>
-              </p>
-              <CaseStudyExpandable label="Guided setup detail">
-                <p className="text-sm text-zinc-400 leading-relaxed">
-                  Guided first-time setup for an automation-ready path: biometrics,
-                  bank account for automatic prize payout, richer push notifications
-                  (paper scans don&apos;t auto-claim), and cloud backup when switching
-                  phones.
-                </p>
-              </CaseStudyExpandable>
-            </div>
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5">
-              <p className="text-xs font-semibold uppercase tracking-widest text-emerald-400/90">
-                Reducing missed prize redemptions
-              </p>
-              <p className="mt-2">
-                <span className={M_HERO}>−70%</span>
-              </p>
-              <CaseStudyExpandable label="Mechanisms">
-                <p className="text-sm text-zinc-400 leading-relaxed">
-                  Clear countdown timers, prize status, redemption deadlines, and
-                  real-time push notifications so people don&apos;t learn about a win
-                  too late.
-                </p>
-              </CaseStudyExpandable>
-            </div>
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5">
-              <p className="text-xs font-semibold uppercase tracking-widest text-emerald-400/90">
-                Task success across ages
-              </p>
-              <p className="mt-2">
-                <span className={M_HERO}>88%</span>
-              </p>
-              <CaseStudyExpandable label="Testing scope">
-                <p className="text-sm text-zinc-400 leading-relaxed">
-                  Usability testing with users aged 18–70+, including visually
-                  impaired participants—refining scanning, donation, and redemption
-                  flows.
-                </p>
-              </CaseStudyExpandable>
-            </div>
+            <EInvoiceHeroTldr />
           </div>
         </CaseStudyHeroFullBleed>
       </header>
