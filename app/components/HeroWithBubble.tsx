@@ -29,6 +29,10 @@ const HERO_LOGOS = [
 
 const CYCLE_MS = 2500;
 
+/** ~3 lines at hero clamp — keeps “Hello” fixed while subtitles cycle / wrap. */
+const SUBHEAD_SLOT_MIN_H =
+  "min-h-[calc(3*1.08*clamp(1.85rem,4.5vw,4rem))]";
+
 function BubbleBackdrop() {
   return (
     <div
@@ -54,9 +58,9 @@ export function HeroWithBubble() {
     "max-w-none text-left text-[clamp(1.85rem,4.5vw,4rem)] font-normal leading-[1.08] tracking-[-0.02em]";
 
   return (
-    <div className="flex w-full flex-col lg:min-h-[min(520px,70svh)]">
-      <div className="flex flex-1 flex-col">
-        <div className="relative isolate flex flex-col gap-8 lg:flex-row lg:items-center lg:gap-8">
+    <div className="flex min-h-0 w-full flex-1 flex-col">
+      <div className="flex min-h-0 flex-1 flex-col">
+        <div className="relative isolate flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-8">
           <div className="relative z-10 flex min-w-0 w-full max-w-[72rem] shrink-0 flex-col items-start gap-3 text-left lg:max-w-[min(72rem,65%)]">
             <h1 className="sr-only">Angela Yang — product designer</h1>
             <p
@@ -66,7 +70,7 @@ export function HeroWithBubble() {
               Hello, I&apos;m Angela
             </p>
             <div
-              className="relative w-full max-w-[72rem] min-h-[2.75em] overflow-hidden"
+              className={`relative w-full max-w-[72rem] overflow-hidden ${SUBHEAD_SLOT_MIN_H}`}
               aria-live="polite"
               aria-atomic="true"
             >
@@ -149,7 +153,7 @@ export function HeroWithBubble() {
         </div>
       </div>
 
-      <div className="mt-10 flex w-full justify-center pb-1 lg:mt-auto lg:pt-12">
+      <div className="mt-10 flex w-full shrink-0 justify-center pb-1 lg:mt-auto lg:pt-8">
         <ul className="flex max-w-full flex-wrap items-center justify-center gap-x-3 gap-y-3 sm:gap-x-4">
           {HERO_LOGOS.map((logo) => (
             <li

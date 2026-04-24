@@ -7,7 +7,6 @@ import { CaseStudyHeroFullBleed } from "../_components/CaseStudyHeroFullBleed";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { CaseStudyScanSummary } from "../_components/CaseStudyScanSummary";
-import { CompetitorLandscapeTable } from "./CompetitorLandscapeTable";
 import { DesignJourneyCollapsible } from "../_components/DesignJourneyCollapsible";
 import { ProblemPersonasBlock } from "./ProblemPersonasBlock";
 import { OutcomeAutoSlideshow } from "./OutcomeAutoSlideshow";
@@ -69,7 +68,6 @@ const M_TIME =
   "rounded-md bg-amber-500/15 px-1.5 py-0.5 font-medium tabular-nums text-amber-100/95";
 
 const E_INVOICE_JOURNEY_IDS = [
-  "competitor-insights",
   "accessibility",
   "business-constraints",
   "functional-map",
@@ -376,15 +374,6 @@ export default function EInvoiceCaseStudy() {
                 ↓
               </span>
             </a>
-            <a
-              href="#final-solution-screens"
-              className="inline-flex items-center gap-2 rounded-full border border-violet-500/35 bg-violet-500/10 px-4 py-2.5 text-sm font-medium text-violet-200 transition hover:border-violet-400/45 hover:bg-violet-500/15"
-            >
-              Jump to final solutions
-              <span aria-hidden className="text-violet-400/90">
-                ↓
-              </span>
-            </a>
           </div>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -460,6 +449,8 @@ export default function EInvoiceCaseStudy() {
           id="key-outcomes"
           className="scroll-mt-28 space-y-14 sm:scroll-mt-32"
         >
+          <FinalScreensMarquee slides={FINAL_SOLUTION_MARQUEE_SLIDES} />
+
           <div className="max-w-3xl space-y-4">
             <span className="text-xs font-medium uppercase tracking-widest text-emerald-400/90">
               From evidence to interface
@@ -542,20 +533,6 @@ export default function EInvoiceCaseStudy() {
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection
-          id="final-solution-screens"
-          className="scroll-mt-28 space-y-10"
-        >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            07 · Final solution screens
-          </span>
-          <h2 className="max-w-3xl text-zinc-100">
-            High-fidelity mocks for lottery, scan, and redemption—the flows we
-            stress-tested hardest before ship.
-          </h2>
-          <FinalScreensMarquee slides={FINAL_SOLUTION_MARQUEE_SLIDES} />
-        </CaseStudyInViewSection>
-
-        <CaseStudyInViewSection
           id="impact-results"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
@@ -610,38 +587,11 @@ export default function EInvoiceCaseStudy() {
           panelId="e-invoice-design-journey-panel"
         >
         <CaseStudyInViewSection
-          id="competitor-insights"
-          className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
-        >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            03 · Competitor insights &amp; design process
-          </span>
-          <h2 className="max-w-3xl text-zinc-100">
-            MoF, mature third parties, and LINE showed where trust and habit live—we
-            borrowed patterns that still fit ministry rules.
-          </h2>
-          <p className="max-w-3xl text-sm leading-relaxed text-zinc-400">
-            Quick competitive read before IA and UI: what to mirror, what to avoid,
-            and what stayed out of bounds.
-          </p>
-          <CompetitorLandscapeTable />
-          <CaseStudyExpandable label="How benchmarks shaped shipped UI">
-            <p className="max-w-3xl text-sm leading-relaxed text-zinc-400">
-              <span className="text-zinc-200">How this shaped the work:</span> I
-              borrowed clear onboarding patterns from LINE, scan-and-login pacing and
-              spending views from strong third parties, and data plus sensory feedback
-              ideas from high-rated apps—then folded everything back into
-              accessibility rules, ministry policy, and what engineering could ship.
-            </p>
-          </CaseStudyExpandable>
-        </CaseStudyInViewSection>
-
-        <CaseStudyInViewSection
           id="accessibility"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            04 · Accessibility
+            03 · Accessibility
           </span>
           <h2 className="max-w-3xl text-zinc-100">
             VoiceOver sessions on legacy exposed broken focus, roles, and copy—we
@@ -754,7 +704,7 @@ export default function EInvoiceCaseStudy() {
         >
           <div className="max-w-3xl space-y-4">
             <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-              05 · Page flow, UI direction &amp; design system
+              04 · Page flow, UI direction &amp; design system
             </span>
             <h2 className="max-w-3xl text-zinc-100">
               Figma page flows caught navigation gaps early;{" "}
@@ -848,7 +798,7 @@ export default function EInvoiceCaseStudy() {
         >
           <div className="max-w-3xl space-y-6">
             <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-              06 · Testing &amp; iterations
+              05 · Testing &amp; iterations
             </span>
             <h2 className="max-w-3xl text-zinc-100">
               Twelve moderated sessions—including low-vision users—landed at{" "}
