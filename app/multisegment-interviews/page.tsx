@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { CaseStudyContentLayout } from "@/app/case-studies/_components/CaseStudyContentLayout";
-import { EInvoiceMultisegmentResearchSections } from "@/app/case-studies/e-invoice-app/EInvoiceMultisegmentResearchSections";
+import { MultisegmentInterviewsResearchBody } from "./MultisegmentInterviewsResearchBody";
 
 export const metadata = {
   title: "Multisegment interviews — Taiwan e-invoice research | Angela Yang",
@@ -42,7 +42,7 @@ export default function MultisegmentInterviewsPage() {
           </p>
         </header>
 
-        <EInvoiceMultisegmentResearchSections />
+        <MultisegmentInterviewsResearchBody />
       </CaseStudyContentLayout>
     </article>
   );

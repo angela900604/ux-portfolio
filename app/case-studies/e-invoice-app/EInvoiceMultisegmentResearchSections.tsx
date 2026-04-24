@@ -60,8 +60,8 @@ const BADGE_INTERVIEW =
   "bg-emerald-500/12 text-emerald-200/95 ring-1 ring-emerald-500/25";
 
 /**
- * Condensed user-pain narrative (App Store + interviews) + shared truth.
- * Shared by the e-invoice case study and /multisegment-interviews.
+ * Condensed user-pain narrative (App Store + interviews) for the e-invoice case study.
+ * Standalone research page: `app/multisegment-interviews/MultisegmentInterviewsResearchBody.tsx`.
  */
 export function EInvoiceMultisegmentResearchSections() {
   return (
