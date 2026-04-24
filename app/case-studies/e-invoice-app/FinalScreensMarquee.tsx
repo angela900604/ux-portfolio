@@ -58,7 +58,7 @@ export function FinalScreensMarquee({
 
   return (
     <div
-      className="relative py-2"
+      className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 bg-[#5F48C6] py-6 sm:py-8"
       role="region"
       aria-label="Final solution screens — auto-scrolling gallery. Pause with reduced motion in system settings."
     >

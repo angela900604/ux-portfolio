@@ -96,7 +96,7 @@ const SCAN_SHARED_TRUTH_OUTCOME = {
   decision:
     "Lock the scan control to the primary focal area on home—always visible, never hidden behind personalization or secondary promos.",
   outcome:
-    "Scan & prize tasks reached 92% success—the strongest task in the battery—with a median completion time of about 40 seconds.",
+    "Scan & check prize tasks reached 92% success—the strongest task in the battery—with a median completion time of about 40 seconds.",
 } as const;
 
 /** Research → problem → decision → outcome; paired with final UI (solution-final-*.png). */
@@ -363,21 +363,16 @@ export default function EInvoiceCaseStudy() {
         >
           <FinalScreensMarquee slides={FINAL_SOLUTION_MARQUEE_SLIDES} />
 
-          <div className="max-w-4xl space-y-5">
-            <h2 className="text-2xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-3xl md:text-4xl md:leading-snug">
-              One home for four audiences—we combined each group&apos;s needs on a
-              single surface and put the shared-truth action, scanning, at the very
-              top of the homepage.
-            </h2>
-            <p className="max-w-3xl text-base leading-relaxed text-zinc-400 sm:text-lg">
-              Research agreed on the first job after launch; everything else—login,
-              guided setup, and optional home modules—layers underneath without
-              hiding that anchor.
-            </p>
-          </div>
+          <div className="space-y-5 sm:space-y-6">
+            <div className="max-w-4xl">
+              <h2 className="text-2xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-3xl md:text-4xl md:leading-snug">
+                One home for four audiences—we combined each group&apos;s needs on a
+                single surface and put the shared-truth action, scanning, at the very
+                top of the homepage.
+              </h2>
+            </div>
 
-          <article className="space-y-6 border-t border-zinc-800/90 pt-12 lg:pt-14">
-            <div className="min-w-0 max-w-3xl space-y-6">
+            <div className="min-w-0 max-w-3xl space-y-4">
               <div className="rounded-xl border border-emerald-500/25 bg-emerald-500/[0.07] px-4 py-3 sm:px-5 sm:py-4">
                 <p className="text-[11px] font-semibold uppercase tracking-widest text-emerald-200/95">
                   Outcome
@@ -415,9 +410,9 @@ export default function EInvoiceCaseStudy() {
                 </div>
               </CaseStudyExpandable>
             </div>
-          </article>
 
-          <HomeBeforeAfterSlider />
+            <HomeBeforeAfterSlider />
+          </div>
 
           <div className="space-y-16 lg:space-y-20">
             {KEY_OUTCOME_ROWS.map((row) => (

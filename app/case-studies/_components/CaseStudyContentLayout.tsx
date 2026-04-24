@@ -33,7 +33,7 @@ export function CaseStudyContentLayout({
   const main = (
     <div className={CASE_STUDY_BODY_GRID}>
       <div
-        className={`case-study-prose min-w-0 w-full overflow-x-hidden ${contentClassName}`}
+        className={`case-study-prose min-w-0 w-full ${contentClassName}`}
       >
         {children}
       </div>

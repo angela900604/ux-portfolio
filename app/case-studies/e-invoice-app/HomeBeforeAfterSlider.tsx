@@ -20,7 +20,7 @@ export function HomeBeforeAfterSlider() {
   }, []);
 
   return (
-    <figure className="mt-10 w-full min-w-0">
+    <figure className="w-full min-w-0">
       <div
         ref={containerRef}
         className="relative w-full cursor-ew-resize overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/50 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.04)] touch-none select-none outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950"
@@ -112,7 +112,7 @@ export function HomeBeforeAfterSlider() {
           <span className="text-xs font-bold tracking-tight">⟷</span>
         </div>
       </div>
-      <figcaption className="mt-4 text-sm leading-relaxed text-zinc-500">
+      <figcaption className="mt-3 text-sm leading-relaxed text-zinc-500">
         <span className="font-medium text-zinc-400">Home · before / after.</span>{" "}
         Drag the center handle (or press and drag anywhere on the frame) to compare
         the shipped home redesign with the earlier layout.
