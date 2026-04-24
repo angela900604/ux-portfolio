@@ -73,9 +73,10 @@ export function LoginBeforeAfterSlider() {
           src={AFTER_SRC}
           alt="After: Face ID, Touch ID, and pattern unlock options for Cloud Invoice app login"
           fill
+          unoptimized
           draggable={false}
           className="pointer-events-none object-cover select-none [-webkit-user-drag:none]"
-          sizes="(max-width: 1152px) 100vw, 960px"
+          sizes="100vw"
         />
 
         <div
@@ -88,9 +89,10 @@ export function LoginBeforeAfterSlider() {
             src={BEFORE_SRC}
             alt="Before: password-only verification modal in system settings"
             fill
+            unoptimized
             draggable={false}
             className="pointer-events-none object-cover select-none [-webkit-user-drag:none]"
-            sizes="(max-width: 1152px) 100vw, 960px"
+            sizes="100vw"
           />
         </div>
 

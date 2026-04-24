@@ -140,7 +140,7 @@ const KEY_OUTCOME_ROWS: {
 }[] = [
   {
     title:
-      "\u{1F510} Login: password-only path (hard for seniors who forgot codes) \u2192 Face ID, Touch ID (Android) & pattern unlock",
+      "Login: password-only path (hard for seniors who forgot codes) \u2192 Face ID, Touch ID (Android) & pattern unlock",
     assetId: "13",
     screenLabel: "Login verification",
     beforeAfterLoginSlider: true,
@@ -155,7 +155,7 @@ const KEY_OUTCOME_ROWS: {
   },
   {
     title:
-      "\u{1F680} Automation-ready experience \u2192 guided first-time setup",
+      "Automation-ready experience \u2192 guided first-time setup",
     assetId: "08",
     screenLabel: "guided first-time setup",
     onboardingDemoVideo: true,
