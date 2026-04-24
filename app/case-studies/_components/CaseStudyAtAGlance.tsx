@@ -7,6 +7,8 @@ type Props = {
   items: readonly CaseStudyAtAGlanceItem[];
   /** Left accent stripe — Baskin-Robbins uses brand pink; others default to violet. */
   accent?: "default" | "baskin";
+  /** Omit the “At a glance” heading (e.g. e-invoice hero). */
+  hideTitle?: boolean;
 };
 
 const ACCENT_BAR = {
@@ -22,18 +24,15 @@ const ACCENT_BAR = {
 export function CaseStudyAtAGlance({
   items,
   accent = "default",
+  hideTitle = false,
 }: Props) {
   const bar = ACCENT_BAR[accent];
 
-  return (
-    <div className="space-y-2">
-      <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-        At a glance
-      </p>
-      <div
-        className="relative flex items-start gap-2.5 sm:gap-3"
-        aria-label="Project summary at a glance"
-      >
+  const body = (
+    <div
+      className="relative flex items-start gap-2.5 sm:gap-3"
+      aria-label="Project summary at a glance"
+    >
         <div
           className={`mt-0.5 h-8 w-1 shrink-0 rounded-sm sm:h-9 ${bar}`}
           aria-hidden
@@ -47,13 +46,25 @@ export function CaseStudyAtAGlance({
               <p className="text-[11px] font-semibold uppercase tracking-wider text-zinc-500">
                 {item.label}
               </p>
-              <p className="mt-0.5 text-base font-medium leading-[1.65] text-zinc-100 sm:text-lg">
+              <p className="mt-0.5 text-base font-medium leading-[1.65] text-white/90 sm:text-lg">
                 {item.value}
               </p>
             </div>
           ))}
         </div>
       </div>
+  );
+
+  if (hideTitle) {
+    return body;
+  }
+
+  return (
+    <div className="space-y-2">
+      <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+        At a glance
+      </p>
+      {body}
     </div>
   );
 }

@@ -347,7 +347,7 @@ export default function EInvoiceCaseStudy() {
           </div>
 
           <div className="mt-10">
-            <CaseStudyAtAGlance items={AT_A_GLANCE_ITEMS} />
+            <CaseStudyAtAGlance items={AT_A_GLANCE_ITEMS} hideTitle />
           </div>
 
           <div className="mt-10">
