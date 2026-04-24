@@ -19,6 +19,7 @@ const CYCLING_PHRASES = [
 ] as const;
 
 const HERO_LOGOS = [
+  { src: "/home/logos/figma.png", alt: "Figma" },
   { src: "/home/logos/gemini.png", alt: "Gemini" },
   { src: "/home/logos/cursor.png", alt: "Cursor" },
   { src: "/home/logos/claude.png", alt: "Claude" },

@@ -13,6 +13,7 @@ import { OutcomeAutoSlideshow } from "./OutcomeAutoSlideshow";
 import { FinalScreensMarquee } from "./FinalScreensMarquee";
 import { PhoneMockup, PortraitTile, WideFigure } from "./EInvoiceFigures";
 import { HomeBeforeAfterSlider } from "./HomeBeforeAfterSlider";
+import { SettingHomeModulesVideo } from "./SettingHomeModulesVideo";
 import { LoginBeforeAfterSlider } from "./LoginBeforeAfterSlider";
 
 export const metadata = {
@@ -101,13 +102,6 @@ const SCAN_SHARED_TRUTH_OUTCOME = {
 
 /** Density / modules — second homepage story (after scan before/after). */
 const DENSITY_HOME_MODULES_ROW = {
-  assetId: "03",
-  screenLabel: "Settings / feature overview",
-  assetFiles: [
-    "settings-homepage-display.png",
-    "settings-membership-card.png",
-  ],
-  autoSlideshow: true,
   evidence:
     "This was the hardest tension in the whole system: silver users asked for the sparsest possible home so they could find one or two actions, while younger users wanted winning invoices and spending history surfaced immediately. Two credible audiences, mutually exclusive defaults.",
   problem:
@@ -234,22 +228,15 @@ const FINAL_SOLUTION_MARQUEE_SLIDES = FINAL_SOLUTION_SCREENS.flatMap((item) => {
   }));
 });
 
-type KeyOutcomeRowWithUi =
-  | (typeof KEY_OUTCOME_ROWS)[number]
-  | typeof DENSITY_HOME_MODULES_ROW;
-
-function KeyOutcomePhoneFigures({ row }: { row: KeyOutcomeRowWithUi }) {
-  if ("beforeAfterLoginSlider" in row && row.beforeAfterLoginSlider) return null;
-
-  const screenHint = "screenHint" in row ? row.screenHint : undefined;
+function KeyOutcomePhoneFigures({
+  row,
+}: {
+  row: (typeof KEY_OUTCOME_ROWS)[number];
+}) {
+  if (row.beforeAfterLoginSlider) return null;
 
   const files =
-    row.assetFiles ??
-    [
-      "assetFile" in row && row.assetFile
-        ? row.assetFile
-        : `solution-final-${row.assetId}.png`,
-    ];
+    row.assetFiles ?? [row.assetFile ?? `solution-final-${row.assetId}.png`];
 
   if (files.length === 1) {
     return (
@@ -258,7 +245,7 @@ function KeyOutcomePhoneFigures({ row }: { row: KeyOutcomeRowWithUi }) {
         src={ASSET(files[0])}
         alt={row.screenLabel}
         label={row.screenLabel}
-        hint={screenHint}
+        hint={row.screenHint}
       />
     );
   }
@@ -271,7 +258,7 @@ function KeyOutcomePhoneFigures({ row }: { row: KeyOutcomeRowWithUi }) {
           alt: `${row.screenLabel} — screen ${i + 1} of ${files.length}`,
         }))}
         label={row.screenLabel}
-        hint={screenHint}
+        hint={row.screenHint}
       />
     );
   }
@@ -292,8 +279,8 @@ function KeyOutcomePhoneFigures({ row }: { row: KeyOutcomeRowWithUi }) {
       </div>
       <figcaption className="px-1 text-center lg:text-right">
         <p className="text-xs font-medium text-zinc-200">{row.screenLabel}</p>
-        {screenHint ? (
-          <p className="mt-1 text-[11px] text-zinc-500">{screenHint}</p>
+        {row.screenHint ? (
+          <p className="mt-1 text-[11px] text-zinc-500">{row.screenHint}</p>
         ) : null}
       </figcaption>
     </figure>
@@ -433,7 +420,7 @@ export default function EInvoiceCaseStudy() {
                   and richer layouts could coexist.
                 </h2>
               </div>
-              <article className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-start lg:gap-12">
+              <article className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,28rem)] lg:items-start lg:gap-12">
                 <div className="min-w-0 space-y-6">
                   <div className="rounded-xl border border-emerald-500/25 bg-emerald-500/[0.07] px-4 py-3 sm:px-5 sm:py-4">
                     <p className="text-[11px] font-semibold uppercase tracking-widest text-emerald-200/95">
@@ -472,8 +459,8 @@ export default function EInvoiceCaseStudy() {
                     </div>
                   </CaseStudyExpandable>
                 </div>
-                <div className="flex justify-center lg:justify-end lg:pt-1">
-                  <KeyOutcomePhoneFigures row={DENSITY_HOME_MODULES_ROW} />
+                <div className="min-w-0 w-full max-lg:max-w-md max-lg:mx-auto lg:max-w-none lg:justify-self-end">
+                  <SettingHomeModulesVideo className="w-full" />
                 </div>
               </article>
             </div>
