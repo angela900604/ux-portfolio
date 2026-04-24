@@ -13,6 +13,7 @@ import { OutcomeAutoSlideshow } from "./OutcomeAutoSlideshow";
 import { FinalScreensMarquee } from "./FinalScreensMarquee";
 import { PhoneMockup, PortraitTile, WideFigure } from "./EInvoiceFigures";
 import { HomeBeforeAfterSlider } from "./HomeBeforeAfterSlider";
+import { OnboardingDemoVideo } from "./OnboardingDemoVideo";
 import { SettingHomeModulesVideo } from "./SettingHomeModulesVideo";
 import { LoginBeforeAfterSlider } from "./LoginBeforeAfterSlider";
 
@@ -29,6 +30,10 @@ const FIGMA_WIREFRAME_FLOW =
   "https://www.figma.com/design/ixS4TwNUz1pu0Riv7peXRA/APP-Wireframe?node-id=2120-5665&t=j3rbIoMCpkpNcAY2-1";
 
 const ASSET = (name: string) => `/case-studies/e-invoice/case-assets/${name}`;
+
+/** Scan-first, density, login, and onboarding story headings — same scale. */
+const KEY_OUTCOME_STORY_TITLE_CLASS =
+  "text-2xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-3xl md:text-4xl md:leading-snug";
 
 /** Full-bleed hero behind the project title (café context, scan / invoice UI). */
 const HERO_FULL_BLEED = {
@@ -124,6 +129,8 @@ const KEY_OUTCOME_ROWS: {
   assetFiles?: string[];
   /** Auto-advance slideshow (e.g. guided onboarding sequence) */
   autoSlideshow?: boolean;
+  /** Guided setup story: MP4/WebM below evidence block instead of slideshow */
+  onboardingDemoVideo?: boolean;
   /** Draggable before/after (login) — text first, slider below */
   beforeAfterLoginSlider?: boolean;
   evidence: string;
@@ -151,13 +158,7 @@ const KEY_OUTCOME_ROWS: {
       "\u{1F680} Automation-ready experience \u2192 guided first-time setup",
     assetId: "08",
     screenLabel: "guided first-time setup",
-    assetFiles: [
-      "onboarding-notifications.png",
-      "onboarding-quick-login.png",
-      "onboarding-google-drive.png",
-      "onboarding-auto-remittance.png",
-    ],
-    autoSlideshow: true,
+    onboardingDemoVideo: true,
     evidence:
       "To support more automated journeys—like automatic prize payout when you win—the product needed bank details on file, identity checks that did not mean retyping ministry passwords every time, timely nudges (paper scans do not auto-claim the same way as fully digital flows), and cloud backup so invoices survive a phone upgrade. Most newcomers never finished those prerequisites in a sensible order; onboarding completion in tests sat around 55%, and people who skipped early setup later hit friction at redemption or on a new device.",
     problem:
@@ -364,7 +365,7 @@ export default function EInvoiceCaseStudy() {
 
           <div className="space-y-5 sm:space-y-6">
             <div className="max-w-4xl">
-              <h2 className="text-2xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-3xl md:text-4xl md:leading-snug">
+              <h2 className={KEY_OUTCOME_STORY_TITLE_CLASS}>
                 One home for four audiences—we combined each group&apos;s needs on a
                 single surface and put the shared-truth action, scanning, at the very
                 top of the homepage.
@@ -414,7 +415,7 @@ export default function EInvoiceCaseStudy() {
 
             <div className="mt-12 space-y-5 border-t border-zinc-800/90 pt-12 sm:mt-14 sm:space-y-6 sm:pt-14">
               <div className="max-w-4xl">
-                <h2 className="text-2xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-3xl md:text-4xl md:leading-snug">
+                <h2 className={KEY_OUTCOME_STORY_TITLE_CLASS}>
                   Opposite density needs on one home—we kept scan and the invoice
                   passbook fixed, and made optional home modules configurable so calmer
                   and richer layouts could coexist.
@@ -471,53 +472,64 @@ export default function EInvoiceCaseStudy() {
                 className={
                   row.beforeAfterLoginSlider
                     ? "space-y-10 border-t border-zinc-800/90 pt-12 lg:pt-14"
-                    : "grid gap-10 border-t border-zinc-800/90 pt-12 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-start lg:gap-12 lg:pt-14"
+                    : row.onboardingDemoVideo
+                      ? "min-w-0 space-y-6 border-t border-zinc-800/90 pt-12 lg:pt-14"
+                      : "grid gap-10 border-t border-zinc-800/90 pt-12 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-start lg:gap-12 lg:pt-14"
                 }
               >
                 <div className="min-w-0 space-y-6">
-                  <h3 className="text-zinc-100">
-                    {row.title}
-                  </h3>
-                  <div className="rounded-xl border border-emerald-500/25 bg-emerald-500/[0.07] px-4 py-3 sm:px-5 sm:py-4">
-                    <p className="text-[11px] font-semibold uppercase tracking-widest text-emerald-200/95">
-                      Outcome
-                    </p>
-                    <p className="mt-2 text-sm font-medium leading-relaxed text-zinc-100">
-                      {row.outcome}
-                    </p>
+                  <div className="max-w-4xl">
+                    <h2 className={KEY_OUTCOME_STORY_TITLE_CLASS}>{row.title}</h2>
                   </div>
-                  <CaseStudyExpandable label="Evidence → problem → decision (full)">
-                    <div className="space-y-5">
-                      <div className="border-l-2 border-emerald-500/45 pl-4">
-                        <p className="text-[11px] font-semibold uppercase tracking-widest text-emerald-400/95">
-                          Evidence · interviews &amp; tests
-                        </p>
-                        <p className="mt-2 text-sm leading-relaxed text-zinc-300">
-                          {row.evidence}
-                        </p>
-                      </div>
-                      <div className="border-l-2 border-rose-500/35 pl-4">
-                        <p className="text-[11px] font-semibold uppercase tracking-widest text-rose-300/90">
-                          Problem in the experience
-                        </p>
-                        <p className="mt-2 text-sm leading-relaxed text-zinc-300">
-                          {row.problem}
-                        </p>
-                      </div>
-                      <div className="border-l-2 border-violet-500/45 pl-4">
-                        <p className="text-[11px] font-semibold uppercase tracking-widest text-violet-300/95">
-                          Decision
-                        </p>
-                        <p className="mt-2 text-sm leading-relaxed text-zinc-300">
-                          {row.decision}
-                        </p>
-                      </div>
+                  <div
+                    className={
+                      row.onboardingDemoVideo ? "max-w-3xl space-y-6" : "space-y-6"
+                    }
+                  >
+                    <div className="rounded-xl border border-emerald-500/25 bg-emerald-500/[0.07] px-4 py-3 sm:px-5 sm:py-4">
+                      <p className="text-[11px] font-semibold uppercase tracking-widest text-emerald-200/95">
+                        Outcome
+                      </p>
+                      <p className="mt-2 text-sm font-medium leading-relaxed text-zinc-100">
+                        {row.outcome}
+                      </p>
                     </div>
-                  </CaseStudyExpandable>
+                    <CaseStudyExpandable label="Evidence → problem → decision (full)">
+                      <div className="space-y-5">
+                        <div className="border-l-2 border-emerald-500/45 pl-4">
+                          <p className="text-[11px] font-semibold uppercase tracking-widest text-emerald-400/95">
+                            Evidence · interviews &amp; tests
+                          </p>
+                          <p className="mt-2 text-sm leading-relaxed text-zinc-300">
+                            {row.evidence}
+                          </p>
+                        </div>
+                        <div className="border-l-2 border-rose-500/35 pl-4">
+                          <p className="text-[11px] font-semibold uppercase tracking-widest text-rose-300/90">
+                            Problem in the experience
+                          </p>
+                          <p className="mt-2 text-sm leading-relaxed text-zinc-300">
+                            {row.problem}
+                          </p>
+                        </div>
+                        <div className="border-l-2 border-violet-500/45 pl-4">
+                          <p className="text-[11px] font-semibold uppercase tracking-widest text-violet-300/95">
+                            Decision
+                          </p>
+                          <p className="mt-2 text-sm leading-relaxed text-zinc-300">
+                            {row.decision}
+                          </p>
+                        </div>
+                      </div>
+                    </CaseStudyExpandable>
+                  </div>
+                  {row.onboardingDemoVideo ? (
+                    <OnboardingDemoVideo className="w-full" />
+                  ) : null}
                 </div>
                 {row.beforeAfterLoginSlider ? (
                   <LoginBeforeAfterSlider />
-                ) : (
+                ) : row.onboardingDemoVideo ? null : (
                   <div
                     className={
                       row.autoSlideshow
