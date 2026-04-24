@@ -51,7 +51,7 @@ const METRICS = [
 
 export function EInvoiceHeroTldr() {
   return (
-    <div className="rounded-[1.75rem] bg-[#e4e4e8] p-6 text-zinc-900 shadow-[inset_0_1px_0_rgba(255,255,255,0.65)] sm:p-8 md:p-10">
+    <div className="rounded-[1.75rem] bg-white/80 p-6 text-zinc-900 shadow-[inset_0_1px_0_rgba(255,255,255,0.55)] ring-1 ring-white/40 backdrop-blur-sm sm:p-8 md:p-10">
       <div className="flex flex-col items-center text-center">
         <span className="inline-flex items-center gap-1.5 rounded-full bg-zinc-900 px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-white">
           <TldrTargetIcon className="h-3.5 w-3.5 opacity-90" />

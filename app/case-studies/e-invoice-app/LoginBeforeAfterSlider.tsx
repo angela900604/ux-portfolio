@@ -3,9 +3,9 @@
 import Image from "next/image";
 import { useCallback, useRef, useState } from "react";
 
-const BEFORE_SRC = "/case-studies/e-invoice/login-before-after-before.png";
-const AFTER_SRC = "/case-studies/e-invoice/login-before-after-after.png";
-/** Exported comparison frames (legacy password modal · multi-method auth), 1024×576 */
+const BEFORE_SRC = "/case-studies/e-invoice/login-before-after-before.jpg";
+const AFTER_SRC = "/case-studies/e-invoice/login-before-after-after.jpg";
+/** Comparison frames (legacy password modal · multi-method auth), 1024×576 JPEG @ q95 */
 const ASPECT = 1024 / 576;
 
 export function LoginBeforeAfterSlider() {
@@ -20,7 +20,7 @@ export function LoginBeforeAfterSlider() {
   }, []);
 
   return (
-    <figure className="w-full min-w-0">
+    <figure className="mx-auto w-full min-w-0 max-w-[1024px]">
       <div
         ref={containerRef}
         className="relative w-full cursor-ew-resize overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/50 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.04)] touch-none select-none outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950"
@@ -73,10 +73,10 @@ export function LoginBeforeAfterSlider() {
           src={AFTER_SRC}
           alt="After: Face ID, Touch ID, and pattern unlock options for Cloud Invoice app login"
           fill
-          unoptimized
+          quality={95}
           draggable={false}
           className="pointer-events-none object-cover select-none [-webkit-user-drag:none]"
-          sizes="100vw"
+          sizes="(max-width: 1024px) 100vw, 1024px"
         />
 
         <div
@@ -89,10 +89,10 @@ export function LoginBeforeAfterSlider() {
             src={BEFORE_SRC}
             alt="Before: password-only verification modal in system settings"
             fill
-            unoptimized
+            quality={95}
             draggable={false}
             className="pointer-events-none object-cover select-none [-webkit-user-drag:none]"
-            sizes="100vw"
+            sizes="(max-width: 1024px) 100vw, 1024px"
           />
         </div>
 

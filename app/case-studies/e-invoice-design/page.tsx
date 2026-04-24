@@ -35,12 +35,12 @@ const E_INVOICE_DESIGN_IMAGES = [
     className: "lg:col-span-1",
   },
   {
-    src: "/case-studies/e-invoice/login-before-after-before.png",
+    src: "/case-studies/e-invoice/login-before-after-before.jpg",
     alt: "Login flow before redesign",
     className: "lg:col-span-1",
   },
   {
-    src: "/case-studies/e-invoice/login-before-after-after.png",
+    src: "/case-studies/e-invoice/login-before-after-after.jpg",
     alt: "Login flow after redesign",
     className: "lg:col-span-1",
   },

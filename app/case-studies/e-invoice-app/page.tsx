@@ -564,13 +564,6 @@ export default function EInvoiceCaseStudy() {
               </CaseStudyExpandable>
             </div>
           </div>
-          <CaseStudyExpandable label="Other supporting lifts (spend view, a11y patterns)">
-            <p className="text-sm text-zinc-400 leading-relaxed">
-              Spending analysis, high-contrast visuals, and accessibility-oriented
-              patterns (e.g., VoiceOver annotations) further supported repeat use—
-              especially for younger budgeters and low-vision participants.
-            </p>
-          </CaseStudyExpandable>
         </CaseStudyInViewSection>
 
         <DesignJourneyCollapsible

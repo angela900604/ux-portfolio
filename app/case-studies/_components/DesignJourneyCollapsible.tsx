@@ -66,7 +66,7 @@ export function DesignJourneyCollapsible({
     <div className="scroll-mt-28 space-y-6 sm:scroll-mt-32">
       <div
         id={navAnchorId}
-        className="flex flex-wrap items-center justify-end gap-3 border-t border-zinc-800 pt-10"
+        className="flex flex-wrap items-center justify-center gap-3 border-t border-zinc-800 pt-10"
       >
         <button
           type="button"
