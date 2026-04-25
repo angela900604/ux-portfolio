@@ -75,7 +75,7 @@ export default function AboutPage() {
         </div>
 
         <div
-          className="absolute inset-0 z-[1] bg-black/45 sm:bg-black/40"
+          className="absolute inset-0 z-[1] bg-gradient-to-b from-black via-black/65 to-transparent"
           aria-hidden
         />
         <div

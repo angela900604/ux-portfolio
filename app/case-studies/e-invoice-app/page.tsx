@@ -410,8 +410,8 @@ export default function EInvoiceCaseStudy() {
                   Pushback and alignment process
                 </p>
                 <h3 className="text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl">
-                  Shared first action, conflicting second priorities: how I pushed
-                  for a configurable home
+                  Grounded in user interviews, I proposed a configurable home
+                  solution aligned with both internal and external stakeholders.
                 </h3>
                 <p className="text-sm leading-relaxed text-zinc-300 sm:text-base">
                   Interview data showed one universal behavior across age groups:
@@ -436,13 +436,11 @@ export default function EInvoiceCaseStudy() {
               </div>
             </div>
 
-            <div className="mt-12 space-y-5 border-t border-zinc-800/90 pt-12 sm:mt-14 sm:space-y-6 sm:pt-14">
+            <div className="mt-12 space-y-5 pt-12 sm:mt-14 sm:space-y-6 sm:pt-14">
               <div className="max-w-4xl">
                 <h2 className={KEY_OUTCOME_STORY_TITLE_CLASS}>
-                  I designed optional home modules to be configurable so (older and
-                  low-vision users wanted a sparse home with bold color cues; younger
-                  users wanted a denser dashboard and a cooler, minimal palette—one
-                  layout; two incompatible defaults).
+                  replacing a single static home with optional modules for
+                  segmented user needs.
                 </h2>
               </div>
               <article className="min-w-0 space-y-6">
