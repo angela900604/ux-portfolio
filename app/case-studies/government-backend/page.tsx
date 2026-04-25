@@ -10,7 +10,6 @@ import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { DesignJourneyCollapsible } from "../_components/DesignJourneyCollapsible";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
-import { CaseStudyScanSummary } from "../_components/CaseStudyScanSummary";
 import { FlatAppShot, WideFigure } from "../e-invoice-app/EInvoiceFigures";
 import { GovernmentBackendHeroTldr } from "./GovernmentBackendHeroTldr";
 
@@ -42,11 +41,6 @@ const AT_A_GLANCE_ITEMS = [
 ] as const;
 
 const GOV_BACKEND_JOURNEY_IDS = ["rbac", "iterations"] as const;
-
-const GOV_BACKEND_SCAN_SUMMARY = [
-  "Backend for MoF’s lottery app: RBAC, reporting, and workflows for 600+ staff—permission model that hides noise and protects high-impact actions.",
-  "Dashboards, filters, and CSV export so ops could prep audits without engineering; shipped Jul–Sep 2025 with PM and eng.",
-] as const;
 
 function Metric({ children }: { children: ReactNode }) {
   return (
@@ -125,9 +119,6 @@ export default function GovernmentBackendCaseStudy() {
             <GovernmentBackendHeroTldr />
           </div>
 
-          <div className="mt-8">
-            <CaseStudyScanSummary items={GOV_BACKEND_SCAN_SUMMARY} />
-          </div>
         </CaseStudyHeroFullBleed>
       </header>
 
@@ -239,47 +230,6 @@ export default function GovernmentBackendCaseStudy() {
               </div>
             </div>
           </div>
-        </CaseStudyInViewSection>
-
-        <CaseStudyInViewSection
-          id="summary"
-          className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
-        >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Summary
-          </span>
-          <h2 className="text-zinc-100">
-            Supporting <Metric>600+</Metric> government staff with role-based
-            access control
-          </h2>
-          <p className="text-zinc-300 leading-relaxed">
-            I designed a role-based permission system that aligned responsibilities
-            across departments. By hiding inaccessible features and limiting
-            high-impact actions to specific roles, the platform enabled teams to
-            work independently while preventing conflicts that could affect
-            public-facing content.
-          </p>
-          <h2 className="text-zinc-100 pt-2">
-            Enabling self-service reporting for faster decision-making
-          </h2>
-          <p className="text-zinc-300 leading-relaxed">
-            I redesigned reporting into an actionable dashboard with weekly and
-            monthly views, time-based filters, and{" "}
-            <span className="rounded-md bg-sky-500/15 px-1.5 py-0.5 font-medium text-sky-200/95">
-              CSV export
-            </span>
-            . Staff could prepare reports independently for meetings and audits,
-            reducing reliance on engineers and speeding up operational workflows.
-          </p>
-          <h2 className="text-zinc-100 pt-2">
-            Aligning UI decisions with system logic under tight constraints
-          </h2>
-          <p className="text-zinc-300 leading-relaxed">
-            Working closely with engineers, I designed backend flows that balanced
-            flexibility and stability—such as version control with mandatory update
-            settings and build-code mapping—so critical updates could be enforced
-            quickly without risking system inconsistency.
-          </p>
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection

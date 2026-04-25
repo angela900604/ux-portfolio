@@ -15,6 +15,10 @@ import { MinaPrototypeVideo } from "./MinaPrototypeVideo";
 const MINA_HERO = "/case-studies/mina/mina-ai-hero.png";
 const MINA_FLOW_WIDE = "/case-studies/mina/flow-3.png";
 const MINA_SCREEN_EXTRA = `/case-studies/mina/${encodeURIComponent("image 6.png")}`;
+const MINA_MOCKUP_HAND = "/case-studies/mina/mockup-hand-01.png";
+const MINA_MOCKUP_ISO = "/case-studies/mina/mockup-isometric-02.png";
+const MINA_MOCKUP_TRANSPARENT = "/case-studies/mina/mockup-transparent-03.png";
+const MINA_MOCKUP_SOFA = "/case-studies/mina/mockup-sofa-04.png";
 
 /** Hero “3 demo” clip — WebM (smaller) then H.264 MP4; MOV fallback if a source fails. */
 const MINA_THREE_DEMO_SOURCES = {
@@ -120,6 +124,51 @@ export default function AiMarketplaceCaseStudy() {
               </video>
             </div>
           </figure>
+
+          <section className="rounded-2xl border border-zinc-200 bg-[#F8EFEC] p-4 sm:p-5">
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              <div className="overflow-hidden rounded-xl bg-[#F8EFEC]">
+                <Image
+                  src={MINA_MOCKUP_HAND}
+                  alt="MINA Parenting Copilot shown in an iPhone hand mockup"
+                  width={736}
+                  height={1104}
+                  className="h-auto w-full object-cover"
+                  sizes="(max-width: 640px) 100vw, 50vw"
+                />
+              </div>
+              <div className="overflow-hidden rounded-xl bg-[#F8EFEC]">
+                <Image
+                  src={MINA_MOCKUP_ISO}
+                  alt="MINA listing detail shown in an isometric iPhone mockup"
+                  width={1024}
+                  height={576}
+                  className="h-auto w-full object-cover"
+                  sizes="(max-width: 640px) 100vw, 50vw"
+                />
+              </div>
+              <div className="overflow-hidden rounded-xl bg-[#F8EFEC]">
+                <Image
+                  src={MINA_MOCKUP_TRANSPARENT}
+                  alt="MINA shopping cart shown in a transparent iPhone frame mockup"
+                  width={515}
+                  height={956}
+                  className="h-auto w-full object-cover"
+                  sizes="(max-width: 640px) 100vw, 50vw"
+                />
+              </div>
+              <div className="overflow-hidden rounded-xl bg-[#F8EFEC]">
+                <Image
+                  src={MINA_MOCKUP_SOFA}
+                  alt="MINA review listing screen shown on iPhone mockup on a leather sofa"
+                  width={1024}
+                  height={576}
+                  className="h-auto w-full object-cover"
+                  sizes="(max-width: 640px) 100vw, 50vw"
+                />
+              </div>
+            </div>
+          </section>
 
           <div className="mt-8">
             <CaseStudyScanSummary items={MINA_SCAN_SUMMARY} />

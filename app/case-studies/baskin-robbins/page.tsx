@@ -8,7 +8,6 @@ import { CaseStudyHeroFullBleed } from "../_components/CaseStudyHeroFullBleed";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { DesignJourneyCollapsible } from "../_components/DesignJourneyCollapsible";
-import { CaseStudyScanSummary } from "../_components/CaseStudyScanSummary";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { WideFigure } from "../e-invoice-app/EInvoiceFigures";
 import { AnnotatedFlowSlideshow } from "./AnnotatedFlowSlideshow";
@@ -103,44 +102,30 @@ const FINAL_PRODUCT_GROUPS: readonly FinalProductGroup[] = [
   },
   {
     title: "Member home",
-    description:
-      "The signed-in dashboard for balance, shortcuts, and at-a-glance status—the surface members return to most often.",
     screenNumbers: [20, 9, 12],
   },
   {
     title: "Products",
-    description:
-      "Browse cakes, beverages, and product detail—helping members decide what to order with clear imagery and specs.",
     screenNumbers: [19, 14],
   },
   {
     title: "Member zone",
-    description:
-      "Member-only content and utilities beyond the home hub—profile, perks, and settings tailored to the loyalty program.",
     screenNumbers: [18, 17],
   },
   {
     title: "Vouchers",
-    description:
-      "Coupons and ticket-style rewards in one place so members can find and use what they’ve earned without digging through email.",
     screenNumbers: [13, 5, 15],
   },
   {
     title: "Transactions & invoice capture",
-    description:
-      "Order history plus invoice registration—so members can reconcile spend, recover receipts, and keep points accurate.",
     screenNumbers: [7, 2, 11],
   },
   {
     title: "Store locator",
-    description:
-      "Find nearby shops, hours, and visit-ready info when members are on the go.",
     screenNumbers: [4, 1],
   },
   {
     title: "In-store visits & points",
-    description:
-      "Flows for earning points when dining in—bridging physical visits with the digital wallet.",
     screenNumbers: [6, 8],
   },
 ];
@@ -156,13 +141,6 @@ const AT_A_GLANCE_ITEMS = [
     label: "Focus",
     value: "Discovery through handoff · MVP with engineering",
   },
-] as const;
-
-const SCAN_SUMMARY_LINES = [
-  "Led end-to-end UX/UI for BR31 Taiwan’s first membership app (31 Club), from discovery through developer handoff.",
-  "Delivered functional maps, high-fidelity mockups, annotated flows, and a build-ready UI kit aligned with engineering.",
-  "Shipped the phase-one MVP on schedule; early Taiwan App Store reviews were five stars.",
-  "Collaborated with a PM and four engineers under a tight timeline and real backend constraints.",
 ] as const;
 
 const sectionScroll =
@@ -206,13 +184,6 @@ export default function BaskinRobbinsCaseStudy() {
           }
         >
           <BaskinHeroShowcase primary={null} secondary={HERO_DEMO_IMAGES} />
-
-          <div className="mt-8">
-            <CaseStudyScanSummary
-              items={SCAN_SUMMARY_LINES}
-              bulletClassName="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#F20C90]"
-            />
-          </div>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <a
@@ -267,16 +238,6 @@ export default function BaskinRobbinsCaseStudy() {
               reviews before build.
             </figcaption>
           </figure>
-          <div className="space-y-2 pt-2">
-            <h5 className="text-zinc-100">
-              Stakeholder alignment (Japan HQ · Taiwan)
-            </h5>
-            <WideFigure
-              borderless
-              src={ASSET("stakeholder-alignment.png")}
-              alt="Stakeholder alignment across Japan HQ and Taiwan"
-            />
-          </div>
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection

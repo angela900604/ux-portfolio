@@ -155,7 +155,7 @@ export function HeroWithBubble() {
         </div>
       </div>
 
-      <div className="mt-6 flex w-full shrink-0 justify-center sm:mt-8 lg:mt-auto lg:pt-0">
+      <div className="mt-1 flex w-full shrink-0 justify-center sm:mt-2 lg:mt-auto lg:pt-0">
         <ul className="mx-auto grid w-full max-w-4xl grid-cols-4 justify-items-center gap-x-5 gap-y-5 sm:max-w-5xl sm:grid-cols-7 sm:gap-x-6 md:gap-x-7">
           {HERO_LOGOS.map((logo) => (
             <li

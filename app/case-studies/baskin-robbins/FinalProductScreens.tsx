@@ -2,7 +2,7 @@ import { WideFigure } from "../e-invoice-app/EInvoiceFigures";
 
 export type FinalProductGroup = {
   title: string;
-  description: string;
+  description?: string;
   /** 1-based indices matching `final-screen-${nn}.png` in `public/case-studies/baskin-robbins/` */
   screenNumbers: readonly number[];
 };
@@ -19,9 +19,11 @@ export function FinalProductScreens({ asset, groups }: Props) {
         <div key={group.title} className="space-y-6">
           <div className="max-w-3xl space-y-2">
             <h3 className="text-zinc-100">{group.title}</h3>
-            <p className="text-sm leading-relaxed text-zinc-400">
-              {group.description}
-            </p>
+            {group.description ? (
+              <p className="text-sm leading-relaxed text-zinc-400">
+                {group.description}
+              </p>
+            ) : null}
           </div>
           <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
             {group.screenNumbers.map((n) => {
