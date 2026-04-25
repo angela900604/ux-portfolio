@@ -1,7 +1,3 @@
-"use client";
-
-import { useId, useState } from "react";
-
 function PainBlock({
   badge,
   badgeClassName,
@@ -19,92 +15,47 @@ function PainBlock({
     quoteStyle?: "review" | "synthesis";
   }[];
 }) {
-  const [open, setOpen] = useState(false);
-  const panelId = useId();
-
   return (
     <div className="rounded-2xl border border-zinc-800/90 bg-zinc-900/35 p-6 sm:p-8">
-      <div className="min-w-0 max-w-3xl">
+      <div className="min-w-0 max-w-3xl space-y-4">
         <span
           className={`inline-flex rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] ${badgeClassName}`}
         >
           {badge}
         </span>
-        <h4 className="mt-4 text-xl font-semibold tracking-tight text-zinc-100 sm:text-2xl">
+        <h4 className="text-xl font-semibold tracking-tight text-zinc-100 sm:text-2xl">
           {title}
         </h4>
-        <button
-          type="button"
-          aria-expanded={open}
-          aria-controls={panelId}
-          onClick={() => setOpen((v) => !v)}
-          className="mt-5 flex items-center gap-2 text-sm font-semibold text-emerald-400 transition hover:text-emerald-300"
-        >
-          <span>{open ? "View less" : "View more"}</span>
-          <span
-            aria-hidden
-            className={`inline-flex transition-transform duration-200 ${open ? "rotate-180" : ""}`}
-          >
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="text-current"
+        <p className="text-base leading-relaxed text-zinc-300 sm:text-[1.05rem]">
+          {body}
+        </p>
+        {quotes.map((q, i) => {
+          const quoteClasses =
+            q.quoteStyle === "synthesis"
+              ? "text-sm leading-relaxed text-zinc-400 sm:text-base"
+              : "text-sm italic leading-relaxed text-zinc-400 sm:text-base";
+          return (
+            <figure
+              key={i}
+              className="border-l-2 border-amber-500/45 pl-4 pt-1"
             >
-              <path
-                d="M4 6l4 4 4-4"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </span>
-        </button>
-        <div
-          id={panelId}
-          role="region"
-          aria-label="Additional detail"
-          hidden={!open}
-          className={
-            open
-              ? "mt-5 space-y-4 border-t border-zinc-800/80 pt-5"
-              : "hidden"
-          }
-        >
-          <p className="text-base leading-relaxed text-zinc-300 sm:text-[1.05rem]">
-            {body}
-          </p>
-          {quotes.map((q, i) => {
-            const quoteClasses =
-              q.quoteStyle === "synthesis"
-                ? "text-sm leading-relaxed text-zinc-400 sm:text-base"
-                : "text-sm italic leading-relaxed text-zinc-400 sm:text-base";
-            return (
-              <figure
-                key={i}
-                className="border-l-2 border-amber-500/45 pl-4 pt-1"
-              >
-                <blockquote className={quoteClasses}>
-                  {q.quoteStyle === "synthesis" ? (
-                    q.quote
-                  ) : (
-                    <>
-                      &ldquo;{q.quote}&rdquo;
-                    </>
-                  )}
-                </blockquote>
-                {q.quoteSource ? (
-                  <figcaption className="mt-2 text-xs text-zinc-500">
-                    {q.quoteSource}
-                  </figcaption>
-                ) : null}
-              </figure>
-            );
-          })}
-        </div>
+              <blockquote className={quoteClasses}>
+                {q.quoteStyle === "synthesis" ? (
+                  q.quote
+                ) : (
+                  <>
+                    &ldquo;{q.quote}&rdquo;
+                  </>
+                )}
+              </blockquote>
+              {q.quoteSource ? (
+                <figcaption className="mt-2 text-xs text-zinc-500">
+                  {q.quoteSource}
+                </figcaption>
+              ) : null}
+            </figure>
+          );
+        })}
       </div>
     </div>
   );
@@ -196,22 +147,22 @@ export function EInvoiceMultisegmentResearchSections() {
         </div>
       </section>
 
-      {/* Shared truth + conflict insights — sibling cards */}
+      {/* Shared truth + conflict insights — light cards (distinct from CTA pill below) */}
       <section className="grid gap-4 sm:gap-5 lg:grid-cols-2 lg:gap-6">
-        <div className="flex min-h-0 flex-col rounded-2xl border border-emerald-500/30 bg-emerald-500/[0.08] p-6 sm:p-8">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-emerald-300/95">
+        <div className="flex min-h-0 flex-col rounded-2xl border border-zinc-200/70 bg-white/90 p-6 shadow-[0_1px_0_rgba(0,0,0,0.04)] backdrop-blur-sm sm:p-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-emerald-800/90">
             Shared truth
           </p>
-          <p className="mt-4 text-lg font-semibold leading-relaxed text-zinc-50 sm:text-xl">
+          <p className="mt-4 text-lg font-semibold leading-relaxed text-zinc-900 sm:text-xl">
             Everyone has the same entry behavior of showing the carrier barcode and
             scanning paper invoices.
           </p>
         </div>
-        <div className="flex min-h-0 flex-col rounded-2xl border border-amber-500/35 bg-amber-500/[0.08] p-6 sm:p-8">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-amber-300/90">
+        <div className="flex min-h-0 flex-col rounded-2xl border border-zinc-200/70 bg-white/90 p-6 shadow-[0_1px_0_rgba(0,0,0,0.04)] backdrop-blur-sm sm:p-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-amber-900/85">
             Conflict insights
           </p>
-          <p className="mt-4 text-lg font-semibold leading-relaxed text-zinc-100 sm:text-xl">
+          <p className="mt-4 text-lg font-semibold leading-relaxed text-zinc-900 sm:text-xl">
             On the home screen, older and low-vision groups wanted fewer items, more
             whitespace, and vivid color for fast recognition—while younger groups
             wanted a denser dashboard—more modules, promos, and shortcuts—and a
