@@ -10,13 +10,13 @@ type AppStoreReview = {
 const REVIEWS: AppStoreReview[] = [
   {
     title: "Highly recommended",
-    user: "郭柏霆",
+    user: "Bo-Ting Kuo",
     date: "2025/12/29",
     body: "Love the interface—updating details and checking perks feels very intuitive.",
   },
   {
     leadEmoji: "👍",
-    user: "丹尼爾123",
+    user: "Daniel123",
     date: "2025/12/29",
     body: "The Traditional Chinese UI feels familiar; the type size and layout are easy on the eyes.",
   },
@@ -28,13 +28,13 @@ const REVIEWS: AppStoreReview[] = [
   },
   {
     title: "Great",
-    user: "我可歌可泣奧進口額唷唷",
+    user: "user-kkyy-889",
     date: "2025/12/29",
     body: "The new system runs smoothly; scrolling and swiping feel great.",
   },
   {
     title: "Great",
-    user: "漂亮怪",
+    user: "PrettyMonster",
     date: "2025/12/29",
     body: "Information lookup is comprehensive—I can find the details I need.",
   },

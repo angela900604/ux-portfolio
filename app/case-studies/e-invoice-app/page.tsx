@@ -163,7 +163,7 @@ const KEY_OUTCOME_ROWS: {
     decision:
       "Reframe first launch as a guided setup where each step explains the outcome, not the feature. For bank account linking: surface it as \"wins go straight to your account — no manual step needed,\" and address trust explicitly. Because this step collects financial verification data, we worked through exactly what the bank required and why, then wrote per-field explanations in the UI so users understood what they were providing and how it would be used. Clarity about data purpose is what makes people willing to complete the step. For biometrics: the real value for elderly users isn't convenience — it's that as long as the app is opened within 90 days before the token expires, they never need to remember a password again. That's the difference between needing a family member to log in for you, and being able to do it independently.",
     outcome:
-      "Older adults said, 「快都登入的設定很快很方便，這樣以後就不用記密碼了。」 Foreign residents said, 「說明寫得很清楚，現在終於知道怎麼讓獎金自動匯款了。」",
+      'Older adults said, "Quick-login setup is really convenient; I do not need to remember passwords anymore." Foreign residents said, "The explanations are clear; now I finally understand how to set prize payouts to auto-transfer."',
   },
 ];
 
@@ -173,24 +173,23 @@ const FINAL_SOLUTION_SCREENS: {
   assetFile?: string;
   assetFiles?: string[];
 }[] = [
-  { id: "01", title: "消費分析 · Spending insights" },
-  { id: "02", title: "會員卡管理 · Membership cards" },
+  { id: "01", title: "Spending insights" },
+  { id: "02", title: "Membership cards" },
   {
     id: "03",
-    title: "功能總覽 · Settings overview",
+    title: "Settings overview",
     assetFiles: [
       "settings-homepage-display.png",
       "settings-membership-card.png",
     ],
   },
-  { id: "04", title: "載具歸戶 · Carrier binding" },
-  { id: "05", title: "領獎資料 · Prize claim info" },
-  { id: "06", title: "捐贈發票 · Donation" },
-  { id: "07", title: "減碳存摺分享 · Carbon passbook share" },
+  { id: "04", title: "Carrier binding" },
+  { id: "05", title: "Prize claim info" },
+  { id: "06", title: "Donation" },
+  { id: "07", title: "Carbon passbook share" },
   {
     id: "08",
-    title:
-      "首次設定 · Guided setup (biometrics, bank, notifications, cloud backup)",
+    title: "Guided setup (biometrics, bank, notifications, cloud backup)",
     assetFiles: [
       "onboarding-notifications.png",
       "onboarding-quick-login.png",
@@ -198,20 +197,20 @@ const FINAL_SOLUTION_SCREENS: {
       "onboarding-auto-remittance.png",
     ],
   },
-  { id: "09", title: "我要領獎安全驗證 · Redeem security check" },
-  { id: "10", title: "發票存摺 · Invoice passbook" },
-  { id: "11", title: "發票明細 · Receipt detail" },
-  { id: "12", title: "首頁 · homepage", assetFile: "homepage-hub.png" },
+  { id: "09", title: "Redeem security check" },
+  { id: "10", title: "Invoice passbook" },
+  { id: "11", title: "Receipt detail" },
+  { id: "12", title: "Homepage", assetFile: "homepage-hub.png" },
   {
     id: "13",
-    title: "登入 · Face ID / quick verification",
+    title: "Face ID / quick verification",
     assetFile: "face-id-quick-verification.png",
   },
-  { id: "14", title: "末三碼對獎 · Last-three-digit match" },
-  { id: "15", title: "宣導專區 · Events & promos" },
-  { id: "16", title: "查看中獎發票 · Winning invoices" },
-  { id: "17", title: "掃描紙本發票 · Paper receipt scan" },
-  { id: "18", title: "通知中心 · Notifications" },
+  { id: "14", title: "Last-three-digit match" },
+  { id: "15", title: "Events & promos" },
+  { id: "16", title: "Winning invoices" },
+  { id: "17", title: "Paper receipt scan" },
+  { id: "18", title: "Notifications" },
 ];
 
 const FINAL_SOLUTION_MARQUEE_SLIDES = FINAL_SOLUTION_SCREENS.flatMap((item) => {
@@ -404,6 +403,38 @@ export default function EInvoiceCaseStudy() {
             </div>
 
             <HomeBeforeAfterSlider />
+
+            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/35 p-5 sm:p-6">
+              <div className="max-w-4xl space-y-4">
+                <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500">
+                  Pushback and alignment process
+                </p>
+                <h3 className="text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl">
+                  Shared first action, conflicting second priorities: how I pushed
+                  for a configurable home
+                </h3>
+                <p className="text-sm leading-relaxed text-zinc-300 sm:text-base">
+                  Interview data showed one universal behavior across age groups:
+                  people opened the app to scan paper invoices first. After that,
+                  priorities split sharply. Younger users were already comfortable
+                  with widgets, so they wanted home to emphasize winning status and
+                  spending insights instead of in-app barcode prominence. Middle-aged
+                  users prioritized win status and campaign / event information.
+                  Older users wanted a clean, low-density surface with scan and
+                  barcode as the only obvious jobs.
+                </p>
+                <p className="text-sm leading-relaxed text-zinc-300 sm:text-base">
+                  I used this evidence to push back on a single static home proposal.
+                  First, I reviewed implementation feasibility and delivery risk with
+                  engineering against the project deadline. Then I aligned with PM on
+                  scope and release constraints. After that, I ran a unified meeting
+                  with external stakeholders and presented the interview insights in
+                  a document + deck format, walking through segment-by-segment needs
+                  and the trade-offs. That process is what got us to a configurable
+                  module model instead of one compromised default.
+                </p>
+              </div>
+            </div>
 
             <div className="mt-12 space-y-5 border-t border-zinc-800/90 pt-12 sm:mt-14 sm:space-y-6 sm:pt-14">
               <div className="max-w-4xl">

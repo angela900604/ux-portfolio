@@ -75,7 +75,7 @@ const BASKIN_JOURNEY_IDS = [
 ] as const;
 
 
-/** Taiwan App Store — 31俱樂部 (Baskin-Robbins Taiwan official app) */
+/** Taiwan App Store — 31 Club (Baskin-Robbins Taiwan official app) */
 const APP_STORE_TW =
   "https://apps.apple.com/tw/app/31%E4%BF%B1%E6%A8%82%E9%83%A8/id6755289789";
 

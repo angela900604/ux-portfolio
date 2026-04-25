@@ -174,7 +174,7 @@ export function MultisegmentInterviewsResearchBody() {
             borderless
             src={ASSET("interview-field-20250321-1330-copy.png")}
             alt="Older-adult focus group interview on mobile phone use and everyday spending habits"
-            caption="Older-adult focus group—how they use phones and day-to-day spending habits（與老年焦點團體訪談，了解他們的手機與消費使用習慣）"
+            caption="Older-adult focus group—how they use phones and day-to-day spending habits"
           />
 
           <SketchPersonasExpandable />
