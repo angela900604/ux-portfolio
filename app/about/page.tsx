@@ -102,10 +102,6 @@ export default function AboutPage() {
                   sizes="(max-width: 1024px) 100vw, 720px"
                 />
               </div>
-              <figcaption className="mt-3 text-sm leading-relaxed text-zinc-500">
-                Field research and sessions across ages, languages, and
-                contexts—multi-segment UX, not a single persona repeated.
-              </figcaption>
             </figure>
           </div>
         </section>
