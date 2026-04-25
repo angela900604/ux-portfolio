@@ -35,9 +35,9 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-100">
       <section className="relative border-b border-zinc-800 bg-zinc-950">
-        {/* Copy first in DOM for screen-reader order; stacked above image via z-index. */}
+        {/* Copy in top-left overlay for readability on image. */}
         <div
-          className={`relative z-10 ${SITE_SHELL_CONTAINER} pt-16 pb-28 sm:pt-20 sm:pb-32 md:pb-36`}
+          className={`pointer-events-none absolute inset-x-0 top-0 z-[3] ${SITE_SHELL_CONTAINER} pt-16 sm:pt-20`}
         >
           <p className="text-xs font-medium uppercase tracking-widest text-zinc-200/90">
             About
@@ -48,9 +48,9 @@ export default function AboutPage() {
             (open to relocate)
           </p>
           <p className="mt-5 max-w-3xl text-base font-medium leading-snug tracking-[-0.015em] text-zinc-50 sm:text-lg md:text-xl">
-            Product designer specializing in consumer mobile experiences —
-            I&apos;ve shipped complex, multi-role UX across government-scale and
-            B2C platforms, with a strong research foundation in diverse user
+            Product designer specializing in consumer mobile experiences — I&apos;ve
+            shipped complex, multi-role UX across government-scale and B2C
+            platforms, with a strong research foundation in diverse user
             segments. I&apos;m now focused on AI-driven consumer products and
             expanding into social platform design.
           </p>
