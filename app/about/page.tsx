@@ -34,7 +34,7 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-100">
-      <section className="relative min-h-[min(90vh,56rem)] overflow-hidden border-b border-zinc-800 bg-zinc-950">
+      <section className="relative border-b border-zinc-800 bg-zinc-950">
         {/* Copy first in DOM for screen-reader order; stacked above image via z-index. */}
         <div
           className={`relative z-10 ${SITE_SHELL_CONTAINER} pt-16 pb-28 sm:pt-20 sm:pb-32 md:pb-36`}
@@ -59,21 +59,16 @@ export default function AboutPage() {
           </p>
         </div>
 
-        {/* Profile photo — same horizontal track as shell, behind copy, bottom-aligned, uncropped */}
-        <div
-          className="pointer-events-none absolute inset-0 z-0 flex items-end justify-center"
-          aria-hidden
-        >
-          <div
-            className={`mx-auto flex h-full min-h-0 w-full ${SITE_MAX_WIDTH_CLASS} ${SITE_GUTTER_CLASS} items-end`}
-          >
+        {/* Profile photo in normal flow so section grows to full image height (no crop). */}
+        <div className="relative z-0" aria-hidden>
+          <div className={`mx-auto w-full ${SITE_MAX_WIDTH_CLASS} ${SITE_GUTTER_CLASS}`}>
             <Image
               src="/about/profile-v2.png"
               alt=""
               width={768}
               height={1024}
               priority
-              className="h-auto w-full object-contain object-bottom"
+              className="block h-auto w-full object-contain"
               sizes="(max-width: 640px) calc(100vw - 3rem), (max-width: 1480px) calc(100vw - 12.5rem), 1280px"
             />
           </div>
@@ -177,7 +172,7 @@ export default function AboutPage() {
             graphic={BEYOND_GRAPHIC_GALLERY}
           />
 
-          <div className="mt-12 min-w-0">
+          <div className="mt-6 min-w-0">
             <ul className="grid items-stretch gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {ADJACENT_WORK.map((item, i) => (
                 <li key={item.slug} className="h-full min-h-0">

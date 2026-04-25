@@ -86,19 +86,12 @@ export const BEYOND_GRAPHIC_GALLERY: BeyondGalleryItem[] = [
     gridClass: "lg:col-span-2 lg:row-span-2 lg:min-h-[min(420px,36vw)]",
   },
   {
-    src: "/about/beyond-design/graphic/03.png",
-    alt: "3D-style icon: minimalist turntable on a rounded square",
-    width: 1000,
-    height: 1000,
-    gridClass: "lg:col-span-2 lg:row-span-1 lg:min-h-[min(220px,18vw)]",
-  },
-  {
     src: "/about/beyond-design/graphic/04.png",
     alt: "Mobile UI concept: BakeConnect splash and profile screens with palette",
     width: 511,
     height: 416,
-    gridClass: "lg:col-span-2 lg:row-span-2 lg:min-h-[min(420px,34vw)]",
-    imageClassName: "object-contain scale-100 sm:scale-100",
+    gridClass: "lg:col-span-2 lg:row-span-2 lg:min-h-[min(460px,36vw)]",
+    imageClassName: "object-cover scale-[1.1] sm:scale-[1.14]",
   },
   {
     src: "/about/beyond-design/graphic/08.png",
@@ -133,6 +126,6 @@ export const BEYOND_GRAPHIC_GALLERY: BeyondGalleryItem[] = [
     alt: "Hand-painted ceramic pieces on white fabric—glaze and DIY craft exploration",
     width: 819,
     height: 1024,
-    gridClass: "lg:col-span-4 lg:row-span-1 lg:min-h-[min(340px,42vw)]",
+    gridClass: "lg:col-span-4 lg:row-span-1 lg:min-h-[min(280px,28vw)]",
   },
 ];

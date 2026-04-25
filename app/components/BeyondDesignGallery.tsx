@@ -131,7 +131,7 @@ export function BeyondDesignGallery({
           <h3 className="text-lg font-semibold tracking-tight text-zinc-100 sm:text-xl">
             Digital marketing, branding, graphic design, creatives
           </h3>
-          <div className="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-3 lg:grid-cols-4 lg:grid-rows-[repeat(4,minmax(0,auto))] lg:gap-3">
+          <div className="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-3 lg:auto-rows-auto lg:grid-cols-4 lg:auto-flow-dense lg:gap-3">
             {graphic.map((item) => (
               <GalleryTile
                 key={item.src}
