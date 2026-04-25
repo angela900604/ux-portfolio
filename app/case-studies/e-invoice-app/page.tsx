@@ -177,7 +177,7 @@ const KEY_OUTCOME_ROWS: {
     outcome:
       'Older adults said, "Quick-login setup is really convenient; I do not need to remember passwords anymore." Foreign residents said, "The explanations are clear; now I finally understand how to set prize payouts to auto-transfer."',
     titleNote:
-      "針對外籍人士我也做了英文版本（我會再加畫面）。",
+      "I also delivered an English-language version for foreign residents; UI captures will be added here next.",
   },
 ];
 
