@@ -18,12 +18,6 @@ export function ProblemPersonasBlock() {
           Roughly 20 million people rely on the official app—yet ~2.8★ ratings and
           broken flows were excluding elders, newcomers, and low-vision users.
         </h2>
-        <p className="max-w-3xl text-sm leading-relaxed text-zinc-400 sm:text-base">
-          Exclusion here is not abstract: it means missed payouts, unreadable
-          financial history for residents who don&apos;t read Chinese fluently, and
-          dependence on family for basic civic tasks—privacy and autonomy degrade
-          when the official path doesn&apos;t meet people where they are.
-        </p>
         <CaseStudyExpandable label="Context and design goal">
           <p className="text-zinc-300">
             In Taiwan, every purchase comes with an invoice. For years, people

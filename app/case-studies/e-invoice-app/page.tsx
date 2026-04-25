@@ -348,37 +348,6 @@ export default function EInvoiceCaseStudy() {
       </header>
 
       <CaseStudyContentLayout>
-        <CaseStudyInViewSection
-          id="trust-inclusion-framing"
-          className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
-        >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Trust, privacy &amp; inclusion
-          </span>
-          <div className="max-w-3xl space-y-4">
-            <p className="text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
-              This was a trust and inclusion problem as much as a UX problem —{" "}
-              financial data, civic participation, and user autonomy were all on
-              the line.
-            </p>
-            <p className="text-zinc-300 leading-relaxed">
-              The research program was built for{" "}
-              <span className="text-zinc-100">
-                radically different capabilities and contexts
-              </span>
-              —teens through silver adults, low-vision and VoiceOver users,
-              foreign residents navigating Chinese-heavy UI—because exclusion here
-              means people miss money they&apos;re owed or disengage from a public
-              program. That&apos;s the same class of problem global platforms face
-              when they ship for diverse, high-stakes audiences:{" "}
-              <span className="text-zinc-100">
-                clarity, accessible structure, and predictable control
-              </span>{" "}
-              matter as much as visual polish.
-            </p>
-          </div>
-        </CaseStudyInViewSection>
-
         <ProblemPersonasBlock />
 
         <CaseStudyInViewSection
