@@ -251,10 +251,7 @@ export default function AiMarketplaceCaseStudy() {
                 —cohorted before/after on the same funnel). It is the clearest signal
                 that the work moved real behavior, not just pixels.
               </p>
-            </div>
-            <div className="mx-auto flex w-full max-w-[300px] shrink-0 flex-col items-center lg:mx-0 lg:items-end">
-              <MinaPrototypeVideo />
-              <p className="mt-4 max-w-[300px] text-center text-sm leading-relaxed text-zinc-400 lg:text-right">
+              <p className="max-w-3xl text-sm leading-relaxed text-zinc-400">
                 The clip here is the{" "}
                 <span className="text-zinc-200">
                   one-photo → detection → draft listing
@@ -262,6 +259,9 @@ export default function AiMarketplaceCaseStudy() {
                 direction we aligned on with engineering—same product surface family
                 as the shipping listing experience.
               </p>
+            </div>
+            <div className="mx-auto flex w-full max-w-[300px] shrink-0 flex-col items-center lg:mx-0 lg:items-end">
+              <MinaPrototypeVideo />
             </div>
           </div>
 
@@ -357,7 +357,7 @@ export default function AiMarketplaceCaseStudy() {
             <span className="text-zinc-100">three major flows in parallel</span>{" "}
             with a small eng team.
           </p>
-          <div className="w-full max-w-6xl space-y-3">
+          <div className="w-full max-w-3xl space-y-3">
             <p className="max-w-3xl text-sm leading-relaxed text-zinc-300">
               Component library portfolio (HTML preview)—embedded below; scroll
               inside the frame to browse components.

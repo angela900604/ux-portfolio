@@ -397,7 +397,7 @@ export default function EInvoiceCaseStudy() {
               </h2>
             </div>
 
-            <div className="min-w-0 max-w-3xl space-y-4">
+            <div className="min-w-0 max-w-3xl">
               <div className="rounded-xl border border-emerald-500/25 bg-emerald-500/[0.07] px-4 py-3 sm:px-5 sm:py-4">
                 <p className="text-[11px] font-semibold uppercase tracking-widest text-emerald-200/95">
                   Outcome
@@ -405,35 +405,35 @@ export default function EInvoiceCaseStudy() {
                 <p className="mt-2 text-sm font-medium leading-relaxed text-zinc-100">
                   {SCAN_SHARED_TRUTH_OUTCOME.outcome}
                 </p>
+                <CaseStudyExpandable label="Evidence → problem → decision (full)">
+                  <div className="space-y-5">
+                    <div className="border-l-2 border-emerald-500/45 pl-4">
+                      <p className="text-[11px] font-semibold uppercase tracking-widest text-emerald-400/95">
+                        Evidence · interviews &amp; tests
+                      </p>
+                      <p className="mt-2 text-sm leading-relaxed text-zinc-300">
+                        {SCAN_SHARED_TRUTH_OUTCOME.evidence}
+                      </p>
+                    </div>
+                    <div className="border-l-2 border-rose-500/35 pl-4">
+                      <p className="text-[11px] font-semibold uppercase tracking-widest text-rose-300/90">
+                        Problem in the experience
+                      </p>
+                      <p className="mt-2 text-sm leading-relaxed text-zinc-300">
+                        {SCAN_SHARED_TRUTH_OUTCOME.problem}
+                      </p>
+                    </div>
+                    <div className="border-l-2 border-violet-500/45 pl-4">
+                      <p className="text-[11px] font-semibold uppercase tracking-widest text-violet-300/95">
+                        Decision
+                      </p>
+                      <p className="mt-2 text-sm leading-relaxed text-zinc-300">
+                        {SCAN_SHARED_TRUTH_OUTCOME.decision}
+                      </p>
+                    </div>
+                  </div>
+                </CaseStudyExpandable>
               </div>
-              <CaseStudyExpandable label="Evidence → problem → decision (full)">
-                <div className="space-y-5">
-                  <div className="border-l-2 border-emerald-500/45 pl-4">
-                    <p className="text-[11px] font-semibold uppercase tracking-widest text-emerald-400/95">
-                      Evidence · interviews &amp; tests
-                    </p>
-                    <p className="mt-2 text-sm leading-relaxed text-zinc-300">
-                      {SCAN_SHARED_TRUTH_OUTCOME.evidence}
-                    </p>
-                  </div>
-                  <div className="border-l-2 border-rose-500/35 pl-4">
-                    <p className="text-[11px] font-semibold uppercase tracking-widest text-rose-300/90">
-                      Problem in the experience
-                    </p>
-                    <p className="mt-2 text-sm leading-relaxed text-zinc-300">
-                      {SCAN_SHARED_TRUTH_OUTCOME.problem}
-                    </p>
-                  </div>
-                  <div className="border-l-2 border-violet-500/45 pl-4">
-                    <p className="text-[11px] font-semibold uppercase tracking-widest text-violet-300/95">
-                      Decision
-                    </p>
-                    <p className="mt-2 text-sm leading-relaxed text-zinc-300">
-                      {SCAN_SHARED_TRUTH_OUTCOME.decision}
-                    </p>
-                  </div>
-                </div>
-              </CaseStudyExpandable>
             </div>
 
             <HomeBeforeAfterSlider />
@@ -529,11 +529,7 @@ export default function EInvoiceCaseStudy() {
                   <div className="max-w-4xl">
                     <h2 className={KEY_OUTCOME_STORY_TITLE_CLASS}>{row.title}</h2>
                   </div>
-                  <div
-                    className={
-                      row.onboardingDemoVideo ? "max-w-3xl space-y-6" : "space-y-6"
-                    }
-                  >
+                  <div className={row.onboardingDemoVideo ? "max-w-3xl" : undefined}>
                     <div className="rounded-xl border border-emerald-500/25 bg-emerald-500/[0.07] px-4 py-3 sm:px-5 sm:py-4">
                       <p className="text-[11px] font-semibold uppercase tracking-widest text-emerald-200/95">
                         Outcome
@@ -541,35 +537,35 @@ export default function EInvoiceCaseStudy() {
                       <p className="mt-2 text-sm font-medium leading-relaxed text-zinc-100">
                         {row.outcome}
                       </p>
+                      <CaseStudyExpandable label="Evidence → problem → decision (full)">
+                        <div className="space-y-5">
+                          <div className="border-l-2 border-emerald-500/45 pl-4">
+                            <p className="text-[11px] font-semibold uppercase tracking-widest text-emerald-400/95">
+                              Evidence · interviews &amp; tests
+                            </p>
+                            <p className="mt-2 text-sm leading-relaxed text-zinc-300">
+                              {row.evidence}
+                            </p>
+                          </div>
+                          <div className="border-l-2 border-rose-500/35 pl-4">
+                            <p className="text-[11px] font-semibold uppercase tracking-widest text-rose-300/90">
+                              Problem in the experience
+                            </p>
+                            <p className="mt-2 text-sm leading-relaxed text-zinc-300">
+                              {row.problem}
+                            </p>
+                          </div>
+                          <div className="border-l-2 border-violet-500/45 pl-4">
+                            <p className="text-[11px] font-semibold uppercase tracking-widest text-violet-300/95">
+                              Decision
+                            </p>
+                            <p className="mt-2 text-sm leading-relaxed text-zinc-300">
+                              {row.decision}
+                            </p>
+                          </div>
+                        </div>
+                      </CaseStudyExpandable>
                     </div>
-                    <CaseStudyExpandable label="Evidence → problem → decision (full)">
-                      <div className="space-y-5">
-                        <div className="border-l-2 border-emerald-500/45 pl-4">
-                          <p className="text-[11px] font-semibold uppercase tracking-widest text-emerald-400/95">
-                            Evidence · interviews &amp; tests
-                          </p>
-                          <p className="mt-2 text-sm leading-relaxed text-zinc-300">
-                            {row.evidence}
-                          </p>
-                        </div>
-                        <div className="border-l-2 border-rose-500/35 pl-4">
-                          <p className="text-[11px] font-semibold uppercase tracking-widest text-rose-300/90">
-                            Problem in the experience
-                          </p>
-                          <p className="mt-2 text-sm leading-relaxed text-zinc-300">
-                            {row.problem}
-                          </p>
-                        </div>
-                        <div className="border-l-2 border-violet-500/45 pl-4">
-                          <p className="text-[11px] font-semibold uppercase tracking-widest text-violet-300/95">
-                            Decision
-                          </p>
-                          <p className="mt-2 text-sm leading-relaxed text-zinc-300">
-                            {row.decision}
-                          </p>
-                        </div>
-                      </div>
-                    </CaseStudyExpandable>
                   </div>
                   {row.onboardingDemoVideo ? (
                     <OnboardingDemoVideo className="w-full" />
@@ -598,6 +594,7 @@ export default function EInvoiceCaseStudy() {
           panelId="e-invoice-design-journey-panel"
           title="Design journey"
           subtitle="Functional map, competitive landscape, page flows, testing, and carrier binding insight"
+          className="border-t-0 pt-0 sm:pt-0"
         >
         <CaseStudyInViewSection
           id="functional-map"
@@ -960,6 +957,7 @@ export default function EInvoiceCaseStudy() {
           panelId="e-invoice-reflection-panel"
           title="Reflection"
           subtitle="Lessons, constraints, and what to validate next"
+          className="border-t-0 pt-0 sm:pt-0"
         >
           <div className="space-y-5">
             <h2 className="max-w-3xl text-zinc-100">

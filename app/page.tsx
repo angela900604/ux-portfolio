@@ -25,7 +25,7 @@ const CORE_PRODUCT = [
   {
     slug: "baskin-robbins",
     title: "Cross-market with Japan HQ · BR31 Taiwan membership app",
-    tag: "Mobile · Loyalty",
+    tag: "Mobile · Membership System",
   },
 ] as const;
 
