@@ -1,6 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
-import { SITE_SHELL_CONTAINER } from "@/lib/site-shell";
+import {
+  SITE_GUTTER_CLASS,
+  SITE_MAX_WIDTH_CLASS,
+  SITE_SHELL_CONTAINER,
+} from "@/lib/site-shell";
 import { BeyondDesignGallery } from "../components/BeyondDesignGallery";
 import { FadeInSection } from "../components/FadeInSection";
 import { ProjectCardTag } from "../components/ProjectCardTag";
@@ -30,40 +34,59 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-100">
-      <section className="border-b border-zinc-800">
+      <section className="relative min-h-[min(90vh,56rem)] overflow-hidden border-b border-zinc-800 bg-zinc-950">
+        {/* Copy first in DOM for screen-reader order; stacked above image via z-index. */}
         <div
-          className={`${SITE_SHELL_CONTAINER} pt-16 pb-12 sm:pt-20 sm:pb-16 md:pb-20`}
+          className={`relative z-10 ${SITE_SHELL_CONTAINER} pt-16 pb-28 sm:pt-20 sm:pb-32 md:pb-36`}
         >
-          <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+          <p className="text-xs font-medium uppercase tracking-widest text-zinc-200/90">
             About
           </p>
           <h1 className="mt-4 max-w-2xl text-zinc-50">Angela Yang</h1>
-          <p className="mt-3 max-w-2xl text-xs font-medium uppercase tracking-widest text-zinc-500">
+          <p className="mt-3 max-w-2xl text-xs font-medium uppercase tracking-widest text-zinc-200/85">
             B2C iOS · AI-driven products · Multi-segment research · Vancouver
             (open to relocate)
           </p>
-          <p className="mt-5 max-w-3xl text-base font-medium leading-snug tracking-[-0.015em] text-zinc-100 sm:text-lg md:text-xl">
+          <p className="mt-5 max-w-3xl text-base font-medium leading-snug tracking-[-0.015em] text-zinc-50 sm:text-lg md:text-xl">
             Product designer specializing in consumer mobile experiences —
             I&apos;ve shipped complex, multi-role UX across government-scale and
             B2C platforms, with a strong research foundation in diverse user
             segments. I&apos;m now focused on AI-driven consumer products and
             expanding into social platform design.
           </p>
-          <p className="mt-4 max-w-3xl text-base leading-relaxed text-zinc-400 sm:text-lg">
+          <p className="mt-4 max-w-3xl text-base leading-relaxed text-zinc-200/95 sm:text-lg">
             Based in Vancouver, BC. Open to relocation, remote, or hybrid.
           </p>
-          <div className="mt-10 min-w-0 w-full sm:mt-12">
+        </div>
+
+        {/* Profile photo — same horizontal track as shell, behind copy, bottom-aligned, uncropped */}
+        <div
+          className="pointer-events-none absolute inset-0 z-0 flex items-end justify-center"
+          aria-hidden
+        >
+          <div
+            className={`mx-auto flex h-full min-h-0 w-full ${SITE_MAX_WIDTH_CLASS} ${SITE_GUTTER_CLASS} items-end`}
+          >
             <Image
               src="/about/profile-v2.png"
-              alt="Angela Yang"
+              alt=""
               width={768}
               height={1024}
               priority
-              className="h-auto w-full rounded-2xl border border-zinc-800 bg-zinc-900/30 object-contain"
+              className="h-auto w-full object-contain object-bottom"
               sizes="(max-width: 640px) calc(100vw - 3rem), (max-width: 1480px) calc(100vw - 12.5rem), 1280px"
             />
           </div>
         </div>
+
+        <div
+          className="absolute inset-0 z-[1] bg-black/45 sm:bg-black/40"
+          aria-hidden
+        />
+        <div
+          className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] h-36 bg-gradient-to-t from-zinc-950 via-zinc-950/75 to-transparent sm:h-44 md:h-52"
+          aria-hidden
+        />
       </section>
 
       <div className={`${SITE_SHELL_CONTAINER} py-16 sm:py-24`}>
@@ -71,9 +94,9 @@ export default function AboutPage() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             User interviews
           </span>
-          <div className="mt-6 grid items-start gap-8 lg:grid-cols-12 lg:gap-10">
-            <div className="min-w-0 lg:col-span-5 flex flex-col gap-4 text-base leading-relaxed text-zinc-300 sm:text-lg">
-              <p className="font-medium text-zinc-100">
+          <div className="grid items-start gap-8 lg:grid-cols-12 lg:gap-10">
+            <div className="mt-6 min-w-0 lg:col-span-5 flex flex-col gap-4 text-base leading-relaxed text-zinc-300 sm:text-lg">
+              <p className="text-2xl font-semibold tracking-tight text-zinc-100 sm:text-[1.75rem]">
                 The part of the job where I feel most alive.
               </p>
               <p>

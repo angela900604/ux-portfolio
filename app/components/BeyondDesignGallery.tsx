@@ -129,7 +129,7 @@ export function BeyondDesignGallery({
 
         <section>
           <h3 className="text-lg font-semibold tracking-tight text-zinc-100 sm:text-xl">
-            Graphic design, drawing style exploration
+            Digital marketing, branding, graphic design, creatives
           </h3>
           <div className="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-3 lg:grid-cols-4 lg:grid-rows-[repeat(4,minmax(0,auto))] lg:gap-3">
             {graphic.map((item) => (

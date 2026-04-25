@@ -97,8 +97,8 @@ export const BEYOND_GRAPHIC_GALLERY: BeyondGalleryItem[] = [
     alt: "Mobile UI concept: BakeConnect splash and profile screens with palette",
     width: 511,
     height: 416,
-    gridClass: "lg:col-span-2 lg:row-span-1 lg:min-h-[min(260px,24vw)]",
-    imageClassName: "scale-[1.16] sm:scale-[1.2]",
+    gridClass: "lg:col-span-2 lg:row-span-2 lg:min-h-[min(420px,34vw)]",
+    imageClassName: "object-contain scale-100 sm:scale-100",
   },
   {
     src: "/about/beyond-design/graphic/08.png",
