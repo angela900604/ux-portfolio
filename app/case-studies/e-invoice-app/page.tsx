@@ -95,11 +95,11 @@ const AT_A_GLANCE_ITEMS = [
 /** Everyone agreed on scan-first; rendered above the other outcome rows (text only). */
 const SCAN_SHARED_TRUTH_OUTCOME = {
   evidence:
-    "In field interviews across four age bands, needs diverged everywhere else—but one behavior was universal: the first thing people wanted after launch was to scan a paper invoice. In the legacy layout, scan lived one or two taps away from the visual center, so users hunted before they could act.",
+    "Across all age groups and low-vision participants, one behavior was universal: the primary reason people opened the app was to scan a paper invoice or show their barcode at checkout. But for elderly users, speed was the real barrier — cashiers routinely assumed older customers didn't have the app, and would hand over a paper invoice before the user had a chance to pull out their phone. The app never got used, not because the user gave up, but because the system moved on without them. For users who did get their phone out, the second problem hit: scan wasn't where they expected it. The entry point was buried one or two taps from the visual center, so users hunted while the line moved.",
   problem:
-    "The interface did not match the dominant mental model: scanning is the front door, not a buried utility.",
+    "Two compounding failures: the app wasn't fast enough to surface at checkout, and when it did open, the most-needed action wasn't immediately findable. Together they made the app feel unreliable in the moments that mattered most.",
   decision:
-    "Lock the scan control to the primary focal area on home—always visible, never hidden behind personalization or secondary promos.",
+    "Lock the scan button to the most prominent position on home — always visible on launch, never displaced by promos or personalization. Add a home screen widget so the barcode is accessible without opening the app at all: one less step between pocket and checkout, which is exactly the gap that was causing elderly users to be skipped.",
   outcome:
     "Scan & check prize tasks reached 92% success—the strongest task in the battery—with a median completion time of about 40 seconds.",
 } as const;

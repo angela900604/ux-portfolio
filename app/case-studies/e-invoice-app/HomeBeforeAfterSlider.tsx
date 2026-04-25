@@ -72,7 +72,7 @@ export function HomeBeforeAfterSlider() {
         {/* After (redesign) — full frame */}
         <Image
           src={AFTER_SRC}
-          alt="Cloud Invoice app home — after redesign"
+          alt="After redesign: app home with scan invoice as the primary action and barcode module; iOS home screen widget shows carrier barcode for quick access"
           fill
           draggable={false}
           className="pointer-events-none object-cover select-none [-webkit-user-drag:none]"
