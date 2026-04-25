@@ -57,6 +57,16 @@ const HERO_BELOW_02 = {
   alt: "Person using the e-invoice mobile app: lottery and carrier barcode screen in a warm indoor setting",
 } as const;
 
+const HERO_TABLET_01 = {
+  src: "/case-studies/e-invoice/hero-tablet-01.png",
+  alt: "iPad mockup showing the e-invoice home interface on a textured cushion shelf",
+} as const;
+
+const HERO_TABLET_02 = {
+  src: "/case-studies/e-invoice/hero-tablet-02.png",
+  alt: "iPad mockup showing the e-invoice home interface on fabric near a wooden surface",
+} as const;
+
 /** Friendly lifestyle palette (style direction 01) */
 const STYLE_SWATCHES: { hex: string; name: string }[] = [
   { hex: "#25244A", name: "Deep navy" },
@@ -334,6 +344,28 @@ export default function EInvoiceCaseStudy() {
                 alt={HERO_BELOW_02.alt}
                 width={1024}
                 height={552}
+                className="h-auto w-full object-cover"
+                sizes="(max-width: 640px) 100vw, 50vw"
+              />
+            </div>
+          </div>
+          <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
+            <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+              <Image
+                src={HERO_TABLET_01.src}
+                alt={HERO_TABLET_01.alt}
+                width={1024}
+                height={768}
+                className="h-auto w-full object-cover"
+                sizes="(max-width: 640px) 100vw, 50vw"
+              />
+            </div>
+            <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+              <Image
+                src={HERO_TABLET_02.src}
+                alt={HERO_TABLET_02.alt}
+                width={1024}
+                height={576}
                 className="h-auto w-full object-cover"
                 sizes="(max-width: 640px) 100vw, 50vw"
               />
