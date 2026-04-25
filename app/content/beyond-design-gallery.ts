@@ -91,7 +91,7 @@ export const BEYOND_GRAPHIC_GALLERY: BeyondGalleryItem[] = [
     width: 511,
     height: 416,
     gridClass: "lg:col-span-2 lg:row-span-2 lg:min-h-[min(460px,36vw)]",
-    imageClassName: "object-cover scale-[1.1] sm:scale-[1.14]",
+    imageClassName: "object-cover object-center scale-[1.28] sm:scale-[1.34]",
   },
   {
     src: "/about/beyond-design/graphic/08.png",
