@@ -436,6 +436,27 @@ export default function EInvoiceCaseStudy() {
               </div>
             </div>
 
+            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5 sm:p-6">
+              <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500">
+                Accessibility · Scan feedback
+              </p>
+              <h3 className="mt-2 text-xl font-semibold tracking-tight text-zinc-100 sm:text-2xl">
+                Scan success you can feel and hear, with scan at the top of home
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-zinc-300 sm:text-base">
+                For low-vision users we added explicit scan-success feedback—
+                <span className="text-zinc-200">haptic vibration plus a short confirmation sound</span>
+                —so a successful read is obvious without staring at the screen. The
+                primary scan control sits at the{" "}
+                <span className="text-zinc-200">top of the home screen</span>: VoiceOver
+                reaches it immediately in the rotor order, and people who rely on
+                spatial memory can land the same large target every time instead of
+                hunting a tiny entry. That combination reduces the pressure to hand
+                the phone to a caregiver for a privacy-sensitive task just to know
+                whether scanning worked.
+              </p>
+            </div>
+
             <HomeBeforeAfterSlider />
 
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900/35 p-5 sm:p-6">
@@ -589,8 +610,7 @@ export default function EInvoiceCaseStudy() {
           </div>
         </CaseStudyInViewSection>
 
-        <div className="flex flex-col gap-6">
-        <DesignJourneyCollapsible
+        <div className="flex flex-col gap-6"><DesignJourneyCollapsible
           journeySectionIds={E_INVOICE_JOURNEY_IDS}
           panelId="e-invoice-design-journey-panel"
           title="Design journey"
@@ -950,9 +970,7 @@ export default function EInvoiceCaseStudy() {
           </div>
         </CaseStudyInViewSection>
 
-        </DesignJourneyCollapsible>
-
-        <DesignJourneyCollapsible
+        </DesignJourneyCollapsible><DesignJourneyCollapsible
           journeySectionIds={["reflection", "business-constraints"]}
           navAnchorId="reflection"
           panelId="e-invoice-reflection-panel"
@@ -1076,9 +1094,7 @@ export default function EInvoiceCaseStudy() {
               />
             </div>
           </div>
-        </DesignJourneyCollapsible>
-
-        <CaseStudyInViewSection
+        </DesignJourneyCollapsible><CaseStudyInViewSection
           id="figma-resources"
           className="scroll-mt-28 space-y-5 rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6 sm:scroll-mt-32 sm:p-8"
         >
@@ -1107,8 +1123,7 @@ export default function EInvoiceCaseStudy() {
               Wireframe &amp; wireflow →
             </a>
           </div>
-        </CaseStudyInViewSection>
-        </div>
+        </CaseStudyInViewSection></div>
 
         <CaseStudyInViewSection className="border-t border-zinc-800 pt-12 space-y-8">
           <CaseStudyPrevNext currentSlug="e-invoice-app" />
