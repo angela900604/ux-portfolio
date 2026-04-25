@@ -5,8 +5,8 @@ import { FadeInSection } from "./components/FadeInSection";
 import { HeroWithBubble } from "./components/HeroWithBubble";
 import { ProjectCardTag } from "./components/ProjectCardTag";
 
-const CORE_PRODUCT = {
-  flagship: {
+const CORE_PRODUCT = [
+  {
     slug: "e-invoice-app",
     title:
       "Redesigning Taiwan Ministry of Finance's Uniform Invoice Award Redemption App",
@@ -15,9 +15,7 @@ const CORE_PRODUCT = {
     role: "Product Designer",
     timeline: "2024 – 2025",
   },
-  /** Shipped product / UX case studies (non-flagship) */
-  more: [
-    {
+  {
       slug: "ai-marketplace",
       title: "MINA · AI marketplace for SF parents",
       outcome:
@@ -42,8 +40,7 @@ const CORE_PRODUCT = {
       role: "Lead Product Designer",
       timeline: "2024 – 2025",
     },
-  ],
-};
+] as const;
 
 /** Research insights that changed what shipped — links go to the evidence in each case study. */
 const RESEARCH_SHAPES_BUILD = [
@@ -70,13 +67,6 @@ const RESEARCH_SHAPES_BUILD = [
   },
 ] as const;
 
-/** Flagship card — full-bleed cover, intrinsic aspect (no crop). */
-const E_INVOICE_FLAGSHIP_COVER = {
-  src: "/home/e-invoice-flagship-cover.png",
-  width: 1024,
-  height: 414,
-} as const;
-
 const WORK_THUMB: Record<string, string> = {
   "e-invoice-app": "/home/e-invoice-flagship-cover.png",
   "ai-marketplace": "/case-studies/mina/mina-ai-hero.png",
@@ -100,42 +90,12 @@ export default function Home() {
       <section id="featured" className="border-b border-zinc-800">
         <div className={`${SITE_SHELL_CONTAINER} py-16 sm:py-20`}>
           <h2 className="sr-only">Selected projects</h2>
-          <FadeInSection delay={0.05}>
-            <Link
-              href={`/case-studies/${CORE_PRODUCT.flagship.slug}`}
-              className="group block overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 transition duration-300 hover:-translate-y-1 hover:border-zinc-500"
-            >
-              <div className="border-b border-zinc-800 bg-zinc-900/40">
-                <Image
-                  src={E_INVOICE_FLAGSHIP_COVER.src}
-                  alt={`${CORE_PRODUCT.flagship.title} — product mockup`}
-                  width={E_INVOICE_FLAGSHIP_COVER.width}
-                  height={E_INVOICE_FLAGSHIP_COVER.height}
-                  className="h-auto w-full max-w-full opacity-95 transition duration-500 ease-out group-hover:scale-[1.01]"
-                  sizes="(max-width: 1480px) 100vw, 1200px"
-                  priority
-                />
-              </div>
-              <div className="px-6 py-8 sm:px-10 sm:py-10">
-                <ProjectCardTag variant="flagship" className="mb-3">
-                  {CORE_PRODUCT.flagship.tag}
-                </ProjectCardTag>
-                <h3 className="text-2xl font-semibold tracking-tight text-zinc-100 transition group-hover:text-zinc-50 sm:text-3xl">
-                  {CORE_PRODUCT.flagship.title}
-                  <span className="mt-2 block text-base font-normal text-zinc-400 sm:text-lg">
-                    {CORE_PRODUCT.flagship.outcome}
-                  </span>
-                </h3>
-              </div>
-            </Link>
-          </FadeInSection>
-
-          <ul className="mt-12 grid grid-cols-1 items-stretch gap-8 sm:grid-cols-2">
-            {CORE_PRODUCT.more.map((item, i) => (
+          <ul className="mt-2 grid grid-cols-1 items-stretch gap-8 sm:grid-cols-2">
+            {CORE_PRODUCT.map((item, i) => (
               <li key={item.slug} className="h-full min-h-0">
                 <FadeInSection
                   className="h-full"
-                  delay={0.04 + i * 0.05}
+                  delay={0.05 + i * 0.05}
                 >
                   <Link
                     href={`/case-studies/${item.slug}`}
