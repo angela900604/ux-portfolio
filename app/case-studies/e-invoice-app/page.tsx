@@ -351,24 +351,26 @@ export default function EInvoiceCaseStudy() {
           </div>
           <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
             <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
-              <Image
-                src={HERO_TABLET_01.src}
-                alt={HERO_TABLET_01.alt}
-                width={1024}
-                height={768}
-                className="h-auto w-full object-cover"
-                sizes="(max-width: 640px) 100vw, 50vw"
-              />
+              <div className="relative aspect-[4/3] w-full overflow-hidden">
+                <Image
+                  src={HERO_TABLET_01.src}
+                  alt={HERO_TABLET_01.alt}
+                  fill
+                  className="object-cover object-center scale-[1.08]"
+                  sizes="(max-width: 640px) 100vw, 50vw"
+                />
+              </div>
             </div>
             <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
-              <Image
-                src={HERO_TABLET_02.src}
-                alt={HERO_TABLET_02.alt}
-                width={1024}
-                height={576}
-                className="h-auto w-full object-cover"
-                sizes="(max-width: 640px) 100vw, 50vw"
-              />
+              <div className="relative aspect-[4/3] w-full overflow-hidden">
+                <Image
+                  src={HERO_TABLET_02.src}
+                  alt={HERO_TABLET_02.alt}
+                  fill
+                  className="object-cover object-center scale-[1.08]"
+                  sizes="(max-width: 640px) 100vw, 50vw"
+                />
+              </div>
             </div>
           </div>
 

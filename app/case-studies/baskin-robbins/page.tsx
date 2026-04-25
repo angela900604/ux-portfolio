@@ -480,6 +480,69 @@ export default function BaskinRobbinsCaseStudy() {
           </p>
         </CaseStudyInViewSection>
 
+        <CaseStudyInViewSection className={`space-y-5 ${sectionScroll}`}>
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            Cross-market localization
+          </span>
+          <h2 className="text-zinc-100">
+            What did not transfer 1:1 from Japan, and how I adapted it for Taiwan
+          </h2>
+          <p className="max-w-3xl text-zinc-300 leading-relaxed">
+            The story is not just "Japan-aligned, Taiwan-local rules." The harder
+            work was identifying where proven Japan patterns would break in Taiwan,
+            then aligning engineering, PM, and stakeholders on what to ship now
+            versus phase later.
+          </p>
+          <div className="max-w-4xl space-y-4 rounded-2xl border border-zinc-800 bg-zinc-900/30 p-5 sm:p-6">
+            <p className="text-sm font-semibold uppercase tracking-widest text-zinc-400">
+              Pattern mismatch → adaptation → rationale
+            </p>
+            <ul className="space-y-3 text-zinc-300 leading-relaxed">
+              <li>
+                <span className="font-medium text-zinc-100">
+                  Membership logic mismatch:
+                </span>{" "}
+                Japan&apos;s level system is strongly points-driven, while Taiwan
+                membership is spending-driven. I mapped the reward model to local
+                spending rules first, then scoped points mechanics as phased
+                enhancements.
+              </li>
+              <li>
+                <span className="font-medium text-zinc-100">
+                  Redemption expectation mismatch:
+                </span>{" "}
+                Japan flows assume a mature in-app points redemption habit. Taiwan
+                launch constraints and backend readiness meant we had to simplify
+                first-release redemption paths to avoid dead-end UX.
+              </li>
+              <li>
+                <span className="font-medium text-zinc-100">
+                  Information architecture mismatch:
+                </span>{" "}
+                Some Japan navigation groupings did not match local promotional and
+                campaign behavior. I reorganized functional priorities by local
+                decision moments (membership, offers, redemption) instead of
+                mirroring labels 1:1.
+              </li>
+              <li>
+                <span className="font-medium text-zinc-100">
+                  Delivery reality mismatch:
+                </span>{" "}
+                Not every localization insight could land in phase one. I worked
+                with engineering to define feasible MVP cuts and timeline-safe
+                alternatives, then used interpreted stakeholder reviews to secure
+                alignment before UI lock.
+              </li>
+            </ul>
+          </div>
+          <p className="max-w-3xl text-zinc-300 leading-relaxed">
+            This is the same localization muscle relevant to TikTok UG team
+            work—taking a successful core experience and translating it for
+            Japan/Korea market behavior, policy constraints, and local user
+            expectations without losing delivery speed.
+          </p>
+        </CaseStudyInViewSection>
+
         <CaseStudyInViewSection
           id="visual-style"
           className={`space-y-6 ${sectionScroll}`}
