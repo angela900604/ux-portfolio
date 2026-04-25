@@ -17,7 +17,7 @@ import { OutcomeAutoSlideshow } from "./OutcomeAutoSlideshow";
 import { FinalScreensMarquee } from "./FinalScreensMarquee";
 import { PhoneMockup, PortraitTile, WideFigure } from "./EInvoiceFigures";
 import { HomeBeforeAfterSlider } from "./HomeBeforeAfterSlider";
-import { OnboardingDemoVideo } from "./OnboardingDemoVideo";
+import { GuidedOnboardingVideoPair } from "./OnboardingDemoVideo";
 import { SettingHomeModulesVideo } from "./SettingHomeModulesVideo";
 import { LoginBeforeAfterSlider } from "./LoginBeforeAfterSlider";
 
@@ -144,6 +144,8 @@ const KEY_OUTCOME_ROWS: {
   problem: string;
   decision: string;
   outcome: string;
+  /** Optional line directly under the section title (e.g. localization note). */
+  titleNote?: string;
 }[] = [
   {
     title:
@@ -174,6 +176,8 @@ const KEY_OUTCOME_ROWS: {
       "Reframe first launch as a guided setup where each step explains the outcome, not the feature. For bank account linking: surface it as \"wins go straight to your account — no manual step needed,\" and address trust explicitly. Because this step collects financial verification data, we worked through exactly what the bank required and why, then wrote per-field explanations in the UI so users understood what they were providing and how it would be used. Clarity about data purpose is what makes people willing to complete the step. For biometrics: the real value for elderly users isn't convenience — it's that as long as the app is opened within 90 days before the token expires, they never need to remember a password again. That's the difference between needing a family member to log in for you, and being able to do it independently.",
     outcome:
       'Older adults said, "Quick-login setup is really convenient; I do not need to remember passwords anymore." Foreign residents said, "The explanations are clear; now I finally understand how to set prize payouts to auto-transfer."',
+    titleNote:
+      "針對外籍人士我也做了英文版本（我會再加畫面）。",
   },
 ];
 
@@ -547,8 +551,13 @@ export default function EInvoiceCaseStudy() {
                 }
               >
                 <div className="min-w-0 space-y-6">
-                  <div className="max-w-4xl">
+                  <div className="max-w-4xl space-y-3">
                     <h2 className={KEY_OUTCOME_STORY_TITLE_CLASS}>{row.title}</h2>
+                    {row.titleNote ? (
+                      <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
+                        {row.titleNote}
+                      </p>
+                    ) : null}
                   </div>
                   <div className={row.onboardingDemoVideo ? "max-w-3xl" : undefined}>
                     <div className="rounded-xl border border-emerald-500/25 bg-emerald-500/[0.07] px-4 py-3 sm:px-5 sm:py-4">
@@ -589,7 +598,7 @@ export default function EInvoiceCaseStudy() {
                     </div>
                   </div>
                   {row.onboardingDemoVideo ? (
-                    <OnboardingDemoVideo className="w-full" />
+                    <GuidedOnboardingVideoPair className="w-full" />
                   ) : null}
                 </div>
                 {row.beforeAfterLoginSlider ? (

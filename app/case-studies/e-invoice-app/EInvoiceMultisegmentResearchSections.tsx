@@ -115,12 +115,6 @@ export function EInvoiceMultisegmentResearchSections() {
               },
               {
                 quote:
-                  "My mom gives up. Too many words, too small. She only trusts paper.",
-                quoteSource: "— App Store review (Taiwan)",
-                quoteStyle: "review",
-              },
-              {
-                quote:
                   "Sharpest pain for silver users: uncertainty about what to tap next and anxiety about mistakes—not lack of motivation to use the service.",
                 quoteSource: "— Interview synthesis · silver (51+)",
                 quoteStyle: "synthesis",
