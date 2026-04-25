@@ -589,6 +589,7 @@ export default function EInvoiceCaseStudy() {
           </div>
         </CaseStudyInViewSection>
 
+        <div className="space-y-6 sm:space-y-8">
         <DesignJourneyCollapsible
           journeySectionIds={E_INVOICE_JOURNEY_IDS}
           panelId="e-invoice-design-journey-panel"
@@ -1107,6 +1108,7 @@ export default function EInvoiceCaseStudy() {
             </a>
           </div>
         </CaseStudyInViewSection>
+        </div>
 
         <CaseStudyInViewSection className="border-t border-zinc-800 pt-12 space-y-8">
           <CaseStudyPrevNext currentSlug="e-invoice-app" />

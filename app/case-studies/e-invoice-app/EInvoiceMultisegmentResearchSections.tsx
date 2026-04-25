@@ -16,28 +16,28 @@ function PainBlock({
   }[];
 }) {
   return (
-    <div className="rounded-2xl border border-zinc-800/90 bg-zinc-900/35 p-6 sm:p-8">
+    <div className="rounded-2xl border border-zinc-200/90 bg-white/80 p-6 shadow-sm backdrop-blur-sm sm:p-8">
       <div className="min-w-0 max-w-3xl space-y-4">
         <span
           className={`inline-flex rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] ${badgeClassName}`}
         >
           {badge}
         </span>
-        <h4 className="text-xl font-semibold tracking-tight text-zinc-100 sm:text-2xl">
+        <h4 className="text-xl font-semibold tracking-tight text-zinc-900 sm:text-2xl">
           {title}
         </h4>
-        <p className="text-base leading-relaxed text-zinc-300 sm:text-[1.05rem]">
+        <p className="text-base leading-relaxed text-zinc-700 sm:text-[1.05rem]">
           {body}
         </p>
         {quotes.map((q, i) => {
           const quoteClasses =
             q.quoteStyle === "synthesis"
-              ? "text-sm leading-relaxed text-zinc-400 sm:text-base"
-              : "text-sm italic leading-relaxed text-zinc-400 sm:text-base";
+              ? "text-sm leading-relaxed text-zinc-600 sm:text-base"
+              : "text-sm italic leading-relaxed text-zinc-600 sm:text-base";
           return (
             <figure
               key={i}
-              className="border-l-2 border-amber-500/45 pl-4 pt-1"
+              className="border-l-2 border-zinc-300 pl-4 pt-1"
             >
               <blockquote className={quoteClasses}>
                 {q.quoteStyle === "synthesis" ? (
@@ -49,7 +49,7 @@ function PainBlock({
                 )}
               </blockquote>
               {q.quoteSource ? (
-                <figcaption className="mt-2 text-xs text-zinc-500">
+                  <figcaption className="mt-2 text-xs text-zinc-500">
                   {q.quoteSource}
                 </figcaption>
               ) : null}
@@ -62,7 +62,7 @@ function PainBlock({
 }
 
 const BADGE_USER_PAIN =
-  "bg-rose-500/12 text-rose-200/95 ring-1 ring-rose-500/30";
+  "bg-rose-600 text-white";
 
 /**
  * Condensed user-pain narrative (App Store + interviews) for the e-invoice case study.
@@ -150,7 +150,7 @@ export function EInvoiceMultisegmentResearchSections() {
       {/* Shared truth + conflict insights — light cards (distinct from CTA pill below) */}
       <section className="grid gap-4 sm:gap-5 lg:grid-cols-2 lg:gap-6">
         <div className="flex min-h-0 flex-col rounded-2xl border border-zinc-200/70 bg-white/90 p-6 shadow-[0_1px_0_rgba(0,0,0,0.04)] backdrop-blur-sm sm:p-8">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-emerald-800/90">
+          <p className="inline-flex w-fit rounded-full bg-emerald-600 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-white">
             Shared truth
           </p>
           <p className="mt-4 text-lg font-semibold leading-relaxed text-zinc-900 sm:text-xl">
@@ -159,7 +159,7 @@ export function EInvoiceMultisegmentResearchSections() {
           </p>
         </div>
         <div className="flex min-h-0 flex-col rounded-2xl border border-zinc-200/70 bg-white/90 p-6 shadow-[0_1px_0_rgba(0,0,0,0.04)] backdrop-blur-sm sm:p-8">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-amber-900/85">
+          <p className="inline-flex w-fit rounded-full bg-amber-600 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-white">
             Conflict insights
           </p>
           <p className="mt-4 text-lg font-semibold leading-relaxed text-zinc-900 sm:text-xl">
