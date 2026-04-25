@@ -10,6 +10,7 @@ import { CaseStudyHeroFullBleed } from "../_components/CaseStudyHeroFullBleed";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { DesignJourneyCollapsible } from "../_components/DesignJourneyCollapsible";
+import { CompetitorLandscapeTable } from "./CompetitorLandscapeTable";
 import { ProblemPersonasBlock } from "./ProblemPersonasBlock";
 import { EInvoiceHeroTldr } from "./EInvoiceHeroTldr";
 import { OutcomeAutoSlideshow } from "./OutcomeAutoSlideshow";
@@ -24,7 +25,7 @@ export const metadata = {
   title:
     "Redesigning Taiwan Ministry of Finance's Uniform Invoice Award Redemption App | Angela Yang",
   description:
-    "End-to-end mobile app redesign for the Ministry of Finance Cloud Invoice App: research, competitors, IA, testing (~88% task success), accessibility, and measurable outcomes.",
+    "Government mobile app used by ~20 million people: trust & inclusion at national scale—multi-segment research (age, language, accessibility), competitive benchmarking, IA, ~88% prototype task success, measurable login and onboarding lifts.",
 };
 
 const FIGMA_MOCKUP_PAGE =
@@ -300,9 +301,14 @@ export default function EInvoiceCaseStudy() {
           }
           title={
             <h1 className="mt-5 max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
-              Redesigning Taiwan Ministry of Finance&apos;s Uniform Invoice Award
-              Redemption App
+              Redesigning a government service used by 20 million people
             </h1>
+          }
+          subtitle={
+            <p className="text-lg leading-relaxed text-zinc-200 sm:text-xl">
+              Designing for radical user diversity across age, language, and
+              accessibility at national scale.
+            </p>
           }
           leadBelowSubtitle={
             <CaseStudyAtAGlance
@@ -341,6 +347,60 @@ export default function EInvoiceCaseStudy() {
       </header>
 
       <CaseStudyContentLayout>
+        <CaseStudyInViewSection
+          id="trust-inclusion-framing"
+          className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
+        >
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            Trust, privacy &amp; inclusion
+          </span>
+          <div className="max-w-3xl space-y-4">
+            <p className="text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
+              This was a trust and inclusion problem as much as a UX problem —{" "}
+              financial data, civic participation, and user autonomy were all on
+              the line.
+            </p>
+            <p className="text-zinc-300 leading-relaxed">
+              The research program was built for{" "}
+              <span className="text-zinc-100">
+                radically different capabilities and contexts
+              </span>
+              —teens through silver adults, low-vision and VoiceOver users,
+              foreign residents navigating Chinese-heavy UI—because exclusion here
+              means people miss money they&apos;re owed or disengage from a public
+              program. That&apos;s the same class of problem global platforms face
+              when they ship for diverse, high-stakes audiences:{" "}
+              <span className="text-zinc-100">
+                clarity, accessible structure, and predictable control
+              </span>{" "}
+              matter as much as visual polish.
+            </p>
+          </div>
+        </CaseStudyInViewSection>
+
+        <CaseStudyInViewSection
+          id="competitive-landscape"
+          className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
+        >
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            Competitive landscape
+          </span>
+          <div className="max-w-3xl space-y-3">
+            <h2 className="text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
+              Market read before locking IA—not competitor slides after the
+              solution
+            </h2>
+            <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
+              Early in discovery I benchmarked how Taiwanese users actually
+              experience invoice apps: where third parties won on habit and density,
+              where the official app still owned policy-complete trust, and where
+              LINE removed install friction. Those gaps informed what &quot;good&quot;
+              had to mean before we drew final home and task models.
+            </p>
+          </div>
+          <CompetitorLandscapeTable />
+        </CaseStudyInViewSection>
+
         <ProblemPersonasBlock />
 
         <CaseStudyInViewSection
@@ -690,7 +750,7 @@ export default function EInvoiceCaseStudy() {
         >
           <div className="max-w-3xl space-y-6">
             <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-              05 · Testing &amp; iterations
+              05 · Testing &amp; iterations · Accessibility in the protocol
             </span>
             <h2 className="max-w-3xl text-zinc-100">
               Twelve moderated sessions—including low-vision users—landed at{" "}
@@ -699,7 +759,8 @@ export default function EInvoiceCaseStudy() {
             </h2>
             <p className="max-w-3xl text-sm leading-relaxed text-zinc-400">
               One-on-one observation on core tasks; errors and satisfaction tracked so
-              accessibility and efficiency fixes could ship before launch.
+              VoiceOver paths, visual hierarchy, and plain-language fixes could ship
+              before launch—not relegated to a late &quot;a11y pass.&quot;
             </p>
             <h6 className="text-zinc-400">
               Five core test tasks
@@ -886,9 +947,51 @@ export default function EInvoiceCaseStudy() {
             Reflection
           </span>
           <h2 className="max-w-3xl text-zinc-100">
-            This project sharpened how I pair public-sector governance with inclusive
-            UX—evidence first, then design that survives stakeholder review.
+            The hardest decision was the home density conflict between younger and
+            silver users
           </h2>
+          <div className="max-w-3xl space-y-4 text-zinc-300 leading-relaxed">
+            <p>
+              Interviews were unambiguous: one group needed the sparsest possible
+              home and loud visual anchors; another wanted a richer dashboard with
+              shortcuts and status surfacing immediately. A single static default
+              would always read as &quot;wrong&quot; to half the base. I chose{" "}
+              <span className="text-zinc-100">
+                configurability—optional home modules with fixed rails
+              </span>{" "}
+              over picking one designed default and accepting that we&apos;d quietly
+              fail a major segment.
+            </p>
+            <p>
+              The cost showed up in testing:{" "}
+              <span className="text-zinc-100">
+                first launch picked up cognitive overhead
+              </span>{" "}
+              because people encountered density choices before they had finished a
+              single high-confidence task. If I were redesigning today, I&apos;d
+              validate a{" "}
+              <span className="text-zinc-100">
+                tiered onboarding sequence in production
+              </span>
+              —complete one core job (e.g. scan or passbook) with a sane default,
+              then surface module toggles with clearer presets. Same principle as
+              progressive disclosure in trust-heavy products:{" "}
+              <span className="text-zinc-100">
+                earn comprehension before preference complexity
+              </span>
+              , and A/B test when that handoff happens.
+            </p>
+            <p>
+              A second lesson sat in the data tail: carrier binding scored lowest
+              not because the taps were hard, but because people didn&apos;t
+              understand why the step existed—that&apos;s a{" "}
+              <span className="text-zinc-100">
+                comprehension-over-dexterity
+              </span>{" "}
+              problem. It reinforced that &quot;inclusive&quot; here is often about
+              scenario language and mental models, not only bigger type.
+            </p>
+          </div>
 
           <div
             id="business-constraints"
@@ -928,36 +1031,25 @@ export default function EInvoiceCaseStudy() {
             </div>
           </div>
 
-          <CaseStudyExpandable label="Reflections &amp; next steps">
-            <p className="text-zinc-300 leading-relaxed">
-              I learned how differently diverse users interact with the app—from
-              tech-savvy younger users to elderly users with accessibility needs.
-              Prioritizing core functions like quick barcode access, scanning, and prize
-              redemption is essential. Multi-sensory feedback and guided onboarding help
-              users feel confident and independent.
-            </p>
-            <p className="mt-3 text-zinc-300 leading-relaxed">
-              If I had more time, I would explore deeper personalization—adaptive
-              interfaces for different ages, tech skills, and accessibility needs—and
-              expand testing with more diverse users to catch edge cases and optimize
-              every interaction.
-            </p>
-            <p className="mt-3 text-zinc-300 leading-relaxed">
-              This project strengthened my skills in user research, empathy-driven
-              design, and iterative prototyping. Good UX/UI doesn&apos;t only make
-              apps usable—it makes them inclusive, trustworthy, and enjoyable for
-              everyone.
-            </p>
-            <p className="mt-3 text-zinc-300 leading-relaxed">
-              We saw firsthand how small frustrations—forgotten passwords, complex
-              redemption, unclear navigation—shape daily life. By redesigning with
-              simplicity, accessibility, and guidance at the core, the experience
-              became smoother and faster. Looking forward, deeper backend integration
-              and connections with other financial and loyalty systems could make the
-              app even smarter and more efficient. Thoughtful design doesn&apos;t only
-              look good—it changes how people interact with technology in meaningful
-              ways.
-            </p>
+          <CaseStudyExpandable label="What I&apos;d validate next">
+            <ul className="list-disc space-y-2 pl-5 text-zinc-300 leading-relaxed marker:text-zinc-500">
+              <li>
+                Production experiment on{" "}
+                <span className="text-zinc-200">when</span> optional home modules
+                are introduced (after first successful task vs. first session).
+              </li>
+              <li>
+                Deeper pairing with policy/legal on{" "}
+                <span className="text-zinc-200">how much scenario copy</span> we
+                can show in carrier binding without over-promising merchant
+                coverage.
+              </li>
+              <li>
+                Longitudinal study on{" "}
+                <span className="text-zinc-200">VoiceOver task time</span> after
+                IA stabilization—not just pass/fail in one lab cycle.
+              </li>
+            </ul>
           </CaseStudyExpandable>
           <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
             <Image

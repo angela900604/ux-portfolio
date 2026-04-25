@@ -4,7 +4,6 @@ import { SITE_SHELL_CONTAINER } from "@/lib/site-shell";
 import { FadeInSection } from "./components/FadeInSection";
 import { HeroWithBubble } from "./components/HeroWithBubble";
 import { ProjectCardTag } from "./components/ProjectCardTag";
-import { ServiceOverview } from "./components/ServiceOverview";
 
 const CORE_PRODUCT = {
   flagship: {
@@ -21,7 +20,8 @@ const CORE_PRODUCT = {
     {
       slug: "ai-marketplace",
       title: "MINA · AI marketplace for SF parents",
-      outcome: "Coming soon · case study in progress",
+      outcome:
+        "~30% completed listings (PostHog) · AI listing & copilot · App Store (Canada)",
       tag: "AI · Marketplace",
       role: "Lead Product Designer",
       timeline: "2025 – Present",
@@ -45,52 +45,28 @@ const CORE_PRODUCT = {
   ],
 };
 
-/** Growth, brand, and IP—complements core product craft */
-const ADJACENT_WORK = [
+/** Research insights that changed what shipped — links go to the evidence in each case study. */
+const RESEARCH_SHAPES_BUILD = [
   {
-    slug: "admission-hub",
-    title: "Admission Hub (Digital Marketing)",
-    outcome: "+18% organic traffic, +21% engagement",
-    tag: "Digital Marketing",
-    role: "Digital Marketer",
-    timeline: "May – Aug 2022",
-  },
-  {
-    slug: "momi-animal-health",
-    title: "MOMI Animal Health (Digital Marketing)",
-    outcome: "+75% online sales in 2 months",
-    tag: "Digital Marketing",
-    role: "Social Media & eCommerce",
-    timeline: "Mar – Aug 2021",
-  },
-  {
-    slug: "phyphyya",
-    title: "Haphy Living (Brand IP)",
-    outcome: "Brand identity system for Instagram/eCommerce",
-    tag: "Branding",
-    role: "Branding & Visual Design",
-    timeline: "2023 – 2024",
-  },
-];
-
-const USER_RESEARCH_SKILLS = [
-  {
-    title: "Competitor analysis",
+    source: "Taiwan e-Invoice · Ministry of Finance app",
+    title: 'Carrier binding: "comprehension," not dexterity',
     summary:
-      "Benchmarking product patterns, positioning, and UX decisions to find realistic opportunities and differentiation.",
-    href: "/user-research-journey#competitor-analysis",
+      "Moderated tests showed people stalling before the mechanics—not because taps were hard, but because ministry jargon hid why binding mattered. We reframed the task around automatic capture scenarios and in-flow help, not shorter forms.",
+    href: "/case-studies/e-invoice-app#carrier-binding-insight",
   },
   {
-    title: "Multisegment interviews",
+    source: "Taiwan e-Invoice · multisegment research",
+    title: "One home, two incompatible defaults",
     summary:
-      "Running interviews across different user groups to surface conflicts, shared needs, and decision-ready insights.",
-    href: "/user-research-journey#multisegment-interviews",
+      "Silver and low-vision participants wanted the sparsest home; younger users wanted a dense dashboard. Research killed the idea of a single static layout—we shipped optional modules with fixed rails (scan + passbook) so neither audience was structurally wronged.",
+    href: "/case-studies/e-invoice-app#key-outcomes",
   },
   {
-    title: "Accessibility",
+    source: "MINA · AI marketplace",
+    title: "High-risk AI needs explicit human control",
     summary:
-      "Identifying barriers early and validating inclusive flows for users with different abilities, contexts, and constraints.",
-    href: "/user-research-journey#accessibility",
+      "Parents won’t tolerate silent automation on payouts and listings. Interviews surfaced automation anxiety and loss of control; the product response was preview-before-publish, clear confirmations, and reversibility—not more model cleverness.",
+    href: "/case-studies/ai-marketplace#ai-trust",
   },
 ] as const;
 
@@ -106,9 +82,6 @@ const WORK_THUMB: Record<string, string> = {
   "ai-marketplace": "/case-studies/mina/mina-ai-hero.png",
   "government-backend": "/case-studies/government-backend/home-cover.png",
   "baskin-robbins": "/case-studies/baskin-robbins/home-cover.png",
-  "admission-hub": "/case-studies/admission-hub/home-cover.png",
-  "momi-animal-health": "/case-studies/momi-animal-health/home-cover.png",
-  "phyphyya": "/case-studies/phyphyya/gallery-14.png",
 };
 
 export default function Home() {
@@ -157,7 +130,7 @@ export default function Home() {
             </Link>
           </FadeInSection>
 
-          <ul className="mt-12 grid items-stretch gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="mt-12 grid grid-cols-1 items-stretch gap-8 sm:grid-cols-2">
             {CORE_PRODUCT.more.map((item, i) => (
               <li key={item.slug} className="h-full min-h-0">
                 <FadeInSection
@@ -174,7 +147,7 @@ export default function Home() {
                         alt={`${item.title} thumbnail`}
                         fill
                         className="object-cover opacity-92 transition duration-500 group-hover:scale-[1.04]"
-                        sizes="(max-width: 896px) 100vw, 400px"
+                        sizes="(max-width: 639px) 100vw, (max-width: 1480px) 50vw, 720px"
                       />
                       <div
                         className="pointer-events-none absolute inset-0 bg-gradient-to-t from-zinc-950/50 to-transparent opacity-0 transition duration-300 group-hover:opacity-100"
@@ -202,23 +175,33 @@ export default function Home() {
         <div className={`${SITE_SHELL_CONTAINER} py-16 sm:py-20`}>
           <FadeInSection>
             <h2 className="text-2xl font-semibold tracking-tight text-zinc-100 sm:text-3xl md:text-[2rem]">
-              My user research skills
+              How research shapes what I build
             </h2>
+            <p className="mt-3 max-w-3xl text-base leading-relaxed text-zinc-400 sm:text-lg">
+              Method labels don&apos;t change roadmaps—reframes from the field do.
+              Three examples where evidence forced a different product decision.
+            </p>
           </FadeInSection>
           <ul className="mt-8 grid items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-            {USER_RESEARCH_SKILLS.map((item, i) => (
-              <li key={item.title} className="h-full min-h-0">
+            {RESEARCH_SHAPES_BUILD.map((item, i) => (
+              <li key={item.href} className="h-full min-h-0">
                 <FadeInSection className="h-full" delay={0.04 + i * 0.05}>
                   <Link
                     href={item.href}
                     className="group flex h-full min-h-0 flex-col rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 transition duration-300 hover:-translate-y-0.5 hover:border-zinc-500 hover:shadow-[0_20px_48px_-28px_rgba(0,0,0,0.75)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-400 sm:p-8"
                   >
-                    <h3 className="text-xl font-semibold tracking-tight text-zinc-100 transition group-hover:text-zinc-50 sm:text-2xl">
+                    <p className="text-[11px] font-semibold uppercase tracking-wider text-zinc-500">
+                      {item.source}
+                    </p>
+                    <h3 className="mt-3 text-xl font-semibold tracking-tight text-zinc-100 transition group-hover:text-zinc-50 sm:text-2xl">
                       {item.title}
                     </h3>
                     <p className="mt-4 text-base leading-relaxed text-zinc-300 sm:text-lg">
                       {item.summary}
                     </p>
+                    <span className="mt-5 text-sm font-medium text-zinc-400 group-hover:text-zinc-200">
+                      Read in case study →
+                    </span>
                   </Link>
                 </FadeInSection>
               </li>
@@ -226,57 +209,6 @@ export default function Home() {
           </ul>
         </div>
       </section>
-
-      {/* Brand & storytelling — no visible section blurb */}
-      <section id="selected-work" className="border-b border-zinc-800">
-        <div className={`${SITE_SHELL_CONTAINER} py-16 sm:py-20`}>
-          <FadeInSection>
-            <h2 className="text-2xl font-semibold tracking-tight text-zinc-100 sm:text-3xl md:text-[2rem]">
-              How I Connect Brand &amp; Users
-            </h2>
-          </FadeInSection>
-          <ul className="mt-8 grid items-stretch gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {ADJACENT_WORK.map((item, i) => (
-              <li key={item.slug} className="h-full min-h-0">
-                <FadeInSection
-                  className="h-full"
-                  delay={0.04 + i * 0.05}
-                >
-                  <Link
-                    href={`/case-studies/${item.slug}`}
-                    className="group flex h-full min-h-0 flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/30 transition duration-300 hover:-translate-y-1 hover:border-zinc-500 hover:shadow-[0_20px_48px_-28px_rgba(0,0,0,0.75)]"
-                  >
-                    <div className="relative aspect-[16/11] overflow-hidden bg-zinc-900/50">
-                      <Image
-                        src={WORK_THUMB[item.slug]}
-                        alt={`${item.title} thumbnail`}
-                        fill
-                        className="object-cover opacity-92 transition duration-500 group-hover:scale-[1.04]"
-                        sizes="(max-width: 896px) 100vw, 400px"
-                      />
-                      <div
-                        className="pointer-events-none absolute inset-0 bg-gradient-to-t from-zinc-950/50 to-transparent opacity-0 transition duration-300 group-hover:opacity-100"
-                        aria-hidden
-                      />
-                    </div>
-                    <div className="flex flex-1 flex-col p-6 sm:p-8">
-                      <ProjectCardTag>{item.tag}</ProjectCardTag>
-                      <h3 className="mt-3 text-xl font-semibold tracking-tight text-zinc-100 group-hover:text-zinc-50 sm:text-2xl">
-                        {item.title}
-                        <span className="mt-2 block text-sm font-normal text-zinc-400 sm:text-base">
-                          {item.outcome}
-                        </span>
-                      </h3>
-                    </div>
-                  </Link>
-                </FadeInSection>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      <ServiceOverview />
 
       {/* Contact */}
       <section id="contact" className="border-b border-zinc-800">

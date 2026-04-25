@@ -2,6 +2,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { SITE_SHELL_CONTAINER } from "@/lib/site-shell";
 import { BeyondDesignGallery } from "../components/BeyondDesignGallery";
+import { FadeInSection } from "../components/FadeInSection";
+import { ProjectCardTag } from "../components/ProjectCardTag";
+import {
+  ADJACENT_WORK,
+  ADJACENT_WORK_THUMB,
+} from "../content/adjacent-work";
 import {
   BEYOND_GRAPHIC_GALLERY,
   BEYOND_PHOTOGRAPHY_GALLERY,
@@ -18,7 +24,7 @@ const ABOUT_CARD_BODY_CLASS =
 export const metadata = {
   title: "About | Angela Yang",
   description:
-    "Product Designer: AI-driven B2C mobile & iOS, consumer experiences. MINA AI; Taiwan e-Invoice; Baskin-Robbins. Multi-segment research; B2B/gov as portfolio breadth. Vancouver.",
+    "Product designer: consumer mobile, multi-role UX across government-scale and B2C, diverse user research. AI-driven consumer products; social platform design. Vancouver.",
 };
 
 export default function AboutPage() {
@@ -52,43 +58,11 @@ export default function AboutPage() {
 
             <div className="flex min-w-0 flex-col gap-5 text-base leading-relaxed text-zinc-300 sm:text-lg">
               <p className="max-w-3xl text-lg font-medium leading-snug tracking-[-0.015em] text-zinc-100 sm:text-xl sm:leading-snug md:text-2xl md:leading-[1.35]">
-                Product designer with experience across{" "}
-                <span className="font-semibold text-zinc-50">
-                  B2C iOS and Android mobile, membership systems, government
-                  platforms, AI-driven features, and B2B SaaS,
-                </span>{" "}
-                spanning early-stage startups and large-scale tech companies.
-              </p>
-              <p className="font-medium text-zinc-100">
-                Currently at MINA AI as a sole designer building an AI-driven
-                logistics marketplace product from 0→1, while owning the design
-                system and working closely with founders and engineers.
-              </p>
-              <p>
-                Before that, I worked at Turn Cloud in Taiwan on the Taiwan
-                e-Invoice app, a nationwide service used by millions, and
-                designed internal government dashboards across multi-role
-                workflows. I also led design for the Baskin-Robbins Taiwan
-                membership platform and worked with stakeholders in Japan.
-              </p>
-              <p>
-                My work centers on{" "}
-                <span className="font-semibold text-zinc-50">consumer mobile</span>
-                {" "}and{" "}
-                <span className="font-semibold text-zinc-50">
-                  AI-assisted experiences
-                </span>
-                ,{" "}
-                <span className="font-semibold text-zinc-50">multi-role flows</span>{" "}
-                when the product demands them, and design systems that scale.
-                I&apos;m especially interested in{" "}
-                <span className="font-semibold text-zinc-50">
-                  multi-segment user research
-                </span>{" "}
-                from teens to seniors to internal staff, and how different user
-                needs shape product decisions. I work closely with PMs and
-                engineers, and I&apos;m comfortable leading projects end-to-end
-                in fast-moving environments.
+                Product designer specializing in consumer mobile experiences —
+                I&apos;ve shipped complex, multi-role UX across government-scale
+                and B2C platforms, with a strong research foundation in diverse
+                user segments. I&apos;m now focused on AI-driven consumer
+                products and expanding into social platform design.
               </p>
               <p>
                 Based in Vancouver, BC. Open to relocation, remote, or hybrid.
@@ -201,6 +175,49 @@ export default function AboutPage() {
                 Through travel photography, I capture details from different cities. It is one of my ways to train visual sensitivity and build a more grounded understanding of aesthetics.
               </p>
             </div>
+          </div>
+
+          <div className="mt-12 min-w-0">
+            <FadeInSection>
+              <h2 className="text-2xl font-semibold tracking-tight text-zinc-100 sm:text-3xl md:text-[2rem]">
+                How I Connect Brand &amp; Users
+              </h2>
+            </FadeInSection>
+            <ul className="mt-8 grid items-stretch gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              {ADJACENT_WORK.map((item, i) => (
+                <li key={item.slug} className="h-full min-h-0">
+                  <FadeInSection className="h-full" delay={0.04 + i * 0.05}>
+                    <Link
+                      href={`/case-studies/${item.slug}`}
+                      className="group flex h-full min-h-0 flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/30 transition duration-300 hover:-translate-y-1 hover:border-zinc-500 hover:shadow-[0_20px_48px_-28px_rgba(0,0,0,0.75)]"
+                    >
+                      <div className="relative aspect-[16/11] overflow-hidden bg-zinc-900/50">
+                        <Image
+                          src={ADJACENT_WORK_THUMB[item.slug]}
+                          alt={`${item.title} thumbnail`}
+                          fill
+                          className="object-cover opacity-92 transition duration-500 group-hover:scale-[1.04]"
+                          sizes="(max-width: 896px) 100vw, 400px"
+                        />
+                        <div
+                          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-zinc-950/50 to-transparent opacity-0 transition duration-300 group-hover:opacity-100"
+                          aria-hidden
+                        />
+                      </div>
+                      <div className="flex flex-1 flex-col p-6 sm:p-8">
+                        <ProjectCardTag>{item.tag}</ProjectCardTag>
+                        <h3 className="mt-3 text-xl font-semibold tracking-tight text-zinc-100 group-hover:text-zinc-50 sm:text-2xl">
+                          {item.title}
+                          <span className="mt-2 block text-sm font-normal text-zinc-400 sm:text-base">
+                            {item.outcome}
+                          </span>
+                        </h3>
+                      </div>
+                    </Link>
+                  </FadeInSection>
+                </li>
+              ))}
+            </ul>
           </div>
 
           <BeyondDesignGallery

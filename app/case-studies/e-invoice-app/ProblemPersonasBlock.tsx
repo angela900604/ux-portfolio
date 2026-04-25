@@ -18,6 +18,12 @@ export function ProblemPersonasBlock() {
           Roughly 20 million people rely on the official app—yet ~2.8★ ratings and
           broken flows were excluding elders, newcomers, and low-vision users.
         </h2>
+        <p className="max-w-3xl text-sm leading-relaxed text-zinc-400 sm:text-base">
+          Exclusion here is not abstract: it means missed payouts, unreadable
+          financial history for residents who don&apos;t read Chinese fluently, and
+          dependence on family for basic civic tasks—privacy and autonomy degrade
+          when the official path doesn&apos;t meet people where they are.
+        </p>
         <CaseStudyExpandable label="Context and design goal">
           <p className="text-zinc-300">
             In Taiwan, every purchase comes with an invoice. For years, people
@@ -30,7 +36,9 @@ export function ProblemPersonasBlock() {
           <p className="mt-3 text-zinc-300">
             The issue wasn&apos;t just dated UI: older adults couldn&apos;t use the
             app alone, foreign residents couldn&apos;t parse Chinese labels, and people
-            abandoned sign-in at forgot-password.
+            abandoned sign-in at forgot-password—each failure sits on top of
+            sensitive account and payout data, so trust and accessibility had to move
+            together.
           </p>
           <p className="mt-4 border-l-2 border-emerald-500/40 pl-4 text-sm text-zinc-400">
             <span className="font-medium text-zinc-200">Design goal:</span> users
