@@ -49,11 +49,8 @@ export function SketchPersonasExpandable() {
           </div>
           <div className="min-w-0 text-xs leading-snug">
             <p className="font-medium text-zinc-100">Yi-Ting · 18–30</p>
-            <p className="mt-1 text-zinc-500">
-              Wants speed, aesthetics, dense shortcuts—barcode first, ads never.
-            </p>
             <p className="mt-2 text-[10px] font-medium uppercase tracking-wider text-emerald-400/80">
-              Open full persona →
+              View more →
             </p>
           </div>
         </button>
@@ -77,11 +74,8 @@ export function SketchPersonasExpandable() {
           </div>
           <div className="min-w-0 text-xs leading-snug">
             <p className="font-medium text-zinc-100">David · 31–50</p>
-            <p className="mt-1 text-zinc-500">
-              Balanced power user—biometrics, reminders, reliable at checkout.
-            </p>
             <p className="mt-2 text-[10px] font-medium uppercase tracking-wider text-emerald-400/80">
-              Open full persona →
+              View more →
             </p>
           </div>
         </button>
@@ -105,12 +99,8 @@ export function SketchPersonasExpandable() {
           </div>
           <div className="min-w-0 text-xs leading-snug">
             <p className="font-medium text-zinc-100">Teacher Chen · low vision</p>
-            <p className="mt-1 text-zinc-500">
-              Needs predictable layout, VoiceOver that doesn&apos;t shout, family
-              assist today.
-            </p>
             <p className="mt-2 text-[10px] font-medium uppercase tracking-wider text-emerald-400/80">
-              Open full persona →
+              View more →
             </p>
           </div>
         </button>
@@ -134,12 +124,8 @@ export function SketchPersonasExpandable() {
           </div>
           <div className="min-w-0 text-xs leading-snug">
             <p className="font-medium text-zinc-100">Mei-Ling · 51+ · Silver</p>
-            <p className="mt-1 text-zinc-500">
-              Maze-like flows, small type—needs one clear next step and trust when
-              donating.
-            </p>
             <p className="mt-2 text-[10px] font-medium uppercase tracking-wider text-emerald-400/80">
-              Open full persona →
+              View more →
             </p>
           </div>
         </button>
@@ -163,12 +149,8 @@ export function SketchPersonasExpandable() {
           </div>
           <div className="min-w-0 text-xs leading-snug">
             <p className="font-medium text-zinc-100">Alex · Foreign resident</p>
-            <p className="mt-1 text-zinc-500">
-              Dense Chinese UI and icons—needs calm hierarchy and obvious paths to
-              scan and claim.
-            </p>
             <p className="mt-2 text-[10px] font-medium uppercase tracking-wider text-emerald-400/80">
-              Open full persona →
+              View more →
             </p>
           </div>
         </button>
