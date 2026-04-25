@@ -177,7 +177,7 @@ const KEY_OUTCOME_ROWS: {
     outcome:
       'Older adults said, "Quick-login setup is really convenient; I do not need to remember passwords anymore." Foreign residents said, "The explanations are clear; now I finally understand how to set prize payouts to auto-transfer."',
     titleNote:
-      "I also delivered an English-language version for foreign residents; UI captures will be added here next.",
+      "I also delivered an English-language version for foreign residents.",
   },
 ];
 
@@ -619,7 +619,8 @@ export default function EInvoiceCaseStudy() {
           </div>
         </CaseStudyInViewSection>
 
-        <div className="flex flex-col gap-6"><DesignJourneyCollapsible
+        <div className="flex min-w-0 flex-col gap-6">
+          <div className="flex min-w-0 flex-col gap-[1.5rem]"><DesignJourneyCollapsible
           journeySectionIds={E_INVOICE_JOURNEY_IDS}
           panelId="e-invoice-design-journey-panel"
           title="Design journey"
@@ -1103,7 +1104,7 @@ export default function EInvoiceCaseStudy() {
               />
             </div>
           </div>
-        </DesignJourneyCollapsible><CaseStudyInViewSection
+        </DesignJourneyCollapsible></div><CaseStudyInViewSection
           id="figma-resources"
           className="scroll-mt-28 space-y-5 rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6 sm:scroll-mt-32 sm:p-8"
         >
