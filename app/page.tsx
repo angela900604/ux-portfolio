@@ -4,6 +4,7 @@ import { SITE_SHELL_CONTAINER } from "@/lib/site-shell";
 import { FadeInSection } from "./components/FadeInSection";
 import { HeroWithBubble } from "./components/HeroWithBubble";
 import { ProjectCardTag } from "./components/ProjectCardTag";
+import { ADJACENT_WORK, ADJACENT_WORK_THUMB } from "./content/adjacent-work";
 
 const CORE_PRODUCT = [
   {
@@ -27,6 +28,11 @@ const CORE_PRODUCT = [
     title: "Cross-market with Japan HQ · BR31 Taiwan membership app",
     tag: "Mobile · Membership System",
   },
+] as const;
+
+const HOME_PROJECTS = [
+  ...CORE_PRODUCT,
+  ...ADJACENT_WORK,
 ] as const;
 
 /** Research insights — titles + one-line teasers; detail on linked pages. */
@@ -56,6 +62,7 @@ const WORK_THUMB: Record<string, string> = {
   "ai-marketplace": "/case-studies/mina/mina-ai-hero.png",
   "government-backend": "/case-studies/government-backend/home-cover.png",
   "baskin-robbins": "/case-studies/baskin-robbins/home-cover.png",
+  ...ADJACENT_WORK_THUMB,
 };
 
 export default function Home() {
@@ -75,7 +82,7 @@ export default function Home() {
         <div className={`${SITE_SHELL_CONTAINER} py-16 sm:py-20`}>
           <h2 className="sr-only">Selected projects</h2>
           <ul className="mt-2 grid grid-cols-1 items-stretch gap-8 sm:grid-cols-2">
-            {CORE_PRODUCT.map((item, i) => (
+            {HOME_PROJECTS.map((item, i) => (
               <li key={item.slug} className="h-full min-h-0">
                 <FadeInSection
                   className="h-full"
@@ -102,6 +109,11 @@ export default function Home() {
                       <ProjectCardTag>{item.tag}</ProjectCardTag>
                       <h3 className="mt-3 text-xl font-semibold tracking-tight text-zinc-100 group-hover:text-zinc-50 sm:text-2xl">
                         {item.title}
+                        {"outcome" in item ? (
+                          <span className="mt-2 block text-sm font-normal text-zinc-400 sm:text-base">
+                            {item.outcome}
+                          </span>
+                        ) : null}
                       </h3>
                     </div>
                   </Link>
