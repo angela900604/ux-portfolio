@@ -73,6 +73,7 @@ const M_TIME =
 
 const E_INVOICE_JOURNEY_IDS = [
   "functional-map",
+  "competitive-landscape",
   "page-flow-design",
   "testing",
   "carrier-binding-insight",
@@ -156,13 +157,13 @@ const KEY_OUTCOME_ROWS: {
     screenLabel: "guided first-time setup",
     onboardingDemoVideo: true,
     evidence:
-      "To support more automated journeys—like automatic prize payout when you win—the product needed bank details on file, identity checks that did not mean retyping ministry passwords every time, timely nudges (paper scans do not auto-claim the same way as fully digital flows), and cloud backup so invoices survive a phone upgrade. Most newcomers never finished those prerequisites in a sensible order; onboarding completion in tests sat around 55%, and people who skipped early setup later hit friction at redemption or on a new device.",
+      "In interviews, the pattern for elderly and foreign-resident users was consistent: they had won prizes before but missed the redemption window — not because they ignored the notification, but because they didn't know automatic bank transfer was even an option. The setting existed, buried in the account configuration, but onboarding never surfaced it. Completion for the full setup sequence sat at around 55% in tests, and users who skipped it hit the same friction points at every redemption cycle.",
     problem:
-      "Back-end automation only helps after the right upfront choices. Manual prize claims and sensitive settings still demanded verification—without biometrics, that meant password friction. Without a linked bank account, automatic remittance could not run and users risked missing claim windows. Paper receipts depend more on reminders, so thin notification coverage amplified missed deadlines. Local-only storage meant switching phones could erase years of passbook history.",
+      "The product assumed users would discover and configure the automation-enabling steps on their own. They didn't — and for elderly and foreign-resident users especially, that meant money left unclaimed and repeated manual friction at the moments that mattered most.",
     decision:
-      "Reframe first launch as guided setup with one job per step—turn on biometrics (fewer verification loops for claims and settings), connect a bank account for automatic prize transfer, configure push notifications with richer types for deadlines and paper-scan edge cases, and enable cloud backup so records are not trapped on one handset. Each step explains the outcome (automation, fewer missed wins, safe migration), not a generic feature tour.",
+      "Reframe first launch as a guided setup where each step explains the outcome, not the feature. For bank account linking: surface it as \"wins go straight to your account — no manual step needed,\" and address trust explicitly. Because this step collects financial verification data, we worked through exactly what the bank required and why, then wrote per-field explanations in the UI so users understood what they were providing and how it would be used. Clarity about data purpose is what makes people willing to complete the step. For biometrics: the real value for elderly users isn't convenience — it's that as long as the app is opened within 90 days before the token expires, they never need to remember a password again. That's the difference between needing a family member to log in for you, and being able to do it independently.",
     outcome:
-      "Onboarding completion rose from 55% to 85%. In follow-up sessions—including older adults and foreign residents—people understood why each step mattered for payouts, reminders, and keeping their invoice history across devices.",
+      "Older adults said, 「快都登入的設定很快很方便，這樣以後就不用記密碼了。」 Foreign residents said, 「說明寫得很清楚，現在終於知道怎麼讓獎金自動匯款了。」",
   },
 ];
 
@@ -378,29 +379,6 @@ export default function EInvoiceCaseStudy() {
           </div>
         </CaseStudyInViewSection>
 
-        <CaseStudyInViewSection
-          id="competitive-landscape"
-          className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
-        >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Competitive landscape
-          </span>
-          <div className="max-w-3xl space-y-3">
-            <h2 className="text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
-              Market read before locking IA—not competitor slides after the
-              solution
-            </h2>
-            <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
-              Early in discovery I benchmarked how Taiwanese users actually
-              experience invoice apps: where third parties won on habit and density,
-              where the official app still owned policy-complete trust, and where
-              LINE removed install friction. Those gaps informed what &quot;good&quot;
-              had to mean before we drew final home and task models.
-            </p>
-          </div>
-          <CompetitorLandscapeTable />
-        </CaseStudyInViewSection>
-
         <ProblemPersonasBlock />
 
         <CaseStudyInViewSection
@@ -583,49 +561,6 @@ export default function EInvoiceCaseStudy() {
           </div>
         </CaseStudyInViewSection>
 
-        <CaseStudyInViewSection
-          id="impact-results"
-          className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
-        >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Impact &amp; results
-          </span>
-          <h2 className="max-w-3xl text-zinc-100">
-            In the same research cycle, prototype tasks reached ~88% success;
-            missed redemptions dropped ~70% after clearer deadlines and alerts.
-          </h2>
-          <div className="grid gap-4 sm:grid-cols-2">
-            <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-5">
-              <p className="text-xs font-semibold uppercase tracking-wider text-emerald-400/90">
-                Task success (prototype)
-              </p>
-              <p className="mt-2 text-2xl font-semibold tabular-nums text-emerald-200">
-                <span className={M_TXT}>~88%</span>
-              </p>
-              <CaseStudyExpandable label="What drove the score">
-                <p className="text-sm text-zinc-400 leading-relaxed">
-                  Across 12 participants and five core tasks—strongest on scan &amp;
-                  prize flows after the home and guidance iterations.
-                </p>
-              </CaseStudyExpandable>
-            </div>
-            <div className="rounded-xl border border-zinc-800 bg-zinc-900/35 p-5">
-              <p className="text-xs font-semibold uppercase tracking-wider text-emerald-400/90">
-                Missed prize redemptions
-              </p>
-              <p className="mt-2 text-2xl font-semibold tabular-nums text-emerald-200">
-                <span className={M_TXT}>−70%</span>
-              </p>
-              <CaseStudyExpandable label="What changed">
-                <p className="text-sm text-zinc-400 leading-relaxed">
-                  Clearer deadlines, status, and push alerts so people do not learn
-                  about a win too late.
-                </p>
-              </CaseStudyExpandable>
-            </div>
-          </div>
-        </CaseStudyInViewSection>
-
         <DesignJourneyCollapsible
           journeySectionIds={E_INVOICE_JOURNEY_IDS}
           panelId="e-invoice-design-journey-panel"
@@ -651,6 +586,43 @@ export default function EInvoiceCaseStudy() {
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection
+          id="competitive-landscape"
+          className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
+        >
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            03 · Competitive landscape
+          </span>
+          <div className="max-w-3xl space-y-3">
+            <h2 className="text-zinc-100">
+              Market read before locking IA—not competitor slides after the
+              solution
+            </h2>
+            <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
+              Based on the visual strategy report, we benchmarked references
+              against three filters before finalizing direction: whether the
+              product felt{" "}
+              <span className="text-zinc-200">
+                intuitive, simple, clean, and modern
+              </span>
+              ; whether its interaction patterns aligned with usability
+              heuristics; and whether design elements (whitespace, contrast,
+              card hierarchy, button shape) could directly address real pain in
+              this project.
+            </p>
+            <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
+              That benchmark informed what &quot;good&quot; meant for this MoF app:
+              policy-trust as a baseline, but with faster recognition, clearer
+              hierarchy, and accessibility-friendly density. The same source work
+              also clarified three candidate visual routes for the next phase—{" "}
+              <span className="text-zinc-200">Friendly lifestyle</span>,{" "}
+              <span className="text-zinc-200">Modern minimal</span>, and{" "}
+              <span className="text-zinc-200">Professional practical</span>.
+            </p>
+          </div>
+          <CompetitorLandscapeTable />
+        </CaseStudyInViewSection>
+
+        <CaseStudyInViewSection
           id="page-flow-design"
           className="scroll-mt-28 space-y-12 sm:scroll-mt-32"
         >
@@ -661,11 +633,17 @@ export default function EInvoiceCaseStudy() {
             <h2 className="max-w-3xl text-zinc-100">
               Figma page flows caught navigation gaps early;{" "}
               <span className="text-zinc-200">Friendly lifestyle</span> became the
-              approved visual route from interviews and client review.
+              approved route after comparing three style proposals.
             </h2>
             <p className="max-w-3xl text-sm leading-relaxed text-zinc-400">
-              Login, invoice management, and redemption were mapped before polish so
-              gaps showed up in logic—not only in pixels.
+              We first translated research keywords into interface variables
+              (color system, typography scale, button geometry, icon language,
+              layout rhythm), then tested three directions from the report:
+              multi-color function zoning (friendly lifestyle), black-led
+              reduction (modern minimal), and trust-forward stability
+              (professional practical). Login, invoice management, and redemption
+              were mapped before polish so gaps showed up in logic—not only in
+              pixels.
             </p>
           </div>
 
@@ -678,16 +656,19 @@ export default function EInvoiceCaseStudy() {
                 Moodboard &amp; style directions · 01 Friendly lifestyle
               </h3>
               <p className="text-zinc-300 leading-relaxed">
-                We stayed close to daily life: a multi-color system where{" "}
-                <span className="text-zinc-200">hue signals function</span>, so core
-                tasks stay recognizable at a glance. The goal was a friendly,
-                low-friction feel that still reads as a trustworthy government
-                service—not decorative noise.
+                The approved route stayed closest to daily behavior: a
+                multi-color system where{" "}
+                <span className="text-zinc-200">hue signals function</span>, larger
+                readable type, and rounded cards/buttons that lower intimidation
+                for mixed-skill users. This matched interview keywords
+                (intuitive, simple, clean) while keeping public-service trust.
               </p>
               <p className="text-zinc-300 leading-relaxed">
-                That balance supports faster scanning, clearer hierarchy, and less
-                cognitive load when people are moving (checkout lines, transit,
-                one-handed use).
+                Compared with modern minimal and professional practical, this
+                direction best balanced recognition speed for silver users and
+                visual clarity for younger users. It improved scan-findability,
+                hierarchy legibility, and one-handed task completion in
+                real-world contexts (checkout lines, transit, crowded retail).
               </p>
               <div>
                 <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">
