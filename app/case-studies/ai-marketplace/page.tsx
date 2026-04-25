@@ -9,16 +9,13 @@ import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { DesignJourneyCollapsible } from "../_components/DesignJourneyCollapsible";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
-import { CaseStudyScanSummary } from "../_components/CaseStudyScanSummary";
 import { MinaPrototypeVideo } from "./MinaPrototypeVideo";
 
 const MINA_HERO = "/case-studies/mina/mina-ai-hero.png";
-const MINA_FLOW_WIDE = "/case-studies/mina/flow-3.png";
-const MINA_SCREEN_EXTRA = `/case-studies/mina/${encodeURIComponent("image 6.png")}`;
 const MINA_MOCKUP_HAND = "/case-studies/mina/mockup-hand-01.png";
 const MINA_MOCKUP_ISO = "/case-studies/mina/mockup-isometric-02.png";
-const MINA_MOCKUP_TRANSPARENT = "/case-studies/mina/mockup-transparent-03.png";
 const MINA_MOCKUP_SOFA = "/case-studies/mina/mockup-sofa-04.png";
+const MINA_COPILOT_FLOW = "/case-studies/mina/parenting-copilot-flow.png";
 
 /** Hero “3 demo” clip — WebM (smaller) then H.264 MP4; MOV fallback if a source fails. */
 const MINA_THREE_DEMO_SOURCES = {
@@ -48,11 +45,6 @@ const AT_A_GLANCE_ITEMS = [
     label: "Timeline",
     value: "2025 – Present · iOS live in Canada",
   },
-] as const;
-
-const MINA_SCAN_SUMMARY = [
-  "MINA is a parent-to-parent resale marketplace for the Bay Area—AI speeds up listing and chat, with a community-first GTM.",
-  "Two threads in this case study: business impact (checkout & listing → measurable lift) and AI UX depth (Photo-to-Publish + Parenting Copilot with explicit user control).",
 ] as const;
 
 const MINA_JOURNEY_IDS = ["engineering-proposal", "design-principles"] as const;
@@ -125,9 +117,9 @@ export default function AiMarketplaceCaseStudy() {
             </div>
           </figure>
 
-          <section className="rounded-2xl border border-zinc-200 bg-[#F8EFEC] p-4 sm:p-5">
+          <section>
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-              <div className="overflow-hidden rounded-xl bg-[#F8EFEC]">
+              <div className="overflow-hidden rounded-xl sm:row-span-2">
                 <Image
                   src={MINA_MOCKUP_HAND}
                   alt="MINA Parenting Copilot shown in an iPhone hand mockup"
@@ -137,7 +129,7 @@ export default function AiMarketplaceCaseStudy() {
                   sizes="(max-width: 640px) 100vw, 50vw"
                 />
               </div>
-              <div className="overflow-hidden rounded-xl bg-[#F8EFEC]">
+              <div className="overflow-hidden rounded-xl">
                 <Image
                   src={MINA_MOCKUP_ISO}
                   alt="MINA listing detail shown in an isometric iPhone mockup"
@@ -147,17 +139,7 @@ export default function AiMarketplaceCaseStudy() {
                   sizes="(max-width: 640px) 100vw, 50vw"
                 />
               </div>
-              <div className="overflow-hidden rounded-xl bg-[#F8EFEC]">
-                <Image
-                  src={MINA_MOCKUP_TRANSPARENT}
-                  alt="MINA shopping cart shown in a transparent iPhone frame mockup"
-                  width={515}
-                  height={956}
-                  className="h-auto w-full object-cover"
-                  sizes="(max-width: 640px) 100vw, 50vw"
-                />
-              </div>
-              <div className="overflow-hidden rounded-xl bg-[#F8EFEC]">
+              <div className="overflow-hidden rounded-xl">
                 <Image
                   src={MINA_MOCKUP_SOFA}
                   alt="MINA review listing screen shown on iPhone mockup on a leather sofa"
@@ -169,10 +151,6 @@ export default function AiMarketplaceCaseStudy() {
               </div>
             </div>
           </section>
-
-          <div className="mt-8">
-            <CaseStudyScanSummary items={MINA_SCAN_SUMMARY} />
-          </div>
 
           <div className="mt-12 space-y-6">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
@@ -208,10 +186,11 @@ export default function AiMarketplaceCaseStudy() {
           className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Context
+            Opportunity
           </span>
           <h2 className="max-w-3xl text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
-            MINA in one minute
+            SF parents burn through baby gear fast, but resale is still too slow
+            and too much admin
           </h2>
           <p className="max-w-3xl text-zinc-300 leading-relaxed">
             MINA is a{" "}
@@ -232,37 +211,6 @@ export default function AiMarketplaceCaseStudy() {
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection
-          id="ai-trust"
-          className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
-        >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            AI UX spine
-          </span>
-          <div className="rounded-2xl border border-violet-500/35 bg-violet-950/20 p-6 sm:p-8">
-            <h2 className="text-xl font-semibold leading-snug tracking-tight text-zinc-50 sm:text-2xl md:text-[1.65rem] md:leading-snug">
-              Turning high-risk AI actions into user-controlled flows
-            </h2>
-            <p className="mt-4 text-zinc-300 leading-relaxed">
-              Parents are right to worry about{" "}
-              <span className="text-zinc-100">automation anxiety</span>
-              —loss of control, unclear system behavior, and mistakes that are
-              hard to undo. That shows up in marketplaces as “did the AI publish
-              the wrong price?” or “did it message someone for me without asking?”
-            </p>
-            <p className="mt-4 text-zinc-300 leading-relaxed">
-              Across Photo-to-Publish and the Parenting Copilot, I designed for{" "}
-              <span className="text-zinc-100">
-                preview before publish, explicit confirmations, and reversibility
-              </span>
-              : users see drafts, approve boundaries, and understand what the
-              system did on their behalf. The goal is the same class of trust
-              and transparency hiring managers expect from consumer AI surfaces—
-              legible limits, not magic.
-            </p>
-          </div>
-        </CaseStudyInViewSection>
-
-        <CaseStudyInViewSection
           id="track-a-impact"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
@@ -270,7 +218,8 @@ export default function AiMarketplaceCaseStudy() {
             Track A · Business impact
           </span>
           <h2 className="max-w-3xl text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
-            Checkout &amp; listing redesign — measured with PostHog
+            Hand listing over to an agent: one photo to listing (measured with
+            PostHog)
           </h2>
           <p className="max-w-3xl text-zinc-300 leading-relaxed">
             Classic resale still behaves like running a tiny shop: forms, photos,
@@ -309,54 +258,32 @@ export default function AiMarketplaceCaseStudy() {
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection
-          id="photo-to-publish"
-          className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
+          id="ai-trust"
+          className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Photo-to-Publish
+            AI UX spine
           </span>
-          <h2 className="max-w-3xl text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
-            AI listing breadth — scene → items → drafts users can edit
-          </h2>
-          <p className="max-w-3xl text-zinc-300 leading-relaxed">
-            Photo-to-Publish is the multimodal bet: parents snap real clutter,
-            the system proposes what is in frame, and{" "}
-            <span className="text-zinc-100">
-              listings stay editable before anything goes live
-            </span>
-            . It is the main proof of AI design range beyond a single chat
-            pattern—computer vision, agent steps, and UI that keeps humans in the
-            loop.
-          </p>
-          <figure className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
-            <Image
-              src={MINA_FLOW_WIDE}
-              alt="MINA flow: Pass It On prompt through suggested items to AI-assisted listing drafts with user review"
-              width={2930}
-              height={1092}
-              className="h-auto w-full object-contain"
-              sizes="(max-width: 1200px) 100vw, 1152px"
-            />
-            <figcaption className="border-t border-zinc-800/80 px-4 py-3 text-xs leading-relaxed text-zinc-500 sm:px-5">
-              End-to-end storyboard: life-stage nudges into suggested gear, then
-              AI-assisted listing with space to correct before publish.
-            </figcaption>
-          </figure>
-          <div className="grid gap-6 sm:grid-cols-[minmax(0,14rem)_1fr] sm:items-center sm:gap-10">
-            <figure className="mx-auto w-full max-w-[14rem] overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 sm:mx-0">
-              <Image
-                src={MINA_SCREEN_EXTRA}
-                alt="MINA mobile UI detail: AI-assisted listing or item state"
-                width={375}
-                height={332}
-                className="h-auto w-full object-contain"
-                sizes="(max-width: 640px) 70vw, 240px"
-              />
-            </figure>
-            <p className="text-sm leading-relaxed text-zinc-400">
-              Supporting screen from the same family of flows—tight frames for
-              handoff, pricing, and confirmation so automation never feels
-              silent.
+          <div className="rounded-2xl border border-violet-500/35 bg-violet-950/20 p-6 sm:p-8">
+            <h2 className="text-xl font-semibold leading-snug tracking-tight text-zinc-50 sm:text-2xl md:text-[1.65rem] md:leading-snug">
+              Turning high-risk AI actions into user-controlled flows
+            </h2>
+            <p className="mt-4 text-zinc-300 leading-relaxed">
+              Parents are right to worry about{" "}
+              <span className="text-zinc-100">automation anxiety</span>
+              —loss of control, unclear system behavior, and mistakes that are
+              hard to undo. That shows up in marketplaces as “did the AI publish
+              the wrong price?” or “did it message someone for me without asking?”
+            </p>
+            <p className="mt-4 text-zinc-300 leading-relaxed">
+              Across Photo-to-Publish and the Parenting Copilot, I designed for{" "}
+              <span className="text-zinc-100">
+                preview before publish, explicit confirmations, and reversibility
+              </span>
+              : users see drafts, approve boundaries, and understand what the
+              system did on their behalf. The goal is the same class of trust
+              and transparency hiring managers expect from consumer AI surfaces—
+              legible limits, not magic.
             </p>
           </div>
         </CaseStudyInViewSection>
@@ -369,7 +296,7 @@ export default function AiMarketplaceCaseStudy() {
             Track B · AI depth
           </span>
           <h2 className="max-w-3xl text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
-            Parenting Copilot — life-stage circulation, not generic chat
+            Parenting Copilot, a life-stage triggered circulation system
           </h2>
           <p className="max-w-3xl text-zinc-300 leading-relaxed">
             The copilot is a{" "}
@@ -384,11 +311,21 @@ export default function AiMarketplaceCaseStudy() {
             <span className="text-zinc-100">never bypasses explicit consent</span>.
           </p>
           <p className="max-w-3xl text-zinc-300 leading-relaxed">
-            The wide flow above doubles as the narrative bridge—Pass It On and
-            suggested items are the copilot surface meeting the listing surface.
+            This flow doubles as the narrative bridge—Pass It On and suggested
+            items are the copilot surface meeting the listing surface.
             That is intentional product architecture: one trust model, two
             outcomes (clarity for parents, liquidity for the marketplace).
           </p>
+          <figure className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+            <Image
+              src={MINA_COPILOT_FLOW}
+              alt="Parenting Copilot flow from trigger notification to conversational recommendations and one-tap handoff to listing intent"
+              width={1024}
+              height={576}
+              className="h-auto w-full object-cover"
+              sizes="(max-width: 1200px) 100vw, 1152px"
+            />
+          </figure>
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection
@@ -410,6 +347,20 @@ export default function AiMarketplaceCaseStudy() {
             <span className="text-zinc-100">three major flows in parallel</span>{" "}
             with a small eng team.
           </p>
+          <div className="max-w-3xl rounded-xl border border-zinc-800 bg-zinc-900/40 p-4 sm:p-5">
+            <p className="text-sm leading-relaxed text-zinc-300">
+              Component library portfolio (HTML preview):
+            </p>
+            <a
+              href="/case-studies/mina/ui_component_library_portfolio.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 inline-flex items-center gap-2 rounded-full border border-violet-400/35 bg-violet-500/10 px-4 py-2 text-sm font-medium text-violet-200 transition hover:border-violet-300/60 hover:bg-violet-500/20 hover:text-violet-100"
+            >
+              View UI component library
+              <span aria-hidden>↗</span>
+            </a>
+          </div>
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection
