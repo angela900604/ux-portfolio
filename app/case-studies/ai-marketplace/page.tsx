@@ -240,7 +240,7 @@ export default function AiMarketplaceCaseStudy() {
             —cohorted before/after on the same funnel). It is the clearest signal
             that the work moved real behavior, not just pixels.
           </p>
-          <div className="grid items-center gap-8 lg:grid-cols-[1fr_auto] lg:gap-10">
+          <div className="grid items-start gap-8 lg:grid-cols-[1fr_auto] lg:gap-10">
             <div className="min-w-0 space-y-3 text-zinc-300 leading-relaxed">
               <p>
                 The clip here is the{" "}
@@ -254,37 +254,6 @@ export default function AiMarketplaceCaseStudy() {
             <div className="flex justify-center lg:justify-end">
               <MinaPrototypeVideo />
             </div>
-          </div>
-        </CaseStudyInViewSection>
-
-        <CaseStudyInViewSection
-          id="ai-trust"
-          className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
-        >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            AI UX spine
-          </span>
-          <div className="rounded-2xl border border-violet-500/35 bg-violet-950/20 p-6 sm:p-8">
-            <h2 className="text-xl font-semibold leading-snug tracking-tight text-zinc-50 sm:text-2xl md:text-[1.65rem] md:leading-snug">
-              Turning high-risk AI actions into user-controlled flows
-            </h2>
-            <p className="mt-4 text-zinc-300 leading-relaxed">
-              Parents are right to worry about{" "}
-              <span className="text-zinc-100">automation anxiety</span>
-              —loss of control, unclear system behavior, and mistakes that are
-              hard to undo. That shows up in marketplaces as “did the AI publish
-              the wrong price?” or “did it message someone for me without asking?”
-            </p>
-            <p className="mt-4 text-zinc-300 leading-relaxed">
-              Across Photo-to-Publish and the Parenting Copilot, I designed for{" "}
-              <span className="text-zinc-100">
-                preview before publish, explicit confirmations, and reversibility
-              </span>
-              : users see drafts, approve boundaries, and understand what the
-              system did on their behalf. The goal is the same class of trust
-              and transparency hiring managers expect from consumer AI surfaces—
-              legible limits, not magic.
-            </p>
           </div>
         </CaseStudyInViewSection>
 
@@ -326,6 +295,38 @@ export default function AiMarketplaceCaseStudy() {
               sizes="(max-width: 1200px) 100vw, 1152px"
             />
           </figure>
+
+          <div
+            id="ai-trust"
+            className="scroll-mt-28 space-y-4 pt-2 sm:scroll-mt-32 sm:pt-4"
+          >
+            <div className="rounded-2xl border border-violet-500/35 bg-violet-950/20 p-6 sm:p-8">
+              <span className="text-xs font-medium uppercase tracking-widest text-violet-300/90">
+                Trust &amp; control
+              </span>
+              <h3 className="mt-3 text-xl font-semibold leading-snug tracking-tight text-zinc-50 sm:text-2xl md:text-[1.65rem] md:leading-snug">
+                Preview before publish, explicit confirmations, and reversibility—so
+                parents always know what the AI did
+              </h3>
+              <p className="mt-4 text-zinc-300 leading-relaxed">
+                Parents are right to worry about{" "}
+                <span className="text-zinc-100">automation anxiety</span>
+                —loss of control, unclear system behavior, and mistakes that are
+                hard to undo. That shows up in marketplaces as “did the AI publish
+                the wrong price?” or “did it message someone for me without asking?”
+              </p>
+              <p className="mt-4 text-zinc-300 leading-relaxed">
+                Across Photo-to-Publish and the Parenting Copilot, I designed for{" "}
+                <span className="text-zinc-100">
+                  preview before publish, explicit confirmations, and reversibility
+                </span>
+                : users see drafts, approve boundaries, and understand what the
+                system did on their behalf. The goal is the same class of trust
+                and transparency hiring managers expect from consumer AI surfaces—
+                legible limits, not magic.
+              </p>
+            </div>
+          </div>
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection
@@ -347,19 +348,19 @@ export default function AiMarketplaceCaseStudy() {
             <span className="text-zinc-100">three major flows in parallel</span>{" "}
             with a small eng team.
           </p>
-          <div className="max-w-3xl rounded-xl border border-zinc-800 bg-zinc-900/40 p-4 sm:p-5">
-            <p className="text-sm leading-relaxed text-zinc-300">
-              Component library portfolio (HTML preview):
+          <div className="w-full max-w-6xl space-y-3">
+            <p className="max-w-3xl text-sm leading-relaxed text-zinc-300">
+              Component library portfolio (HTML preview)—embedded below; scroll
+              inside the frame to browse components.
             </p>
-            <a
-              href="/case-studies/mina/ui_component_library_portfolio.html"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-3 inline-flex items-center gap-2 rounded-full border border-violet-400/35 bg-violet-500/10 px-4 py-2 text-sm font-medium text-violet-200 transition hover:border-violet-300/60 hover:bg-violet-500/20 hover:text-violet-100"
-            >
-              View UI component library
-              <span aria-hidden>↗</span>
-            </a>
+            <div className="overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/50 shadow-[0_0_0_1px_rgba(255,255,255,0.04)_inset]">
+              <iframe
+                title="MINA UI component library portfolio (HTML)"
+                src="/case-studies/mina/ui_component_library_portfolio.html"
+                className="block h-[min(88vh,1100px)] w-full border-0 bg-[#F8EFEC]"
+                loading="lazy"
+              />
+            </div>
           </div>
         </CaseStudyInViewSection>
 

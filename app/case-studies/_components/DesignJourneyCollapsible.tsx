@@ -2,6 +2,7 @@
 
 import {
   useCallback,
+  useId,
   useLayoutEffect,
   useMemo,
   useState,
@@ -14,11 +15,42 @@ function hashToId(hash: string): string | null {
   return id || null;
 }
 
+function AccordionChevron({ open }: { open: boolean }) {
+  return (
+    <span
+      aria-hidden
+      className={`shrink-0 text-zinc-400 transition-transform duration-200 ${
+        open ? "rotate-180" : ""
+      }`}
+    >
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 16 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="text-current"
+      >
+        <path
+          d="M4 6l4 4 4-4"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </span>
+  );
+}
+
 export function DesignJourneyCollapsible({
   children,
   journeySectionIds,
   navAnchorId = "design-journey",
   panelId,
+  title = "Design journey",
+  subtitle,
+  className = "",
 }: {
   children: ReactNode;
   journeySectionIds: readonly string[];
@@ -26,7 +58,14 @@ export function DesignJourneyCollapsible({
   navAnchorId?: string;
   /** Unique id for the collapsible panel (`aria-controls`). */
   panelId: string;
+  /** Accordion trigger title (e.g. “Design journey”, “Reflection”). */
+  title?: string;
+  /** Optional secondary line under the title. */
+  subtitle?: string;
+  /** Extra classes on the outer wrapper (spacing between stacked accordions). */
+  className?: string;
 }) {
+  const headingId = useId();
   const journeyIdSet = useMemo(
     () => new Set(journeySectionIds),
     [journeySectionIds],
@@ -63,27 +102,43 @@ export function DesignJourneyCollapsible({
   }, []);
 
   return (
-    <div className="scroll-mt-28 space-y-6 sm:scroll-mt-32">
-      <div
-        id={navAnchorId}
-        className="flex flex-wrap items-center justify-center gap-3 border-t border-zinc-800 pt-10"
-      >
+    <div
+      className={`scroll-mt-28 border-t border-zinc-800 pt-10 sm:scroll-mt-32 sm:pt-12 ${className}`.trim()}
+    >
+      <div className="overflow-hidden rounded-xl border border-zinc-800/90 bg-zinc-900/40">
         <button
           type="button"
+          id={navAnchorId}
           onClick={toggle}
           aria-expanded={open}
           aria-controls={panelId}
-          className="inline-flex items-center gap-2 rounded-full border border-zinc-600 bg-zinc-900/50 px-4 py-2.5 text-sm font-medium text-zinc-200 transition hover:border-zinc-400 hover:text-zinc-50"
+          className="flex w-full items-center justify-between gap-4 px-4 py-4 text-left transition hover:bg-zinc-900/55 sm:px-5 sm:py-4"
         >
-          {open ? "Hide" : "View"} design journey
+          <span id={headingId} className="min-w-0">
+            <span className="block text-base font-semibold tracking-tight text-zinc-100 sm:text-lg">
+              {title}
+            </span>
+            {subtitle ? (
+              <span className="mt-1 block text-sm leading-snug text-zinc-400">
+                {subtitle}
+              </span>
+            ) : null}
+          </span>
+          <AccordionChevron open={open} />
         </button>
-      </div>
-      <div
-        id={panelId}
-        className={open ? "space-y-20" : undefined}
-        aria-hidden={!open}
-      >
-        {open ? children : null}
+        <div
+          id={panelId}
+          role="region"
+          aria-labelledby={headingId}
+          hidden={!open}
+          className={
+            open
+              ? "border-t border-zinc-800/90 px-4 pb-6 pt-2 sm:px-5 sm:pb-8"
+              : "hidden"
+          }
+        >
+          {open ? <div className="pt-4">{children}</div> : null}
+        </div>
       </div>
     </div>
   );
