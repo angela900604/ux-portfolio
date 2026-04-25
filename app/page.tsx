@@ -80,7 +80,7 @@ export default function Home() {
       {/* Hero — lg: fill viewport below header so logo row can sit on the divider */}
       <section className="border-b border-zinc-800 lg:flex lg:min-h-[calc(100svh-4.5rem)] lg:flex-col">
         <div
-          className={`${SITE_SHELL_CONTAINER} flex min-h-0 flex-1 flex-col pt-20 pb-2 sm:pt-28 sm:pb-3 md:pt-36`}
+          className={`${SITE_SHELL_CONTAINER} flex min-h-0 flex-1 flex-col pt-20 pb-0 sm:pt-28 sm:pb-1 md:pt-36 md:pb-2`}
         >
           <HeroWithBubble />
         </div>
