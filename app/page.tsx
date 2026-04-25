@@ -42,28 +42,28 @@ const CORE_PRODUCT = [
     },
 ] as const;
 
-/** Research insights that changed what shipped — links go to the evidence in each case study. */
+/** Research insights — standalone notes plus links to case studies where relevant. */
 const RESEARCH_SHAPES_BUILD = [
   {
-    source: "Taiwan e-Invoice · Ministry of Finance app",
-    title: 'Carrier binding: "comprehension," not dexterity',
+    source: "Taiwan e-Invoice · Field research",
+    title: "The bottleneck wasn't inside the app",
     summary:
-      "Moderated tests showed people stalling before the mechanics—not because taps were hard, but because ministry jargon hid why binding mattered. We reframed the task around automatic capture scenarios and in-flow help, not shorter forms.",
-    href: "/case-studies/e-invoice-app#carrier-binding-insight",
+      "At checkout, cashiers often assumed older customers didn't use the app and handed over paper before they could open it—not user abandonment, the lane moved on. We put the carrier barcode in a home widget and scan first on home so the critical action is one step from pocket.",
+    href: "/research/elderly-checkout-widget",
   },
   {
-    source: "Taiwan e-Invoice · multisegment research",
-    title: "One home, two incompatible defaults",
+    source: "Taiwan e-Invoice · Onboarding & trust",
+    title: "The feature existed. Nobody knew.",
     summary:
-      "Silver and low-vision participants wanted the sparsest home; younger users wanted a dense dashboard. Research killed the idea of a single static layout—we shipped optional modules with fixed rails (scan + passbook) so neither audience was structurally wronged.",
-    href: "/case-studies/e-invoice-app#key-outcomes",
+      "Elderly and foreign-resident users missed prize payouts repeatedly—not from forgetting, but because no one had surfaced the auto-deposit account. We brought it into first-launch onboarding with field-by-field explanations of why bank details matter (trust design, not just shorter forms).",
+    href: "/research/prize-account-discovery",
   },
   {
     source: "MINA · AI marketplace",
     title: "High-risk AI needs explicit human control",
     summary:
-      "Parents won’t tolerate silent automation on payouts and listings. Interviews surfaced automation anxiety and loss of control; the product response was preview-before-publish, clear confirmations, and reversibility—not more model cleverness.",
-    href: "/case-studies/ai-marketplace#ai-trust",
+      "Parents won't tolerate silent automation on payouts and listings. The product response is preview-before-publish, explicit confirmations, and reversibility—legible limits, not more model cleverness.",
+    href: "/research/high-risk-ai-human-control",
   },
 ] as const;
 
@@ -160,7 +160,7 @@ export default function Home() {
                       {item.summary}
                     </p>
                     <span className="mt-5 text-sm font-medium text-zinc-400 group-hover:text-zinc-200">
-                      Read in case study →
+                      Read more →
                     </span>
                   </Link>
                 </FadeInSection>

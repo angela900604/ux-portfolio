@@ -58,9 +58,8 @@ export function EInvoiceHeroTldr() {
           TL;DR
         </span>
         <h2 className="mt-5 w-full max-w-5xl text-pretty text-2xl font-bold leading-[1.15] tracking-tight sm:text-3xl md:max-w-6xl md:text-[2rem] md:leading-[1.12]">
-          From multi-segment field research to ship-ready UI—navigation, trust, and
-          task success for a national base that spans age, language, and
-          accessibility needs.
+          Shipped for 20M+ users · 5 user segments including low-vision and foreign
+          residents · Taiwan Ministry of Digital Affairs certified
         </h2>
       </div>
 
