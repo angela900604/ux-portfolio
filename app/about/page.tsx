@@ -30,53 +30,44 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-100">
-      <section className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 border-b border-zinc-800">
-        <div className="relative h-[min(90vh,56rem)] min-h-[78vh] w-full">
-          <Image
-            src="/about/profile-v2.png"
-            alt="Angela Yang"
-            fill
-            priority
-            className="object-contain object-center"
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-black/18" aria-hidden />
-          <div
-            className="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/55 to-zinc-950/20"
-            aria-hidden
-          />
-          <div className="absolute inset-0 flex items-start pt-16 sm:pt-20">
-            <div className={SITE_SHELL_CONTAINER}>
-              <p className="mb-4 text-xs font-medium uppercase tracking-widest text-zinc-300/85">
-                About
-              </p>
-              <h1 className="max-w-2xl text-white">Angela Yang</h1>
-              <p className="mt-3 max-w-2xl text-xs font-medium uppercase tracking-widest text-zinc-300/85">
-                B2C iOS · AI-driven products · Multi-segment research · Vancouver
-                (open to relocate)
-              </p>
-              <p className="mt-5 max-w-3xl text-base font-medium leading-snug tracking-[-0.015em] text-zinc-100 sm:text-lg md:text-xl">
-                Product designer specializing in consumer mobile experiences —
-                I&apos;ve shipped complex, multi-role UX across government-scale
-                and B2C platforms, with a strong research foundation in diverse
-                user segments. I&apos;m now focused on AI-driven consumer
-                products and expanding into social platform design.
-              </p>
-            </div>
+      <section className="border-b border-zinc-800">
+        <div
+          className={`${SITE_SHELL_CONTAINER} pt-16 pb-12 sm:pt-20 sm:pb-16 md:pb-20`}
+        >
+          <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            About
+          </p>
+          <h1 className="mt-4 max-w-2xl text-zinc-50">Angela Yang</h1>
+          <p className="mt-3 max-w-2xl text-xs font-medium uppercase tracking-widest text-zinc-500">
+            B2C iOS · AI-driven products · Multi-segment research · Vancouver
+            (open to relocate)
+          </p>
+          <p className="mt-5 max-w-3xl text-base font-medium leading-snug tracking-[-0.015em] text-zinc-100 sm:text-lg md:text-xl">
+            Product designer specializing in consumer mobile experiences —
+            I&apos;ve shipped complex, multi-role UX across government-scale and
+            B2C platforms, with a strong research foundation in diverse user
+            segments. I&apos;m now focused on AI-driven consumer products and
+            expanding into social platform design.
+          </p>
+          <p className="mt-4 max-w-3xl text-base leading-relaxed text-zinc-400 sm:text-lg">
+            Based in Vancouver, BC. Open to relocation, remote, or hybrid.
+          </p>
+          <div className="mt-10 min-w-0 w-full sm:mt-12">
+            <Image
+              src="/about/profile-v2.png"
+              alt="Angela Yang"
+              width={768}
+              height={1024}
+              priority
+              className="h-auto w-full rounded-2xl border border-zinc-800 bg-zinc-900/30 object-contain"
+              sizes="(max-width: 640px) calc(100vw - 3rem), (max-width: 1480px) calc(100vw - 12.5rem), 1280px"
+            />
           </div>
         </div>
       </section>
 
       <div className={`${SITE_SHELL_CONTAINER} py-16 sm:py-24`}>
         <section>
-          <div className="flex min-w-0 flex-col gap-5 text-base leading-relaxed text-zinc-300 sm:text-lg">
-              <p>
-                Based in Vancouver, BC. Open to relocation, remote, or hybrid.
-              </p>
-          </div>
-        </section>
-
-        <section className="mt-14 border-t border-zinc-800 pt-12">
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             User interviews
           </span>

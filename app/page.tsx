@@ -29,27 +29,24 @@ const CORE_PRODUCT = [
   },
 ] as const;
 
-/** Research insights — standalone notes plus links to case studies where relevant. */
+/** Research insights — titles + one-line teasers; detail on linked pages. */
 const RESEARCH_SHAPES_BUILD = [
   {
-    source: "Taiwan e-Invoice · Field research",
-    title: "The bottleneck wasn't inside the app",
-    summary:
-      "At checkout, cashiers often assumed older customers didn't use the app and handed over paper before they could open it—not user abandonment, the lane moved on. We put the carrier barcode in a home widget and scan first on home so the critical action is one step from pocket.",
+    source: "e-Invoice",
+    title: "The register moved before the app opened",
+    summary: "Barcode widget, scan-first home, and why the bottleneck was social—not a missing button.",
     href: "/research/elderly-checkout-widget",
   },
   {
-    source: "Taiwan e-Invoice · Onboarding & trust",
-    title: "The feature existed. Nobody knew.",
-    summary:
-      "Elderly and foreign-resident users missed prize payouts repeatedly—not from forgetting, but because no one had surfaced the auto-deposit account. We brought it into first-launch onboarding with field-by-field explanations of why bank details matter (trust design, not just shorter forms).",
+    source: "e-Invoice",
+    title: "A prize setting no one knew existed",
+    summary: "Auto-deposit account buried in jargon—we surfaced it in onboarding with plain trust copy.",
     href: "/research/prize-account-discovery",
   },
   {
-    source: "MINA · AI marketplace",
-    title: "High-risk AI needs explicit human control",
-    summary:
-      "Parents won't tolerate silent automation on payouts and listings. The product response is preview-before-publish, explicit confirmations, and reversibility—legible limits, not more model cleverness.",
+    source: "MINA",
+    title: "Keep people in charge of risky AI steps",
+    summary: "Preview, explicit OK, and undo—so listings and payouts never feel like silent automation.",
     href: "/research/high-risk-ai-human-control",
   },
 ] as const;
@@ -121,10 +118,6 @@ export default function Home() {
             <h2 className="text-2xl font-semibold tracking-tight text-zinc-100 sm:text-3xl md:text-[2rem]">
               How research shapes what I build
             </h2>
-            <p className="mt-3 max-w-3xl text-base leading-relaxed text-zinc-400 sm:text-lg">
-              Method labels don&apos;t change roadmaps—reframes from the field do.
-              Three examples where evidence forced a different product decision.
-            </p>
           </FadeInSection>
           <ul className="mt-8 grid items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
             {RESEARCH_SHAPES_BUILD.map((item, i) => (
@@ -140,10 +133,10 @@ export default function Home() {
                     <h3 className="mt-3 text-xl font-semibold tracking-tight text-zinc-100 transition group-hover:text-zinc-50 sm:text-2xl">
                       {item.title}
                     </h3>
-                    <p className="mt-4 text-base leading-relaxed text-zinc-300 sm:text-lg">
+                    <p className="mt-3 text-sm leading-relaxed text-zinc-400 sm:text-base">
                       {item.summary}
                     </p>
-                    <span className="mt-5 text-sm font-medium text-zinc-400 group-hover:text-zinc-200">
+                    <span className="mt-5 text-sm font-semibold text-emerald-400 transition group-hover:text-emerald-300">
                       Read more →
                     </span>
                   </Link>
@@ -156,7 +149,9 @@ export default function Home() {
 
       {/* Contact */}
       <section id="contact" className="border-b border-zinc-800">
-        <div className={`${SITE_SHELL_CONTAINER} py-16 sm:py-20`}>
+        <div
+          className={`${SITE_SHELL_CONTAINER} pt-16 pb-1 sm:pt-20 sm:pb-5`}
+        >
           <FadeInSection>
             <h2 className="text-2xl font-semibold tracking-tight text-zinc-100 sm:text-3xl md:text-[2rem]">
               Let&apos;s talk
