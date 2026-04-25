@@ -1,3 +1,7 @@
+"use client";
+
+import { useId, useState } from "react";
+
 function PainBlock({
   badge,
   badgeClassName,
@@ -15,47 +19,92 @@ function PainBlock({
     quoteStyle?: "review" | "synthesis";
   }[];
 }) {
+  const [open, setOpen] = useState(false);
+  const panelId = useId();
+
   return (
     <div className="rounded-2xl border border-zinc-800/90 bg-zinc-900/35 p-6 sm:p-8">
-      <div className="min-w-0 max-w-3xl space-y-4">
+      <div className="min-w-0 max-w-3xl">
         <span
           className={`inline-flex rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] ${badgeClassName}`}
         >
           {badge}
         </span>
-        <h4 className="text-xl font-semibold tracking-tight text-zinc-100 sm:text-2xl">
+        <h4 className="mt-4 text-xl font-semibold tracking-tight text-zinc-100 sm:text-2xl">
           {title}
         </h4>
-        <p className="text-base leading-relaxed text-zinc-300 sm:text-[1.05rem]">
-          {body}
-        </p>
-        {quotes.map((q, i) => {
-          const quoteClasses =
-            q.quoteStyle === "synthesis"
-              ? "text-sm leading-relaxed text-zinc-400 sm:text-base"
-              : "text-sm italic leading-relaxed text-zinc-400 sm:text-base";
-          return (
-            <figure
-              key={i}
-              className="border-l-2 border-amber-500/45 pl-4 pt-1"
+        <button
+          type="button"
+          aria-expanded={open}
+          aria-controls={panelId}
+          onClick={() => setOpen((v) => !v)}
+          className="mt-5 flex items-center gap-2 text-sm font-semibold text-emerald-400 transition hover:text-emerald-300"
+        >
+          <span>{open ? "View less" : "View more"}</span>
+          <span
+            aria-hidden
+            className={`inline-flex transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="text-current"
             >
-              <blockquote className={quoteClasses}>
-                {q.quoteStyle === "synthesis" ? (
-                  q.quote
-                ) : (
-                  <>
-                    &ldquo;{q.quote}&rdquo;
-                  </>
-                )}
-              </blockquote>
-              {q.quoteSource ? (
-                <figcaption className="mt-2 text-xs text-zinc-500">
-                  {q.quoteSource}
-                </figcaption>
-              ) : null}
-            </figure>
-          );
-        })}
+              <path
+                d="M4 6l4 4 4-4"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </span>
+        </button>
+        <div
+          id={panelId}
+          role="region"
+          aria-label="Additional detail"
+          hidden={!open}
+          className={
+            open
+              ? "mt-5 space-y-4 border-t border-zinc-800/80 pt-5"
+              : "hidden"
+          }
+        >
+          <p className="text-base leading-relaxed text-zinc-300 sm:text-[1.05rem]">
+            {body}
+          </p>
+          {quotes.map((q, i) => {
+            const quoteClasses =
+              q.quoteStyle === "synthesis"
+                ? "text-sm leading-relaxed text-zinc-400 sm:text-base"
+                : "text-sm italic leading-relaxed text-zinc-400 sm:text-base";
+            return (
+              <figure
+                key={i}
+                className="border-l-2 border-amber-500/45 pl-4 pt-1"
+              >
+                <blockquote className={quoteClasses}>
+                  {q.quoteStyle === "synthesis" ? (
+                    q.quote
+                  ) : (
+                    <>
+                      &ldquo;{q.quote}&rdquo;
+                    </>
+                  )}
+                </blockquote>
+                {q.quoteSource ? (
+                  <figcaption className="mt-2 text-xs text-zinc-500">
+                    {q.quoteSource}
+                  </figcaption>
+                ) : null}
+              </figure>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
