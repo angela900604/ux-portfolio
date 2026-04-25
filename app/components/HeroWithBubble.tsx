@@ -27,9 +27,12 @@ const HERO_LOGOS = [
 
 const CYCLE_MS = 2500;
 
-/** ~3 lines at hero clamp — keeps “Hello” fixed while subtitles cycle / wrap. */
+/**
+ * Reserve enough vertical space for wrapped cycling subtitles on narrow widths.
+ * (overflow-hidden would clip if this is too tight.)
+ */
 const SUBHEAD_SLOT_MIN_H =
-  "min-h-[calc(3*1.08*clamp(1.85rem,4.5vw,4rem))]";
+  "min-h-[calc(5*1.15*clamp(1.85rem,4.5vw,4rem))] sm:min-h-[calc(4*1.15*clamp(1.85rem,4.5vw,4rem))] lg:min-h-[calc(3.5*1.15*clamp(1.85rem,4.5vw,4rem))]";
 
 function BubbleBackdrop() {
   return (
@@ -54,6 +57,7 @@ export function HeroWithBubble() {
 
   const headlineClass =
     "max-w-none text-left text-[clamp(1.85rem,4.5vw,4rem)] font-normal leading-[1.08] tracking-[-0.02em]";
+  const subheadClass = `${headlineClass} leading-[1.15] [overflow-wrap:anywhere]`;
 
   return (
     <div className="flex min-h-0 w-full flex-1 flex-col">
@@ -68,7 +72,7 @@ export function HeroWithBubble() {
               Hello, I&apos;m Angela
             </p>
             <div
-              className={`relative w-full max-w-[72rem] overflow-hidden ${SUBHEAD_SLOT_MIN_H}`}
+              className={`relative w-full max-w-[72rem] overflow-hidden pb-1 ${SUBHEAD_SLOT_MIN_H}`}
               aria-live="polite"
               aria-atomic="true"
             >
@@ -93,7 +97,7 @@ export function HeroWithBubble() {
                           ease: [0.22, 1, 0.36, 1],
                         }
                   }
-                  className={`${headlineClass} text-zinc-400`}
+                  className={`${subheadClass} text-zinc-400`}
                   style={{ fontFamily: DISPLAY_FONT }}
                 >
                   {reduceMotion
@@ -151,21 +155,22 @@ export function HeroWithBubble() {
         </div>
       </div>
 
-      <div className="mt-10 flex w-full shrink-0 justify-center lg:mt-auto lg:pt-0">
-        <ul className="flex max-w-full flex-wrap items-center justify-center gap-x-3 gap-y-3 sm:gap-x-4">
+      <div className="mt-6 flex w-full shrink-0 justify-center sm:mt-8 lg:mt-auto lg:pt-0">
+        <ul className="mx-auto grid w-full max-w-4xl grid-cols-4 justify-items-center gap-x-5 gap-y-5 sm:max-w-5xl sm:grid-cols-7 sm:gap-x-6 md:gap-x-7">
           {HERO_LOGOS.map((logo) => (
             <li
               key={logo.src}
-              className="relative h-8 w-[124px] shrink-0"
-              aria-label={logo.alt}
+              className="flex h-11 w-full max-w-[5.25rem] items-center justify-center sm:h-12 sm:max-w-[5.75rem]"
             >
-              <Image
-                src={logo.src}
-                alt={logo.alt}
-                fill
-                className="object-contain opacity-85 [filter:grayscale(1)]"
-                sizes="124px"
-              />
+              <div className="relative h-9 w-full sm:h-10">
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  fill
+                  className="object-contain object-center opacity-85 [filter:grayscale(1)]"
+                  sizes="(max-width: 640px) 22vw, 92px"
+                />
+              </div>
             </li>
           ))}
         </ul>
