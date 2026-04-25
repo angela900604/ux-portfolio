@@ -208,6 +208,16 @@ export default function AiMarketplaceCaseStudy() {
             pairing daily with one PM and five engineers while we shipped the
             first public build in Canada.
           </p>
+          <div className="mt-6 max-w-3xl overflow-hidden rounded-xl border border-zinc-800/50 bg-zinc-900/40">
+            <Image
+              src="/case-studies/mina/community-collage.jpg"
+              alt="MINA community event: signage, parents trying the app, and team at a local gathering"
+              width={768}
+              height={1024}
+              className="h-auto w-full object-contain"
+              sizes="(max-width: 768px) 100vw, 768px"
+            />
+          </div>
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection
@@ -217,42 +227,73 @@ export default function AiMarketplaceCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Track A · Business impact
           </span>
-          <h2 className="max-w-3xl text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
-            Hand listing over to an agent: one photo to listing (measured with
-            PostHog)
-          </h2>
-          <p className="max-w-3xl text-zinc-300 leading-relaxed">
-            Classic resale still behaves like running a tiny shop: forms, photos,
-            buyer threads, pickup coordination. I{" "}
-            <span className="text-zinc-100">
-              redesigned checkout and the listing path end-to-end
-            </span>{" "}
-            to reduce drop-off and ambiguity—clear steps, fewer dead ends, and UI
-            that matches how parents actually move from intent to a completed
-            listing.
-          </p>
-          <p className="max-w-3xl text-zinc-300 leading-relaxed">
-            After we tightened that flow,{" "}
-            <span className="font-semibold text-emerald-200/95">
-              completed listings rose ~30%
-            </span>{" "}
-            (<span className="text-zinc-100">PostHog</span>
-            —cohorted before/after on the same funnel). It is the clearest signal
-            that the work moved real behavior, not just pixels.
-          </p>
           <div className="grid items-start gap-8 lg:grid-cols-[1fr_auto] lg:gap-10">
-            <div className="min-w-0 space-y-3 text-zinc-300 leading-relaxed">
-              <p>
-                The clip here is the{" "}
+            <div className="min-w-0 space-y-4">
+              <h2 className="max-w-3xl text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
+                Hand listing over to an agent: one photo to listing
+              </h2>
+              <p className="max-w-3xl text-zinc-300 leading-relaxed">
+                Classic resale still behaves like running a tiny shop: forms, photos,
+                buyer threads, pickup coordination. I{" "}
                 <span className="text-zinc-100">
-                  one-photo → detection → draft listing
+                  redesigned checkout and the listing path end-to-end
                 </span>{" "}
-                direction we aligned on with engineering—same product surface
-                family as the shipping listing experience.
+                to reduce drop-off and ambiguity—clear steps, fewer dead ends, and UI
+                that matches how parents actually move from intent to a completed
+                listing.
+              </p>
+              <p className="max-w-3xl text-zinc-300 leading-relaxed">
+                After we tightened that flow,{" "}
+                <span className="font-semibold text-emerald-200/95">
+                  completed listings rose ~30%
+                </span>{" "}
+                (<span className="text-zinc-100">PostHog</span>
+                —cohorted before/after on the same funnel). It is the clearest signal
+                that the work moved real behavior, not just pixels.
               </p>
             </div>
-            <div className="flex justify-center lg:justify-end">
+            <div className="mx-auto flex w-full max-w-[300px] shrink-0 flex-col items-center lg:mx-0 lg:items-end">
               <MinaPrototypeVideo />
+              <p className="mt-4 max-w-[300px] text-center text-sm leading-relaxed text-zinc-400 lg:text-right">
+                The clip here is the{" "}
+                <span className="text-zinc-200">
+                  one-photo → detection → draft listing
+                </span>{" "}
+                direction we aligned on with engineering—same product surface family
+                as the shipping listing experience.
+              </p>
+            </div>
+          </div>
+
+          <div
+            id="ai-trust"
+            className="scroll-mt-28 space-y-4 pt-4 sm:scroll-mt-32 sm:pt-6"
+          >
+            <div className="rounded-2xl border border-[#B75E45]/50 bg-[#B75E45]/18 p-6 sm:p-8">
+              <span className="text-xs font-medium uppercase tracking-widest text-[#E8A995]">
+                Trust &amp; control
+              </span>
+              <h3 className="mt-3 text-xl font-semibold leading-snug tracking-tight text-zinc-50 sm:text-2xl md:text-[1.65rem] md:leading-snug">
+                Preview before publish, explicit confirmations, and reversibility—so
+                parents always know what the AI did
+              </h3>
+              <p className="mt-4 text-zinc-300 leading-relaxed">
+                Parents are right to worry about{" "}
+                <span className="text-zinc-100">automation anxiety</span>
+                —loss of control, unclear system behavior, and mistakes that are
+                hard to undo. That shows up in marketplaces as “did the AI publish
+                the wrong price?” or “did it message someone for me without asking?”
+              </p>
+              <p className="mt-4 text-zinc-300 leading-relaxed">
+                I designed for{" "}
+                <span className="text-zinc-100">
+                  preview before publish, explicit confirmations, and reversibility
+                </span>
+                : users see drafts, approve boundaries, and understand what the
+                system did on their behalf. The goal is the same class of trust
+                and transparency hiring managers expect from consumer AI surfaces—
+                legible limits, not magic.
+              </p>
             </div>
           </div>
         </CaseStudyInViewSection>
@@ -295,38 +336,6 @@ export default function AiMarketplaceCaseStudy() {
               sizes="(max-width: 1200px) 100vw, 1152px"
             />
           </figure>
-
-          <div
-            id="ai-trust"
-            className="scroll-mt-28 space-y-4 pt-2 sm:scroll-mt-32 sm:pt-4"
-          >
-            <div className="rounded-2xl border border-violet-500/35 bg-violet-950/20 p-6 sm:p-8">
-              <span className="text-xs font-medium uppercase tracking-widest text-violet-300/90">
-                Trust &amp; control
-              </span>
-              <h3 className="mt-3 text-xl font-semibold leading-snug tracking-tight text-zinc-50 sm:text-2xl md:text-[1.65rem] md:leading-snug">
-                Preview before publish, explicit confirmations, and reversibility—so
-                parents always know what the AI did
-              </h3>
-              <p className="mt-4 text-zinc-300 leading-relaxed">
-                Parents are right to worry about{" "}
-                <span className="text-zinc-100">automation anxiety</span>
-                —loss of control, unclear system behavior, and mistakes that are
-                hard to undo. That shows up in marketplaces as “did the AI publish
-                the wrong price?” or “did it message someone for me without asking?”
-              </p>
-              <p className="mt-4 text-zinc-300 leading-relaxed">
-                Across Photo-to-Publish and the Parenting Copilot, I designed for{" "}
-                <span className="text-zinc-100">
-                  preview before publish, explicit confirmations, and reversibility
-                </span>
-                : users see drafts, approve boundaries, and understand what the
-                system did on their behalf. The goal is the same class of trust
-                and transparency hiring managers expect from consumer AI surfaces—
-                legible limits, not magic.
-              </p>
-            </div>
-          </div>
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection
@@ -359,39 +368,6 @@ export default function AiMarketplaceCaseStudy() {
                 src="/case-studies/mina/ui_component_library_portfolio.html"
                 className="block h-[min(88vh,1100px)] w-full border-0 bg-[#F8EFEC]"
                 loading="lazy"
-              />
-            </div>
-          </div>
-        </CaseStudyInViewSection>
-
-        <CaseStudyInViewSection
-          id="why-this-exists"
-          className="scroll-mt-28 sm:scroll-mt-32"
-        >
-          <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_min(18rem,32vw)] lg:items-stretch lg:gap-10 xl:grid-cols-[minmax(0,1fr)_22.5rem] xl:gap-12">
-            <div className="min-w-0 space-y-4">
-              <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-                Community GTM
-              </span>
-              <h2 className="max-w-3xl text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
-                SF parents burn through baby gear fast, but resale is still too
-                slow and too much admin
-              </h2>
-              <p className="max-w-3xl text-zinc-300 leading-relaxed">
-                Classic resale asks parents to behave like shops—listings, DMs,
-                pickup logistics. The pain is the attention tax every time a stage
-                ends and a new pile appears; MINA meets people in community
-                moments first, then earns the listing.
-              </p>
-            </div>
-            <div className="min-w-0 overflow-hidden rounded-xl border border-zinc-800/50 bg-zinc-900/40">
-              <Image
-                src="/case-studies/mina/community-collage.jpg"
-                alt="MINA community event: signage, parents trying the app, and team at a local gathering"
-                width={768}
-                height={1024}
-                className="h-auto w-full object-contain"
-                sizes="(max-width: 1024px) 100vw, min(480px, 45vw)"
               />
             </div>
           </div>
