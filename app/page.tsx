@@ -36,7 +36,7 @@ const CORE_PRODUCT = {
     },
     {
       slug: "baskin-robbins",
-      title: "Baskin-Robbins Taiwan's first membership app",
+      title: "Cross-market with Japan HQ · BR31 Taiwan membership app",
       outcome: "MVP scoped · Japan-aligned, Taiwan-local rules",
       tag: "Mobile · Loyalty",
       role: "Lead Product Designer",

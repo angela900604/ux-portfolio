@@ -24,9 +24,10 @@ import {
 } from "./BaskinHeroShowcase";
 
 export const metadata = {
-  title: "Baskin-Robbins Taiwan Membership App | Angela Yang",
+  title:
+    "Cross-market collaboration with Japan HQ — Baskin Robbins Taiwan membership app | Angela Yang",
   description:
-    "Lead UX/UI for BR31 Taiwan’s first membership app: team objectives, functional map, style proposals, MVP delivery, and build-ready UI kit and handoff.",
+    "Lead UX/UI for BR31 Taiwan’s first membership app: Japan HQ alignment via interpreted meetings, functional map, style proposals, MVP delivery, and build-ready UI kit.",
 };
 
 const ASSET = (name: string) => `/case-studies/baskin-robbins/${name}`;
@@ -185,8 +186,9 @@ export default function BaskinRobbinsCaseStudy() {
             </div>
           }
           title={
-            <h1 className="mt-5 max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
-              Baskin-Robbins Taiwan&apos;s first membership app
+            <h1 className="mt-5 max-w-[min(100%,56rem)] text-3xl font-semibold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
+              Cross-market collaboration with Japan HQ for Taiwan&apos;s first
+              Baskin Robbins membership app
             </h1>
           }
           subtitle={
@@ -245,6 +247,26 @@ export default function BaskinRobbinsCaseStudy() {
             offers. We shipped a membership app aligned with HQ, tuned for how
             people expect to redeem and browse on the phone.
           </p>
+          <p className="max-w-3xl text-zinc-300 leading-relaxed">
+            I collaborated directly with Japan HQ stakeholders through online
+            meetings, with a Japanese interpreter facilitating communication. I often
+            needed to ensure design decisions could be reviewed and approved across
+            both markets before development began.
+          </p>
+          <figure className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+            <Image
+              src={ASSET("japan-hq-cross-market-meeting.png")}
+              alt="Video call with Japan HQ and Taiwan stakeholders—cross-market alignment for BR31 membership app"
+              width={1024}
+              height={644}
+              className="h-auto w-full object-cover"
+              sizes="(max-width: 1024px) 100vw, 960px"
+            />
+            <figcaption className="border-t border-zinc-800/80 px-4 py-3 text-xs leading-relaxed text-zinc-500 sm:px-5">
+              Online working session with Japan HQ and Taiwan—interpreter-supported
+              reviews before build.
+            </figcaption>
+          </figure>
           <div className="space-y-2 pt-2">
             <h5 className="text-zinc-100">
               Stakeholder alignment (Japan HQ · Taiwan)

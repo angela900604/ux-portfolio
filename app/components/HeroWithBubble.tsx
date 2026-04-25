@@ -12,10 +12,7 @@ const DISPLAY_FONT =
 
 const CYCLING_PHRASES = [
   "I design consumer-facing, AI-driven mobile applications",
-  "I build scalable B2B Internal system with multi-role workflows",
   "I value empathy and curiosity in how I approach every problem",
-  "I studied new media and user experience design",
-  "I love traveling across Europe and capturing scenic moments",
 ] as const;
 
 const HERO_LOGOS = [
