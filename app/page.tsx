@@ -10,36 +10,23 @@ const CORE_PRODUCT = [
     slug: "e-invoice-app",
     title:
       "Redesigning Taiwan Ministry of Finance's Uniform Invoice Award Redemption App",
-    outcome: "~88% prototype task success (moderated)",
     tag: "Public Service · Mobile App",
-    role: "Product Designer",
-    timeline: "2024 – 2025",
   },
   {
-      slug: "ai-marketplace",
-      title: "MINA · AI marketplace for SF parents",
-      outcome:
-        "~30% completed listings (PostHog) · AI listing & copilot · App Store (Canada)",
-      tag: "AI · Marketplace",
-      role: "Lead Product Designer",
-      timeline: "2025 – Present",
-    },
-    {
-      slug: "government-backend",
-      title: "Role-based backend for 600+ government staff",
-      outcome: "~30% faster ops entry · ~99% data accuracy",
-      tag: "B2B SaaS platform",
-      role: "Lead Product Designer",
-      timeline: "2024 – 2025",
-    },
-    {
-      slug: "baskin-robbins",
-      title: "Cross-market with Japan HQ · BR31 Taiwan membership app",
-      outcome: "MVP scoped · Japan-aligned, Taiwan-local rules",
-      tag: "Mobile · Loyalty",
-      role: "Lead Product Designer",
-      timeline: "2024 – 2025",
-    },
+    slug: "ai-marketplace",
+    title: "MINA · AI marketplace for SF parents",
+    tag: "AI · Marketplace",
+  },
+  {
+    slug: "government-backend",
+    title: "Role-based backend for 600+ government staff",
+    tag: "B2B SaaS platform",
+  },
+  {
+    slug: "baskin-robbins",
+    title: "Cross-market with Japan HQ · BR31 Taiwan membership app",
+    tag: "Mobile · Loyalty",
+  },
 ] as const;
 
 /** Research insights — standalone notes plus links to case studies where relevant. */
@@ -118,9 +105,6 @@ export default function Home() {
                       <ProjectCardTag>{item.tag}</ProjectCardTag>
                       <h3 className="mt-3 text-xl font-semibold tracking-tight text-zinc-100 group-hover:text-zinc-50 sm:text-2xl">
                         {item.title}
-                        <span className="mt-2 block text-sm font-normal text-zinc-400 sm:text-base">
-                          {item.outcome}
-                        </span>
                       </h3>
                     </div>
                   </Link>
