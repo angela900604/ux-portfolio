@@ -2,12 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { SITE_SHELL_CONTAINER } from "@/lib/site-shell";
 import { BeyondDesignGallery } from "../components/BeyondDesignGallery";
-import { FadeInSection } from "../components/FadeInSection";
-import { ProjectCardTag } from "../components/ProjectCardTag";
-import {
-  ADJACENT_WORK,
-  ADJACENT_WORK_THUMB,
-} from "../content/adjacent-work";
 import {
   BEYOND_GRAPHIC_GALLERY,
   BEYOND_PHOTOGRAPHY_GALLERY,
@@ -30,33 +24,39 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-100">
-      <div className={`${SITE_SHELL_CONTAINER} py-16 sm:py-24`}>
-        <p className="text-xs font-medium uppercase tracking-widest text-zinc-500 mb-4">
-          About
-        </p>
-        <h1 className="max-w-2xl">
-          Angela Yang
-        </h1>
-        <p className="mt-3 text-xs font-medium uppercase tracking-widest text-zinc-500 max-w-2xl">
-          B2C iOS · AI-driven products · Multi-segment research · Vancouver (open
-          to relocate)
-        </p>
-
-        <section className="mt-10">
-          <div className="grid items-start gap-8 lg:grid-cols-2 lg:gap-10">
-            <div>
-              <Image
-                src="/about/profile-v2.png"
-                alt="Angela Yang"
-                width={768}
-                height={1024}
-                className="h-auto w-full"
-                sizes="(max-width: 1024px) 100vw, 512px"
-                priority
-              />
+      <section className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 border-b border-zinc-800">
+        <div className="relative h-[min(90vh,56rem)] min-h-[78vh] w-full">
+          <Image
+            src="/about/profile-v2.png"
+            alt="Angela Yang"
+            fill
+            priority
+            className="object-cover object-[center_25%]"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-black/20" aria-hidden />
+          <div
+            className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/72 to-zinc-950/20"
+            aria-hidden
+          />
+          <div className="absolute inset-0 flex items-end pb-14 pt-28 sm:pb-20 sm:pt-36">
+            <div className={SITE_SHELL_CONTAINER}>
+              <p className="mb-4 text-xs font-medium uppercase tracking-widest text-zinc-300/80">
+                About
+              </p>
+              <h1 className="max-w-2xl text-white">Angela Yang</h1>
+              <p className="mt-3 max-w-2xl text-xs font-medium uppercase tracking-widest text-zinc-300/80">
+                B2C iOS · AI-driven products · Multi-segment research · Vancouver
+                (open to relocate)
+              </p>
             </div>
+          </div>
+        </div>
+      </section>
 
-            <div className="flex min-w-0 flex-col gap-5 text-base leading-relaxed text-zinc-300 sm:text-lg">
+      <div className={`${SITE_SHELL_CONTAINER} py-16 sm:py-24`}>
+        <section>
+          <div className="flex min-w-0 flex-col gap-5 text-base leading-relaxed text-zinc-300 sm:text-lg">
               <p className="max-w-3xl text-lg font-medium leading-snug tracking-[-0.015em] text-zinc-100 sm:text-xl sm:leading-snug md:text-2xl md:leading-[1.35]">
                 Product designer specializing in consumer mobile experiences —
                 I&apos;ve shipped complex, multi-role UX across government-scale
@@ -67,7 +67,6 @@ export default function AboutPage() {
               <p>
                 Based in Vancouver, BC. Open to relocation, remote, or hybrid.
               </p>
-            </div>
           </div>
         </section>
 
@@ -157,69 +156,6 @@ export default function AboutPage() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Beyond design
           </span>
-          <div className="mt-6 grid min-w-0 gap-4 sm:grid-cols-2 lg:gap-6">
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 sm:p-7">
-              <h3 className={ABOUT_CARD_TITLE_CLASS}>
-                Graphic design, drawing style exploration
-              </h3>
-              <p className={ABOUT_CARD_BODY_CLASS}>
-                I love work where I can be creative—illustration, graphic design,
-                branding, and hands-on DIY.
-              </p>
-            </div>
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 sm:p-7">
-              <h3 className={ABOUT_CARD_TITLE_CLASS}>
-                Photography &amp; travel
-              </h3>
-              <p className={ABOUT_CARD_BODY_CLASS}>
-                Through travel photography, I capture details from different cities. It is one of my ways to train visual sensitivity and build a more grounded understanding of aesthetics.
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-12 min-w-0">
-            <FadeInSection>
-              <h2 className="text-2xl font-semibold tracking-tight text-zinc-100 sm:text-3xl md:text-[2rem]">
-                How I Connect Brand &amp; Users
-              </h2>
-            </FadeInSection>
-            <ul className="mt-8 grid items-stretch gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {ADJACENT_WORK.map((item, i) => (
-                <li key={item.slug} className="h-full min-h-0">
-                  <FadeInSection className="h-full" delay={0.04 + i * 0.05}>
-                    <Link
-                      href={`/case-studies/${item.slug}`}
-                      className="group flex h-full min-h-0 flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/30 transition duration-300 hover:-translate-y-1 hover:border-zinc-500 hover:shadow-[0_20px_48px_-28px_rgba(0,0,0,0.75)]"
-                    >
-                      <div className="relative aspect-[16/11] overflow-hidden bg-zinc-900/50">
-                        <Image
-                          src={ADJACENT_WORK_THUMB[item.slug]}
-                          alt={`${item.title} thumbnail`}
-                          fill
-                          className="object-cover opacity-92 transition duration-500 group-hover:scale-[1.04]"
-                          sizes="(max-width: 896px) 100vw, 400px"
-                        />
-                        <div
-                          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-zinc-950/50 to-transparent opacity-0 transition duration-300 group-hover:opacity-100"
-                          aria-hidden
-                        />
-                      </div>
-                      <div className="flex flex-1 flex-col p-6 sm:p-8">
-                        <ProjectCardTag>{item.tag}</ProjectCardTag>
-                        <h3 className="mt-3 text-xl font-semibold tracking-tight text-zinc-100 group-hover:text-zinc-50 sm:text-2xl">
-                          {item.title}
-                          <span className="mt-2 block text-sm font-normal text-zinc-400 sm:text-base">
-                            {item.outcome}
-                          </span>
-                        </h3>
-                      </div>
-                    </Link>
-                  </FadeInSection>
-                </li>
-              ))}
-            </ul>
-          </div>
-
           <BeyondDesignGallery
             photography={BEYOND_PHOTOGRAPHY_GALLERY}
             graphic={BEYOND_GRAPHIC_GALLERY}

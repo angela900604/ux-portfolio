@@ -5,6 +5,8 @@ export type BeyondGalleryItem = {
   height: number;
   /** lg+ bento placement — mirrors travel collage grid */
   gridClass: string;
+  /** Optional per-item scale tweak for assets with built-in margins */
+  imageClassName?: string;
 };
 
 /** Photography & travel — same assets + layout as the original Beyond design travel grid */
@@ -96,6 +98,7 @@ export const BEYOND_GRAPHIC_GALLERY: BeyondGalleryItem[] = [
     width: 511,
     height: 416,
     gridClass: "lg:col-span-2 lg:row-span-1 lg:min-h-[min(260px,24vw)]",
+    imageClassName: "scale-[1.16] sm:scale-[1.2]",
   },
   {
     src: "/about/beyond-design/graphic/08.png",
