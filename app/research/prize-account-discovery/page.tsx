@@ -47,7 +47,7 @@ export default function PrizeAccountDiscoveryPage() {
             The feature existed. Nobody knew.
           </h1>
           <p className="text-lg font-medium text-zinc-300">
-            人們錯過獎金不是因為不在意
+            People didn&apos;t miss prizes because they didn&apos;t care
           </p>
           <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
             A discovery problem, not a motivation problem: the setting was in the
@@ -58,20 +58,22 @@ export default function PrizeAccountDiscoveryPage() {
 
         <section className="max-w-3xl space-y-6 border-t border-zinc-800 pt-10 sm:pt-12">
           <h2 className="text-xs font-semibold uppercase tracking-widest text-zinc-500">
-            故事
+            Story
           </h2>
           <blockquote className="border-l-2 border-violet-500/45 pl-5 text-lg leading-relaxed text-zinc-200 sm:text-xl">
-            老年人和外籍人士重複錯過領獎機會，不是因為忘記，而是根本不知道有「自動匯款帳戶」這個設定存在。功能存在，但從來沒人告訴他們。
+            Older adults and foreign residents missed prize payouts over and
+            over—not because they forgot, but because they had no idea an
+            auto-deposit account setting existed. The capability was in the
+            product; nobody had ever explained it to them.
           </blockquote>
           <p className="leading-relaxed text-zinc-300">
-            In research, some participants missed prize payouts again and again.
-            The pattern was not “they did not care”—it was that{" "}
+            In research, the pattern was not lack of motivation—it was that{" "}
             <span className="text-zinc-100">
-              no one had ever surfaced the auto-deposit account
+              no one had surfaced the auto-deposit account
             </span>{" "}
-            as a first-class step. Ministry jargon and buried settings hid a
-            capability that only works if people know it exists and trust why
-            bank details are collected.
+            as a first-class step. Ministry jargon and buried settings hid
+            something that only helps if people know it exists and trust why bank
+            details are collected.
           </p>
         </section>
 
@@ -89,7 +91,8 @@ export default function PrizeAccountDiscoveryPage() {
             length.
           </p>
           <p className="text-zinc-400 leading-relaxed">
-            Onboarding 時主動把這件事搬到台面，並逐欄解釋為什麼需要銀行資料。
+            Bring it forward in first-launch onboarding and explain each field—why
+            bank information is needed and how it connects to automatic payout.
           </p>
         </section>
 

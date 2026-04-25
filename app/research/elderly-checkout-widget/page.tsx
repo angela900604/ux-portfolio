@@ -47,7 +47,7 @@ export default function ElderlyCheckoutWidgetPage() {
             The bottleneck wasn&apos;t inside the app
           </h1>
           <p className="text-lg font-medium text-zinc-300">
-            e-Invoice · 老人被收銀台跳過的故事
+            e-Invoice · When older shoppers were skipped at the register
           </p>
           <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
             A pattern from multisegment interviews and checkout observation: the
@@ -57,16 +57,18 @@ export default function ElderlyCheckoutWidgetPage() {
 
         <section className="max-w-3xl space-y-6 border-t border-zinc-800 pt-10 sm:pt-12">
           <h2 className="text-xs font-semibold uppercase tracking-widest text-zinc-500">
-            故事
+            Story
           </h2>
           <blockquote className="border-l-2 border-emerald-500/50 pl-5 text-lg leading-relaxed text-zinc-200 sm:text-xl">
-            老年人還沒掏出手機，收銀員就默認他們沒有 app、直接給紙本。不是用戶放棄，是系統在他們之前就移動了。
+            Older shoppers often hadn&apos;t gotten their phone out when the
+            cashier assumed they didn&apos;t use the app and handed them a paper
+            receipt instead. Users didn&apos;t give up—the lane had already moved
+            on without them.
           </blockquote>
           <p className="leading-relaxed text-zinc-300">
-            Before older shoppers could open the official app, cashiers often
-            assumed they would not use it and handed over a paper invoice. The app
-            never entered the interaction—not because the person gave up, but
-            because the lane had already moved on.
+            The official app never entered the interaction in those moments—not
+            because the person abandoned the task, but because the social default
+            at the register was faster than opening the right screen.
           </p>
           <p className="leading-relaxed text-zinc-300">
             For people who did get their phone out, a second friction showed up in
@@ -89,7 +91,8 @@ export default function ElderlyCheckoutWidgetPage() {
             launch, not displaced by promos or personalization.
           </p>
           <p className="text-zinc-400 leading-relaxed">
-            把 barcode 做成 widget，不用開 app 就能在結帳時出示載具。
+            A home-screen widget surfaces the carrier barcode at checkout without
+            launching the full app first.
           </p>
         </section>
 
