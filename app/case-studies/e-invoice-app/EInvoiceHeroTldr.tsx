@@ -20,6 +20,12 @@ function TldrTargetIcon({ className }: { className?: string }) {
 
 const METRICS = [
   {
+    kicker: "Scale",
+    value: "~20M users · national service",
+    title: "Public reach",
+    detail: "Country-scale dependency on one official surface.",
+  },
+  {
     kicker: "What we shipped",
     value: "68% → 92%",
     title: "Increasing login success",
@@ -63,7 +69,7 @@ export function EInvoiceHeroTldr() {
         </h2>
       </div>
 
-      <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
         {METRICS.map((m) => (
           <div
             key={m.kicker}

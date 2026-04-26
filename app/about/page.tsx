@@ -44,7 +44,7 @@ export default function AboutPage() {
           </p>
           <h1 className="mt-4 max-w-2xl text-zinc-50">Angela Yang</h1>
           <p className="mt-3 max-w-2xl text-xs font-medium uppercase tracking-widest text-zinc-200/85">
-            B2C iOS · AI-driven products · Multi-segment research · Vancouver
+            B2C mobile &amp; tablet · Cross-market products · AI-driven · Vancouver
             (open to relocate)
           </p>
           <p className="mt-5 max-w-3xl text-base font-medium leading-snug tracking-[-0.015em] text-zinc-50 sm:text-lg md:text-xl">

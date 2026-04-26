@@ -11,7 +11,7 @@ const CORE_PRODUCT = [
     slug: "e-invoice-app",
     title:
       "Redesigning Taiwan Ministry of Finance's Uniform Invoice Award Redemption App",
-    tag: "Public Service · Mobile App",
+    tag: "Mobile · Multi-segment · Shipped",
   },
   {
     slug: "ai-marketplace",
@@ -21,12 +21,12 @@ const CORE_PRODUCT = [
   {
     slug: "government-backend",
     title: "Role-based backend for 600+ government staff",
-    tag: "B2B SaaS platform",
+    tag: "Responsive · Web · 600+ Users",
   },
   {
     slug: "baskin-robbins",
     title: "Cross-market with Japan HQ · BR31 Taiwan membership app",
-    tag: "Mobile · Membership System",
+    tag: "Mobile · Cross-market JP×TW · Shipped",
   },
 ] as const;
 
@@ -54,6 +54,13 @@ const RESEARCH_SHAPES_BUILD = [
     title: "Keep people in charge of risky AI steps",
     summary: "Preview, explicit OK, and undo—so listings and payouts never feel like silent automation.",
     href: "/research/high-risk-ai-human-control",
+  },
+  {
+    source: "BR31",
+    title: "Adapting Japan's membership logic for Taiwan",
+    summary:
+      "Membership tiers ran on points in Japan, spending amounts in Taiwan — same product, different market rules required structural redesign, not just translation.",
+    href: "/case-studies/baskin-robbins",
   },
 ] as const;
 
@@ -131,7 +138,7 @@ export default function Home() {
               How research shapes what I build
             </h2>
           </FadeInSection>
-          <ul className="mt-8 grid items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+          <ul className="mt-8 grid items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 lg:gap-8">
             {RESEARCH_SHAPES_BUILD.map((item, i) => (
               <li key={item.href} className="h-full min-h-0">
                 <FadeInSection className="h-full" delay={0.04 + i * 0.05}>

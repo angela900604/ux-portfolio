@@ -60,9 +60,14 @@ export function CaseStudyAtAGlance({
 }: Props) {
   const bar = ACCENT_BAR[accent];
 
+  const noAccentGridClass =
+    items.length >= 5
+      ? "grid min-w-0 w-full grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 lg:gap-x-6 xl:gap-x-8"
+      : "grid min-w-0 w-full grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-8";
+
   const columnsClass = showAccent
     ? "flex min-w-0 flex-1 flex-col gap-y-2 lg:flex-row lg:gap-x-6 lg:gap-y-0 xl:gap-x-8"
-    : "grid min-w-0 w-full grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-8";
+    : noAccentGridClass;
 
   const columns = (
     <div className={columnsClass}>

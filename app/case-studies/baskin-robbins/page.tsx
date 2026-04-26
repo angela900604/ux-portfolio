@@ -138,6 +138,10 @@ const AT_A_GLANCE_ITEMS = [
     value: "Mobile membership app · Loyalty & rewards (Taiwan)",
   },
   {
+    label: "Market scope",
+    value: "Taiwan launch · Aligned with Japan HQ · iOS + Android",
+  },
+  {
     label: "Focus",
     value: "Discovery through handoff · MVP with engineering",
   },
