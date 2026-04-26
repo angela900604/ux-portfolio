@@ -10,9 +10,9 @@ import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { AppStoreReviewsSection } from "./AppStoreReviews";
 import {
-  FinalProductScreens,
-  type FinalProductGroup,
-} from "./FinalProductScreens";
+  BaskinFinalScreensMarquee,
+  type BaskinMarqueeSlide,
+} from "./BaskinFinalScreensMarquee";
 import {
   BaskinHeroShowcase,
   type BaskinHeroImage,
@@ -43,32 +43,12 @@ const HERO_DEMO_IMAGES = [
   },
 ] as const;
 
-/**
- * Final product (`final-screen-01` … `final-screen-20`): each number 1–20 appears
- * at most once across groups. Order in each `screenNumbers` = display order.
- */
-const FINAL_PRODUCT_GROUPS: readonly FinalProductGroup[] = [
-  {
-    title: "Sign-in & registration",
-    screenNumbers: [10, 3],
-  },
-  {
-    title: "Member home",
-    screenNumbers: [20, 9],
-  },
-  {
-    title: "Vouchers",
-    screenNumbers: [13, 5],
-  },
-  {
-    title: "In-store visits & points",
-    screenNumbers: [6, 8],
-  },
-  {
-    title: "Store locator",
-    screenNumbers: [4, 1],
-  },
-];
+const FINAL_PRODUCT_MARQUEE_SLIDES: readonly BaskinMarqueeSlide[] = [
+  20, 9, 10, 3, 13, 5, 6, 8, 4,
+].map((n) => ({
+  src: ASSET(`final-screen-${String(n).padStart(2, "0")}.png`),
+  alt: `BR31 Taiwan membership app — final screen ${n}`,
+}));
 
 const AT_A_GLANCE_ITEMS = [
   { label: "Timeline", value: "Dec 2024 – Mar 2025 (4 months)" },
@@ -263,16 +243,14 @@ export default function BaskinRobbinsCaseStudy() {
               in-app barcodes across ticket types and hardware. Issues were closed
               before the September 2025 launch.
             </p>
-            <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
-              <Image
-                src={ASSET("uat-voucher-flow-collage.png")}
-                alt="BR31 app: redemption success, promotional voucher, in-store gift, and scannable digital barcode for POS"
-                width={1200}
-                height={900}
-                className="h-auto w-full object-contain"
-                sizes="(max-width: 1024px) 100vw, 960px"
-              />
-            </div>
+            <Image
+              src={ASSET("uat-voucher-flow-collage.png")}
+              alt="UAT testing — POS barcode scan across ticket types before September 2025 launch"
+              width={1200}
+              height={900}
+              className="h-auto w-full max-w-full object-contain"
+              sizes="(max-width: 1024px) 100vw, min(100vw, 48rem)"
+            />
             <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/50 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.04)]">
               <video
                 className="h-auto w-full object-contain"
@@ -292,7 +270,7 @@ export default function BaskinRobbinsCaseStudy() {
 
         <CaseStudyInViewSection
           id="final-product"
-          className={`space-y-10 ${sectionScroll}`}
+          className={`space-y-8 ${sectionScroll}`}
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Final product
@@ -300,7 +278,7 @@ export default function BaskinRobbinsCaseStudy() {
           <h2 className="text-zinc-100">
             The product
           </h2>
-          <FinalProductScreens asset={ASSET} groups={FINAL_PRODUCT_GROUPS} />
+          <BaskinFinalScreensMarquee slides={FINAL_PRODUCT_MARQUEE_SLIDES} />
         </CaseStudyInViewSection>
 
         <AppStoreReviewsSection appStoreHref={APP_STORE_TW} />

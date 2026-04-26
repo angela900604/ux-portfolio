@@ -56,6 +56,7 @@ export function BaskinHeroShowcase({
                 src={img.src}
                 alt={img.alt}
                 fill
+                quality={95}
                 className="object-cover"
                 sizes={
                   secondary.length === 1
