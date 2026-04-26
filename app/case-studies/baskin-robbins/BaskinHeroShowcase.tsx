@@ -39,7 +39,11 @@ export function BaskinHeroShowcase({
         </ImageLightbox>
       ) : null}
 
-      <div className="grid gap-4 sm:grid-cols-3">
+      <div
+        className={`grid gap-4 ${
+          secondary.length === 1 ? "grid-cols-1" : "sm:grid-cols-3"
+        }`}
+      >
         {secondary.map((img) => (
           <ImageLightbox
             key={img.src}
@@ -53,7 +57,11 @@ export function BaskinHeroShowcase({
                 alt={img.alt}
                 fill
                 className="object-cover"
-                sizes="(max-width: 640px) 100vw, 33vw"
+                sizes={
+                  secondary.length === 1
+                    ? "(max-width: 1480px) 100vw, 1200px"
+                    : "(max-width: 640px) 100vw, 33vw"
+                }
                 priority
               />
             </div>

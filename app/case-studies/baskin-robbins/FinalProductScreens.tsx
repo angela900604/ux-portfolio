@@ -25,7 +25,7 @@ export function FinalProductScreens({ asset, groups }: Props) {
               </p>
             ) : null}
           </div>
-          <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid max-w-4xl gap-x-6 gap-y-12 sm:grid-cols-2">
             {group.screenNumbers.map((n) => {
               const src = asset(
                 `final-screen-${String(n).padStart(2, "0")}.png`
