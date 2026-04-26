@@ -4,6 +4,7 @@ import {
   CaseStudyAtAGlance,
   CASE_STUDY_AT_A_GLANCE_DARK_HERO_PROPS,
 } from "../_components/CaseStudyAtAGlance";
+import { CaseStudyHeroFullBleed } from "../_components/CaseStudyHeroFullBleed";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
@@ -13,10 +14,6 @@ import {
   BaskinFinalScreensMarquee,
   type BaskinMarqueeSlide,
 } from "./BaskinFinalScreensMarquee";
-import {
-  CASE_STUDY_BODY_GRID,
-  SITE_SHELL_CONTAINER,
-} from "@/lib/site-shell";
 
 export const metadata = {
   title:
@@ -26,6 +23,11 @@ export const metadata = {
 };
 
 const ASSET = (name: string) => `/case-studies/baskin-robbins/${name}`;
+
+const HERO_MEMBERSHIP = {
+  src: ASSET("hero-membership.png"),
+  alt: "BR31 membership app hero: member benefits and digital card on phone in café setting",
+} as const;
 
 const HERO_MOCKUP_IMAGES = [
   {
@@ -82,57 +84,76 @@ const APP_STORE_TW =
   "https://apps.apple.com/tw/app/31%E4%BF%B1%E6%A8%82%E9%83%A8/id6755289789";
 
 export default function BaskinRobbinsCaseStudy() {
+  const [heroPrimary, ...heroSquarePair] = HERO_MOCKUP_IMAGES;
+
   return (
     <article className="min-h-screen bg-zinc-950 text-zinc-100">
-      <header className="border-b border-zinc-800 bg-zinc-950">
-        <div className={`${SITE_SHELL_CONTAINER} pt-14 pb-6 sm:pt-20 sm:pb-8`}>
-          <div
-            className={`${CASE_STUDY_BODY_GRID} case-study-prose min-w-0 overflow-x-hidden`}
-          >
-            <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-zinc-500">
+      <header className="border-b border-zinc-800">
+        <CaseStudyHeroFullBleed
+          imageSrc={HERO_MEMBERSHIP.src}
+          imageAlt={HERO_MEMBERSHIP.alt}
+          imageClassName="object-cover object-[center_30%]"
+          eyebrow={
+            <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-white/75">
               <span>Case Study</span>
-              <span className="text-zinc-600">·</span>
+              <span className="text-white/45">·</span>
               <span>Mobile · Loyalty</span>
-              <span className="text-zinc-600">·</span>
+              <span className="text-white/45">·</span>
               <span>Zero-to-one</span>
             </div>
-            <h1 className="mt-5 max-w-[min(100%,56rem)] text-3xl font-semibold tracking-tight text-zinc-100 sm:text-4xl md:text-5xl lg:text-6xl">
+          }
+          title={
+            <h1 className="mt-5 max-w-[min(100%,56rem)] text-3xl font-semibold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
               Cross-market collaboration with Japan HQ for Taiwan&apos;s first
               Baskin Robbins membership app
             </h1>
-            <p className="mt-5 max-w-3xl text-base leading-relaxed text-zinc-300 sm:text-lg">
+          }
+          subtitle={
+            <p className="text-base leading-relaxed text-zinc-200 sm:text-lg">
               Taiwan&apos;s loyalty market was growing fast while BR31 still had no
               native app—I led end-to-end UX/UI for 31 Club, shipped the phase-one MVP
               on schedule, and early Taiwan App Store reviews came in at five stars.
             </p>
-            <div className="mt-8 max-w-4xl">
-              <CaseStudyAtAGlance
-                items={AT_A_GLANCE_ITEMS}
-                {...CASE_STUDY_AT_A_GLANCE_DARK_HERO_PROPS}
+          }
+          leadBelowSubtitle={
+            <CaseStudyAtAGlance
+              items={AT_A_GLANCE_ITEMS}
+              {...CASE_STUDY_AT_A_GLANCE_DARK_HERO_PROPS}
+            />
+          }
+        >
+          <div className="space-y-6 sm:space-y-8">
+            <div className="min-w-0 w-full">
+              <Image
+                src={heroPrimary.src}
+                alt={heroPrimary.alt}
+                width={1200}
+                height={900}
+                quality={95}
+                className="h-auto w-full object-contain"
+                sizes="(max-width: 1480px) 100vw, 1200px"
+                priority
               />
             </div>
-          </div>
-        </div>
-        <div className="border-t border-zinc-800/80 bg-zinc-900/25">
-          <div className={`${SITE_SHELL_CONTAINER} py-8 sm:py-10`}>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {HERO_MOCKUP_IMAGES.map((img) => (
-                <div key={img.src} className="min-w-0">
+            <div className="grid grid-cols-2 gap-4 sm:gap-6">
+              {heroSquarePair.map((img) => (
+                <div
+                  key={img.src}
+                  className="relative aspect-square min-w-0 overflow-hidden"
+                >
                   <Image
                     src={img.src}
                     alt={img.alt}
-                    width={1200}
-                    height={900}
+                    fill
                     quality={95}
-                    className="h-auto w-full object-contain"
-                    sizes="(max-width: 1024px) 100vw, 33vw"
-                    priority
+                    className="object-cover"
+                    sizes="(max-width: 768px) 50vw, 500px"
                   />
                 </div>
               ))}
             </div>
           </div>
-        </div>
+        </CaseStudyHeroFullBleed>
       </header>
 
       <CaseStudyContentLayout>
@@ -169,130 +190,127 @@ export default function BaskinRobbinsCaseStudy() {
           </div>
         </CaseStudyInViewSection>
 
-        <CaseStudyInViewSection
-          className={`min-w-0 w-full space-y-8 ${sectionScroll}`}
-        >
-          <DesignJourneyCollapsible
-            journeySectionIds={DESIGN_JOURNEY_SUBSECTION_IDS}
-            panelId="baskin-design-journey-panel"
-            navAnchorId="design-journey"
-            title="Design journey"
-            subtitle="From requirements and handoff to HQ sign-off and store UAT"
-          >
-            <div
-              id="design-journey-req"
-              className={`max-w-3xl space-y-4 ${sectionScroll}`}
-            >
-              <h3 className="text-lg font-semibold tracking-tight text-zinc-100 sm:text-xl">
-                Requirement interviews &amp; functional map
-              </h3>
-              <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
-                Interviews with the client and backend team locked feasibility and
-                scope early. Japan tied tiers to points; Taiwan&apos;s CRM used
-                spend, with no initial point-redemption plan—we redesigned loyalty
-                for the local market before UI, not after. The functional map also
-                flagged webview vs. native surfaces so build stayed interpretable.
-              </p>
-            </div>
-
-            <div
-              id="design-journey-visual"
-              className={`max-w-3xl space-y-4 ${sectionScroll}`}
-            >
-              <h3 className="text-lg font-semibold tracking-tight text-zinc-100 sm:text-xl">
-                Visual style proposal
-              </h3>
-              <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
-                Three directions under time pressure:{" "}
-                <span className="text-zinc-300">
-                  A — sweet &amp; energetic (pink-forward)
-                </span>
-                ;{" "}
-                <span className="text-zinc-300">
-                  B — minimal &amp; fresh (white + pink accents, close to Japan)
-                </span>
-                ;{" "}
-                <span className="text-zinc-300">
-                  C — gradient &amp; premium
-                </span>
-                . The client chose A; I locked pink and blue primaries with neutral
-                hierarchy and built the component library on that system.
-              </p>
-            </div>
-
-            <div
-              id="design-journey-flow"
-              className={`max-w-3xl space-y-4 ${sectionScroll}`}
-            >
-              <h3 className="text-lg font-semibold tracking-tight text-zinc-100 sm:text-xl">
-                Page flow &amp; interaction logic
-              </h3>
-              <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
-                After mockup approval, a detailed page flow captured transitions,
-                decision logic, scroll vs. fixed regions, and states—not just arrows.
-                Figma links let engineers walk the logic without slack threads.
-              </p>
-            </div>
-
-            <div
-              id="design-journey-hq"
-              className={`max-w-3xl space-y-4 ${sectionScroll}`}
-            >
-              <h3 className="text-lg font-semibold tracking-tight text-zinc-100 sm:text-xl">
-                Cross-market review with Japan HQ
-              </h3>
-              <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
-                HQ sign-off gated engineering. I presented through
-                interpreter-supported calls with both market rationale and screens—why
-                Taiwan diverged where it had to—so we avoided expensive post-launch
-                rework.
-              </p>
-            </div>
-
-            <div
-              id="design-journey-handoff"
-              className={`max-w-3xl space-y-4 ${sectionScroll}`}
-            >
-              <h3 className="text-lg font-semibold tracking-tight text-zinc-100 sm:text-xl">
-                Handoff &amp; UAT
-              </h3>
-              <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
-                Handoff was two Figmas: full mockups with slice notes (dimensions,
-                constraints, scroll regions) and a UI kit (components, color, type,
-                icons). Pre-launch UAT stressed voucher redemption—POS scans of
-                in-app barcodes across ticket types and hardware. Issues were closed
-                before the September 2025 launch.
-              </p>
-            </div>
-          </DesignJourneyCollapsible>
-
-          <div className="grid min-w-0 gap-4 md:grid-cols-2 md:items-start md:gap-6">
-            <Image
-              src={ASSET("uat-voucher-flow-collage.png")}
-              alt="UAT testing — POS barcode scan across ticket types before September 2025 launch"
-              width={1200}
-              height={900}
-              className="h-auto w-full object-contain"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
-            <video
-              className="h-auto w-full object-contain"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              aria-label="Screen recording: BR31 voucher and POS barcode testing during UAT"
-            >
-              <source src={ASSET("br31-testing.webm")} type="video/webm" />
-              <source src={ASSET("br31-testing.mp4")} type="video/mp4" />
-            </video>
-          </div>
-        </CaseStudyInViewSection>
-
         <div id="final-product" className={sectionScroll}>
           <BaskinFinalScreensMarquee slides={FINAL_PRODUCT_MARQUEE_SLIDES} />
         </div>
+
+        <CaseStudyInViewSection
+          className={`min-w-0 w-full border-t border-zinc-800 pt-10 sm:pt-12 ${sectionScroll}`}
+        >
+          <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-8">
+            <div className="min-w-0 flex-1">
+              <DesignJourneyCollapsible
+                journeySectionIds={DESIGN_JOURNEY_SUBSECTION_IDS}
+                panelId="baskin-design-journey-panel"
+                navAnchorId="design-journey"
+                title="Design journey"
+                subtitle="From requirements and handoff to HQ sign-off and store UAT"
+                className="!scroll-mt-0 border-t-0 !pt-0"
+              >
+                <div
+                  id="design-journey-req"
+                  className={`space-y-4 ${sectionScroll}`}
+                >
+                  <h3 className="text-lg font-semibold tracking-tight text-zinc-100 sm:text-xl">
+                    Requirement interviews &amp; functional map
+                  </h3>
+                  <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
+                    Interviews with the client and backend team locked feasibility and
+                    scope early. Japan tied tiers to points; Taiwan&apos;s CRM used
+                    spend, with no initial point-redemption plan—we redesigned loyalty
+                    for the local market before UI, not after. The functional map also
+                    flagged webview vs. native surfaces so build stayed interpretable.
+                  </p>
+                </div>
+
+                <div
+                  id="design-journey-visual"
+                  className={`space-y-4 ${sectionScroll}`}
+                >
+                  <h3 className="text-lg font-semibold tracking-tight text-zinc-100 sm:text-xl">
+                    Visual style proposal
+                  </h3>
+                  <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
+                    Three directions under time pressure:{" "}
+                    <span className="text-zinc-300">
+                      A — sweet &amp; energetic (pink-forward)
+                    </span>
+                    ;{" "}
+                    <span className="text-zinc-300">
+                      B — minimal &amp; fresh (white + pink accents, close to Japan)
+                    </span>
+                    ;{" "}
+                    <span className="text-zinc-300">
+                      C — gradient &amp; premium
+                    </span>
+                    . The client chose A; I locked pink and blue primaries with neutral
+                    hierarchy and built the component library on that system.
+                  </p>
+                </div>
+
+                <div
+                  id="design-journey-flow"
+                  className={`space-y-4 ${sectionScroll}`}
+                >
+                  <h3 className="text-lg font-semibold tracking-tight text-zinc-100 sm:text-xl">
+                    Page flow &amp; interaction logic
+                  </h3>
+                  <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
+                    After mockup approval, a detailed page flow captured transitions,
+                    decision logic, scroll vs. fixed regions, and states—not just arrows.
+                    Figma links let engineers walk the logic without slack threads.
+                  </p>
+                </div>
+
+                <div
+                  id="design-journey-hq"
+                  className={`space-y-4 ${sectionScroll}`}
+                >
+                  <h3 className="text-lg font-semibold tracking-tight text-zinc-100 sm:text-xl">
+                    Cross-market review with Japan HQ
+                  </h3>
+                  <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
+                    HQ sign-off gated engineering. I presented through
+                    interpreter-supported calls with both market rationale and screens—why
+                    Taiwan diverged where it had to—so we avoided expensive post-launch
+                    rework.
+                  </p>
+                </div>
+
+                <div
+                  id="design-journey-handoff"
+                  className={`space-y-4 ${sectionScroll}`}
+                >
+                  <h3 className="text-lg font-semibold tracking-tight text-zinc-100 sm:text-xl">
+                    Handoff &amp; UAT
+                  </h3>
+                  <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
+                    Handoff was two Figmas: full mockups with slice notes (dimensions,
+                    constraints, scroll regions) and a UI kit (components, color, type,
+                    icons). Pre-launch UAT stressed voucher redemption—POS scans of
+                    in-app barcodes across ticket types and hardware. Issues were closed
+                    before the September 2025 launch.
+                  </p>
+                </div>
+              </DesignJourneyCollapsible>
+            </div>
+
+            <div className="min-w-0 flex-1">
+              <video
+                className="h-auto w-full object-contain"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                aria-label="Screen recording: BR31 voucher and POS barcode testing during UAT"
+              >
+                <source src={ASSET("br31-testing.webm")} type="video/webm" />
+                <source src={ASSET("br31-testing.mp4")} type="video/mp4" />
+              </video>
+            </div>
+          </div>
+        </CaseStudyInViewSection>
 
         <AppStoreReviewsSection appStoreHref={APP_STORE_TW} />
 
