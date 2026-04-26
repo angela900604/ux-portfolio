@@ -51,13 +51,6 @@ const RESEARCH_SHAPES_BUILD = [
     summary: "Preview, explicit OK, and undo—so listings and payouts never feel like silent automation.",
     href: "/research/high-risk-ai-human-control",
   },
-  {
-    source: "BR31",
-    title: "Adapting Japan's membership logic for Taiwan",
-    summary:
-      "Membership tiers ran on points in Japan, spending amounts in Taiwan — same product, different market rules required structural redesign, not just translation.",
-    href: "/case-studies/baskin-robbins",
-  },
 ] as const;
 
 const WORK_THUMB: Record<string, string> = {
@@ -131,7 +124,7 @@ export default function Home() {
               How research shapes what I build
             </h2>
           </FadeInSection>
-          <ul className="mt-8 grid items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 lg:gap-8">
+          <ul className="mt-8 grid items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
             {RESEARCH_SHAPES_BUILD.map((item, i) => (
               <li key={item.href} className="h-full min-h-0">
                 <FadeInSection className="h-full" delay={0.04 + i * 0.05}>
