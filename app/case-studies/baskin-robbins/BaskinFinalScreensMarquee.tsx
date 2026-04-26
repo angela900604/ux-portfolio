@@ -39,9 +39,12 @@ function MarqueeSlide({
 export function BaskinFinalScreensMarquee({
   slides,
   durationSec,
+  backgroundColor = "#FEE7F4",
 }: {
   slides: readonly BaskinMarqueeSlide[];
   durationSec?: number;
+  /** Marquee strip background (default light pink for BR31). */
+  backgroundColor?: string;
 }) {
   if (slides.length === 0) return null;
 
@@ -51,7 +54,7 @@ export function BaskinFinalScreensMarquee({
   return (
     <div
       className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 py-6 sm:py-8"
-      style={{ backgroundColor: "#F20C90" }}
+      style={{ backgroundColor }}
       role="region"
       aria-label="Shipped product screens — auto-scrolling gallery. Pause with reduced motion in system settings."
     >
