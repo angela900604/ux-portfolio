@@ -24,3 +24,14 @@ export function ProjectCardTag({
     </span>
   );
 }
+
+/** Green “Shipped” pill for homepage UX / product case cards. */
+export function ProjectShippedBadge({ className = "" }: { className?: string }) {
+  return (
+    <span
+      className={`inline-flex w-fit shrink-0 items-center rounded-full border border-emerald-400/45 bg-emerald-500/[0.14] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-widest text-emerald-200/95 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.07)] transition duration-300 group-hover:border-emerald-400/55 group-hover:bg-emerald-500/20 group-hover:text-emerald-100 ${className}`.trim()}
+    >
+      Shipped
+    </span>
+  );
+}

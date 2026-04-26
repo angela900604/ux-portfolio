@@ -3,7 +3,7 @@ import Image from "next/image";
 import { SITE_SHELL_CONTAINER } from "@/lib/site-shell";
 import { FadeInSection } from "./components/FadeInSection";
 import { HeroWithBubble } from "./components/HeroWithBubble";
-import { ProjectCardTag } from "./components/ProjectCardTag";
+import { ProjectCardTag, ProjectShippedBadge } from "./components/ProjectCardTag";
 import { EInvoiceHomeProjectCover } from "./components/EInvoiceHomeProjectCover";
 import { ADJACENT_WORK, ADJACENT_WORK_THUMB } from "./content/adjacent-work";
 
@@ -27,7 +27,7 @@ const CORE_PRODUCT = [
   {
     slug: "baskin-robbins",
     title: "Cross-market with Japan HQ · BR31 Taiwan membership app",
-    tag: "Mobile · Cross-market JP×TW · Shipped",
+    tag: "Mobile · Cross-market JP×TW",
   },
 ] as const;
 
@@ -104,7 +104,10 @@ export default function Home() {
                       />
                     </div>
                     <div className="flex flex-1 flex-col p-6 sm:p-8">
-                      <ProjectCardTag>{item.tag}</ProjectCardTag>
+                      <div className="flex flex-wrap items-center gap-2">
+                        <ProjectCardTag>{item.tag}</ProjectCardTag>
+                        <ProjectShippedBadge />
+                      </div>
                       <h3 className="mt-3 text-xl font-semibold tracking-tight text-zinc-100 group-hover:text-zinc-50 sm:text-2xl">
                         {item.title}
                       </h3>
