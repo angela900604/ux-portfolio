@@ -156,14 +156,18 @@ export default function BaskinRobbinsCaseStudy() {
             Project background
           </span>
           <h2 className="text-zinc-100">
-            Why this project
+            Japan&apos;s BR31 had a thriving membership app. Taiwan had nothing.
           </h2>
           <p className="text-zinc-300 leading-relaxed max-w-3xl">
-            BR31 already had a working loyalty program in Japan. Taiwan had
-            nothing—no dedicated app, no digital rewards loop. I led end-to-end
-            UX/UI to change that: a Phase 1 MVP shipped in 4 months, aligned with
-            Japan HQ and built for how Taiwanese users actually engage with loyalty
-            programs on mobile.
+            Japan&apos;s 31Club launched in 2014 and grew to over 10 million
+            members by 2025. Member purchases now account for more than 40% of
+            total sales — proof that the loyalty loop directly drives revenue.
+            Taiwan had no equivalent: no dedicated app, no digital rewards surface,
+            no way to turn a one-time scoop buyer into a repeat member.
+          </p>
+          <p className="text-zinc-300 leading-relaxed max-w-3xl">
+            I was brought in to close that gap — design Taiwan&apos;s first BR31
+            membership app from zero, aligned with Japan HQ, shipped in 4 months.
           </p>
           <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
             <Image
