@@ -6,16 +6,7 @@ import {
   SITE_SHELL_CONTAINER,
 } from "@/lib/site-shell";
 import { BeyondDesignGallery } from "../components/BeyondDesignGallery";
-import { FadeInSection } from "../components/FadeInSection";
-import { ProjectCardTag } from "../components/ProjectCardTag";
-import {
-  ADJACENT_WORK,
-  ADJACENT_WORK_THUMB,
-} from "../content/adjacent-work";
-import {
-  BEYOND_GRAPHIC_GALLERY,
-  BEYOND_PHOTOGRAPHY_GALLERY,
-} from "../content/beyond-design-gallery";
+import { BEYOND_PHOTOGRAPHY_GALLERY } from "../content/beyond-design-gallery";
 
 const INTERVIEW_PHOTO_SRC = "/about/user-interviews-collage.png";
 
@@ -167,46 +158,9 @@ export default function AboutPage() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Beyond design
           </span>
-          <div className="mt-6 min-w-0">
-            <ul className="grid items-stretch gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {ADJACENT_WORK.map((item, i) => (
-                <li key={item.slug} className="h-full min-h-0">
-                  <FadeInSection className="h-full" delay={0.04 + i * 0.05}>
-                    <Link
-                      href={`/case-studies/${item.slug}`}
-                      className="group flex h-full min-h-0 flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/30 transition duration-300 hover:-translate-y-1 hover:border-zinc-500 hover:shadow-[0_20px_48px_-28px_rgba(0,0,0,0.75)]"
-                    >
-                      <div className="relative aspect-[16/11] overflow-hidden bg-zinc-900/50">
-                        <Image
-                          src={ADJACENT_WORK_THUMB[item.slug]}
-                          alt={`${item.title} thumbnail`}
-                          fill
-                          className="object-cover opacity-92 transition duration-500 group-hover:scale-[1.04]"
-                          sizes="(max-width: 896px) 100vw, 400px"
-                        />
-                        <div
-                          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-zinc-950/50 to-transparent opacity-0 transition duration-300 group-hover:opacity-100"
-                          aria-hidden
-                        />
-                      </div>
-                      <div className="flex flex-1 flex-col p-6 sm:p-8">
-                        <ProjectCardTag>{item.tag}</ProjectCardTag>
-                        <h3 className="mt-3 text-xl font-semibold tracking-tight text-zinc-100 group-hover:text-zinc-50 sm:text-2xl">
-                          {item.title}
-                          <span className="mt-2 block text-sm font-normal text-zinc-400 sm:text-base">
-                            {item.outcome}
-                          </span>
-                        </h3>
-                      </div>
-                    </Link>
-                  </FadeInSection>
-                </li>
-              ))}
-            </ul>
-          </div>
           <BeyondDesignGallery
             photography={BEYOND_PHOTOGRAPHY_GALLERY}
-            graphic={BEYOND_GRAPHIC_GALLERY}
+            graphic={[]}
           />
         </section>
 
