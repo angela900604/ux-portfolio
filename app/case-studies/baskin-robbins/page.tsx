@@ -60,6 +60,7 @@ const HERO_DEMO_IMAGES = [
 ] as const;
 
 const BASKIN_JOURNEY_IDS = [
+  "design-journey-overview",
   "team-objectives",
   "role-deliverables",
   "project-outcomes",
@@ -269,7 +270,181 @@ export default function BaskinRobbinsCaseStudy() {
         <DesignJourneyCollapsible
           journeySectionIds={BASKIN_JOURNEY_IDS}
           panelId="baskin-design-journey-panel"
+          subtitle="Requirements, visual style, page flow, Japan HQ review, handoff &amp; UAT"
         >
+        <CaseStudyInViewSection
+          id="design-journey-overview"
+          className={`max-w-3xl space-y-8 ${sectionScroll}`}
+        >
+          <div className="space-y-2">
+            <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+              Design journey
+            </span>
+            <h2 className="max-w-3xl text-zinc-100">
+              From requirements and style lock to cross-market sign-off and store-ready
+              UAT
+            </h2>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold tracking-tight text-zinc-100 sm:text-xl">
+              Requirement interviews &amp; functional map
+            </h3>
+            <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
+              I started by conducting requirement interviews with the client and
+              backend engineers to confirm feature feasibility and scope.
+            </p>
+            <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
+              One key discovery: Japan&apos;s membership used points for tier
+              progression, while Taiwan&apos;s existing CRM was built around spending
+              amounts. There was also no initial plan for point redemption in Taiwan.
+              Rather than forcing a 1:1 port of the Japan model, I flagged the gap
+              early and we redesigned the membership mechanics to fit the local
+              market — adjusting the loyalty logic before any UI was built, not after.
+            </p>
+            <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
+              The functional map also identified which features would render as
+              webviews versus native screens, which reduced developer
+              misinterpretation during build and prevented late-stage scope surprises.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold tracking-tight text-zinc-100 sm:text-xl">
+              Visual style proposal
+            </h3>
+            <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
+              With timeline pressure, I prepared three style directions for the client
+              to evaluate rather than iterating open-endedly:
+            </p>
+            <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-zinc-400 marker:text-zinc-500 sm:text-base">
+              <li>
+                <span className="font-medium text-zinc-200">
+                  Style A — Sweet &amp; energetic:
+                </span>{" "}
+                BR31&apos;s signature pink as the dominant hue, high energy; targets
+                users who respond to vibrant brand expression.
+              </li>
+              <li>
+                <span className="font-medium text-zinc-200">
+                  Style B — Minimal &amp; fresh:
+                </span>{" "}
+                Primarily white with pink accents, close to Japan&apos;s existing app,
+                familiar and clean.
+              </li>
+              <li>
+                <span className="font-medium text-zinc-200">
+                  Style C — Gradient &amp; premium:
+                </span>{" "}
+                Gradient treatments to convey a more sophisticated, modern brand
+                image.
+              </li>
+            </ul>
+            <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
+              The client selected Style A. I then locked the color system — BR31 pink
+              and blue as primaries, neutral tones for hierarchy and readability — and
+              built the component library on top of that decision.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold tracking-tight text-zinc-100 sm:text-xl">
+              Page flow &amp; interaction logic
+            </h3>
+            <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
+              Once mockups were client-approved, I translated them into a detailed
+              page flow that documented page-to-page transitions and the system&apos;s
+              decision logic (not just arrows — annotations covered scrollable vs.
+              non-scrollable areas, conditional states, and interaction behaviors). I
+              used Figma&apos;s linking feature to cross-reference explanations inline,
+              so developers could navigate the logic without back-and-forth.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold tracking-tight text-zinc-100 sm:text-xl">
+              Cross-market review with Japan HQ
+            </h3>
+            <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
+              All design decisions required review and sign-off from Japan HQ before
+              engineering could begin. I collaborated directly with Japan stakeholders
+              through online meetings, with a Japanese interpreter facilitating. Each
+              review session required me to present not just the designs, but the
+              Taiwan market rationale — why certain patterns deviated from Japan&apos;s
+              app, backed by local user context. This added coordination overhead, but
+              prevented post-launch revision cycles that would have been more
+              expensive.
+            </p>
+            <figure className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+              <Image
+                src={ASSET("japan-hq-cross-market-meeting.png")}
+                alt="Online working session with Japan HQ and Taiwan stakeholders—interpreter-supported design review before build"
+                width={1024}
+                height={644}
+                className="h-auto w-full object-cover"
+                sizes="(max-width: 1024px) 100vw, 960px"
+              />
+              <figcaption className="border-t border-zinc-800/80 px-4 py-3 text-xs leading-relaxed text-zinc-500 sm:px-5">
+                Online working session with Japan HQ and Taiwan—interpreter-supported
+                reviews before build.
+              </figcaption>
+            </figure>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold tracking-tight text-zinc-100 sm:text-xl">
+              Handoff &amp; UAT
+            </h3>
+            <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
+              I delivered two Figma files to the development team: a full mockup file
+              with high-fidelity screens and slicing annotations (dimensions,
+              constraints, scrollable regions), and a UI kit with main components,
+              colors, typography, and icons organized for direct export.
+            </p>
+            <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
+              Before launch, we ran UAT focused on the voucher redemption flow —
+              specifically testing whether POS systems at BR31 stores could
+              successfully scan the in-app digital voucher barcodes. We ran through
+              multiple ticket types across different POS configurations to confirm
+              scan accuracy and catch any rendering or contrast issues that would
+              cause failures at the counter. Issues found during UAT were resolved
+              before the September 2025 launch.
+            </p>
+            <figure className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+              <Image
+                src={ASSET("uat-voucher-flow-collage.png")}
+                alt="BR31 app: redemption success, promotional voucher, in-store gift, and scannable digital barcode for POS"
+                width={1200}
+                height={900}
+                className="h-auto w-full object-contain"
+                sizes="(max-width: 1024px) 100vw, 960px"
+              />
+              <figcaption className="border-t border-zinc-800/80 px-4 py-3 text-xs leading-relaxed text-zinc-500 sm:px-5">
+                Voucher redemption UI states exercised during UAT — from confirmation
+                to scannable barcode at the counter.
+              </figcaption>
+            </figure>
+            <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/50 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.04)]">
+              <video
+                className="h-auto w-full object-contain"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                aria-label="Screen recording: BR31 voucher and POS barcode testing during UAT"
+              >
+                <source src={ASSET("br31-testing.webm")} type="video/webm" />
+                <source src={ASSET("br31-testing.mp4")} type="video/mp4" />
+              </video>
+            </div>
+            <p className="text-xs text-zinc-500">
+              UAT screen recording: barcode scan paths and POS behavior across ticket
+              types.
+            </p>
+          </div>
+        </CaseStudyInViewSection>
+
         <CaseStudyInViewSection
           id="team-objectives"
           className={`space-y-6 ${sectionScroll}`}
