@@ -9,6 +9,7 @@ import { BeyondDesignGallery } from "../components/BeyondDesignGallery";
 import { BEYOND_PHOTOGRAPHY_GALLERY } from "../content/beyond-design-gallery";
 
 const INTERVIEW_PHOTO_SRC = "/about/user-interviews-collage.png";
+const RESUME_PDF_SRC = "/resume/AngelaYang_Resume.pdf";
 
 /** Shared typography for all About page content cards */
 const ABOUT_CARD_TITLE_CLASS =
@@ -165,6 +166,13 @@ export default function AboutPage() {
         </section>
 
         <div className="mt-10 flex flex-wrap gap-4">
+          <a
+            href={RESUME_PDF_SRC}
+            download
+            className="inline-flex items-center rounded-full border border-zinc-700 bg-zinc-900/60 px-4 py-2 text-sm font-medium text-zinc-100 transition hover:border-zinc-500 hover:bg-zinc-800/80"
+          >
+            Download Resume
+          </a>
           <a
             href="https://linkedin.com/in/angelayangg/"
             target="_blank"

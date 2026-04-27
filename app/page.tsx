@@ -5,6 +5,7 @@ import { FadeInSection } from "./components/FadeInSection";
 import { HeroWithBubble } from "./components/HeroWithBubble";
 import { ProjectCardTag, ProjectShippedBadge } from "./components/ProjectCardTag";
 import { EInvoiceHomeProjectCover } from "./components/EInvoiceHomeProjectCover";
+import { MinaHomeProjectCover } from "./components/MinaHomeProjectCover";
 import { ADJACENT_WORK, ADJACENT_WORK_THUMB } from "./content/adjacent-work";
 
 const CORE_PRODUCT = [
@@ -54,7 +55,6 @@ const RESEARCH_SHAPES_BUILD = [
 ] as const;
 
 const WORK_THUMB: Record<string, string> = {
-  "ai-marketplace": "/case-studies/mina/mina-ai-hero.png",
   "government-backend": "/case-studies/government-backend/home-cover.png",
   "baskin-robbins": "/case-studies/baskin-robbins/home-cover.png",
 };
@@ -89,6 +89,8 @@ export default function Home() {
                     <div className="relative aspect-[16/11] overflow-hidden bg-zinc-900/50">
                       {item.slug === "e-invoice-app" ? (
                         <EInvoiceHomeProjectCover />
+                      ) : item.slug === "ai-marketplace" ? (
+                        <MinaHomeProjectCover />
                       ) : (
                         <Image
                           src={WORK_THUMB[item.slug]}
