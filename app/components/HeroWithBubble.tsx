@@ -11,7 +11,7 @@ const DISPLAY_FONT =
   "var(--font-serif-display), Georgia, 'Times New Roman', serif";
 
 const CYCLING_PHRASES = [
-  "I design consumer-facing, community-driven products — AI-assisted mobile experiences where member connection and trust matter",
+  "I design consumer-facing experiences across mobile, web, and tablets",
   "I value empathy and curiosity in how I approach every problem",
 ] as const;
 
