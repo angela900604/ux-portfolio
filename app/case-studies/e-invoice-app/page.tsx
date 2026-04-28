@@ -14,7 +14,7 @@ import { DesignJourneyCollapsible } from "../_components/DesignJourneyCollapsibl
 import { CompetitorLandscapeTable } from "./CompetitorLandscapeTable";
 import { EInvoiceHeroTldr } from "./EInvoiceHeroTldr";
 import { FinalScreensMarquee } from "./FinalScreensMarquee";
-import { PhoneMockup, PortraitTile, WideFigure } from "./EInvoiceFigures";
+import { PortraitTile, WideFigure } from "./EInvoiceFigures";
 import { HomeBeforeAfterSlider } from "./HomeBeforeAfterSlider";
 import { GuidedOnboardingVideoPair } from "./OnboardingDemoVideo";
 import { SettingHomeModulesVideo } from "./SettingHomeModulesVideo";
@@ -37,9 +37,6 @@ const ASSET = (name: string) => `/case-studies/e-invoice/case-assets/${name}`;
 const STORY_SECTION_TITLE_CLASS =
   "text-2xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-3xl md:text-4xl md:leading-snug";
 
-const STORY_BEAT_LABEL_CLASS =
-  "text-[11px] font-semibold uppercase tracking-widest text-zinc-500";
-
 function StoryBeat({
   label,
   children,
@@ -48,9 +45,11 @@ function StoryBeat({
   children: ReactNode;
 }) {
   return (
-    <div className="max-w-3xl">
-      <p className={STORY_BEAT_LABEL_CLASS}>{label}</p>
-      <div className="mt-2 space-y-2 text-sm leading-relaxed text-zinc-300">
+    <div className="max-w-3xl rounded-xl border border-zinc-800/90 bg-zinc-900/35 px-4 py-4 sm:px-5 sm:py-5">
+      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-emerald-200/90">
+        {label}
+      </p>
+      <div className="mt-3 space-y-2 text-sm leading-[1.6] text-zinc-400 [&_p]:text-sm [&_p]:leading-[1.6] [&_span.font-semibold]:text-base [&_span.font-semibold]:leading-snug [&_span.font-semibold]:text-zinc-50">
         {children}
       </div>
     </div>
@@ -104,7 +103,6 @@ const E_INVOICE_JOURNEY_IDS = [
   "competitive-landscape",
   "page-flow-design",
   "testing",
-  "carrier-binding-insight",
 ] as const;
 
 const AT_A_GLANCE_ITEMS = [
@@ -136,7 +134,6 @@ const FINAL_SOLUTION_SCREENS: {
       "settings-membership-card.png",
     ],
   },
-  { id: "04", title: "Carrier binding" },
   { id: "05", title: "Prize claim info" },
   { id: "06", title: "Donation" },
   { id: "07", title: "Carbon passbook share" },
@@ -284,13 +281,15 @@ export default function EInvoiceCaseStudy() {
           <div className="space-y-16 border-t border-zinc-800/90 pt-14 sm:space-y-20 sm:pt-16">
             <section
               id="e-invoice-story-1-homepage"
-              className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
+              className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
             >
-              <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-                Section 1
-              </span>
-              <h2 className={STORY_SECTION_TITLE_CLASS}>The Homepage</h2>
-              <div className="space-y-5">
+              <header className="space-y-2">
+                <span className="text-xs font-semibold uppercase tracking-[0.14em] text-zinc-400">
+                  Section 1
+                </span>
+                <h2 className={STORY_SECTION_TITLE_CLASS}>The Homepage</h2>
+              </header>
+              <div className="space-y-4">
                 <StoryBeat label="Problem">
                   <p>
                     <span className="font-semibold text-zinc-100">
@@ -354,15 +353,17 @@ export default function EInvoiceCaseStudy() {
 
             <section
               id="e-invoice-story-2-accessibility"
-              className="scroll-mt-28 space-y-5 border-t border-zinc-800/90 pt-14 sm:scroll-mt-32 sm:pt-16"
+              className="scroll-mt-28 space-y-6 border-t border-zinc-800/90 pt-14 sm:scroll-mt-32 sm:pt-16"
             >
-              <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-                Section 2
-              </span>
-              <h2 className={STORY_SECTION_TITLE_CLASS}>
-                Accessibility &amp; foreign residents
-              </h2>
-              <div className="space-y-5">
+              <header className="space-y-2">
+                <span className="text-xs font-semibold uppercase tracking-[0.14em] text-zinc-400">
+                  Section 2
+                </span>
+                <h2 className={STORY_SECTION_TITLE_CLASS}>
+                  Accessibility &amp; foreign residents
+                </h2>
+              </header>
+              <div className="space-y-4">
                 <StoryBeat label="Problem">
                   <p>
                     <span className="font-semibold text-zinc-100">
@@ -426,15 +427,17 @@ export default function EInvoiceCaseStudy() {
 
             <section
               id="e-invoice-story-3-login"
-              className="scroll-mt-28 space-y-5 border-t border-zinc-800/90 pt-14 sm:scroll-mt-32 sm:pt-16"
+              className="scroll-mt-28 space-y-6 border-t border-zinc-800/90 pt-14 sm:scroll-mt-32 sm:pt-16"
             >
-              <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-                Section 3
-              </span>
-              <h2 className={STORY_SECTION_TITLE_CLASS}>
-                Login &amp; authentication
-              </h2>
-              <div className="space-y-5">
+              <header className="space-y-2">
+                <span className="text-xs font-semibold uppercase tracking-[0.14em] text-zinc-400">
+                  Section 3
+                </span>
+                <h2 className={STORY_SECTION_TITLE_CLASS}>
+                  Login &amp; authentication
+                </h2>
+              </header>
+              <div className="space-y-4">
                 <StoryBeat label="Problem">
                   <p>
                     <span className="font-semibold text-zinc-100">
@@ -477,17 +480,19 @@ export default function EInvoiceCaseStudy() {
 
             <section
               id="e-invoice-story-4-onboarding"
-              className="scroll-mt-28 space-y-5 border-t border-zinc-800/90 pt-14 sm:scroll-mt-32 sm:pt-16"
+              className="scroll-mt-28 space-y-6 border-t border-zinc-800/90 pt-14 sm:scroll-mt-32 sm:pt-16"
             >
-              <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-                Section 4
-              </span>
-              <h2 className={STORY_SECTION_TITLE_CLASS}>Onboarding</h2>
+              <header className="space-y-2">
+                <span className="text-xs font-semibold uppercase tracking-[0.14em] text-zinc-400">
+                  Section 4
+                </span>
+                <h2 className={STORY_SECTION_TITLE_CLASS}>Onboarding</h2>
+              </header>
               <p className="max-w-3xl text-sm text-zinc-400">
                 I also shipped an English-language experience for foreign
                 residents.
               </p>
-              <div className="space-y-5">
+              <div className="space-y-4">
                 <StoryBeat label="Problem">
                   <p>
                     <span className="font-semibold text-zinc-100">
@@ -532,13 +537,13 @@ export default function EInvoiceCaseStudy() {
           </div>
         </CaseStudyInViewSection>
 
-        <div className="flex min-w-0 flex-col gap-6">
-          <div className="flex min-w-0 flex-col gap-[1.5rem]"><DesignJourneyCollapsible
+        <div className="flex min-w-0 flex-col gap-10 sm:gap-12">
+          <DesignJourneyCollapsible
           journeySectionIds={E_INVOICE_JOURNEY_IDS}
           panelId="e-invoice-design-journey-panel"
           title="Design journey"
-          subtitle="Functional map, competitive landscape, page flows, testing, and carrier binding insight"
-          className="border-t-0 pt-0 sm:pt-0"
+          subtitle="Functional map, competitive landscape, page flows, and moderated testing"
+          className="!border-t-0 !pt-0 sm:!pt-0"
         >
         <CaseStudyInViewSection
           id="functional-map"
@@ -711,7 +716,7 @@ export default function EInvoiceCaseStudy() {
             <h2 className="max-w-3xl text-zinc-100">
               Twelve moderated sessions—including low-vision users—landed at{" "}
               <span className={M_TXT}>88%</span> success and a clear fix list for login,
-              carrier binding, and prize flows.
+              invoice management, and prize flows.
             </h2>
             <p className="max-w-3xl text-sm leading-relaxed text-zinc-400">
               One-on-one observation on core tasks; errors and satisfaction tracked so
@@ -794,112 +799,16 @@ export default function EInvoiceCaseStudy() {
               />
             </div>
           </div>
-
-          <div
-            id="carrier-binding-insight"
-            className="scroll-mt-28 border-t border-zinc-800/90 pt-12 sm:scroll-mt-32 lg:pt-14"
-          >
-            <p className="text-xs font-medium uppercase tracking-widest text-amber-400/90">
-              Lowest task score · reframed problem
-            </p>
-            <h3 className="mt-3 max-w-3xl text-zinc-100">
-              <span aria-hidden>{"\u{1F517}"}</span> Carrier binding scored{" "}
-              <span className={M_TXT}>67%</span> because people didn&apos;t understand
-              why the step existed—not because the taps were hard.
-            </h3>
-            <p className="mt-2 max-w-3xl text-sm text-zinc-500 leading-relaxed">
-              Reframe: scenario copy and smart support so &quot;bind carrier&quot; reads
-              as automatic invoice capture, not ministry jargon.
-            </p>
-
-            <article className="mt-10 grid gap-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-start lg:gap-12">
-              <div className="min-w-0 space-y-5">
-                <div className="border-l-2 border-emerald-500/45 pl-4">
-                  <p className="text-[11px] font-semibold uppercase tracking-widest text-emerald-400/95">
-                    Before · what we saw in tests
-                  </p>
-                  <p className="mt-2 text-sm leading-relaxed text-zinc-300">
-                    In moderated sessions, participants rarely failed because they
-                    could not find the next button—they failed because{" "}
-                    <span className="font-medium text-zinc-100">
-                      they did not understand why they were being asked to bind a
-                      carrier at all
-                    </span>
-                    . The label read like ministry jargon, not like something tied to
-                    their daily shopping. Many abandoned the flow before attempting
-                    the mechanics.
-                  </p>
-                </div>
-
-                <div
-                  className="rounded-xl border border-amber-500/35 bg-amber-500/[0.08] px-4 py-3 sm:px-5 sm:py-4"
-                  role="note"
-                >
-                  <p className="text-[11px] font-semibold uppercase tracking-widest text-amber-200/95">
-                    Highlight
-                  </p>
-                  <p className="mt-2 text-sm font-medium leading-relaxed text-zinc-100">
-                    The bottleneck was comprehension, not dexterity: users could not
-                    connect &quot;bind carrier&quot; to &quot;this is how invoices
-                    show up from the purchases I already make.&quot;
-                  </p>
-                </div>
-
-                <div className="border-l-2 border-violet-500/45 pl-4">
-                  <p className="text-[11px] font-semibold uppercase tracking-widest text-violet-300/95">
-                    Insight
-                  </p>
-                  <p className="mt-2 text-sm leading-relaxed text-zinc-300">
-                    The product value of binding is{" "}
-                    <span className="text-zinc-100">
-                      automatic ingestion: link an email (or carrier), and e-invoices
-                      from merchants that use that identifier—e-commerce, subscriptions,
-                      and more—can flow into the app without a manual step each time
-                    </span>
-                    . That story was missing from the old surface; the UI assumed
-                    prior civic literacy.
-                  </p>
-                </div>
-
-                <div className="border-l-2 border-zinc-600 pl-4">
-                  <p className="text-[11px] font-semibold uppercase tracking-widest text-zinc-400">
-                    Decision
-                  </p>
-                  <p className="mt-2 text-sm leading-relaxed text-zinc-300">
-                    On the binding experience, add{" "}
-                    <span className="text-zinc-100">concrete scenario copy</span>{" "}
-                    (e.g. &quot;When you check out on Shopee, matching invoices can
-                    land here automatically&quot;) instead of technical wording alone;
-                    add a{" "}
-                    <span className="text-zinc-100">
-                      smart assistant / help entry
-                    </span>{" "}
-                    so uncertain users can ask in plain language without leaving the
-                    task.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex justify-center lg:justify-end lg:pt-1">
-                <PhoneMockup
-                  chromeless
-                  src={ASSET("solution-final-04.png")}
-                  alt="Final · Carrier binding screen"
-                  label="Final · Carrier binding"
-                  hint="solution-final-04 · carrier binding"
-                />
-              </div>
-            </article>
-          </div>
         </CaseStudyInViewSection>
 
-        </DesignJourneyCollapsible><DesignJourneyCollapsible
+        </DesignJourneyCollapsible>
+        <DesignJourneyCollapsible
           journeySectionIds={["reflection", "business-constraints"]}
           navAnchorId="reflection"
           panelId="e-invoice-reflection-panel"
           title="Reflection"
           subtitle="Lessons, constraints, and what to validate next"
-          className="border-t-0 pt-0 sm:pt-0"
+          className="!border-t-0 !pt-0 sm:!pt-0"
         >
           <div className="space-y-5">
             <h2 className="max-w-3xl text-zinc-100">
@@ -938,14 +847,13 @@ export default function EInvoiceCaseStudy() {
                 , and A/B test when that handoff happens.
               </p>
               <p>
-                A second lesson sat in the data tail: carrier binding scored lowest
-                not because the taps were hard, but because people didn&apos;t
-                understand why the step existed—that&apos;s a{" "}
+                A second lesson sat in the data tail: the weakest tasks were rarely
+                about motor skill—they were about{" "}
                 <span className="text-zinc-100">
-                  comprehension-over-dexterity
-                </span>{" "}
-                problem. It reinforced that &quot;inclusive&quot; here is often about
-                scenario language and mental models, not only bigger type.
+                  whether people understood why a step existed
+                </span>
+                . Inclusive design here meant scenario language and mental models, not
+                only bigger type.
               </p>
             </div>
 
@@ -997,7 +905,7 @@ export default function EInvoiceCaseStudy() {
                 <li>
                   Deeper pairing with policy/legal on{" "}
                   <span className="text-zinc-200">how much scenario copy</span> we
-                  can show in carrier binding without over-promising merchant
+                  can show in technical setup flows without over-promising merchant
                   coverage.
                 </li>
                 <li>
@@ -1017,23 +925,28 @@ export default function EInvoiceCaseStudy() {
               />
             </div>
           </div>
-        </DesignJourneyCollapsible></div><CaseStudyInViewSection
+        </DesignJourneyCollapsible>
+        <CaseStudyInViewSection
           id="figma-resources"
-          className="scroll-mt-28 space-y-5 rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6 sm:scroll-mt-32 sm:p-8"
+          className="scroll-mt-28 space-y-4 rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6 sm:scroll-mt-32 sm:space-y-5 sm:p-8"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+          <span className="text-xs font-semibold uppercase tracking-[0.14em] text-emerald-200/85">
             Figma files
           </span>
-          <h2 className="max-w-3xl text-zinc-100">
+          <h2 className="max-w-2xl text-pretty text-lg font-semibold leading-snug tracking-tight text-zinc-100 sm:text-xl md:text-2xl">
             Open the source files for wireflows, page logic, and hi-fi mocks in one
             place.
           </h2>
-          <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <p className="max-w-2xl text-sm text-zinc-400">
+            Hi-fi mockups and page flow first; wireframes and wireflow for IA and
+            early logic.
+          </p>
+          <div className="flex flex-col gap-3 pt-1 sm:flex-row sm:flex-wrap sm:items-center">
             <a
               href={FIGMA_MOCKUP_PAGE}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-zinc-600 px-4 py-2 text-sm text-zinc-200 hover:border-zinc-400 hover:text-zinc-50 transition"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-500/90 px-5 py-2.5 text-sm font-semibold text-zinc-950 transition hover:bg-emerald-400"
             >
               Mockup &amp; page flow →
             </a>
@@ -1041,12 +954,13 @@ export default function EInvoiceCaseStudy() {
               href={FIGMA_WIREFRAME_FLOW}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-zinc-600 px-4 py-2 text-sm text-zinc-200 hover:border-zinc-400 hover:text-zinc-50 transition"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-zinc-600 bg-transparent px-5 py-2.5 text-sm font-medium text-zinc-200 transition hover:border-zinc-400 hover:text-zinc-50"
             >
               Wireframe &amp; wireflow →
             </a>
           </div>
-        </CaseStudyInViewSection></div>
+        </CaseStudyInViewSection>
+        </div>
 
         <CaseStudyInViewSection className="border-t border-zinc-800 pt-12 space-y-8">
           <CaseStudyPrevNext currentSlug="e-invoice-app" />

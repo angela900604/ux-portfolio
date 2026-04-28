@@ -110,12 +110,12 @@ export default function PrizeAccountDiscoveryPage() {
             </li>
             <li>
               <Link
-                href="/case-studies/e-invoice-app#carrier-binding-insight"
+                href="/case-studies/e-invoice-app#testing"
                 className={LINK_CLASS}
               >
-                e-Invoice · carrier binding insight
+                e-Invoice · moderated testing
               </Link>
-              —reframing comprehension-heavy flows with in-flow help.
+              —task success, comprehension vs. dexterity, and iteration priorities.
             </li>
           </ul>
         </section>
