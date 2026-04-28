@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -11,9 +12,7 @@ import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { DesignJourneyCollapsible } from "../_components/DesignJourneyCollapsible";
 import { CompetitorLandscapeTable } from "./CompetitorLandscapeTable";
-import { ProblemPersonasBlock } from "./ProblemPersonasBlock";
 import { EInvoiceHeroTldr } from "./EInvoiceHeroTldr";
-import { OutcomeAutoSlideshow } from "./OutcomeAutoSlideshow";
 import { FinalScreensMarquee } from "./FinalScreensMarquee";
 import { PhoneMockup, PortraitTile, WideFigure } from "./EInvoiceFigures";
 import { HomeBeforeAfterSlider } from "./HomeBeforeAfterSlider";
@@ -35,9 +34,28 @@ const FIGMA_WIREFRAME_FLOW =
 
 const ASSET = (name: string) => `/case-studies/e-invoice/case-assets/${name}`;
 
-/** Scan-first, density, login, and onboarding story headings — same scale. */
-const KEY_OUTCOME_STORY_TITLE_CLASS =
+const STORY_SECTION_TITLE_CLASS =
   "text-2xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-3xl md:text-4xl md:leading-snug";
+
+const STORY_BEAT_LABEL_CLASS =
+  "text-[11px] font-semibold uppercase tracking-widest text-zinc-500";
+
+function StoryBeat({
+  label,
+  children,
+}: {
+  label: string;
+  children: ReactNode;
+}) {
+  return (
+    <div className="max-w-3xl">
+      <p className={STORY_BEAT_LABEL_CLASS}>{label}</p>
+      <div className="mt-2 space-y-2 text-sm leading-relaxed text-zinc-300">
+        {children}
+      </div>
+    </div>
+  );
+}
 
 /** Full-bleed hero behind the project title (café context, scan / invoice UI). */
 const HERO_FULL_BLEED = {
@@ -102,85 +120,6 @@ const AT_A_GLANCE_ITEMS = [
   },
 ] as const;
 
-/** Everyone agreed on scan-first; rendered above the other outcome rows (text only). */
-const SCAN_SHARED_TRUTH_OUTCOME = {
-  evidence:
-    "Across all age groups and low-vision participants, one behavior was universal: the primary reason people opened the app was to scan a paper invoice or show their barcode at checkout. But for elderly users, speed was the real barrier — cashiers routinely assumed older customers didn't have the app, and would hand over a paper invoice before the user had a chance to pull out their phone. The app never got used, not because the user gave up, but because the system moved on without them. For users who did get their phone out, the second problem hit: scan wasn't where they expected it. The entry point was buried one or two taps from the visual center, so users hunted while the line moved.",
-  problem:
-    "Two compounding failures: the app wasn't fast enough to surface at checkout, and when it did open, the most-needed action wasn't immediately findable. Together they made the app feel unreliable in the moments that mattered most.",
-  decision:
-    "Lock the scan button to the most prominent position on home — always visible on launch, never displaced by promos or personalization. Add a home screen widget so the barcode is accessible without opening the app at all: one less step between pocket and checkout, which is exactly the gap that was causing elderly users to be skipped.",
-  outcome:
-    "Scan & check prize tasks reached 92% success—the strongest task in the battery—with a median completion time of about 40 seconds.",
-} as const;
-
-/** Density / modules — second homepage story (after scan before/after). */
-const DENSITY_HOME_MODULES_ROW = {
-  evidence:
-    "This was the hardest tension in the whole system: silver users asked for the sparsest possible home so they could find one or two actions, while younger users wanted winning invoices and spending history surfaced immediately. Two credible audiences, mutually exclusive defaults.",
-  problem:
-    "A single static layout would always betray one segment—either “too empty” or “too noisy.”",
-  decision:
-    "Add settings toggles for optional home modules (e.g., spending analytics, win alerts, campaign tiles). Core rails—scan and the invoice passbook—stay fixed and cannot be turned off.",
-} as const;
-
-/** Research → problem → decision → outcome; paired with final UI (solution-final-*.png). */
-const KEY_OUTCOME_ROWS: {
-  title: string;
-  assetId: string;
-  screenLabel: string;
-  screenHint?: string;
-  /** When set, use this file in case-assets instead of solution-final-{assetId}.png */
-  assetFile?: string;
-  /** Multiple screens — shared caption from screenLabel / screenHint */
-  assetFiles?: string[];
-  /** Auto-advance slideshow (e.g. guided onboarding sequence) */
-  autoSlideshow?: boolean;
-  /** Guided setup story: MP4/WebM below evidence block instead of slideshow */
-  onboardingDemoVideo?: boolean;
-  /** Draggable before/after (login) — text first, slider below */
-  beforeAfterLoginSlider?: boolean;
-  evidence: string;
-  problem: string;
-  decision: string;
-  outcome: string;
-  /** Optional line directly under the section title (e.g. localization note). */
-  titleNote?: string;
-}[] = [
-  {
-    title:
-      "Login: password-only path (hard for seniors who forgot codes) \u2192 Face ID, Touch ID (Android) & pattern unlock",
-    assetId: "13",
-    screenLabel: "Login verification",
-    beforeAfterLoginSlider: true,
-    evidence:
-      "Across age groups, interviews kept surfacing the same failure mode: forgetting the Ministry of Finance verification code. In moderated usability tests, the login task topped out at about 75% success—almost every miss traced back to passwords or verification. Older adults and visually impaired participants often had to hand the phone to family to finish sign-in.",
-    problem:
-      "The account gate was doing its security job, but it was also blocking real people from ever reaching the tasks that mattered.",
-    decision:
-      "Ship Face ID / Touch ID as a first-class path and rebuild “forgot password” recovery entirely inside the app—no more kicking people out to external ministry pages mid-flow.",
-    outcome:
-      "Retention signal: login success moved from 68% to 92%. For the 51+ cohort in particular, many could complete first-time login on their own—without a caregiver in the loop.",
-  },
-  {
-    title:
-      "Prepare new users and new feature settings with guided onboarding",
-    assetId: "08",
-    screenLabel: "guided first-time setup",
-    onboardingDemoVideo: true,
-    evidence:
-      "In interviews, the pattern for elderly and foreign-resident users was consistent: they had won prizes before but missed the redemption window — not because they ignored the notification, but because they didn't know automatic bank transfer was even an option. The setting existed, buried in the account configuration, but onboarding never surfaced it. Completion for the full setup sequence sat at around 55% in tests, and users who skipped it hit the same friction points at every redemption cycle.",
-    problem:
-      "The product assumed users would discover and configure the automation-enabling steps on their own. They didn't — and for elderly and foreign-resident users especially, that meant money left unclaimed and repeated manual friction at the moments that mattered most.",
-    decision:
-      "Reframe first launch as a guided setup where each step explains the outcome, not the feature. For bank account linking: surface it as \"wins go straight to your account — no manual step needed,\" and address trust explicitly. Because this step collects financial verification data, we worked through exactly what the bank required and why, then wrote per-field explanations in the UI so users understood what they were providing and how it would be used. Clarity about data purpose is what makes people willing to complete the step. For biometrics: the real value for elderly users isn't convenience — it's that as long as the app is opened within 90 days before the token expires, they never need to remember a password again. That's the difference between needing a family member to log in for you, and being able to do it independently.",
-    outcome:
-      'Activation: guided first-launch completion rose about 30% after shipping—older adults said, "Quick-login setup is really convenient; I do not need to remember passwords anymore." Foreign residents said, "The explanations are clear; now I finally understand how to set prize payouts to auto-transfer."',
-    titleNote:
-      "I also delivered an English-language version for foreign residents.",
-  },
-];
-
 const FINAL_SOLUTION_SCREENS: {
   id: string;
   title: string;
@@ -238,65 +177,6 @@ const FINAL_SOLUTION_MARQUEE_SLIDES = FINAL_SOLUTION_SCREENS.flatMap((item) => {
         : item.title,
   }));
 });
-
-function KeyOutcomePhoneFigures({
-  row,
-}: {
-  row: (typeof KEY_OUTCOME_ROWS)[number];
-}) {
-  if (row.beforeAfterLoginSlider) return null;
-
-  const files =
-    row.assetFiles ?? [row.assetFile ?? `solution-final-${row.assetId}.png`];
-
-  if (files.length === 1) {
-    return (
-      <PhoneMockup
-        chromeless
-        src={ASSET(files[0])}
-        alt={row.screenLabel}
-        label={row.screenLabel}
-        hint={row.screenHint}
-      />
-    );
-  }
-
-  if (row.autoSlideshow) {
-    return (
-      <OutcomeAutoSlideshow
-        screens={files.map((f, i) => ({
-          src: ASSET(f),
-          alt: `${row.screenLabel} — screen ${i + 1} of ${files.length}`,
-        }))}
-        label={row.screenLabel}
-        hint={row.screenHint}
-      />
-    );
-  }
-
-  return (
-    <figure className="w-full max-w-[640px] space-y-3 lg:ml-auto">
-      <div className="flex flex-wrap justify-center gap-5 lg:justify-end">
-        {files.map((f, i) => (
-          <PhoneMockup
-            key={f}
-            chromeless
-            hideCaption
-            src={ASSET(f)}
-            alt={`${row.screenLabel} — screen ${i + 1} of ${files.length}`}
-            label=""
-          />
-        ))}
-      </div>
-      <figcaption className="px-1 text-center lg:text-right">
-        <p className="text-xs font-medium text-zinc-200">{row.screenLabel}</p>
-        {row.screenHint ? (
-          <p className="mt-1 text-[11px] text-zinc-500">{row.screenHint}</p>
-        ) : null}
-      </figcaption>
-    </figure>
-  );
-}
 
 export default function EInvoiceCaseStudy() {
   return (
@@ -385,237 +265,270 @@ export default function EInvoiceCaseStudy() {
       </header>
 
       <CaseStudyContentLayout>
-        <ProblemPersonasBlock />
-
         <CaseStudyInViewSection
           id="key-outcomes"
           className="scroll-mt-28 space-y-14 sm:scroll-mt-32"
         >
           <FinalScreensMarquee slides={FINAL_SOLUTION_MARQUEE_SLIDES} />
 
-          <div className="space-y-5 sm:space-y-6">
-            <div className="max-w-4xl">
-              <h2 className={KEY_OUTCOME_STORY_TITLE_CLASS}>
-                I brought all user groups&apos; needs into one place and made scanning
-                the first thing they see.
+          <p className="max-w-2xl text-sm leading-relaxed text-zinc-500">
+            <Link
+              href="/user-research-journey"
+              className="font-medium text-emerald-200/90 underline-offset-4 hover:text-emerald-100 hover:underline"
+            >
+              User research journey
+            </Link>
+            —methods, segments, and artifacts behind these decisions.
+          </p>
+
+          <div className="space-y-16 border-t border-zinc-800/90 pt-14 sm:space-y-20 sm:pt-16">
+            <section
+              id="e-invoice-story-1-homepage"
+              className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
+            >
+              <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+                Section 1
+              </span>
+              <h2 className={STORY_SECTION_TITLE_CLASS}>The Homepage</h2>
+              <div className="space-y-5">
+                <StoryBeat label="Problem">
+                  <p>
+                    <span className="font-semibold text-zinc-100">
+                      Users opened the app and couldn&apos;t find what they
+                      needed.
+                    </span>{" "}
+                    Five very different user segments, all frustrated for
+                    different reasons.
+                  </p>
+                </StoryBeat>
+                <StoryBeat label="Key insight">
+                  <p>
+                    <span className="font-semibold text-zinc-100">
+                      Every group shared one first action: scan a paper invoice.
+                    </span>{" "}
+                    Seniors especially—at checkout, cashiers assumed they
+                    couldn&apos;t use the app and handed them paper receipts
+                    instead.
+                  </p>
+                </StoryBeat>
+                <StoryBeat label="Decision">
+                  <p>
+                    <span className="font-semibold text-zinc-100">
+                      Scan became the primary, large, labeled CTA—the first
+                      thing on open.
+                    </span>{" "}
+                    Before: small QR icon, top-right. After: unmissable.
+                  </p>
+                </StoryBeat>
+                <StoryBeat label="Conflict">
+                  <p>
+                    <span className="font-semibold text-zinc-100">
+                      Stakeholders wanted sustainability promotion to lead the
+                      homepage.
+                    </span>{" "}
+                    Research showed it didn&apos;t rank in the top four priorities
+                    for any segment.
+                  </p>
+                </StoryBeat>
+                <StoryBeat label="Resolution">
+                  <p>
+                    <span className="font-semibold text-zinc-100">
+                      Customizable home: users toggle sections in Settings.
+                    </span>{" "}
+                    Sustainability stays in-product for people who want it.
+                    Stakeholders approved.
+                  </p>
+                </StoryBeat>
+                <StoryBeat label="Outcome">
+                  <p>
+                    <span className="font-semibold text-zinc-100">
+                      Prototype testing with the same participants validated the
+                      direction.
+                    </span>{" "}
+                    Strong positive responses across ages—especially seniors.
+                  </p>
+                </StoryBeat>
+              </div>
+              <HomeBeforeAfterSlider />
+            </section>
+
+            <section
+              id="e-invoice-story-2-accessibility"
+              className="scroll-mt-28 space-y-5 border-t border-zinc-800/90 pt-14 sm:scroll-mt-32 sm:pt-16"
+            >
+              <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+                Section 2
+              </span>
+              <h2 className={STORY_SECTION_TITLE_CLASS}>
+                Accessibility &amp; foreign residents
               </h2>
-            </div>
-
-            <div className="min-w-0 max-w-3xl">
-              <div className="rounded-xl border border-emerald-500/25 bg-emerald-500/[0.07] px-4 py-3 sm:px-5 sm:py-4">
-                <p className="text-[11px] font-semibold uppercase tracking-widest text-emerald-200/95">
-                  Outcome
-                </p>
-                <p className="mt-2 text-sm font-medium leading-relaxed text-zinc-100">
-                  {SCAN_SHARED_TRUTH_OUTCOME.outcome}
-                </p>
-                <CaseStudyExpandable label="Evidence → problem → decision (full)">
-                  <div className="space-y-5">
-                    <div className="border-l-2 border-emerald-500/45 pl-4">
-                      <p className="text-[11px] font-semibold uppercase tracking-widest text-emerald-400/95">
-                        Evidence · interviews &amp; tests
-                      </p>
-                      <p className="mt-2 text-sm leading-relaxed text-zinc-300">
-                        {SCAN_SHARED_TRUTH_OUTCOME.evidence}
-                      </p>
-                    </div>
-                    <div className="border-l-2 border-rose-500/35 pl-4">
-                      <p className="text-[11px] font-semibold uppercase tracking-widest text-rose-300/90">
-                        Problem in the experience
-                      </p>
-                      <p className="mt-2 text-sm leading-relaxed text-zinc-300">
-                        {SCAN_SHARED_TRUTH_OUTCOME.problem}
-                      </p>
-                    </div>
-                    <div className="border-l-2 border-violet-500/45 pl-4">
-                      <p className="text-[11px] font-semibold uppercase tracking-widest text-violet-300/95">
-                        Decision
-                      </p>
-                      <p className="mt-2 text-sm leading-relaxed text-zinc-300">
-                        {SCAN_SHARED_TRUTH_OUTCOME.decision}
-                      </p>
-                    </div>
-                  </div>
-                </CaseStudyExpandable>
+              <div className="space-y-5">
+                <StoryBeat label="Problem">
+                  <p>
+                    <span className="font-semibold text-zinc-100">
+                      Low-vision users and foreign residents couldn&apos;t finish
+                      core tasks alone.
+                    </span>{" "}
+                    Icons were unreadable, labels assumed civic vocabulary, and
+                    there was no audio confirmation after scan.
+                  </p>
+                </StoryBeat>
+                <StoryBeat label="Key insight">
+                  <p>
+                    <span className="font-semibold text-zinc-100">
+                      Foreign residents needed text to decode the control—not
+                      icon-only cues.
+                    </span>{" "}
+                    Low-vision users relied on a fixed position they could
+                    memorize more than on fine visuals.
+                  </p>
+                </StoryBeat>
+                <StoryBeat label="Decision">
+                  <p>
+                    <span className="font-semibold text-zinc-100">
+                      Large tap target + readable text label + fixed placement.
+                    </span>{" "}
+                    One pattern served both groups—including labels that don&apos;t
+                    assume Chinese literacy.
+                  </p>
+                </StoryBeat>
+                <StoryBeat label="Conflict">
+                  <p>
+                    <span className="font-semibold text-zinc-100">
+                      Younger users wanted a denser, cooler layout.
+                    </span>{" "}
+                    Older and low-vision users needed fewer modules, more
+                    whitespace, and vivid color—one layout, two incompatible
+                    defaults.
+                  </p>
+                </StoryBeat>
+                <StoryBeat label="Resolution">
+                  <p>
+                    <span className="font-semibold text-zinc-100">
+                      The same Settings-based home toggles (Section 1) let each
+                      person choose density.
+                    </span>{" "}
+                    No single compromised default for everyone.
+                  </p>
+                </StoryBeat>
+                <StoryBeat label="Outcome">
+                  <p>
+                    <span className="font-semibold text-zinc-100">
+                      88% task success in moderated tests
+                    </span>{" "}
+                    on scan, donate, and redemption—including visually impaired
+                    participants, across ages.
+                  </p>
+                </StoryBeat>
               </div>
-            </div>
+              <SettingHomeModulesVideo className="w-full" />
+            </section>
 
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5 sm:p-6">
-              <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500">
-                Accessibility · Scan feedback
+            <section
+              id="e-invoice-story-3-login"
+              className="scroll-mt-28 space-y-5 border-t border-zinc-800/90 pt-14 sm:scroll-mt-32 sm:pt-16"
+            >
+              <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+                Section 3
+              </span>
+              <h2 className={STORY_SECTION_TITLE_CLASS}>
+                Login &amp; authentication
+              </h2>
+              <div className="space-y-5">
+                <StoryBeat label="Problem">
+                  <p>
+                    <span className="font-semibold text-zinc-100">
+                      Login success hovered around ~68%.
+                    </span>{" "}
+                    Middle-aged users were hit hardest—forgotten passwords and
+                    MoF verification codes blocked them before any core task.
+                  </p>
+                </StoryBeat>
+                <StoryBeat label="Key insight">
+                  <p>
+                    <span className="font-semibold text-zinc-100">
+                      Authentication was secure but became a wall.
+                    </span>{" "}
+                    The gap wasn&apos;t security—it was recovery.
+                  </p>
+                </StoryBeat>
+                <StoryBeat label="Decision">
+                  <p>
+                    <span className="font-semibold text-zinc-100">
+                      Ship biometric login and in-app password recovery.
+                    </span>{" "}
+                    People could get back in without memorizing credentials or
+                    hunting a one-time code.
+                  </p>
+                </StoryBeat>
+                <StoryBeat label="Outcome">
+                  <p>
+                    <span className="font-semibold text-zinc-100">
+                      After launch, the client reported materially higher login
+                      success in internal analytics.
+                    </span>{" "}
+                    Support volume tied to account access fell compared with
+                    baseline.
+                  </p>
+                </StoryBeat>
+              </div>
+              <LoginBeforeAfterSlider />
+            </section>
+
+            <section
+              id="e-invoice-story-4-onboarding"
+              className="scroll-mt-28 space-y-5 border-t border-zinc-800/90 pt-14 sm:scroll-mt-32 sm:pt-16"
+            >
+              <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+                Section 4
+              </span>
+              <h2 className={STORY_SECTION_TITLE_CLASS}>Onboarding</h2>
+              <p className="max-w-3xl text-sm text-zinc-400">
+                I also shipped an English-language experience for foreign
+                residents.
               </p>
-              <h3 className="mt-2 text-xl font-semibold tracking-tight text-zinc-100 sm:text-2xl">
-                Scan success you can feel and hear, with scan at the top of home
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-zinc-300 sm:text-base">
-                For low-vision users we added explicit scan-success feedback—
-                <span className="text-zinc-200">haptic vibration plus a short confirmation sound</span>
-                —so a successful read is obvious without staring at the screen. The
-                primary scan control sits at the{" "}
-                <span className="text-zinc-200">top of the home screen</span>: VoiceOver
-                reaches it immediately in the rotor order, and people who rely on
-                spatial memory can land the same large target every time instead of
-                hunting a tiny entry. That combination reduces the pressure to hand
-                the phone to a caregiver for a privacy-sensitive task just to know
-                whether scanning worked.
-              </p>
-            </div>
-
-            <HomeBeforeAfterSlider />
-
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/35 p-5 sm:p-6">
-              <div className="max-w-4xl space-y-4">
-                <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500">
-                  Pushback and alignment process
-                </p>
-                <h3 className="text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl">
-                  Grounded in user interviews, I proposed a configurable home
-                  solution aligned with both internal and external stakeholders.
-                </h3>
-                <p className="text-sm leading-relaxed text-zinc-300 sm:text-base">
-                  Interview data showed one universal behavior across age groups:
-                  people opened the app to scan paper invoices first. After that,
-                  priorities split sharply. Younger users were already comfortable
-                  with widgets, so they wanted home to emphasize winning status and
-                  spending insights instead of in-app barcode prominence. Middle-aged
-                  users prioritized win status and campaign / event information.
-                  Older users wanted a clean, low-density surface with scan and
-                  barcode as the only obvious jobs.
-                </p>
-                <p className="text-sm leading-relaxed text-zinc-300 sm:text-base">
-                  I used this evidence to push back on a single static home proposal.
-                  First, I reviewed implementation feasibility and delivery risk with
-                  engineering against the project deadline. Then I aligned with PM on
-                  scope and release constraints. After that, I ran a unified meeting
-                  with external stakeholders and presented the interview insights in
-                  a document + deck format, walking through segment-by-segment needs
-                  and the trade-offs. That process is what got us to a configurable
-                  module model instead of one compromised default.
-                </p>
+              <div className="space-y-5">
+                <StoryBeat label="Problem">
+                  <p>
+                    <span className="font-semibold text-zinc-100">
+                      Many users—especially seniors and foreign residents—never
+                      finished auto prize transfer or biometric setup.
+                    </span>{" "}
+                    They missed redemptions because they didn&apos;t know the
+                    feature existed or how to turn it on.
+                  </p>
+                </StoryBeat>
+                <StoryBeat label="Key insight">
+                  <p>
+                    <span className="font-semibold text-zinc-100">
+                      These steps don&apos;t surface through casual browsing.
+                    </span>{" "}
+                    They needed introduction at first launch—when people are
+                    most willing to configure.
+                  </p>
+                </StoryBeat>
+                <StoryBeat label="Decision">
+                  <p>
+                    <span className="font-semibold text-zinc-100">
+                      Guided onboarding: one job per screen.
+                    </span>{" "}
+                    Biometric setup → bank account for auto-transfer →
+                    notifications → cloud backup—each step explained why it
+                    mattered, not only what to tap.
+                  </p>
+                </StoryBeat>
+                <StoryBeat label="Outcome">
+                  <p>
+                    <span className="font-semibold text-zinc-100">
+                      First-launch completion rose ~30%.
+                    </span>{" "}
+                    Post-launch, the team saw fewer missed prize redemptions tied
+                    to setup gaps.
+                  </p>
+                </StoryBeat>
               </div>
-            </div>
-
-            <div className="mt-12 space-y-5 pt-12 sm:mt-14 sm:space-y-6 sm:pt-14">
-              <div className="max-w-4xl">
-                <h2 className={KEY_OUTCOME_STORY_TITLE_CLASS}>
-                  replacing a single static home with optional modules for
-                  segmented user needs.
-                </h2>
-              </div>
-              <article className="min-w-0 space-y-6">
-                <div className="max-w-3xl space-y-6">
-                  <CaseStudyExpandable label="Evidence → problem → decision (full)">
-                    <div className="space-y-5">
-                      <div className="border-l-2 border-emerald-500/45 pl-4">
-                        <p className="text-[11px] font-semibold uppercase tracking-widest text-emerald-400/95">
-                          Evidence · interviews &amp; tests
-                        </p>
-                        <p className="mt-2 text-sm leading-relaxed text-zinc-300">
-                          {DENSITY_HOME_MODULES_ROW.evidence}
-                        </p>
-                      </div>
-                      <div className="border-l-2 border-rose-500/35 pl-4">
-                        <p className="text-[11px] font-semibold uppercase tracking-widest text-rose-300/90">
-                          Problem in the experience
-                        </p>
-                        <p className="mt-2 text-sm leading-relaxed text-zinc-300">
-                          {DENSITY_HOME_MODULES_ROW.problem}
-                        </p>
-                      </div>
-                      <div className="border-l-2 border-violet-500/45 pl-4">
-                        <p className="text-[11px] font-semibold uppercase tracking-widest text-violet-300/95">
-                          Decision
-                        </p>
-                        <p className="mt-2 text-sm leading-relaxed text-zinc-300">
-                          {DENSITY_HOME_MODULES_ROW.decision}
-                        </p>
-                      </div>
-                    </div>
-                  </CaseStudyExpandable>
-                </div>
-                <SettingHomeModulesVideo className="w-full" />
-              </article>
-            </div>
-          </div>
-
-          <div className="space-y-16 lg:space-y-20">
-            {KEY_OUTCOME_ROWS.map((row) => (
-              <article
-                key={row.assetId}
-                className={
-                  row.beforeAfterLoginSlider
-                    ? "space-y-10 border-t border-zinc-800/90 pt-12 lg:pt-14"
-                    : row.onboardingDemoVideo
-                      ? "min-w-0 space-y-6 border-t border-zinc-800/90 pt-12 lg:pt-14"
-                      : "grid gap-10 border-t border-zinc-800/90 pt-12 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-start lg:gap-12 lg:pt-14"
-                }
-              >
-                <div className="min-w-0 space-y-6">
-                  <div className="max-w-4xl space-y-3">
-                    <h2 className={KEY_OUTCOME_STORY_TITLE_CLASS}>{row.title}</h2>
-                    {row.titleNote ? (
-                      <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
-                        {row.titleNote}
-                      </p>
-                    ) : null}
-                  </div>
-                  <div className={row.onboardingDemoVideo ? "max-w-3xl" : undefined}>
-                    <div className="rounded-xl border border-emerald-500/25 bg-emerald-500/[0.07] px-4 py-3 sm:px-5 sm:py-4">
-                      <p className="text-[11px] font-semibold uppercase tracking-widest text-emerald-200/95">
-                        Outcome
-                      </p>
-                      <p className="mt-2 text-sm font-medium leading-relaxed text-zinc-100">
-                        {row.outcome}
-                      </p>
-                      <CaseStudyExpandable label="Evidence → problem → decision (full)">
-                        <div className="space-y-5">
-                          <div className="border-l-2 border-emerald-500/45 pl-4">
-                            <p className="text-[11px] font-semibold uppercase tracking-widest text-emerald-400/95">
-                              Evidence · interviews &amp; tests
-                            </p>
-                            <p className="mt-2 text-sm leading-relaxed text-zinc-300">
-                              {row.evidence}
-                            </p>
-                          </div>
-                          <div className="border-l-2 border-rose-500/35 pl-4">
-                            <p className="text-[11px] font-semibold uppercase tracking-widest text-rose-300/90">
-                              Problem in the experience
-                            </p>
-                            <p className="mt-2 text-sm leading-relaxed text-zinc-300">
-                              {row.problem}
-                            </p>
-                          </div>
-                          <div className="border-l-2 border-violet-500/45 pl-4">
-                            <p className="text-[11px] font-semibold uppercase tracking-widest text-violet-300/95">
-                              Decision
-                            </p>
-                            <p className="mt-2 text-sm leading-relaxed text-zinc-300">
-                              {row.decision}
-                            </p>
-                          </div>
-                        </div>
-                      </CaseStudyExpandable>
-                    </div>
-                  </div>
-                  {row.onboardingDemoVideo ? (
-                    <GuidedOnboardingVideoPair className="w-full" />
-                  ) : null}
-                </div>
-                {row.beforeAfterLoginSlider ? (
-                  <LoginBeforeAfterSlider />
-                ) : row.onboardingDemoVideo ? null : (
-                  <div
-                    className={
-                      row.autoSlideshow
-                        ? "flex justify-center lg:pt-1"
-                        : "flex justify-center lg:justify-end lg:pt-1"
-                    }
-                  >
-                    <KeyOutcomePhoneFigures row={row} />
-                  </div>
-                )}
-              </article>
-            ))}
+              <GuidedOnboardingVideoPair className="w-full" />
+            </section>
           </div>
         </CaseStudyInViewSection>
 

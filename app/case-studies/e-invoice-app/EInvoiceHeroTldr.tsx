@@ -27,10 +27,10 @@ const METRICS = [
   },
   {
     kicker: "Retention",
-    value: "68% → 92%",
-    title: "Login success (return visits)",
+    value: "Client-reported lift",
+    title: "Login success after ship",
     detail:
-      "Biometric login and in-app password recovery so more people complete sign-in on their own—fewer drop-offs at the gate on repeat use.",
+      "Biometric login and in-app password recovery; internal analytics and support trends showed materially better completion—not a published A/B headline.",
   },
   {
     kicker: "Activation",

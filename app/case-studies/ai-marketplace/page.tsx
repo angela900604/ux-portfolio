@@ -188,47 +188,45 @@ export default function AiMarketplaceCaseStudy() {
       <CaseStudyContentLayout>
         <CaseStudyInViewSection
           id="context"
-          className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
+          className="scroll-mt-28 space-y-6 sm:scroll-mt-32 sm:space-y-8"
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Opportunity
           </span>
-          <h2 className="max-w-3xl text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
-            SF parents burn through baby gear fast, but resale is still too slow
-            and too much admin
-          </h2>
-          <p className="max-w-3xl text-zinc-300 leading-relaxed">
-            MINA is a{" "}
-            <span className="text-zinc-100">zero-to-one iOS marketplace</span>{" "}
-            for parents—starting in{" "}
-            <span className="text-zinc-100">
-              San Francisco mom communities
-            </span>
-            —where used baby and kids gear turns over fast. The wedge is{" "}
-            <span className="text-zinc-100">
-              AI-assisted listing and chat on top of community-led distribution
-            </span>
-            , not another generic classifieds app. I joined as the{" "}
-            <span className="text-zinc-100">sole product designer (IC)</span>,
-            pairing daily with one PM and five engineers while we shipped the
-            first public build in Canada.
-          </p>
-          <p className="max-w-3xl text-zinc-300 leading-relaxed">
-            Distribution is inherently social: I treated{" "}
-            <span className="text-zinc-100">
-              listing completion and share-out
-            </span>{" "}
-            as one thread—clear publish states and lightweight paths for parents
-            to pass items to people they already know, not only browse inside the
-            app.{" "}
-            <span className="text-zinc-100">Community events</span> (signage,
-            demos, conversations on the ground) informed how much explanation
-            first-time sellers need. The{" "}
-            <span className="text-zinc-100">Parenting Copilot</span> sits on the
-            same thesis: nudge life-stage transitions so gear keeps moving within
-            the network—member connection driving circulation, not one-off
-            transactions.
-          </p>
+          <div className="max-w-3xl space-y-8">
+            <div className="space-y-3">
+              <h2 className="text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
+                The real problem wasn&apos;t a missing app — it was the admin
+              </h2>
+              <p className="text-zinc-300 leading-relaxed">
+                SF moms in tight spaces cycle through baby gear every few months.
+                They knew about Facebook Marketplace. They just couldn&apos;t
+                face creating listings one by one for a bag full of onesies.
+              </p>
+            </div>
+            <div className="space-y-3">
+              <h3 className="text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
+                The insight from the community
+              </h3>
+              <p className="text-zinc-300 leading-relaxed">
+                Through early user conversations, we found three distinct seller
+                types: moms who want to sell fast, moms who want to give things
+                away for free, and higher-income moms who donate in bulk and want
+                something back — recognition, community access, a perk.
+              </p>
+            </div>
+            <div className="space-y-3">
+              <h3 className="text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
+                The design response
+              </h3>
+              <p className="text-zinc-300 leading-relaxed">
+                One photo → AI agent generates multiple listings through chat. No
+                forms. For free-item givers, Mina Circle. For bulk donors, event
+                access and partner perks. The AI reduces the admin; the community
+                provides the motivation.
+              </p>
+            </div>
+          </div>
           <div className="mt-6 max-w-3xl overflow-hidden rounded-xl border border-zinc-800/50 bg-zinc-900/40">
             <Image
               src="/case-studies/mina/community-collage.jpg"
@@ -250,6 +248,11 @@ export default function AiMarketplaceCaseStudy() {
           </span>
           <div className="grid items-start gap-8 lg:grid-cols-[1fr_auto] lg:gap-10">
             <div className="min-w-0 space-y-4">
+              <p className="max-w-3xl text-zinc-300 leading-relaxed">
+                The 30% lift in completed listings wasn&apos;t from adding
+                features — it came from removing friction that research told us
+                was there.
+              </p>
               <h2 className="max-w-3xl text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
                 Hand listing over to an agent: one photo to listing
               </h2>
