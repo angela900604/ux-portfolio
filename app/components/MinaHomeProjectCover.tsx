@@ -51,7 +51,7 @@ export function MinaHomeProjectCover() {
         loop
         playsInline
         preload="metadata"
-        aria-label="Preview: MINA AI marketplace for parents"
+        aria-label="Preview: MINA community-first marketplace for parents"
       >
         <source src={WEBM} type="video/webm" />
         <source src={MP4} type="video/mp4" />

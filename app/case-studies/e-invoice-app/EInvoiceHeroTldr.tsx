@@ -26,18 +26,18 @@ const METRICS = [
     detail: "Country-scale dependency on one official surface.",
   },
   {
-    kicker: "What we shipped",
+    kicker: "Retention",
     value: "68% → 92%",
-    title: "Increasing login success",
+    title: "Login success (return visits)",
     detail:
-      "Biometric login and in-app password recovery so more people finish sign-in on their own.",
+      "Biometric login and in-app password recovery so more people complete sign-in on their own—fewer drop-offs at the gate on repeat use.",
   },
   {
-    kicker: "Guided setup detail",
+    kicker: "Activation",
     value: "+30%",
-    title: "Boosting onboarding completion",
+    title: "First-launch onboarding completion",
     detail:
-      "First-launch steps for biometrics, bank link, notifications, and cloud backup—explained one job at a time.",
+      "Guided setup for biometrics, bank link, notifications, and cloud backup—one job per step so new users reach “ready to use” faster.",
   },
   {
     kicker: "Mechanisms",

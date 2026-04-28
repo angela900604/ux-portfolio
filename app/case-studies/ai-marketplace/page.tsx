@@ -31,7 +31,8 @@ const MINA_APP_STORE =
 const AT_A_GLANCE_ITEMS = [
   {
     label: "Outcome",
-    value: "~30% lift in completed listings (PostHog, after checkout & listing redesign)",
+    value:
+      "Redesigned the listing funnel for seller conversion — completed listings up ~30% (PostHog cohorted A/B). Defined success metrics with PM before shipping.",
   },
   {
     label: "Team",
@@ -43,16 +44,17 @@ const AT_A_GLANCE_ITEMS = [
   },
   {
     label: "Timeline",
-    value: "2025 – Present · iOS live in Canada",
+    value: "Sep 2025 – Present (ongoing) · iOS live in Canada",
   },
 ] as const;
 
 const MINA_JOURNEY_IDS = ["engineering-proposal", "design-principles"] as const;
 
 export const metadata = {
-  title: "MINA · AI marketplace for parents — impact, AI trust & design system | Angela Yang",
+  title:
+    "MINA · Community-first AI marketplace for parents — impact, trust & design system | Angela Yang",
   description:
-    "Sole designer on MINA (iOS): ~30% completed listings lift in PostHog after checkout & listing work; Photo-to-Publish AI; Parenting Copilot; 50+ component design system; 0→1 flows with PM and engineering.",
+    "Sole designer on MINA (iOS): community-driven marketplace for SF parents—growth-focused listing funnel (~30% completed listings lift, PostHog cohorted A/B), share-friendly listing paths, in-person community events, Parenting Copilot for circulation; AI trust, 50+ component system.",
 };
 
 export default function AiMarketplaceCaseStudy() {
@@ -84,9 +86,12 @@ export default function AiMarketplaceCaseStudy() {
           }
           subtitle={
             <p className="text-lg leading-relaxed text-zinc-200 sm:text-xl">
-              From measurable listing outcomes to AI people can trust: checkout
-              and publish flows, a parenting copilot, and a system that scales
-              with a small team.
+              Community-driven product design: SF parent networks and IRL events
+              feed the flywheel—listings built to share outward, a Parenting
+              Copilot that nudges gear circulation inside those circles, and
+              growth through the listing funnel—conversion, engagement, and AI
+              surfaces people can trust. Checkout, publish, and a system that
+              scales with a small team.
             </p>
           }
           leadBelowSubtitle={
@@ -208,6 +213,22 @@ export default function AiMarketplaceCaseStudy() {
             pairing daily with one PM and five engineers while we shipped the
             first public build in Canada.
           </p>
+          <p className="max-w-3xl text-zinc-300 leading-relaxed">
+            Distribution is inherently social: I treated{" "}
+            <span className="text-zinc-100">
+              listing completion and share-out
+            </span>{" "}
+            as one thread—clear publish states and lightweight paths for parents
+            to pass items to people they already know, not only browse inside the
+            app.{" "}
+            <span className="text-zinc-100">Community events</span> (signage,
+            demos, conversations on the ground) informed how much explanation
+            first-time sellers need. The{" "}
+            <span className="text-zinc-100">Parenting Copilot</span> sits on the
+            same thesis: nudge life-stage transitions so gear keeps moving within
+            the network—member connection driving circulation, not one-off
+            transactions.
+          </p>
           <div className="mt-6 max-w-3xl overflow-hidden rounded-xl border border-zinc-800/50 bg-zinc-900/40">
             <Image
               src="/case-studies/mina/community-collage.jpg"
@@ -243,13 +264,38 @@ export default function AiMarketplaceCaseStudy() {
                 listing.
               </p>
               <p className="max-w-3xl text-zinc-300 leading-relaxed">
-                After we tightened that flow,{" "}
-                <span className="font-semibold text-emerald-200/95">
-                  completed listings rose ~30%
+                <span className="text-zinc-100">
+                  Redesigned the listing funnel to improve seller conversion
+                </span>
+                —completed listings up ~30% (
+                <span className="text-zinc-100">PostHog</span> cohorted A/B on the
+                same funnel).{" "}
+                <span className="text-zinc-100">
+                  Defined success metrics with the PM before shipping
                 </span>{" "}
-                (<span className="text-zinc-100">PostHog</span>
-                —cohorted before/after on the same funnel). It is the clearest signal
-                that the work moved real behavior, not just pixels.
+                so we could read a clean signal on conversion, not just ship
+                pixels.
+              </p>
+              <p className="max-w-3xl text-zinc-300 leading-relaxed">
+                For each test, the PM and I framed a{" "}
+                <span className="text-zinc-100">clear hypothesis</span> (what we
+                expected to move seller completion) and{" "}
+                <span className="text-zinc-100">
+                  success metrics plus guardrails
+                </span>{" "}
+                —typically completion rate with step-level drop-off and
+                time-to-publish—before splitting traffic, with{" "}
+                <span className="text-zinc-100">
+                  funnel and property definitions documented
+                </span>{" "}
+                so PM and analytics could read the same numbers. We evaluated
+                outcomes in{" "}
+                <span className="text-zinc-100">PostHog cohorted funnels</span>{" "}
+                against those definitions, then{" "}
+                <span className="text-zinc-100">
+                  shipped, refined, or queued the next iteration
+                </span>{" "}
+                from what the data showed, not from the strongest mockup alone.
               </p>
               <p className="max-w-3xl text-sm leading-relaxed text-zinc-400">
                 The clip here is the{" "}
@@ -324,7 +370,13 @@ export default function AiMarketplaceCaseStudy() {
             This flow doubles as the narrative bridge—Pass It On and suggested
             items are the copilot surface meeting the listing surface.
             That is intentional product architecture: one trust model, two
-            outcomes (clarity for parents, liquidity for the marketplace).
+            outcomes (clarity for parents, liquidity for the marketplace). At
+            the community layer, it is also how{" "}
+            <span className="text-zinc-100">
+              member-to-member connection sustains supply
+            </span>
+            —parents get timely nudges to circulate gear, and the marketplace
+            captures that motion instead of relying on cold discovery alone.
           </p>
           <figure className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
             <Image

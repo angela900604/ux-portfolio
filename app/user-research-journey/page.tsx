@@ -44,7 +44,7 @@ export default function UserResearchJourneyPage() {
           </h1>
           <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
             Competitor analysis, multisegment interviews, and accessibility—one
-            thread from evidence to shipped patterns (Feb–Sep 2025).
+            thread from evidence to shipped patterns (Feb–Nov 2025).
           </p>
         </header>
 

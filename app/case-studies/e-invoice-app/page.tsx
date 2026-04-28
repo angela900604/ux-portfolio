@@ -25,7 +25,7 @@ export const metadata = {
   title:
     "Redesigning Taiwan Ministry of Finance's Uniform Invoice Award Redemption App | Angela Yang",
   description:
-    "Government mobile app used by ~20 million people: trust & inclusion at national scale—multi-segment research (age, language, accessibility), competitive benchmarking, IA, ~88% prototype task success, measurable login and onboarding lifts.",
+    "Government mobile app used by ~20 million people: trust & inclusion at national scale—multi-segment research (age, language, accessibility), competitive benchmarking, IA, ~88% prototype task success, measurable lifts in activation (onboarding) and retention (login success).",
 };
 
 const FIGMA_MOCKUP_PAGE =
@@ -90,7 +90,7 @@ const E_INVOICE_JOURNEY_IDS = [
 ] as const;
 
 const AT_A_GLANCE_ITEMS = [
-  { label: "Timeline", value: "Feb 2025 – Sep 2025 (8 months)" },
+  { label: "Timeline", value: "Feb 2025 – Nov 2025 (10 months)" },
   { label: "Role", value: "UX/UI Designer" },
   {
     label: "Project type",
@@ -160,7 +160,7 @@ const KEY_OUTCOME_ROWS: {
     decision:
       "Ship Face ID / Touch ID as a first-class path and rebuild “forgot password” recovery entirely inside the app—no more kicking people out to external ministry pages mid-flow.",
     outcome:
-      "Login success moved from 68% to 92%. For the 51+ cohort in particular, many could complete first-time login on their own—without a caregiver in the loop.",
+      "Retention signal: login success moved from 68% to 92%. For the 51+ cohort in particular, many could complete first-time login on their own—without a caregiver in the loop.",
   },
   {
     title:
@@ -175,7 +175,7 @@ const KEY_OUTCOME_ROWS: {
     decision:
       "Reframe first launch as a guided setup where each step explains the outcome, not the feature. For bank account linking: surface it as \"wins go straight to your account — no manual step needed,\" and address trust explicitly. Because this step collects financial verification data, we worked through exactly what the bank required and why, then wrote per-field explanations in the UI so users understood what they were providing and how it would be used. Clarity about data purpose is what makes people willing to complete the step. For biometrics: the real value for elderly users isn't convenience — it's that as long as the app is opened within 90 days before the token expires, they never need to remember a password again. That's the difference between needing a family member to log in for you, and being able to do it independently.",
     outcome:
-      'Older adults said, "Quick-login setup is really convenient; I do not need to remember passwords anymore." Foreign residents said, "The explanations are clear; now I finally understand how to set prize payouts to auto-transfer."',
+      'Activation: guided first-launch completion rose about 30% after shipping—older adults said, "Quick-login setup is really convenient; I do not need to remember passwords anymore." Foreign residents said, "The explanations are clear; now I finally understand how to set prize payouts to auto-transfer."',
     titleNote:
       "I also delivered an English-language version for foreign residents.",
   },

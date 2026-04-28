@@ -60,7 +60,7 @@ const FINAL_PRODUCT_MARQUEE_SLIDES: readonly BaskinMarqueeSlide[] = [
 }));
 
 const AT_A_GLANCE_ITEMS = [
-  { label: "Timeline", value: "Dec 2024 – Mar 2025 (4 months)" },
+  { label: "Timeline", value: "Dec 2024 – Feb 2025 (3 months)" },
   { label: "Role", value: "Lead UX/UI Designer" },
   {
     label: "Project type",
@@ -176,7 +176,7 @@ export default function BaskinRobbinsCaseStudy() {
           </p>
           <p className="text-zinc-300 leading-relaxed max-w-3xl">
             I was brought in to close that gap — design Taiwan&apos;s first BR31
-            membership app from zero, aligned with Japan HQ, shipped in 4 months.
+            membership app from zero, aligned with Japan HQ, shipped in 3 months.
           </p>
           <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
             <Image

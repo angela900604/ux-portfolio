@@ -13,12 +13,12 @@ const CORE_PRODUCT = [
     slug: "e-invoice-app",
     title:
       "Redesigning Taiwan Ministry of Finance's Uniform Invoice Award Redemption App",
-    tag: "Mobile · Multi-segment · Shipped",
+    tag: "Mobile · Activation & retention · Shipped",
   },
   {
     slug: "ai-marketplace",
-    title: "MINA · AI marketplace for SF parents",
-    tag: "AI · Marketplace",
+    title: "MINA · Community-first marketplace for SF parents",
+    tag: "AI · Community-driven · Growth & conversion",
   },
   {
     slug: "government-backend",
@@ -49,7 +49,8 @@ const RESEARCH_SHAPES_BUILD = [
   {
     source: "MINA",
     title: "Keep people in charge of risky AI steps",
-    summary: "Preview, explicit OK, and undo—so listings and payouts never feel like silent automation.",
+    summary:
+      "In a community marketplace, preview-before-publish and undo keep member-to-member trust intact—listings and payouts never feel like silent automation.",
     href: "/research/high-risk-ai-human-control",
   },
 ] as const;

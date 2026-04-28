@@ -3,7 +3,7 @@ import Link from "next/link";
 /** Order matches homepage: flagship → core product → adjacent work */
 export const CASE_STUDY_NAV: { slug: string; label: string }[] = [
   { slug: "e-invoice-app", label: "e-Invoice app" },
-  { slug: "ai-marketplace", label: "MINA · AI marketplace" },
+  { slug: "ai-marketplace", label: "MINA · community marketplace" },
   { slug: "government-backend", label: "Government backend" },
   { slug: "baskin-robbins", label: "Baskin-Robbins Taiwan" },
   { slug: "admission-hub", label: "Admission Hub" },

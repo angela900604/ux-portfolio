@@ -22,7 +22,7 @@ export function CompetitorAnalysisMain({
           diverge
         </h2>
         <p className={`${BODY} text-zinc-400`}>
-          Ministry of Finance Cloud Invoice redesign (Feb–Sep 2025): App Store
+          Ministry of Finance Cloud Invoice redesign (Feb–Nov 2025): App Store
           signals plus screen-level benchmarks before IA and UI.
         </p>
       </header>

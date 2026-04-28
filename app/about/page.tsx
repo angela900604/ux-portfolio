@@ -20,7 +20,7 @@ const ABOUT_CARD_BODY_CLASS =
 export const metadata = {
   title: "About | Angela Yang",
   description:
-    "Product designer: consumer mobile, multi-role UX across government-scale and B2C, diverse user research. AI-driven consumer products; social platform design. Vancouver.",
+    "Product designer: consumer mobile and growth-focused UX, multi-role flows across government-scale and B2C, diverse user research. AI-driven consumer products; social platform design. Vancouver.",
 };
 
 export default function AboutPage() {
@@ -36,15 +36,16 @@ export default function AboutPage() {
           </p>
           <h1 className="mt-4 max-w-2xl text-zinc-50">Angela Yang</h1>
           <p className="mt-3 max-w-2xl text-xs font-medium uppercase tracking-widest text-zinc-200/85">
-            B2C mobile &amp; tablet · Cross-market products · AI-driven · Vancouver
+            Consumer &amp; growth · B2C mobile &amp; tablet · AI-driven · Vancouver
             (open to relocate)
           </p>
           <p className="mt-5 max-w-3xl text-base font-medium leading-snug tracking-[-0.015em] text-zinc-50 sm:text-lg md:text-xl">
-            Product designer specializing in consumer mobile experiences — I&apos;ve
-            shipped complex, multi-role UX across government-scale and B2C
-            platforms, with a strong research foundation in diverse user
-            segments. I&apos;m now focused on AI-driven consumer products and
-            expanding into social platform design.
+            I specialize in consumer mobile experiences where design directly
+            drives user growth and retention — I&apos;ve shipped complex,
+            multi-role UX across government-scale and B2C platforms, with a
+            strong research foundation in diverse user segments. I&apos;m now
+            focused on AI-driven consumer products and expanding into social
+            platform design.
           </p>
           <p className="mt-4 max-w-3xl text-base leading-relaxed text-zinc-200/95 sm:text-lg">
             Based in Vancouver, BC. Open to relocation, remote, or hybrid.
