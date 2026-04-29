@@ -449,16 +449,14 @@ export default function AiMarketplaceCaseStudy() {
           </span>
           <div className="grid items-start gap-8 lg:grid-cols-[1fr_auto] lg:gap-10">
             <div className="min-w-0 space-y-4">
-              <div className="max-w-3xl rounded-2xl border border-emerald-500/35 border-l-[4px] border-l-emerald-400/80 bg-emerald-500/[0.07] px-5 py-5 sm:px-6 sm:py-6">
-                <p className="text-base font-medium leading-relaxed text-zinc-100 sm:text-lg">
-                  Posting one item on Facebook Marketplace takes 10 minutes. Posting
-                  a bag of baby gear takes all afternoon.
-                </p>
-                <p className="mt-4 text-base font-medium leading-relaxed text-zinc-100 sm:text-lg">
-                  I redesigned the listing flow end-to-end — completed listings up
-                  ~30% in a cohorted A/B.
-                </p>
-              </div>
+              <h2 className="max-w-3xl text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
+                I redesigned the listing flow end-to-end — completed listings up
+                ~30% in a cohorted A/B.
+              </h2>
+              <p className="max-w-3xl text-zinc-300 leading-relaxed">
+                Posting one item on Facebook Marketplace takes 10 minutes. Posting
+                a bag of baby gear takes all afternoon.
+              </p>
             </div>
             <div className="mx-auto flex w-full max-w-[300px] shrink-0 flex-col items-center lg:mx-0 lg:items-end">
               <MinaPrototypeVideo />
@@ -544,10 +542,6 @@ export default function AiMarketplaceCaseStudy() {
             with a small eng team.
           </p>
           <div className="w-full max-w-3xl space-y-3">
-            <p className="max-w-3xl text-sm leading-relaxed text-zinc-300">
-              Component library portfolio (HTML preview)—embedded below; scroll
-              inside the frame to browse components.
-            </p>
             <div className="overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/50 shadow-[0_0_0_1px_rgba(255,255,255,0.04)_inset]">
               <iframe
                 title="MINA UI component library portfolio (HTML)"

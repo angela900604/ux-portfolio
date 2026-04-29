@@ -413,7 +413,7 @@ export default function EInvoiceCaseStudy() {
                 A national e-invoice app must work for radically different ages,
                 languages, and abilities.
               </span>
-              <span className="mt-3 block text-[0.82em] font-medium leading-snug text-zinc-300 sm:mt-4">
+              <span className="mt-3 block text-[0.74em] font-medium leading-snug text-zinc-300 sm:mt-4">
                 It also had to feel obvious on first open—close to zero learning curve
                 for the tasks millions repeat every week—without trading off public
                 trust.
