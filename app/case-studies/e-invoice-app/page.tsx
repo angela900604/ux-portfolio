@@ -566,89 +566,6 @@ export default function EInvoiceCaseStudy() {
                 detail="Across scan, donate, and redemption—including visually impaired participants and mixed ages."
               />
               <SettingHomeModulesVideo className="w-full" />
-
-              <div className="mt-12 max-w-4xl space-y-4 border-t border-zinc-800/90 pt-10">
-                <h3 className="text-lg font-semibold tracking-tight text-zinc-100 sm:text-xl">
-                  Handoff &amp; engineering alignment
-                </h3>
-                <div className="text-sm leading-relaxed text-zinc-400 sm:text-base">
-                  <p className="font-medium text-zinc-200">
-                    Handoff included three layers:
-                  </p>
-                  <ul className="mt-4 list-none space-y-3.5">
-                    <li className="flex gap-3">
-                      <span
-                        className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400/85"
-                        aria-hidden
-                      />
-                      <span>
-                        <span className="font-semibold text-zinc-200">
-                          API state matrix
-                        </span>
-                        {" — "}
-                        Each flow mapped against account states and timing windows, so
-                        engineering knew which endpoint to hit per scenario.
-                      </span>
-                    </li>
-                    <li className="flex gap-3">
-                      <span
-                        className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400/85"
-                        aria-hidden
-                      />
-                      <span>
-                        <span className="font-semibold text-zinc-200">
-                          Screen reader annotation
-                        </span>
-                        {" — "}
-                        VoiceOver focus order marked directly on screens.
-                      </span>
-                    </li>
-                    <li className="flex gap-3">
-                      <span
-                        className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400/85"
-                        aria-hidden
-                      />
-                      <span>
-                        <span className="font-semibold text-zinc-200">
-                          Component specs
-                        </span>
-                        {" — "}
-                        States, empty copy, and error strings per component in the
-                        Figma library.
-                      </span>
-                    </li>
-                  </ul>
-                  <Link
-                    href={FIGMA_MOCKUP_PAGE}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-6 inline-flex w-fit items-center justify-center gap-2 rounded-full border border-emerald-400/45 bg-emerald-500/15 px-5 py-2.5 text-sm font-semibold text-emerald-200 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] transition hover:border-emerald-400/65 hover:bg-emerald-500/25 hover:text-emerald-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400/80"
-                  >
-                    Figma mockups
-                    <span aria-hidden className="text-base leading-none">
-                      →
-                    </span>
-                  </Link>
-                  <p className="mt-4 text-zinc-500">
-                    The composite below shows how those layers showed up in one export
-                    for RD review.
-                  </p>
-                </div>
-                <figure className="mt-6 overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
-                  <Image
-                    src={HANDOFF_MODULE_SETTINGS_SPEC.src}
-                    alt={HANDOFF_MODULE_SETTINGS_SPEC.alt}
-                    width={1024}
-                    height={588}
-                    className="h-auto w-full object-cover object-top"
-                    sizes="(max-width: 896px) 100vw, 896px"
-                  />
-                  <figcaption className="border-t border-zinc-800/80 px-4 py-3 text-xs leading-relaxed text-zinc-500 sm:px-5 sm:text-sm">
-                    Composite: annotated flows, VoiceOver order, and API / account-state
-                    matrix—one surface engineers could trace during implementation.
-                  </figcaption>
-                </figure>
-              </div>
             </section>
 
             <section
@@ -714,12 +631,95 @@ export default function EInvoiceCaseStudy() {
         </CaseStudyInViewSection>
 
         <div className="flex min-w-0 flex-col gap-10 sm:gap-12">
+          <CaseStudyInViewSection
+            id="e-invoice-handoff"
+            className="scroll-mt-28 border-t border-zinc-800/90 pt-10 sm:scroll-mt-32 sm:pt-12"
+          >
+            <div className="max-w-4xl space-y-4">
+              <h3 className="text-lg font-semibold tracking-tight text-zinc-100 sm:text-xl">
+                Handoff &amp; engineering alignment
+              </h3>
+              <div className="text-sm leading-relaxed text-zinc-400 sm:text-base">
+                <p className="font-medium text-zinc-200">
+                  Handoff included three layers:
+                </p>
+                <ul className="mt-4 list-none space-y-3.5">
+                  <li className="flex gap-3">
+                    <span
+                      className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400/85"
+                      aria-hidden
+                    />
+                    <span>
+                      <span className="font-semibold text-zinc-200">
+                        API state matrix
+                      </span>
+                      {" — "}
+                      Each flow mapped against account states and timing windows, so
+                      engineering knew which endpoint to hit per scenario.
+                    </span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span
+                      className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400/85"
+                      aria-hidden
+                    />
+                    <span>
+                      <span className="font-semibold text-zinc-200">
+                        Screen reader annotation
+                      </span>
+                      {" — "}
+                      VoiceOver focus order marked directly on screens.
+                    </span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span
+                      className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400/85"
+                      aria-hidden
+                    />
+                    <span>
+                      <span className="font-semibold text-zinc-200">
+                        Component specs
+                      </span>
+                      {" — "}
+                      States, empty copy, and error strings per component in the Figma
+                      library.
+                    </span>
+                  </li>
+                </ul>
+                <Link
+                  href={FIGMA_MOCKUP_PAGE}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-6 inline-flex w-fit items-center justify-center gap-2 rounded-full border border-emerald-400/45 bg-emerald-500/15 px-5 py-2.5 text-sm font-semibold text-emerald-200 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] transition hover:border-emerald-400/65 hover:bg-emerald-500/25 hover:text-emerald-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400/80"
+                >
+                  Figma mockups
+                  <span aria-hidden className="text-base leading-none">
+                    →
+                  </span>
+                </Link>
+                <p className="mt-4 text-zinc-500">
+                  The composite below shows how those layers showed up in one export
+                  for RD review.
+                </p>
+              </div>
+              <figure className="mt-6 overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+                <Image
+                  src={HANDOFF_MODULE_SETTINGS_SPEC.src}
+                  alt={HANDOFF_MODULE_SETTINGS_SPEC.alt}
+                  width={1024}
+                  height={583}
+                  className="h-auto w-full object-cover object-top"
+                  sizes="(max-width: 896px) 100vw, 896px"
+                />
+              </figure>
+            </div>
+          </CaseStudyInViewSection>
+
           <DesignJourneyCollapsible
           journeySectionIds={E_INVOICE_JOURNEY_IDS}
           panelId="e-invoice-design-journey-panel"
           title="Design journey"
           subtitle="Functional map, competitive landscape, page flows, and moderated testing"
-          className="!border-t-0 !pt-0 sm:!pt-0"
         >
         <CaseStudyInViewSection
           id="functional-map"
