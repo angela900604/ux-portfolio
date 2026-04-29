@@ -19,6 +19,7 @@ import { HomeBeforeAfterSlider } from "./HomeBeforeAfterSlider";
 import { GuidedOnboardingVideoPair } from "./OnboardingDemoVideo";
 import { SettingHomeModulesVideo } from "./SettingHomeModulesVideo";
 import { LoginBeforeAfterSlider } from "./LoginBeforeAfterSlider";
+import { ProblemPersonasBlock } from "./ProblemPersonasBlock";
 
 export const metadata = {
   title:
@@ -202,10 +203,27 @@ export default function EInvoiceCaseStudy() {
             </p>
           }
           leadBelowSubtitle={
-            <CaseStudyAtAGlance
-              items={AT_A_GLANCE_ITEMS}
-              {...CASE_STUDY_AT_A_GLANCE_DARK_HERO_PROPS}
-            />
+            <div className="space-y-6">
+              <CaseStudyAtAGlance
+                items={AT_A_GLANCE_ITEMS}
+                {...CASE_STUDY_AT_A_GLANCE_DARK_HERO_PROPS}
+              />
+              <div className="flex max-w-3xl flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
+                <Link
+                  href="/user-research-journey"
+                  className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-emerald-400 px-7 py-3.5 text-base font-semibold text-zinc-950 shadow-[0_12px_40px_-12px_rgba(52,211,153,0.55)] ring-1 ring-white/15 transition hover:bg-emerald-300 hover:shadow-[0_14px_44px_-12px_rgba(52,211,153,0.6)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-200"
+                >
+                  View full research journey
+                  <span aria-hidden className="text-lg leading-none">
+                    →
+                  </span>
+                </Link>
+                <p className="text-sm leading-relaxed text-zinc-300 sm:max-w-md sm:text-[0.9375rem] sm:leading-snug">
+                  User research journey—methods, segments, and artifacts behind
+                  these decisions.
+                </p>
+              </div>
+            </div>
           }
         >
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
@@ -262,21 +280,29 @@ export default function EInvoiceCaseStudy() {
       </header>
 
       <CaseStudyContentLayout>
+        <ProblemPersonasBlock />
+
         <CaseStudyInViewSection
           id="key-outcomes"
           className="scroll-mt-28 space-y-14 sm:scroll-mt-32"
         >
-          <FinalScreensMarquee slides={FINAL_SOLUTION_MARQUEE_SLIDES} />
+          <div className="space-y-3">
+            <span className="text-xs font-semibold uppercase tracking-[0.14em] text-zinc-400">
+              Opportunity
+            </span>
+            <h2 className="max-w-3xl text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
+              A national lottery app had to work for radically different ages,
+              languages, and abilities—without trading off public trust.
+            </h2>
+            <p className="max-w-3xl text-sm leading-relaxed text-zinc-400 sm:text-base">
+              The redesign paired multi-segment research with ship-ready IA and UI:
+              scan-first home, inclusive density, authentication people could recover
+              from, and onboarding that surfaced automation before users hit
+              redemption friction.
+            </p>
+          </div>
 
-          <p className="max-w-2xl text-sm leading-relaxed text-zinc-500">
-            <Link
-              href="/user-research-journey"
-              className="font-medium text-emerald-200/90 underline-offset-4 hover:text-emerald-100 hover:underline"
-            >
-              User research journey
-            </Link>
-            —methods, segments, and artifacts behind these decisions.
-          </p>
+          <FinalScreensMarquee slides={FINAL_SOLUTION_MARQUEE_SLIDES} />
 
           <div className="space-y-16 border-t border-zinc-800/90 pt-14 sm:space-y-20 sm:pt-16">
             <section
