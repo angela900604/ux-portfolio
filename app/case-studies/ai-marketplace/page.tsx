@@ -242,7 +242,8 @@ export default function AiMarketplaceCaseStudy() {
                     marginBottom: "16px",
                   }}
                 >
-                  Three distinct seller types emerged from early conversations.
+                  Three ways parents want to move gear showed up in early
+                  conversations.
                 </p>
                 <div className="flex items-center mb-[10px]">
                   <span
@@ -256,6 +257,31 @@ export default function AiMarketplaceCaseStudy() {
                       color: "#C8A84B",
                     }}
                   >
+                    List fast
+                  </span>
+                  <span
+                    style={{
+                      fontSize: "22px",
+                      fontWeight: 500,
+                      color: "rgba(255,255,255,0.7)",
+                      marginLeft: "14px",
+                    }}
+                  >
+                    wants listings without form grind
+                  </span>
+                </div>
+                <div className="flex items-center mb-[10px]">
+                  <span
+                    style={{
+                      border: "1px solid rgba(255,255,255,0.25)",
+                      borderRadius: "20px",
+                      padding: "5px 14px",
+                      fontSize: "16px",
+                      fontWeight: 600,
+                      display: "inline-block",
+                      color: "rgba(255,255,255,0.6)",
+                    }}
+                  >
                     Sell fast
                   </span>
                   <span
@@ -266,7 +292,7 @@ export default function AiMarketplaceCaseStudy() {
                       marginLeft: "14px",
                     }}
                   >
-                    wants a transaction, fast
+                    wants timely picks as baby stages change
                   </span>
                 </div>
                 <div className="flex items-center mb-[10px]">
@@ -281,7 +307,7 @@ export default function AiMarketplaceCaseStudy() {
                       color: "rgba(255,255,255,0.6)",
                     }}
                   >
-                    Give free
+                    Giveaway free fast
                   </span>
                   <span
                     style={{
@@ -291,32 +317,7 @@ export default function AiMarketplaceCaseStudy() {
                       marginLeft: "14px",
                     }}
                   >
-                    wants it gone, no friction
-                  </span>
-                </div>
-                <div className="flex items-center mb-[10px]">
-                  <span
-                    style={{
-                      border: "1px solid rgba(255,255,255,0.25)",
-                      borderRadius: "20px",
-                      padding: "5px 14px",
-                      fontSize: "16px",
-                      fontWeight: 600,
-                      display: "inline-block",
-                      color: "rgba(255,255,255,0.6)",
-                    }}
-                  >
-                    Bulk donate
-                  </span>
-                  <span
-                    style={{
-                      fontSize: "22px",
-                      fontWeight: 500,
-                      color: "rgba(255,255,255,0.7)",
-                      marginLeft: "14px",
-                    }}
-                  >
-                    wants recognition + something back
+                    big IRL drop-off + perks as return
                   </span>
                 </div>
               </div>
@@ -336,7 +337,7 @@ export default function AiMarketplaceCaseStudy() {
                         marginBottom: "3px",
                       }}
                     >
-                      Sell fast
+                      List fast
                     </p>
                     <p
                       style={{
@@ -362,7 +363,7 @@ export default function AiMarketplaceCaseStudy() {
                         marginBottom: "3px",
                       }}
                     >
-                      Give free
+                      Sell fast
                     </p>
                     <p
                       style={{
@@ -371,7 +372,8 @@ export default function AiMarketplaceCaseStudy() {
                         color: "#F0F0F0",
                       }}
                     >
-                      Mina Circle — post once, community claims.
+                      Parenting Copilot nudges buyers when their baby enters a new
+                      phase and surfaces the gear they&apos;ll need next.
                     </p>
                   </div>
                   <div
@@ -388,7 +390,7 @@ export default function AiMarketplaceCaseStudy() {
                         marginBottom: "3px",
                       }}
                     >
-                      Bulk donate
+                      Giveaway free fast
                     </p>
                     <p
                       style={{
@@ -397,7 +399,19 @@ export default function AiMarketplaceCaseStudy() {
                         color: "#F0F0F0",
                       }}
                     >
-                      Event access and partner perks as the return.
+                      MINA Circle — claim free items.
+                    </p>
+                    <p
+                      style={{
+                        fontSize: "15px",
+                        fontWeight: 500,
+                        color: "rgba(255,255,255,0.5)",
+                        marginTop: "10px",
+                        lineHeight: 1.45,
+                      }}
+                    >
+                      At offline events, parents can donate a big bag of baby gear
+                      and get return value through event partner perks and coupons.
                     </p>
                   </div>
                   <p
@@ -435,66 +449,16 @@ export default function AiMarketplaceCaseStudy() {
           </span>
           <div className="grid items-start gap-8 lg:grid-cols-[1fr_auto] lg:gap-10">
             <div className="min-w-0 space-y-4">
-              <p className="max-w-3xl text-zinc-300 leading-relaxed">
-                The 30% lift in completed listings wasn&apos;t from adding
-                features — it came from removing friction that research told us
-                was there.
-              </p>
-              <h2 className="max-w-3xl text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
-                Hand listing over to an agent: one photo to listing
-              </h2>
-              <p className="max-w-3xl text-zinc-300 leading-relaxed">
-                Classic resale still behaves like running a tiny shop: forms, photos,
-                buyer threads, pickup coordination. I{" "}
-                <span className="text-zinc-100">
-                  redesigned checkout and the listing path end-to-end
-                </span>{" "}
-                to reduce drop-off and ambiguity—clear steps, fewer dead ends, and UI
-                that matches how parents actually move from intent to a completed
-                listing.
-              </p>
-              <p className="max-w-3xl text-zinc-300 leading-relaxed">
-                <span className="text-zinc-100">
-                  Redesigned the listing funnel to improve seller conversion
-                </span>
-                —completed listings up ~30% (
-                <span className="text-zinc-100">PostHog</span> cohorted A/B on the
-                same funnel).{" "}
-                <span className="text-zinc-100">
-                  Defined success metrics with the PM before shipping
-                </span>{" "}
-                so we could read a clean signal on conversion, not just ship
-                pixels.
-              </p>
-              <p className="max-w-3xl text-zinc-300 leading-relaxed">
-                For each test, the PM and I framed a{" "}
-                <span className="text-zinc-100">clear hypothesis</span> (what we
-                expected to move seller completion) and{" "}
-                <span className="text-zinc-100">
-                  success metrics plus guardrails
-                </span>{" "}
-                —typically completion rate with step-level drop-off and
-                time-to-publish—before splitting traffic, with{" "}
-                <span className="text-zinc-100">
-                  funnel and property definitions documented
-                </span>{" "}
-                so PM and analytics could read the same numbers. We evaluated
-                outcomes in{" "}
-                <span className="text-zinc-100">PostHog cohorted funnels</span>{" "}
-                against those definitions, then{" "}
-                <span className="text-zinc-100">
-                  shipped, refined, or queued the next iteration
-                </span>{" "}
-                from what the data showed, not from the strongest mockup alone.
-              </p>
-              <p className="max-w-3xl text-sm leading-relaxed text-zinc-400">
-                The clip here is the{" "}
-                <span className="text-zinc-200">
-                  one-photo → detection → draft listing
-                </span>{" "}
-                direction we aligned on with engineering—same product surface family
-                as the shipping listing experience.
-              </p>
+              <div className="max-w-3xl rounded-2xl border border-emerald-500/35 border-l-[4px] border-l-emerald-400/80 bg-emerald-500/[0.07] px-5 py-5 sm:px-6 sm:py-6">
+                <p className="text-base font-medium leading-relaxed text-zinc-100 sm:text-lg">
+                  Posting one item on Facebook Marketplace takes 10 minutes. Posting
+                  a bag of baby gear takes all afternoon.
+                </p>
+                <p className="mt-4 text-base font-medium leading-relaxed text-zinc-100 sm:text-lg">
+                  I redesigned the listing flow end-to-end — completed listings up
+                  ~30% in a cohorted A/B.
+                </p>
+              </div>
             </div>
             <div className="mx-auto flex w-full max-w-[300px] shrink-0 flex-col items-center lg:mx-0 lg:items-end">
               <MinaPrototypeVideo />
