@@ -54,9 +54,15 @@ function storyBeatColors(label: string) {
   return STORY_BEAT_PALETTE[label.toLowerCase()] ?? STORY_BEAT_PALETTE.problem;
 }
 
-function StoryBeatTimeline({ children }: { children: ReactNode }) {
+function StoryBeatTimeline({
+  children,
+  className = "max-w-3xl",
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
   return (
-    <div className="relative max-w-3xl">
+    <div className={`relative min-w-0 ${className}`.trim()}>
       <div
         className="absolute bottom-3 left-[15px] top-3 w-px bg-zinc-600/80"
         aria-hidden
@@ -70,10 +76,13 @@ function StoryBeat({
   label,
   headline,
   detail,
+  largeHeadline = false,
 }: {
   label: string;
   headline: ReactNode;
   detail: ReactNode;
+  /** Larger headline typography (e.g. Section 1 dual narratives). */
+  largeHeadline?: boolean;
 }) {
   const colors = storyBeatColors(label);
   const kind = label.toLowerCase();
@@ -88,11 +97,15 @@ function StoryBeat({
 
   const headlineClass = isOutcome
     ? "text-[15px] font-medium leading-snug text-zinc-900"
-    : "text-[15px] font-medium leading-snug text-zinc-50";
+    : largeHeadline
+      ? "text-[17px] font-medium leading-snug text-zinc-50 sm:text-lg"
+      : "text-[15px] font-medium leading-snug text-zinc-50";
 
   const detailClass = isOutcome
     ? "mt-1 text-[13px] font-normal leading-relaxed text-zinc-600"
-    : "mt-1 text-[13px] font-normal leading-relaxed text-zinc-400";
+    : largeHeadline
+      ? "mt-1 text-[13px] font-normal leading-relaxed text-zinc-400 sm:text-[0.9375rem]"
+      : "mt-1 text-[13px] font-normal leading-relaxed text-zinc-400";
 
   return (
     <div className={isConflict ? "relative my-2 pl-10" : "relative pl-10"}>
@@ -115,6 +128,33 @@ function StoryBeat({
         <p className={`${headlineClass} mt-3`}>{headline}</p>
         <p className={detailClass}>{detail}</p>
       </div>
+    </div>
+  );
+}
+
+/** Full-width outcome callout: no timeline rail (Section 1). */
+function StoryOutcomeCallout({
+  headline,
+  detail,
+}: {
+  headline: ReactNode;
+  detail: ReactNode;
+}) {
+  const colors = storyBeatColors("outcome");
+  return (
+    <div className="mt-8 max-w-4xl rounded-xl border border-[#97C459] bg-[#EAF3DE] px-5 py-6 shadow-sm sm:px-7 sm:py-8">
+      <span
+        className="inline-flex rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em]"
+        style={{ backgroundColor: colors.tagBg, color: colors.tagFg }}
+      >
+        Outcome
+      </span>
+      <p className="mt-4 text-lg font-medium leading-snug text-zinc-900 sm:text-xl md:text-2xl">
+        {headline}
+      </p>
+      <p className="mt-2 text-sm font-normal leading-relaxed text-zinc-600 sm:text-base">
+        {detail}
+      </p>
     </div>
   );
 }
@@ -269,21 +309,18 @@ export default function EInvoiceCaseStudy() {
               <CaseStudyAtAGlance
                 items={AT_A_GLANCE_ITEMS}
                 {...CASE_STUDY_AT_A_GLANCE_DARK_HERO_PROPS}
+                noAccentGridClassName="grid w-full min-w-0 grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-8 [&>div]:min-w-0"
               />
-              <div className="flex max-w-3xl flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
+              <div className="max-w-3xl">
                 <Link
                   href="/user-research-journey"
-                  className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-emerald-400 px-7 py-3.5 text-base font-semibold text-zinc-950 shadow-[0_12px_40px_-12px_rgba(52,211,153,0.55)] ring-1 ring-white/15 transition hover:bg-emerald-300 hover:shadow-[0_14px_44px_-12px_rgba(52,211,153,0.6)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-200"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-400 px-7 py-3.5 text-base font-semibold text-zinc-950 shadow-[0_12px_40px_-12px_rgba(52,211,153,0.55)] ring-1 ring-white/15 transition hover:bg-emerald-300 hover:shadow-[0_14px_44px_-12px_rgba(52,211,153,0.6)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-200"
                 >
                   View full research journey
                   <span aria-hidden className="text-lg leading-none">
                     →
                   </span>
                 </Link>
-                <p className="text-sm leading-relaxed text-zinc-300 sm:max-w-md sm:text-[0.9375rem] sm:leading-snug">
-                  User research journey—methods, segments, and artifacts behind
-                  these decisions.
-                </p>
               </div>
             </div>
           }
@@ -377,43 +414,52 @@ export default function EInvoiceCaseStudy() {
                 </span>
                 <h2 className={STORY_SECTION_TITLE_CLASS}>The Homepage</h2>
               </header>
-              <StoryBeatTimeline>
-                <StoryBeat
-                  label="Problem"
-                  headline="Users opened the app and couldn&apos;t find what they needed."
-                  detail="Five very different user segments, all frustrated for different reasons."
-                />
-                <StoryBeat
-                  label="Key insight"
-                  headline="Every group shared one first action: scan a paper invoice."
-                  detail="Seniors especially—at checkout, cashiers assumed they couldn&apos;t use the app and handed them paper receipts instead."
-                />
-                <StoryBeat
-                  label="Decision"
-                  headline="Scan became the primary, large, labeled CTA—the first thing on open."
-                  detail="Before: small QR icon, top-right. After: unmissable."
-                />
-                <StoryBeat
-                  label="Problem"
-                  headline="Low-vision users and foreign residents couldn&apos;t finish core tasks alone."
-                  detail="Icons were unreadable, labels assumed civic vocabulary, and there was no audio confirmation after scan."
-                />
-                <StoryBeat
-                  label="Key insight"
-                  headline="Foreign residents needed text to decode the control—not icon-only cues."
-                  detail="Low-vision users relied on a fixed position they could memorize more than on fine visuals."
-                />
-                <StoryBeat
-                  label="Decision"
-                  headline="Large tap target + readable text label + fixed placement."
-                  detail="One pattern served both groups—including labels that don&apos;t assume Chinese literacy."
-                />
-                <StoryBeat
-                  label="Outcome"
-                  headline="Prototype testing with the same participants validated the scan-first, inclusive home direction."
-                  detail="Strong positive responses across ages—especially seniors."
-                />
-              </StoryBeatTimeline>
+              <div className="grid gap-10 lg:grid-cols-2 lg:gap-12">
+                <StoryBeatTimeline className="max-w-none">
+                  <StoryBeat
+                    label="Problem"
+                    headline="Users opened the app and couldn&apos;t find what they needed."
+                    detail="Five very different user segments, all frustrated for different reasons."
+                    largeHeadline
+                  />
+                  <StoryBeat
+                    label="Key insight"
+                    headline="Every group shared one first action: scan a paper invoice."
+                    detail="Seniors especially have a lot of paper invoices to scan. At checkout, cashiers assumed elderly don&apos;t use the e-invoice app and handed them paper receipts instead."
+                    largeHeadline
+                  />
+                  <StoryBeat
+                    label="Decision"
+                    headline="Scan became the primary, large, labeled CTA—the first thing on open."
+                    detail="Before: small QR icon, top-right. After: unmissable."
+                    largeHeadline
+                  />
+                </StoryBeatTimeline>
+                <StoryBeatTimeline className="max-w-none">
+                  <StoryBeat
+                    label="Problem"
+                    headline="Low-vision users and foreign residents couldn&apos;t finish core tasks alone."
+                    detail="Icons were unreadable, labels assumed civic vocabulary, and there was no audio confirmation after scan."
+                    largeHeadline
+                  />
+                  <StoryBeat
+                    label="Key insight"
+                    headline="Foreign residents needed text to decode the control—not icon-only cues."
+                    detail="Low-vision users relied on a fixed position they could memorize more than on fine visuals."
+                    largeHeadline
+                  />
+                  <StoryBeat
+                    label="Decision"
+                    headline="Large tap target + readable text label + fixed placement."
+                    detail="One pattern served both groups—including labels that don&apos;t assume Chinese literacy."
+                    largeHeadline
+                  />
+                </StoryBeatTimeline>
+              </div>
+              <StoryOutcomeCallout
+                headline="Prototype testing with the same participants validated the scan-first, inclusive home direction."
+                detail="Strong positive responses across ages—especially seniors."
+              />
               <HomeBeforeAfterSlider />
             </section>
 

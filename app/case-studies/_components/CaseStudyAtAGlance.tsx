@@ -32,6 +32,8 @@ type Props = {
   accent?: "default" | "baskin";
   /** When false, hide the accent bar and lay out items in an even grid (e.g. e-invoice hero). */
   showAccent?: boolean;
+  /** When `showAccent` is false, optional Tailwind grid class for columns (e.g. even 4-col). */
+  noAccentGridClassName?: string;
   /** Omit the “At a glance” heading (e.g. e-invoice hero). */
   hideTitle?: boolean;
   /** Override label row typography (default: zinc-500 caps). */
@@ -54,6 +56,7 @@ export function CaseStudyAtAGlance({
   items,
   accent = "default",
   showAccent = true,
+  noAccentGridClassName,
   hideTitle = false,
   labelClassName = "text-[11px] font-semibold uppercase tracking-wider text-zinc-500",
   valueClassName = "mt-0.5 text-base font-medium leading-[1.65] text-white/90 sm:text-lg",
@@ -61,9 +64,10 @@ export function CaseStudyAtAGlance({
   const bar = ACCENT_BAR[accent];
 
   const noAccentGridClass =
-    items.length >= 5
+    noAccentGridClassName ??
+    (items.length >= 5
       ? "grid min-w-0 w-full grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 lg:gap-x-6 xl:gap-x-8"
-      : "grid min-w-0 w-full grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-8";
+      : "grid min-w-0 w-full grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-8");
 
   const columnsClass = showAccent
     ? "flex min-w-0 flex-1 flex-col gap-y-2 lg:flex-row lg:gap-x-6 lg:gap-y-0 xl:gap-x-8"
