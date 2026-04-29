@@ -687,12 +687,12 @@ export default function EInvoiceCaseStudy() {
                   </li>
                 </ul>
               </div>
-              <figure className="mt-6 overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+              <figure className="mt-6 overflow-hidden rounded-2xl border border-zinc-800 bg-[#F6F5FF] p-[40px]">
                 <Image
                   src={HANDOFF_MODULE_SETTINGS_SPEC.src}
                   alt={HANDOFF_MODULE_SETTINGS_SPEC.alt}
                   width={1024}
-                  height={571}
+                  height={633}
                   className="h-auto w-full object-contain object-top"
                   sizes="(max-width: 1024px) 100vw, 1024px"
                   unoptimized
