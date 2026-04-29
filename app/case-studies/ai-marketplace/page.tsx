@@ -35,7 +35,7 @@ const MINA_APP_STORE =
 const AT_A_GLANCE_ITEMS = [
   {
     label: "Timeline",
-    value: "Sep 2025 – Present (ongoing) · iOS live in Canada",
+    value: "Sep 2025 – Present",
   },
   {
     label: "Role",
