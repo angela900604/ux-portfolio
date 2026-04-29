@@ -12,6 +12,7 @@ import { DesignJourneyCollapsible } from "../_components/DesignJourneyCollapsibl
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { FlatAppShot, WideFigure } from "../e-invoice-app/EInvoiceFigures";
 import { GovernmentBackendHeroTldr } from "./GovernmentBackendHeroTldr";
+import { GovernmentBackendUnifiedIaDiagram } from "./GovernmentBackendUnifiedIaDiagram";
 
 export const metadata = {
   title: "Role-Based Government Backend (600+ Staff) | Angela Yang",
@@ -40,7 +41,7 @@ const AT_A_GLANCE_ITEMS = [
   },
 ] as const;
 
-const GOV_BACKEND_JOURNEY_IDS = ["rbac", "iterations"] as const;
+const GOV_BACKEND_JOURNEY_IDS = ["iterations"] as const;
 
 function Metric({ children }: { children: ReactNode }) {
   return (
@@ -252,10 +253,27 @@ export default function GovernmentBackendCaseStudy() {
           </p>
         </CaseStudyInViewSection>
 
-        <DesignJourneyCollapsible
-          journeySectionIds={GOV_BACKEND_JOURNEY_IDS}
-          panelId="gov-backend-design-journey-panel"
+        <CaseStudyInViewSection
+          id="unified-ia"
+          className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            Information architecture
+          </span>
+          <h2 className="max-w-3xl text-zinc-100">
+            One platform layer: five org columns in, consistent modules out
+          </h2>
+          <p className="max-w-3xl text-zinc-300 leading-relaxed">
+            Before this backend, teams leaned on spreadsheets and one-off tools for
+            campaigns, pushes, and reports. The design problem was how to respect real
+            jurisdictional boundaries while still giving everyone a{" "}
+            <span className="text-zinc-100">single module map</span>—so training,
+            audits, and releases point to the same IA, with permissions doing the
+            differentiation instead of separate products per unit.
+          </p>
+          <GovernmentBackendUnifiedIaDiagram />
+        </CaseStudyInViewSection>
+
         <CaseStudyInViewSection
           id="rbac"
           className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
@@ -472,8 +490,66 @@ export default function GovernmentBackendCaseStudy() {
               </table>
             </div>
           </div>
+
+          <div
+            id="engineering-handoff"
+            className="scroll-mt-28 space-y-4 border-t border-zinc-800/90 pt-10 sm:scroll-mt-32 sm:pt-12"
+          >
+            <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+              Handoff &amp; engineering alignment
+            </span>
+            <h3 className="max-w-3xl text-lg font-semibold tracking-tight text-zinc-100 sm:text-xl">
+              Turning stakeholder politics into implementable permission rules
+            </h3>
+            <div className="max-w-3xl space-y-4 text-zinc-300 leading-relaxed">
+              <p>
+                The main tension was{" "}
+                <span className="text-zinc-100">
+                  breadth of roles vs. implementation cost
+                </span>
+                : engineering pushed for fewer composite checks and simpler
+                policies, while each ministry unit insisted their staff could not see
+                or trigger the wrong surface. I did not resolve that in the abstract—I
+                exported the workshop matrix (above) into{" "}
+                <span className="text-zinc-100">
+                  annotated Figma flows and a short “grant dictionary”
+                </span>{" "}
+                (feature key → API capability → UI visibility) so debates happened on
+                concrete rows, not opinions.
+              </p>
+              <p>
+                A concrete conflict was{" "}
+                <span className="text-zinc-100">promotion pinning</span>: several
+                roles could author outreach, but only HQ could occupy the five
+                homepage slots. Some stakeholders wanted a shared “editor” role with
+                optional pin; engineers worried about race conditions and audit
+                trails. The compromise we shipped in UX was{" "}
+                <span className="text-zinc-100">
+                  hide high-impact controls entirely for non-HQ roles
+                </span>{" "}
+                rather than disabled grey states—cleaner for civil servants and
+                fewer “why can’t I click this?” tickets, while the backend kept a
+                single enforcement path.
+              </p>
+              <p>
+                On <span className="text-zinc-100">reporting</span>, the constraint
+                was data volume and export fairness: wide date ranges and
+                unbounded CSVs were risky. I aligned filters and copy with what the
+                API could guarantee (statistical year, bounded exports, sensible
+                defaults) so the UI never promised a slice the service could not
+                deliver—then iterated the chart hierarchy once engineers confirmed
+                query patterns for weekly vs. monthly rollups.
+              </p>
+            </div>
+          </div>
         </CaseStudyInViewSection>
 
+        <DesignJourneyCollapsible
+          journeySectionIds={GOV_BACKEND_JOURNEY_IDS}
+          panelId="gov-backend-design-journey-panel"
+          title="Key design iterations"
+          subtitle="Reporting dashboards and app version control — before/after and flow diagrams"
+        >
         <CaseStudyInViewSection
           id="iterations"
           className="scroll-mt-28 space-y-8 sm:scroll-mt-32"

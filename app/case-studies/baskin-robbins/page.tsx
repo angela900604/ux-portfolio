@@ -191,6 +191,60 @@ export default function BaskinRobbinsCaseStudy() {
           </div>
         </CaseStudyInViewSection>
 
+        <CaseStudyInViewSection
+          id="cross-market-decisions"
+          className={`space-y-6 border-t border-zinc-800 pt-10 sm:pt-12 ${sectionScroll}`}
+        >
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            Cross-market decisions
+          </span>
+          <h2 className="max-w-3xl text-zinc-100">
+            Where Japan HQ patterns met Taiwan usage—and what we negotiated
+          </h2>
+          <div className="max-w-3xl space-y-4 text-zinc-300 leading-relaxed">
+            <p>
+              Japan&apos;s 31Club reference skews{" "}
+              <span className="text-zinc-100">
+                calm density, points-first loyalty, and a minimal white/pink shell
+              </span>
+              built for a market that has used the app for years. Taiwan launch
+              skewed{" "}
+              <span className="text-zinc-100">
+                in-store urgency: barcode ready at the counter, faster scan paths,
+                and promo surfaces
+              </span>{" "}
+              parents expect from local QSR loyalty apps. The conflict wasn&apos;t
+              “ignore HQ”—it was which layers had to stay globally legible (brand
+              color, illustration tone, component vocabulary) versus which could flex
+              for local CRM reality and retail rhythm. My trade-off was to{" "}
+              <span className="text-zinc-100">
+                keep parent-brand primitives and review gates
+              </span>{" "}
+              while refusing a pixel-copy of Japan: IA, density, and tier storytelling
+              were tuned for Taiwan first, with rationale documented for every
+              divergence before interpreter-led HQ calls.
+            </p>
+            <p>
+              The decision that{" "}
+              <span className="text-zinc-100">
+                actually rewired the design direction—after alignment, not before
+              </span>
+              —was loyalty mechanics: HQ&apos;s mental model centers on{" "}
+              <span className="text-zinc-100">points and redemption</span>, but
+              Taiwan&apos;s phase-one backend was{" "}
+              <span className="text-zinc-100">spend-based tiers without point
+              burn</span>. Once engineering and client confirmed that gap in
+              workshops, we stopped designing “mini Japan” flows and reframed the MVP
+              around <span className="text-zinc-100">spend progress, tier unlocks,
+              and voucher redemption</span>—then chose the sweeter, more campaign-forward
+              visual direction (A) because it matched how Taiwan needed to{" "}
+              <span className="text-zinc-100">merchandise benefits</span>, while
+              direction B (closer to Japan&apos;s quieter white shell) would have
+              under-communicated value in a market still learning the program.
+            </p>
+          </div>
+        </CaseStudyInViewSection>
+
         <div id="final-product" className={sectionScroll}>
           <BaskinFinalScreensMarquee slides={FINAL_PRODUCT_MARQUEE_SLIDES} />
         </div>

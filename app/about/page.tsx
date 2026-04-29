@@ -127,12 +127,23 @@ export default function AboutPage() {
               <h3 className={ABOUT_CARD_TITLE_CLASS}>
                 Engineering-led collaboration
               </h3>
-              <p className={`${ABOUT_CARD_BODY_CLASS} flex-1`}>
-                I work very closely with frontend and backend engineers from the
-                beginning. During early product phases, I proactively discuss
-                implementation feasibility so innovative ideas stay practical and
-                buildable.
-              </p>
+              <div className={`${ABOUT_CARD_BODY_CLASS} flex-1 flex flex-col`}>
+                <p>
+                  I work very closely with frontend and backend engineers from the
+                  beginning. During early product phases, I proactively discuss
+                  implementation feasibility so innovative ideas stay practical and
+                  buildable.
+                </p>
+                <p className="mt-4 border-l-2 border-emerald-500/35 pl-3 text-sm leading-relaxed text-zinc-500 sm:text-base">
+                  <span className="font-medium text-zinc-300">Example:</span> On the
+                  e-invoice app, I aligned with backend on ministry verification and
+                  session behavior while designing login—so we shipped biometric
+                  sign-in and in-app recovery instead of leaving users stuck in rigid
+                  code-retry loops (login success had been stuck around{" "}
+                  <span className="tabular-nums text-zinc-400">~68%</span>
+                  ).
+                </p>
+              </div>
             </div>
             <div className="flex h-full min-w-0 flex-col rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 sm:p-7">
               <h3 className={ABOUT_CARD_TITLE_CLASS}>

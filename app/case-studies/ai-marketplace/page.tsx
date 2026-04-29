@@ -13,6 +13,7 @@ import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { DesignJourneyCollapsible } from "../_components/DesignJourneyCollapsible";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
+import VisualPlaceholder from "../_components/VisualPlaceholder";
 import { MinaPrototypeVideo } from "./MinaPrototypeVideo";
 
 const MINA_HERO = "/case-studies/mina/mina-ai-hero.png";
@@ -165,9 +166,9 @@ export default function AiMarketplaceCaseStudy() {
               <div className="overflow-hidden rounded-xl sm:row-span-2">
                 <Image
                   src={MINA_MOCKUP_HAND}
-                  alt="MINA Parenting Copilot shown in an iPhone hand mockup"
-                  width={736}
-                  height={1104}
+                  alt="MINA Parenting Copilot on iPhone, held in hand against a light textured background"
+                  width={720}
+                  height={1024}
                   className="h-auto w-full object-cover"
                   sizes="(max-width: 640px) 100vw, 50vw"
                 />
@@ -520,6 +521,58 @@ export default function AiMarketplaceCaseStudy() {
               sizes="(max-width: 1200px) 100vw, 1152px"
             />
           </figure>
+
+          <div
+            id="mina-ai-api-ux"
+            className="scroll-mt-28 space-y-4 border-t border-zinc-800/90 pt-8 sm:scroll-mt-32 sm:pt-10"
+          >
+            <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+              System constraints
+            </span>
+            <h3 className="max-w-3xl text-lg font-semibold leading-snug tracking-tight text-zinc-100 sm:text-xl md:text-[1.35rem] md:leading-snug">
+              How listing AI and Copilot UX bridge real API behavior—not just
+              feature copy
+            </h3>
+            <div className="max-w-3xl space-y-4 text-zinc-300 leading-relaxed">
+              <p>
+                <span className="text-zinc-100">AI-generated listings are not a
+                single synchronous form submit.</span> Model and orchestration
+                latency varies; I designed the chat-native flow around{" "}
+                <span className="text-zinc-100">
+                  multi-turn disclosure, visible “working” states, and partial
+                  drafts
+                </span>{" "}
+                so parents always see forward progress instead of a blocking
+                spinner that implies instant completion. That gave engineering
+                room to stream or chunk responses without the UI lying about
+                readiness.
+              </p>
+              <p>
+                <span className="text-zinc-100">
+                  Preview-before-publish is trust-first for parents
+                </span>
+                —but it also matches how the team wanted to treat server state:{" "}
+                <span className="text-zinc-100">
+                  drafts stay explicit until a publish action
+                </span>
+                , which simplifies idempotency, rollback, and moderation hooks
+                when the model mis-labels price or condition. UX and API contracts
+                pointed the same direction rather than bolting trust on as a
+                veneer.
+              </p>
+              <p>
+                For <span className="text-zinc-100">Copilot recommendations</span>,
+                not every nudge can block on perfect real-time inventory or event
+                data. I paired ideal paths with{" "}
+                <span className="text-zinc-100">
+                  graceful degradation—cached guidance, clear “we’ll follow up”
+                  states
+                </span>
+                —so the client never promises stock or timing the backend
+                couldn&apos;t guarantee in v1.
+              </p>
+            </div>
+          </div>
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection
@@ -539,8 +592,27 @@ export default function AiMarketplaceCaseStudy() {
             that new screens composed from documented pieces instead of one-offs.
             That mattered because we were shipping{" "}
             <span className="text-zinc-100">three major flows in parallel</span>{" "}
-            with a small eng team.
+            with a small eng team. Named variants, spacing, and component props in
+            Figma mirrored how iOS consumed them—so devs could pull a cell, a
+            chat bubble, or a CTA stack without a bespoke spec each time.
           </p>
+          <p className="max-w-3xl text-sm leading-relaxed text-zinc-500 sm:text-base">
+            Snapshots below are placeholders—drop in 1–2 Figma exports (e.g. atoms +
+            molecules, or AI surface kit). The iframe after them is the full HTML
+            catalog for deep browsing.
+          </p>
+          <div className="grid w-full max-w-5xl gap-4 sm:grid-cols-2 [&_figure]:mt-0">
+            <VisualPlaceholder
+              label="Figma library — core UI (buttons, inputs, cells)"
+              hint="Export a cropped artboard: navigation + listing rows + form fields so engineers see composition at a glance."
+              aspect="video"
+            />
+            <VisualPlaceholder
+              label="Figma library — AI & chat surfaces"
+              hint="Export chat bubbles, draft states, confirmation patterns—ties directly to preview-before-publish and listing agent flows."
+              aspect="video"
+            />
+          </div>
           <div className="w-full max-w-3xl space-y-3">
             <div className="overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/50 shadow-[0_0_0_1px_rgba(255,255,255,0.04)_inset]">
               <iframe

@@ -25,6 +25,24 @@ export function ProjectCardTag({
   );
 }
 
+/** One-line technical / systems signals under homepage project tags (not user-research teasers). */
+export function ProjectTechHighlights({
+  children,
+  className = "",
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <p
+      className={`mt-2 text-[11px] font-medium leading-snug text-zinc-500 sm:text-xs sm:text-zinc-400 ${className}`.trim()}
+    >
+      <span className="sr-only">Technical highlights: </span>
+      {children}
+    </p>
+  );
+}
+
 /** Green “Shipped” pill for homepage UX / product case cards. */
 export function ProjectShippedBadge({ className = "" }: { className?: string }) {
   return (

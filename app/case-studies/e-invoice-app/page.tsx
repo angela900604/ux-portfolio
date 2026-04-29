@@ -11,6 +11,7 @@ import { CaseStudyHeroFullBleed } from "../_components/CaseStudyHeroFullBleed";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { DesignJourneyCollapsible } from "../_components/DesignJourneyCollapsible";
+import VisualPlaceholder from "../_components/VisualPlaceholder";
 import { CompetitorLandscapeTable } from "./CompetitorLandscapeTable";
 import { EInvoiceHeroTldr } from "./EInvoiceHeroTldr";
 import { FinalScreensMarquee } from "./FinalScreensMarquee";
@@ -560,6 +561,52 @@ export default function EInvoiceCaseStudy() {
                 detail="Across scan, donate, and redemption—including visually impaired participants and mixed ages."
               />
               <SettingHomeModulesVideo className="w-full" />
+
+              <div className="mt-12 max-w-4xl space-y-4 border-t border-zinc-800/90 pt-10">
+                <h3 className="text-lg font-semibold tracking-tight text-zinc-100 sm:text-xl">
+                  Handoff &amp; engineering collaboration
+                </h3>
+                <div className="space-y-3 text-sm leading-relaxed text-zinc-400 sm:text-base">
+                  <p>
+                    Once the customizable home model was accepted, I aligned{" "}
+                    <span className="text-zinc-200">
+                      module identifiers, settings keys, and default visibility
+                    </span>{" "}
+                    with engineering before high-fi freeze—so each optional block
+                    mapped to persistence and feature flags instead of living only as
+                    layer names in Figma.
+                  </p>
+                  <p>
+                    Joint reviews pressure-tested{" "}
+                    <span className="text-zinc-200">edge cases</span>: what happens
+                    when every optional module is hidden, how reorder behaves on slow
+                    networks, and which layout rules had to stay{" "}
+                    <span className="text-zinc-200">client-only</span> because home
+                    APIs couldn&apos;t yet vary per segment at the granularity the UI
+                    implied—those constraints fed directly back into what remained
+                    configurable vs. fixed in the skeleton.
+                  </p>
+                  <p>
+                    Handoff paired the{" "}
+                    <Link
+                      href={FIGMA_MOCKUP_PAGE}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-medium text-emerald-400/95 underline decoration-emerald-400/35 underline-offset-4 hover:text-emerald-300"
+                    >
+                      Figma mockups
+                    </Link>{" "}
+                    with an annotation pass (states, empty copy, error strings) and a
+                    short naming sheet devs and QA could grep against—below is a
+                    placeholder for the kind of spec capture I used in RD review.
+                  </p>
+                </div>
+                <VisualPlaceholder
+                  label="Module / settings handoff spec"
+                  hint="Replace with a Figma export or spreadsheet snippet: module keys, toggles, and edge-case notes from engineering sync."
+                  aspect="video"
+                />
+              </div>
             </section>
 
             <section

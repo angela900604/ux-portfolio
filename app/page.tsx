@@ -3,7 +3,11 @@ import Image from "next/image";
 import { SITE_SHELL_CONTAINER } from "@/lib/site-shell";
 import { FadeInSection } from "./components/FadeInSection";
 import { HeroWithBubble } from "./components/HeroWithBubble";
-import { ProjectCardTag, ProjectShippedBadge } from "./components/ProjectCardTag";
+import {
+  ProjectCardTag,
+  ProjectShippedBadge,
+  ProjectTechHighlights,
+} from "./components/ProjectCardTag";
 import { EInvoiceHomeProjectCover } from "./components/EInvoiceHomeProjectCover";
 import { MinaHomeProjectCover } from "./components/MinaHomeProjectCover";
 import { ADJACENT_WORK, ADJACENT_WORK_THUMB } from "./content/adjacent-work";
@@ -14,21 +18,28 @@ const CORE_PRODUCT = [
     title:
       "Redesigning Taiwan Ministry of Finance's Uniform Invoice Award Redemption App",
     tag: "Mobile · Activation & retention · Shipped",
+    techHighlights:
+      "Configurable module system · RBAC · Accessibility-first IA",
   },
   {
     slug: "ai-marketplace",
     title: "MINA · Community-first marketplace for SF parents",
     tag: "AI · Community-driven · Growth & conversion",
+    techHighlights: "AI trust patterns · 0→1 design system · A/B tested",
   },
   {
     slug: "government-backend",
     title: "Role-based backend for 600+ government staff",
     tag: "Responsive · Web · 600+ Users",
+    techHighlights:
+      "Permission matrix (600+ seats) · Reporting & audit surfaces · Version-control UX",
   },
   {
     slug: "baskin-robbins",
     title: "Cross-market with Japan HQ · BR31 Taiwan membership app",
     tag: "Mobile · Cross-market JP×TW",
+    techHighlights:
+      "JP×HQ alignment · Membership & loyalty IA · Build-ready UI kit",
   },
 ] as const;
 
@@ -111,6 +122,9 @@ export default function Home() {
                         <ProjectCardTag>{item.tag}</ProjectCardTag>
                         <ProjectShippedBadge />
                       </div>
+                      <ProjectTechHighlights>
+                        {item.techHighlights}
+                      </ProjectTechHighlights>
                       <h3 className="mt-3 text-xl font-semibold tracking-tight text-zinc-100 group-hover:text-zinc-50 sm:text-2xl">
                         {item.title}
                       </h3>
