@@ -490,9 +490,7 @@ export default function AiMarketplaceCaseStudy() {
                   preview before publish, explicit confirmations, and reversibility
                 </span>
                 : users see drafts, approve boundaries, and understand what the
-                system did on their behalf. The goal is the same class of trust
-                and transparency hiring managers expect from consumer AI surfaces—
-                legible limits, not magic.
+                system did on their behalf.
               </p>
             </div>
           </div>
@@ -506,31 +504,13 @@ export default function AiMarketplaceCaseStudy() {
             Track B · AI depth
           </span>
           <h2 className="max-w-3xl text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
-            Parenting Copilot, a life-stage triggered circulation system
+            Babies grow fast. The Copilot notices when a phase is ending and asks:
+            ready to pass this along?
           </h2>
           <p className="max-w-3xl text-zinc-300 leading-relaxed">
-            The copilot is a{" "}
-            <span className="text-zinc-100">
-              life-stage triggered circulation system
-            </span>
-            : it helps parents notice when a phase is ending, what gear tends to
-            matter next, and how to move items out kindly—without pretending to
-            be medical advice. Sub-flows include{" "}
-            <span className="text-zinc-100">asking about a specific item</span>{" "}
-            and follow-up questions where the model proposes next steps but{" "}
-            <span className="text-zinc-100">never bypasses explicit consent</span>.
-          </p>
-          <p className="max-w-3xl text-zinc-300 leading-relaxed">
-            This flow doubles as the narrative bridge—Pass It On and suggested
-            items are the copilot surface meeting the listing surface.
-            That is intentional product architecture: one trust model, two
-            outcomes (clarity for parents, liquidity for the marketplace). At
-            the community layer, it is also how{" "}
-            <span className="text-zinc-100">
-              member-to-member connection sustains supply
-            </span>
-            —parents get timely nudges to circulate gear, and the marketplace
-            captures that motion instead of relying on cold discovery alone.
+            The copilot is a life-stage triggered circulation system: it helps
+            parents notice when a phase is ending, what gear tends to matter next,
+            and how to move items out kindly.
           </p>
           <figure className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
             <Image

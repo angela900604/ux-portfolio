@@ -171,8 +171,9 @@ export default function BaskinRobbinsCaseStudy() {
             Japan&apos;s 31Club launched in 2014 and grew to over 10 million
             members by 2025. Member purchases now account for more than 40% of
             total sales — proof that the loyalty loop directly drives revenue.
-            Taiwan had no equivalent: no dedicated app, no digital rewards surface,
-            no way to turn a one-time scoop buyer into a repeat member.
+            BR31 Taiwan had no app while competitors were already running loyalty
+            programs on mobile. There was no dedicated digital rewards surface—no
+            way to turn a one-time scoop buyer into a repeat member.
           </p>
           <p className="text-zinc-300 leading-relaxed max-w-3xl">
             I was brought in to close that gap — design Taiwan&apos;s first BR31
