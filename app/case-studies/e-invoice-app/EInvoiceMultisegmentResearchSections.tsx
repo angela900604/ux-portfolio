@@ -80,14 +80,13 @@ const BADGE_SEGMENT_FOREIGN = "bg-sky-100 text-sky-900";
 const BADGE_SEGMENT_LOW_VISION = "bg-emerald-100 text-emerald-900";
 
 /**
- * Condensed user-pain narrative (App Store + interviews) for the e-invoice case study.
- * Standalone research page: `app/multisegment-interviews/MultisegmentInterviewsResearchBody.tsx`.
+ * Condensed user-pain narrative (App Store + interviews + sessions) for the MoF
+ * e-invoice redesign. Rendered on {@link /user-research-journey}.
  */
 export function EInvoiceMultisegmentResearchSections() {
   return (
     <div className="space-y-12 sm:space-y-16">
       <section
-        id="personas"
         className="scroll-mt-28 space-y-8 sm:scroll-mt-32 sm:space-y-10"
       >
         <div className="space-y-8 sm:space-y-10">

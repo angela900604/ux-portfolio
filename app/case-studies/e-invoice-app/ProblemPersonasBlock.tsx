@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { CaseStudyExpandable } from "../_components/CaseStudyExpandable";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
-import { EInvoiceMultisegmentResearchSections } from "./EInvoiceMultisegmentResearchSections";
 
 export function ProblemPersonasBlock() {
   return (
@@ -51,14 +50,23 @@ export function ProblemPersonasBlock() {
         </div>
       </div>
 
-      <EInvoiceMultisegmentResearchSections />
-
-      <div className="pt-4">
+      <div className="max-w-3xl space-y-4 rounded-xl border border-zinc-800/90 bg-zinc-900/35 px-4 py-5 sm:px-5 sm:py-6">
+        <p className="text-sm leading-relaxed text-zinc-400">
+          Segment-by-segment user pain (App Store, interviews, sessions), shared
+          entry behavior, and home-screen conflicts live on the{" "}
+          <Link
+            href="/user-research-journey#e-invoice-user-pain"
+            className="font-medium text-emerald-200/95 underline-offset-4 hover:text-emerald-100 hover:underline"
+          >
+            research journey
+          </Link>
+          —so this case study stays focused on decisions and outcomes.
+        </p>
         <Link
-          href="/user-research-journey"
+          href="/user-research-journey#e-invoice-user-pain"
           className="inline-flex items-center justify-center rounded-full border border-emerald-500/45 bg-emerald-500/15 px-7 py-3 text-base font-semibold text-emerald-100 transition hover:border-emerald-400/70 hover:bg-emerald-500/25 hover:text-white"
         >
-          View research journey
+          View full user pain synthesis
         </Link>
       </div>
     </CaseStudyInViewSection>

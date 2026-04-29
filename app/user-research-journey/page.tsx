@@ -3,11 +3,12 @@ import { AccessibilityVoiceoverMain } from "@/app/accessibility-voiceover/Access
 import { CaseStudyContentLayout } from "@/app/case-studies/_components/CaseStudyContentLayout";
 import { CompetitorAnalysisMain } from "@/app/competitor-analysis/CompetitorAnalysisMain";
 import { MultisegmentInterviewsMain } from "@/app/multisegment-interviews/MultisegmentInterviewsMain";
+import { EInvoiceMultisegmentResearchSections } from "@/app/case-studies/e-invoice-app/EInvoiceMultisegmentResearchSections";
 
 export const metadata = {
   title: "User research journey — Taiwan MoF e-invoice app | Angela Yang",
   description:
-    "Competitor benchmarks, multisegment interviews (including low vision), and VoiceOver accessibility work for the Ministry of Finance Cloud Invoice redesign.",
+    "Competitor benchmarks, multisegment interviews, segment-by-segment user pain synthesis, and VoiceOver accessibility work for the Ministry of Finance Cloud Invoice redesign.",
 };
 
 const VIEW_PROJECT_CLASS =
@@ -54,6 +55,23 @@ export default function UserResearchJourneyPage() {
 
         <section id="multisegment-interviews" className={SECTION_WRAP}>
           <MultisegmentInterviewsMain showViewProject={false} />
+        </section>
+
+        <section id="e-invoice-user-pain" className={SECTION_WRAP}>
+          <div className="max-w-3xl space-y-3">
+            <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+              E-invoice app · Synthesis
+            </p>
+            <h2 className="text-2xl font-semibold tracking-tight text-zinc-100 sm:text-3xl">
+              User pain by segment &amp; cross-group findings
+            </h2>
+            <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
+              App Store reviews, interviews, and moderated tests—distilled into
+              segment cards, a shared scan/barcode truth, and the home-screen density
+              conflict that drove configurable modules in the case study.
+            </p>
+          </div>
+          <EInvoiceMultisegmentResearchSections />
         </section>
 
         <section id="accessibility" className={SECTION_WRAP}>
