@@ -54,6 +54,16 @@ function storyBeatColors(label: string) {
   return STORY_BEAT_PALETTE[label.toLowerCase()] ?? STORY_BEAT_PALETTE.problem;
 }
 
+/** Solid #RRGGBB → rgba with alpha (e.g. 0.8 for 80% tag fill opacity). */
+function hexToRgba(hex: string, alpha: number): string {
+  const normalized = hex.replace("#", "");
+  if (normalized.length !== 6) return hex;
+  const r = parseInt(normalized.slice(0, 2), 16);
+  const g = parseInt(normalized.slice(2, 4), 16);
+  const b = parseInt(normalized.slice(4, 6), 16);
+  return `rgba(${r},${g},${b},${alpha})`;
+}
+
 function StoryBeatTimeline({
   children,
   className = "max-w-3xl",
@@ -90,29 +100,31 @@ function StoryBeat({
   const isOutcome = kind === "outcome";
 
   const cardClass = isOutcome
-    ? "rounded-xl border border-[#97C459] bg-[#EAF3DE] px-4 py-4 shadow-sm sm:px-5 sm:py-5"
+    ? "rounded-xl border border-zinc-600/80 border-l-[3px] border-l-emerald-500/85 bg-zinc-900/80 px-4 py-4 shadow-sm sm:px-5 sm:py-5"
     : isConflict
       ? "rounded-r-xl rounded-l-none border border-t border-r border-b border-zinc-700/80 border-l-[3px] border-l-[#EF9F27] bg-zinc-900/40 px-4 py-4 sm:px-5 sm:py-5"
       : "rounded-r-xl rounded-l-md border border-t border-r border-b border-zinc-700/80 border-l-transparent bg-zinc-900/40 px-4 py-4 sm:px-5 sm:py-5";
 
   const headlineClass = isOutcome
-    ? "text-[15px] font-medium leading-snug text-zinc-900"
+    ? largeHeadline
+      ? "text-xl font-semibold leading-snug text-zinc-100 sm:text-2xl md:text-[1.7rem] md:leading-snug"
+      : "text-base font-semibold leading-snug text-zinc-100 sm:text-lg md:text-xl"
     : largeHeadline
-      ? "text-[17px] font-medium leading-snug text-zinc-50 sm:text-lg"
-      : "text-[15px] font-medium leading-snug text-zinc-50";
+      ? "text-xl font-semibold leading-snug tracking-tight text-zinc-50 sm:text-2xl md:text-[1.75rem] md:leading-snug lg:text-[1.9rem]"
+      : "text-lg font-semibold leading-snug text-zinc-50 sm:text-xl md:text-2xl";
 
   const detailClass = isOutcome
-    ? "mt-1 text-[13px] font-normal leading-relaxed text-zinc-600"
+    ? "mt-1 text-[13px] font-normal leading-relaxed text-zinc-400 sm:text-sm"
     : largeHeadline
-      ? "mt-1 text-[13px] font-normal leading-relaxed text-zinc-400 sm:text-[0.9375rem]"
-      : "mt-1 text-[13px] font-normal leading-relaxed text-zinc-400";
+      ? "mt-2 text-sm font-normal leading-relaxed text-zinc-400 sm:text-[0.9375rem]"
+      : "mt-2 text-sm font-normal leading-relaxed text-zinc-400 sm:text-[0.9375rem]";
 
   return (
     <div className={isConflict ? "relative my-2 pl-10" : "relative pl-10"}>
       <span
         className={
           isOutcome
-            ? "absolute left-[15px] top-[1.35rem] z-[1] h-2 w-2 -translate-x-1/2 rounded-full ring-2 ring-[#97C459]/60"
+            ? "absolute left-[15px] top-[1.35rem] z-[1] h-2 w-2 -translate-x-1/2 rounded-full ring-2 ring-emerald-500/35"
             : "absolute left-[15px] top-[1.35rem] z-[1] h-2 w-2 -translate-x-1/2 rounded-full ring-2 ring-zinc-950"
         }
         style={{ backgroundColor: colors.dot }}
@@ -120,19 +132,30 @@ function StoryBeat({
       />
       <div className={cardClass}>
         <span
-          className="inline-flex rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em]"
-          style={{ backgroundColor: colors.tagBg, color: colors.tagFg }}
+          className={
+            isOutcome
+              ? "inline-flex rounded-full border border-emerald-500/80 bg-emerald-500/80 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-emerald-50"
+              : "inline-flex rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em]"
+          }
+          style={
+            isOutcome
+              ? undefined
+              : {
+                  backgroundColor: hexToRgba(colors.tagBg, 0.8),
+                  color: colors.tagFg,
+                }
+          }
         >
           {label}
         </span>
         <p className={`${headlineClass} mt-3`}>{headline}</p>
-        <p className={detailClass}>{detail}</p>
+        <div className={detailClass}>{detail}</div>
       </div>
     </div>
   );
 }
 
-/** Full-width outcome callout: no timeline rail (Section 1). */
+/** Full-width outcome callout: no timeline rail (Section 1). Dark surface, accent rail—no mint fill. */
 function StoryOutcomeCallout({
   headline,
   detail,
@@ -140,19 +163,15 @@ function StoryOutcomeCallout({
   headline: ReactNode;
   detail: ReactNode;
 }) {
-  const colors = storyBeatColors("outcome");
   return (
-    <div className="mt-8 max-w-4xl rounded-xl border border-[#97C459] bg-[#EAF3DE] px-5 py-6 shadow-sm sm:px-7 sm:py-8">
-      <span
-        className="inline-flex rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em]"
-        style={{ backgroundColor: colors.tagBg, color: colors.tagFg }}
-      >
+    <div className="mt-8 max-w-4xl rounded-2xl border border-zinc-700/85 border-l-[4px] border-l-emerald-500/90 bg-zinc-900/80 px-6 py-7 sm:px-8 sm:py-9">
+      <span className="inline-flex rounded-full border border-emerald-500/80 bg-emerald-500/80 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-emerald-50">
         Outcome
       </span>
-      <p className="mt-4 text-lg font-medium leading-snug text-zinc-900 sm:text-xl md:text-2xl">
+      <p className="mt-3 text-2xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-3xl md:text-[1.85rem] md:leading-snug">
         {headline}
       </p>
-      <p className="mt-2 text-sm font-normal leading-relaxed text-zinc-600 sm:text-base">
+      <p className="mt-3 max-w-3xl text-sm font-normal leading-relaxed text-zinc-400 sm:text-base">
         {detail}
       </p>
     </div>
@@ -472,41 +491,66 @@ export default function EInvoiceCaseStudy() {
                   Section 2
                 </span>
                 <h2 className={STORY_SECTION_TITLE_CLASS}>
-                  Density, stakeholders &amp; a configurable home
+                  Stakeholder pushback: promo-first vs. what people open the app for
                 </h2>
               </header>
-              <p className="max-w-3xl text-sm leading-relaxed text-zinc-400 sm:text-base">
-                Government partners cared deeply about low-carbon messaging and wanted
-                the sustainability promo zone to dominate on open. User evidence told a
-                different story about what people reach for first—this section is that
-                pushback, the cross-age layout conflict, and how we landed on optional
-                home modules in Settings.
-              </p>
-              <StoryBeatTimeline>
+              <StoryBeatTimeline className="max-w-none">
                 <StoryBeat
                   label="Problem"
-                  headline="Policy priorities collided with the real open sequence."
-                  detail="Stakeholders wanted the sustainability / 宣導 zone to lead the homepage for outreach. Interviews and prototypes showed a shared stack instead: scan a paper invoice first, then the in-app carrier barcode (for people who don&apos;t use OS widgets), then not missing lottery updates for younger and middle-aged users, then spending insights for younger users—the promo surface wasn&apos;t among the top reasons people launched the app."
+                  headline="Partners wanted the sustainability / 宣導 zone to dominate on open. Interview evidence ranked a different set of jobs first."
+                  detail={
+                    <>
+                      <span className="block">
+                        Government partners cared deeply about low-carbon messaging and
+                        wanted the sustainability promotion area to lead the home screen.
+                      </span>
+                      <span className="mt-3 block">
+                        What showed up consistently in interviews was a shared priority
+                        order: a prominent{" "}
+                        <span className="text-zinc-200">scan paper invoice</span>{" "}
+                        action first; then the{" "}
+                        <span className="text-zinc-200">in-app carrier barcode</span>{" "}
+                        for people who don&apos;t use iPhone or Android home-screen
+                        widgets and need to show the code as soon as they open the app;
+                        then{" "}
+                        <span className="text-zinc-200">
+                          not missing prize / lottery information
+                        </span>{" "}
+                        for younger and middle-aged users; then{" "}
+                        <span className="text-zinc-200">spending analysis</span> for
+                        younger users—often richer here than in standalone budgeting
+                        apps. The outreach zone wasn&apos;t among the top reasons people
+                        launched the app.{" "}
+                        <span className="text-zinc-200">Prototype testing</span> fed back
+                        the same story.
+                      </span>
+                    </>
+                  }
+                  largeHeadline
                 />
                 <StoryBeat
                   label="Key insight"
-                  headline="On the home screen, older and low-vision groups wanted fewer items, more whitespace, and vivid color for fast recognition—while younger groups wanted a denser dashboard—more modules, promos, and shortcuts—and a cooler, minimal palette."
-                  detail="One layout; two incompatible defaults."
+                  headline="Same home layout, two incompatible defaults across age."
+                  detail="Older and low-vision groups wanted fewer modules, more whitespace, and strong color for quick recognition. Younger groups wanted a denser dashboard—more modules, promos, and shortcuts—and a cooler, minimal palette."
+                  largeHeadline
                 />
                 <StoryBeat
                   label="Conflict"
-                  headline="I took the interview and prototype readouts into stakeholder meetings to push back on a promo-first default."
-                  detail="I understood the ministry&apos;s need to surface 減碳 and 宣導—but the evidence showed scan and core jobs had to win the first screen. Prototype feedback kept backing that ordering."
+                  headline="I brought interview and prototype evidence into government stakeholder meetings to challenge a promo-first default."
+                  detail="I understood their need to surface 減碳 and 宣導—but the data said job-first ordering had to win the first screen. That was the argument I used in the room."
+                  largeHeadline
                 />
                 <StoryBeat
                   label="Resolution"
-                  headline="Configurable home modules in Settings—core rails fixed, everything else togglable."
-                  detail="Users choose which sections appear—including sustainability—so someone who only wants scan plus 宣導 can turn other modules off and still give the promo block the visibility they care about. Stakeholders accepted the model."
+                  headline="A customizable home: section visibility toggles in Settings."
+                  detail="Users can turn individual home sections on or off—for example, someone who only wants the scan control and the 宣導 zone can hide the rest, so the promo block still gets the space they care about without forcing that default on everyone. Partners accepted the model."
+                  largeHeadline
                 />
                 <StoryBeat
                   label="Outcome"
-                  headline="The priority story held up in testing; moderated sessions later reached 88% task success."
-                  detail="On scan, donate, and redemption—including visually impaired participants, across ages."
+                  headline="The priority story held in testing; moderated sessions reached 88% task success."
+                  detail="Across scan, donate, and redemption—including visually impaired participants and mixed ages."
+                  largeHeadline
                 />
               </StoryBeatTimeline>
               <SettingHomeModulesVideo className="w-full" />
@@ -529,21 +573,25 @@ export default function EInvoiceCaseStudy() {
                   label="Problem"
                   headline="Login success hovered around ~68%."
                   detail="Middle-aged users were hit hardest—forgotten passwords and MoF verification codes blocked them before any core task."
+                  largeHeadline
                 />
                 <StoryBeat
                   label="Key insight"
                   headline="Authentication was secure but became a wall."
                   detail="The gap wasn&apos;t security—it was recovery."
+                  largeHeadline
                 />
                 <StoryBeat
                   label="Decision"
                   headline="Ship biometric login and in-app password recovery."
                   detail="People could get back in without memorizing credentials or hunting a one-time code."
+                  largeHeadline
                 />
                 <StoryBeat
                   label="Outcome"
                   headline="After launch, the client reported materially higher login success in internal analytics."
                   detail="Support volume tied to account access fell compared with baseline."
+                  largeHeadline
                 />
               </StoryBeatTimeline>
               <LoginBeforeAfterSlider />
@@ -568,21 +616,25 @@ export default function EInvoiceCaseStudy() {
                   label="Problem"
                   headline="Many users—especially seniors and foreign residents—never finished auto prize transfer or biometric setup."
                   detail="They missed redemptions because they didn&apos;t know the feature existed or how to turn it on."
+                  largeHeadline
                 />
                 <StoryBeat
                   label="Key insight"
                   headline="These steps don&apos;t surface through casual browsing."
                   detail="They needed introduction at first launch—when people are most willing to configure."
+                  largeHeadline
                 />
                 <StoryBeat
                   label="Decision"
                   headline="Guided onboarding: one job per screen."
                   detail="Biometric setup → bank account for auto-transfer → notifications → cloud backup—each step explained why it mattered, not only what to tap."
+                  largeHeadline
                 />
                 <StoryBeat
                   label="Outcome"
                   headline="First-launch completion rose ~30%."
                   detail="Post-launch, the team saw fewer missed prize redemptions tied to setup gaps."
+                  largeHeadline
                 />
               </StoryBeatTimeline>
               <GuidedOnboardingVideoPair className="w-full" />
