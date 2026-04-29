@@ -4,6 +4,10 @@ import {
   CaseStudyAtAGlance,
   CASE_STUDY_AT_A_GLANCE_DARK_HERO_PROPS,
 } from "../_components/CaseStudyAtAGlance";
+import {
+  CaseStudyHeroTldr,
+  type CaseStudyHeroTldrMetric,
+} from "../_components/CaseStudyHeroTldr";
 import { CaseStudyHeroFullBleed } from "../_components/CaseStudyHeroFullBleed";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
@@ -30,23 +34,35 @@ const MINA_APP_STORE =
 
 const AT_A_GLANCE_ITEMS = [
   {
-    label: "Outcome",
-    value:
-      "Redesigned the listing funnel for seller conversion — completed listings up ~30% (PostHog cohorted A/B). Defined success metrics with PM before shipping.",
-  },
-  {
     label: "Team",
     value: "Sole product designer (IC) · 1 PM + 5 engineers",
-  },
-  {
-    label: "Shipped",
-    value: "0→1 design system (50+ components) + 3 major flows",
   },
   {
     label: "Timeline",
     value: "Sep 2025 – Present (ongoing) · iOS live in Canada",
   },
 ] as const;
+
+const MINA_TLDR_METRICS: CaseStudyHeroTldrMetric[] = [
+  {
+    kicker: "Growth",
+    value: "~30%",
+    title: "Completed listings lift",
+    detail:
+      "PostHog cohorted A/B after listing funnel redesign. Defined success metrics with PM before shipping.",
+  },
+  {
+    kicker: "Shipped",
+    value: "50+",
+    title: "0→1 design system (50+ components) + 3 major flows",
+  },
+  {
+    kicker: "Team",
+    value: "Sole IC",
+    title: "Product design",
+    detail: "1 PM + 5 engineers — end-to-end UX on iOS.",
+  },
+];
 
 const MINA_JOURNEY_IDS = ["engineering-proposal", "design-principles"] as const;
 
@@ -98,6 +114,7 @@ export default function AiMarketplaceCaseStudy() {
             <CaseStudyAtAGlance
               items={AT_A_GLANCE_ITEMS}
               {...CASE_STUDY_AT_A_GLANCE_DARK_HERO_PROPS}
+              noAccentGridClassName="grid w-full min-w-0 grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 lg:grid-cols-2 lg:gap-x-8 [&>div]:min-w-0"
             />
           }
         >
@@ -181,6 +198,19 @@ export default function AiMarketplaceCaseStudy() {
                 </span>
               </a>
             </div>
+          </div>
+
+          <div className="mt-10">
+            <CaseStudyHeroTldr
+              headline={
+                <>
+                  Sole designer on MINA — AI-native marketplace for parents ·
+                  Listing funnel, trust-first surfaces, and system work · iOS live
+                  in Canada
+                </>
+              }
+              metrics={MINA_TLDR_METRICS}
+            />
           </div>
         </CaseStudyHeroFullBleed>
       </header>
