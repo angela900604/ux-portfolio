@@ -198,12 +198,12 @@ const HERO_BELOW_02 = {
 
 const HERO_TABLET_01 = {
   src: "/case-studies/e-invoice/hero-tablet-01.png",
-  alt: "iPad mockup showing the e-invoice home interface on a textured cushion shelf",
+  alt: "Person interacting with an iPad showing the e-invoice app in a neutral indoor setting",
 } as const;
 
 const HERO_TABLET_02 = {
   src: "/case-studies/e-invoice/hero-tablet-02.png",
-  alt: "iPad mockup showing the e-invoice home interface on fabric near a wooden surface",
+  alt: "iPad Pro mockup showing the e-invoice home interface on textured fabric beside a wooden surface",
 } as const;
 
 /** Friendly lifestyle palette (style direction 01) */
