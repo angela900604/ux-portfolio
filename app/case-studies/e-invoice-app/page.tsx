@@ -491,13 +491,14 @@ export default function EInvoiceCaseStudy() {
                   Section 2
                 </span>
                 <h2 className={STORY_SECTION_TITLE_CLASS}>
-                  Stakeholder pushback: promo-first vs. what people open the app for
+                  Pushback with external stakeholders: promo-first vs. what users
+                  actually open the app for
                 </h2>
               </header>
               <StoryBeatTimeline className="max-w-none">
                 <StoryBeat
                   label="Problem"
-                  headline="Partners wanted the sustainability / 宣導 zone to dominate on open. Interview evidence ranked a different set of jobs first."
+                  headline="Partners wanted the sustainability outreach zone to dominate on open. Interview evidence ranked a different set of jobs first."
                   detail={
                     <>
                       <span className="block">
@@ -537,22 +538,20 @@ export default function EInvoiceCaseStudy() {
                 <StoryBeat
                   label="Conflict"
                   headline="I brought interview and prototype evidence into government stakeholder meetings to challenge a promo-first default."
-                  detail="I understood their need to surface 減碳 and 宣導—but the data said job-first ordering had to win the first screen. That was the argument I used in the room."
+                  detail="I understood their need to surface carbon-reduction messaging and policy outreach—but the data said job-first ordering had to win the first screen. That was the argument I used in the room."
                   largeHeadline
                 />
                 <StoryBeat
                   label="Resolution"
                   headline="A customizable home: section visibility toggles in Settings."
-                  detail="Users can turn individual home sections on or off—for example, someone who only wants the scan control and the 宣導 zone can hide the rest, so the promo block still gets the space they care about without forcing that default on everyone. Partners accepted the model."
-                  largeHeadline
-                />
-                <StoryBeat
-                  label="Outcome"
-                  headline="The priority story held in testing; moderated sessions reached 88% task success."
-                  detail="Across scan, donate, and redemption—including visually impaired participants and mixed ages."
+                  detail="Users can turn individual home sections on or off—for example, someone who only wants the scan control and the sustainability outreach block can hide the rest, so the promo block still gets the space they care about without forcing that default on everyone. Partners accepted the model."
                   largeHeadline
                 />
               </StoryBeatTimeline>
+              <StoryOutcomeCallout
+                headline="The priority story held in testing; moderated sessions reached 88% task success."
+                detail="Across scan, donate, and redemption—including visually impaired participants and mixed ages."
+              />
               <SettingHomeModulesVideo className="w-full" />
             </section>
 
@@ -571,8 +570,8 @@ export default function EInvoiceCaseStudy() {
               <StoryBeatTimeline>
                 <StoryBeat
                   label="Problem"
-                  headline="Login success hovered around ~68%."
-                  detail="Middle-aged users were hit hardest—forgotten passwords and MoF verification codes blocked them before any core task."
+                  headline="Middle-aged users were hit hardest—forgotten passwords."
+                  detail="Login success hovered around ~68%. MoF verification codes and recovery friction blocked them before any core task."
                   largeHeadline
                 />
                 <StoryBeat
