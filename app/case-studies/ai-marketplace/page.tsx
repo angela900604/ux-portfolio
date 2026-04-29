@@ -234,12 +234,88 @@ export default function AiMarketplaceCaseStudy() {
                 <span className="inline-flex rounded-full border border-amber-300/60 bg-amber-400/20 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-amber-100">
                   The insight
                 </span>
-                <p className="mt-4 text-lg font-medium leading-relaxed text-zinc-200 sm:text-xl">
-                  Through early user conversations, we found three distinct seller
-                  types: moms who want to sell fast, moms who want to give things
-                  away for free, and higher-income moms who donate in bulk and want
-                  something back — recognition, community access, a perk.
+                <p
+                  className="mt-4"
+                  style={{
+                    fontSize: "13px",
+                    color: "rgba(255,255,255,0.5)",
+                    marginBottom: "16px",
+                  }}
+                >
+                  Three distinct seller types emerged from early conversations.
                 </p>
+                <div className="flex items-center mb-[10px]">
+                  <span
+                    style={{
+                      border: "1px solid #C8A84B",
+                      borderRadius: "20px",
+                      padding: "2px 10px",
+                      fontSize: "11px",
+                      fontWeight: 500,
+                      display: "inline-block",
+                      color: "#C8A84B",
+                    }}
+                  >
+                    Sell fast
+                  </span>
+                  <span
+                    style={{
+                      fontSize: "13px",
+                      color: "rgba(255,255,255,0.55)",
+                      marginLeft: "10px",
+                    }}
+                  >
+                    wants a transaction, fast
+                  </span>
+                </div>
+                <div className="flex items-center mb-[10px]">
+                  <span
+                    style={{
+                      border: "1px solid rgba(255,255,255,0.25)",
+                      borderRadius: "20px",
+                      padding: "2px 10px",
+                      fontSize: "11px",
+                      fontWeight: 500,
+                      display: "inline-block",
+                      color: "rgba(255,255,255,0.6)",
+                    }}
+                  >
+                    Give free
+                  </span>
+                  <span
+                    style={{
+                      fontSize: "13px",
+                      color: "rgba(255,255,255,0.55)",
+                      marginLeft: "10px",
+                    }}
+                  >
+                    wants it gone, no friction
+                  </span>
+                </div>
+                <div className="flex items-center mb-[10px]">
+                  <span
+                    style={{
+                      border: "1px solid rgba(255,255,255,0.25)",
+                      borderRadius: "20px",
+                      padding: "2px 10px",
+                      fontSize: "11px",
+                      fontWeight: 500,
+                      display: "inline-block",
+                      color: "rgba(255,255,255,0.6)",
+                    }}
+                  >
+                    Bulk donate
+                  </span>
+                  <span
+                    style={{
+                      fontSize: "13px",
+                      color: "rgba(255,255,255,0.55)",
+                      marginLeft: "10px",
+                    }}
+                  >
+                    wants recognition + something back
+                  </span>
+                </div>
               </div>
               <div className="hidden items-center justify-center lg:flex" aria-hidden>
                 <span className="text-3xl font-semibold text-zinc-500">→</span>
@@ -248,12 +324,90 @@ export default function AiMarketplaceCaseStudy() {
                 <span className="inline-flex rounded-full border border-emerald-300/60 bg-emerald-400/20 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-emerald-100">
                   The design response
                 </span>
-                <p className="mt-4 text-lg font-medium leading-relaxed text-zinc-200 sm:text-xl">
-                  One photo → AI agent generates multiple listings through chat. No
-                  forms. For free-item givers, Mina Circle. For bulk donors, event
-                  access and partner perks. The AI reduces the admin; the community
-                  provides the motivation.
-                </p>
+                <div className="mt-4">
+                  <div>
+                    <p
+                      style={{
+                        fontSize: "11px",
+                        color: "rgba(255,255,255,0.35)",
+                        marginBottom: "3px",
+                      }}
+                    >
+                      Sell fast
+                    </p>
+                    <p
+                      style={{
+                        fontSize: "14px",
+                        fontWeight: 500,
+                        color: "#F0F0F0",
+                      }}
+                    >
+                      One photo. AI generates listings through chat — no forms.
+                    </p>
+                  </div>
+                  <div
+                    style={{
+                      borderTop: "1px solid rgba(255,255,255,0.07)",
+                      paddingTop: "12px",
+                      marginTop: "12px",
+                    }}
+                  >
+                    <p
+                      style={{
+                        fontSize: "11px",
+                        color: "rgba(255,255,255,0.35)",
+                        marginBottom: "3px",
+                      }}
+                    >
+                      Give free
+                    </p>
+                    <p
+                      style={{
+                        fontSize: "14px",
+                        fontWeight: 500,
+                        color: "#F0F0F0",
+                      }}
+                    >
+                      Mina Circle — post once, community claims.
+                    </p>
+                  </div>
+                  <div
+                    style={{
+                      borderTop: "1px solid rgba(255,255,255,0.07)",
+                      paddingTop: "12px",
+                      marginTop: "12px",
+                    }}
+                  >
+                    <p
+                      style={{
+                        fontSize: "11px",
+                        color: "rgba(255,255,255,0.35)",
+                        marginBottom: "3px",
+                      }}
+                    >
+                      Bulk donate
+                    </p>
+                    <p
+                      style={{
+                        fontSize: "14px",
+                        fontWeight: 500,
+                        color: "#F0F0F0",
+                      }}
+                    >
+                      Event access and partner perks as the return.
+                    </p>
+                  </div>
+                  <p
+                    style={{
+                      fontSize: "12px",
+                      color: "rgba(255,255,255,0.35)",
+                      marginTop: "16px",
+                      fontStyle: "italic",
+                    }}
+                  >
+                    The AI removes the admin. The community provides the motivation.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
