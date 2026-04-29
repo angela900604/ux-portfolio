@@ -44,8 +44,9 @@ export default function AboutPage() {
             drives user growth and retention — I&apos;ve shipped complex,
             multi-role UX across government-scale and B2C platforms, with a
             strong research foundation in diverse user segments. I&apos;m now
-            focused on AI-driven consumer products and expanding into social
-            platform design.
+            focused on AI-driven consumer products, with a long-term goal of
+            shaping product direction and driving meaningful impact through both
+            design and cross-functional leadership.
           </p>
           <p className="mt-4 max-w-3xl text-base leading-relaxed text-zinc-200/95 sm:text-lg">
             Based in Vancouver, BC. Open to relocation, remote, or hybrid.
