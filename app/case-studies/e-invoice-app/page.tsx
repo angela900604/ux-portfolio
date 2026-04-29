@@ -567,7 +567,7 @@ export default function EInvoiceCaseStudy() {
                   Login &amp; authentication
                 </h2>
               </header>
-              <StoryBeatTimeline>
+              <StoryBeatTimeline className="max-w-none">
                 <StoryBeat
                   label="Problem"
                   headline="Authentication was secure, but middle-aged and senior users kept forgetting their passwords."
@@ -580,13 +580,11 @@ export default function EInvoiceCaseStudy() {
                   detail="People could get back in without memorizing credentials or hunting a one-time code."
                   largeHeadline
                 />
-                <StoryBeat
-                  label="Outcome"
-                  headline="After launch, the client reported materially higher login success in internal analytics."
-                  detail="Support volume tied to account access fell compared with baseline."
-                  largeHeadline
-                />
               </StoryBeatTimeline>
+              <StoryOutcomeCallout
+                headline="After launch, the client reported materially higher login success in internal analytics."
+                detail="Support volume tied to account access fell compared with baseline."
+              />
               <LoginBeforeAfterSlider />
             </section>
 
@@ -603,29 +601,22 @@ export default function EInvoiceCaseStudy() {
               <StoryBeatTimeline className="max-w-none">
                 <StoryBeat
                   label="Problem"
-                  headline="Jackpot wins go unclaimed at startling rates—and cloud setup gaps are a major driver."
+                  headline="About one in four of the biggest lottery wins still never get claimed—often because people forget to check, use cloud invoices without linking a bank account for automatic prize payouts, or miss notifications—and many foreign residents don&apos;t even know prizes can auto-transfer or how to set that up."
                   detail={
                     <>
                       <span className="block">
-                        Recent Ministry of Finance figures put the unclaimed share of
-                        the largest prizes at roughly{" "}
-                        <span className="text-zinc-200">one in four</span>—so about a
-                        quarter of “millionaire” wins never get redeemed.
-                      </span>
-                      <span className="mt-3 block">
-                        From 2011 through end of 2025 the government issued{" "}
+                        From 2011 through end of 2025 the Ministry of Finance issued{" "}
                         <span className="text-zinc-200">1,250</span> NT$10M special
                         prizes;{" "}
                         <span className="text-zinc-200">946</span> were claimed and{" "}
-                        <span className="text-zinc-200">304</span> expired. People
-                        forgot to check tickets, or used cloud invoices without an
-                        auto prize-transfer account linked and missed win
-                        notifications—exactly the flows onboarding needed to fix.
+                        <span className="text-zinc-200">304</span> expired—largely
+                        from forgotten checks and cloud-invoice users without
+                        auto-transfer accounts who missed win alerts.
                       </span>
                       <span className="mt-3 block">
                         Many users—especially seniors and foreign residents—never
                         finished auto prize transfer or biometric setup because they
-                        didn&apos;t know the features existed or how to turn them on.
+                        didn&apos;t know those options existed or how to turn them on.
                       </span>
                     </>
                   }
@@ -633,14 +624,14 @@ export default function EInvoiceCaseStudy() {
                 />
                 <StoryBeat
                   label="Decision"
-                  headline="Guided onboarding: one job per screen."
+                  headline="Guided onboarding &amp; English version for foreigners"
                   detail="Biometric setup → bank account for auto-transfer → notifications → cloud backup—each step explained why it mattered, not only what to tap. I also shipped an English-language experience for foreign residents."
                   largeHeadline
                 />
               </StoryBeatTimeline>
               <StoryOutcomeCallout
-                headline="One month post-launch, client-reported missed redemptions tied to setup and notification gaps fell ~26% versus the pre-ship baseline."
-                detail="Composite internal read (not a published MoF statistic)—aligned with clearer deadlines, status, and alerts from guided first launch."
+                headline="One month post-launch, client-reported missed top-tier prize redemptions moved from about 24% to 18%."
+                detail="Directional internal read (not a published MoF statistic)—aligned with clearer setup, deadlines, status, and alerts from guided first launch."
               />
               <GuidedOnboardingVideoPair className="w-full" />
             </section>
