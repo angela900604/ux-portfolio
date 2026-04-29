@@ -34,12 +34,21 @@ const MINA_APP_STORE =
 
 const AT_A_GLANCE_ITEMS = [
   {
-    label: "Team",
+    label: "Timeline",
+    value: "Sep 2025 – Present (ongoing) · iOS live in Canada",
+  },
+  {
+    label: "Role",
     value: "Sole product designer (IC) · 1 PM + 5 engineers",
   },
   {
-    label: "Timeline",
-    value: "Sep 2025 – Present (ongoing) · iOS live in Canada",
+    label: "Project type",
+    value: "AI-native marketplace iOS app · 0→1 consumer product",
+  },
+  {
+    label: "Focus",
+    value:
+      "Listing funnel, AI trust surfaces, design system, community-led growth",
   },
 ] as const;
 
@@ -102,20 +111,32 @@ export default function AiMarketplaceCaseStudy() {
           }
           subtitle={
             <p className="text-lg leading-relaxed text-zinc-200 sm:text-xl">
-              Community-driven product design: SF parent networks and IRL events
-              feed the flywheel—listings built to share outward, a Parenting
-              Copilot that nudges gear circulation inside those circles, and
-              growth through the listing funnel—conversion, engagement, and AI
-              surfaces people can trust. Checkout, publish, and a system that
-              scales with a small team.
+              A community flywheel for SF parents: IRL events, shareable listings,
+              and an AI Copilot that moves gear through the circles people already
+              trust.
             </p>
           }
           leadBelowSubtitle={
-            <CaseStudyAtAGlance
-              items={AT_A_GLANCE_ITEMS}
-              {...CASE_STUDY_AT_A_GLANCE_DARK_HERO_PROPS}
-              noAccentGridClassName="grid w-full min-w-0 grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 lg:grid-cols-2 lg:gap-x-8 [&>div]:min-w-0"
-            />
+            <div className="space-y-6">
+              <CaseStudyAtAGlance
+                items={AT_A_GLANCE_ITEMS}
+                {...CASE_STUDY_AT_A_GLANCE_DARK_HERO_PROPS}
+                noAccentGridClassName="grid w-full min-w-0 grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-8 [&>div]:min-w-0"
+              />
+              <div className="max-w-3xl">
+                <a
+                  href={MINA_APP_STORE}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-400 px-7 py-3.5 text-base font-semibold text-zinc-950 shadow-[0_12px_40px_-12px_rgba(52,211,153,0.55)] ring-1 ring-white/15 transition hover:bg-emerald-300 hover:shadow-[0_14px_44px_-12px_rgba(52,211,153,0.6)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-200"
+                >
+                  Mina · App Store (Canada)
+                  <span aria-hidden className="text-lg leading-none">
+                    →
+                  </span>
+                </a>
+              </div>
+            </div>
           }
         >
           <figure className="mb-8 w-full min-w-0">
@@ -173,32 +194,6 @@ export default function AiMarketplaceCaseStudy() {
               </div>
             </div>
           </section>
-
-          <div className="mt-12 space-y-6">
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-              <div>
-                <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-                  App Store
-                </p>
-                <h3 className="mt-1 text-zinc-100">Live product</h3>
-                <p className="mt-1 max-w-xl text-sm text-zinc-500">
-                  Mina — Resale for Parents is available on the App Store in Canada
-                  for iPhone.
-                </p>
-              </div>
-              <a
-                href={MINA_APP_STORE}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full border border-zinc-600 bg-zinc-900/50 px-5 py-2.5 text-sm font-medium text-zinc-100 transition hover:border-zinc-500 hover:bg-zinc-800/80 sm:self-start"
-              >
-                Mina · App Store (Canada)
-                <span aria-hidden className="text-zinc-500">
-                  {"\u2197"}
-                </span>
-              </a>
-            </div>
-          </div>
 
           <div className="mt-10">
             <CaseStudyHeroTldr
