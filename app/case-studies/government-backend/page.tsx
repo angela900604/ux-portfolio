@@ -579,38 +579,44 @@ export default function GovernmentBackendCaseStudy() {
         </CaseStudyInViewSection>
         </DesignJourneyCollapsible>
 
-        <CaseStudyInViewSection
-          id="reflection"
-          className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
+        <DesignJourneyCollapsible
+          journeySectionIds={["reflection"]}
+          navAnchorId="reflection"
+          panelId="gov-backend-reflection-panel"
+          title="Reflection"
+          subtitle="Lessons learned under enterprise constraints"
+          className="!border-t-0 !pt-0 sm:!pt-0"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Reflection
-          </span>
-          <h2 className="text-zinc-100">
-            Processes and interfaces, under constraints
-          </h2>
-          <p className="text-zinc-300 leading-relaxed">
-            This project taught me that designing government-scale platforms
-            isn&apos;t just about new features—it&apos;s about integrating with
-            established habits, hierarchies, and system logic. The biggest challenge
-            was balancing existing workflows with a scalable backend architecture,
-            all under a tight timeline.
-          </p>
-          <p className="text-zinc-300 leading-relaxed">
-            I made intentional trade-offs: instead of building a full functional
-            map, I validated requirements directly through annotated mockups and
-            page flows. This accelerated collaboration but required refining details
-            live during discussions. It was a valuable lesson in designing under
-            constraints while still maintaining trust and accuracy.
-          </p>
-          <p className="text-zinc-300 leading-relaxed">
-            Most importantly, I learned that in enterprise-scale projects, solving
-            problems often means designing processes as much as interfaces. This
-            strengthened my ability to align system logic with human workflows,
-            advocate for practical solutions, and deliver designs that enhance
-            usability while driving organizational efficiency.
-          </p>
-        </CaseStudyInViewSection>
+          <CaseStudyInViewSection
+            id="reflection"
+            className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
+          >
+            <h2 className="text-zinc-100">
+              Processes and interfaces, under constraints
+            </h2>
+            <p className="text-zinc-300 leading-relaxed">
+              This project taught me that designing government-scale platforms
+              isn&apos;t just about new features—it&apos;s about integrating with
+              established habits, hierarchies, and system logic. The biggest challenge
+              was balancing existing workflows with a scalable backend architecture,
+              all under a tight timeline.
+            </p>
+            <p className="text-zinc-300 leading-relaxed">
+              I made intentional trade-offs: instead of building a full functional
+              map, I validated requirements directly through annotated mockups and
+              page flows. This accelerated collaboration but required refining details
+              live during discussions. It was a valuable lesson in designing under
+              constraints while still maintaining trust and accuracy.
+            </p>
+            <p className="text-zinc-300 leading-relaxed">
+              Most importantly, I learned that in enterprise-scale projects, solving
+              problems often means designing processes as much as interfaces. This
+              strengthened my ability to align system logic with human workflows,
+              advocate for practical solutions, and deliver designs that enhance
+              usability while driving organizational efficiency.
+            </p>
+          </CaseStudyInViewSection>
+        </DesignJourneyCollapsible>
 
         <CaseStudyInViewSection className="border-t border-zinc-800 pt-12 space-y-8">
           <CaseStudyPrevNext currentSlug="government-backend" />
