@@ -221,7 +221,7 @@ export default function AiMarketplaceCaseStudy() {
           <div className="max-w-3xl space-y-8">
             <div className="space-y-3">
               <h2 className="text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
-                The real problem wasn&apos;t a missing app — it was the admin
+                No moms wants to list 47 baby items one by one.
               </h2>
               <p className="text-zinc-300 leading-relaxed">
                 SF moms in tight spaces cycle through baby gear every few months.
@@ -229,27 +229,32 @@ export default function AiMarketplaceCaseStudy() {
                 face creating listings one by one for a bag full of onesies.
               </p>
             </div>
-            <div className="space-y-3">
-              <h3 className="text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
-                The insight from the community
-              </h3>
-              <p className="text-zinc-300 leading-relaxed">
-                Through early user conversations, we found three distinct seller
-                types: moms who want to sell fast, moms who want to give things
-                away for free, and higher-income moms who donate in bulk and want
-                something back — recognition, community access, a perk.
-              </p>
-            </div>
-            <div className="space-y-3">
-              <h3 className="text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
-                The design response
-              </h3>
-              <p className="text-zinc-300 leading-relaxed">
-                One photo → AI agent generates multiple listings through chat. No
-                forms. For free-item givers, Mina Circle. For bulk donors, event
-                access and partner perks. The AI reduces the admin; the community
-                provides the motivation.
-              </p>
+            <div className="grid items-stretch gap-4 lg:max-w-none lg:grid-cols-[1fr_auto_1fr] lg:gap-6">
+              <div className="rounded-2xl border border-zinc-800/80 bg-zinc-900/45 p-5 sm:p-6">
+                <span className="inline-flex rounded-full border border-amber-300/60 bg-amber-400/20 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-amber-100">
+                  The insight
+                </span>
+                <p className="mt-4 text-lg font-medium leading-relaxed text-zinc-200 sm:text-xl">
+                  Through early user conversations, we found three distinct seller
+                  types: moms who want to sell fast, moms who want to give things
+                  away for free, and higher-income moms who donate in bulk and want
+                  something back — recognition, community access, a perk.
+                </p>
+              </div>
+              <div className="hidden items-center justify-center lg:flex" aria-hidden>
+                <span className="text-3xl font-semibold text-zinc-500">→</span>
+              </div>
+              <div className="rounded-2xl border border-zinc-800/80 bg-zinc-900/45 p-5 sm:p-6">
+                <span className="inline-flex rounded-full border border-emerald-300/60 bg-emerald-400/20 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-emerald-100">
+                  The design response
+                </span>
+                <p className="mt-4 text-lg font-medium leading-relaxed text-zinc-200 sm:text-xl">
+                  One photo → AI agent generates multiple listings through chat. No
+                  forms. For free-item givers, Mina Circle. For bulk donors, event
+                  access and partner perks. The AI reduces the admin; the community
+                  provides the motivation.
+                </p>
+              </div>
             </div>
           </div>
           <div className="mt-6 max-w-3xl overflow-hidden rounded-xl border border-zinc-800/50 bg-zinc-900/40">
