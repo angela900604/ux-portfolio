@@ -11,7 +11,6 @@ import { CaseStudyHeroFullBleed } from "../_components/CaseStudyHeroFullBleed";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { DesignJourneyCollapsible } from "../_components/DesignJourneyCollapsible";
-import VisualPlaceholder from "../_components/VisualPlaceholder";
 import { CompetitorLandscapeTable } from "./CompetitorLandscapeTable";
 import { EInvoiceHeroTldr } from "./EInvoiceHeroTldr";
 import { FinalScreensMarquee } from "./FinalScreensMarquee";
@@ -205,6 +204,12 @@ const HERO_TABLET_01 = {
 const HERO_TABLET_02 = {
   src: "/case-studies/e-invoice/hero-tablet-02.png",
   alt: "iPad Pro mockup showing the e-invoice home interface on textured fabric beside a wooden surface",
+} as const;
+
+/** Handoff composite: Figma flows, a11y reader order, prize-claim state matrix */
+const HANDOFF_MODULE_SETTINGS_SPEC = {
+  src: "/case-studies/e-invoice/handoff-module-settings-spec.png",
+  alt: "E-invoice handoff export: annotated Figma flows for prize list, scan, and security verification; screen reader focus order overlays; spreadsheet matrix of carrier and winning states for claim actions",
 } as const;
 
 /** Friendly lifestyle palette (style direction 01) */
@@ -564,48 +569,85 @@ export default function EInvoiceCaseStudy() {
 
               <div className="mt-12 max-w-4xl space-y-4 border-t border-zinc-800/90 pt-10">
                 <h3 className="text-lg font-semibold tracking-tight text-zinc-100 sm:text-xl">
-                  Handoff &amp; engineering collaboration
+                  Handoff &amp; engineering alignment
                 </h3>
-                <div className="space-y-3 text-sm leading-relaxed text-zinc-400 sm:text-base">
-                  <p>
-                    Once the customizable home model was accepted, I aligned{" "}
-                    <span className="text-zinc-200">
-                      module identifiers, settings keys, and default visibility
-                    </span>{" "}
-                    with engineering before high-fi freeze—so each optional block
-                    mapped to persistence and feature flags instead of living only as
-                    layer names in Figma.
+                <div className="text-sm leading-relaxed text-zinc-400 sm:text-base">
+                  <p className="font-medium text-zinc-200">
+                    Handoff included three layers:
                   </p>
-                  <p>
-                    Joint reviews pressure-tested{" "}
-                    <span className="text-zinc-200">edge cases</span>: what happens
-                    when every optional module is hidden, how reorder behaves on slow
-                    networks, and which layout rules had to stay{" "}
-                    <span className="text-zinc-200">client-only</span> because home
-                    APIs couldn&apos;t yet vary per segment at the granularity the UI
-                    implied—those constraints fed directly back into what remained
-                    configurable vs. fixed in the skeleton.
-                  </p>
-                  <p>
-                    Handoff paired the{" "}
-                    <Link
-                      href={FIGMA_MOCKUP_PAGE}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-medium text-emerald-400/95 underline decoration-emerald-400/35 underline-offset-4 hover:text-emerald-300"
-                    >
-                      Figma mockups
-                    </Link>{" "}
-                    with an annotation pass (states, empty copy, error strings) and a
-                    short naming sheet devs and QA could grep against—below is a
-                    placeholder for the kind of spec capture I used in RD review.
+                  <ul className="mt-4 list-none space-y-3.5">
+                    <li className="flex gap-3">
+                      <span
+                        className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400/85"
+                        aria-hidden
+                      />
+                      <span>
+                        <span className="font-semibold text-zinc-200">
+                          API state matrix
+                        </span>
+                        {" — "}
+                        Each flow mapped against account states and timing windows, so
+                        engineering knew which endpoint to hit per scenario.
+                      </span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span
+                        className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400/85"
+                        aria-hidden
+                      />
+                      <span>
+                        <span className="font-semibold text-zinc-200">
+                          Screen reader annotation
+                        </span>
+                        {" — "}
+                        VoiceOver focus order marked directly on screens.
+                      </span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span
+                        className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400/85"
+                        aria-hidden
+                      />
+                      <span>
+                        <span className="font-semibold text-zinc-200">
+                          Component specs
+                        </span>
+                        {" — "}
+                        States, empty copy, and error strings per component in the
+                        Figma library.
+                      </span>
+                    </li>
+                  </ul>
+                  <Link
+                    href={FIGMA_MOCKUP_PAGE}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-6 inline-flex w-fit items-center justify-center gap-2 rounded-full border border-emerald-400/45 bg-emerald-500/15 px-5 py-2.5 text-sm font-semibold text-emerald-200 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] transition hover:border-emerald-400/65 hover:bg-emerald-500/25 hover:text-emerald-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400/80"
+                  >
+                    Figma mockups
+                    <span aria-hidden className="text-base leading-none">
+                      →
+                    </span>
+                  </Link>
+                  <p className="mt-4 text-zinc-500">
+                    The composite below shows how those layers showed up in one export
+                    for RD review.
                   </p>
                 </div>
-                <VisualPlaceholder
-                  label="Module / settings handoff spec"
-                  hint="Replace with a Figma export or spreadsheet snippet: module keys, toggles, and edge-case notes from engineering sync."
-                  aspect="video"
-                />
+                <figure className="mt-6 overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+                  <Image
+                    src={HANDOFF_MODULE_SETTINGS_SPEC.src}
+                    alt={HANDOFF_MODULE_SETTINGS_SPEC.alt}
+                    width={1024}
+                    height={588}
+                    className="h-auto w-full object-cover object-top"
+                    sizes="(max-width: 896px) 100vw, 896px"
+                  />
+                  <figcaption className="border-t border-zinc-800/80 px-4 py-3 text-xs leading-relaxed text-zinc-500 sm:px-5 sm:text-sm">
+                    Composite: annotated flows, VoiceOver order, and API / account-state
+                    matrix—one surface engineers could trace during implementation.
+                  </figcaption>
+                </figure>
               </div>
             </section>
 
