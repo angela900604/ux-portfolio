@@ -107,10 +107,10 @@ function StoryBeat({
 
   const headlineClass = isOutcome
     ? largeHeadline
-      ? "text-xl font-semibold leading-snug text-zinc-100 sm:text-2xl md:text-[1.7rem] md:leading-snug"
+      ? "text-lg font-semibold leading-snug text-zinc-100 sm:text-xl md:text-[1.55rem] md:leading-snug"
       : "text-base font-semibold leading-snug text-zinc-100 sm:text-lg md:text-xl"
     : largeHeadline
-      ? "text-xl font-semibold leading-snug tracking-tight text-zinc-50 sm:text-2xl md:text-[1.75rem] md:leading-snug lg:text-[1.9rem]"
+      ? "text-lg font-semibold leading-snug tracking-tight text-zinc-50 sm:text-xl md:text-[1.6rem] md:leading-snug lg:text-[1.75rem]"
       : "text-lg font-semibold leading-snug text-zinc-50 sm:text-xl md:text-2xl";
 
   const detailClass = isOutcome
@@ -168,7 +168,7 @@ function StoryOutcomeCallout({
       <span className="inline-flex rounded-full border border-emerald-500/80 bg-emerald-500/80 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-emerald-50">
         Outcome
       </span>
-      <p className="mt-3 text-2xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-3xl md:text-[1.85rem] md:leading-snug">
+      <p className="mt-3 text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
         {headline}
       </p>
       <p className="mt-3 max-w-3xl text-sm font-normal leading-relaxed text-zinc-400 sm:text-base">
@@ -686,21 +686,6 @@ export default function EInvoiceCaseStudy() {
                     </span>
                   </li>
                 </ul>
-                <Link
-                  href={FIGMA_MOCKUP_PAGE}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-6 inline-flex w-fit items-center justify-center gap-2 rounded-full border border-emerald-400/45 bg-emerald-500/15 px-5 py-2.5 text-sm font-semibold text-emerald-200 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] transition hover:border-emerald-400/65 hover:bg-emerald-500/25 hover:text-emerald-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400/80"
-                >
-                  Figma mockups
-                  <span aria-hidden className="text-base leading-none">
-                    →
-                  </span>
-                </Link>
-                <p className="mt-4 text-zinc-500">
-                  The composite below shows how those layers showed up in one export
-                  for RD review.
-                </p>
               </div>
               <figure className="mt-6 overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
                 <Image
@@ -708,8 +693,9 @@ export default function EInvoiceCaseStudy() {
                   alt={HANDOFF_MODULE_SETTINGS_SPEC.alt}
                   width={1024}
                   height={583}
-                  className="h-auto w-full object-cover object-top"
-                  sizes="(max-width: 896px) 100vw, 896px"
+                  className="h-auto w-full object-contain object-top"
+                  sizes="(max-width: 1024px) 100vw, 1024px"
+                  unoptimized
                 />
               </figure>
             </div>
