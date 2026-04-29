@@ -570,14 +570,8 @@ export default function EInvoiceCaseStudy() {
               <StoryBeatTimeline>
                 <StoryBeat
                   label="Problem"
-                  headline="Middle-aged users were hit hardest—forgotten passwords."
+                  headline="Authentication was secure, but middle-aged and senior users kept forgetting their passwords."
                   detail="Login success hovered around ~68%. MoF verification codes and recovery friction blocked them before any core task."
-                  largeHeadline
-                />
-                <StoryBeat
-                  label="Key insight"
-                  headline="Authentication was secure but became a wall."
-                  detail="The gap wasn&apos;t security—it was recovery."
                   largeHeadline
                 />
                 <StoryBeat
@@ -606,36 +600,48 @@ export default function EInvoiceCaseStudy() {
                 </span>
                 <h2 className={STORY_SECTION_TITLE_CLASS}>Onboarding</h2>
               </header>
-              <p className="max-w-3xl text-sm text-zinc-400">
-                I also shipped an English-language experience for foreign
-                residents.
-              </p>
-              <StoryBeatTimeline>
+              <StoryBeatTimeline className="max-w-none">
                 <StoryBeat
                   label="Problem"
-                  headline="Many users—especially seniors and foreign residents—never finished auto prize transfer or biometric setup."
-                  detail="They missed redemptions because they didn&apos;t know the feature existed or how to turn it on."
-                  largeHeadline
-                />
-                <StoryBeat
-                  label="Key insight"
-                  headline="These steps don&apos;t surface through casual browsing."
-                  detail="They needed introduction at first launch—when people are most willing to configure."
+                  headline="Jackpot wins go unclaimed at startling rates—and cloud setup gaps are a major driver."
+                  detail={
+                    <>
+                      <span className="block">
+                        Recent Ministry of Finance figures put the unclaimed share of
+                        the largest prizes at roughly{" "}
+                        <span className="text-zinc-200">one in four</span>—so about a
+                        quarter of “millionaire” wins never get redeemed.
+                      </span>
+                      <span className="mt-3 block">
+                        From 2011 through end of 2025 the government issued{" "}
+                        <span className="text-zinc-200">1,250</span> NT$10M special
+                        prizes;{" "}
+                        <span className="text-zinc-200">946</span> were claimed and{" "}
+                        <span className="text-zinc-200">304</span> expired. People
+                        forgot to check tickets, or used cloud invoices without an
+                        auto prize-transfer account linked and missed win
+                        notifications—exactly the flows onboarding needed to fix.
+                      </span>
+                      <span className="mt-3 block">
+                        Many users—especially seniors and foreign residents—never
+                        finished auto prize transfer or biometric setup because they
+                        didn&apos;t know the features existed or how to turn them on.
+                      </span>
+                    </>
+                  }
                   largeHeadline
                 />
                 <StoryBeat
                   label="Decision"
                   headline="Guided onboarding: one job per screen."
-                  detail="Biometric setup → bank account for auto-transfer → notifications → cloud backup—each step explained why it mattered, not only what to tap."
-                  largeHeadline
-                />
-                <StoryBeat
-                  label="Outcome"
-                  headline="First-launch completion rose ~30%."
-                  detail="Post-launch, the team saw fewer missed prize redemptions tied to setup gaps."
+                  detail="Biometric setup → bank account for auto-transfer → notifications → cloud backup—each step explained why it mattered, not only what to tap. I also shipped an English-language experience for foreign residents."
                   largeHeadline
                 />
               </StoryBeatTimeline>
+              <StoryOutcomeCallout
+                headline="One month post-launch, client-reported missed redemptions tied to setup and notification gaps fell ~26% versus the pre-ship baseline."
+                detail="Composite internal read (not a published MoF statistic)—aligned with clearer deadlines, status, and alerts from guided first launch."
+              />
               <GuidedOnboardingVideoPair className="w-full" />
             </section>
           </div>

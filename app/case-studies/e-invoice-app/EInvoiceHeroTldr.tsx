@@ -26,25 +26,18 @@ const METRICS = [
     detail: "Country-scale dependency on one official surface.",
   },
   {
-    kicker: "Retention",
-    value: "Client-reported lift",
-    title: "Login success after ship",
-    detail:
-      "Biometric login and in-app password recovery; internal analytics and support trends showed materially better completion—not a published A/B headline.",
-  },
-  {
     kicker: "Activation",
-    value: "+30%",
-    title: "First-launch onboarding completion",
+    value: "Guided setup",
+    title: "First-launch onboarding",
     detail:
-      "Guided setup for biometrics, bank link, notifications, and cloud backup—one job per step so new users reach “ready to use” faster.",
+      "Biometrics, bank link, notifications, and cloud backup—one job per screen so new users reach “ready to use” faster.",
   },
   {
     kicker: "Mechanisms",
-    value: "−70%",
+    value: "~−26%",
     title: "Reducing missed prize redemptions",
     detail:
-      "Clearer deadlines, status, and push alerts so wins are not discovered too late.",
+      "One month post-launch, client-reported missed redemptions tied to setup, notifications, and deadline visibility fell versus pre-ship baseline—directional internal read, not a published MoF figure.",
   },
   {
     kicker: "Testing scope",
@@ -69,7 +62,7 @@ export function EInvoiceHeroTldr() {
         </h2>
       </div>
 
-      <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+      <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
         {METRICS.map((m) => (
           <div
             key={m.kicker}
