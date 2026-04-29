@@ -18,12 +18,16 @@ function TldrTargetIcon({ className }: { className?: string }) {
   );
 }
 
-const METRICS = [
+const METRICS: {
+  kicker: string;
+  value: string;
+  title: string;
+  detail?: string;
+}[] = [
   {
     kicker: "Scale",
-    value: "~20M users · national service",
-    title: "Public reach",
-    detail: "Country-scale dependency on one official surface.",
+    value: "20,000,000+ users",
+    title: "Taiwan National Public Service",
   },
   {
     kicker: "Mechanisms",
@@ -37,9 +41,9 @@ const METRICS = [
     value: "88%",
     title: "Task success across ages",
     detail:
-      "Moderated sessions with users 18–70+, including visually impaired participants, on scan, donate, and redemption.",
+      "Moderated prototype usability testing sessions with users 18–70+, including visually impaired participants, on scan, donate, and redemption.",
   },
-] as const;
+];
 
 export function EInvoiceHeroTldr() {
   return (
@@ -70,7 +74,9 @@ export function EInvoiceHeroTldr() {
             <p className="mt-2 text-sm font-semibold leading-snug text-zinc-900">
               {m.title}
             </p>
-            <p className="mt-2 text-xs leading-relaxed text-zinc-600">{m.detail}</p>
+            {m.detail ? (
+              <p className="mt-2 text-xs leading-relaxed text-zinc-600">{m.detail}</p>
+            ) : null}
           </div>
         ))}
       </div>

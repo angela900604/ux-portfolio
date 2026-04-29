@@ -409,15 +409,16 @@ export default function EInvoiceCaseStudy() {
               Opportunity
             </span>
             <h2 className="max-w-3xl text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
-              A national lottery app had to work for radically different ages,
-              languages, and abilities—without trading off public trust.
+              <span className="block">
+                A national e-invoice app must work for radically different ages,
+                languages, and abilities.
+              </span>
+              <span className="mt-3 block text-[0.92em] font-medium leading-snug text-zinc-300 sm:mt-4">
+                It also had to feel obvious on first open—close to zero learning curve
+                for the tasks millions repeat every week—without trading off public
+                trust.
+              </span>
             </h2>
-            <p className="max-w-3xl text-sm leading-relaxed text-zinc-400 sm:text-base">
-              The redesign paired multi-segment research with ship-ready IA and UI:
-              scan-first home, inclusive density, authentication people could recover
-              from, and onboarding that surfaced automation before users hit
-              redemption friction.
-            </p>
           </div>
 
           <FinalScreensMarquee slides={FINAL_SOLUTION_MARQUEE_SLIDES} />
@@ -457,14 +458,20 @@ export default function EInvoiceCaseStudy() {
                 <StoryBeatTimeline className="max-w-none">
                   <StoryBeat
                     label="Problem"
-                    headline="Low-vision users and foreign residents couldn&apos;t finish core tasks alone."
-                    detail="Icons were unreadable, labels assumed civic vocabulary, and there was no audio confirmation after scan."
+                    headline="Icon-only patterns and vague labels left foreign residents guessing—and many low-vision users couldn&apos;t use the app without a caregiver."
+                    detail="Glyphs alone didn&apos;t read as actions, especially without Chinese civic vocabulary. Low-vision participants often couldn&apos;t complete core flows independently; memorizing where things were wasn&apos;t enough when controls stayed visually unclear."
                     largeHeadline
                   />
                   <StoryBeat
                     label="Key insight"
-                    headline="Foreign residents needed text to decode the control—not icon-only cues."
-                    detail="Low-vision users relied on a fixed position they could memorize more than on fine visuals."
+                    headline="Foreign residents needed readable text to decode controls—not icon-only cues."
+                    detail="Plain words made affordances legible without assuming Chinese literacy or bureaucratic shorthand."
+                    largeHeadline
+                  />
+                  <StoryBeat
+                    label="Key insight"
+                    headline="Low-vision users needed stable placement and large, labeled targets—not finer icon artwork."
+                    detail="Predictable positions plus text reduced reliance on small graphics and on caregivers for routine tasks."
                     largeHeadline
                   />
                   <StoryBeat
