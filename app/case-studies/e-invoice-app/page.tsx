@@ -692,7 +692,7 @@ export default function EInvoiceCaseStudy() {
                   src={HANDOFF_MODULE_SETTINGS_SPEC.src}
                   alt={HANDOFF_MODULE_SETTINGS_SPEC.alt}
                   width={1024}
-                  height={583}
+                  height={571}
                   className="h-auto w-full object-contain object-top"
                   sizes="(max-width: 1024px) 100vw, 1024px"
                   unoptimized

@@ -127,23 +127,12 @@ export default function AboutPage() {
               <h3 className={ABOUT_CARD_TITLE_CLASS}>
                 Engineering-led collaboration
               </h3>
-              <div className={`${ABOUT_CARD_BODY_CLASS} flex-1 flex flex-col`}>
-                <p>
-                  I work very closely with frontend and backend engineers from the
-                  beginning. During early product phases, I proactively discuss
-                  implementation feasibility so innovative ideas stay practical and
-                  buildable.
-                </p>
-                <p className="mt-4 border-l-2 border-emerald-500/35 pl-3 text-sm leading-relaxed text-zinc-500 sm:text-base">
-                  <span className="font-medium text-zinc-300">Example:</span> On the
-                  e-invoice app, I aligned with backend on ministry verification and
-                  session behavior while designing login—so we shipped biometric
-                  sign-in and in-app recovery instead of leaving users stuck in rigid
-                  code-retry loops (login success had been stuck around{" "}
-                  <span className="tabular-nums text-zinc-400">~68%</span>
-                  ).
-                </p>
-              </div>
+              <p className={`${ABOUT_CARD_BODY_CLASS} flex-1`}>
+                I work very closely with frontend and backend engineers from the
+                beginning. During early product phases, I proactively discuss
+                implementation feasibility so innovative ideas stay practical and
+                buildable.
+              </p>
             </div>
             <div className="flex h-full min-w-0 flex-col rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 sm:p-7">
               <h3 className={ABOUT_CARD_TITLE_CLASS}>
@@ -178,11 +167,11 @@ export default function AboutPage() {
           />
         </section>
 
-        <div className="mt-10 flex flex-wrap gap-4">
+        <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3">
           <a
             href={RESUME_PDF_SRC}
             download
-            className="inline-flex items-center rounded-full border border-zinc-700 bg-zinc-900/60 px-4 py-2 text-sm font-medium text-zinc-100 transition hover:border-zinc-500 hover:bg-zinc-800/80"
+            className="inline-flex min-h-10 items-center justify-center rounded-full border border-zinc-700 bg-zinc-900/60 px-4 py-2 text-sm font-medium text-zinc-100 transition hover:border-zinc-500 hover:bg-zinc-800/80"
           >
             Download Resume
           </a>
@@ -190,11 +179,14 @@ export default function AboutPage() {
             href="https://linkedin.com/in/angelayangg/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-medium text-zinc-300 hover:text-zinc-100"
+            className="inline-flex min-h-10 items-center text-sm font-medium text-zinc-300 transition hover:text-zinc-100"
           >
             LinkedIn
           </a>
-          <Link href="/" className="text-sm font-medium text-zinc-300 hover:text-zinc-100">
+          <Link
+            href="/"
+            className="inline-flex min-h-10 items-center text-sm font-medium text-zinc-300 transition hover:text-zinc-100"
+          >
             Work
           </Link>
         </div>
