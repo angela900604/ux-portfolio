@@ -249,9 +249,9 @@ export default function AiMarketplaceCaseStudy() {
                     style={{
                       border: "1px solid #C8A84B",
                       borderRadius: "20px",
-                      padding: "2px 10px",
-                      fontSize: "11px",
-                      fontWeight: 500,
+                      padding: "5px 14px",
+                      fontSize: "16px",
+                      fontWeight: 600,
                       display: "inline-block",
                       color: "#C8A84B",
                     }}
@@ -260,9 +260,10 @@ export default function AiMarketplaceCaseStudy() {
                   </span>
                   <span
                     style={{
-                      fontSize: "13px",
-                      color: "rgba(255,255,255,0.55)",
-                      marginLeft: "10px",
+                      fontSize: "22px",
+                      fontWeight: 500,
+                      color: "rgba(255,255,255,0.7)",
+                      marginLeft: "14px",
                     }}
                   >
                     wants a transaction, fast
@@ -273,9 +274,9 @@ export default function AiMarketplaceCaseStudy() {
                     style={{
                       border: "1px solid rgba(255,255,255,0.25)",
                       borderRadius: "20px",
-                      padding: "2px 10px",
-                      fontSize: "11px",
-                      fontWeight: 500,
+                      padding: "5px 14px",
+                      fontSize: "16px",
+                      fontWeight: 600,
                       display: "inline-block",
                       color: "rgba(255,255,255,0.6)",
                     }}
@@ -284,9 +285,10 @@ export default function AiMarketplaceCaseStudy() {
                   </span>
                   <span
                     style={{
-                      fontSize: "13px",
-                      color: "rgba(255,255,255,0.55)",
-                      marginLeft: "10px",
+                      fontSize: "22px",
+                      fontWeight: 500,
+                      color: "rgba(255,255,255,0.7)",
+                      marginLeft: "14px",
                     }}
                   >
                     wants it gone, no friction
@@ -297,9 +299,9 @@ export default function AiMarketplaceCaseStudy() {
                     style={{
                       border: "1px solid rgba(255,255,255,0.25)",
                       borderRadius: "20px",
-                      padding: "2px 10px",
-                      fontSize: "11px",
-                      fontWeight: 500,
+                      padding: "5px 14px",
+                      fontSize: "16px",
+                      fontWeight: 600,
                       display: "inline-block",
                       color: "rgba(255,255,255,0.6)",
                     }}
@@ -308,9 +310,10 @@ export default function AiMarketplaceCaseStudy() {
                   </span>
                   <span
                     style={{
-                      fontSize: "13px",
-                      color: "rgba(255,255,255,0.55)",
-                      marginLeft: "10px",
+                      fontSize: "22px",
+                      fontWeight: 500,
+                      color: "rgba(255,255,255,0.7)",
+                      marginLeft: "14px",
                     }}
                   >
                     wants recognition + something back
@@ -337,8 +340,8 @@ export default function AiMarketplaceCaseStudy() {
                     </p>
                     <p
                       style={{
-                        fontSize: "14px",
-                        fontWeight: 500,
+                        fontSize: "24px",
+                        fontWeight: 600,
                         color: "#F0F0F0",
                       }}
                     >
@@ -363,8 +366,8 @@ export default function AiMarketplaceCaseStudy() {
                     </p>
                     <p
                       style={{
-                        fontSize: "14px",
-                        fontWeight: 500,
+                        fontSize: "24px",
+                        fontWeight: 600,
                         color: "#F0F0F0",
                       }}
                     >
@@ -389,8 +392,8 @@ export default function AiMarketplaceCaseStudy() {
                     </p>
                     <p
                       style={{
-                        fontSize: "14px",
-                        fontWeight: 500,
+                        fontSize: "24px",
+                        fontWeight: 600,
                         color: "#F0F0F0",
                       }}
                     >
