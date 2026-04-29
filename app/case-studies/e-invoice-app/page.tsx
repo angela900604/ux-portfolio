@@ -413,7 +413,7 @@ export default function EInvoiceCaseStudy() {
                 A national e-invoice app must work for radically different ages,
                 languages, and abilities.
               </span>
-              <span className="mt-3 block text-[0.92em] font-medium leading-snug text-zinc-300 sm:mt-4">
+              <span className="mt-3 block text-[0.82em] font-medium leading-snug text-zinc-300 sm:mt-4">
                 It also had to feel obvious on first open—close to zero learning curve
                 for the tasks millions repeat every week—without trading off public
                 trust.
@@ -458,20 +458,20 @@ export default function EInvoiceCaseStudy() {
                 <StoryBeatTimeline className="max-w-none">
                   <StoryBeat
                     label="Problem"
-                    headline="Icon-only patterns and vague labels left foreign residents guessing—and many low-vision users couldn&apos;t use the app without a caregiver."
-                    detail="Glyphs alone didn&apos;t read as actions, especially without Chinese civic vocabulary. Low-vision participants often couldn&apos;t complete core flows independently; memorizing where things were wasn&apos;t enough when controls stayed visually unclear."
+                    headline="small Icon-only patterns left foreign residents guessing and many low-vision users couldn&apos;t use the app without a caregiver."
+                    detail=""
                     largeHeadline
                   />
                   <StoryBeat
                     label="Key insight"
                     headline="Foreign residents needed readable text to decode controls—not icon-only cues."
-                    detail="Plain words made affordances legible without assuming Chinese literacy or bureaucratic shorthand."
+                    detail=""
                     largeHeadline
                   />
                   <StoryBeat
                     label="Key insight"
-                    headline="Low-vision users needed stable placement and large, labeled targets—not finer icon artwork."
-                    detail="Predictable positions plus text reduced reliance on small graphics and on caregivers for routine tasks."
+                    headline="Low-vision users needed Predictable and stable placement and large, labeled CTA instead of small icon."
+                    detail=""
                     largeHeadline
                   />
                   <StoryBeat
@@ -544,7 +544,7 @@ export default function EInvoiceCaseStudy() {
                 />
                 <StoryBeat
                   label="Conflict"
-                  headline="I brought interview and prototype evidence into government stakeholder meetings to challenge a promo-first default."
+                  headline="I brought interview evidence into government stakeholder meetings to challenge a promo-first default."
                   detail="I understood their need to surface carbon-reduction messaging and policy outreach—but the data said job-first ordering had to win the first screen. That was the argument I used in the room."
                   largeHeadline
                 />
@@ -577,7 +577,7 @@ export default function EInvoiceCaseStudy() {
               <StoryBeatTimeline className="max-w-none">
                 <StoryBeat
                   label="Problem"
-                  headline="Authentication was secure, but middle-aged and senior users kept forgetting their passwords."
+                  headline="Authentication was secure, but middle-aged and senior users kept forgetting their verification passwords"
                   detail="Login success hovered around ~68%. MoF verification codes and recovery friction blocked them before any core task."
                   largeHeadline
                 />
@@ -588,10 +588,6 @@ export default function EInvoiceCaseStudy() {
                   largeHeadline
                 />
               </StoryBeatTimeline>
-              <StoryOutcomeCallout
-                headline="After launch, the client reported materially higher login success in internal analytics."
-                detail="Support volume tied to account access fell compared with baseline."
-              />
               <LoginBeforeAfterSlider />
             </section>
 
@@ -603,30 +599,13 @@ export default function EInvoiceCaseStudy() {
                 <span className="text-xs font-semibold uppercase tracking-[0.14em] text-zinc-400">
                   Section 4
                 </span>
-                <h2 className={STORY_SECTION_TITLE_CLASS}>Onboarding</h2>
+                <h2 className={STORY_SECTION_TITLE_CLASS}>Guided Onboarding Setup</h2>
               </header>
               <StoryBeatTimeline className="max-w-none">
                 <StoryBeat
                   label="Problem"
-                  headline="About one in four of the biggest lottery wins still never get claimed—often because people forget to check, use cloud invoices without linking a bank account for automatic prize payouts, or miss notifications—and many foreign residents don&apos;t even know prizes can auto-transfer or how to set that up."
-                  detail={
-                    <>
-                      <span className="block">
-                        From 2011 through end of 2025 the Ministry of Finance issued{" "}
-                        <span className="text-zinc-200">1,250</span> NT$10M special
-                        prizes;{" "}
-                        <span className="text-zinc-200">946</span> were claimed and{" "}
-                        <span className="text-zinc-200">304</span> expired—largely
-                        from forgotten checks and cloud-invoice users without
-                        auto-transfer accounts who missed win alerts.
-                      </span>
-                      <span className="mt-3 block">
-                        Many users—especially seniors and foreign residents—never
-                        finished auto prize transfer or biometric setup because they
-                        didn&apos;t know those options existed or how to turn them on.
-                      </span>
-                    </>
-                  }
+                  headline="Many lottery prizes go unclaimed because people don&apos;t check, miss alerts, or never set up auto transfer."
+                  detail="About 1/4 major lottery prizes are never claimed. People forget to check, miss notifications, or use cloud invoices without linking a bank account for automatic payouts. Many foreign residents don&apos;t know auto-transfer exists or how to set it up. Seniors and foreign residents often didn&apos;t complete auto-transfer or biometric setup because they weren&apos;t aware of these features or how to enable them."
                   largeHeadline
                 />
                 <StoryBeat
@@ -638,7 +617,7 @@ export default function EInvoiceCaseStudy() {
               </StoryBeatTimeline>
               <StoryOutcomeCallout
                 headline="One month post-launch, client-reported missed top-tier prize redemptions moved from about 24% to 18%."
-                detail="Directional internal read (not a published MoF statistic)—aligned with clearer setup, deadlines, status, and alerts from guided first launch."
+                detail=""
               />
               <GuidedOnboardingVideoPair className="w-full" />
             </section>
