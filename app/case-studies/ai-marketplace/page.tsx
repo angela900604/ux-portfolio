@@ -450,41 +450,94 @@ export default function AiMarketplaceCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Track A · Business impact
           </span>
-          <div className="min-w-0 space-y-6">
-            <div className="space-y-4">
-              <h2 className="max-w-3xl text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
-                I redesigned the listing flow end-to-end — completed listings up
-                ~30% in a cohorted A/B.
-              </h2>
-              <p className="max-w-3xl text-zinc-300 leading-relaxed">
+          <div className="min-w-0 space-y-8">
+            <h2 className="max-w-3xl text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
+              I redesigned the listing flow end-to-end — completed listings up ~30%
+              in a cohorted A/B.
+            </h2>
+
+            <div className="max-w-4xl space-y-8 font-serif text-[15px] leading-relaxed text-zinc-200 sm:text-base">
+              <p className="text-zinc-200">
                 Posting one item on Facebook Marketplace takes 10 minutes. Posting
                 a bag of baby gear takes all afternoon.
               </p>
-              <p className="max-w-3xl text-zinc-300 leading-relaxed">
-                The create flow now splits{" "}
-                <span className="text-zinc-100">single vs. multiple listings</span>{" "}
-                up front.{" "}
-                <span className="text-zinc-100">Single listing</span> drops the
-                chat-agent shell: the photo stays in focus with a tab-style detail
-                sheet underneath, and listing fields appear progressively as
-                generation completes—so parents aren&apos;t stuck watching one
-                full-screen spinner while latency does its work.{" "}
-                <span className="text-zinc-100">Multiple listings</span> keeps the
-                conversational agent: the model tags items on the image; tapping a
-                tag opens a modal to confirm or edit that item&apos;s details; when
-                everything looks right, a single confirm hands off to publish.
+
+              <div className="-mx-1 overflow-x-auto sm:mx-0">
+                <table className="w-full min-w-[520px] border-collapse text-left">
+                  <thead>
+                    <tr className="border-b border-zinc-600">
+                      <th className="w-[26%] pb-3 pr-3 align-bottom font-normal text-zinc-500" />
+                      <th
+                        scope="col"
+                        className="pb-3 pr-4 align-bottom font-normal text-zinc-100"
+                      >
+                        Single listing
+                      </th>
+                      <th
+                        scope="col"
+                        className="pb-3 align-bottom font-normal text-zinc-100"
+                      >
+                        Multiple listings
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-zinc-200">
+                    <tr className="border-b border-zinc-600">
+                      <th
+                        scope="row"
+                        className="py-3 pr-3 align-top text-left font-semibold text-zinc-100"
+                      >
+                        Shell
+                      </th>
+                      <td className="py-3 pr-4 align-top">
+                        Photo-focused + tab detail sheet
+                      </td>
+                      <td className="py-3 align-top">Conversational agent</td>
+                    </tr>
+                    <tr className="border-b border-zinc-600">
+                      <th
+                        scope="row"
+                        className="py-3 pr-3 align-top text-left font-semibold text-zinc-100"
+                      >
+                        AI output
+                      </th>
+                      <td className="py-3 pr-4 align-top">
+                        Fields appear as generation completes
+                      </td>
+                      <td className="py-3 align-top">Model tags items on image</td>
+                    </tr>
+                    <tr className="border-b border-zinc-600">
+                      <th
+                        scope="row"
+                        className="py-3 pr-3 align-top text-left font-semibold text-zinc-100"
+                      >
+                        Confirm
+                      </th>
+                      <td className="py-3 pr-4 align-top">Review inline</td>
+                      <td className="py-3 align-top">
+                        Tap tag → modal → single confirm
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p className="italic text-zinc-300">
+                No full-screen spinner. Parents see progress as latency does its
+                work.
               </p>
-              <p className="max-w-3xl text-zinc-300 leading-relaxed">
-                Zip code, meetup preferences, and similar profile-level fields belong
-                in onboarding and settings—I didn&apos;t duplicate them inside this
-                flow; if parents need to change them, they adjust in settings instead
-                of blocking listing creation.
+              <p className="text-zinc-200">
+                <span className="font-semibold text-zinc-100 not-italic">
+                  IA decision:
+                </span>{" "}
+                Zip code, meetup preferences, and profile-level fields live in
+                onboarding and settings—not duplicated inside this flow.
               </p>
             </div>
             <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
               <Image
                 src={MINA_TRACK_A_FLOWS}
-                alt="MINA create listing: one photo to multiple listings (top row) and one photo to a single listing (bottom row), from home through photo capture to AI-assisted listing details"
+                alt="MINA create listing flows: one photo to multiple listings with review and confirm to publish; one photo to a single listing with progressive disclosure as AI generates fields"
                 width={MINA_TRACK_A_FLOWS_W}
                 height={MINA_TRACK_A_FLOWS_H}
                 className="h-auto w-full object-contain"
