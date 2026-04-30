@@ -54,7 +54,8 @@ export type SplitCapsuleLinkProps = {
 };
 
 /**
- * Pill CTA: label and arrow are separate capsules; on hover they join (gap closes, inner radii flatten).
+ * Pill CTA: label and arrow are separate capsules; on hover gap closes and radii read as two joined droplets.
+ * Arrow points slightly up-right at rest, straight right on hover.
  */
 export function SplitCapsuleLink({
   href,
@@ -69,20 +70,22 @@ export function SplitCapsuleLink({
   const inner = (
     <>
       <span
-        className={`inline-flex items-center rounded-full border px-5 py-2.5 text-sm font-semibold transition-all duration-200 ease-out group-hover:rounded-r-none group-hover:border-r-0 group-hover:pr-4 sm:px-6 sm:py-3 sm:text-base ${v.left}`}
+        className={`inline-flex items-center rounded-full border px-5 py-2.5 text-sm font-semibold transition-[border-radius,padding,border-color,background-color,box-shadow] duration-300 ease-[cubic-bezier(0.33,1,0.68,1)] group-hover:rounded-l-[999px] group-hover:rounded-r-lg group-hover:border-r-0 group-hover:pr-5 sm:px-6 sm:py-3 sm:text-base ${v.left}`}
       >
         {label}
       </span>
       <span
-        className={`inline-flex min-w-[2.75rem] items-center justify-center rounded-full border px-3 py-2.5 text-base font-semibold leading-none transition-all duration-200 ease-out group-hover:-ml-px group-hover:rounded-l-none group-hover:border-l-0 sm:min-w-[3rem] sm:py-3 sm:text-lg ${v.right}`}
+        className={`inline-flex min-w-[2.75rem] items-center justify-center rounded-full border px-3 py-2.5 text-base font-semibold leading-none transition-[border-radius,margin,border-color,background-color,box-shadow] duration-300 ease-[cubic-bezier(0.33,1,0.68,1)] group-hover:-ml-px group-hover:rounded-l-lg group-hover:rounded-r-[999px] group-hover:border-l-0 sm:min-w-[3rem] sm:py-3 sm:text-lg ${v.right}`}
         aria-hidden
       >
-        →
+        <span className="inline-block origin-center -rotate-[30deg] transition-transform duration-300 ease-[cubic-bezier(0.33,1,0.68,1)] group-hover:rotate-0">
+          →
+        </span>
       </span>
     </>
   );
 
-  const wrapClass = `group inline-flex w-fit items-stretch gap-2 transition-[gap] duration-200 ease-out hover:gap-0 ${v.group} ${className}`.trim();
+  const wrapClass = `group inline-flex w-fit items-stretch gap-2 transition-[gap] duration-300 ease-[cubic-bezier(0.33,1,0.68,1)] hover:gap-0 ${v.group} ${className}`.trim();
 
   const isExternal =
     href.startsWith("http://") ||
