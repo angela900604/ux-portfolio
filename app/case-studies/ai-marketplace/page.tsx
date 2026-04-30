@@ -17,11 +17,15 @@ import { SplitCapsuleLink } from "@/app/components/SplitCapsuleLink";
 
 const MINA_HERO = "/case-studies/mina/mina-ai-hero.png";
 const MINA_MOCKUP_HAND = "/case-studies/mina/mockup-hand-01.png";
-const MINA_FLOW_SINGLE = "/case-studies/mina/flow-single-listing.png";
-const MINA_FLOW_MULTIPLE = "/case-studies/mina/flow-multiple-listings.png";
+const MINA_TRACK_A_FLOWS = "/case-studies/mina/track-a-single-and-multiple-flows.png";
+const MINA_TRACK_A_FLOWS_W = 1024;
+const MINA_TRACK_A_FLOWS_H = 656;
 const MINA_MOCKUP_ISO = "/case-studies/mina/mockup-isometric-02.png";
 const MINA_MOCKUP_SOFA = "/case-studies/mina/mockup-sofa-04.png";
 const MINA_COPILOT_FLOW = "/case-studies/mina/parenting-copilot-flow.png";
+/** Matches `parenting-copilot-flow.png` on disk (1024×428). For sharper retina, replace asset with ~2048px-wide export. */
+const MINA_COPILOT_FLOW_W = 1024;
+const MINA_COPILOT_FLOW_H = 428;
 
 /** Hero “3 demo” clip — WebM (smaller) then H.264 MP4; MOV fallback if a source fails. */
 const MINA_THREE_DEMO_SOURCES = {
@@ -477,35 +481,16 @@ export default function AiMarketplaceCaseStudy() {
                 of blocking listing creation.
               </p>
             </div>
-            <div className="grid gap-6 lg:grid-cols-2">
-              <figure className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
-                <Image
-                  src={MINA_FLOW_SINGLE}
-                  alt="MINA single listing flow: choose single path, capture photo, progressive listing fields in a bottom sheet while the image stays in focus"
-                  width={1024}
-                  height={457}
-                  className="h-auto w-full object-contain"
-                  sizes="(max-width: 1024px) 100vw, 512px"
-                />
-                <figcaption className="border-t border-zinc-800/80 px-4 py-3 text-xs text-zinc-500 sm:text-sm">
-                  Single listing — photo-first layout with progressive disclosure as
-                  AI fills the sheet.
-                </figcaption>
-              </figure>
-              <figure className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
-                <Image
-                  src={MINA_FLOW_MULTIPLE}
-                  alt="MINA multiple listing flow: chat agent, image tags for detected items, modal listing details, confirm to publish"
-                  width={1024}
-                  height={333}
-                  className="h-auto w-full object-contain"
-                  sizes="(max-width: 1024px) 100vw, 512px"
-                />
-                <figcaption className="border-t border-zinc-800/80 px-4 py-3 text-xs text-zinc-500 sm:text-sm">
-                  Multiple listings — chat agent, per-item modals from tags, then
-                  publish.
-                </figcaption>
-              </figure>
+            <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+              <Image
+                src={MINA_TRACK_A_FLOWS}
+                alt="MINA create listing: one photo to multiple listings (top row) and one photo to a single listing (bottom row), from home through photo capture to AI-assisted listing details"
+                width={MINA_TRACK_A_FLOWS_W}
+                height={MINA_TRACK_A_FLOWS_H}
+                className="h-auto w-full object-contain"
+                unoptimized
+                sizes="(max-width: 1280px) 100vw, 1200px"
+              />
             </div>
           </div>
 
@@ -560,10 +545,11 @@ export default function AiMarketplaceCaseStudy() {
             <Image
               src={MINA_COPILOT_FLOW}
               alt="Parenting Copilot flow from trigger notification to conversational recommendations and one-tap handoff to listing intent"
-              width={1024}
-              height={576}
-              className="h-auto w-full object-cover"
-              sizes="(max-width: 1200px) 100vw, 1152px"
+              width={MINA_COPILOT_FLOW_W}
+              height={MINA_COPILOT_FLOW_H}
+              quality={92}
+              className="h-auto w-full object-contain"
+              sizes="(max-width: 1024px) 100vw, min(100vw, 896px)"
             />
           </figure>
 
