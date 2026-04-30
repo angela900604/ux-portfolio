@@ -54,8 +54,7 @@ export type SplitCapsuleLinkProps = {
 };
 
 /**
- * Pill CTA: label and arrow are separate capsules; on hover gap closes and
- * `filter: url(#splitCapsuleGoo)` applies after gap closes (see globals.css).
+ * Pill CTA: label and arrow are separate capsules; on hover the gap closes and the pills join (sharp, no blur).
  * Arrow points slightly up-right at rest, straight right on hover.
  */
 export function SplitCapsuleLink({
@@ -71,7 +70,7 @@ export function SplitCapsuleLink({
   const inner = (
     <span className="split-capsule-goo-layer inline-flex w-fit items-stretch gap-2">
       <span
-        className={`inline-flex items-center rounded-full border px-5 py-2.5 text-sm font-semibold transition-[border-radius,padding,border-color,background-color,box-shadow] duration-300 ease-[cubic-bezier(0.33,1,0.68,1)] group-hover:rounded-l-[999px] group-hover:rounded-r-lg group-hover:border-r-0 group-hover:pr-5 sm:px-6 sm:py-3 sm:text-base ${v.left}`}
+        className={`inline-flex items-center rounded-full border px-5 py-2.5 text-sm font-semibold transition-[border-radius,padding,border-color,background-color,box-shadow] duration-[260ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:rounded-l-[999px] group-hover:rounded-r-lg group-hover:border-r-0 group-hover:pr-5 sm:px-6 sm:py-3 sm:text-base ${v.left}`}
       >
         {label}
       </span>

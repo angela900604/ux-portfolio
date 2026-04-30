@@ -50,30 +50,6 @@ export default function RootLayout({
       className={`${sans.variable} ${display.variable} ${serifDisplay.variable} scroll-smooth`}
     >
       <body className="min-h-screen overflow-x-hidden">
-        {/* SplitCapsuleLink: metaball merge — blur overlap + alpha matrix “pinch” (see globals.css) */}
-        <svg
-          aria-hidden
-          className="pointer-events-none absolute h-px w-px overflow-hidden"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <defs>
-            <filter
-              id="splitCapsuleGoo"
-              x="-60%"
-              y="-60%"
-              width="220%"
-              height="220%"
-              colorInterpolationFilters="sRGB"
-            >
-              <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />
-              <feColorMatrix
-                in="blur"
-                type="matrix"
-                values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10"
-              />
-            </filter>
-          </defs>
-        </svg>
         <SoftCursor />
         <div className="flex min-h-screen flex-col">
           <header className="sticky top-0 z-50 border-b border-zinc-800 bg-zinc-950/80 backdrop-blur-sm">
