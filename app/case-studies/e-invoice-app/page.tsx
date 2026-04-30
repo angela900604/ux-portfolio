@@ -20,6 +20,7 @@ import { GuidedOnboardingVideoPair } from "./OnboardingDemoVideo";
 import { SettingHomeModulesVideo } from "./SettingHomeModulesVideo";
 import { LoginBeforeAfterSlider } from "./LoginBeforeAfterSlider";
 import { ProblemPersonasBlock } from "./ProblemPersonasBlock";
+import { SplitCapsuleCta } from "@/app/components/SplitCapsuleCta";
 
 export const metadata = {
   title:
@@ -337,15 +338,11 @@ export default function EInvoiceCaseStudy() {
                 noAccentGridClassName="grid w-full min-w-0 grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-8 [&>div]:min-w-0"
               />
               <div className="max-w-3xl">
-                <Link
+                <SplitCapsuleCta
                   href="/user-research-journey"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-400 px-7 py-3.5 text-base font-semibold text-zinc-950 shadow-[0_12px_40px_-12px_rgba(52,211,153,0.55)] ring-1 ring-white/15 transition hover:bg-emerald-300 hover:shadow-[0_14px_44px_-12px_rgba(52,211,153,0.6)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-200"
-                >
-                  View full research journey
-                  <span aria-hidden className="text-lg leading-none">
-                    →
-                  </span>
-                </Link>
+                  variant="emeraldSolid"
+                  label="View full research journey"
+                />
               </div>
             </div>
           }
@@ -1104,22 +1101,18 @@ export default function EInvoiceCaseStudy() {
             early logic.
           </p>
           <div className="flex flex-col gap-3 pt-1 sm:flex-row sm:flex-wrap sm:items-center">
-            <a
+            <SplitCapsuleCta
               href={FIGMA_MOCKUP_PAGE}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-500/90 px-5 py-2.5 text-sm font-semibold text-zinc-950 transition hover:bg-emerald-400"
-            >
-              Mockup &amp; page flow →
-            </a>
-            <a
+              external
+              variant="emeraldHiFi"
+              label="Mockup & page flow"
+            />
+            <SplitCapsuleCta
               href={FIGMA_WIREFRAME_FLOW}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-zinc-600 bg-transparent px-5 py-2.5 text-sm font-medium text-zinc-200 transition hover:border-zinc-400 hover:text-zinc-50"
-            >
-              Wireframe &amp; wireflow →
-            </a>
+              external
+              variant="outlineZinc"
+              label="Wireframe & wireflow"
+            />
           </div>
         </CaseStudyInViewSection>
         </div>

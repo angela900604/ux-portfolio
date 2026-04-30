@@ -13,6 +13,7 @@ import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { DesignJourneyCollapsible } from "../_components/DesignJourneyCollapsible";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
+import { SplitCapsuleCta } from "@/app/components/SplitCapsuleCta";
 
 const MINA_HERO = "/case-studies/mina/mina-ai-hero.png";
 const MINA_MOCKUP_HAND = "/case-studies/mina/mockup-hand-01.png";
@@ -129,17 +130,12 @@ export default function AiMarketplaceCaseStudy() {
                 noAccentGridClassName="grid w-full min-w-0 grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-8 [&>div]:min-w-0"
               />
               <div className="max-w-3xl">
-                <a
+                <SplitCapsuleCta
                   href={MINA_APP_STORE}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-400 px-7 py-3.5 text-base font-semibold text-zinc-950 shadow-[0_12px_40px_-12px_rgba(52,211,153,0.55)] ring-1 ring-white/15 transition hover:bg-emerald-300 hover:shadow-[0_14px_44px_-12px_rgba(52,211,153,0.6)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-200"
-                >
-                  Mina · App Store (Canada)
-                  <span aria-hidden className="text-lg leading-none">
-                    →
-                  </span>
-                </a>
+                  external
+                  variant="coral"
+                  label="Mina · App Store (Canada)"
+                />
               </div>
             </div>
           }
