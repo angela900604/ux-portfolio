@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ImageLightbox } from "@/app/components/ImageLightbox";
 import { SITE_SHELL_CONTAINER } from "@/lib/site-shell";
 import { FadeInSection } from "./components/FadeInSection";
 import { HeroWithBubble } from "./components/HeroWithBubble";
@@ -72,9 +71,6 @@ const WORK_THUMB: Record<string, string> = {
   "baskin-robbins": "/case-studies/baskin-robbins/home-cover.png",
 };
 
-const E_INVOICE_HOME_POSTER = "/home/e-invoice-flagship-cover.png";
-const MINA_HOME_POSTER = "/case-studies/mina/mina-ai-hero.png";
-
 export default function Home() {
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-100">
@@ -100,40 +96,25 @@ export default function Home() {
                 >
                   <div className="group flex h-full min-h-0 flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/30 transition duration-300 hover:-translate-y-1 hover:border-zinc-500 hover:shadow-[0_20px_48px_-28px_rgba(0,0,0,0.75)]">
                     <div className="relative aspect-[16/11] overflow-hidden bg-zinc-900/50">
-                      {item.slug === "e-invoice-app" ? (
-                        <ImageLightbox
-                          src={E_INVOICE_HOME_POSTER}
-                          alt={`${item.title} — preview still`}
-                          className="absolute inset-0 block"
-                          disableHoverScale
-                        >
+                      <Link
+                        href={`/case-studies/${item.slug}`}
+                        className="absolute inset-0 block rounded-xl outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950"
+                        aria-label={`Open case study: ${item.title}`}
+                      >
+                        {item.slug === "e-invoice-app" ? (
                           <EInvoiceHomeProjectCover />
-                        </ImageLightbox>
-                      ) : item.slug === "ai-marketplace" ? (
-                        <ImageLightbox
-                          src={MINA_HOME_POSTER}
-                          alt={`${item.title} — preview still`}
-                          className="absolute inset-0 block"
-                          disableHoverScale
-                        >
+                        ) : item.slug === "ai-marketplace" ? (
                           <MinaHomeProjectCover />
-                        </ImageLightbox>
-                      ) : (
-                        <ImageLightbox
-                          src={WORK_THUMB[item.slug]}
-                          alt={`${item.title} thumbnail`}
-                          className="absolute inset-0"
-                          disableHoverScale
-                        >
+                        ) : (
                           <Image
                             src={WORK_THUMB[item.slug]}
-                            alt={`${item.title} thumbnail`}
+                            alt=""
                             fill
                             className="object-cover opacity-92 transition duration-500 group-hover:scale-[1.04]"
                             sizes="(max-width: 639px) 100vw, (max-width: 1480px) 50vw, 720px"
                           />
-                        </ImageLightbox>
-                      )}
+                        )}
+                      </Link>
                       <div
                         className="pointer-events-none absolute inset-0 bg-gradient-to-t from-zinc-950/50 to-transparent opacity-0 transition duration-300 group-hover:opacity-100"
                         aria-hidden
@@ -217,20 +198,19 @@ export default function Home() {
                 <FadeInSection className="h-full" delay={0.05 + i * 0.05}>
                   <div className="group flex h-full min-h-0 flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/30 transition duration-300 hover:-translate-y-1 hover:border-zinc-500 hover:shadow-[0_20px_48px_-28px_rgba(0,0,0,0.75)]">
                     <div className="relative aspect-[16/11] overflow-hidden bg-zinc-900/50">
-                      <ImageLightbox
-                        src={ADJACENT_WORK_THUMB[item.slug]}
-                        alt={`${item.title} thumbnail`}
-                        className="absolute inset-0"
-                        disableHoverScale
+                      <Link
+                        href={`/case-studies/${item.slug}`}
+                        className="absolute inset-0 block rounded-xl outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950"
+                        aria-label={`Open case study: ${item.title}`}
                       >
                         <Image
                           src={ADJACENT_WORK_THUMB[item.slug]}
-                          alt={`${item.title} thumbnail`}
+                          alt=""
                           fill
                           className="object-cover opacity-92 transition duration-500 group-hover:scale-[1.04]"
                           sizes="(max-width: 639px) 100vw, (max-width: 1024px) 50vw, 400px"
                         />
-                      </ImageLightbox>
+                      </Link>
                       <div
                         className="pointer-events-none absolute inset-0 bg-gradient-to-t from-zinc-950/50 to-transparent opacity-0 transition duration-300 group-hover:opacity-100"
                         aria-hidden

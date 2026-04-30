@@ -18,10 +18,10 @@ import { SplitCapsuleLink } from "@/app/components/SplitCapsuleLink";
 
 const MINA_HERO = "/case-studies/mina/mina-ai-hero.png";
 const MINA_MOCKUP_HAND = "/case-studies/mina/mockup-hand-01.png";
-const MINA_TRACK_A_FLOWS = "/case-studies/mina/track-a-single-and-multiple-flows.png";
-/** Intrinsic px of `MINA_TRACK_A_FLOWS` on disk. Full-column layout needs ~2048px-wide export + updated W/H for sharp Retina. */
-const MINA_TRACK_A_FLOWS_W = 1024;
-const MINA_TRACK_A_FLOWS_H = 656;
+/** Screen recording — listing flow (Track A). Filename has spaces; encode for URL. */
+const MINA_TRACK_A_SCREEN_RECORDING = `/case-studies/mina/${encodeURIComponent(
+  "Screen Recording 2026-04-30 at 15.53.42.mov",
+)}`;
 const MINA_OPPORTUNITY_IMAGE = "/case-studies/mina/mina-event-opportunity.png";
 const MINA_OPPORTUNITY_W = 1024;
 const MINA_OPPORTUNITY_H = 907;
@@ -489,107 +489,43 @@ export default function AiMarketplaceCaseStudy() {
               in a cohorted A/B.
             </h2>
 
-            <div className="max-w-4xl space-y-8 font-serif text-[15px] leading-relaxed text-zinc-200 sm:text-base">
-              <p className="text-zinc-200">
-                Posting one item on Facebook Marketplace takes 10 minutes. Posting
-                a bag of baby gear takes all afternoon.
-              </p>
-
-              <div className="-mx-1 overflow-x-auto sm:mx-0">
-                <div className="overflow-hidden rounded-xl border border-zinc-800">
-                  <table className="w-full min-w-[520px] border-collapse text-left">
-                    <thead>
-                      <tr className="border-b border-zinc-700 bg-zinc-800/75">
-                        <th className="w-[26%] px-3 pb-3 pt-3 align-bottom font-normal text-zinc-500" />
-                        <th
-                          scope="col"
-                          className="px-0 pb-3 pr-4 pt-3 align-bottom text-sm font-medium text-[#E8A995] sm:text-base"
-                        >
-                          Single listing
-                        </th>
-                        <th
-                          scope="col"
-                          className="px-0 pb-3 pr-3 pt-3 align-bottom text-sm font-medium text-[#E8A995] sm:text-base"
-                        >
-                          Multiple listings
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody className="bg-zinc-950/40 text-zinc-200">
-                      <tr className="border-b border-zinc-700/80">
-                        <th
-                          scope="row"
-                          className="px-3 py-3 align-top text-left text-sm font-medium text-zinc-500"
-                        >
-                          Shell
-                        </th>
-                        <td className="py-3 pr-4 align-top">
-                          Photo-focused + tab detail sheet
-                        </td>
-                        <td className="py-3 pr-3 align-top">
-                          Conversational agent
-                        </td>
-                      </tr>
-                      <tr className="border-b border-zinc-700/80">
-                        <th
-                          scope="row"
-                          className="px-3 py-3 align-top text-left text-sm font-medium text-zinc-500"
-                        >
-                          AI output
-                        </th>
-                        <td className="py-3 pr-4 align-top">
-                          Fields appear as generation completes
-                        </td>
-                        <td className="py-3 pr-3 align-top">
-                          Model tags items on image
-                        </td>
-                      </tr>
-                      <tr>
-                        <th
-                          scope="row"
-                          className="px-3 py-3 align-top text-left text-sm font-medium text-zinc-500"
-                        >
-                          Confirm
-                        </th>
-                        <td className="py-3 pr-4 align-top">Review inline</td>
-                        <td className="py-3 pr-3 align-top">
-                          Tap tag → modal → single confirm
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-
-              <p className="font-sans text-lg font-semibold leading-snug tracking-tight text-zinc-50 sm:text-xl md:text-[1.35rem] md:leading-snug">
-                No full-screen spinner. Parents see progress as latency does its
-                work.
-              </p>
-              <div className="font-sans mt-8 border-t border-zinc-700/80 pt-6">
-                <p className="border-l-2 border-[#B75E45]/55 pl-4 text-zinc-300 leading-relaxed">
-                  <span className="font-semibold text-zinc-100">IA decision:</span>{" "}
-                  Zip code, meetup preferences, and profile-level fields live in
-                  onboarding and settings—not duplicated inside this flow.
+            <div className="grid max-w-5xl gap-4 sm:grid-cols-2 sm:gap-5">
+              <div className="flex flex-col gap-3 rounded-2xl border border-zinc-700/80 bg-zinc-900/50 p-5 sm:gap-3.5 sm:p-6">
+                <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+                  System constraints
+                </p>
+                <p className="text-xs font-semibold uppercase leading-relaxed tracking-[0.08em] text-zinc-200 sm:text-sm">
+                  No full-screen spinner. Parents see progress as latency does its
+                  work.
+                </p>
+                <p className="text-sm leading-relaxed text-zinc-400 sm:text-[15px]">
+                  <span className="font-semibold text-zinc-100">
+                    AI-generated listings aren&apos;t instant—show staged progress,
+                    not a spinner for users to stare and wait.
+                  </span>
                 </p>
               </div>
+              <div className="flex flex-col gap-3 rounded-2xl border border-zinc-700/80 bg-zinc-900/50 p-5 sm:gap-3.5 sm:p-6">
+                <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+                  Automation and user control balance
+                </p>
+                <p className="text-sm leading-relaxed text-zinc-300 sm:text-[15px]">
+                  Preview-before-publish is trust-first for parents—and it mirrors
+                  real server state: nothing ships until publish.
+                </p>
+              </div>
+            </div>
 
-              <div className="w-full overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
-                <ImageLightbox
-                  src={MINA_TRACK_A_FLOWS}
-                  alt="MINA create listing: one photo to multiple listings (review details, confirm to publish); one photo to a single listing with progressive fields as AI generates, avoiding a blocking spinner"
-                  className="block w-full"
-                  disableHoverScale
-                >
-                  <Image
-                    src={MINA_TRACK_A_FLOWS}
-                    alt="MINA create listing: one photo to multiple listings (review details, confirm to publish); one photo to a single listing with progressive fields as AI generates, avoiding a blocking spinner"
-                    width={MINA_TRACK_A_FLOWS_W}
-                    height={MINA_TRACK_A_FLOWS_H}
-                    className="h-auto w-full object-contain"
-                    quality={95}
-                    sizes="(max-width: 640px) 100vw, min(896px, calc(100vw - 3rem))"
-                  />
-                </ImageLightbox>
+            <div className="max-w-4xl w-full">
+              <div className="w-full overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950">
+                <video
+                  className="block h-auto w-full max-h-[min(85vh,56rem)] bg-black object-contain"
+                  controls
+                  playsInline
+                  preload="metadata"
+                  src={MINA_TRACK_A_SCREEN_RECORDING}
+                  aria-label="MINA create listing flow: screen recording of single and multiple listing paths with progressive AI output and no blocking spinner"
+                />
               </div>
             </div>
           </div>
@@ -661,50 +597,6 @@ export default function AiMarketplaceCaseStudy() {
                   />
                 </ImageLightbox>
               </figure>
-            </div>
-          </div>
-
-          <div
-            id="mina-ai-api-ux"
-            className="scroll-mt-28 space-y-6 border-t border-zinc-800/90 pt-8 sm:scroll-mt-32 sm:pt-10"
-          >
-            <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-              System constraints
-            </span>
-            <h3 className="max-w-3xl text-lg font-semibold leading-snug tracking-tight text-zinc-100 sm:text-xl md:text-[1.35rem] md:leading-snug">
-              How listing AI and Copilot UX bridge real API behavior—not just
-              feature copy
-            </h3>
-            <div className="grid max-w-5xl gap-4 sm:grid-cols-2 sm:gap-5">
-              <div className="flex flex-col gap-3 rounded-2xl border border-zinc-700/80 bg-zinc-900/50 p-5 sm:gap-3.5 sm:p-6">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-zinc-500 sm:text-[11px]">
-                  Model latency
-                </p>
-                <p className="text-base font-semibold leading-snug text-zinc-100 sm:text-lg">
-                  AI-generated listings aren&apos;t instant—show staged progress,
-                  not a spinner that pretends they are.
-                </p>
-                <p className="text-sm leading-relaxed text-zinc-400">
-                  Model latency varies, so I designed around multi-turn disclosure
-                  and partial drafts—parents always see forward movement instead of a
-                  blocking wait that implies instant completion. Engineering can stream
-                  or chunk responses without the UI lying about readiness.
-                </p>
-              </div>
-              <div className="flex flex-col gap-3 rounded-2xl border border-zinc-700/80 bg-zinc-900/50 p-5 sm:gap-3.5 sm:p-6">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-zinc-500 sm:text-[11px]">
-                  Server state
-                </p>
-                <p className="text-base font-semibold leading-snug text-zinc-100 sm:text-lg">
-                  Preview-before-publish is trust-first for parents—and it mirrors
-                  real server state: nothing ships until publish.
-                </p>
-                <p className="text-sm leading-relaxed text-zinc-400">
-                  Drafts stay explicit until a publish action, which simplifies
-                  rollback and moderation hooks when the model mis-labels price or
-                  condition.
-                </p>
-              </div>
             </div>
           </div>
         </CaseStudyInViewSection>

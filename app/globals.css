@@ -163,3 +163,37 @@ html.soft-cursor :disabled:hover {
     will-change: auto;
   }
 }
+
+/**
+ * SplitCapsuleLink — droplet merge: animate gap only (GPU-friendly).
+ * `filter: url(#…)` cannot interpolate smoothly; applying it only after gap
+ * closes avoids a muddy “blurred gutter” mid-transition.
+ */
+.split-capsule-goo-layer {
+  isolation: isolate;
+  gap: 0.5rem;
+  filter: none;
+  transition-property: gap, filter;
+  transition-duration: 260ms, 0ms;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1), linear;
+  transition-delay: 0ms, 0ms;
+}
+
+.group:hover .split-capsule-goo-layer,
+.group:focus-within .split-capsule-goo-layer {
+  gap: 0;
+  filter: url(#splitCapsuleGoo);
+  transition-duration: 260ms, 0ms;
+  transition-delay: 0ms, 255ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .split-capsule-goo-layer {
+    transition: none;
+  }
+
+  .group:hover .split-capsule-goo-layer,
+  .group:focus-within .split-capsule-goo-layer {
+    filter: none;
+  }
+}

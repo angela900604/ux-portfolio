@@ -54,7 +54,8 @@ export type SplitCapsuleLinkProps = {
 };
 
 /**
- * Pill CTA: label and arrow are separate capsules; on hover gap closes and radii read as two joined droplets.
+ * Pill CTA: label and arrow are separate capsules; on hover gap closes and
+ * `filter: url(#splitCapsuleGoo)` applies after gap closes (see globals.css).
  * Arrow points slightly up-right at rest, straight right on hover.
  */
 export function SplitCapsuleLink({
@@ -68,24 +69,24 @@ export function SplitCapsuleLink({
 }: SplitCapsuleLinkProps) {
   const v = variantClass[variant];
   const inner = (
-    <>
+    <span className="split-capsule-goo-layer inline-flex w-fit items-stretch gap-2">
       <span
         className={`inline-flex items-center rounded-full border px-5 py-2.5 text-sm font-semibold transition-[border-radius,padding,border-color,background-color,box-shadow] duration-300 ease-[cubic-bezier(0.33,1,0.68,1)] group-hover:rounded-l-[999px] group-hover:rounded-r-lg group-hover:border-r-0 group-hover:pr-5 sm:px-6 sm:py-3 sm:text-base ${v.left}`}
       >
         {label}
       </span>
       <span
-        className={`inline-flex min-w-[2.75rem] items-center justify-center rounded-full border px-3 py-2.5 text-base font-semibold leading-none transition-[border-radius,margin,border-color,background-color,box-shadow] duration-300 ease-[cubic-bezier(0.33,1,0.68,1)] group-hover:-ml-px group-hover:rounded-l-lg group-hover:rounded-r-[999px] group-hover:border-l-0 sm:min-w-[3rem] sm:py-3 sm:text-lg ${v.right}`}
+        className={`inline-flex min-w-[2.75rem] items-center justify-center rounded-full border px-3 py-2.5 text-base font-semibold leading-none transition-[border-radius,margin,border-color,background-color,box-shadow] duration-[260ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-ml-px group-hover:rounded-l-lg group-hover:rounded-r-[999px] group-hover:border-l-0 sm:min-w-[3rem] sm:py-3 sm:text-lg ${v.right}`}
         aria-hidden
       >
-        <span className="inline-block origin-center -rotate-[30deg] transition-transform duration-300 ease-[cubic-bezier(0.33,1,0.68,1)] group-hover:rotate-0">
+        <span className="inline-block origin-center -rotate-[30deg] transition-transform duration-[260ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:rotate-0">
           →
         </span>
       </span>
-    </>
+    </span>
   );
 
-  const wrapClass = `group inline-flex w-fit items-stretch gap-2 transition-[gap] duration-300 ease-[cubic-bezier(0.33,1,0.68,1)] hover:gap-0 ${v.group} ${className}`.trim();
+  const wrapClass = `group inline-flex w-fit items-stretch ${v.group} ${className}`.trim();
 
   const isExternal =
     href.startsWith("http://") ||
