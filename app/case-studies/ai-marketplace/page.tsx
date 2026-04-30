@@ -13,14 +13,18 @@ import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { DesignJourneyCollapsible } from "../_components/DesignJourneyCollapsible";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
-import VisualPlaceholder from "../_components/VisualPlaceholder";
-import { MinaPrototypeVideo } from "./MinaPrototypeVideo";
 
 const MINA_HERO = "/case-studies/mina/mina-ai-hero.png";
 const MINA_MOCKUP_HAND = "/case-studies/mina/mockup-hand-01.png";
 const MINA_MOCKUP_ISO = "/case-studies/mina/mockup-isometric-02.png";
 const MINA_MOCKUP_SOFA = "/case-studies/mina/mockup-sofa-04.png";
 const MINA_COPILOT_FLOW = "/case-studies/mina/parenting-copilot-flow.png";
+/** Figma / component library handoff composite — fills frame below design system intro */
+const MINA_COMPONENT_LIBRARY_COVER =
+  "/case-studies/mina/component-library-cover.png";
+/** Create-listing concepts: single (photo + tabs) vs. multi (agent + tag modals) */
+const MINA_LISTING_FLOW_01 = "/case-studies/mina/listing-flow-01.png";
+const MINA_LISTING_FLOW_02 = "/case-studies/mina/listing-flow-02.png";
 
 /** Hero “3 demo” clip — WebM (smaller) then H.264 MP4; MOV fallback if a source fails. */
 const MINA_THREE_DEMO_SOURCES = {
@@ -40,7 +44,7 @@ const AT_A_GLANCE_ITEMS = [
   },
   {
     label: "Role",
-    value: "Sole product designer (IC) · 1 PM + 5 engineers",
+    value: "Sole product designer · 1 PM + 5 engineers",
   },
   {
     label: "Project type",
@@ -68,7 +72,7 @@ const MINA_TLDR_METRICS: CaseStudyHeroTldrMetric[] = [
   },
   {
     kicker: "Team",
-    value: "Sole IC",
+    value: "Sole designer",
     title: "Product design",
     detail: "1 PM + 5 engineers — end-to-end UX on iOS.",
   },
@@ -347,7 +351,8 @@ export default function AiMarketplaceCaseStudy() {
                         color: "#F0F0F0",
                       }}
                     >
-                      One photo. AI generates listings through chat — no forms.
+                      One photo — single vs. multi paths split up front; tabs and
+                      progressive detail instead of staring at a spinner.
                     </p>
                   </div>
                   <div
@@ -448,20 +453,69 @@ export default function AiMarketplaceCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Track A · Business impact
           </span>
-          <div className="grid items-start gap-8 lg:grid-cols-[1fr_auto] lg:gap-10">
-            <div className="min-w-0 space-y-4">
-              <h2 className="max-w-3xl text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
-                I redesigned the listing flow end-to-end — completed listings up
-                ~30% in a cohorted A/B.
-              </h2>
-              <p className="max-w-3xl text-zinc-300 leading-relaxed">
-                Posting one item on Facebook Marketplace takes 10 minutes. Posting
-                a bag of baby gear takes all afternoon.
+          <div className="max-w-3xl space-y-4">
+            <h2 className="text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
+              I redesigned the listing flow end-to-end — completed listings up ~30%
+              in a cohorted A/B.
+            </h2>
+            <p className="text-zinc-300 leading-relaxed">
+              Posting one item on Facebook Marketplace takes 10 minutes. Posting a
+              bag of baby gear takes all afternoon.
+            </p>
+            <div className="space-y-4 text-zinc-300 leading-relaxed">
+              <p>
+                The create-listing experience now{" "}
+                <span className="text-zinc-100">
+                  separates single-item and multi-item paths at the start
+                </span>
+                —each tuned to how long generation takes and how much conversation
+                parents need.
+              </p>
+              <p>
+                <span className="text-zinc-100">Single listing</span> drops the chat
+                agent. It&apos;s a{" "}
+                <span className="text-zinc-100">photo-first layout with tabs</span>:
+                listing details appear as they&apos;re generated so users aren&apos;t
+                stuck watching a spinner while the model catches up.
+              </p>
+              <p>
+                <span className="text-zinc-100">Multiple listings</span> keep the{" "}
+                <span className="text-zinc-100">conversational agent</span>. Tapping a
+                tag opens a modal with that item&apos;s draft; after everything looks
+                right, a single &quot;ready to publish&quot; beat hands off to ship.
+              </p>
+              <p>
+                <span className="text-zinc-100">Zip code and meetup preference</span>{" "}
+                belong in account setup—I&apos;d guide people through them in
+                onboarding so listings don&apos;t re-litigate logistics every time.
+                If life changes, they adjust once in Settings.
               </p>
             </div>
-            <div className="mx-auto flex w-full max-w-[300px] shrink-0 flex-col items-center lg:mx-0 lg:items-end">
-              <MinaPrototypeVideo />
-            </div>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2 lg:gap-5">
+            <figure className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+              <Image
+                src={MINA_LISTING_FLOW_01}
+                alt="MINA create listing — single-item style flow: photo focus with tabs as AI fills listing details progressively"
+                width={1024}
+                height={1024}
+                className="h-auto w-full object-cover"
+                sizes="(max-width: 640px) 100vw, 50vw"
+                unoptimized
+              />
+            </figure>
+            <figure className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+              <Image
+                src={MINA_LISTING_FLOW_02}
+                alt="MINA create listing — multi-item agent flow: conversational UI with tag-driven listing detail modals before publish"
+                width={1024}
+                height={1024}
+                className="h-auto w-full object-cover"
+                sizes="(max-width: 640px) 100vw, 50vw"
+                unoptimized
+              />
+            </figure>
           </div>
 
           <div
@@ -524,7 +578,7 @@ export default function AiMarketplaceCaseStudy() {
 
           <div
             id="mina-ai-api-ux"
-            className="scroll-mt-28 space-y-4 border-t border-zinc-800/90 pt-8 sm:scroll-mt-32 sm:pt-10"
+            className="scroll-mt-28 space-y-5 border-t border-zinc-800/90 pt-8 sm:scroll-mt-32 sm:pt-10"
           >
             <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
               System constraints
@@ -533,44 +587,30 @@ export default function AiMarketplaceCaseStudy() {
               How listing AI and Copilot UX bridge real API behavior—not just
               feature copy
             </h3>
-            <div className="max-w-3xl space-y-4 text-zinc-300 leading-relaxed">
-              <p>
-                <span className="text-zinc-100">AI-generated listings are not a
-                single synchronous form submit.</span> Model and orchestration
-                latency varies; I designed the chat-native flow around{" "}
-                <span className="text-zinc-100">
-                  multi-turn disclosure, visible “working” states, and partial
-                  drafts
-                </span>{" "}
-                so parents always see forward progress instead of a blocking
-                spinner that implies instant completion. That gave engineering
-                room to stream or chunk responses without the UI lying about
-                readiness.
-              </p>
-              <p>
-                <span className="text-zinc-100">
-                  Preview-before-publish is trust-first for parents
-                </span>
-                —but it also matches how the team wanted to treat server state:{" "}
-                <span className="text-zinc-100">
-                  drafts stay explicit until a publish action
-                </span>
-                , which simplifies idempotency, rollback, and moderation hooks
-                when the model mis-labels price or condition. UX and API contracts
-                pointed the same direction rather than bolting trust on as a
-                veneer.
-              </p>
-              <p>
-                For <span className="text-zinc-100">Copilot recommendations</span>,
-                not every nudge can block on perfect real-time inventory or event
-                data. I paired ideal paths with{" "}
-                <span className="text-zinc-100">
-                  graceful degradation—cached guidance, clear “we’ll follow up”
-                  states
-                </span>
-                —so the client never promises stock or timing the backend
-                couldn&apos;t guarantee in v1.
-              </p>
+            <div className="grid gap-4 md:grid-cols-2 md:gap-5">
+              <div className="rounded-2xl border border-zinc-800/90 bg-zinc-900/45 p-6 sm:p-7">
+                <p className="text-sm leading-relaxed text-zinc-300 sm:text-base">
+                  <span className="font-medium text-zinc-100">
+                    AI-generated listings aren&apos;t instant.
+                  </span>{" "}
+                  Model latency varies, so I designed around multi-turn disclosure
+                  and partial drafts—parents always see forward progress instead of a
+                  blocking spinner that implies instant completion. Engineering
+                  could stream or chunk responses without the UI lying about
+                  readiness.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-zinc-800/90 bg-zinc-900/45 p-6 sm:p-7">
+                <p className="text-sm leading-relaxed text-zinc-300 sm:text-base">
+                  <span className="font-medium text-zinc-100">
+                    Preview-before-publish is trust-first for parents
+                  </span>
+                  —but it also matches how the team wanted to treat server state:
+                  drafts stay explicit until a publish action, which simplifies
+                  rollback and moderation hooks when the model mis-labels price or
+                  condition.
+                </p>
+              </div>
             </div>
           </div>
         </CaseStudyInViewSection>
@@ -596,23 +636,17 @@ export default function AiMarketplaceCaseStudy() {
             Figma mirrored how iOS consumed them—so devs could pull a cell, a
             chat bubble, or a CTA stack without a bespoke spec each time.
           </p>
-          <p className="max-w-3xl text-sm leading-relaxed text-zinc-500 sm:text-base">
-            Snapshots below are placeholders—drop in 1–2 Figma exports (e.g. atoms +
-            molecules, or AI surface kit). The iframe after them is the full HTML
-            catalog for deep browsing.
-          </p>
-          <div className="grid w-full max-w-5xl gap-4 sm:grid-cols-2 [&_figure]:mt-0">
-            <VisualPlaceholder
-              label="Figma library — core UI (buttons, inputs, cells)"
-              hint="Export a cropped artboard: navigation + listing rows + form fields so engineers see composition at a glance."
-              aspect="video"
+          <figure className="relative aspect-[1024/633] w-full max-w-none overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/50 shadow-[0_0_0_1px_rgba(255,255,255,0.04)_inset]">
+            <Image
+              src={MINA_COMPONENT_LIBRARY_COVER}
+              alt="MINA design system handoff: component library overview, tokens, and UI patterns for engineering"
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 1280px) 100vw, 1280px"
+              unoptimized
+              priority={false}
             />
-            <VisualPlaceholder
-              label="Figma library — AI & chat surfaces"
-              hint="Export chat bubbles, draft states, confirmation patterns—ties directly to preview-before-publish and listing agent flows."
-              aspect="video"
-            />
-          </div>
+          </figure>
           <div className="w-full max-w-3xl space-y-3">
             <div className="overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/50 shadow-[0_0_0_1px_rgba(255,255,255,0.04)_inset]">
               <iframe
@@ -658,16 +692,20 @@ export default function AiMarketplaceCaseStudy() {
             <p className="text-zinc-300 leading-relaxed">
               I translated the direction into{" "}
               <span className="text-zinc-100">mockups and a page flow</span> so
-              engineers could follow the narrative beat-by-beat: the user opens
-              with a single photo; the model analyzes the scene,{" "}
+              engineers could follow the narrative: users choose{" "}
+              <span className="text-zinc-100">single vs. multiple listings</span> up
+              front. One path is{" "}
               <span className="text-zinc-100">
-                detects items, and surfaces labels on the image
+                photo + tabs—details stream in as the model generates
               </span>
-              ; the user then talks to the agent in chat about intent—for example,
-              &quot;I want to sell this stroller&quot;—and the system{" "}
-              <span className="text-zinc-100">drafts a listing</span> from that
-              conversation. The goal was to show a differentiated, investor-friendly
-              story without hiding the hard parts.
+              ; the other keeps a{" "}
+              <span className="text-zinc-100">
+                chat agent with tags and modals per item
+              </span>{" "}
+              before a final publish. Logistics fields like zip and meetup preference
+              sit in onboarding / Settings so the listing flow doesn&apos;t repeat
+              them. The goal was a differentiated story that still matched model
+              latency and trust constraints.
             </p>
             <p className="text-zinc-300 leading-relaxed">
               Engineers pushed back on feasibility:{" "}
