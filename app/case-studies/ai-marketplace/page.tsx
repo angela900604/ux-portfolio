@@ -18,7 +18,7 @@ import { SplitCapsuleLink } from "@/app/components/SplitCapsuleLink";
 
 const MINA_HERO = "/case-studies/mina/mina-ai-hero.png";
 const MINA_MOCKUP_HAND = "/case-studies/mina/mockup-hand-01.png";
-/** Track A — dual listing flows art (full-res PNG; `unoptimized` so Next does not re-encode). */
+/** Track A — dual listing flows art. `unoptimized` = serve PNG as-is (no Next re-encode). W/H must match file pixels (e.g. @3x from 1024×656pt → 3072×1968). */
 const MINA_TRACK_A_FLOWS = "/case-studies/mina/track-a-listing-flows-full.png";
 const MINA_TRACK_A_FLOWS_W = 1024;
 const MINA_TRACK_A_FLOWS_H = 656;
