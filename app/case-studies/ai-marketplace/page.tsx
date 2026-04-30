@@ -19,7 +19,7 @@ import { SplitCapsuleLink } from "@/app/components/SplitCapsuleLink";
 const MINA_HERO = "/case-studies/mina/mina-ai-hero.png";
 const MINA_MOCKUP_HAND = "/case-studies/mina/mockup-hand-01.png";
 const MINA_TRACK_A_FLOWS = "/case-studies/mina/track-a-single-and-multiple-flows.png";
-/** Intrinsic px of `MINA_TRACK_A_FLOWS` on disk. For Retina sharpness, replace asset with ~2× width and update W/H. */
+/** Intrinsic px of `MINA_TRACK_A_FLOWS` on disk. Full-column layout needs ~2048px-wide export + updated W/H for sharp Retina. */
 const MINA_TRACK_A_FLOWS_W = 1024;
 const MINA_TRACK_A_FLOWS_H = 656;
 const MINA_OPPORTUNITY_IMAGE = "/case-studies/mina/mina-event-opportunity.png";
@@ -28,7 +28,7 @@ const MINA_OPPORTUNITY_H = 907;
 const MINA_MOCKUP_ISO = "/case-studies/mina/mockup-isometric-02.png";
 const MINA_MOCKUP_SOFA = "/case-studies/mina/mockup-sofa-04.png";
 const MINA_COPILOT_FLOW = "/case-studies/mina/parenting-copilot-flow.png";
-/** Intrinsic px on disk; layout caps display width to avoid upscaling. Use ~2× export + update for hi-DPI. */
+/** Intrinsic px on disk. Match narrative column width; use ~2048px-wide export + updated W/H to reduce blur on hi-DPI. */
 const MINA_COPILOT_FLOW_W = 1024;
 const MINA_COPILOT_FLOW_H = 428;
 
@@ -496,99 +496,101 @@ export default function AiMarketplaceCaseStudy() {
               </p>
 
               <div className="-mx-1 overflow-x-auto sm:mx-0">
-                <table className="w-full min-w-[520px] border-collapse text-left">
-                  <thead>
-                    <tr className="border-b border-zinc-600">
-                      <th className="w-[26%] pb-3 pr-3 align-bottom font-normal text-zinc-500" />
-                      <th
-                        scope="col"
-                        className="pb-3 pr-4 align-bottom font-normal text-zinc-100"
-                      >
-                        Single listing
-                      </th>
-                      <th
-                        scope="col"
-                        className="pb-3 align-bottom font-normal text-zinc-100"
-                      >
-                        Multiple listings
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody className="text-zinc-200">
-                    <tr className="border-b border-zinc-600">
-                      <th
-                        scope="row"
-                        className="py-3 pr-3 align-top text-left font-semibold text-zinc-100"
-                      >
-                        Shell
-                      </th>
-                      <td className="py-3 pr-4 align-top">
-                        Photo-focused + tab detail sheet
-                      </td>
-                      <td className="py-3 align-top">Conversational agent</td>
-                    </tr>
-                    <tr className="border-b border-zinc-600">
-                      <th
-                        scope="row"
-                        className="py-3 pr-3 align-top text-left font-semibold text-zinc-100"
-                      >
-                        AI output
-                      </th>
-                      <td className="py-3 pr-4 align-top">
-                        Fields appear as generation completes
-                      </td>
-                      <td className="py-3 align-top">Model tags items on image</td>
-                    </tr>
-                    <tr className="border-b border-zinc-600">
-                      <th
-                        scope="row"
-                        className="py-3 pr-3 align-top text-left font-semibold text-zinc-100"
-                      >
-                        Confirm
-                      </th>
-                      <td className="py-3 pr-4 align-top">Review inline</td>
-                      <td className="py-3 align-top">
-                        Tap tag → modal → single confirm
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+                <div className="overflow-hidden rounded-xl border border-zinc-800">
+                  <table className="w-full min-w-[520px] border-collapse text-left">
+                    <thead>
+                      <tr className="border-b border-zinc-700 bg-zinc-800/75">
+                        <th className="w-[26%] px-3 pb-3 pt-3 align-bottom font-normal text-zinc-500" />
+                        <th
+                          scope="col"
+                          className="px-0 pb-3 pr-4 pt-3 align-bottom text-sm font-medium text-[#E8A995] sm:text-base"
+                        >
+                          Single listing
+                        </th>
+                        <th
+                          scope="col"
+                          className="px-0 pb-3 pr-3 pt-3 align-bottom text-sm font-medium text-[#E8A995] sm:text-base"
+                        >
+                          Multiple listings
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody className="bg-zinc-950/40 text-zinc-200">
+                      <tr className="border-b border-zinc-700/80">
+                        <th
+                          scope="row"
+                          className="px-3 py-3 align-top text-left text-sm font-medium text-zinc-500"
+                        >
+                          Shell
+                        </th>
+                        <td className="py-3 pr-4 align-top">
+                          Photo-focused + tab detail sheet
+                        </td>
+                        <td className="py-3 pr-3 align-top">
+                          Conversational agent
+                        </td>
+                      </tr>
+                      <tr className="border-b border-zinc-700/80">
+                        <th
+                          scope="row"
+                          className="px-3 py-3 align-top text-left text-sm font-medium text-zinc-500"
+                        >
+                          AI output
+                        </th>
+                        <td className="py-3 pr-4 align-top">
+                          Fields appear as generation completes
+                        </td>
+                        <td className="py-3 pr-3 align-top">
+                          Model tags items on image
+                        </td>
+                      </tr>
+                      <tr>
+                        <th
+                          scope="row"
+                          className="px-3 py-3 align-top text-left text-sm font-medium text-zinc-500"
+                        >
+                          Confirm
+                        </th>
+                        <td className="py-3 pr-4 align-top">Review inline</td>
+                        <td className="py-3 pr-3 align-top">
+                          Tap tag → modal → single confirm
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
 
-              <p className="italic text-zinc-300">
+              <p className="font-sans text-lg font-semibold leading-snug tracking-tight text-zinc-50 sm:text-xl md:text-[1.35rem] md:leading-snug">
                 No full-screen spinner. Parents see progress as latency does its
                 work.
               </p>
-              <p className="text-zinc-200">
-                <span className="font-semibold text-zinc-100 not-italic">
-                  IA decision:
-                </span>{" "}
-                Zip code, meetup preferences, and profile-level fields live in
-                onboarding and settings—not duplicated inside this flow.
-              </p>
-            </div>
-            <div
-              className="mx-auto w-full overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40"
-              style={{
-                maxWidth: `min(100%, ${MINA_TRACK_A_FLOWS_W}px)`,
-              }}
-            >
-              <ImageLightbox
-                src={MINA_TRACK_A_FLOWS}
-                alt="MINA create listing: one photo to multiple listings (review details, confirm to publish); one photo to a single listing with progressive fields as AI generates, avoiding a blocking spinner"
-                className="block w-full"
-                disableHoverScale
-              >
-                <Image
+              <div className="font-sans mt-8 border-t border-zinc-700/80 pt-6">
+                <p className="border-l-2 border-[#B75E45]/55 pl-4 text-zinc-300 leading-relaxed">
+                  <span className="font-semibold text-zinc-100">IA decision:</span>{" "}
+                  Zip code, meetup preferences, and profile-level fields live in
+                  onboarding and settings—not duplicated inside this flow.
+                </p>
+              </div>
+
+              <div className="w-full overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+                <ImageLightbox
                   src={MINA_TRACK_A_FLOWS}
                   alt="MINA create listing: one photo to multiple listings (review details, confirm to publish); one photo to a single listing with progressive fields as AI generates, avoiding a blocking spinner"
-                  width={MINA_TRACK_A_FLOWS_W}
-                  height={MINA_TRACK_A_FLOWS_H}
-                  className="h-auto w-full object-contain"
-                  unoptimized
-                  sizes={`(max-width: ${MINA_TRACK_A_FLOWS_W}px) 100vw, ${MINA_TRACK_A_FLOWS_W}px`}
-                />
-              </ImageLightbox>
+                  className="block w-full"
+                  disableHoverScale
+                >
+                  <Image
+                    src={MINA_TRACK_A_FLOWS}
+                    alt="MINA create listing: one photo to multiple listings (review details, confirm to publish); one photo to a single listing with progressive fields as AI generates, avoiding a blocking spinner"
+                    width={MINA_TRACK_A_FLOWS_W}
+                    height={MINA_TRACK_A_FLOWS_H}
+                    className="h-auto w-full object-contain"
+                    quality={95}
+                    sizes="(max-width: 640px) 100vw, min(896px, calc(100vw - 3rem))"
+                  />
+                </ImageLightbox>
+              </div>
             </div>
           </div>
 
@@ -630,38 +632,37 @@ export default function AiMarketplaceCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Track B · AI depth
           </span>
-          <h2 className="max-w-3xl text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
-            Babies grow fast. The Copilot notices when a phase is ending and asks:
-            ready to pass this along?
-          </h2>
-          <p className="max-w-3xl text-zinc-300 leading-relaxed">
-            The copilot is a life-stage triggered circulation system: it helps
-            parents notice when a phase is ending, what gear tends to matter next,
-            and how to move items out kindly.
-          </p>
-          <figure
-            className="mx-auto w-full overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40"
-            style={{
-              maxWidth: `min(100%, ${MINA_COPILOT_FLOW_W}px)`,
-            }}
-          >
-            <ImageLightbox
-              src={MINA_COPILOT_FLOW}
-              alt="Parenting Copilot flow: lock-screen stage nudge, in-app exploration stage and gear picks, what to expect next, then chat to request an item, MINA confirms, and pickup is scheduled with order details"
-              className="block w-full"
-              disableHoverScale
-            >
-              <Image
-                src={MINA_COPILOT_FLOW}
-                alt="Parenting Copilot flow: lock-screen stage nudge, in-app exploration stage and gear picks, what to expect next, then chat to request an item, MINA confirms, and pickup is scheduled with order details"
-                width={MINA_COPILOT_FLOW_W}
-                height={MINA_COPILOT_FLOW_H}
-                className="h-auto w-full object-contain"
-                unoptimized
-                sizes={`(max-width: ${MINA_COPILOT_FLOW_W}px) 100vw, ${MINA_COPILOT_FLOW_W}px`}
-              />
-            </ImageLightbox>
-          </figure>
+          <div className="min-w-0 space-y-5">
+            <h2 className="max-w-3xl text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
+              Babies grow fast. The Copilot notices when a phase is ending and asks:
+              ready to pass this along?
+            </h2>
+            <p className="max-w-3xl text-zinc-300 leading-relaxed">
+              The copilot is a life-stage triggered circulation system: it helps
+              parents notice when a phase is ending, what gear tends to matter next,
+              and how to move items out kindly.
+            </p>
+            <div className="max-w-4xl w-full">
+              <figure className="w-full overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+                <ImageLightbox
+                  src={MINA_COPILOT_FLOW}
+                  alt="Parenting Copilot flow: lock-screen stage nudge, in-app exploration stage and gear picks, what to expect next, then chat to request an item, MINA confirms, and pickup is scheduled with order details"
+                  className="block w-full"
+                  disableHoverScale
+                >
+                  <Image
+                    src={MINA_COPILOT_FLOW}
+                    alt="Parenting Copilot flow: lock-screen stage nudge, in-app exploration stage and gear picks, what to expect next, then chat to request an item, MINA confirms, and pickup is scheduled with order details"
+                    width={MINA_COPILOT_FLOW_W}
+                    height={MINA_COPILOT_FLOW_H}
+                    className="h-auto w-full object-contain"
+                    quality={95}
+                    sizes="(max-width: 640px) 100vw, min(896px, calc(100vw - 3rem))"
+                  />
+                </ImageLightbox>
+              </figure>
+            </div>
+          </div>
 
           <div
             id="mina-ai-api-ux"
@@ -675,24 +676,31 @@ export default function AiMarketplaceCaseStudy() {
               feature copy
             </h3>
             <div className="grid max-w-5xl gap-4 sm:grid-cols-2 sm:gap-5">
-              <div className="rounded-2xl border border-zinc-700/80 bg-zinc-900/50 p-5 sm:p-6">
-                <p className="text-sm leading-relaxed text-zinc-300">
-                  <span className="font-semibold text-zinc-100">
-                    AI-generated listings aren&apos;t instant.
-                  </span>{" "}
+              <div className="flex flex-col gap-3 rounded-2xl border border-zinc-700/80 bg-zinc-900/50 p-5 sm:gap-3.5 sm:p-6">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-zinc-500 sm:text-[11px]">
+                  Model latency
+                </p>
+                <p className="text-base font-semibold leading-snug text-zinc-100 sm:text-lg">
+                  AI-generated listings aren&apos;t instant—show staged progress,
+                  not a spinner that pretends they are.
+                </p>
+                <p className="text-sm leading-relaxed text-zinc-400">
                   Model latency varies, so I designed around multi-turn disclosure
-                  and partial drafts—parents always see forward progress instead of a
-                  blocking spinner that implies instant completion. Engineering could
-                  stream or chunk responses without the UI lying about readiness.
+                  and partial drafts—parents always see forward movement instead of a
+                  blocking wait that implies instant completion. Engineering can stream
+                  or chunk responses without the UI lying about readiness.
                 </p>
               </div>
-              <div className="rounded-2xl border border-zinc-700/80 bg-zinc-900/50 p-5 sm:p-6">
-                <p className="text-sm leading-relaxed text-zinc-300">
-                  <span className="font-semibold text-zinc-100">
-                    Preview-before-publish is trust-first for parents
-                  </span>
-                  —but it also matches how the team wanted to treat server state:
-                  drafts stay explicit until a publish action, which simplifies
+              <div className="flex flex-col gap-3 rounded-2xl border border-zinc-700/80 bg-zinc-900/50 p-5 sm:gap-3.5 sm:p-6">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-zinc-500 sm:text-[11px]">
+                  Server state
+                </p>
+                <p className="text-base font-semibold leading-snug text-zinc-100 sm:text-lg">
+                  Preview-before-publish is trust-first for parents—and it mirrors
+                  real server state: nothing ships until publish.
+                </p>
+                <p className="text-sm leading-relaxed text-zinc-400">
+                  Drafts stay explicit until a publish action, which simplifies
                   rollback and moderation hooks when the model mis-labels price or
                   condition.
                 </p>
