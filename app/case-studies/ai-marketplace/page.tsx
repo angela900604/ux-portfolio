@@ -18,10 +18,10 @@ import { SplitCapsuleLink } from "@/app/components/SplitCapsuleLink";
 
 const MINA_HERO = "/case-studies/mina/mina-ai-hero.png";
 const MINA_MOCKUP_HAND = "/case-studies/mina/mockup-hand-01.png";
-/** Screen recording — listing flow (Track A). Filename has spaces; encode for URL. */
-const MINA_TRACK_A_SCREEN_RECORDING = `/case-studies/mina/${encodeURIComponent(
-  "Screen Recording 2026-04-30 at 15.53.42.mov",
-)}`;
+/** Track A — dual listing flows art (full-res PNG; `unoptimized` so Next does not re-encode). */
+const MINA_TRACK_A_FLOWS = "/case-studies/mina/track-a-listing-flows-full.png";
+const MINA_TRACK_A_FLOWS_W = 1024;
+const MINA_TRACK_A_FLOWS_H = 656;
 const MINA_OPPORTUNITY_IMAGE = "/case-studies/mina/mina-event-opportunity.png";
 const MINA_OPPORTUNITY_W = 1024;
 const MINA_OPPORTUNITY_H = 907;
@@ -517,46 +517,24 @@ export default function AiMarketplaceCaseStudy() {
             </div>
 
             <div className="max-w-4xl w-full">
-              <div className="w-full overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950">
-                <video
-                  className="block h-auto w-full max-h-[min(85vh,56rem)] bg-black object-contain"
-                  controls
-                  playsInline
-                  preload="metadata"
-                  src={MINA_TRACK_A_SCREEN_RECORDING}
-                  aria-label="MINA create listing flow: screen recording of single and multiple listing paths with progressive AI output and no blocking spinner"
-                />
+              <div className="w-full overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+                <ImageLightbox
+                  src={MINA_TRACK_A_FLOWS}
+                  alt="MINA: one photo to multiple listings—AI tags on image, review details per item, confirm to publish; one photo to a single listing—create listing screen with title and fields appearing progressively instead of a blocking spinner"
+                  className="block w-full"
+                  disableHoverScale
+                >
+                  <Image
+                    src={MINA_TRACK_A_FLOWS}
+                    alt="MINA: one photo to multiple listings—AI tags on image, review details per item, confirm to publish; one photo to a single listing—create listing screen with title and fields appearing progressively instead of a blocking spinner"
+                    width={MINA_TRACK_A_FLOWS_W}
+                    height={MINA_TRACK_A_FLOWS_H}
+                    className="h-auto w-full object-contain"
+                    unoptimized
+                    sizes="(max-width: 640px) 100vw, min(896px, calc(100vw - 3rem))"
+                  />
+                </ImageLightbox>
               </div>
-            </div>
-          </div>
-
-          <div
-            id="ai-trust"
-            className="scroll-mt-28 space-y-4 pt-4 sm:scroll-mt-32 sm:pt-6"
-          >
-            <div className="rounded-2xl border border-[#B75E45]/50 bg-[#B75E45]/18 p-6 sm:p-8">
-              <span className="text-xs font-medium uppercase tracking-widest text-[#E8A995]">
-                Trust &amp; control
-              </span>
-              <h3 className="mt-3 text-xl font-semibold leading-snug tracking-tight text-zinc-50 sm:text-2xl md:text-[1.65rem] md:leading-snug">
-                Preview before publish, explicit confirmations, and reversibility—so
-                parents always know what the AI did
-              </h3>
-              <p className="mt-4 text-zinc-300 leading-relaxed">
-                Parents are right to worry about{" "}
-                <span className="text-zinc-100">automation anxiety</span>
-                —loss of control, unclear system behavior, and mistakes that are
-                hard to undo. That shows up in marketplaces as “did the AI publish
-                the wrong price?” or “did it message someone for me without asking?”
-              </p>
-              <p className="mt-4 text-zinc-300 leading-relaxed">
-                I designed for{" "}
-                <span className="text-zinc-100">
-                  preview before publish, explicit confirmations, and reversibility
-                </span>
-                : users see drafts, approve boundaries, and understand what the
-                system did on their behalf.
-              </p>
             </div>
           </div>
         </CaseStudyInViewSection>

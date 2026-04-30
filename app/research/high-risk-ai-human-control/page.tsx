@@ -107,8 +107,8 @@ export default function HighRiskAiHumanControlPage() {
             screens, metrics, and Photo-to-Publish detail, see the full write-up.
           </p>
           <p>
-            <Link href="/case-studies/ai-marketplace#ai-trust" className={LINK_CLASS}>
-              Open MINA case study · AI trust section →
+            <Link href="/case-studies/ai-marketplace#track-a-impact" className={LINK_CLASS}>
+              Open MINA case study · Track A →
             </Link>
           </p>
         </section>
