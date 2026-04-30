@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { SplitCapsuleLink } from "@/app/components/SplitCapsuleLink";
 import {
   CaseStudyAtAGlance,
   CASE_STUDY_AT_A_GLANCE_DARK_HERO_PROPS,
@@ -20,7 +21,6 @@ import { GuidedOnboardingVideoPair } from "./OnboardingDemoVideo";
 import { SettingHomeModulesVideo } from "./SettingHomeModulesVideo";
 import { LoginBeforeAfterSlider } from "./LoginBeforeAfterSlider";
 import { ProblemPersonasBlock } from "./ProblemPersonasBlock";
-import { SplitCapsuleCta } from "@/app/components/SplitCapsuleCta";
 
 export const metadata = {
   title:
@@ -338,10 +338,10 @@ export default function EInvoiceCaseStudy() {
                 noAccentGridClassName="grid w-full min-w-0 grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-8 [&>div]:min-w-0"
               />
               <div className="max-w-3xl">
-                <SplitCapsuleCta
+                <SplitCapsuleLink
                   href="/user-research-journey"
-                  variant="emeraldSolid"
                   label="View full research journey"
+                  variant="emerald"
                 />
               </div>
             </div>
@@ -1101,17 +1101,19 @@ export default function EInvoiceCaseStudy() {
             early logic.
           </p>
           <div className="flex flex-col gap-3 pt-1 sm:flex-row sm:flex-wrap sm:items-center">
-            <SplitCapsuleCta
+            <SplitCapsuleLink
               href={FIGMA_MOCKUP_PAGE}
-              external
-              variant="emeraldHiFi"
-              label="Mockup & page flow"
+              label="Mockup &amp; page flow"
+              variant="emeraldSoft"
+              target="_blank"
+              rel="noopener noreferrer"
             />
-            <SplitCapsuleCta
+            <SplitCapsuleLink
               href={FIGMA_WIREFRAME_FLOW}
-              external
-              variant="outlineZinc"
-              label="Wireframe & wireflow"
+              label="Wireframe &amp; wireflow"
+              variant="outline"
+              target="_blank"
+              rel="noopener noreferrer"
             />
           </div>
         </CaseStudyInViewSection>

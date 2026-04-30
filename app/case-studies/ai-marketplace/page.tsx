@@ -13,19 +13,15 @@ import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { DesignJourneyCollapsible } from "../_components/DesignJourneyCollapsible";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
-import { SplitCapsuleCta } from "@/app/components/SplitCapsuleCta";
+import { SplitCapsuleLink } from "@/app/components/SplitCapsuleLink";
 
 const MINA_HERO = "/case-studies/mina/mina-ai-hero.png";
 const MINA_MOCKUP_HAND = "/case-studies/mina/mockup-hand-01.png";
+const MINA_FLOW_SINGLE = "/case-studies/mina/flow-single-listing.png";
+const MINA_FLOW_MULTIPLE = "/case-studies/mina/flow-multiple-listings.png";
 const MINA_MOCKUP_ISO = "/case-studies/mina/mockup-isometric-02.png";
 const MINA_MOCKUP_SOFA = "/case-studies/mina/mockup-sofa-04.png";
 const MINA_COPILOT_FLOW = "/case-studies/mina/parenting-copilot-flow.png";
-/** Figma / component library handoff composite — fills frame below design system intro */
-const MINA_COMPONENT_LIBRARY_COVER =
-  "/case-studies/mina/component-library-cover.png";
-/** Create-listing concepts: single (photo + tabs) vs. multi (agent + tag modals) */
-const MINA_LISTING_FLOW_01 = "/case-studies/mina/listing-flow-01.png";
-const MINA_LISTING_FLOW_02 = "/case-studies/mina/listing-flow-02.png";
 
 /** Hero “3 demo” clip — WebM (smaller) then H.264 MP4; MOV fallback if a source fails. */
 const MINA_THREE_DEMO_SOURCES = {
@@ -73,7 +69,7 @@ const MINA_TLDR_METRICS: CaseStudyHeroTldrMetric[] = [
   },
   {
     kicker: "Team",
-    value: "Sole designer",
+    value: "Sole",
     title: "Product design",
     detail: "1 PM + 5 engineers — end-to-end UX on iOS.",
   },
@@ -130,11 +126,12 @@ export default function AiMarketplaceCaseStudy() {
                 noAccentGridClassName="grid w-full min-w-0 grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-8 [&>div]:min-w-0"
               />
               <div className="max-w-3xl">
-                <SplitCapsuleCta
+                <SplitCapsuleLink
                   href={MINA_APP_STORE}
-                  external
-                  variant="coral"
                   label="Mina · App Store (Canada)"
+                  variant="mina"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 />
               </div>
             </div>
@@ -162,14 +159,13 @@ export default function AiMarketplaceCaseStudy() {
           </figure>
 
           <section>
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-              <div className="overflow-hidden rounded-xl sm:row-span-2">
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:items-stretch">
+              <div className="relative min-h-[min(88vw,480px)] w-full overflow-hidden rounded-xl sm:row-span-2 sm:min-h-[min(100%,640px)]">
                 <Image
                   src={MINA_MOCKUP_HAND}
                   alt="MINA Parenting Copilot on iPhone, held in hand against a light textured background"
-                  width={720}
-                  height={1024}
-                  className="h-auto w-full object-cover"
+                  fill
+                  className="object-cover object-center"
                   sizes="(max-width: 640px) 100vw, 50vw"
                 />
               </div>
@@ -347,8 +343,9 @@ export default function AiMarketplaceCaseStudy() {
                         color: "#F0F0F0",
                       }}
                     >
-                      One photo — single vs. multi paths split up front; tabs and
-                      progressive detail instead of staring at a spinner.
+                      Two create paths: single listing (photo-first sheet, fields
+                      fill in as the model streams) vs. multiple listings (chat agent,
+                      tags on the photo, modals per item—then one publish).
                     </p>
                   </div>
                   <div
@@ -449,69 +446,67 @@ export default function AiMarketplaceCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Track A · Business impact
           </span>
-          <div className="max-w-3xl space-y-4">
-            <h2 className="text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
-              I redesigned the listing flow end-to-end — completed listings up ~30%
-              in a cohorted A/B.
-            </h2>
-            <p className="text-zinc-300 leading-relaxed">
-              Posting one item on Facebook Marketplace takes 10 minutes. Posting a
-              bag of baby gear takes all afternoon.
-            </p>
-            <div className="space-y-4 text-zinc-300 leading-relaxed">
-              <p>
-                The create-listing experience now{" "}
-                <span className="text-zinc-100">
-                  separates single-item and multi-item paths at the start
-                </span>
-                —each tuned to how long generation takes and how much conversation
-                parents need.
+          <div className="min-w-0 space-y-6">
+            <div className="space-y-4">
+              <h2 className="max-w-3xl text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
+                I redesigned the listing flow end-to-end — completed listings up
+                ~30% in a cohorted A/B.
+              </h2>
+              <p className="max-w-3xl text-zinc-300 leading-relaxed">
+                Posting one item on Facebook Marketplace takes 10 minutes. Posting
+                a bag of baby gear takes all afternoon.
               </p>
-              <p>
-                <span className="text-zinc-100">Single listing</span> drops the chat
-                agent. It&apos;s a{" "}
-                <span className="text-zinc-100">photo-first layout with tabs</span>:
-                listing details appear as they&apos;re generated so users aren&apos;t
-                stuck watching a spinner while the model catches up.
+              <p className="max-w-3xl text-zinc-300 leading-relaxed">
+                The create flow now splits{" "}
+                <span className="text-zinc-100">single vs. multiple listings</span>{" "}
+                up front.{" "}
+                <span className="text-zinc-100">Single listing</span> drops the
+                chat-agent shell: the photo stays in focus with a tab-style detail
+                sheet underneath, and listing fields appear progressively as
+                generation completes—so parents aren&apos;t stuck watching one
+                full-screen spinner while latency does its work.{" "}
+                <span className="text-zinc-100">Multiple listings</span> keeps the
+                conversational agent: the model tags items on the image; tapping a
+                tag opens a modal to confirm or edit that item&apos;s details; when
+                everything looks right, a single confirm hands off to publish.
               </p>
-              <p>
-                <span className="text-zinc-100">Multiple listings</span> keep the{" "}
-                <span className="text-zinc-100">conversational agent</span>. Tapping a
-                tag opens a modal with that item&apos;s draft; after everything looks
-                right, a single &quot;ready to publish&quot; beat hands off to ship.
-              </p>
-              <p>
-                <span className="text-zinc-100">Zip code and meetup preference</span>{" "}
-                belong in account setup—I&apos;d guide people through them in
-                onboarding so listings don&apos;t re-litigate logistics every time.
-                If life changes, they adjust once in Settings.
+              <p className="max-w-3xl text-zinc-300 leading-relaxed">
+                Zip code, meetup preferences, and similar profile-level fields belong
+                in onboarding and settings—I didn&apos;t duplicate them inside this
+                flow; if parents need to change them, they adjust in settings instead
+                of blocking listing creation.
               </p>
             </div>
-          </div>
-
-          <div className="grid gap-4 sm:grid-cols-2 lg:gap-5">
-            <figure className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
-              <Image
-                src={MINA_LISTING_FLOW_01}
-                alt="MINA create listing — single-item style flow: photo focus with tabs as AI fills listing details progressively"
-                width={1024}
-                height={1024}
-                className="h-auto w-full object-cover"
-                sizes="(max-width: 640px) 100vw, 50vw"
-                unoptimized
-              />
-            </figure>
-            <figure className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
-              <Image
-                src={MINA_LISTING_FLOW_02}
-                alt="MINA create listing — multi-item agent flow: conversational UI with tag-driven listing detail modals before publish"
-                width={1024}
-                height={1024}
-                className="h-auto w-full object-cover"
-                sizes="(max-width: 640px) 100vw, 50vw"
-                unoptimized
-              />
-            </figure>
+            <div className="grid gap-6 lg:grid-cols-2">
+              <figure className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+                <Image
+                  src={MINA_FLOW_SINGLE}
+                  alt="MINA single listing flow: choose single path, capture photo, progressive listing fields in a bottom sheet while the image stays in focus"
+                  width={1024}
+                  height={457}
+                  className="h-auto w-full object-contain"
+                  sizes="(max-width: 1024px) 100vw, 512px"
+                />
+                <figcaption className="border-t border-zinc-800/80 px-4 py-3 text-xs text-zinc-500 sm:text-sm">
+                  Single listing — photo-first layout with progressive disclosure as
+                  AI fills the sheet.
+                </figcaption>
+              </figure>
+              <figure className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+                <Image
+                  src={MINA_FLOW_MULTIPLE}
+                  alt="MINA multiple listing flow: chat agent, image tags for detected items, modal listing details, confirm to publish"
+                  width={1024}
+                  height={333}
+                  className="h-auto w-full object-contain"
+                  sizes="(max-width: 1024px) 100vw, 512px"
+                />
+                <figcaption className="border-t border-zinc-800/80 px-4 py-3 text-xs text-zinc-500 sm:text-sm">
+                  Multiple listings — chat agent, per-item modals from tags, then
+                  publish.
+                </figcaption>
+              </figure>
+            </div>
           </div>
 
           <div
@@ -574,7 +569,7 @@ export default function AiMarketplaceCaseStudy() {
 
           <div
             id="mina-ai-api-ux"
-            className="scroll-mt-28 space-y-5 border-t border-zinc-800/90 pt-8 sm:scroll-mt-32 sm:pt-10"
+            className="scroll-mt-28 space-y-6 border-t border-zinc-800/90 pt-8 sm:scroll-mt-32 sm:pt-10"
           >
             <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
               System constraints
@@ -583,22 +578,21 @@ export default function AiMarketplaceCaseStudy() {
               How listing AI and Copilot UX bridge real API behavior—not just
               feature copy
             </h3>
-            <div className="grid gap-4 md:grid-cols-2 md:gap-5">
-              <div className="rounded-2xl border border-zinc-800/90 bg-zinc-900/45 p-6 sm:p-7">
-                <p className="text-sm leading-relaxed text-zinc-300 sm:text-base">
-                  <span className="font-medium text-zinc-100">
+            <div className="grid max-w-5xl gap-4 sm:grid-cols-2 sm:gap-5">
+              <div className="rounded-2xl border border-zinc-700/80 bg-zinc-900/50 p-5 sm:p-6">
+                <p className="text-sm leading-relaxed text-zinc-300">
+                  <span className="font-semibold text-zinc-100">
                     AI-generated listings aren&apos;t instant.
                   </span>{" "}
                   Model latency varies, so I designed around multi-turn disclosure
                   and partial drafts—parents always see forward progress instead of a
-                  blocking spinner that implies instant completion. Engineering
-                  could stream or chunk responses without the UI lying about
-                  readiness.
+                  blocking spinner that implies instant completion. Engineering could
+                  stream or chunk responses without the UI lying about readiness.
                 </p>
               </div>
-              <div className="rounded-2xl border border-zinc-800/90 bg-zinc-900/45 p-6 sm:p-7">
-                <p className="text-sm leading-relaxed text-zinc-300 sm:text-base">
-                  <span className="font-medium text-zinc-100">
+              <div className="rounded-2xl border border-zinc-700/80 bg-zinc-900/50 p-5 sm:p-6">
+                <p className="text-sm leading-relaxed text-zinc-300">
+                  <span className="font-semibold text-zinc-100">
                     Preview-before-publish is trust-first for parents
                   </span>
                   —but it also matches how the team wanted to treat server state:
@@ -632,17 +626,6 @@ export default function AiMarketplaceCaseStudy() {
             Figma mirrored how iOS consumed them—so devs could pull a cell, a
             chat bubble, or a CTA stack without a bespoke spec each time.
           </p>
-          <figure className="relative aspect-[1024/633] w-full max-w-none overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/50 shadow-[0_0_0_1px_rgba(255,255,255,0.04)_inset]">
-            <Image
-              src={MINA_COMPONENT_LIBRARY_COVER}
-              alt="MINA design system handoff: component library overview, tokens, and UI patterns for engineering"
-              fill
-              className="object-cover object-center"
-              sizes="(max-width: 1280px) 100vw, 1280px"
-              unoptimized
-              priority={false}
-            />
-          </figure>
           <div className="w-full max-w-3xl space-y-3">
             <div className="overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/50 shadow-[0_0_0_1px_rgba(255,255,255,0.04)_inset]">
               <iframe
@@ -688,20 +671,14 @@ export default function AiMarketplaceCaseStudy() {
             <p className="text-zinc-300 leading-relaxed">
               I translated the direction into{" "}
               <span className="text-zinc-100">mockups and a page flow</span> so
-              engineers could follow the narrative: users choose{" "}
-              <span className="text-zinc-100">single vs. multiple listings</span> up
-              front. One path is{" "}
-              <span className="text-zinc-100">
-                photo + tabs—details stream in as the model generates
-              </span>
-              ; the other keeps a{" "}
-              <span className="text-zinc-100">
-                chat agent with tags and modals per item
-              </span>{" "}
-              before a final publish. Logistics fields like zip and meetup preference
-              sit in onboarding / Settings so the listing flow doesn&apos;t repeat
-              them. The goal was a differentiated story that still matched model
-              latency and trust constraints.
+              engineers could follow two beats:{" "}
+              <span className="text-zinc-100">single listing</span> (photo stays
+              dominant; a sheet streams fields as the model catches up—no chat
+              middleman) and{" "}
+              <span className="text-zinc-100">multiple listings</span> (same photo,
+              chat agent, on-image tags, modal detail per item, then batch publish).
+              The goal was a differentiated story that still matched what multimodal
+              models and moderation needed.
             </p>
             <p className="text-zinc-300 leading-relaxed">
               Engineers pushed back on feasibility:{" "}

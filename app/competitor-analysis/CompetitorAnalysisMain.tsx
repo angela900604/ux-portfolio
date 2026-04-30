@@ -1,12 +1,9 @@
-import Link from "next/link";
 import { CompetitorLandscapeTable } from "@/app/case-studies/e-invoice-app/CompetitorLandscapeTable";
+import { SplitCapsuleLink } from "@/app/components/SplitCapsuleLink";
 
 const LABEL = "text-xs font-semibold uppercase tracking-widest text-zinc-500";
 const BODY = "text-base leading-relaxed text-zinc-300";
 const LIST = "mt-3 list-disc space-y-2 pl-5 text-base leading-relaxed text-zinc-300 marker:text-zinc-600";
-
-const VIEW_PROJECT_CLASS =
-  "inline-flex items-center justify-center rounded-full border border-emerald-500/45 bg-emerald-500/15 px-7 py-3 text-base font-semibold text-emerald-100 transition hover:border-emerald-400/70 hover:bg-emerald-500/25 hover:text-white";
 
 export function CompetitorAnalysisMain({
   showViewProject = true,
@@ -88,9 +85,11 @@ export function CompetitorAnalysisMain({
 
       {showViewProject ? (
         <div className="pt-2">
-          <Link href="/case-studies/e-invoice-app" className={VIEW_PROJECT_CLASS}>
-            View project
-          </Link>
+          <SplitCapsuleLink
+            href="/case-studies/e-invoice-app"
+            label="View project"
+            variant="ghostEmerald"
+          />
         </div>
       ) : null}
     </>

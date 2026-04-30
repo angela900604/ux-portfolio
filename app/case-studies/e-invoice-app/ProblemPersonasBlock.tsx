@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import { SplitCapsuleLink } from "@/app/components/SplitCapsuleLink";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 
 export function ProblemPersonasBlock() {
@@ -17,18 +17,16 @@ export function ProblemPersonasBlock() {
           broken flows were excluding elders, newcomers, and low-vision users.
         </h2>
         <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-start">
-          <Link
+          <SplitCapsuleLink
             href="/user-research-journey#e-invoice-user-pain"
-            className="inline-flex items-center justify-center rounded-full border border-emerald-500/45 bg-emerald-500/15 px-7 py-3.5 text-base font-semibold text-emerald-100 transition hover:border-emerald-400/70 hover:bg-emerald-500/25 hover:text-white"
-          >
-            Context and design goal
-          </Link>
-          <Link
+            label="Context and design goal"
+            variant="ghostEmerald"
+          />
+          <SplitCapsuleLink
             href="/user-research-journey#e-invoice-user-pain"
-            className="inline-flex items-center justify-center rounded-full border border-emerald-500/45 bg-emerald-500/15 px-7 py-3.5 text-base font-semibold text-emerald-100 transition hover:border-emerald-400/70 hover:bg-emerald-500/25 hover:text-white"
-          >
-            View full user pain synthesis
-          </Link>
+            label="View full user pain synthesis"
+            variant="ghostEmerald"
+          />
         </div>
         <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
           <Image

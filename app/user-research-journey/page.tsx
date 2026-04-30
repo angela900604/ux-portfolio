@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { AccessibilityVoiceoverMain } from "@/app/accessibility-voiceover/AccessibilityVoiceoverMain";
+import { SplitCapsuleLink } from "@/app/components/SplitCapsuleLink";
 import { CaseStudyContentLayout } from "@/app/case-studies/_components/CaseStudyContentLayout";
 import { CompetitorAnalysisMain } from "@/app/competitor-analysis/CompetitorAnalysisMain";
 import { MultisegmentInterviewsMain } from "@/app/multisegment-interviews/MultisegmentInterviewsMain";
@@ -10,9 +11,6 @@ export const metadata = {
   description:
     "Competitor benchmarks, multisegment interviews, segment-by-segment user pain synthesis, and VoiceOver accessibility work for the Ministry of Finance Cloud Invoice redesign.",
 };
-
-const VIEW_PROJECT_CLASS =
-  "inline-flex items-center justify-center rounded-full border border-emerald-500/45 bg-emerald-500/15 px-7 py-3 text-base font-semibold text-emerald-100 transition hover:border-emerald-400/70 hover:bg-emerald-500/25 hover:text-white";
 
 const SECTION_WRAP =
   "scroll-mt-28 space-y-10 border-t border-zinc-800 pt-12 sm:scroll-mt-32 sm:space-y-12 sm:pt-14";
@@ -79,9 +77,11 @@ export default function UserResearchJourneyPage() {
         </section>
 
         <div className="border-t border-zinc-800 pt-10 sm:pt-12">
-          <Link href="/case-studies/e-invoice-app" className={VIEW_PROJECT_CLASS}>
-            View project
-          </Link>
+          <SplitCapsuleLink
+            href="/case-studies/e-invoice-app"
+            label="View project"
+            variant="ghostEmerald"
+          />
         </div>
       </CaseStudyContentLayout>
     </article>

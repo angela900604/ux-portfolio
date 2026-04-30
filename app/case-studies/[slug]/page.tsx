@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { SplitCapsuleLink } from "@/app/components/SplitCapsuleLink";
 import VisualPlaceholder from "../_components/VisualPlaceholder";
 
 const KNOWN_SLUGS = [
@@ -46,12 +47,13 @@ export default function CaseStudySlugPage({
           aspect="wide"
         />
       </div>
-      <Link
-        href="/case-studies/e-invoice-app"
-        className="mt-8 text-sm font-medium text-zinc-300 hover:text-zinc-100"
-      >
-        View flagship case study →
-      </Link>
+      <div className="mt-8">
+        <SplitCapsuleLink
+          href="/case-studies/e-invoice-app"
+          label="View flagship case study"
+          variant="outline"
+        />
+      </div>
       <Link href="/" className="mt-4 text-sm text-zinc-500 hover:text-zinc-300">
         ← Back to work
       </Link>
