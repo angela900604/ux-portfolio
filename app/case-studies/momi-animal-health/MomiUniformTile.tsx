@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ImageLightbox } from "../e-invoice-app/ImageLightbox";
+import { ImageLightbox } from "@/app/components/ImageLightbox";
 
 /** Fixed aspect + cover crop so every tile matches height in the grid. */
 export function MomiUniformTile({

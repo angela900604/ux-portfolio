@@ -2,6 +2,7 @@
 
 import type { CSSProperties } from "react";
 import Image from "next/image";
+import { ImageLightbox } from "@/app/components/ImageLightbox";
 
 export type BaskinMarqueeSlide = {
   src: string;
@@ -20,14 +21,21 @@ function MarqueeSlide({
       className="mx-3 w-[min(78vw,280px)] shrink-0 sm:mx-4 sm:w-[300px]"
       aria-hidden={ariaHidden || undefined}
     >
-      <Image
+      <ImageLightbox
         src={slide.src}
         alt={slide.alt}
-        width={900}
-        height={506}
-        className="h-auto w-full object-contain bg-transparent"
-        sizes="300px"
-      />
+        className="block w-full"
+        disableHoverScale
+      >
+        <Image
+          src={slide.src}
+          alt={slide.alt}
+          width={900}
+          height={506}
+          className="h-auto w-full object-contain bg-transparent"
+          sizes="300px"
+        />
+      </ImageLightbox>
     </div>
   );
 }

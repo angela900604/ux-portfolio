@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ImageLightbox } from "./ImageLightbox";
+import { ImageLightbox } from "@/app/components/ImageLightbox";
 
 export type SolutionItem = {
   src: string;

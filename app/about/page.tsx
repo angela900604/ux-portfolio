@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { ImageLightbox } from "@/app/components/ImageLightbox";
 import {
   SITE_GUTTER_CLASS,
   SITE_MAX_WIDTH_CLASS,
@@ -54,17 +55,25 @@ export default function AboutPage() {
         </div>
 
         {/* Profile photo in normal flow so section grows to full image height (no crop). */}
-        <div className="relative z-0" aria-hidden>
+        <div className="relative z-0">
           <div className={`mx-auto w-full ${SITE_MAX_WIDTH_CLASS} ${SITE_GUTTER_CLASS}`}>
-            <Image
+            <ImageLightbox
               src="/about/profile-v2.png"
-              alt=""
-              width={768}
-              height={1024}
-              priority
-              className="block h-auto w-full object-contain"
-              sizes="(max-width: 640px) calc(100vw - 3rem), (max-width: 1480px) calc(100vw - 12.5rem), 1280px"
-            />
+              alt="Angela Yang — profile photo"
+              className="block w-full"
+              disableHoverScale
+              ariaLabel="View profile photo larger"
+            >
+              <Image
+                src="/about/profile-v2.png"
+                alt="Angela Yang — profile photo"
+                width={768}
+                height={1024}
+                priority
+                className="block h-auto w-full object-contain"
+                sizes="(max-width: 640px) calc(100vw - 3rem), (max-width: 1480px) calc(100vw - 12.5rem), 1280px"
+              />
+            </ImageLightbox>
           </div>
         </div>
 
@@ -105,15 +114,22 @@ export default function AboutPage() {
               </p>
             </div>
             <figure className="min-w-0 lg:col-span-7">
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
-                <Image
-                  src={INTERVIEW_PHOTO_SRC}
-                  alt="Collage: Angela facilitating user research—in group sessions, one-on-one interviews, and conversations with participants across ages and contexts."
-                  fill
-                  className="object-contain object-center"
-                  sizes="(max-width: 1024px) 100vw, 720px"
-                />
-              </div>
+              <ImageLightbox
+                src={INTERVIEW_PHOTO_SRC}
+                alt="Collage: Angela facilitating user research—in group sessions, one-on-one interviews, and conversations with participants across ages and contexts."
+                className="block w-full"
+                disableHoverScale
+              >
+                <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+                  <Image
+                    src={INTERVIEW_PHOTO_SRC}
+                    alt="Collage: Angela facilitating user research—in group sessions, one-on-one interviews, and conversations with participants across ages and contexts."
+                    fill
+                    className="object-contain object-center"
+                    sizes="(max-width: 1024px) 100vw, 720px"
+                  />
+                </div>
+              </ImageLightbox>
             </figure>
           </div>
         </section>

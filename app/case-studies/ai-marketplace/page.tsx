@@ -13,17 +13,22 @@ import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { DesignJourneyCollapsible } from "../_components/DesignJourneyCollapsible";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
+import { ImageLightbox } from "@/app/components/ImageLightbox";
 import { SplitCapsuleLink } from "@/app/components/SplitCapsuleLink";
 
 const MINA_HERO = "/case-studies/mina/mina-ai-hero.png";
 const MINA_MOCKUP_HAND = "/case-studies/mina/mockup-hand-01.png";
 const MINA_TRACK_A_FLOWS = "/case-studies/mina/track-a-single-and-multiple-flows.png";
+/** Intrinsic px of `MINA_TRACK_A_FLOWS` on disk. For Retina sharpness, replace asset with ~2× width and update W/H. */
 const MINA_TRACK_A_FLOWS_W = 1024;
 const MINA_TRACK_A_FLOWS_H = 656;
+const MINA_OPPORTUNITY_IMAGE = "/case-studies/mina/mina-event-opportunity.png";
+const MINA_OPPORTUNITY_W = 1024;
+const MINA_OPPORTUNITY_H = 907;
 const MINA_MOCKUP_ISO = "/case-studies/mina/mockup-isometric-02.png";
 const MINA_MOCKUP_SOFA = "/case-studies/mina/mockup-sofa-04.png";
 const MINA_COPILOT_FLOW = "/case-studies/mina/parenting-copilot-flow.png";
-/** Matches `parenting-copilot-flow.png` on disk (1024×428). For sharper retina, replace asset with ~2048px-wide export. */
+/** Intrinsic px on disk; layout caps display width to avoid upscaling. Use ~2× export + update for hi-DPI. */
 const MINA_COPILOT_FLOW_W = 1024;
 const MINA_COPILOT_FLOW_H = 428;
 
@@ -165,33 +170,54 @@ export default function AiMarketplaceCaseStudy() {
           <section>
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:items-stretch">
               <div className="relative min-h-[min(88vw,480px)] w-full overflow-hidden rounded-xl sm:row-span-2 sm:min-h-[min(100%,640px)]">
-                <Image
+                <ImageLightbox
                   src={MINA_MOCKUP_HAND}
                   alt="MINA Parenting Copilot on iPhone, held in hand against a light textured background"
-                  fill
-                  className="object-cover object-center"
-                  sizes="(max-width: 640px) 100vw, 50vw"
-                />
+                  className="absolute inset-0"
+                  disableHoverScale
+                >
+                  <Image
+                    src={MINA_MOCKUP_HAND}
+                    alt="MINA Parenting Copilot on iPhone, held in hand against a light textured background"
+                    fill
+                    className="object-cover object-center"
+                    sizes="(max-width: 640px) 100vw, 50vw"
+                  />
+                </ImageLightbox>
               </div>
               <div className="overflow-hidden rounded-xl">
-                <Image
+                <ImageLightbox
                   src={MINA_MOCKUP_ISO}
                   alt="MINA listing detail shown in an isometric iPhone mockup"
-                  width={1024}
-                  height={576}
-                  className="h-auto w-full object-cover"
-                  sizes="(max-width: 640px) 100vw, 50vw"
-                />
+                  className="block w-full"
+                  disableHoverScale
+                >
+                  <Image
+                    src={MINA_MOCKUP_ISO}
+                    alt="MINA listing detail shown in an isometric iPhone mockup"
+                    width={1024}
+                    height={576}
+                    className="h-auto w-full object-cover"
+                    sizes="(max-width: 640px) 100vw, 50vw"
+                  />
+                </ImageLightbox>
               </div>
               <div className="overflow-hidden rounded-xl">
-                <Image
+                <ImageLightbox
                   src={MINA_MOCKUP_SOFA}
                   alt="MINA review listing screen shown on iPhone mockup on a leather sofa"
-                  width={1024}
-                  height={576}
-                  className="h-auto w-full object-cover"
-                  sizes="(max-width: 640px) 100vw, 50vw"
-                />
+                  className="block w-full"
+                  disableHoverScale
+                >
+                  <Image
+                    src={MINA_MOCKUP_SOFA}
+                    alt="MINA review listing screen shown on iPhone mockup on a leather sofa"
+                    width={1024}
+                    height={576}
+                    className="h-auto w-full object-cover"
+                    sizes="(max-width: 640px) 100vw, 50vw"
+                  />
+                </ImageLightbox>
               </div>
             </div>
           </section>
@@ -432,14 +458,21 @@ export default function AiMarketplaceCaseStudy() {
             </div>
           </div>
           <div className="mt-6 max-w-3xl overflow-hidden rounded-xl border border-zinc-800/50 bg-zinc-900/40">
-            <Image
-              src="/case-studies/mina/community-collage.jpg"
-              alt="MINA community event: signage, parents trying the app, and team at a local gathering"
-              width={768}
-              height={1024}
-              className="h-auto w-full object-contain"
-              sizes="(max-width: 768px) 100vw, 768px"
-            />
+            <ImageLightbox
+              src={MINA_OPPORTUNITY_IMAGE}
+              alt="MINA IRL event: tabletop signage with PSA, register QR and perks, and tips; parents trying the app together"
+              className="block w-full"
+              disableHoverScale
+            >
+              <Image
+                src={MINA_OPPORTUNITY_IMAGE}
+                alt="MINA IRL event: tabletop signage with PSA, register QR and perks, and tips; parents trying the app together"
+                width={MINA_OPPORTUNITY_W}
+                height={MINA_OPPORTUNITY_H}
+                className="h-auto w-full object-contain"
+                sizes="(max-width: 1024px) 100vw, 768px"
+              />
+            </ImageLightbox>
           </div>
         </CaseStudyInViewSection>
 
@@ -534,16 +567,28 @@ export default function AiMarketplaceCaseStudy() {
                 onboarding and settings—not duplicated inside this flow.
               </p>
             </div>
-            <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
-              <Image
+            <div
+              className="mx-auto w-full overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40"
+              style={{
+                maxWidth: `min(100%, ${MINA_TRACK_A_FLOWS_W}px)`,
+              }}
+            >
+              <ImageLightbox
                 src={MINA_TRACK_A_FLOWS}
-                alt="MINA create listing flows: one photo to multiple listings with review and confirm to publish; one photo to a single listing with progressive disclosure as AI generates fields"
-                width={MINA_TRACK_A_FLOWS_W}
-                height={MINA_TRACK_A_FLOWS_H}
-                className="h-auto w-full object-contain"
-                unoptimized
-                sizes="(max-width: 1280px) 100vw, 1200px"
-              />
+                alt="MINA create listing: one photo to multiple listings (review details, confirm to publish); one photo to a single listing with progressive fields as AI generates, avoiding a blocking spinner"
+                className="block w-full"
+                disableHoverScale
+              >
+                <Image
+                  src={MINA_TRACK_A_FLOWS}
+                  alt="MINA create listing: one photo to multiple listings (review details, confirm to publish); one photo to a single listing with progressive fields as AI generates, avoiding a blocking spinner"
+                  width={MINA_TRACK_A_FLOWS_W}
+                  height={MINA_TRACK_A_FLOWS_H}
+                  className="h-auto w-full object-contain"
+                  unoptimized
+                  sizes={`(max-width: ${MINA_TRACK_A_FLOWS_W}px) 100vw, ${MINA_TRACK_A_FLOWS_W}px`}
+                />
+              </ImageLightbox>
             </div>
           </div>
 
@@ -594,16 +639,28 @@ export default function AiMarketplaceCaseStudy() {
             parents notice when a phase is ending, what gear tends to matter next,
             and how to move items out kindly.
           </p>
-          <figure className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
-            <Image
+          <figure
+            className="mx-auto w-full overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40"
+            style={{
+              maxWidth: `min(100%, ${MINA_COPILOT_FLOW_W}px)`,
+            }}
+          >
+            <ImageLightbox
               src={MINA_COPILOT_FLOW}
-              alt="Parenting Copilot flow from trigger notification to conversational recommendations and one-tap handoff to listing intent"
-              width={MINA_COPILOT_FLOW_W}
-              height={MINA_COPILOT_FLOW_H}
-              quality={92}
-              className="h-auto w-full object-contain"
-              sizes="(max-width: 1024px) 100vw, min(100vw, 896px)"
-            />
+              alt="Parenting Copilot flow: lock-screen stage nudge, in-app exploration stage and gear picks, what to expect next, then chat to request an item, MINA confirms, and pickup is scheduled with order details"
+              className="block w-full"
+              disableHoverScale
+            >
+              <Image
+                src={MINA_COPILOT_FLOW}
+                alt="Parenting Copilot flow: lock-screen stage nudge, in-app exploration stage and gear picks, what to expect next, then chat to request an item, MINA confirms, and pickup is scheduled with order details"
+                width={MINA_COPILOT_FLOW_W}
+                height={MINA_COPILOT_FLOW_H}
+                className="h-auto w-full object-contain"
+                unoptimized
+                sizes={`(max-width: ${MINA_COPILOT_FLOW_W}px) 100vw, ${MINA_COPILOT_FLOW_W}px`}
+              />
+            </ImageLightbox>
           </figure>
 
           <div

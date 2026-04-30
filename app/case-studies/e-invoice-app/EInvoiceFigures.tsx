@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ImageLightbox } from "./ImageLightbox";
+import { ImageLightbox } from "@/app/components/ImageLightbox";
 
 const R_SCREEN = "rounded-[1.35rem]";
 

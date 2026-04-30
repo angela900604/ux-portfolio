@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { ImageLightbox } from "@/app/components/ImageLightbox";
 import type { ReactNode } from "react";
 import {
   CaseStudyAtAGlance,
@@ -300,14 +301,21 @@ export default function AdmissionHubCaseStudy() {
               Kong–based readers could self-serve before consulting.
             </p>
             <figure className="mt-6 bg-white">
-              <Image
+              <ImageLightbox
                 src={AH_ASSET("wordpress-blog-life-in-canada-50-facts.png")}
                 alt="Admission Hub WordPress blog article — 50 interesting facts about Canada, desktop layout with hero image and sidebar widgets"
-                width={1024}
-                height={581}
-                className="block h-auto w-full"
-                sizes="(max-width: 896px) 100vw, 896px"
-              />
+                className="block w-full"
+                disableHoverScale
+              >
+                <Image
+                  src={AH_ASSET("wordpress-blog-life-in-canada-50-facts.png")}
+                  alt="Admission Hub WordPress blog article — 50 interesting facts about Canada, desktop layout with hero image and sidebar widgets"
+                  width={1024}
+                  height={581}
+                  className="block h-auto w-full"
+                  sizes="(max-width: 896px) 100vw, 896px"
+                />
+              </ImageLightbox>
               <figcaption className="mt-4 text-sm text-[#666] leading-relaxed">
                 <span className="font-semibold text-[#2C3E50]">
                   Featured articles (live)
@@ -376,14 +384,21 @@ export default function AdmissionHubCaseStudy() {
           </div>
 
           <figure className="mt-10 bg-[#F5F3EF]">
-            <Image
+            <ImageLightbox
               src={AH_ASSET("dragon-boat-and-coop-creative.png")}
               alt="Admission Hub — Dragon Boat Festival Instagram post mockup beside Working Holiday COOP service flyer for Canada ADM"
-              width={1024}
-              height={556}
-              className="block h-auto w-full"
-              sizes="(max-width: 896px) 100vw, 896px"
-            />
+              className="block w-full"
+              disableHoverScale
+            >
+              <Image
+                src={AH_ASSET("dragon-boat-and-coop-creative.png")}
+                alt="Admission Hub — Dragon Boat Festival Instagram post mockup beside Working Holiday COOP service flyer for Canada ADM"
+                width={1024}
+                height={556}
+                className="block h-auto w-full"
+                sizes="(max-width: 896px) 100vw, 896px"
+              />
+            </ImageLightbox>
             <figcaption className="mt-4 space-y-2 text-sm text-[#666] leading-relaxed">
               <p>
                 <strong className="text-[#2C3E50]">Left (Instagram):</strong>{" "}

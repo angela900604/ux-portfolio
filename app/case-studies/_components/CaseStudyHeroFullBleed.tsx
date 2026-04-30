@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
+import { ImageLightbox } from "@/app/components/ImageLightbox";
 import { CASE_STUDY_BODY_GRID, SITE_SHELL_CONTAINER } from "@/lib/site-shell";
 
 /** Title band: same full-width narrative track as {@link CaseStudyContentLayout}. */
@@ -66,7 +67,12 @@ function FullBleedImageOnly({
 }: Pick<Props, "imageSrc" | "imageAlt" | "imageClassName" | "priority">) {
   return (
     <div className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2">
-      <div className={BELOW_META_HERO_INNER}>
+      <ImageLightbox
+        src={imageSrc}
+        alt={imageAlt}
+        className={BELOW_META_HERO_INNER}
+        disableHoverScale
+      >
         <Image
           src={imageSrc}
           alt={imageAlt}
@@ -75,7 +81,7 @@ function FullBleedImageOnly({
           className={imageClassName}
           sizes="100vw"
         />
-      </div>
+      </ImageLightbox>
     </div>
   );
 }
@@ -98,15 +104,17 @@ function BelowMetaImageContained({
       <div className={`${SITE_SHELL_CONTAINER} py-10 sm:py-12`}>
         <HeroBelowFoldFullGrid>
           <div className="flex justify-center">
-            <Image
-              src={imageSrc}
-              alt={imageAlt}
-              width={width}
-              height={height}
-              priority={priority}
-              className="h-auto max-h-[min(85vh,48rem)] w-auto max-w-full object-contain"
-              sizes="(max-width: 1200px) 100vw, 1200px"
-            />
+            <ImageLightbox src={imageSrc} alt={imageAlt} disableHoverScale>
+              <Image
+                src={imageSrc}
+                alt={imageAlt}
+                width={width}
+                height={height}
+                priority={priority}
+                className="h-auto max-h-[min(85vh,48rem)] w-auto max-w-full object-contain"
+                sizes="(max-width: 1200px) 100vw, 1200px"
+              />
+            </ImageLightbox>
           </div>
         </HeroBelowFoldFullGrid>
       </div>
@@ -175,18 +183,28 @@ export function CaseStudyHeroFullBleed({
     <>
       <div className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2">
         <div className="relative h-[min(90vh,56rem)] min-h-[80vh] w-full">
-          <Image
+          <ImageLightbox
             src={imageSrc}
             alt={imageAlt}
-            fill
-            priority={priority}
-            className={imageClassName}
-            sizes="100vw"
-          />
+            className="absolute inset-0"
+            disableHoverScale
+          >
+            <Image
+              src={imageSrc}
+              alt={imageAlt}
+              fill
+              priority={priority}
+              className={imageClassName}
+              sizes="100vw"
+            />
+          </ImageLightbox>
           {/* Base dim + bottom-heavy gradient so titles stay readable on bright photos */}
-          <div className="absolute inset-0 bg-black/35" aria-hidden />
           <div
-            className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/82 to-zinc-950/55"
+            className="pointer-events-none absolute inset-0 bg-black/35"
+            aria-hidden
+          />
+          <div
+            className="pointer-events-none absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/82 to-zinc-950/55"
             aria-hidden
           />
           <div className="absolute inset-0 flex flex-col justify-end pb-14 pt-28 sm:pb-20 sm:pt-36">

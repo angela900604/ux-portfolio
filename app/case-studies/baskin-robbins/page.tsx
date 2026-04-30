@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ImageLightbox } from "@/app/components/ImageLightbox";
 import {
   CaseStudyAtAGlance,
   CASE_STUDY_AT_A_GLANCE_DARK_HERO_PROPS,
@@ -124,22 +125,32 @@ export default function BaskinRobbinsCaseStudy() {
         >
           <div className="space-y-6 sm:space-y-8">
             <div className="min-w-0 w-full">
-              <Image
+              <ImageLightbox
                 src={heroPrimary.src}
                 alt={heroPrimary.alt}
-                width={1200}
-                height={900}
-                quality={95}
-                className="h-auto w-full object-contain"
-                sizes="(max-width: 1480px) 100vw, 1200px"
-                priority
-              />
+                className="block w-full"
+                disableHoverScale
+              >
+                <Image
+                  src={heroPrimary.src}
+                  alt={heroPrimary.alt}
+                  width={1200}
+                  height={900}
+                  quality={95}
+                  className="h-auto w-full object-contain"
+                  sizes="(max-width: 1480px) 100vw, 1200px"
+                  priority
+                />
+              </ImageLightbox>
             </div>
             <div className="grid grid-cols-2 gap-4 sm:gap-6">
               {heroSquarePair.map((img) => (
-                <div
+                <ImageLightbox
                   key={img.src}
+                  src={img.src}
+                  alt={img.alt}
                   className="relative aspect-square min-w-0 overflow-hidden"
+                  disableHoverScale
                 >
                   <Image
                     src={img.src}
@@ -149,7 +160,7 @@ export default function BaskinRobbinsCaseStudy() {
                     className="object-cover"
                     sizes="(max-width: 768px) 50vw, 500px"
                   />
-                </div>
+                </ImageLightbox>
               ))}
             </div>
           </div>
@@ -180,14 +191,21 @@ export default function BaskinRobbinsCaseStudy() {
             membership app from zero, aligned with Japan HQ, shipped in 3 months.
           </p>
           <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
-            <Image
+            <ImageLightbox
               src={ASSET("japan-hq-cross-market-meeting.png")}
               alt="Video call with Japan HQ and Taiwan stakeholders—cross-market alignment for BR31 membership app, interpreter-supported reviews before build"
-              width={1024}
-              height={644}
-              className="h-auto w-full object-cover"
-              sizes="(max-width: 1024px) 100vw, 960px"
-            />
+              className="block w-full"
+              disableHoverScale
+            >
+              <Image
+                src={ASSET("japan-hq-cross-market-meeting.png")}
+                alt="Video call with Japan HQ and Taiwan stakeholders—cross-market alignment for BR31 membership app, interpreter-supported reviews before build"
+                width={1024}
+                height={644}
+                className="h-auto w-full object-cover"
+                sizes="(max-width: 1024px) 100vw, 960px"
+              />
+            </ImageLightbox>
           </div>
         </CaseStudyInViewSection>
 

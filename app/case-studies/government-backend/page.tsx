@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
+import { ImageLightbox } from "@/app/components/ImageLightbox";
 import Link from "next/link";
 import {
   CaseStudyAtAGlance,
@@ -106,14 +107,21 @@ export default function GovernmentBackendCaseStudy() {
           }
         >
           <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
-            <Image
+            <ImageLightbox
               src={BACKEND_COVER.src}
               alt={BACKEND_COVER.alt}
-              width={1024}
-              height={764}
-              className="h-auto w-full object-cover"
-              sizes="(max-width: 768px) 100vw, 1080px"
-            />
+              className="block w-full"
+              disableHoverScale
+            >
+              <Image
+                src={BACKEND_COVER.src}
+                alt={BACKEND_COVER.alt}
+                width={1024}
+                height={764}
+                className="h-auto w-full object-cover"
+                sizes="(max-width: 768px) 100vw, 1080px"
+              />
+            </ImageLightbox>
           </div>
 
           <div className="mt-10">

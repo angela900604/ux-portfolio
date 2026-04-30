@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
+import { ImageLightbox } from "@/app/components/ImageLightbox";
 import { PortraitTile } from "./EInvoiceFigures";
 
 const ASSET = (name: string) => `/case-studies/e-invoice/case-assets/${name}`;
@@ -30,15 +31,28 @@ export function SketchPersonasExpandable() {
   return (
     <div className="space-y-5">
       <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        <button
-          type="button"
+        <div
+          role="button"
+          tabIndex={0}
           className={CARD}
           onClick={() => setOpen("yiting")}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              setOpen("yiting");
+            }
+          }}
           aria-haspopup="dialog"
           aria-expanded={open === "yiting"}
           aria-label="Open full persona: Yi-Ting, 18–30"
         >
-          <div className="relative h-[4.5rem] w-14 shrink-0 overflow-hidden rounded-lg bg-zinc-800">
+          <ImageLightbox
+            src={ASSET("persona-portrait-01.png")}
+            alt="Sketch portrait: Yi-Ting, 18–30"
+            className="relative h-[4.5rem] w-14 shrink-0 overflow-hidden rounded-lg bg-zinc-800"
+            stopTriggerPropagation
+            disableHoverScale
+          >
             <Image
               src={ASSET("persona-portrait-01.png")}
               alt=""
@@ -46,7 +60,7 @@ export function SketchPersonasExpandable() {
               className="object-cover object-center"
               sizes="56px"
             />
-          </div>
+          </ImageLightbox>
           <div className="min-w-0 text-xs leading-snug">
             <p className="font-medium text-zinc-100">Yi-Ting · 18–30</p>
             <p className="mt-1 text-zinc-500">
@@ -56,17 +70,30 @@ export function SketchPersonasExpandable() {
               Open full persona →
             </p>
           </div>
-        </button>
+        </div>
 
-        <button
-          type="button"
+        <div
+          role="button"
+          tabIndex={0}
           className={CARD}
           onClick={() => setOpen("david")}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              setOpen("david");
+            }
+          }}
           aria-haspopup="dialog"
           aria-expanded={open === "david"}
           aria-label="Open full persona: David, 31–50"
         >
-          <div className="relative h-[4.5rem] w-14 shrink-0 overflow-hidden rounded-lg bg-zinc-800">
+          <ImageLightbox
+            src={ASSET("persona-portrait-02.png")}
+            alt="Sketch portrait: David, 31–50"
+            className="relative h-[4.5rem] w-14 shrink-0 overflow-hidden rounded-lg bg-zinc-800"
+            stopTriggerPropagation
+            disableHoverScale
+          >
             <Image
               src={ASSET("persona-portrait-02.png")}
               alt=""
@@ -74,7 +101,7 @@ export function SketchPersonasExpandable() {
               className="object-cover object-center"
               sizes="56px"
             />
-          </div>
+          </ImageLightbox>
           <div className="min-w-0 text-xs leading-snug">
             <p className="font-medium text-zinc-100">David · 31–50</p>
             <p className="mt-1 text-zinc-500">
@@ -84,17 +111,30 @@ export function SketchPersonasExpandable() {
               Open full persona →
             </p>
           </div>
-        </button>
+        </div>
 
-        <button
-          type="button"
+        <div
+          role="button"
+          tabIndex={0}
           className={CARD}
           onClick={() => setOpen("chen")}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              setOpen("chen");
+            }
+          }}
           aria-haspopup="dialog"
           aria-expanded={open === "chen"}
           aria-label="Open full persona: Teacher Chen, low vision"
         >
-          <div className="relative h-[4.5rem] w-14 shrink-0 overflow-hidden rounded-lg bg-zinc-800">
+          <ImageLightbox
+            src={ASSET("persona-portrait-vi-session.png")}
+            alt="Sketch portrait: Teacher Chen, low vision"
+            className="relative h-[4.5rem] w-14 shrink-0 overflow-hidden rounded-lg bg-zinc-800"
+            stopTriggerPropagation
+            disableHoverScale
+          >
             <Image
               src={ASSET("persona-portrait-vi-session.png")}
               alt=""
@@ -102,7 +142,7 @@ export function SketchPersonasExpandable() {
               className="object-cover object-center"
               sizes="56px"
             />
-          </div>
+          </ImageLightbox>
           <div className="min-w-0 text-xs leading-snug">
             <p className="font-medium text-zinc-100">Teacher Chen · low vision</p>
             <p className="mt-1 text-zinc-500">
@@ -113,17 +153,30 @@ export function SketchPersonasExpandable() {
               Open full persona →
             </p>
           </div>
-        </button>
+        </div>
 
-        <button
-          type="button"
+        <div
+          role="button"
+          tabIndex={0}
           className={CARD}
           onClick={() => setOpen("meiling")}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              setOpen("meiling");
+            }
+          }}
           aria-haspopup="dialog"
           aria-expanded={open === "meiling"}
           aria-label="Open full persona: Mei-Ling, 51+"
         >
-          <div className="relative h-[4.5rem] w-14 shrink-0 overflow-hidden rounded-lg bg-zinc-800">
+          <ImageLightbox
+            src={ASSET("persona-portrait-03.png")}
+            alt="Sketch portrait: Mei-Ling, 51+"
+            className="relative h-[4.5rem] w-14 shrink-0 overflow-hidden rounded-lg bg-zinc-800"
+            stopTriggerPropagation
+            disableHoverScale
+          >
             <Image
               src={ASSET("persona-portrait-03.png")}
               alt=""
@@ -131,7 +184,7 @@ export function SketchPersonasExpandable() {
               className="object-cover object-center"
               sizes="56px"
             />
-          </div>
+          </ImageLightbox>
           <div className="min-w-0 text-xs leading-snug">
             <p className="font-medium text-zinc-100">Mei-Ling · 51+ · Silver</p>
             <p className="mt-1 text-zinc-500">
@@ -142,17 +195,30 @@ export function SketchPersonasExpandable() {
               Open full persona →
             </p>
           </div>
-        </button>
+        </div>
 
-        <button
-          type="button"
+        <div
+          role="button"
+          tabIndex={0}
           className={CARD}
           onClick={() => setOpen("alex")}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              setOpen("alex");
+            }
+          }}
           aria-haspopup="dialog"
           aria-expanded={open === "alex"}
           aria-label="Open full persona: Alex, foreign resident"
         >
-          <div className="relative h-[4.5rem] w-14 shrink-0 overflow-hidden rounded-lg bg-zinc-800">
+          <ImageLightbox
+            src={ASSET("persona-portrait-04.png")}
+            alt="Sketch portrait: Alex, foreign resident"
+            className="relative h-[4.5rem] w-14 shrink-0 overflow-hidden rounded-lg bg-zinc-800"
+            stopTriggerPropagation
+            disableHoverScale
+          >
             <Image
               src={ASSET("persona-portrait-04.png")}
               alt=""
@@ -160,7 +226,7 @@ export function SketchPersonasExpandable() {
               className="object-cover object-center"
               sizes="56px"
             />
-          </div>
+          </ImageLightbox>
           <div className="min-w-0 text-xs leading-snug">
             <p className="font-medium text-zinc-100">Alex · Foreign resident</p>
             <p className="mt-1 text-zinc-500">
@@ -171,7 +237,7 @@ export function SketchPersonasExpandable() {
               Open full persona →
             </p>
           </div>
-        </button>
+        </div>
       </div>
 
       {open ? (

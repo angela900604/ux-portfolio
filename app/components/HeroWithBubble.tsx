@@ -3,6 +3,7 @@
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { ImageLightbox } from "@/app/components/ImageLightbox";
 
 const BUBBLE_SRC = "/home/header-bubble-v2.png";
 const ASPECT = 1024 / 744;
@@ -112,11 +113,17 @@ export function HeroWithBubble() {
           <div className="relative z-0 hidden min-h-[min(28rem,50vh)] flex-1 lg:block">
             <div className="pointer-events-none absolute inset-y-0 right-0 flex w-full items-center justify-end">
               <div
-                className="home-bubble-float relative h-auto w-[min(46vw,56rem,calc(62vh*1024/744))] shrink-0"
+                className="home-bubble-float relative h-auto w-[min(46vw,56rem,calc(62vh*1024/744))] shrink-0 pointer-events-auto"
                 style={{ aspectRatio: ASPECT }}
               >
                 <BubbleBackdrop />
-                <div className="relative h-full w-full">
+                <ImageLightbox
+                  src={BUBBLE_SRC}
+                  alt="Decorative illustration accompanying the hero headline"
+                  ariaLabel="View hero illustration larger"
+                  className="relative h-full w-full"
+                  disableHoverScale
+                >
                   <Image
                     src={BUBBLE_SRC}
                     alt=""
@@ -125,23 +132,26 @@ export function HeroWithBubble() {
                     sizes="(max-width: 1280px) 50vw, 720px"
                     priority
                   />
-                </div>
+                </ImageLightbox>
               </div>
             </div>
           </div>
         </div>
 
         {/* Mobile / tablet: centered bubble under hero copy */}
-        <div
-          className="pointer-events-none mt-8 flex justify-center lg:hidden"
-          aria-hidden
-        >
+        <div className="mt-8 flex justify-center lg:hidden">
           <div
             className="home-bubble-float relative h-auto w-[min(92vw,36rem,calc(48vh*1024/744))]"
             style={{ aspectRatio: ASPECT }}
           >
             <BubbleBackdrop />
-            <div className="relative h-full w-full">
+            <ImageLightbox
+              src={BUBBLE_SRC}
+              alt="Decorative illustration accompanying the hero headline"
+              ariaLabel="View hero illustration larger"
+              className="relative h-full w-full"
+              disableHoverScale
+            >
               <Image
                 src={BUBBLE_SRC}
                 alt=""
@@ -150,7 +160,7 @@ export function HeroWithBubble() {
                 sizes="(max-width: 1024px) 92vw, 640px"
                 priority
               />
-            </div>
+            </ImageLightbox>
           </div>
         </div>
       </div>
@@ -162,7 +172,12 @@ export function HeroWithBubble() {
               key={logo.src}
               className="flex h-11 w-full max-w-[5.25rem] items-center justify-center sm:h-12 sm:max-w-[5.75rem]"
             >
-              <div className="relative h-9 w-full sm:h-10">
+              <ImageLightbox
+                src={logo.src}
+                alt={logo.alt}
+                className="relative h-9 w-full sm:h-10"
+                disableHoverScale
+              >
                 <Image
                   src={logo.src}
                   alt={logo.alt}
@@ -170,7 +185,7 @@ export function HeroWithBubble() {
                   className="object-contain object-center opacity-85 [filter:grayscale(1)]"
                   sizes="(max-width: 640px) 22vw, 92px"
                 />
-              </div>
+              </ImageLightbox>
             </li>
           ))}
         </ul>

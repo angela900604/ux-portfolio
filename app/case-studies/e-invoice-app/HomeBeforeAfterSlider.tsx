@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useCallback, useRef, useState } from "react";
+import { BeforeAfterComparisonLightbox } from "@/app/components/BeforeAfterComparisonLightbox";
 
 const BEFORE_SRC = "/case-studies/e-invoice/home-before-after-before.png";
 const AFTER_SRC = "/case-studies/e-invoice/home-before-after-after.png";
@@ -111,6 +112,12 @@ export function HomeBeforeAfterSlider() {
         >
           <span className="text-xs font-bold tracking-tight">⟷</span>
         </div>
+        <BeforeAfterComparisonLightbox
+          beforeSrc={BEFORE_SRC}
+          afterSrc={AFTER_SRC}
+          beforeAlt="Cloud Invoice app home — before redesign"
+          afterAlt="After redesign: app home with scan invoice as the primary action and barcode module; iOS home screen widget shows carrier barcode for quick access"
+        />
       </div>
       <figcaption className="mt-3 text-sm leading-relaxed text-zinc-500">
         <span className="font-medium text-zinc-400">Home · before / after.</span>{" "}

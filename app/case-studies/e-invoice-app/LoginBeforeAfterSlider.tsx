@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useCallback, useRef, useState } from "react";
+import { BeforeAfterComparisonLightbox } from "@/app/components/BeforeAfterComparisonLightbox";
 
 const BEFORE_SRC = "/case-studies/e-invoice/login-before-after-before.jpg";
 const AFTER_SRC = "/case-studies/e-invoice/login-before-after-after.jpg";
@@ -110,6 +111,12 @@ export function LoginBeforeAfterSlider() {
         >
           <span className="text-xs font-bold tracking-tight">⟷</span>
         </div>
+        <BeforeAfterComparisonLightbox
+          beforeSrc={BEFORE_SRC}
+          afterSrc={AFTER_SRC}
+          beforeAlt="Before: password-only verification modal in system settings"
+          afterAlt="After: Face ID, Touch ID, and pattern unlock options for Cloud Invoice app login"
+        />
       </div>
       <figcaption className="mt-4 text-sm leading-relaxed text-zinc-500">
         <span className="font-medium text-zinc-400">Login · before / after.</span>{" "}

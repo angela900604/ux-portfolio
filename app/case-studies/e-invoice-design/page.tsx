@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ImageLightbox } from "@/app/components/ImageLightbox";
 import { SITE_SHELL_CONTAINER } from "@/lib/site-shell";
 
 export const metadata = {
@@ -88,7 +89,12 @@ export default function EInvoiceDesignPage() {
           <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
             {E_INVOICE_DESIGN_IMAGES.map((item) => (
               <li key={item.src} className={item.className}>
-                <div className="relative overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+                <ImageLightbox
+                  src={item.src}
+                  alt={item.alt}
+                  className="relative block w-full overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40"
+                  disableHoverScale
+                >
                   <Image
                     src={item.src}
                     alt={item.alt}
@@ -97,7 +103,7 @@ export default function EInvoiceDesignPage() {
                     className="h-auto w-full object-cover"
                     sizes="(max-width: 1024px) 100vw, (max-width: 1480px) 50vw, 960px"
                   />
-                </div>
+                </ImageLightbox>
               </li>
             ))}
           </ul>

@@ -2,7 +2,7 @@
 
 import type { CSSProperties } from "react";
 import Image from "next/image";
-import { ImageLightbox } from "./ImageLightbox";
+import { ImageLightbox } from "@/app/components/ImageLightbox";
 
 export type FinalMarqueeSlide = {
   src: string;

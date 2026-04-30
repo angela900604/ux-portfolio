@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ImageLightbox } from "@/app/components/ImageLightbox";
 import { SplitCapsuleLink } from "@/app/components/SplitCapsuleLink";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 
@@ -29,13 +30,20 @@ export function ProblemPersonasBlock() {
           />
         </div>
         <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
-          <Image
+          <ImageLightbox
             src="/case-studies/e-invoice/photo-invoice-receipts.png"
             alt="Paper receipts commonly collected for Taiwan's invoice lottery"
-            width={1200}
-            height={900}
-            className="h-auto w-full object-cover"
-          />
+            className="block w-full"
+            disableHoverScale
+          >
+            <Image
+              src="/case-studies/e-invoice/photo-invoice-receipts.png"
+              alt="Paper receipts commonly collected for Taiwan's invoice lottery"
+              width={1200}
+              height={900}
+              className="h-auto w-full object-cover"
+            />
+          </ImageLightbox>
         </div>
       </div>
     </CaseStudyInViewSection>

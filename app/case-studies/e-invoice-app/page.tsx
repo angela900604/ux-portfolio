@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { ImageLightbox } from "@/app/components/ImageLightbox";
 import { SplitCapsuleLink } from "@/app/components/SplitCapsuleLink";
 import {
   CaseStudyAtAGlance,
@@ -349,47 +350,75 @@ export default function EInvoiceCaseStudy() {
         >
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
             <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
-              <Image
+              <ImageLightbox
                 src={HERO_BELOW_01.src}
                 alt={HERO_BELOW_01.alt}
-                width={1024}
-                height={571}
-                className="h-auto w-full object-cover"
-                sizes="(max-width: 640px) 100vw, 50vw"
-              />
+                className="block w-full"
+                disableHoverScale
+              >
+                <Image
+                  src={HERO_BELOW_01.src}
+                  alt={HERO_BELOW_01.alt}
+                  width={1024}
+                  height={571}
+                  className="h-auto w-full object-cover"
+                  sizes="(max-width: 640px) 100vw, 50vw"
+                />
+              </ImageLightbox>
             </div>
             <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
-              <Image
+              <ImageLightbox
                 src={HERO_BELOW_02.src}
                 alt={HERO_BELOW_02.alt}
-                width={1024}
-                height={552}
-                className="h-auto w-full object-cover"
-                sizes="(max-width: 640px) 100vw, 50vw"
-              />
+                className="block w-full"
+                disableHoverScale
+              >
+                <Image
+                  src={HERO_BELOW_02.src}
+                  alt={HERO_BELOW_02.alt}
+                  width={1024}
+                  height={552}
+                  className="h-auto w-full object-cover"
+                  sizes="(max-width: 640px) 100vw, 50vw"
+                />
+              </ImageLightbox>
             </div>
           </div>
           <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
             <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
               <div className="relative aspect-[4/3] w-full overflow-hidden">
-                <Image
+                <ImageLightbox
                   src={HERO_TABLET_01.src}
                   alt={HERO_TABLET_01.alt}
-                  fill
-                  className="object-cover object-center scale-[1.08]"
-                  sizes="(max-width: 640px) 100vw, 50vw"
-                />
+                  className="absolute inset-0"
+                  disableHoverScale
+                >
+                  <Image
+                    src={HERO_TABLET_01.src}
+                    alt={HERO_TABLET_01.alt}
+                    fill
+                    className="object-cover object-center scale-[1.08]"
+                    sizes="(max-width: 640px) 100vw, 50vw"
+                  />
+                </ImageLightbox>
               </div>
             </div>
             <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
               <div className="relative aspect-[4/3] w-full overflow-hidden">
-                <Image
+                <ImageLightbox
                   src={HERO_TABLET_02.src}
                   alt={HERO_TABLET_02.alt}
-                  fill
-                  className="object-cover object-center scale-[1.08]"
-                  sizes="(max-width: 640px) 100vw, 50vw"
-                />
+                  className="absolute inset-0"
+                  disableHoverScale
+                >
+                  <Image
+                    src={HERO_TABLET_02.src}
+                    alt={HERO_TABLET_02.alt}
+                    fill
+                    className="object-cover object-center scale-[1.08]"
+                    sizes="(max-width: 640px) 100vw, 50vw"
+                  />
+                </ImageLightbox>
               </div>
             </div>
           </div>
@@ -685,15 +714,22 @@ export default function EInvoiceCaseStudy() {
                 </ul>
               </div>
               <figure className="mt-6 overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
-                <Image
+                <ImageLightbox
                   src={HANDOFF_MODULE_SETTINGS_SPEC.src}
                   alt={HANDOFF_MODULE_SETTINGS_SPEC.alt}
-                  width={1024}
-                  height={571}
-                  className="h-auto w-full object-contain object-top"
-                  sizes="(max-width: 1024px) 100vw, 1024px"
-                  unoptimized
-                />
+                  className="block w-full"
+                  disableHoverScale
+                >
+                  <Image
+                    src={HANDOFF_MODULE_SETTINGS_SPEC.src}
+                    alt={HANDOFF_MODULE_SETTINGS_SPEC.alt}
+                    width={1024}
+                    height={571}
+                    className="h-auto w-full object-contain object-top"
+                    sizes="(max-width: 1024px) 100vw, 1024px"
+                    unoptimized
+                  />
+                </ImageLightbox>
               </figure>
             </div>
           </CaseStudyInViewSection>
@@ -1075,13 +1111,20 @@ export default function EInvoiceCaseStudy() {
               </ul>
             </CaseStudyExpandable>
             <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
-              <Image
+              <ImageLightbox
                 src="/case-studies/e-invoice/photo-stakeholder-meeting.png"
                 alt="Stakeholder meeting during the e-Invoice redesign project"
-                width={1600}
-                height={900}
-                className="h-auto w-full object-cover"
-              />
+                className="block w-full"
+                disableHoverScale
+              >
+                <Image
+                  src="/case-studies/e-invoice/photo-stakeholder-meeting.png"
+                  alt="Stakeholder meeting during the e-Invoice redesign project"
+                  width={1600}
+                  height={900}
+                  className="h-auto w-full object-cover"
+                />
+              </ImageLightbox>
             </div>
           </div>
         </DesignJourneyCollapsible>

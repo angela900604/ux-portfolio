@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { ImageLightbox } from "@/app/components/ImageLightbox";
 
 type MomiSlide = {
   src: string;
@@ -80,7 +81,12 @@ export function MomiImageSlideshow({
       aria-label={label}
     >
       <div className="relative">
-        <div className={frame}>
+        <ImageLightbox
+          src={current.src}
+          alt={current.alt}
+          className={frame}
+          disableHoverScale
+        >
           <Image
             src={current.src}
             alt={current.alt}
@@ -95,7 +101,7 @@ export function MomiImageSlideshow({
             }
             priority={safeIndex === 0}
           />
-        </div>
+        </ImageLightbox>
 
         {total > 1 ? (
           <div

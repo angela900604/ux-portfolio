@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
-import { ImageLightbox } from "../e-invoice-app/ImageLightbox";
+import { ImageLightbox } from "@/app/components/ImageLightbox";
 
 export type SlideshowSlide = {
   src: string;

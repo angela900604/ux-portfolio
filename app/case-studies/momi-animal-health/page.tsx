@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { ImageLightbox } from "@/app/components/ImageLightbox";
 import type { ReactNode } from "react";
 import {
   CaseStudyAtAGlance,
@@ -282,9 +283,12 @@ export default function MomiAnimalHealthCaseStudy() {
             </p>
             <div className="mt-4 grid gap-4 sm:grid-cols-2">
               {PET_EXPO_PHOTOS.map((photo) => (
-                <div
+                <ImageLightbox
                   key={photo.src}
+                  src={photo.src}
+                  alt={photo.alt}
                   className="relative aspect-[4/3] w-full overflow-hidden rounded-xl border border-[#E8E1D6] bg-[#FAF7F2]"
+                  disableHoverScale
                 >
                   <Image
                     src={photo.src}
@@ -293,7 +297,7 @@ export default function MomiAnimalHealthCaseStudy() {
                     className="object-cover object-center"
                     sizes="(max-width: 640px) 100vw, 50vw"
                   />
-                </div>
+                </ImageLightbox>
               ))}
             </div>
           </div>
