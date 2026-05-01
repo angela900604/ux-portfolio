@@ -77,7 +77,7 @@ export function GovernmentBackendCorrespondingScreensSlider({
         aria-valuemin={0}
         aria-valuemax={100}
         aria-valuenow={Math.round(pos * 100)}
-        aria-label="Compare backend admin notification settings with in-app notification detail. Drag horizontally."
+        aria-label="Compare backend annotation with corresponding app UI. Drag horizontally."
       >
         <span className="pointer-events-none absolute left-3 top-3 z-[2] rounded-md bg-zinc-950/75 px-2 py-1 text-[10px] font-semibold uppercase tracking-wider text-sky-200 ring-1 ring-sky-700/60">
           Backend
@@ -90,6 +90,7 @@ export function GovernmentBackendCorrespondingScreensSlider({
           src={appSrc}
           alt={appAlt}
           fill
+          unoptimized
           draggable={false}
           className="pointer-events-none select-none bg-zinc-950 object-contain object-center [-webkit-user-drag:none]"
           sizes="(max-width: 1024px) 100vw, 896px"
@@ -105,6 +106,7 @@ export function GovernmentBackendCorrespondingScreensSlider({
             src={backendSrc}
             alt={backendAlt}
             fill
+            unoptimized
             draggable={false}
             className="pointer-events-none select-none bg-zinc-950 object-contain object-center [-webkit-user-drag:none]"
             sizes="(max-width: 1024px) 100vw, 896px"

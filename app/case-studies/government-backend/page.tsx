@@ -151,16 +151,16 @@ export default function GovernmentBackendCaseStudy() {
               <span className="text-zinc-200">push notifications</span>, then open the
               in-app <span className="text-zinc-200">notification center</span> and
               message details—aligned with those backend rules. Drag the handle (or
-              press and drag anywhere on the frame) to compare the admin console with
-              the in-app message detail.
+              press and drag anywhere on the frame) to compare the backend
+              annotation with the corresponding app composition.
             </p>
             <GovernmentBackendCorrespondingScreensSlider
-              backendSrc={ASSET("backend-notification-settings.png")}
-              appSrc={ASSET("app-notification-detail.png")}
-              backendAlt="Backend admin: notification content, audience, and scheduled publish settings"
-              appAlt="Consumer app: notification detail screen for a message triggered by backend rules"
-              aspectWidth={1024}
-              aspectHeight={860}
+              backendSrc={ASSET("annotation.png")}
+              appSrc={ASSET("app.png")}
+              backendAlt="Annotated diagram: backend notification rules and corresponding in-app notification surfaces"
+              appAlt="Corresponding app UI composition: push, notification center, and message detail aligned with backend settings"
+              aspectWidth={2648}
+              aspectHeight={1244}
             />
             <p className="max-w-3xl text-xs text-zinc-500 leading-relaxed">
               Same flow also surfaces as{" "}

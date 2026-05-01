@@ -1,93 +1,5 @@
 import type { ReactNode } from "react";
 
-function IconTableGrid({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      width="22"
-      height="22"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.75"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden
-    >
-      <rect x="3" y="3" width="7" height="7" rx="1" />
-      <rect x="14" y="3" width="7" height="7" rx="1" />
-      <rect x="3" y="14" width="7" height="7" rx="1" />
-      <rect x="14" y="14" width="7" height="7" rx="1" />
-    </svg>
-  );
-}
-
-function IconEyeOff({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      width="22"
-      height="22"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.75"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden
-    >
-      <path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49" />
-      <path d="M14.084 14.158a3 3 0 0 1-4.242-4.242" />
-      <path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.008-5.063" />
-      <path d="m2 2 20 20" />
-    </svg>
-  );
-}
-
-function IconMessage({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      width="22"
-      height="22"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.75"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden
-    >
-      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-    </svg>
-  );
-}
-
-function AlignmentDonut() {
-  return (
-    <div
-      className="relative mx-auto aspect-square w-full max-w-[280px] shrink-0 sm:max-w-[320px]"
-      role="img"
-      aria-label="Three-part alignment model: workshop matrix for concrete debates, hide instead of disable for risky controls, and UI scoped to API guarantees."
-    >
-      <div
-        className="absolute inset-0 rounded-full shadow-[0_0_0_1px_rgba(255,255,255,0.06)_inset]"
-        style={{
-          background:
-            "conic-gradient(from -90deg, rgb(139 92 246) 0deg 120deg, rgb(14 165 233) 120deg 240deg, rgb(245 158 11) 240deg 360deg)",
-        }}
-      />
-      <div className="absolute inset-[20%] flex items-center justify-center rounded-full bg-white shadow-[inset_0_1px_0_0_rgba(0,0,0,0.06)] ring-1 ring-zinc-900/10">
-        <div className="flex items-center gap-2.5 px-3" aria-hidden>
-          <IconTableGrid className="text-violet-600" />
-          <IconEyeOff className="text-sky-600" />
-          <IconMessage className="text-amber-600" />
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function RbacCell({ granted }: { granted: boolean }) {
   return (
     <td className="px-2 py-2.5 text-center align-middle text-sm tabular-nums">
@@ -303,41 +215,29 @@ const STEPS: {
 export function GovernmentBackendEngineeringAlignment() {
   return (
     <div className="space-y-10">
-      <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-14">
-        <AlignmentDonut />
-        <ol className="min-w-0 flex-1 list-none space-y-8 p-0">
-          {STEPS.map((s) => (
-            <li key={s.n} className="flex gap-4">
-              <span className="mt-0.5 shrink-0 font-mono text-sm font-semibold tabular-nums text-violet-400">
+      <ol className="grid w-full max-w-6xl list-none grid-cols-1 gap-8 p-0 md:grid-cols-3 md:gap-6 lg:gap-8">
+        {STEPS.map((s) => (
+          <li
+            key={s.n}
+            className="min-w-0 border-t border-zinc-800/80 pt-6 first:border-t-0 first:pt-0 md:border-t-0 md:border-l md:pt-0 md:pl-6 md:first:border-l-0 md:first:pl-0"
+          >
+            <div className="flex flex-col gap-3">
+              <span className="font-mono text-sm font-semibold tabular-nums text-violet-400">
                 {s.n}
               </span>
-              <div className="min-w-0 space-y-2">
-                <h3 className="text-base font-semibold leading-snug tracking-tight text-zinc-100 sm:text-lg">
-                  {s.title}
-                </h3>
-                <p className="text-sm leading-relaxed text-zinc-400 sm:text-[15px]">
-                  {s.body}
-                </p>
-              </div>
-            </li>
-          ))}
-        </ol>
-      </div>
+              <h3 className="text-base font-semibold leading-snug tracking-tight text-zinc-100 sm:text-lg">
+                {s.title}
+              </h3>
+              <p className="text-sm leading-relaxed text-zinc-400 sm:text-[15px]">
+                {s.body}
+              </p>
+            </div>
+          </li>
+        ))}
+      </ol>
 
       <figure className="space-y-3">
-        <h4 className="text-sm font-semibold text-zinc-200">
-          RBAC in the UI · Role-based visibility
-        </h4>
-        <p className="max-w-3xl text-sm text-zinc-500">
-          Matrix of main vs. sub-functions by organization (from stakeholder
-          definitions): checkmarks indicate access; dashes mean the feature is not
-          available for that unit.
-        </p>
         <RbacMatrixTable />
-        <figcaption className="text-xs leading-relaxed text-zinc-500">
-          Stakeholder workshop matrix — same rows used in Figma flows and grant
-          dictionary for engineering handoff.
-        </figcaption>
       </figure>
     </div>
   );
