@@ -11,6 +11,7 @@ import {
 import { CaseStudyHeroFullBleed } from "../_components/CaseStudyHeroFullBleed";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
+import { CaseStudyExpandable } from "../_components/CaseStudyExpandable";
 import { DesignJourneyCollapsible } from "../_components/DesignJourneyCollapsible";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { ImageLightbox } from "@/app/components/ImageLightbox";
@@ -586,6 +587,46 @@ export default function AiMarketplaceCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Design system
           </span>
+          <CaseStudyExpandable
+            label="End-to-end shopper journey the library covers"
+            className="mt-0 max-w-3xl"
+          >
+            <p className="text-zinc-400">
+              Patterns were grouped by where parents are in a flow—not by
+              abstract IA—so new screens composed against the same five beats.
+            </p>
+            <ul className="mt-3 list-none space-y-2.5 text-zinc-300">
+              <li>
+                <span className="font-semibold text-zinc-100">Discovery</span>
+                {" — "}
+                Search, browse, navigation
+              </li>
+              <li>
+                <span className="font-semibold text-zinc-100">Decisioning</span>
+                {" — "}
+                Detail pages, comparison, content → action
+              </li>
+              <li>
+                <span className="font-semibold text-zinc-100">Transaction</span>
+                {" — "}
+                Cart, checkout, payment or booking equivalent
+              </li>
+              <li>
+                <span className="font-semibold text-zinc-100">
+                  Post-transaction
+                </span>
+                {" — "}
+                Order status, returns, support / self-serve
+              </li>
+              <li>
+                <span className="font-semibold text-zinc-100">
+                  Merchandising levers
+                </span>
+                {" — "}
+                Promos, recommendations, personalization
+              </li>
+            </ul>
+          </CaseStudyExpandable>
           <h2 className="max-w-3xl text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
             50+ components so engineering could move without redesigning atoms
           </h2>
