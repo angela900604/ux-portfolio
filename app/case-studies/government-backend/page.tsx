@@ -11,7 +11,8 @@ import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { DesignJourneyCollapsible } from "../_components/DesignJourneyCollapsible";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
-import { FlatAppShot, WideFigure } from "../e-invoice-app/EInvoiceFigures";
+import { WideFigure } from "../e-invoice-app/EInvoiceFigures";
+import { GovernmentBackendCorrespondingScreensSlider } from "./GovernmentBackendCorrespondingScreensSlider";
 import { GovernmentBackendEngineeringAlignment } from "./GovernmentBackendEngineeringAlignment";
 import { GovernmentBackendHeroTldr } from "./GovernmentBackendHeroTldr";
 
@@ -149,75 +150,24 @@ export default function GovernmentBackendCaseStudy() {
               and schedule delivery in advance. End users receive{" "}
               <span className="text-zinc-200">push notifications</span>, then open the
               in-app <span className="text-zinc-200">notification center</span> and
-              message details—aligned with those backend rules.
+              message details—aligned with those backend rules. Drag the handle (or
+              press and drag anywhere on the frame) to compare the admin console with
+              the in-app message detail.
             </p>
-            <div className="space-y-8">
-              <div className="min-w-0 space-y-3">
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="rounded-md bg-sky-500/20 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-sky-200">
-                    Backend
-                  </span>
-                  <span className="text-xs text-zinc-500">
-                    Admin console (staff-facing)
-                  </span>
-                </div>
-                <figure className="space-y-2">
-                  <div className="overflow-hidden rounded-[20px] border border-zinc-700/60 bg-zinc-900/30">
-                    <ImageLightbox
-                      src={ASSET("annotation.png")}
-                      alt="Annotated diagram: backend notification composition and scheduling aligned with in-app notification surfaces"
-                      className="block w-full"
-                      disableHoverScale
-                    >
-                      <Image
-                        src={ASSET("annotation.png")}
-                        alt="Annotated diagram: backend notification composition and scheduling aligned with in-app notification surfaces"
-                        width={2648}
-                        height={1244}
-                        className="h-auto w-full object-contain"
-                        sizes="(max-width: 768px) 100vw, min(896px, calc(100vw - 3rem))"
-                      />
-                    </ImageLightbox>
-                  </div>
-                  <figcaption className="max-w-3xl text-xs text-zinc-500">
-                    Annotation · Backend rules and corresponding app touchpoints.
-                  </figcaption>
-                </figure>
-              </div>
-              <div className="space-y-3">
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="rounded-md bg-violet-500/20 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-violet-200">
-                    App
-                  </span>
-                  <span className="text-xs text-zinc-500">
-                    End-user mobile (triggered by backend rules)
-                  </span>
-                </div>
-                <div className="grid grid-cols-1 justify-items-center gap-10 sm:grid-cols-3 sm:gap-6">
-                  <FlatAppShot
-                    uniform
-                    frameless
-                    src={ASSET("app-push-notification.png")}
-                    alt="App: push notification on lock screen triggered by backend settings"
-                    label="App · Push notification (triggered by backend)"
-                  />
-                  <FlatAppShot
-                    uniform
-                    frameless
-                    src={ASSET("app-notification-list.png")}
-                    alt="App: notification center list"
-                    label="App · Notification center list"
-                  />
-                  <FlatAppShot
-                    uniform
-                    frameless
-                    src={ASSET("app-notification-detail.png")}
-                    alt="App: notification detail screen"
-                    label="App · Notification Detail"
-                  />
-                </div>
-              </div>
-            </div>
+            <GovernmentBackendCorrespondingScreensSlider
+              backendSrc={ASSET("backend-notification-settings.png")}
+              appSrc={ASSET("app-notification-detail.png")}
+              backendAlt="Backend admin: notification content, audience, and scheduled publish settings"
+              appAlt="Consumer app: notification detail screen for a message triggered by backend rules"
+              aspectWidth={1024}
+              aspectHeight={860}
+            />
+            <p className="max-w-3xl text-xs text-zinc-500 leading-relaxed">
+              Same flow also surfaces as{" "}
+              <span className="text-zinc-400">push on the lock screen</span> and in
+              the <span className="text-zinc-400">notification center list</span>{" "}
+              before opening this detail view.
+            </p>
           </div>
         </CaseStudyInViewSection>
 
