@@ -162,12 +162,6 @@ export default function GovernmentBackendCaseStudy() {
               aspectWidth={2648}
               aspectHeight={1244}
             />
-            <p className="max-w-3xl text-xs text-zinc-500 leading-relaxed">
-              Same flow also surfaces as{" "}
-              <span className="text-zinc-400">push on the lock screen</span> and in
-              the <span className="text-zinc-400">notification center list</span>{" "}
-              before opening this detail view.
-            </p>
           </div>
         </CaseStudyInViewSection>
 
@@ -206,11 +200,13 @@ export default function GovernmentBackendCaseStudy() {
           <GovernmentBackendEngineeringAlignment />
         </CaseStudyInViewSection>
 
+        <div className="flex flex-col gap-4 sm:gap-5">
         <DesignJourneyCollapsible
           journeySectionIds={GOV_BACKEND_JOURNEY_IDS}
           panelId="gov-backend-design-journey-panel"
           title="Key design iterations"
           subtitle="Reporting dashboards and app version control — before/after and flow diagrams"
+          className="!border-t-0"
         >
         <CaseStudyInViewSection
           id="iterations"
@@ -373,6 +369,7 @@ export default function GovernmentBackendCaseStudy() {
             </p>
           </CaseStudyInViewSection>
         </DesignJourneyCollapsible>
+        </div>
 
         <CaseStudyInViewSection className="border-t border-zinc-800 pt-12 space-y-8">
           <CaseStudyPrevNext currentSlug="government-backend" />

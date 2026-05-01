@@ -17,10 +17,6 @@ const STEPS: {
         collaborate within one system while respecting each other&apos;s
         responsibilities. That challenge became the foundation for designing
         role-based access control.
-        <br />
-        <br />I defined a clear set of principles for access: which roles could
-        see which features, and how permissions should differ. If a role had no
-        access to a feature, that feature simply did not appear in their sidebar.
       </>
     ),
   },
@@ -72,7 +68,13 @@ export function GovernmentBackendEngineeringAlignment() {
         ))}
       </ol>
 
-      <figure className="space-y-3">
+      <figure className="space-y-4">
+        <p className="max-w-3xl text-sm leading-relaxed text-zinc-400 sm:text-[15px]">
+          I defined a clear set of principles for access: which roles could see
+          which features, and how permissions should differ. If a role had no
+          access to a feature, that feature simply did not appear in their
+          sidebar.
+        </p>
         <div className="overflow-x-auto rounded-xl border border-zinc-800 bg-zinc-900/30">
           <Image
             src={ROLE_CHART_SRC}

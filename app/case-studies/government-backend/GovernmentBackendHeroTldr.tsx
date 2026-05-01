@@ -66,11 +66,11 @@ export function GovernmentBackendHeroTldr() {
         </h2>
       </div>
 
-      <div className="mt-8 grid gap-4 sm:grid-cols-2">
+      <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-5 md:items-stretch">
         {METRICS.map((m) => (
           <div
             key={m.kicker}
-            className="flex flex-col rounded-2xl border border-zinc-200/90 bg-white p-5 shadow-sm"
+            className="flex min-w-0 flex-col rounded-2xl border border-zinc-200/90 bg-white p-5 shadow-sm"
           >
             <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500">
               {m.kicker}
