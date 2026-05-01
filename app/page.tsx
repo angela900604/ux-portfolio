@@ -23,7 +23,7 @@ const CORE_PRODUCT = [
   },
   {
     slug: "ai-marketplace",
-    title: "MINA AI · Marketplace community for SF parents",
+    title: "MINA · AI-Powered Marketplace Community for SF Parents",
     tag: "AI · Community-driven · Growth & conversion",
     techHighlights: "AI trust patterns · 0→1 design system · A/B tested",
   },
