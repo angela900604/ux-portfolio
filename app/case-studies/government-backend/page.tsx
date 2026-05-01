@@ -12,6 +12,7 @@ import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { DesignJourneyCollapsible } from "../_components/DesignJourneyCollapsible";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { FlatAppShot, WideFigure } from "../e-invoice-app/EInvoiceFigures";
+import { GovernmentBackendEngineeringAlignment } from "./GovernmentBackendEngineeringAlignment";
 import { GovernmentBackendHeroTldr } from "./GovernmentBackendHeroTldr";
 
 export const metadata = {
@@ -48,23 +49,6 @@ function Metric({ children }: { children: ReactNode }) {
     <span className="rounded-md bg-emerald-500/15 px-1.5 py-0.5 font-semibold text-emerald-200/95 tabular-nums">
       {children}
     </span>
-  );
-}
-
-function RbacCell({ granted }: { granted: boolean }) {
-  return (
-    <td className="px-2 py-2.5 text-center align-middle text-sm tabular-nums">
-      {granted ? (
-        <span
-          className="inline-flex h-6 w-6 items-center justify-center rounded bg-emerald-600 text-xs font-semibold text-white"
-          aria-label="Granted"
-        >
-          ✓
-        </span>
-      ) : (
-        <span className="text-zinc-600">—</span>
-      )}
-    </td>
   );
 }
 
@@ -290,273 +274,16 @@ export default function GovernmentBackendCaseStudy() {
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection
-          id="rbac"
-          className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
+          id="design-engineering-alignment"
+          className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Role-based access control
+            Design &amp; engineering
           </span>
-          <h2 className="text-zinc-100">
-            Collaboration across departments—without stepping on each other
+          <h2 className="max-w-3xl text-zinc-100">
+            How I aligned design with engineering
           </h2>
-          <p className="text-zinc-300 leading-relaxed">
-            The first major challenge was enabling multiple departments to
-            collaborate within one system while respecting each other&apos;s
-            responsibilities. That challenge became the foundation for designing
-            role-based access control.
-          </p>
-          <p className="text-zinc-300 leading-relaxed">
-            I defined a clear set of principles for access: which roles could see
-            which features, and how permissions should differ. If a role had no
-            access to a feature, that feature simply did not appear in their
-            sidebar.
-          </p>
-          <p className="text-zinc-300 leading-relaxed">
-            Some roles had partial access. For example, in the Promotion Zone
-            (public education content), multiple roles could create articles, but
-            only the National Tax Bureau Headquarters could pin them to the top.
-            Since pinned articles directly shaped the app homepage (limited to{" "}
-            <Metric>5</Metric> pinned slots), the &quot;Pin to Top&quot; button only
-            appeared for that
-            specific role. For all other roles, the article list showed without the
-            pinning option.
-          </p>
-          <p className="text-zinc-300 leading-relaxed">
-            This careful role definition empowered each department to work
-            independently while preventing conflicts that could undermine
-            credibility.
-          </p>
-          <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6 space-y-4 max-w-3xl">
-            <h5 className="text-zinc-100">
-              Role &amp; permission example · Promotion Zone
-            </h5>
-            <p className="text-zinc-300 leading-relaxed text-sm">
-              <span className="text-zinc-200 font-medium">General role</span> with
-              &quot;Create Article&quot; permission: users can create and manage
-              promotion articles. However, the &quot;Pin to Top&quot; option is
-              hidden—so they can contribute content without interfering with how
-              articles are prioritized on the app homepage.
-            </p>
-            <p className="text-zinc-300 leading-relaxed text-sm">
-              <span className="text-zinc-200 font-medium">
-                National Tax Bureau Headquarters role
-              </span>{" "}
-              with &quot;Create Article&quot; and &quot;Pin to Top&quot;
-              permissions: in addition to creating and managing promotion articles,
-              this role has exclusive access to &quot;Pin to Top.&quot; Because
-              pinned articles directly control up to five homepage slots, only this
-              role can decide the final order of content displayed to end users.
-            </p>
-          </div>
-
-          <div className="space-y-3 pt-2">
-            <h5 className="text-zinc-100">
-              RBAC in the UI · Role-based visibility
-            </h5>
-            <p className="text-sm text-zinc-500 max-w-3xl">
-              Matrix of main vs. sub-functions by organization (from stakeholder
-              definitions): checkmarks indicate access; dashes mean the feature is
-              not available for that unit.
-            </p>
-            <div className="overflow-x-auto rounded-xl border border-zinc-800">
-              <table className="min-w-[960px] w-full border-collapse text-left text-sm">
-                <thead className="bg-zinc-950 text-zinc-100">
-                  <tr>
-                    <th className="border border-zinc-800 px-3 py-2.5 font-semibold">
-                      Main function
-                    </th>
-                    <th className="border border-zinc-800 px-3 py-2.5 font-semibold">
-                      Sub-function
-                    </th>
-                    <th className="border border-zinc-800 px-2 py-2.5 text-center font-semibold">
-                      Center
-                    </th>
-                    <th className="border border-zinc-800 px-2 py-2.5 text-center font-semibold">
-                      NTA HQ
-                    </th>
-                    <th className="border border-zinc-800 px-2 py-2.5 text-center font-semibold">
-                      NTA branches &amp; offices
-                    </th>
-                    <th className="border border-zinc-800 px-2 py-2.5 text-center font-semibold">
-                      Printing
-                    </th>
-                    <th className="border border-zinc-800 px-2 py-2.5 text-center font-semibold">
-                      Tax admin.
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-zinc-800 bg-zinc-900/30 text-zinc-300">
-                  <tr className="align-top">
-                    <td
-                      className="border border-zinc-800 px-3 py-2.5 text-zinc-200"
-                      rowSpan={2}
-                    >
-                      01 Basic information
-                    </td>
-                    <td className="border border-zinc-800 px-3 py-2.5">
-                      1_1 Terms &amp; privacy · 1_2 Mobile barcode prize remittance
-                      notice
-                    </td>
-                    <RbacCell granted />
-                    <RbacCell granted={false} />
-                    <RbacCell granted={false} />
-                    <RbacCell granted={false} />
-                    <RbacCell granted={false} />
-                  </tr>
-                  <tr className="align-top">
-                    <td className="border border-zinc-800 px-3 py-2.5">
-                      1_3 App version management
-                    </td>
-                    <RbacCell granted />
-                    <RbacCell granted={false} />
-                    <RbacCell granted={false} />
-                    <RbacCell granted={false} />
-                    <RbacCell granted={false} />
-                  </tr>
-                  <tr className="align-top">
-                    <td
-                      className="border border-zinc-800 px-3 py-2.5 text-zinc-200"
-                      rowSpan={2}
-                    >
-                      02 Data statistics
-                    </td>
-                    <td className="border border-zinc-800 px-3 py-2.5">
-                      2_1 First-time lottery app users
-                    </td>
-                    <RbacCell granted />
-                    <RbacCell granted />
-                    <RbacCell granted />
-                    <RbacCell granted />
-                    <RbacCell granted />
-                  </tr>
-                  <tr className="align-top">
-                    <td className="border border-zinc-800 px-3 py-2.5">
-                      2_2 Lottery app member count
-                    </td>
-                    <RbacCell granted />
-                    <RbacCell granted />
-                    <RbacCell granted />
-                    <RbacCell granted />
-                    <RbacCell granted />
-                  </tr>
-                  <tr className="align-top">
-                    <td
-                      className="border border-zinc-800 px-3 py-2.5 text-zinc-200"
-                      rowSpan={3}
-                    >
-                      03 Notifications
-                    </td>
-                    <td className="border border-zinc-800 px-3 py-2.5">
-                      3_1 Announcements
-                    </td>
-                    <RbacCell granted />
-                    <RbacCell granted />
-                    <RbacCell granted={false} />
-                    <RbacCell granted={false} />
-                    <RbacCell granted={false} />
-                  </tr>
-                  <tr className="align-top">
-                    <td className="border border-zinc-800 px-3 py-2.5">
-                      3_2 Personal notifications
-                    </td>
-                    <RbacCell granted />
-                    <RbacCell granted />
-                    <RbacCell granted={false} />
-                    <RbacCell granted={false} />
-                    <RbacCell granted={false} />
-                  </tr>
-                  <tr className="align-top">
-                    <td className="border border-zinc-800 px-3 py-2.5">
-                      3_3 Homepage pinned notice
-                    </td>
-                    <RbacCell granted />
-                    <RbacCell granted />
-                    <RbacCell granted={false} />
-                    <RbacCell granted={false} />
-                    <RbacCell granted={false} />
-                  </tr>
-                  <tr className="align-top">
-                    <td
-                      className="border border-zinc-800 px-3 py-2.5 text-zinc-200"
-                      rowSpan={2}
-                    >
-                      04 Promotion zone
-                    </td>
-                    <td className="border border-zinc-800 px-3 py-2.5">
-                      4_1 Publish promo content
-                    </td>
-                    <RbacCell granted={false} />
-                    <RbacCell granted />
-                    <RbacCell granted />
-                    <RbacCell granted={false} />
-                    <RbacCell granted={false} />
-                  </tr>
-                  <tr className="align-top">
-                    <td className="border border-zinc-800 px-3 py-2.5">
-                      4_2 Pin promo content
-                    </td>
-                    <RbacCell granted={false} />
-                    <RbacCell granted />
-                    <RbacCell granted={false} />
-                    <RbacCell granted={false} />
-                    <RbacCell granted={false} />
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          <div
-            id="engineering-handoff"
-            className="scroll-mt-28 space-y-4 border-t border-zinc-800/90 pt-10 sm:scroll-mt-32 sm:pt-12"
-          >
-            <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-              Handoff &amp; engineering alignment
-            </span>
-            <h3 className="max-w-3xl text-lg font-semibold tracking-tight text-zinc-100 sm:text-xl">
-              Turning stakeholder politics into implementable permission rules
-            </h3>
-            <div className="max-w-3xl space-y-4 text-zinc-300 leading-relaxed">
-              <p>
-                The main tension was{" "}
-                <span className="text-zinc-100">
-                  breadth of roles vs. implementation cost
-                </span>
-                : engineering pushed for fewer composite checks and simpler
-                policies, while each ministry unit insisted their staff could not see
-                or trigger the wrong surface. I did not resolve that in the abstract—I
-                exported the workshop matrix (above) into{" "}
-                <span className="text-zinc-100">
-                  annotated Figma flows and a short “grant dictionary”
-                </span>{" "}
-                (feature key → API capability → UI visibility) so debates happened on
-                concrete rows, not opinions.
-              </p>
-              <p>
-                A concrete conflict was{" "}
-                <span className="text-zinc-100">promotion pinning</span>: several
-                roles could author outreach, but only HQ could occupy the five
-                homepage slots. Some stakeholders wanted a shared “editor” role with
-                optional pin; engineers worried about race conditions and audit
-                trails. The compromise we shipped in UX was{" "}
-                <span className="text-zinc-100">
-                  hide high-impact controls entirely for non-HQ roles
-                </span>{" "}
-                rather than disabled grey states—cleaner for civil servants and
-                fewer “why can’t I click this?” tickets, while the backend kept a
-                single enforcement path.
-              </p>
-              <p>
-                On <span className="text-zinc-100">reporting</span>, the constraint
-                was data volume and export fairness: wide date ranges and
-                unbounded CSVs were risky. I aligned filters and copy with what the
-                API could guarantee (statistical year, bounded exports, sensible
-                defaults) so the UI never promised a slice the service could not
-                deliver—then iterated the chart hierarchy once engineers confirmed
-                query patterns for weekly vs. monthly rollups.
-              </p>
-            </div>
-          </div>
+          <GovernmentBackendEngineeringAlignment />
         </CaseStudyInViewSection>
 
         <DesignJourneyCollapsible
