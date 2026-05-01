@@ -10,11 +10,11 @@ const ROLE_CHART_ALT =
 
 export function GovernmentBackendRoleChartLightbox() {
   return (
-    <div className="overflow-x-auto rounded-xl border border-zinc-800 bg-zinc-900/30">
+    <div className="w-full rounded-xl border border-zinc-800 bg-zinc-900/30">
       <ImageLightbox
         src={ROLE_CHART_SRC}
         alt={ROLE_CHART_ALT}
-        className="block w-max max-w-none"
+        className="block w-full"
         disableHoverScale
       >
         <Image
@@ -22,9 +22,9 @@ export function GovernmentBackendRoleChartLightbox() {
           alt={ROLE_CHART_ALT}
           width={3949}
           height={1471}
-          className="h-auto w-auto min-w-[960px] max-w-none"
+          className="h-auto w-full max-w-full object-contain"
           unoptimized
-          sizes="(min-width: 1152px) 72rem, 100vw"
+          sizes="(max-width: 1480px) 100vw, 1200px"
         />
       </ImageLightbox>
     </div>
