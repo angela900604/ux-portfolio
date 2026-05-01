@@ -1,7 +1,5 @@
 import type { ReactNode } from "react";
-import Image from "next/image";
-
-const ROLE_CHART_SRC = `/case-studies/government-backend/${encodeURIComponent("role chart.png")}`;
+import { GovernmentBackendRoleChartLightbox } from "./GovernmentBackendRoleChartLightbox";
 
 const STEPS: {
   n: string;
@@ -46,12 +44,12 @@ const STEPS: {
 
 export function GovernmentBackendEngineeringAlignment() {
   return (
-    <div className="space-y-10">
-      <ol className="grid w-full max-w-6xl list-none grid-cols-1 gap-8 p-0 md:grid-cols-3 md:gap-6 lg:gap-8">
+    <div className="w-full space-y-10">
+      <ol className="grid w-full list-none grid-cols-1 gap-y-10 p-0 md:grid-cols-3 md:gap-x-8 md:gap-y-0">
         {STEPS.map((s) => (
           <li
             key={s.n}
-            className="min-w-0 border-t border-zinc-800/80 pt-6 first:border-t-0 first:pt-0 md:border-t-0 md:border-l md:pt-0 md:pl-6 md:first:border-l-0 md:first:pl-0"
+            className="min-w-0 border-t border-zinc-800/80 pt-8 first:border-t-0 first:pt-0 md:border-t-0 md:pt-0"
           >
             <div className="flex flex-col gap-3">
               <span className="font-mono text-sm font-semibold tabular-nums text-[#05C3DD]">
@@ -75,17 +73,7 @@ export function GovernmentBackendEngineeringAlignment() {
           access to a feature, that feature simply did not appear in their
           sidebar.
         </p>
-        <div className="overflow-x-auto rounded-xl border border-zinc-800 bg-zinc-900/30">
-          <Image
-            src={ROLE_CHART_SRC}
-            alt="Role-based access chart: main functions, sub-functions, and permissions by Center, NTA HQ, NTA branches and offices, Printing, and Tax administration"
-            width={3949}
-            height={1471}
-            className="h-auto w-full min-w-[960px] max-w-none"
-            unoptimized
-            sizes="(min-width: 1152px) 72rem, 100vw"
-          />
-        </div>
+        <GovernmentBackendRoleChartLightbox />
       </figure>
     </div>
   );
