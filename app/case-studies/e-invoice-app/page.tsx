@@ -13,7 +13,6 @@ import { CaseStudyHeroFullBleed } from "../_components/CaseStudyHeroFullBleed";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { DesignJourneyCollapsible } from "../_components/DesignJourneyCollapsible";
-import { CompetitorLandscapeTable } from "./CompetitorLandscapeTable";
 import { EInvoiceHeroTldr } from "./EInvoiceHeroTldr";
 import { FinalScreensMarquee } from "./FinalScreensMarquee";
 import { PortraitTile, WideFigure } from "./EInvoiceFigures";
@@ -236,10 +235,8 @@ const M_TIME =
   "rounded-md bg-amber-500/15 px-1.5 py-0.5 font-medium tabular-nums text-amber-100/95";
 
 const E_INVOICE_JOURNEY_IDS = [
-  "competitive-landscape",
   "functional-map",
-  "moodboard",
-  "mockups-design-system",
+  "page-flow-design",
   "testing",
 ] as const;
 
@@ -746,51 +743,14 @@ export default function EInvoiceCaseStudy() {
           journeySectionIds={E_INVOICE_JOURNEY_IDS}
           panelId="e-invoice-design-journey-panel"
           title="Design journey"
-          subtitle="Competitive analysis, functional map, moodboard, mockups & design system, and moderated testing"
+          subtitle="Functional map, page flows, and moderated testing"
         >
-        <CaseStudyInViewSection
-          id="competitive-landscape"
-          className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
-        >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            01 · Competitive analysis
-          </span>
-          <div className="max-w-3xl space-y-3">
-            <h2 className="text-zinc-100">
-              Market read before locking IA—not competitor slides after the
-              solution
-            </h2>
-            <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
-              Based on the visual strategy report, we benchmarked references
-              against three filters before finalizing direction: whether the
-              product felt{" "}
-              <span className="text-zinc-200">
-                intuitive, simple, clean, and modern
-              </span>
-              ; whether its interaction patterns aligned with usability
-              heuristics; and whether design elements (whitespace, contrast,
-              card hierarchy, button shape) could directly address real pain in
-              this project.
-            </p>
-            <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
-              That benchmark informed what &quot;good&quot; meant for this MoF app:
-              policy-trust as a baseline, but with faster recognition, clearer
-              hierarchy, and accessibility-friendly density. The same source work
-              also clarified three candidate visual routes for the next phase—{" "}
-              <span className="text-zinc-200">Friendly lifestyle</span>,{" "}
-              <span className="text-zinc-200">Modern minimal</span>, and{" "}
-              <span className="text-zinc-200">Professional practical</span>.
-            </p>
-          </div>
-          <CompetitorLandscapeTable />
-        </CaseStudyInViewSection>
-
         <CaseStudyInViewSection
           id="functional-map"
           className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            02 · Functional map
+            Functional map
           </span>
           <h2 className="max-w-3xl text-zinc-100">
             Before moving to wireframe, I mapped out{" "}
@@ -824,12 +784,12 @@ export default function EInvoiceCaseStudy() {
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection
-          id="moodboard"
+          id="page-flow-design"
           className="scroll-mt-28 space-y-12 sm:scroll-mt-32"
         >
           <div className="max-w-3xl space-y-4">
             <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-              03 · Moodboard
+              03 · Page flow, UI direction &amp; design system
             </span>
             <h2 className="max-w-3xl text-zinc-100">
               Figma page flows caught navigation gaps early;{" "}
@@ -913,16 +873,11 @@ export default function EInvoiceCaseStudy() {
               />
             </div>
           </div>
-        </CaseStudyInViewSection>
 
-        <CaseStudyInViewSection
-          id="mockups-design-system"
-          className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
-        >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            04 · Mockups &amp; design system
-          </span>
-          <div className="max-w-3xl">
+          <div className="max-w-3xl space-y-4 pt-2">
+                         <h3 className="text-zinc-100">
+              Mockups &amp; design system
+            </h3>
             <p className="text-zinc-300 leading-relaxed">
               High-fidelity work used the iOS / iPadOS UI Kit as a baseline—native
               components, predictable spacing, and patterns that engineering could map
@@ -937,7 +892,7 @@ export default function EInvoiceCaseStudy() {
         >
           <div className="max-w-3xl space-y-6">
             <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-              05 · Testing &amp; iterations · Accessibility in the protocol
+              04 · Testing &amp; iterations · Accessibility in the protocol
             </span>
             <h2 className="max-w-3xl text-zinc-100">
               Twelve moderated sessions—including low-vision users—landed at{" "}
