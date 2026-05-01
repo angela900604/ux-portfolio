@@ -18,12 +18,12 @@ const CYCLING_PHRASES = [
 
 const HERO_LOGOS = [
   { src: "/home/logos/figma.png", alt: "Figma" },
-  { src: "/home/logos/gemini.png", alt: "Gemini" },
-  { src: "/home/logos/cursor.png", alt: "Cursor" },
   { src: "/home/logos/claude.png", alt: "Claude" },
-  { src: "/home/logos/chatgpt.png", alt: "ChatGPT" },
+  { src: "/home/logos/cursor.png", alt: "Cursor" },
   { src: "/home/logos/github.png", alt: "GitHub" },
   { src: "/home/logos/vercel.png", alt: "Vercel" },
+  { src: "/home/logos/gemini.png", alt: "Gemini" },
+  { src: "/home/logos/chatgpt.png", alt: "ChatGPT" },
 ] as const;
 
 const CYCLE_MS = 2500;
