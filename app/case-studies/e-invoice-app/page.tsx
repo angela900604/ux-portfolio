@@ -233,6 +233,8 @@ const M_TXT =
   "rounded-md bg-emerald-500/20 px-1.5 py-0.5 font-semibold tabular-nums text-emerald-200";
 const M_TIME =
   "rounded-md bg-amber-500/15 px-1.5 py-0.5 font-medium tabular-nums text-amber-100/95";
+/** Design journey copy — emerald emphasis on key terms */
+const JOURNEY_EMPHASIS = "font-semibold text-emerald-200";
 
 const E_INVOICE_JOURNEY_IDS = [
   "functional-map",
@@ -754,29 +756,23 @@ export default function EInvoiceCaseStudy() {
           </span>
           <h2 className="max-w-3xl text-zinc-100">
             Before moving to wireframe, I mapped out{" "}
-            <span className="font-medium text-zinc-200">functional map</span> for
-            all features (login, home, prize redemptions, etc) and{" "}
-            <span className="font-medium text-zinc-200">validated</span> each
-            touchpoint with{" "}
-            <span className="font-medium text-zinc-200">
-              internal stakeholders
-            </span>{" "}
+            <span className={JOURNEY_EMPHASIS}>functional map</span> for all
+            features (login, home, prize redemptions, etc) and{" "}
+            <span className={JOURNEY_EMPHASIS}>validated</span> each touchpoint
+            with <span className={JOURNEY_EMPHASIS}>internal stakeholders</span>{" "}
             (engineers on{" "}
-            <span className="font-medium text-zinc-200">
+            <span className={JOURNEY_EMPHASIS}>
               API availability and data sources
             </span>
             ) and{" "}
-            <span className="font-medium text-zinc-200">
-              external stakeholders
-            </span>{" "}
+            <span className={JOURNEY_EMPHASIS}>external stakeholders</span>{" "}
             (government staff clients) to confirm the scope was{" "}
-            <span className="font-medium text-zinc-200">feasible</span>.
+            <span className={JOURNEY_EMPHASIS}>feasible</span>.
           </h2>
           <WideFigure
             borderless
             src={FUNCTIONAL_MAP_INITIAL_DISCUSSION.src}
             alt={FUNCTIONAL_MAP_INITIAL_DISCUSSION.alt}
-            caption="Example of Initial Feature Discussion Stage (export)."
             width={7136}
             height={2520}
             unoptimized
@@ -791,21 +787,28 @@ export default function EInvoiceCaseStudy() {
             <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
               03 · Page flow, UI direction &amp; design system
             </span>
-            <h2 className="max-w-3xl text-zinc-100">
-              Figma page flows caught navigation gaps early;{" "}
-              <span className="text-zinc-200">Friendly lifestyle</span> became the
-              approved route after comparing three style proposals.
-            </h2>
-            <p className="max-w-3xl text-sm leading-relaxed text-zinc-400">
-              We first translated research keywords into interface variables
-              (color system, typography scale, button geometry, icon language,
-              layout rhythm), then tested three directions from the report:
-              multi-color function zoning (friendly lifestyle), black-led
-              reduction (modern minimal), and trust-forward stability
-              (professional practical). Login, invoice management, and redemption
-              were mapped before polish so gaps showed up in logic—not only in
-              pixels.
+            <p className="max-w-3xl text-sm leading-relaxed text-zinc-300 sm:text-base">
+              In user interviews, people described how they wanted the app to
+              feel in everyday use—easy to scan, calm, and not overwhelming.
+              They said they wanted something that felt familiar and light, not
+              stiff or crowded. Those conversations kept circling back to the
+              same qualities, which we captured as:
             </p>
+            <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">
+              Interview keywords
+            </p>
+            <ul
+              className="flex flex-wrap gap-2.5"
+              aria-label="User interview keywords (Chinese)"
+            >
+              {(["直覺", "簡約", "清爽", "現代"] as const).map((word) => (
+                <li key={word}>
+                  <span className="inline-flex rounded-lg border border-emerald-500/45 bg-emerald-500/10 px-3 py-1.5 text-base font-semibold tracking-wide text-emerald-100 sm:text-lg">
+                    {word}
+                  </span>
+                </li>
+              ))}
+            </ul>
           </div>
 
           <div className="grid gap-10 lg:grid-cols-2 lg:items-start lg:gap-14">

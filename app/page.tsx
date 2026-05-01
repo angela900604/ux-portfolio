@@ -23,13 +23,13 @@ const CORE_PRODUCT = [
   },
   {
     slug: "ai-marketplace",
-    title: "MINA · Community-first marketplace for SF parents",
+    title: "MINA AI · Marketplace community for SF parents",
     tag: "AI · Community-driven · Growth & conversion",
     techHighlights: "AI trust patterns · 0→1 design system · A/B tested",
   },
   {
     slug: "government-backend",
-    title: "Role-based backend for 600+ government staff",
+    title: "Internal Backend Platform for 600+ government staff",
     tag: "Responsive · Web · 600+ Users",
     techHighlights:
       "Permission matrix (600+ seats) · Reporting & audit surfaces · Version-control UX",
