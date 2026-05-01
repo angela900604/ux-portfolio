@@ -13,7 +13,6 @@ import { DesignJourneyCollapsible } from "../_components/DesignJourneyCollapsibl
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { FlatAppShot, WideFigure } from "../e-invoice-app/EInvoiceFigures";
 import { GovernmentBackendHeroTldr } from "./GovernmentBackendHeroTldr";
-import { GovernmentBackendUnifiedIaDiagram } from "./GovernmentBackendUnifiedIaDiagram";
 
 export const metadata = {
   title: "Role-Based Government Backend (600+ Staff) | Angela Yang",
@@ -180,27 +179,24 @@ export default function GovernmentBackendCaseStudy() {
                 </div>
                 <figure className="space-y-2">
                   <div className="overflow-hidden rounded-[20px] border border-zinc-700/60 bg-zinc-900/30">
-                    <div className="relative w-full aspect-video">
-                      <video
-                        className="absolute inset-0 h-full w-full bg-black object-contain"
-                        autoPlay
-                        muted
-                        loop
-                        controls
-                        playsInline
-                        preload="metadata"
-                        aria-label="Backend admin: notification content and scheduled publishing"
-                      >
-                        <source
-                          src={ASSET("backend-demo.mp4")}
-                          type="video/mp4"
-                        />
-                      </video>
-                    </div>
+                    <ImageLightbox
+                      src={ASSET("annotation.png")}
+                      alt="Annotated diagram: backend notification composition and scheduling aligned with in-app notification surfaces"
+                      className="block w-full"
+                      disableHoverScale
+                    >
+                      <Image
+                        src={ASSET("annotation.png")}
+                        alt="Annotated diagram: backend notification composition and scheduling aligned with in-app notification surfaces"
+                        width={2648}
+                        height={1244}
+                        className="h-auto w-full object-contain"
+                        sizes="(max-width: 768px) 100vw, min(896px, calc(100vw - 3rem))"
+                      />
+                    </ImageLightbox>
                   </div>
                   <figcaption className="max-w-3xl text-xs text-zinc-500">
-                    Backend · Notification settings (content + pre-scheduled
-                    publish time).
+                    Annotation · Backend rules and corresponding app touchpoints.
                   </figcaption>
                 </figure>
               </div>
@@ -259,27 +255,38 @@ export default function GovernmentBackendCaseStudy() {
             staff across multiple departments to collaborate effectively within one
             reliable platform.
           </p>
-        </CaseStudyInViewSection>
-
-        <CaseStudyInViewSection
-          id="unified-ia"
-          className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
-        >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Information architecture
-          </span>
-          <h2 className="max-w-3xl text-zinc-100">
-            One platform layer: five org columns in, consistent modules out
-          </h2>
-          <p className="max-w-3xl text-zinc-300 leading-relaxed">
-            Before this backend, teams leaned on spreadsheets and one-off tools for
-            campaigns, pushes, and reports. The design problem was how to respect real
-            jurisdictional boundaries while still giving everyone a{" "}
-            <span className="text-zinc-100">single module map</span>—so training,
-            audits, and releases point to the same IA, with permissions doing the
-            differentiation instead of separate products per unit.
-          </p>
-          <GovernmentBackendUnifiedIaDiagram />
+          <div className="space-y-3 pt-6">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="rounded-md bg-sky-500/20 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-sky-200">
+                Backend
+              </span>
+              <span className="text-xs text-zinc-500">
+                Admin console walkthrough (notification settings)
+              </span>
+            </div>
+            <figure className="space-y-2">
+              <div className="overflow-hidden rounded-[20px] border border-zinc-700/60 bg-zinc-900/30">
+                <div className="relative w-full aspect-video">
+                  <video
+                    className="absolute inset-0 h-full w-full bg-black object-contain"
+                    autoPlay
+                    muted
+                    loop
+                    controls
+                    playsInline
+                    preload="metadata"
+                    aria-label="Backend admin: notification content and scheduled publishing"
+                  >
+                    <source src={ASSET("backend-demo.mp4")} type="video/mp4" />
+                  </video>
+                </div>
+              </div>
+              <figcaption className="max-w-3xl text-xs text-zinc-500">
+                Backend · Notification settings (content + pre-scheduled publish
+                time).
+              </figcaption>
+            </figure>
+          </div>
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection
