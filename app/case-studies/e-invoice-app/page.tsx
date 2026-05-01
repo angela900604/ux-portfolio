@@ -236,9 +236,10 @@ const M_TIME =
   "rounded-md bg-amber-500/15 px-1.5 py-0.5 font-medium tabular-nums text-amber-100/95";
 
 const E_INVOICE_JOURNEY_IDS = [
-  "functional-map",
   "competitive-landscape",
-  "page-flow-design",
+  "functional-map",
+  "moodboard",
+  "mockups-design-system",
   "testing",
 ] as const;
 
@@ -745,14 +746,51 @@ export default function EInvoiceCaseStudy() {
           journeySectionIds={E_INVOICE_JOURNEY_IDS}
           panelId="e-invoice-design-journey-panel"
           title="Design journey"
-          subtitle="Functional map, competitive landscape, page flows, and moderated testing"
+          subtitle="Competitive analysis, functional map, moodboard, mockups & design system, and moderated testing"
         >
+        <CaseStudyInViewSection
+          id="competitive-landscape"
+          className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
+        >
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            01 · Competitive analysis
+          </span>
+          <div className="max-w-3xl space-y-3">
+            <h2 className="text-zinc-100">
+              Market read before locking IA—not competitor slides after the
+              solution
+            </h2>
+            <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
+              Based on the visual strategy report, we benchmarked references
+              against three filters before finalizing direction: whether the
+              product felt{" "}
+              <span className="text-zinc-200">
+                intuitive, simple, clean, and modern
+              </span>
+              ; whether its interaction patterns aligned with usability
+              heuristics; and whether design elements (whitespace, contrast,
+              card hierarchy, button shape) could directly address real pain in
+              this project.
+            </p>
+            <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
+              That benchmark informed what &quot;good&quot; meant for this MoF app:
+              policy-trust as a baseline, but with faster recognition, clearer
+              hierarchy, and accessibility-friendly density. The same source work
+              also clarified three candidate visual routes for the next phase—{" "}
+              <span className="text-zinc-200">Friendly lifestyle</span>,{" "}
+              <span className="text-zinc-200">Modern minimal</span>, and{" "}
+              <span className="text-zinc-200">Professional practical</span>.
+            </p>
+          </div>
+          <CompetitorLandscapeTable />
+        </CaseStudyInViewSection>
+
         <CaseStudyInViewSection
           id="functional-map"
           className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Functional map
+            02 · Functional map
           </span>
           <h2 className="max-w-3xl text-zinc-100">
             Before moving to wireframe, I mapped out{" "}
@@ -786,49 +824,12 @@ export default function EInvoiceCaseStudy() {
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection
-          id="competitive-landscape"
-          className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
-        >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            03 · Competitive landscape
-          </span>
-          <div className="max-w-3xl space-y-3">
-            <h2 className="text-zinc-100">
-              Market read before locking IA—not competitor slides after the
-              solution
-            </h2>
-            <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
-              Based on the visual strategy report, we benchmarked references
-              against three filters before finalizing direction: whether the
-              product felt{" "}
-              <span className="text-zinc-200">
-                intuitive, simple, clean, and modern
-              </span>
-              ; whether its interaction patterns aligned with usability
-              heuristics; and whether design elements (whitespace, contrast,
-              card hierarchy, button shape) could directly address real pain in
-              this project.
-            </p>
-            <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
-              That benchmark informed what &quot;good&quot; meant for this MoF app:
-              policy-trust as a baseline, but with faster recognition, clearer
-              hierarchy, and accessibility-friendly density. The same source work
-              also clarified three candidate visual routes for the next phase—{" "}
-              <span className="text-zinc-200">Friendly lifestyle</span>,{" "}
-              <span className="text-zinc-200">Modern minimal</span>, and{" "}
-              <span className="text-zinc-200">Professional practical</span>.
-            </p>
-          </div>
-          <CompetitorLandscapeTable />
-        </CaseStudyInViewSection>
-
-        <CaseStudyInViewSection
-          id="page-flow-design"
+          id="moodboard"
           className="scroll-mt-28 space-y-12 sm:scroll-mt-32"
         >
           <div className="max-w-3xl space-y-4">
             <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-              04 · Page flow, UI direction &amp; design system
+              03 · Moodboard
             </span>
             <h2 className="max-w-3xl text-zinc-100">
               Figma page flows caught navigation gaps early;{" "}
@@ -912,11 +913,16 @@ export default function EInvoiceCaseStudy() {
               />
             </div>
           </div>
+        </CaseStudyInViewSection>
 
-          <div className="max-w-3xl space-y-4 pt-2">
-                         <h3 className="text-zinc-100">
-              Mockups &amp; design system
-            </h3>
+        <CaseStudyInViewSection
+          id="mockups-design-system"
+          className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
+        >
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            04 · Mockups &amp; design system
+          </span>
+          <div className="max-w-3xl">
             <p className="text-zinc-300 leading-relaxed">
               High-fidelity work used the iOS / iPadOS UI Kit as a baseline—native
               components, predictable spacing, and patterns that engineering could map
