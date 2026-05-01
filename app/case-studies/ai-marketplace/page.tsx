@@ -586,11 +586,12 @@ export default function AiMarketplaceCaseStudy() {
           </span>
           <div className="max-w-3xl space-y-4">
             <CaseStudyExpandable
-              label="我主要負責了哪些flows"
+              label="Which product flows I owned"
               className="!mt-0"
+              accent="mina"
             >
               <p className="text-zinc-400">
-                以下是我有深度參與的主要 product flows：
+                These are the main flows I worked on end-to-end:
               </p>
               <ul className="mt-3 list-none space-y-2.5 text-zinc-300">
                 <li>Search, browse, navigation</li>
@@ -604,7 +605,11 @@ export default function AiMarketplaceCaseStudy() {
                 </li>
               </ul>
             </CaseStudyExpandable>
-            <CaseStudyExpandable label="Design journey" className="!mt-0">
+            <CaseStudyExpandable
+              label="Design journey"
+              className="!mt-0"
+              accent="mina"
+            >
               <div className="flex flex-col gap-12 sm:gap-14">
                 <CaseStudyInViewSection
                   id="engineering-proposal"
