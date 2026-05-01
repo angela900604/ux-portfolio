@@ -1,171 +1,7 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 
-function RbacCell({ granted }: { granted: boolean }) {
-  return (
-    <td className="px-2 py-2.5 text-center align-middle text-sm tabular-nums">
-      {granted ? (
-        <span
-          className="inline-flex h-6 w-6 items-center justify-center rounded bg-emerald-600 text-xs font-semibold text-white"
-          aria-label="Granted"
-        >
-          ✓
-        </span>
-      ) : (
-        <span className="text-zinc-600">—</span>
-      )}
-    </td>
-  );
-}
-
-function RbacMatrixTable() {
-  return (
-    <div className="overflow-x-auto rounded-xl border border-zinc-800">
-      <table className="min-w-[960px] w-full border-collapse text-left text-sm">
-        <thead className="bg-zinc-950 text-zinc-100">
-          <tr>
-            <th className="border border-zinc-800 px-3 py-2.5 font-semibold">
-              Main function
-            </th>
-            <th className="border border-zinc-800 px-3 py-2.5 font-semibold">
-              Sub-function
-            </th>
-            <th className="border border-zinc-800 px-2 py-2.5 text-center font-semibold">
-              Center
-            </th>
-            <th className="border border-zinc-800 px-2 py-2.5 text-center font-semibold">
-              NTA HQ
-            </th>
-            <th className="border border-zinc-800 px-2 py-2.5 text-center font-semibold">
-              NTA branches &amp; offices
-            </th>
-            <th className="border border-zinc-800 px-2 py-2.5 text-center font-semibold">
-              Printing
-            </th>
-            <th className="border border-zinc-800 px-2 py-2.5 text-center font-semibold">
-              Tax admin.
-            </th>
-          </tr>
-        </thead>
-        <tbody className="divide-y divide-zinc-800 bg-zinc-900/30 text-zinc-300">
-          <tr className="align-top">
-            <td
-              className="border border-zinc-800 px-3 py-2.5 text-zinc-200"
-              rowSpan={2}
-            >
-              01 Basic information
-            </td>
-            <td className="border border-zinc-800 px-3 py-2.5">
-              1_1 Terms &amp; privacy · 1_2 Mobile barcode prize remittance notice
-            </td>
-            <RbacCell granted />
-            <RbacCell granted={false} />
-            <RbacCell granted={false} />
-            <RbacCell granted={false} />
-            <RbacCell granted={false} />
-          </tr>
-          <tr className="align-top">
-            <td className="border border-zinc-800 px-3 py-2.5">
-              1_3 App version management
-            </td>
-            <RbacCell granted />
-            <RbacCell granted={false} />
-            <RbacCell granted={false} />
-            <RbacCell granted={false} />
-            <RbacCell granted={false} />
-          </tr>
-          <tr className="align-top">
-            <td
-              className="border border-zinc-800 px-3 py-2.5 text-zinc-200"
-              rowSpan={2}
-            >
-              02 Data statistics
-            </td>
-            <td className="border border-zinc-800 px-3 py-2.5">
-              2_1 First-time lottery app users
-            </td>
-            <RbacCell granted />
-            <RbacCell granted />
-            <RbacCell granted />
-            <RbacCell granted />
-            <RbacCell granted />
-          </tr>
-          <tr className="align-top">
-            <td className="border border-zinc-800 px-3 py-2.5">
-              2_2 Lottery app member count
-            </td>
-            <RbacCell granted />
-            <RbacCell granted />
-            <RbacCell granted />
-            <RbacCell granted />
-            <RbacCell granted />
-          </tr>
-          <tr className="align-top">
-            <td
-              className="border border-zinc-800 px-3 py-2.5 text-zinc-200"
-              rowSpan={3}
-            >
-              03 Notifications
-            </td>
-            <td className="border border-zinc-800 px-3 py-2.5">
-              3_1 Announcements
-            </td>
-            <RbacCell granted />
-            <RbacCell granted />
-            <RbacCell granted={false} />
-            <RbacCell granted={false} />
-            <RbacCell granted={false} />
-          </tr>
-          <tr className="align-top">
-            <td className="border border-zinc-800 px-3 py-2.5">
-              3_2 Personal notifications
-            </td>
-            <RbacCell granted />
-            <RbacCell granted />
-            <RbacCell granted={false} />
-            <RbacCell granted={false} />
-            <RbacCell granted={false} />
-          </tr>
-          <tr className="align-top">
-            <td className="border border-zinc-800 px-3 py-2.5">
-              3_3 Homepage pinned notice
-            </td>
-            <RbacCell granted />
-            <RbacCell granted />
-            <RbacCell granted={false} />
-            <RbacCell granted={false} />
-            <RbacCell granted={false} />
-          </tr>
-          <tr className="align-top">
-            <td
-              className="border border-zinc-800 px-3 py-2.5 text-zinc-200"
-              rowSpan={2}
-            >
-              04 Promotion zone
-            </td>
-            <td className="border border-zinc-800 px-3 py-2.5">
-              4_1 Publish promo content
-            </td>
-            <RbacCell granted={false} />
-            <RbacCell granted />
-            <RbacCell granted />
-            <RbacCell granted={false} />
-            <RbacCell granted={false} />
-          </tr>
-          <tr className="align-top">
-            <td className="border border-zinc-800 px-3 py-2.5">
-              4_2 Pin promo content
-            </td>
-            <RbacCell granted={false} />
-            <RbacCell granted />
-            <RbacCell granted={false} />
-            <RbacCell granted={false} />
-            <RbacCell granted={false} />
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  );
-}
+const ROLE_CHART_SRC = `/case-studies/government-backend/${encodeURIComponent("role chart.png")}`;
 
 const STEPS: {
   n: string;
@@ -174,7 +10,7 @@ const STEPS: {
 }[] = [
   {
     n: "01",
-    title: "把抽象的權限爭議變成可以討論的具體東西",
+    title: "Turning abstract permission debates into concrete scope",
     body: (
       <>
         The first major challenge was enabling multiple departments to
@@ -222,7 +58,7 @@ export function GovernmentBackendEngineeringAlignment() {
             className="min-w-0 border-t border-zinc-800/80 pt-6 first:border-t-0 first:pt-0 md:border-t-0 md:border-l md:pt-0 md:pl-6 md:first:border-l-0 md:first:pl-0"
           >
             <div className="flex flex-col gap-3">
-              <span className="font-mono text-sm font-semibold tabular-nums text-violet-400">
+              <span className="font-mono text-sm font-semibold tabular-nums text-[#05C3DD]">
                 {s.n}
               </span>
               <h3 className="text-base font-semibold leading-snug tracking-tight text-zinc-100 sm:text-lg">
@@ -237,7 +73,17 @@ export function GovernmentBackendEngineeringAlignment() {
       </ol>
 
       <figure className="space-y-3">
-        <RbacMatrixTable />
+        <div className="overflow-x-auto rounded-xl border border-zinc-800 bg-zinc-900/30">
+          <Image
+            src={ROLE_CHART_SRC}
+            alt="Role-based access chart: main functions, sub-functions, and permissions by Center, NTA HQ, NTA branches and offices, Printing, and Tax administration"
+            width={3949}
+            height={1471}
+            className="h-auto w-full min-w-[960px] max-w-none"
+            unoptimized
+            sizes="(min-width: 1152px) 72rem, 100vw"
+          />
+        </div>
       </figure>
     </div>
   );

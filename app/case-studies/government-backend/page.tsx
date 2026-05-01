@@ -24,10 +24,17 @@ export const metadata = {
 
 const ASSET = (name: string) => `/case-studies/government-backend/${name}`;
 
-/** Homepage + in-page cover — MacBook on desk showing the admin backend UI */
+const GOV_BACKEND_COVER_SRC = ASSET(
+  encodeURIComponent("rolebased backend cover.png"),
+);
+
+const HIGHLIGHT_CYAN = "#05C3DD";
+const HIGHLIGHT_CYAN_BG = "rgba(5, 195, 221, 0.18)";
+
+/** Homepage card + in-page hero/cover — shared artwork */
 const BACKEND_COVER = {
-  src: ASSET("home-cover.png"),
-  alt: "MacBook on a desk displaying the role-based government backend admin dashboard with data tables and filters",
+  src: GOV_BACKEND_COVER_SRC,
+  alt: "Role-based government backend platform — cover artwork",
 } as const;
 
 const AT_A_GLANCE_ITEMS = [
@@ -45,29 +52,15 @@ const AT_A_GLANCE_ITEMS = [
 
 const GOV_BACKEND_JOURNEY_IDS = ["iterations"] as const;
 
-function Metric({
-  children,
-  accent = "emerald",
-}: {
-  children: ReactNode;
-  /** Brand cyan for staff scale callouts (e.g. 600+). */
-  accent?: "emerald" | "cyan";
-}) {
-  if (accent === "cyan") {
-    return (
-      <span
-        className="rounded-md px-1.5 py-0.5 font-semibold tabular-nums"
-        style={{
-          backgroundColor: "rgba(5, 195, 221, 0.18)",
-          color: "#05C3DD",
-        }}
-      >
-        {children}
-      </span>
-    );
-  }
+function Metric({ children }: { children: ReactNode }) {
   return (
-    <span className="rounded-md bg-emerald-500/15 px-1.5 py-0.5 font-semibold text-emerald-200/95 tabular-nums">
+    <span
+      className="rounded-md px-1.5 py-0.5 font-semibold tabular-nums"
+      style={{
+        backgroundColor: HIGHLIGHT_CYAN_BG,
+        color: HIGHLIGHT_CYAN,
+      }}
+    >
       {children}
     </span>
   );
@@ -78,8 +71,8 @@ export default function GovernmentBackendCaseStudy() {
     <article className="min-h-screen bg-zinc-950 text-zinc-100">
       <header className="border-b border-zinc-800">
         <CaseStudyHeroFullBleed
-          imageSrc={ASSET("hero-platform-overview.png")}
-          imageAlt="Government backend platform overview — dashboards and navigation"
+          imageSrc={GOV_BACKEND_COVER_SRC}
+          imageAlt="Role-based government backend platform — cover artwork"
           imageClassName="object-cover object-[center_40%]"
           eyebrow={
             <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-white/75">
@@ -99,7 +92,7 @@ export default function GovernmentBackendCaseStudy() {
             <p className="text-lg leading-relaxed text-zinc-200 sm:text-xl">
               Backend platform for the Ministry of Finance&apos;s Uniform Invoice
               Lottery Redemption App—role-based access and reporting for{" "}
-              <Metric accent="cyan">600+</Metric> staff, faster invoice management and fewer
+              <Metric>600+</Metric> staff, faster invoice management and fewer
               errors.
             </p>
           }
@@ -146,15 +139,9 @@ export default function GovernmentBackendCaseStudy() {
           <h2 className="max-w-3xl text-zinc-100 leading-snug">
             After the public lottery app shipped, MoF needed a single backend for
             announcements, promos, push rules, reporting, and app versions—used by{" "}
-            <Metric accent="cyan">600+</Metric> people who expect the same familiarity
+            <Metric>600+</Metric> people who expect the same familiarity
             as other government systems.
           </h2>
-          <p className="text-zinc-300 leading-relaxed max-w-3xl">
-            <Metric>3</Metric> rounds of needs interviews set priorities and flows.
-            As sole UX/UI, I paired with engineering on what should stay editable vs.
-            hard-coded, and used mockups + page flows (not giant specs) to match a
-            tight Jul–Sep window.
-          </p>
 
           <div className="space-y-3 pt-4">
             <h5 className="text-zinc-100">
@@ -165,9 +152,7 @@ export default function GovernmentBackendCaseStudy() {
               and schedule delivery in advance. End users receive{" "}
               <span className="text-zinc-200">push notifications</span>, then open the
               in-app <span className="text-zinc-200">notification center</span> and
-              message details—aligned with those backend rules. Drag the handle (or
-              press and drag anywhere on the frame) to compare the backend
-              annotation with the corresponding app composition.
+              message details—aligned with those backend rules.
             </p>
             <GovernmentBackendCorrespondingScreensSlider
               backendSrc={ASSET("annotation.png")}
@@ -188,53 +173,23 @@ export default function GovernmentBackendCaseStudy() {
 
         <CaseStudyInViewSection
           id="final-result"
-          className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
+          className="scroll-mt-28 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Final result
-          </span>
-          <h2 className="text-zinc-100">
-            One reliable platform for cross-department operations
-          </h2>
-          <p className="text-zinc-300 leading-relaxed">
-            The final backend platform unified the management of announcements,
-            promotions, push notifications, data reports, and app version updates.
-            With carefully defined role-based permissions, workflow-driven
-            reporting, and system-level consistency, the design enabled government
-            staff across multiple departments to collaborate effectively within one
-            reliable platform.
-          </p>
-          <div className="space-y-3 pt-6">
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="rounded-md bg-sky-500/20 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-sky-200">
-                Backend
-              </span>
-              <span className="text-xs text-zinc-500">
-                Admin console walkthrough (notification settings)
-              </span>
+          <div className="overflow-hidden rounded-[20px] border border-zinc-700/60 bg-zinc-900/30">
+            <div className="relative w-full aspect-video">
+              <video
+                className="absolute inset-0 h-full w-full bg-black object-contain"
+                autoPlay
+                muted
+                loop
+                controls
+                playsInline
+                preload="metadata"
+                aria-label="Backend admin: notification content and scheduled publishing"
+              >
+                <source src={ASSET("backend-demo.mp4")} type="video/mp4" />
+              </video>
             </div>
-            <figure className="space-y-2">
-              <div className="overflow-hidden rounded-[20px] border border-zinc-700/60 bg-zinc-900/30">
-                <div className="relative w-full aspect-video">
-                  <video
-                    className="absolute inset-0 h-full w-full bg-black object-contain"
-                    autoPlay
-                    muted
-                    loop
-                    controls
-                    playsInline
-                    preload="metadata"
-                    aria-label="Backend admin: notification content and scheduled publishing"
-                  >
-                    <source src={ASSET("backend-demo.mp4")} type="video/mp4" />
-                  </video>
-                </div>
-              </div>
-              <figcaption className="max-w-3xl text-xs text-zinc-500">
-                Backend · Notification settings (content + pre-scheduled publish
-                time).
-              </figcaption>
-            </figure>
           </div>
         </CaseStudyInViewSection>
 
@@ -294,16 +249,34 @@ export default function GovernmentBackendCaseStudy() {
             </p>
             <p className="text-zinc-300 leading-relaxed">
               <span className="text-zinc-200 font-semibold">Impact:</span> Present{" "}
-              <span className="rounded-md bg-amber-500/15 px-1.5 py-0.5 font-medium text-amber-100/90">
+              <span
+                className="rounded-md px-1.5 py-0.5 font-medium"
+                style={{
+                  backgroundColor: HIGHLIGHT_CYAN_BG,
+                  color: HIGHLIGHT_CYAN,
+                }}
+              >
                 weekly
               </span>{" "}
               and{" "}
-              <span className="rounded-md bg-amber-500/15 px-1.5 py-0.5 font-medium text-amber-100/90">
+              <span
+                className="rounded-md px-1.5 py-0.5 font-medium"
+                style={{
+                  backgroundColor: HIGHLIGHT_CYAN_BG,
+                  color: HIGHLIGHT_CYAN,
+                }}
+              >
                 monthly
               </span>{" "}
               numbers in meetings without manual calculations; compare time periods
               more easily;{" "}
-              <span className="rounded-md bg-sky-500/15 px-1.5 py-0.5 font-medium text-sky-200/95">
+              <span
+                className="rounded-md px-1.5 py-0.5 font-medium"
+                style={{
+                  backgroundColor: HIGHLIGHT_CYAN_BG,
+                  color: HIGHLIGHT_CYAN,
+                }}
+              >
                 export
               </span>{" "}
               datasets independently, reducing reliance on engineers and speeding up

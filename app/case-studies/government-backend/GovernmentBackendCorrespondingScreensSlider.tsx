@@ -40,7 +40,7 @@ export function GovernmentBackendCorrespondingScreensSlider({
     <figure className="w-full min-w-0 max-w-4xl">
       <div
         ref={containerRef}
-        className="relative w-full cursor-ew-resize overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/50 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.04)] touch-none select-none outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950"
+        className="relative w-full cursor-ew-resize overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/50 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.04)] touch-none select-none outline-none focus-visible:ring-2 focus-visible:ring-[#05C3DD]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950"
         style={{ aspectRatio: aspect }}
         onDragStartCapture={(e) => e.preventDefault()}
         onPointerDown={(e) => {
@@ -79,10 +79,10 @@ export function GovernmentBackendCorrespondingScreensSlider({
         aria-valuenow={Math.round(pos * 100)}
         aria-label="Compare backend annotation with corresponding app UI. Drag horizontally."
       >
-        <span className="pointer-events-none absolute left-3 top-3 z-[2] rounded-md bg-zinc-950/75 px-2 py-1 text-[10px] font-semibold uppercase tracking-wider text-sky-200 ring-1 ring-sky-700/60">
+        <span className="pointer-events-none absolute left-3 top-3 z-[2] rounded-md bg-zinc-950/75 px-2 py-1 text-[10px] font-semibold uppercase tracking-wider text-[#05C3DD] ring-1 ring-[#05C3DD]/60">
           Backend
         </span>
-        <span className="pointer-events-none absolute right-3 top-3 z-[2] rounded-md bg-zinc-950/75 px-2 py-1 text-[10px] font-semibold uppercase tracking-wider text-violet-200 ring-1 ring-violet-700/60">
+        <span className="pointer-events-none absolute right-3 top-3 z-[2] rounded-md bg-zinc-950/75 px-2 py-1 text-[10px] font-semibold uppercase tracking-wider text-[#05C3DD] ring-1 ring-[#05C3DD]/60">
           App
         </span>
 

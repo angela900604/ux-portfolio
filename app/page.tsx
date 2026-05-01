@@ -44,7 +44,7 @@ const CORE_PRODUCT = [
 ] as const;
 
 const WORK_THUMB: Record<string, string> = {
-  "government-backend": "/case-studies/government-backend/home-cover.png",
+  "government-backend": `/case-studies/government-backend/${encodeURIComponent("rolebased backend cover.png")}`,
   "baskin-robbins": "/case-studies/baskin-robbins/home-cover.png",
 };
 

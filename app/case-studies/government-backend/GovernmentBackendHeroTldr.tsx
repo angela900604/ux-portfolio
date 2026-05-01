@@ -43,13 +43,6 @@ const METRICS = [
     detail:
       "Working closely with engineers, I designed backend flows that balanced flexibility and stability—such as version control with mandatory update settings and build-code mapping—so critical updates could be enforced quickly without risking system inconsistency.",
   },
-  {
-    kicker: "Final result",
-    value: "One",
-    title: "Unified cross-department platform",
-    detail:
-      "The final backend platform unified the management of announcements, promotions, push notifications, data reports, and app version updates. With carefully defined role-based permissions, workflow-driven reporting, and system-level consistency, the design enabled government staff across multiple departments to collaborate effectively within one reliable platform.",
-  },
 ] as const;
 
 export function GovernmentBackendHeroTldr() {
@@ -83,10 +76,8 @@ export function GovernmentBackendHeroTldr() {
               {m.kicker}
             </p>
             <p
-              className={`mt-3 text-2xl font-bold tabular-nums tracking-tight sm:text-3xl ${
-                m.value === "600+" ? "" : "text-emerald-600"
-              }`}
-              style={m.value === "600+" ? { color: CYAN_600 } : undefined}
+              className="mt-3 text-2xl font-bold tabular-nums tracking-tight sm:text-3xl"
+              style={{ color: CYAN_600 }}
             >
               {m.value}
             </p>
