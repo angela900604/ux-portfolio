@@ -2,12 +2,11 @@
 
 import Image from "next/image";
 import { useCallback, useRef, useState } from "react";
-import { BeforeAfterComparisonLightbox } from "@/app/components/BeforeAfterComparisonLightbox";
 
-const BEFORE_SRC = "/case-studies/e-invoice/home-before-after-before.png";
-const AFTER_SRC = "/case-studies/e-invoice/home-before-after-after.png";
-/** Matches exported comparison frames (1024×576). */
-const ASPECT = 1024 / 576;
+const BEFORE_SRC = "/case-studies/e-invoice/before.png";
+const AFTER_SRC = "/case-studies/e-invoice/after.png";
+/** Matches `before.png` / `after.png` on disk (7680×4320). */
+const ASPECT = 7680 / 4320;
 
 export function HomeBeforeAfterSlider() {
   const [pos, setPos] = useState(0.5);
@@ -75,9 +74,10 @@ export function HomeBeforeAfterSlider() {
           src={AFTER_SRC}
           alt="After redesign: app home with scan invoice as the primary action and barcode module; iOS home screen widget shows carrier barcode for quick access"
           fill
+          unoptimized
           draggable={false}
           className="pointer-events-none object-cover select-none [-webkit-user-drag:none]"
-          sizes="(max-width: 1152px) 100vw, 960px"
+          sizes="100vw"
         />
 
         {/* Before — clipped to the left of the divider */}
@@ -91,9 +91,10 @@ export function HomeBeforeAfterSlider() {
             src={BEFORE_SRC}
             alt="Cloud Invoice app home — before redesign"
             fill
+            unoptimized
             draggable={false}
             className="pointer-events-none object-cover select-none [-webkit-user-drag:none]"
-            sizes="(max-width: 1152px) 100vw, 960px"
+            sizes="100vw"
           />
         </div>
 
@@ -112,18 +113,7 @@ export function HomeBeforeAfterSlider() {
         >
           <span className="text-xs font-bold tracking-tight">⟷</span>
         </div>
-        <BeforeAfterComparisonLightbox
-          beforeSrc={BEFORE_SRC}
-          afterSrc={AFTER_SRC}
-          beforeAlt="Cloud Invoice app home — before redesign"
-          afterAlt="After redesign: app home with scan invoice as the primary action and barcode module; iOS home screen widget shows carrier barcode for quick access"
-        />
       </div>
-      <figcaption className="mt-3 text-sm leading-relaxed text-zinc-500">
-        <span className="font-medium text-zinc-400">Home · before / after.</span>{" "}
-        Drag the center handle (or press and drag anywhere on the frame) to compare
-        the shipped home redesign with the earlier layout.
-      </figcaption>
     </figure>
   );
 }
