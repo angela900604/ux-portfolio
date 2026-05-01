@@ -2,12 +2,13 @@
 
 import Image from "next/image";
 import { useCallback, useRef, useState } from "react";
-import { BeforeAfterComparisonLightbox } from "@/app/components/BeforeAfterComparisonLightbox";
 
-const BEFORE_SRC = "/case-studies/e-invoice/login-before-after-before.jpg";
-const AFTER_SRC = "/case-studies/e-invoice/login-before-after-after.jpg";
-/** Comparison frames (legacy password modal · multi-method auth), 1024×576 JPEG @ q95 */
-const ASPECT = 1024 / 576;
+const BEFORE_SRC =
+  "/case-studies/e-invoice/" + encodeURIComponent("verify before.png");
+const AFTER_SRC =
+  "/case-studies/e-invoice/" + encodeURIComponent("verify after.png");
+/** Matches `verify before.png` / `verify after.png` on disk (7680×4320). */
+const ASPECT = 7680 / 4320;
 
 export function LoginBeforeAfterSlider() {
   const [pos, setPos] = useState(0.5);
@@ -74,10 +75,10 @@ export function LoginBeforeAfterSlider() {
           src={AFTER_SRC}
           alt="After: Face ID, Touch ID, and pattern unlock options for Cloud Invoice app login"
           fill
-          quality={95}
+          unoptimized
           draggable={false}
           className="pointer-events-none object-cover select-none [-webkit-user-drag:none]"
-          sizes="(max-width: 1024px) 100vw, 1024px"
+          sizes="100vw"
         />
 
         <div
@@ -90,10 +91,10 @@ export function LoginBeforeAfterSlider() {
             src={BEFORE_SRC}
             alt="Before: password-only verification modal in system settings"
             fill
-            quality={95}
+            unoptimized
             draggable={false}
             className="pointer-events-none object-cover select-none [-webkit-user-drag:none]"
-            sizes="(max-width: 1024px) 100vw, 1024px"
+            sizes="100vw"
           />
         </div>
 
@@ -111,19 +112,7 @@ export function LoginBeforeAfterSlider() {
         >
           <span className="text-xs font-bold tracking-tight">⟷</span>
         </div>
-        <BeforeAfterComparisonLightbox
-          beforeSrc={BEFORE_SRC}
-          afterSrc={AFTER_SRC}
-          beforeAlt="Before: password-only verification modal in system settings"
-          afterAlt="After: Face ID, Touch ID, and pattern unlock options for Cloud Invoice app login"
-        />
       </div>
-      <figcaption className="mt-4 text-sm leading-relaxed text-zinc-500">
-        <span className="font-medium text-zinc-400">Login · before / after.</span>{" "}
-        Drag the center handle (or press and drag anywhere on the frame) to compare
-        the legacy password-only path with Face ID, Touch ID (Android), and pattern
-        (dots) unlock.
-      </figcaption>
     </figure>
   );
 }
