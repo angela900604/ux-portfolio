@@ -9,37 +9,37 @@ const variantClass: Record<
 > = {
   emerald: {
     group: "focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-emerald-200",
-    left: "border border-emerald-300/90 bg-emerald-400 text-zinc-950 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.2)] group-hover:border-emerald-200/90 group-hover:bg-emerald-300",
+    left: "border border-emerald-300/90 bg-emerald-400 text-zinc-950 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.2)] group-hover:border-emerald-600 group-hover:bg-emerald-600",
     right:
-      "border border-emerald-300/90 bg-emerald-400 text-zinc-950 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.2)] group-hover:border-emerald-200/90 group-hover:bg-emerald-300",
+      "border border-emerald-300/90 bg-emerald-400 text-zinc-950 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.2)] group-hover:border-emerald-600 group-hover:bg-emerald-600",
   },
   emeraldSoft: {
     group:
       "focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-emerald-400/60",
-    left: "border border-emerald-500/80 bg-emerald-500/90 text-zinc-950 group-hover:border-emerald-400 group-hover:bg-emerald-400",
+    left: "border border-emerald-500/80 bg-emerald-500/90 text-zinc-950 group-hover:border-emerald-700 group-hover:bg-emerald-700",
     right:
-      "border border-emerald-500/80 bg-emerald-500/90 text-zinc-950 group-hover:border-emerald-400 group-hover:bg-emerald-400",
+      "border border-emerald-500/80 bg-emerald-500/90 text-zinc-950 group-hover:border-emerald-700 group-hover:bg-emerald-700",
   },
   ghostEmerald: {
     group:
       "focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-emerald-400/50",
-    left: "border border-emerald-500/45 bg-emerald-500/15 text-emerald-100 group-hover:border-emerald-400/70 group-hover:bg-emerald-500/25 group-hover:text-white",
+    left: "border border-emerald-500/45 bg-emerald-500/15 text-emerald-100 group-hover:border-emerald-700/75 group-hover:bg-emerald-950/45 group-hover:text-emerald-50",
     right:
-      "border border-emerald-500/45 bg-emerald-500/15 text-emerald-100 group-hover:border-emerald-400/70 group-hover:bg-emerald-500/25 group-hover:text-white",
+      "border border-emerald-500/45 bg-emerald-500/15 text-emerald-100 group-hover:border-emerald-700/75 group-hover:bg-emerald-950/45 group-hover:text-emerald-50",
   },
   outline: {
     group:
       "focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-zinc-400",
-    left: "border border-zinc-600 bg-transparent text-zinc-200 group-hover:border-zinc-400 group-hover:text-zinc-50",
+    left: "border border-zinc-600 bg-transparent text-zinc-200 group-hover:border-zinc-500 group-hover:bg-zinc-800/90 group-hover:text-zinc-100",
     right:
-      "border border-zinc-600 bg-transparent text-zinc-200 group-hover:border-zinc-400 group-hover:text-zinc-50",
+      "border border-zinc-600 bg-transparent text-zinc-200 group-hover:border-zinc-500 group-hover:bg-zinc-800/90 group-hover:text-zinc-100",
   },
   mina: {
     group:
       "focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-[#E8A995]",
-    left: "border border-[#9a4d38] bg-[#B75E45] text-white shadow-[0_12px_40px_-12px_rgba(183,94,69,0.45)] group-hover:border-[#c46a52] group-hover:bg-[#c46a52]",
+    left: "border border-[#9a4d38] bg-[#B75E45] text-white shadow-[0_12px_40px_-12px_rgba(183,94,69,0.45)] group-hover:border-[#6b3426] group-hover:bg-[#8f432f]",
     right:
-      "border border-[#9a4d38] bg-[#B75E45] text-white shadow-[0_12px_40px_-12px_rgba(183,94,69,0.45)] group-hover:border-[#c46a52] group-hover:bg-[#c46a52]",
+      "border border-[#9a4d38] bg-[#B75E45] text-white shadow-[0_12px_40px_-12px_rgba(183,94,69,0.45)] group-hover:border-[#6b3426] group-hover:bg-[#8f432f]",
   },
 };
 

@@ -28,7 +28,7 @@ const MINA_OPPORTUNITY_H = 907;
 const MINA_MOCKUP_ISO = "/case-studies/mina/mockup-isometric-02.png";
 const MINA_MOCKUP_SOFA = "/case-studies/mina/mockup-sofa-04.png";
 const MINA_COPILOT_FLOW = "/case-studies/mina/parenting-copilot-flow.png";
-/** Intrinsic px on disk. Match narrative column width; use ~2048px-wide export + updated W/H to reduce blur on hi-DPI. */
+/** Track B Copilot flow art. `unoptimized` on `<Image>` = PNG served as-is. W/H must match file pixels. */
 const MINA_COPILOT_FLOW_W = 1024;
 const MINA_COPILOT_FLOW_H = 428;
 
@@ -570,7 +570,7 @@ export default function AiMarketplaceCaseStudy() {
                     width={MINA_COPILOT_FLOW_W}
                     height={MINA_COPILOT_FLOW_H}
                     className="h-auto w-full object-contain"
-                    quality={95}
+                    unoptimized
                     sizes="(max-width: 640px) 100vw, min(896px, calc(100vw - 3rem))"
                   />
                 </ImageLightbox>
