@@ -208,10 +208,10 @@ const HERO_TABLET_02 = {
   alt: "iPad Pro mockup showing the e-invoice home interface on textured fabric beside a wooden surface",
 } as const;
 
-/** Handoff composite: Figma flows, a11y reader order, prize-claim state matrix */
+/** Handoff & engineering alignment figure */
 const HANDOFF_MODULE_SETTINGS_SPEC = {
-  src: "/case-studies/e-invoice/handoff-module-settings-spec.png",
-  alt: "E-invoice handoff export: annotated Figma flows for prize list, scan, and security verification; screen reader focus order overlays; spreadsheet matrix of carrier and winning states for claim actions",
+  src: "/case-studies/e-invoice/Handoff.png",
+  alt: "E-invoice design handoff: Figma flows, API state mapping, screen reader annotations, and component specs for engineering alignment",
 } as const;
 
 /** Friendly lifestyle palette (style direction 01) */
@@ -723,8 +723,8 @@ export default function EInvoiceCaseStudy() {
                   <Image
                     src={HANDOFF_MODULE_SETTINGS_SPEC.src}
                     alt={HANDOFF_MODULE_SETTINGS_SPEC.alt}
-                    width={1024}
-                    height={571}
+                    width={2414}
+                    height={1450}
                     className="h-auto w-full object-contain object-top"
                     sizes="(max-width: 1024px) 100vw, 1024px"
                     unoptimized
