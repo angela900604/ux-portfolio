@@ -18,19 +18,19 @@ import { SplitCapsuleLink } from "@/app/components/SplitCapsuleLink";
 
 const MINA_HERO = "/case-studies/mina/mina-ai-hero.png";
 const MINA_MOCKUP_HAND = "/case-studies/mina/mockup-hand-01.png";
-/** Track A — dual listing flows art. `width`/`height` = intrinsic px for next/image. */
-const MINA_TRACK_A_FLOWS = "/case-studies/mina/track-a-listing-flows-full.png";
-const MINA_TRACK_A_FLOWS_W = 1024;
-const MINA_TRACK_A_FLOWS_H = 656;
+/** Track A — `track a.png` in public (spaces in filename). Intrinsic px must match file on disk. */
+const MINA_TRACK_A_FLOWS = `/case-studies/mina/${encodeURIComponent("track a.png")}`;
+const MINA_TRACK_A_FLOWS_W = 7680;
+const MINA_TRACK_A_FLOWS_H = 4925;
 const MINA_OPPORTUNITY_IMAGE = "/case-studies/mina/mina-event-opportunity.png";
 const MINA_OPPORTUNITY_W = 1024;
 const MINA_OPPORTUNITY_H = 907;
 const MINA_MOCKUP_ISO = "/case-studies/mina/mockup-isometric-02.png";
 const MINA_MOCKUP_SOFA = "/case-studies/mina/mockup-sofa-04.png";
-const MINA_COPILOT_FLOW = "/case-studies/mina/parenting-copilot-flow.png";
-/** Track B Copilot flow art. `width`/`height` = intrinsic px for next/image. */
-const MINA_COPILOT_FLOW_W = 1024;
-const MINA_COPILOT_FLOW_H = 428;
+/** Track B — `track b.png` in public. Intrinsic px must match file on disk. */
+const MINA_COPILOT_FLOW = `/case-studies/mina/${encodeURIComponent("track b.png")}`;
+const MINA_COPILOT_FLOW_W = 7680;
+const MINA_COPILOT_FLOW_H = 3212;
 
 /** Hero “3 demo” clip — WebM (smaller) then H.264 MP4; MOV fallback if a source fails. */
 const MINA_THREE_DEMO_SOURCES = {
@@ -530,7 +530,7 @@ export default function AiMarketplaceCaseStudy() {
                     width={MINA_TRACK_A_FLOWS_W}
                     height={MINA_TRACK_A_FLOWS_H}
                     className="h-auto w-full object-contain"
-                    quality={90}
+                    unoptimized
                     sizes="(max-width: 640px) 100vw, min(896px, calc(100vw - 3rem))"
                   />
                 </ImageLightbox>
@@ -570,7 +570,7 @@ export default function AiMarketplaceCaseStudy() {
                     width={MINA_COPILOT_FLOW_W}
                     height={MINA_COPILOT_FLOW_H}
                     className="h-auto w-full object-contain"
-                    quality={90}
+                    unoptimized
                     sizes="(max-width: 640px) 100vw, min(896px, calc(100vw - 3rem))"
                   />
                 </ImageLightbox>
