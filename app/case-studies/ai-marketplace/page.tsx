@@ -12,7 +12,6 @@ import { CaseStudyHeroFullBleed } from "../_components/CaseStudyHeroFullBleed";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { CaseStudyExpandable } from "../_components/CaseStudyExpandable";
-import { DesignJourneyCollapsible } from "../_components/DesignJourneyCollapsible";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { ImageLightbox } from "@/app/components/ImageLightbox";
 import { SplitCapsuleLink } from "@/app/components/SplitCapsuleLink";
@@ -84,8 +83,6 @@ const MINA_TLDR_METRICS: CaseStudyHeroTldrMetric[] = [
     detail: "1 PM + 5 engineers — end-to-end UX on iOS.",
   },
 ];
-
-const MINA_JOURNEY_IDS = ["engineering-proposal", "design-principles"] as const;
 
 export const metadata = {
   title:
@@ -581,65 +578,179 @@ export default function AiMarketplaceCaseStudy() {
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection
+          id="shopper-journey-coverage"
+          className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
+        >
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            Flows &amp; design journey
+          </span>
+          <div className="max-w-3xl space-y-4">
+            <CaseStudyExpandable
+              label="我主要負責了哪些flows"
+              className="!mt-0"
+            >
+              <p className="text-zinc-400">
+                以下是我有深度參與的主要 product flows：
+              </p>
+              <ul className="mt-3 list-none space-y-2.5 text-zinc-300">
+                <li>Search, browse, navigation</li>
+                <li>Detail pages, comparison, content → action</li>
+                <li>Cart, checkout, payment or booking equivalent</li>
+                <li>Order status, returns, support / self-serve</li>
+                <li>
+                  <span className="font-semibold text-zinc-100">AI-driven</span>
+                  {" "}
+                  promos, recommendations, personalization
+                </li>
+              </ul>
+            </CaseStudyExpandable>
+            <CaseStudyExpandable label="Design journey" className="!mt-0">
+              <div className="flex flex-col gap-12 sm:gap-14">
+                <CaseStudyInViewSection
+                  id="engineering-proposal"
+                  className="scroll-mt-0 space-y-5"
+                >
+                  <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+                    Proposal &amp; alignment
+                  </span>
+                  <h2 className="text-zinc-100">
+                    An innovative create-listing flow—and how we stress-tested it
+                    with engineering
+                  </h2>
+                  <p className="text-zinc-300 leading-relaxed">
+                    Our co-founder emphasized that{" "}
+                    <span className="text-zinc-100">
+                      investors care about measurable upside and how clearly the
+                      product stands out
+                    </span>
+                    . To ground that story, I audited{" "}
+                    <span className="text-zinc-100">
+                      create-listing flows across mainstream marketplace apps
+                    </span>
+                    . None of them centered on a{" "}
+                    <span className="text-zinc-100">chat-native agent</span> for
+                    listing creation—most still feel like long forms and category
+                    pickers. That gap became the wedge I wanted to spell out for
+                    the team.
+                  </p>
+                  <p className="text-zinc-300 leading-relaxed">
+                    I translated the direction into{" "}
+                    <span className="text-zinc-100">mockups and a page flow</span>{" "}
+                    so engineers could follow two beats:{" "}
+                    <span className="text-zinc-100">single listing</span> (photo
+                    stays dominant; a sheet streams fields as the model catches
+                    up—no chat middleman) and{" "}
+                    <span className="text-zinc-100">multiple listings</span> (same
+                    photo, chat agent, on-image tags, modal detail per item, then
+                    batch publish). The goal was a differentiated story that still
+                    matched what multimodal models and moderation needed.
+                  </p>
+                  <p className="text-zinc-300 leading-relaxed">
+                    Engineers pushed back on feasibility:{" "}
+                    <span className="text-zinc-100">
+                      one image alone may not carry enough signal for full listing
+                      quality
+                    </span>
+                    . I folded that into the flow by adding an explicit beat where
+                    the agent{" "}
+                    <span className="text-zinc-100">
+                      asks the user to upload additional photos
+                    </span>{" "}
+                    when detail is thin—so the experience stays ambitious but honest
+                    about what multimodal models need.
+                  </p>
+                  <p className="text-zinc-300 leading-relaxed">
+                    Beyond the selling agent, I also sketched how MINA could grow
+                    into adjacent agents: one that{" "}
+                    <span className="text-zinc-100">
+                      helps coordinate buyers and sellers
+                    </span>{" "}
+                    (status, timing, handoff), and a{" "}
+                    <span className="text-zinc-100">parenting copilot</span> that
+                    nudges parents through developmental phases—what stage the
+                    baby is entering and what gear tends to matter—so the app feels
+                    useful even between transactions.
+                  </p>
+                  <p className="text-zinc-300 leading-relaxed">
+                    The team raised a fair concern: promoting{" "}
+                    <span className="text-zinc-100">
+                      several different AI chat agents
+                    </span>{" "}
+                    could confuse users on the surface and multiply complexity in
+                    the backend model layer. My counter was directional:{" "}
+                    <span className="text-zinc-100">
+                      if each agent has a clearly separated entry point in the
+                      product, can we also treat the underlying models or
+                      orchestration as separate lanes—so the UX stays legible and the
+                      stack does not collapse into one overloaded generalist?
+                    </span>{" "}
+                    That question stays open; it is part of the ongoing
+                    design–engineering trade space as we narrow MVP scope.
+                  </p>
+                </CaseStudyInViewSection>
+
+                <CaseStudyInViewSection
+                  id="design-principles"
+                  className="scroll-mt-0 space-y-4"
+                >
+                  <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+                    Design principles (draft)
+                  </span>
+                  <h2 className="text-zinc-100">
+                    Trust, speed, and parent-grade clarity
+                  </h2>
+                  <ul className="space-y-3 text-zinc-300 leading-relaxed list-none">
+                    <li className="flex gap-3">
+                      <span className="text-violet-400 font-semibold shrink-0">
+                        01
+                      </span>
+                      <span>
+                        <span className="text-zinc-100">Preview before publish</span>{" "}
+                        — AI drafts are always visible and editable; nothing ships
+                        silently.
+                      </span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="text-violet-400 font-semibold shrink-0">
+                        02
+                      </span>
+                      <span>
+                        <span className="text-zinc-100">Local-first language</span> —
+                        copy and defaults tuned for SF pickup reality (density,
+                        transit, weather).
+                      </span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="text-violet-400 font-semibold shrink-0">
+                        03
+                      </span>
+                      <span>
+                        <span className="text-zinc-100">Quiet automation</span> — the
+                        agent reduces coordination noise without hiding who is on the
+                        other side of a transaction.
+                      </span>
+                    </li>
+                  </ul>
+                </CaseStudyInViewSection>
+              </div>
+            </CaseStudyExpandable>
+          </div>
+        </CaseStudyInViewSection>
+
+        <CaseStudyInViewSection
           id="design-system"
           className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Design system
           </span>
-          <CaseStudyExpandable
-            label="End-to-end shopper journey the library covers"
-            className="mt-0 max-w-3xl"
-          >
-            <p className="text-zinc-400">
-              Patterns were grouped by where parents are in a flow—not by
-              abstract IA—so new screens composed against the same five beats.
-            </p>
-            <ul className="mt-3 list-none space-y-2.5 text-zinc-300">
-              <li>
-                <span className="font-semibold text-zinc-100">Discovery</span>
-                {" — "}
-                Search, browse, navigation
-              </li>
-              <li>
-                <span className="font-semibold text-zinc-100">Decisioning</span>
-                {" — "}
-                Detail pages, comparison, content → action
-              </li>
-              <li>
-                <span className="font-semibold text-zinc-100">Transaction</span>
-                {" — "}
-                Cart, checkout, payment or booking equivalent
-              </li>
-              <li>
-                <span className="font-semibold text-zinc-100">
-                  Post-transaction
-                </span>
-                {" — "}
-                Order status, returns, support / self-serve
-              </li>
-              <li>
-                <span className="font-semibold text-zinc-100">
-                  Merchandising levers
-                </span>
-                {" — "}
-                Promos, recommendations, personalization
-              </li>
-            </ul>
-          </CaseStudyExpandable>
           <h2 className="max-w-3xl text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
             50+ components so engineering could move without redesigning atoms
           </h2>
           <p className="max-w-3xl text-zinc-300 leading-relaxed">
-            I owned the{" "}
-            <span className="text-zinc-100">Figma library and patterns</span> for
-            navigation, listings, chat, AI surfaces, and forms—enough coverage
-            that new screens composed from documented pieces instead of one-offs.
-            That mattered because we were shipping{" "}
-            <span className="text-zinc-100">three major flows in parallel</span>{" "}
-            with a small eng team. Named variants, spacing, and component props in
-            Figma mirrored how iOS consumed them—so devs could pull a cell, a
-            chat bubble, or a CTA stack without a bespoke spec each time.
+            I owned a scalable Figma system that mirrored iOS—using standardized
+            variants, spacing, and component props—so a small team could ship
+            multiple complex flows fast without one-off specs.
           </p>
           <div className="w-full max-w-3xl space-y-3">
             <div className="overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/50 shadow-[0_0_0_1px_rgba(255,255,255,0.04)_inset]">
@@ -652,127 +763,6 @@ export default function AiMarketplaceCaseStudy() {
             </div>
           </div>
         </CaseStudyInViewSection>
-
-        <DesignJourneyCollapsible
-          journeySectionIds={MINA_JOURNEY_IDS}
-          panelId="mina-design-journey-panel"
-        >
-          <CaseStudyInViewSection
-            id="engineering-proposal"
-            className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
-          >
-            <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-              Proposal &amp; alignment
-            </span>
-            <h2 className="text-zinc-100">
-              An innovative create-listing flow—and how we stress-tested it with
-              engineering
-            </h2>
-            <p className="text-zinc-300 leading-relaxed">
-              Our co-founder emphasized that{" "}
-              <span className="text-zinc-100">
-                investors care about measurable upside and how clearly the product
-                stands out
-              </span>
-              . To ground that story, I audited{" "}
-              <span className="text-zinc-100">
-                create-listing flows across mainstream marketplace apps
-              </span>
-              . None of them centered on a{" "}
-              <span className="text-zinc-100">chat-native agent</span> for listing
-              creation—most still feel like long forms and category pickers. That
-              gap became the wedge I wanted to spell out for the team.
-            </p>
-            <p className="text-zinc-300 leading-relaxed">
-              I translated the direction into{" "}
-              <span className="text-zinc-100">mockups and a page flow</span> so
-              engineers could follow two beats:{" "}
-              <span className="text-zinc-100">single listing</span> (photo stays
-              dominant; a sheet streams fields as the model catches up—no chat
-              middleman) and{" "}
-              <span className="text-zinc-100">multiple listings</span> (same photo,
-              chat agent, on-image tags, modal detail per item, then batch publish).
-              The goal was a differentiated story that still matched what multimodal
-              models and moderation needed.
-            </p>
-            <p className="text-zinc-300 leading-relaxed">
-              Engineers pushed back on feasibility:{" "}
-              <span className="text-zinc-100">
-                one image alone may not carry enough signal for full listing quality
-              </span>
-              . I folded that into the flow by adding an explicit beat where the
-              agent{" "}
-              <span className="text-zinc-100">
-                asks the user to upload additional photos
-              </span>{" "}
-              when detail is thin—so the experience stays ambitious but honest about
-              what multimodal models need.
-            </p>
-            <p className="text-zinc-300 leading-relaxed">
-              Beyond the selling agent, I also sketched how MINA could grow into
-              adjacent agents: one that{" "}
-              <span className="text-zinc-100">
-                helps coordinate buyers and sellers
-              </span>{" "}
-              (status, timing, handoff), and a{" "}
-              <span className="text-zinc-100">parenting copilot</span> that nudges
-              parents through developmental phases—what stage the baby is entering
-              and what gear tends to matter—so the app feels useful even between
-              transactions.
-            </p>
-            <p className="text-zinc-300 leading-relaxed">
-              The team raised a fair concern: promoting{" "}
-              <span className="text-zinc-100">several different AI chat agents</span>{" "}
-              could confuse users on the surface and multiply complexity in the
-              backend model layer. My counter was directional:{" "}
-              <span className="text-zinc-100">
-                if each agent has a clearly separated entry point in the product,
-                can we also treat the underlying models or orchestration as
-                separate lanes—so the UX stays legible and the stack does not
-                collapse into one overloaded generalist?
-              </span>{" "}
-              That question stays open; it is part of the ongoing design–engineering
-              trade space as we narrow MVP scope.
-            </p>
-          </CaseStudyInViewSection>
-
-          <CaseStudyInViewSection
-            id="design-principles"
-            className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
-          >
-            <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-              Design principles (draft)
-            </span>
-            <h2 className="text-zinc-100">
-              Trust, speed, and parent-grade clarity
-            </h2>
-            <ul className="space-y-3 text-zinc-300 leading-relaxed list-none">
-              <li className="flex gap-3">
-                <span className="text-violet-400 font-semibold shrink-0">01</span>
-                <span>
-                  <span className="text-zinc-100">Preview before publish</span> —
-                  AI drafts are always visible and editable; nothing ships silently.
-                </span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-violet-400 font-semibold shrink-0">02</span>
-                <span>
-                  <span className="text-zinc-100">Local-first language</span> —
-                  copy and defaults tuned for SF pickup reality (density, transit,
-                  weather).
-                </span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-violet-400 font-semibold shrink-0">03</span>
-                <span>
-                  <span className="text-zinc-100">Quiet automation</span> — the
-                  agent reduces coordination noise without hiding who is on the
-                  other side of a transaction.
-                </span>
-              </li>
-            </ul>
-          </CaseStudyInViewSection>
-        </DesignJourneyCollapsible>
 
         <CaseStudyInViewSection className="border-t border-zinc-800 pt-12 space-y-8">
           <CaseStudyPrevNext currentSlug="ai-marketplace" />
