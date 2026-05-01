@@ -45,7 +45,27 @@ const AT_A_GLANCE_ITEMS = [
 
 const GOV_BACKEND_JOURNEY_IDS = ["iterations"] as const;
 
-function Metric({ children }: { children: ReactNode }) {
+function Metric({
+  children,
+  accent = "emerald",
+}: {
+  children: ReactNode;
+  /** Brand cyan for staff scale callouts (e.g. 600+). */
+  accent?: "emerald" | "cyan";
+}) {
+  if (accent === "cyan") {
+    return (
+      <span
+        className="rounded-md px-1.5 py-0.5 font-semibold tabular-nums"
+        style={{
+          backgroundColor: "rgba(5, 195, 221, 0.18)",
+          color: "#05C3DD",
+        }}
+      >
+        {children}
+      </span>
+    );
+  }
   return (
     <span className="rounded-md bg-emerald-500/15 px-1.5 py-0.5 font-semibold text-emerald-200/95 tabular-nums">
       {children}
@@ -79,7 +99,7 @@ export default function GovernmentBackendCaseStudy() {
             <p className="text-lg leading-relaxed text-zinc-200 sm:text-xl">
               Backend platform for the Ministry of Finance&apos;s Uniform Invoice
               Lottery Redemption App—role-based access and reporting for{" "}
-              <Metric>600+</Metric> staff, faster invoice management and fewer
+              <Metric accent="cyan">600+</Metric> staff, faster invoice management and fewer
               errors.
             </p>
           }
@@ -123,17 +143,12 @@ export default function GovernmentBackendCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Opportunity
           </span>
-          <h2 className="text-zinc-100">
-            One admin hub for campaigns, reporting, and releases—before 600+ staff
-            outgrew spreadsheets and one-off tools
-          </h2>
-          <p className="text-zinc-300 leading-relaxed max-w-3xl">
-            After the public lottery app shipped, MoF needed a{" "}
-            <span className="text-zinc-100">single backend</span> for
+          <h2 className="max-w-3xl text-zinc-100 leading-snug">
+            After the public lottery app shipped, MoF needed a single backend for
             announcements, promos, push rules, reporting, and app versions—used by{" "}
-            <Metric>600+</Metric> people who expect the same familiarity as other
-            government systems.
-          </p>
+            <Metric accent="cyan">600+</Metric> people who expect the same familiarity
+            as other government systems.
+          </h2>
           <p className="text-zinc-300 leading-relaxed max-w-3xl">
             <Metric>3</Metric> rounds of needs interviews set priorities and flows.
             As sole UX/UI, I paired with engineering on what should stay editable vs.

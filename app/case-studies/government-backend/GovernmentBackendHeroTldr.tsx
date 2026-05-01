@@ -1,3 +1,6 @@
+const CYAN_600 = "#05C3DD";
+const CYAN_600_BG = "rgba(5, 195, 221, 0.18)";
+
 /** TL;DR summary band for the government-backend hero (matches e-invoice TL;DR shell). */
 function TldrTargetIcon({ className }: { className?: string }) {
   return (
@@ -59,8 +62,14 @@ export function GovernmentBackendHeroTldr() {
         </span>
         <h2 className="mt-5 w-full max-w-5xl text-pretty text-2xl font-bold leading-[1.15] tracking-tight sm:text-3xl md:max-w-6xl md:text-[2rem] md:leading-[1.12]">
           Supporting{" "}
-          <span className="whitespace-nowrap">600+</span> government staff with
-          role-based access—one reliable backend for MoF lottery operations.
+          <span
+            className="whitespace-nowrap rounded-md px-1.5 py-0.5 tabular-nums"
+            style={{ backgroundColor: CYAN_600_BG, color: CYAN_600 }}
+          >
+            600+
+          </span>{" "}
+          government staff with role-based access—one reliable backend for MoF
+          lottery operations.
         </h2>
       </div>
 
@@ -73,7 +82,12 @@ export function GovernmentBackendHeroTldr() {
             <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500">
               {m.kicker}
             </p>
-            <p className="mt-3 text-2xl font-bold tabular-nums tracking-tight text-emerald-600 sm:text-3xl">
+            <p
+              className={`mt-3 text-2xl font-bold tabular-nums tracking-tight sm:text-3xl ${
+                m.value === "600+" ? "" : "text-emerald-600"
+              }`}
+              style={m.value === "600+" ? { color: CYAN_600 } : undefined}
+            >
               {m.value}
             </p>
             <p className="mt-2 text-sm font-semibold leading-snug text-zinc-900">
