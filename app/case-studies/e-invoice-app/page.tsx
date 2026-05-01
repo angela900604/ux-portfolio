@@ -37,6 +37,13 @@ const FIGMA_WIREFRAME_FLOW =
 
 const ASSET = (name: string) => `/case-studies/e-invoice/case-assets/${name}`;
 
+const FUNCTIONAL_MAP_INITIAL_DISCUSSION = {
+  src:
+    "/case-studies/e-invoice/" +
+    encodeURIComponent("Example of Initial Feature Discussion Stage.png"),
+  alt: "Example of initial feature discussion stage: functional map and touchpoints before wireframes",
+} as const;
+
 const STORY_SECTION_TITLE_CLASS =
   "text-2xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-3xl md:text-4xl md:leading-snug";
 
@@ -748,15 +755,33 @@ export default function EInvoiceCaseStudy() {
             Functional map
           </span>
           <h2 className="max-w-3xl text-zinc-100">
-            We mapped actors and touchpoints—login, home, notifications,
-            scan-and-win, redemptions—before hi-fi so scope stayed technically
-            plausible.
+            Before moving to wireframe, I mapped out{" "}
+            <span className="font-medium text-zinc-200">functional map</span> for
+            all features (login, home, prize redemptions, etc) and{" "}
+            <span className="font-medium text-zinc-200">validated</span> each
+            touchpoint with{" "}
+            <span className="font-medium text-zinc-200">
+              internal stakeholders
+            </span>{" "}
+            (engineers on{" "}
+            <span className="font-medium text-zinc-200">
+              API availability and data sources
+            </span>
+            ) and{" "}
+            <span className="font-medium text-zinc-200">
+              external stakeholders
+            </span>{" "}
+            (government staff clients) to confirm the scope was{" "}
+            <span className="font-medium text-zinc-200">feasible</span>.
           </h2>
           <WideFigure
             borderless
-            src={ASSET("functional-map-v0.png")}
-            alt="Functional map v0.0 — information architecture of the e-invoice app"
-            caption="Functional map v0.0 · Functional_map_v0.0 (export)."
+            src={FUNCTIONAL_MAP_INITIAL_DISCUSSION.src}
+            alt={FUNCTIONAL_MAP_INITIAL_DISCUSSION.alt}
+            caption="Example of Initial Feature Discussion Stage (export)."
+            width={7136}
+            height={2520}
+            unoptimized
           />
         </CaseStudyInViewSection>
 

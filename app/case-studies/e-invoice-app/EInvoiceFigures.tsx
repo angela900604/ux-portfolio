@@ -18,6 +18,9 @@ export function WideFigure({
   frame = "default",
   borderless = false,
   cropTopBottomPx = 0,
+  width = 2400,
+  height = 1350,
+  unoptimized = false,
 }: {
   src: string;
   alt: string;
@@ -29,6 +32,11 @@ export function WideFigure({
   borderless?: boolean;
   /** Crop this many pixels from top and bottom (e.g. hero tuning) */
   cropTopBottomPx?: number;
+  /** Intrinsic pixel size (layout hint; use real dimensions for very wide exports). */
+  width?: number;
+  height?: number;
+  /** Serve asset as-is (no Next image compression). */
+  unoptimized?: boolean;
 }) {
   const imageInner = (
     <ImageLightbox
@@ -47,8 +55,9 @@ export function WideFigure({
       <Image
         src={src}
         alt={alt}
-        width={2400}
-        height={1350}
+        width={width}
+        height={height}
+        unoptimized={unoptimized}
         className={`h-auto w-full max-w-full object-contain ${
           frame === "white" ? "bg-white" : ""
         }`}
