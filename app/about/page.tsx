@@ -98,19 +98,10 @@ export default function AboutPage() {
                 The part of the job where I feel most alive.
               </p>
               <p>
-                I genuinely love{" "}
-                <span className="text-zinc-100">user interviews</span>—from
-                teenagers and seniors to foreign-language users and people who
-                rely on accessibility settings, across consumer, B2B, and
-                government contexts. I listen until motivations and constraints
-                surface; that&apos;s where I&apos;m most energized and where the
-                best product bets show up.
-              </p>
-              <p>
-                Whether it&apos;s a focus group, a 1:1 usability session, or a
-                contextual chat, I care about making participants feel respected
-                and heard, then turning what we learn into something the team can
-                act on.
+                Whether it&apos;s a focus group, a 1:1 usability session, I care
+                about making participants feel respected and heard, then turning
+                what we learn into something the team can act on. This is where
+                I&apos;m most energized and where the best product bets show up.
               </p>
             </div>
             <figure className="min-w-0 lg:col-span-7">
