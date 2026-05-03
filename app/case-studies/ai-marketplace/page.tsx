@@ -151,7 +151,7 @@ export default function AiMarketplaceCaseStudy() {
           <figure className="mb-8 w-full min-w-0">
             <div className="relative aspect-video w-full min-h-0 overflow-hidden rounded-xl border border-zinc-800/80 bg-black shadow-[0_20px_50px_-20px_rgba(0,0,0,0.65)]">
               <video
-                className="absolute inset-0 h-full w-full rounded-[inherit] object-contain object-center"
+                className="absolute inset-0 h-full w-full min-h-0 min-w-0 rounded-[inherit] object-cover object-center"
                 poster={MINA_HERO}
                 autoPlay
                 loop
