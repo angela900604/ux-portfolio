@@ -37,11 +37,10 @@ const MINA_DESIGN_JOURNEY_SECTION_IDS = [
   "design-principles",
 ] as const;
 
-/** Hero “3 demo” clip — WebM (smaller) then H.264 MP4; MOV fallback if a source fails. */
-const MINA_THREE_DEMO_SOURCES = {
-  webm: "/case-studies/mina/3-demo.webm",
-  mp4: "/case-studies/mina/3-demo.mp4",
-  movFallback: `/case-studies/mina/${encodeURIComponent("3 demo.mov")}`,
+/** Hero screen recording — WebM (VP9) + MP4 (H.264 remux from source). */
+const MINA_HERO_VID_SOURCES = {
+  webm: "/case-studies/mina/mina-hero-vid.webm",
+  mp4: "/case-studies/mina/mina-hero-vid.mp4",
 } as const;
 
 /** Canada App Store — Mina - Resale for Parents */
@@ -150,22 +149,19 @@ export default function AiMarketplaceCaseStudy() {
           }
         >
           <figure className="mb-8 w-full min-w-0">
-            <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-zinc-800/80 bg-black shadow-[0_20px_50px_-20px_rgba(0,0,0,0.65)]">
+            <div className="relative aspect-video w-full min-h-0 overflow-hidden rounded-xl border border-zinc-800/80 bg-black shadow-[0_20px_50px_-20px_rgba(0,0,0,0.65)]">
               <video
-                className="absolute inset-0 h-full w-full object-cover object-center"
+                className="absolute inset-0 h-full w-full rounded-[inherit] object-contain object-center"
+                poster={MINA_HERO}
                 autoPlay
                 loop
                 muted
                 playsInline
-                preload="auto"
-                aria-label="MINA app demo: three flows screen recording."
+                preload="metadata"
+                aria-label="MINA hero: three iPhone flows—Parenting Copilot, create listing with AI tags, and offer flow."
               >
-                <source src={MINA_THREE_DEMO_SOURCES.webm} type="video/webm" />
-                <source src={MINA_THREE_DEMO_SOURCES.mp4} type="video/mp4" />
-                <source
-                  src={MINA_THREE_DEMO_SOURCES.movFallback}
-                  type="video/quicktime"
-                />
+                <source src={MINA_HERO_VID_SOURCES.webm} type="video/webm" />
+                <source src={MINA_HERO_VID_SOURCES.mp4} type="video/mp4" />
               </video>
             </div>
           </figure>
