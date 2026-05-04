@@ -226,8 +226,7 @@ export default function AiMarketplaceCaseStudy() {
               headline={
                 <>
                   Sole designer on MINA — AI-native marketplace for parents ·
-                  Listing funnel, trust-first surfaces, and system work · iOS live
-                  in Canada
+                  Listing funnel, trust-first surfaces, and system work
                 </>
               }
               metrics={MINA_TLDR_METRICS}
@@ -255,203 +254,38 @@ export default function AiMarketplaceCaseStudy() {
                 face creating listings one by one for a bag full of onesies.
               </p>
             </div>
-            <div className="grid items-stretch gap-4 lg:max-w-none lg:grid-cols-[1fr_auto_1fr] lg:gap-6">
+            <div className="max-w-3xl">
               <div className="rounded-2xl border border-zinc-800/80 bg-zinc-900/45 p-5 sm:p-6">
                 <span className="inline-flex rounded-full border border-amber-300/60 bg-amber-400/20 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-amber-100">
                   The insight
                 </span>
-                <p
-                  className="mt-4"
-                  style={{
-                    fontSize: "13px",
-                    color: "rgba(255,255,255,0.5)",
-                    marginBottom: "16px",
-                  }}
-                >
+                <p className="mt-4 text-sm leading-relaxed text-zinc-400 sm:text-[15px]">
                   Three ways parents want to move gear showed up in early
                   conversations.
                 </p>
-                <div className="flex items-center mb-[10px]">
-                  <span
-                    style={{
-                      border: "1px solid #C8A84B",
-                      borderRadius: "20px",
-                      padding: "5px 14px",
-                      fontSize: "16px",
-                      fontWeight: 600,
-                      display: "inline-block",
-                      color: "#C8A84B",
-                    }}
-                  >
+                <div className="mt-4 flex flex-wrap items-baseline gap-x-3 gap-y-2 border-b border-zinc-800/80 pb-4">
+                  <span className="rounded-full border border-amber-400/70 bg-amber-500/10 px-3.5 py-1 text-sm font-semibold text-amber-200">
                     List fast
                   </span>
-                  <span
-                    style={{
-                      fontSize: "22px",
-                      fontWeight: 500,
-                      color: "rgba(255,255,255,0.7)",
-                      marginLeft: "14px",
-                    }}
-                  >
+                  <span className="text-lg font-medium leading-snug text-zinc-200 sm:text-xl">
                     wants listings without form grind
                   </span>
                 </div>
-                <div className="flex items-center mb-[10px]">
-                  <span
-                    style={{
-                      border: "1px solid rgba(255,255,255,0.25)",
-                      borderRadius: "20px",
-                      padding: "5px 14px",
-                      fontSize: "16px",
-                      fontWeight: 600,
-                      display: "inline-block",
-                      color: "rgba(255,255,255,0.6)",
-                    }}
-                  >
+                <div className="mt-4 flex flex-wrap items-baseline gap-x-3 gap-y-2 border-b border-zinc-800/80 pb-4">
+                  <span className="rounded-full border border-zinc-500/60 bg-zinc-800/50 px-3.5 py-1 text-sm font-semibold text-zinc-200">
                     Sell fast
                   </span>
-                  <span
-                    style={{
-                      fontSize: "22px",
-                      fontWeight: 500,
-                      color: "rgba(255,255,255,0.7)",
-                      marginLeft: "14px",
-                    }}
-                  >
+                  <span className="text-lg font-medium leading-snug text-zinc-200 sm:text-xl">
                     wants timely picks as baby stages change
                   </span>
                 </div>
-                <div className="flex items-center mb-[10px]">
-                  <span
-                    style={{
-                      border: "1px solid rgba(255,255,255,0.25)",
-                      borderRadius: "20px",
-                      padding: "5px 14px",
-                      fontSize: "16px",
-                      fontWeight: 600,
-                      display: "inline-block",
-                      color: "rgba(255,255,255,0.6)",
-                    }}
-                  >
+                <div className="mt-4 flex flex-wrap items-baseline gap-x-3 gap-y-2">
+                  <span className="rounded-full border border-zinc-500/60 bg-zinc-800/50 px-3.5 py-1 text-sm font-semibold text-zinc-200">
                     Giveaway free fast
                   </span>
-                  <span
-                    style={{
-                      fontSize: "22px",
-                      fontWeight: 500,
-                      color: "rgba(255,255,255,0.7)",
-                      marginLeft: "14px",
-                    }}
-                  >
+                  <span className="text-lg font-medium leading-snug text-zinc-200 sm:text-xl">
                     big IRL drop-off + perks as return
                   </span>
-                </div>
-              </div>
-              <div className="hidden items-center justify-center lg:flex" aria-hidden>
-                <span className="text-3xl font-semibold text-zinc-500">→</span>
-              </div>
-              <div className="rounded-2xl border border-zinc-800/80 bg-zinc-900/45 p-5 sm:p-6">
-                <span className="inline-flex rounded-full border border-emerald-300/60 bg-emerald-400/20 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-emerald-100">
-                  The design response
-                </span>
-                <div className="mt-4">
-                  <div>
-                    <p
-                      style={{
-                        fontSize: "11px",
-                        color: "rgba(255,255,255,0.35)",
-                        marginBottom: "3px",
-                      }}
-                    >
-                      List fast
-                    </p>
-                    <p
-                      style={{
-                        fontSize: "24px",
-                        fontWeight: 600,
-                        color: "#F0F0F0",
-                      }}
-                    >
-                      Two create paths: single listing (photo-first sheet, fields
-                      fill in as the model streams) vs. multiple listings (chat agent,
-                      tags on the photo, modals per item—then one publish).
-                    </p>
-                  </div>
-                  <div
-                    style={{
-                      borderTop: "1px solid rgba(255,255,255,0.07)",
-                      paddingTop: "12px",
-                      marginTop: "12px",
-                    }}
-                  >
-                    <p
-                      style={{
-                        fontSize: "11px",
-                        color: "rgba(255,255,255,0.35)",
-                        marginBottom: "3px",
-                      }}
-                    >
-                      Sell fast
-                    </p>
-                    <p
-                      style={{
-                        fontSize: "24px",
-                        fontWeight: 600,
-                        color: "#F0F0F0",
-                      }}
-                    >
-                      Parenting Copilot nudges buyers when their baby enters a new
-                      phase and surfaces the gear they&apos;ll need next.
-                    </p>
-                  </div>
-                  <div
-                    style={{
-                      borderTop: "1px solid rgba(255,255,255,0.07)",
-                      paddingTop: "12px",
-                      marginTop: "12px",
-                    }}
-                  >
-                    <p
-                      style={{
-                        fontSize: "11px",
-                        color: "rgba(255,255,255,0.35)",
-                        marginBottom: "3px",
-                      }}
-                    >
-                      Giveaway free fast
-                    </p>
-                    <p
-                      style={{
-                        fontSize: "24px",
-                        fontWeight: 600,
-                        color: "#F0F0F0",
-                      }}
-                    >
-                      MINA Circle — claim free items.
-                    </p>
-                    <p
-                      style={{
-                        fontSize: "15px",
-                        fontWeight: 500,
-                        color: "rgba(255,255,255,0.5)",
-                        marginTop: "10px",
-                        lineHeight: 1.45,
-                      }}
-                    >
-                      At offline events, parents can donate a big bag of baby gear
-                      and get return value through event partner perks and coupons.
-                    </p>
-                  </div>
-                  <p
-                    style={{
-                      fontSize: "12px",
-                      color: "rgba(255,255,255,0.35)",
-                      marginTop: "16px",
-                      fontStyle: "italic",
-                    }}
-                  >
-                    The AI removes the admin. The community provides the motivation.
-                  </p>
                 </div>
               </div>
             </div>
@@ -473,6 +307,54 @@ export default function AiMarketplaceCaseStudy() {
               />
             </ImageLightbox>
           </div>
+          <div className="mt-8 max-w-3xl rounded-2xl border border-zinc-800/80 bg-zinc-900/45 p-5 sm:p-6">
+            <span className="inline-flex rounded-full border border-emerald-300/60 bg-emerald-400/20 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-emerald-100">
+              The design response
+            </span>
+            <p className="mt-4 text-sm leading-relaxed text-zinc-300 sm:text-[15px]">
+              Each path uses{" "}
+              <span className="font-semibold text-zinc-100">AI where it helps</span>
+              —multimodal tagging, streaming fields from a photo, and chat-native
+              drafts—while keeping latency visible and parents in control of what
+              publishes.
+            </p>
+            <div className="mt-6 space-y-6 border-t border-zinc-800/80 pt-6">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
+                  List fast
+                </p>
+                <p className="mt-2 text-lg font-semibold leading-snug text-zinc-100 sm:text-xl">
+                  Two create paths: single listing (photo-first sheet, fields fill in
+                  as the model streams) vs. multiple listings (chat agent, tags on the
+                  photo, modals per item—then one publish).
+                </p>
+              </div>
+              <div className="border-t border-zinc-800/80 pt-6">
+                <p className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
+                  Sell fast
+                </p>
+                <p className="mt-2 text-lg font-semibold leading-snug text-zinc-100 sm:text-xl">
+                  Parenting Copilot nudges buyers when their baby enters a new phase
+                  and surfaces the gear they&apos;ll need next.
+                </p>
+              </div>
+              <div className="border-t border-zinc-800/80 pt-6">
+                <p className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
+                  Giveaway free fast
+                </p>
+                <p className="mt-2 text-lg font-semibold leading-snug text-zinc-100 sm:text-xl">
+                  MINA Circle — claim free items.
+                </p>
+                <p className="mt-3 text-sm leading-relaxed text-zinc-300 sm:text-[15px]">
+                  At offline events, parents can donate a big bag of baby gear and get
+                  return value through event partner perks and coupons.
+                </p>
+              </div>
+            </div>
+            <p className="mt-6 border-t border-zinc-800/80 pt-6 text-sm italic leading-relaxed text-zinc-400">
+              The AI removes the admin. The community provides the motivation.
+            </p>
+          </div>
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection
@@ -488,29 +370,30 @@ export default function AiMarketplaceCaseStudy() {
               in a cohorted A/B.
             </h2>
 
-            <div className="grid max-w-5xl gap-4 sm:grid-cols-2 sm:gap-5">
-              <div className="flex flex-col gap-3 rounded-2xl border border-zinc-700/80 bg-zinc-900/50 p-5 sm:gap-3.5 sm:p-6">
-                <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            <div className="grid max-w-5xl gap-5 sm:grid-cols-2 sm:gap-6">
+              <div className="flex flex-col gap-3 rounded-2xl border border-zinc-600/60 bg-zinc-900/70 p-5 sm:gap-4 sm:p-6">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-zinc-400">
                   System constraints
                 </p>
-                <p className="text-xs font-semibold uppercase leading-relaxed tracking-[0.08em] text-zinc-200 sm:text-sm">
-                  No full-screen spinner. Parents see progress as latency does its
-                  work.
-                </p>
-                <p className="text-sm leading-relaxed text-zinc-400 sm:text-[15px]">
-                  <span className="font-semibold text-zinc-100">
-                    AI-generated listings aren&apos;t instant—show staged progress,
-                    not a spinner for users to stare and wait.
-                  </span>
+                <h3 className="text-base font-semibold leading-snug text-zinc-100 sm:text-lg">
+                  No blocking spinner — show staged progress while AI work lands
+                </h3>
+                <p className="text-[15px] leading-relaxed text-zinc-300 sm:text-base">
+                  AI-generated listings aren&apos;t instant. Give parents a clear
+                  sense of forward motion instead of a full-screen spinner they have to
+                  stare at while models and moderation catch up.
                 </p>
               </div>
-              <div className="flex flex-col gap-3 rounded-2xl border border-zinc-700/80 bg-zinc-900/50 p-5 sm:gap-3.5 sm:p-6">
-                <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-                  Automation and user control balance
+              <div className="flex flex-col gap-3 rounded-2xl border border-zinc-600/60 bg-zinc-900/70 p-5 sm:gap-4 sm:p-6">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-zinc-400">
+                  Automation and user control
                 </p>
-                <p className="text-sm leading-relaxed text-zinc-300 sm:text-[15px]">
-                  Preview-before-publish is trust-first for parents—and it mirrors
-                  real server state: nothing ships until publish.
+                <h3 className="text-base font-semibold leading-snug text-zinc-100 sm:text-lg">
+                  Preview before publish — trust-first, and true to server state
+                </h3>
+                <p className="text-[15px] leading-relaxed text-zinc-300 sm:text-base">
+                  Nothing ships until publish. Parents always see drafts and edits
+                  first, which matches how the backend actually commits listings.
                 </p>
               </div>
             </div>
