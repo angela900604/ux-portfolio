@@ -16,7 +16,7 @@ import { DesignJourneyCollapsible } from "../_components/DesignJourneyCollapsibl
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { ImageLightbox } from "@/app/components/ImageLightbox";
 import { SplitCapsuleLink } from "@/app/components/SplitCapsuleLink";
-import { SITE_SHELL_CONTAINER } from "@/lib/site-shell";
+import { SITE_GUTTER_CLASS } from "@/lib/site-shell";
 
 const MINA_HERO = "/case-studies/mina/mina-ai-hero.png";
 const MINA_MOCKUP_HAND = "/case-studies/mina/mockup-hand-01.png";
@@ -375,19 +375,17 @@ export default function AiMarketplaceCaseStudy() {
           className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 py-16 sm:py-24 md:py-28"
           aria-label="Principle: AI and community"
         >
-          <div className={SITE_SHELL_CONTAINER}>
-            <div
-              className="rounded-2xl px-5 py-10 sm:px-8 sm:py-14 md:py-16"
-              style={MINA_TERRACOTTA_SURFACE}
+          <div
+            className={`w-full py-10 sm:py-14 md:py-16 ${SITE_GUTTER_CLASS}`}
+            style={MINA_TERRACOTTA_SURFACE}
+          >
+            <p
+              className="text-center text-[clamp(1.5rem,4vw,3.25rem)] font-medium italic leading-[1.12] tracking-tight text-[#f0e8e4]"
+              style={{ fontFamily: "Georgia, serif" }}
             >
-              <p
-                className="text-center text-[clamp(1.5rem,4vw,3.25rem)] font-medium italic leading-[1.12] tracking-tight text-[#f0e8e4]"
-                style={{ fontFamily: "Georgia, serif" }}
-              >
-                &ldquo;The AI removes the admin. The community provides the
-                motivation.&rdquo;
-              </p>
-            </div>
+              &ldquo;The AI removes the admin. The community provides the
+              motivation.&rdquo;
+            </p>
           </div>
         </section>
 
