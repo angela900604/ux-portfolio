@@ -548,42 +548,63 @@ export default function AiMarketplaceCaseStudy() {
                   designing around the edges of that.
                 </p>
               </div>
-              <aside className="mx-auto flex w-full max-w-[min(100%,360px)] flex-col gap-8 lg:sticky lg:top-28 lg:col-span-5 lg:mx-0 lg:max-w-none lg:self-start">
-                <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 shadow-[0_20px_50px_-24px_rgba(0,0,0,0.5)]">
-                  <ImageLightbox
-                    src={MINA_CREATE_FLOW_WORKAROUND}
-                    alt="MINA Create workaround: Listing #1 with multi-photo grid, cover tag, remove controls, Add Another Listing, and Next"
-                    className="block w-full"
-                    disableHoverScale
-                  >
-                    <Image
+              <aside className="mx-auto w-full max-w-xl lg:sticky lg:top-28 lg:col-span-5 lg:mx-0 lg:max-w-none lg:self-start">
+                <div className="flex min-w-0 flex-row items-center justify-center gap-2 sm:gap-3">
+                  <div className="min-w-0 flex-1 overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 shadow-[0_20px_50px_-24px_rgba(0,0,0,0.5)]">
+                    <ImageLightbox
                       src={MINA_CREATE_FLOW_WORKAROUND}
                       alt="MINA Create workaround: Listing #1 with multi-photo grid, cover tag, remove controls, Add Another Listing, and Next"
-                      width={MINA_CREATE_FLOW_WORKAROUND_W}
-                      height={MINA_CREATE_FLOW_WORKAROUND_H}
-                      className="h-auto w-full object-contain"
-                      unoptimized
-                      sizes="(max-width: 1024px) min(360px, 100vw), 360px"
-                    />
-                  </ImageLightbox>
-                </div>
-                <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 shadow-[0_20px_50px_-24px_rgba(0,0,0,0.5)]">
-                  <ImageLightbox
-                    src={MINA_CREATE_FLOW_ONE_PHOTO_MULTI}
-                    alt="MINA Create listing: one photo with AI tags for Blush Bow Beanie and Alya Signature Sleepsuit, Publish button, and Ask MINA chat field"
-                    className="block w-full"
-                    disableHoverScale
+                      className="block w-full"
+                      disableHoverScale
+                    >
+                      <Image
+                        src={MINA_CREATE_FLOW_WORKAROUND}
+                        alt="MINA Create workaround: Listing #1 with multi-photo grid, cover tag, remove controls, Add Another Listing, and Next"
+                        width={MINA_CREATE_FLOW_WORKAROUND_W}
+                        height={MINA_CREATE_FLOW_WORKAROUND_H}
+                        className="h-auto w-full object-contain"
+                        unoptimized
+                        sizes="(max-width: 1024px) 42vw, 200px"
+                      />
+                    </ImageLightbox>
+                  </div>
+                  <div
+                    className="flex shrink-0 items-center justify-center text-zinc-500"
+                    aria-hidden="true"
                   >
-                    <Image
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      className="h-7 w-7 sm:h-8 sm:w-8"
+                    >
+                      <path
+                        d="M5 12h12M13 6l6 6-6 6"
+                        stroke="currentColor"
+                        strokeWidth="1.75"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </div>
+                  <div className="min-w-0 flex-1 overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 shadow-[0_20px_50px_-24px_rgba(0,0,0,0.5)]">
+                    <ImageLightbox
                       src={MINA_CREATE_FLOW_ONE_PHOTO_MULTI}
                       alt="MINA Create listing: one photo with AI tags for Blush Bow Beanie and Alya Signature Sleepsuit, Publish button, and Ask MINA chat field"
-                      width={MINA_CREATE_FLOW_ONE_PHOTO_MULTI_W}
-                      height={MINA_CREATE_FLOW_ONE_PHOTO_MULTI_H}
-                      className="h-auto w-full object-contain"
-                      unoptimized
-                      sizes="(max-width: 1024px) min(360px, 100vw), 360px"
-                    />
-                  </ImageLightbox>
+                      className="block w-full"
+                      disableHoverScale
+                    >
+                      <Image
+                        src={MINA_CREATE_FLOW_ONE_PHOTO_MULTI}
+                        alt="MINA Create listing: one photo with AI tags for Blush Bow Beanie and Alya Signature Sleepsuit, Publish button, and Ask MINA chat field"
+                        width={MINA_CREATE_FLOW_ONE_PHOTO_MULTI_W}
+                        height={MINA_CREATE_FLOW_ONE_PHOTO_MULTI_H}
+                        className="h-auto w-full object-contain"
+                        unoptimized
+                        sizes="(max-width: 1024px) 42vw, 200px"
+                      />
+                    </ImageLightbox>
+                  </div>
                 </div>
               </aside>
             </div>
