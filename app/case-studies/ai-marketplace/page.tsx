@@ -40,14 +40,14 @@ const MINA_DESIGN_JOURNEY_SECTION_IDS = [
 ] as const;
 
 /**
- * Hero screen recording — MP4 first in `<video>` so Chrome/Firefox pick the higher-bitrate
- * H.264 stream; WebM is a smaller fallback. Intrinsic px must match exported file (macOS mdls).
+ * Hero screen recording (`herovideo.mov` → MP4 stream-copy + VP9 WebM). MP4 first in `<video>`
+ * so Chrome/Firefox prefer H.264. Intrinsic px must match exported file.
  */
 const MINA_HERO_VID_W = 1576;
-const MINA_HERO_VID_H = 682;
+const MINA_HERO_VID_H = 814;
 const MINA_HERO_VID_SOURCES = {
-  mp4: "/case-studies/mina/minaherosectionvid.mp4",
-  webm: "/case-studies/mina/minaherosectionvid.webm",
+  mp4: "/case-studies/mina/herovideo.mp4",
+  webm: "/case-studies/mina/herovideo.webm",
 } as const;
 
 /** Canada App Store — Mina - Resale for Parents */
@@ -372,11 +372,11 @@ export default function AiMarketplaceCaseStudy() {
         </CaseStudyInViewSection>
 
         <section
-          className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 py-16 sm:py-24 md:py-28"
+          className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 py-32 sm:py-48 md:py-56"
           aria-label="Principle: AI and community"
         >
           <div
-            className={`w-full py-10 sm:py-14 md:py-16 ${SITE_GUTTER_CLASS}`}
+            className={`w-full py-20 sm:py-28 md:py-32 ${SITE_GUTTER_CLASS}`}
             style={MINA_TERRACOTTA_SURFACE}
           >
             <p
