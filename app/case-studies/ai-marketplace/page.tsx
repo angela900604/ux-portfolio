@@ -354,11 +354,12 @@ export default function AiMarketplaceCaseStudy() {
         </CaseStudyInViewSection>
 
         <section
-          className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 bg-white py-16 sm:py-24 md:py-28"
+          className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 bg-[#F8EFEC] py-16 sm:py-24 md:py-28"
           aria-label="Principle: AI and community"
         >
-          <p className="mx-auto max-w-[min(92vw,52rem)] px-6 text-center text-[clamp(1.5rem,4vw,3.25rem)] font-semibold leading-[1.12] tracking-tight text-zinc-900 sm:px-10">
-            The AI removes the admin. The community provides the motivation.
+          <p className="mx-auto max-w-[min(92vw,52rem)] px-6 text-center text-[clamp(1.5rem,4vw,3.25rem)] font-medium italic leading-[1.12] tracking-tight text-zinc-900 sm:px-10">
+            &ldquo;The AI removes the admin. The community provides the
+            motivation.&rdquo;
           </p>
         </section>
 
