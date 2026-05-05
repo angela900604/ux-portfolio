@@ -12,7 +12,6 @@ import {
 import { CaseStudyHeroFullBleed } from "../_components/CaseStudyHeroFullBleed";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
-import { DesignJourneyCollapsible } from "../_components/DesignJourneyCollapsible";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { ImageLightbox } from "@/app/components/ImageLightbox";
 import { SplitCapsuleLink } from "@/app/components/SplitCapsuleLink";
@@ -33,11 +32,6 @@ const MINA_MOCKUP_SOFA = "/case-studies/mina/mockup-sofa-04.png";
 const MINA_COPILOT_FLOW = `/case-studies/mina/${encodeURIComponent("track b.png")}`;
 const MINA_COPILOT_FLOW_W = 7680;
 const MINA_COPILOT_FLOW_H = 3212;
-
-const MINA_DESIGN_JOURNEY_SECTION_IDS = [
-  "engineering-proposal",
-  "design-principles",
-] as const;
 
 /**
  * Hero screen recording (`herovideo.mov` → MP4 stream-copy + VP9 WebM). MP4 first in `<video>`
@@ -372,11 +366,11 @@ export default function AiMarketplaceCaseStudy() {
         </CaseStudyInViewSection>
 
         <section
-          className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 py-32 sm:py-48 md:py-56"
+          className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 -mt-16 -mb-16 py-6 sm:-mt-24 sm:-mb-24 sm:py-8 md:py-10"
           aria-label="Principle: AI and community"
         >
           <div
-            className={`w-full py-20 sm:py-28 md:py-32 ${SITE_GUTTER_CLASS}`}
+            className={`w-full py-8 sm:py-10 md:py-12 ${SITE_GUTTER_CLASS}`}
             style={MINA_TERRACOTTA_SURFACE}
           >
             <p
@@ -525,134 +519,6 @@ export default function AiMarketplaceCaseStudy() {
             </div>
           </div>
         </CaseStudyInViewSection>
-
-        <DesignJourneyCollapsible
-          journeySectionIds={MINA_DESIGN_JOURNEY_SECTION_IDS}
-          panelId="mina-design-journey-panel"
-          navAnchorId="design-journey"
-          title="Design journey"
-          subtitle="Create-listing proposal with engineering, and draft design principles"
-        >
-          <div className="flex flex-col gap-12 sm:gap-14">
-            <CaseStudyInViewSection
-              id="engineering-proposal"
-              className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
-            >
-              <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-                Proposal &amp; alignment
-              </span>
-              <h2 className="text-zinc-100">
-                An innovative create-listing flow—and how we stress-tested it with
-                engineering
-              </h2>
-              <p className="text-zinc-300 leading-relaxed">
-                Our co-founder emphasized that{" "}
-                <span className="text-zinc-100">
-                  investors care about measurable upside and how clearly the product
-                  stands out
-                </span>
-                . To ground that story, I audited{" "}
-                <span className="text-zinc-100">
-                  create-listing flows across mainstream marketplace apps
-                </span>
-                . None of them centered on a{" "}
-                <span className="text-zinc-100">chat-native agent</span> for listing
-                creation—most still feel like long forms and category pickers. That
-                gap became the wedge I wanted to spell out for the team.
-              </p>
-              <p className="text-zinc-300 leading-relaxed">
-                I translated the direction into{" "}
-                <span className="text-zinc-100">mockups and a page flow</span> so
-                engineers could follow two beats:{" "}
-                <span className="text-zinc-100">single listing</span> (photo stays
-                dominant; a sheet streams fields as the model catches up—no chat
-                middleman) and{" "}
-                <span className="text-zinc-100">multiple listings</span> (same photo,
-                chat agent, on-image tags, modal detail per item, then batch
-                publish). The goal was a differentiated story that still matched what
-                multimodal models and moderation needed.
-              </p>
-              <p className="text-zinc-300 leading-relaxed">
-                Engineers pushed back on feasibility:{" "}
-                <span className="text-zinc-100">
-                  one image alone may not carry enough signal for full listing quality
-                </span>
-                . I folded that into the flow by adding an explicit beat where the
-                agent{" "}
-                <span className="text-zinc-100">
-                  asks the user to upload additional photos
-                </span>{" "}
-                when detail is thin—so the experience stays ambitious but honest about
-                what multimodal models need.
-              </p>
-              <p className="text-zinc-300 leading-relaxed">
-                Beyond the selling agent, I also sketched how MINA could grow into
-                adjacent agents: one that{" "}
-                <span className="text-zinc-100">
-                  helps coordinate buyers and sellers
-                </span>{" "}
-                (status, timing, handoff), and a{" "}
-                <span className="text-zinc-100">parenting copilot</span> that nudges
-                parents through developmental phases—what stage the baby is entering
-                and what gear tends to matter—so the app feels useful even between
-                transactions.
-              </p>
-              <p className="text-zinc-300 leading-relaxed">
-                The team raised a fair concern: promoting{" "}
-                <span className="text-zinc-100">
-                  several different AI chat agents
-                </span>{" "}
-                could confuse users on the surface and multiply complexity in the
-                backend model layer. My counter was directional:{" "}
-                <span className="text-zinc-100">
-                  if each agent has a clearly separated entry point in the product,
-                  can we also treat the underlying models or orchestration as separate
-                  lanes—so the UX stays legible and the stack does not collapse into one
-                  overloaded generalist?
-                </span>{" "}
-                That question stays open; it is part of the ongoing design–engineering
-                trade space as we narrow MVP scope.
-              </p>
-            </CaseStudyInViewSection>
-
-            <CaseStudyInViewSection
-              id="design-principles"
-              className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
-            >
-              <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-                Design principles (draft)
-              </span>
-              <h2 className="text-zinc-100">
-                Trust, speed, and parent-grade clarity
-              </h2>
-              <ul className="list-none space-y-3 text-zinc-300 leading-relaxed">
-                <li className="flex gap-3">
-                  <span className="shrink-0 font-semibold text-violet-400">01</span>
-                  <span>
-                    <span className="text-zinc-100">Preview before publish</span> —
-                    AI drafts are always visible and editable; nothing ships silently.
-                  </span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="shrink-0 font-semibold text-violet-400">02</span>
-                  <span>
-                    <span className="text-zinc-100">Local-first language</span> — copy
-                    and defaults tuned for SF pickup reality (density, transit,
-                    weather).
-                  </span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="shrink-0 font-semibold text-violet-400">03</span>
-                  <span>
-                    <span className="text-zinc-100">Quiet automation</span> — the agent
-                    reduces coordination noise without hiding who is on the other side
-                    of a transaction.
-                  </span>
-                </li>
-              </ul>
-            </CaseStudyInViewSection>
-          </div>
-        </DesignJourneyCollapsible>
 
         <CaseStudyInViewSection className="border-t border-zinc-800 pt-12 space-y-8">
           <CaseStudyPrevNext currentSlug="ai-marketplace" />
