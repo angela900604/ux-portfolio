@@ -15,6 +15,7 @@ import { DesignJourneyCollapsible } from "../_components/DesignJourneyCollapsibl
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { ImageLightbox } from "@/app/components/ImageLightbox";
 import { SplitCapsuleLink } from "@/app/components/SplitCapsuleLink";
+import { SITE_SHELL_CONTAINER } from "@/lib/site-shell";
 
 const MINA_HERO = "/case-studies/mina/mina-ai-hero.png";
 const MINA_MOCKUP_HAND = "/case-studies/mina/mockup-hand-01.png";
@@ -37,10 +38,15 @@ const MINA_DESIGN_JOURNEY_SECTION_IDS = [
   "design-principles",
 ] as const;
 
-/** Hero screen recording — WebM (VP9) + MP4 (H.264 remux from `minaherosectionvid.mov`). */
+/**
+ * Hero screen recording — MP4 first in `<video>` so Chrome/Firefox pick the higher-bitrate
+ * H.264 stream; WebM is a smaller fallback. Intrinsic px must match exported file (macOS mdls).
+ */
+const MINA_HERO_VID_W = 1576;
+const MINA_HERO_VID_H = 682;
 const MINA_HERO_VID_SOURCES = {
-  webm: "/case-studies/mina/minaherosectionvid.webm",
   mp4: "/case-studies/mina/minaherosectionvid.mp4",
+  webm: "/case-studies/mina/minaherosectionvid.webm",
 } as const;
 
 /** Canada App Store — Mina - Resale for Parents */
@@ -142,9 +148,14 @@ export default function AiMarketplaceCaseStudy() {
           }
         >
           <figure className="mb-8 w-full min-w-0">
-            <div className="relative aspect-video w-full min-h-0 overflow-hidden rounded-xl border border-zinc-800/80 bg-black shadow-[0_20px_50px_-20px_rgba(0,0,0,0.65)]">
+            <div
+              className="relative w-full min-h-0 overflow-hidden rounded-xl border border-zinc-800/80 bg-black shadow-[0_20px_50px_-20px_rgba(0,0,0,0.65)]"
+              style={{ aspectRatio: `${MINA_HERO_VID_W} / ${MINA_HERO_VID_H}` }}
+            >
               <video
-                className="absolute inset-0 h-full w-full min-h-0 min-w-0 rounded-[inherit] object-cover object-center"
+                className="absolute inset-0 h-full w-full min-h-0 min-w-0 rounded-[inherit] object-contain object-center"
+                width={MINA_HERO_VID_W}
+                height={MINA_HERO_VID_H}
                 poster={MINA_HERO}
                 autoPlay
                 loop
@@ -153,8 +164,8 @@ export default function AiMarketplaceCaseStudy() {
                 preload="auto"
                 aria-label="MINA hero: three iPhone flows—Parenting Copilot, create listing with AI tags, and offer flow."
               >
-                <source src={MINA_HERO_VID_SOURCES.webm} type="video/webm" />
                 <source src={MINA_HERO_VID_SOURCES.mp4} type="video/mp4" />
+                <source src={MINA_HERO_VID_SOURCES.webm} type="video/webm" />
               </video>
             </div>
           </figure>
@@ -249,9 +260,9 @@ export default function AiMarketplaceCaseStudy() {
             </div>
             <div className="max-w-3xl">
               <div className="rounded-2xl border border-zinc-800/80 bg-zinc-900/45 p-5 sm:p-6">
-                <span className="inline-flex rounded-full border border-amber-300/60 bg-amber-400/20 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-amber-100">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-zinc-500">
                   The insight
-                </span>
+                </p>
                 <p className="mt-4 text-sm leading-relaxed text-zinc-400 sm:text-[15px]">
                   Three ways parents want to move gear came up in early
                   conversations.
@@ -354,13 +365,15 @@ export default function AiMarketplaceCaseStudy() {
         </CaseStudyInViewSection>
 
         <section
-          className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 bg-[#F8EFEC] py-16 sm:py-24 md:py-28"
+          className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 bg-[#B75E45]/80 py-16 sm:py-24 md:py-28"
           aria-label="Principle: AI and community"
         >
-          <p className="mx-auto max-w-[min(92vw,52rem)] px-6 text-center text-[clamp(1.5rem,4vw,3.25rem)] font-medium italic leading-[1.12] tracking-tight text-zinc-900 sm:px-10">
-            &ldquo;The AI removes the admin. The community provides the
-            motivation.&rdquo;
-          </p>
+          <div className={SITE_SHELL_CONTAINER}>
+            <p className="text-center font-serif text-[clamp(1.5rem,4vw,3.25rem)] font-medium italic leading-[1.12] tracking-tight text-white">
+              &ldquo;The AI removes the admin. The community provides the
+              motivation.&rdquo;
+            </p>
+          </div>
         </section>
 
         <CaseStudyInViewSection
@@ -398,27 +411,27 @@ export default function AiMarketplaceCaseStudy() {
             </div>
 
             <div className="grid max-w-5xl gap-5 sm:grid-cols-2 sm:gap-6">
-              <div className="flex flex-col gap-3 rounded-2xl border border-zinc-600/60 bg-zinc-900/70 p-5 sm:gap-4 sm:p-6">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-zinc-400">
+              <div className="flex flex-col gap-3 rounded-2xl border border-white/20 bg-[#B75E45]/80 p-5 sm:gap-4 sm:p-6">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-white/75">
                   System constraints
                 </p>
-                <h3 className="text-base font-semibold leading-snug text-zinc-100 sm:text-lg">
+                <h3 className="text-base font-semibold leading-snug text-white sm:text-lg">
                   No blocking spinner — show staged progress while AI work lands
                 </h3>
-                <p className="text-[15px] leading-relaxed text-zinc-300 sm:text-base">
+                <p className="text-[15px] leading-relaxed text-white/90 sm:text-base">
                   AI-generated listings aren&apos;t instant. Give parents a clear
                   sense of forward motion instead of a full-screen spinner they have to
                   stare at while models and moderation catch up.
                 </p>
               </div>
-              <div className="flex flex-col gap-3 rounded-2xl border border-zinc-600/60 bg-zinc-900/70 p-5 sm:gap-4 sm:p-6">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-zinc-400">
+              <div className="flex flex-col gap-3 rounded-2xl border border-white/20 bg-[#B75E45]/80 p-5 sm:gap-4 sm:p-6">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-white/75">
                   Automation and user control
                 </p>
-                <h3 className="text-base font-semibold leading-snug text-zinc-100 sm:text-lg">
+                <h3 className="text-base font-semibold leading-snug text-white sm:text-lg">
                   Preview before publish — trust-first, and true to server state
                 </h3>
-                <p className="text-[15px] leading-relaxed text-zinc-300 sm:text-base">
+                <p className="text-[15px] leading-relaxed text-white/90 sm:text-base">
                   Nothing ships until publish. Parents always see drafts and edits
                   first, which matches how the backend actually commits listings.
                 </p>
@@ -428,11 +441,11 @@ export default function AiMarketplaceCaseStudy() {
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection
-          id="track-b-copilot"
+          id="parenting-copilot"
           className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Track B · AI depth
+            Parenting copilot
           </span>
           <div className="min-w-0 space-y-5">
             <h2 className="max-w-3xl text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
