@@ -34,8 +34,8 @@ const MINA_COPILOT_FLOW_W = 7680;
 const MINA_COPILOT_FLOW_H = 3212;
 /** Create-listing evolution — workaround vs one-photo multi-listing mocks. */
 const MINA_CREATE_FLOW_WORKAROUND = "/case-studies/mina/mina-create-flow-workaround.png";
-const MINA_CREATE_FLOW_WORKAROUND_W = 273;
-const MINA_CREATE_FLOW_WORKAROUND_H = 489;
+const MINA_CREATE_FLOW_WORKAROUND_W = 423;
+const MINA_CREATE_FLOW_WORKAROUND_H = 860;
 const MINA_CREATE_FLOW_ONE_PHOTO_MULTI =
   "/case-studies/mina/mina-create-flow-one-photo-multi.png";
 const MINA_CREATE_FLOW_ONE_PHOTO_MULTI_W = 423;
@@ -502,6 +502,95 @@ export default function AiMarketplaceCaseStudy() {
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection
+          id="create-listing-evolution"
+          className="scroll-mt-28 space-y-8 sm:scroll-mt-32"
+        >
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            Create listing
+          </span>
+          <div className="min-w-0 space-y-8">
+            <h2 className="max-w-3xl text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
+              How the create-listing flow evolved
+            </h2>
+            <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-12 lg:gap-12">
+              <div className="min-w-0 space-y-6 text-zinc-300 leading-relaxed lg:col-span-7">
+                <p>
+                  The original vision was simple: a parent dumps a pile of photos,
+                  and AI figures out which ones belong to the same listing. The
+                  engineer said it wasn&apos;t feasible — the model couldn&apos;t
+                  reliably group photos that way.
+                </p>
+                <p>
+                  So I designed a workaround: one screen where parents could
+                  manually add listings and upload photos to each, then publish
+                  everything at once. It was technically sound.
+                </p>
+                <p>
+                  But after going deeper on the core user pain point, I realized it
+                  hadn&apos;t solved anything. Parents still had to build each
+                  listing by hand. The form grind was still there.
+                </p>
+                <p>
+                  I went back to the engineer with a different ask — one photo,
+                  multiple listings, with AI filling in the details.
+                </p>
+                <p>
+                  He was willing to try, but flagged a real edge case: blurry
+                  photos would cause inaccurate detections, and the model would
+                  silently generate bad data. So I added a photo-quality prompt —
+                  if the image wasn&apos;t clear enough, the app would ask the
+                  parent to retake it before the AI ran.
+                </p>
+                <p>
+                  The final flow wasn&apos;t the original vision, and it wasn&apos;t
+                  the safe workaround either. It came from pushing past the first
+                  &ldquo;no&rdquo; to find what was actually possible — and then
+                  designing around the edges of that.
+                </p>
+              </div>
+              <aside className="mx-auto flex w-full max-w-[min(100%,360px)] flex-col gap-8 lg:sticky lg:top-28 lg:col-span-5 lg:mx-0 lg:max-w-none lg:self-start">
+                <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 shadow-[0_20px_50px_-24px_rgba(0,0,0,0.5)]">
+                  <ImageLightbox
+                    src={MINA_CREATE_FLOW_WORKAROUND}
+                    alt="MINA Create workaround: Listing #1 with multi-photo grid, cover tag, remove controls, Add Another Listing, and Next"
+                    className="block w-full"
+                    disableHoverScale
+                  >
+                    <Image
+                      src={MINA_CREATE_FLOW_WORKAROUND}
+                      alt="MINA Create workaround: Listing #1 with multi-photo grid, cover tag, remove controls, Add Another Listing, and Next"
+                      width={MINA_CREATE_FLOW_WORKAROUND_W}
+                      height={MINA_CREATE_FLOW_WORKAROUND_H}
+                      className="h-auto w-full object-contain"
+                      unoptimized
+                      sizes="(max-width: 1024px) min(360px, 100vw), 360px"
+                    />
+                  </ImageLightbox>
+                </div>
+                <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 shadow-[0_20px_50px_-24px_rgba(0,0,0,0.5)]">
+                  <ImageLightbox
+                    src={MINA_CREATE_FLOW_ONE_PHOTO_MULTI}
+                    alt="MINA Create listing: one photo with AI tags for Blush Bow Beanie and Alya Signature Sleepsuit, Publish button, and Ask MINA chat field"
+                    className="block w-full"
+                    disableHoverScale
+                  >
+                    <Image
+                      src={MINA_CREATE_FLOW_ONE_PHOTO_MULTI}
+                      alt="MINA Create listing: one photo with AI tags for Blush Bow Beanie and Alya Signature Sleepsuit, Publish button, and Ask MINA chat field"
+                      width={MINA_CREATE_FLOW_ONE_PHOTO_MULTI_W}
+                      height={MINA_CREATE_FLOW_ONE_PHOTO_MULTI_H}
+                      className="h-auto w-full object-contain"
+                      unoptimized
+                      sizes="(max-width: 1024px) min(360px, 100vw), 360px"
+                    />
+                  </ImageLightbox>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </CaseStudyInViewSection>
+
+        <CaseStudyInViewSection
           id="design-system"
           className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
         >
@@ -524,111 +613,6 @@ export default function AiMarketplaceCaseStudy() {
                 className="block h-[min(88vh,1100px)] w-full border-0 bg-[#F8EFEC]"
                 loading="lazy"
               />
-            </div>
-          </div>
-        </CaseStudyInViewSection>
-
-        <CaseStudyInViewSection
-          id="create-listing-evolution"
-          className="scroll-mt-28 space-y-8 sm:scroll-mt-32"
-        >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Create listing
-          </span>
-          <div className="min-w-0 space-y-8">
-            <h2 className="max-w-3xl text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
-              How the create-listing flow evolved
-            </h2>
-            <div className="max-w-3xl space-y-6 text-zinc-300 leading-relaxed">
-              <p>
-                The original vision was simple: a parent dumps a pile of photos,
-                and AI figures out which ones belong to the same listing. The
-                engineer said it wasn&apos;t feasible — the model couldn&apos;t
-                reliably group photos that way.
-              </p>
-              <p>
-                So I designed a workaround: one screen where parents could
-                manually add listings and upload photos to each, then publish
-                everything at once. It was technically sound.
-              </p>
-            </div>
-
-            <figure className="mx-auto w-full max-w-[280px]">
-              <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 shadow-[0_20px_50px_-24px_rgba(0,0,0,0.5)]">
-                <ImageLightbox
-                  src={MINA_CREATE_FLOW_WORKAROUND}
-                  alt="MINA Create flow workaround: multi-step Create screen with Listing #1 card, dashed photo placeholder, Add Another Listing, and Next"
-                  className="block w-full"
-                  disableHoverScale
-                >
-                  <Image
-                    src={MINA_CREATE_FLOW_WORKAROUND}
-                    alt="MINA Create flow workaround: multi-step Create screen with Listing #1 card, dashed photo placeholder, Add Another Listing, and Next"
-                    width={MINA_CREATE_FLOW_WORKAROUND_W}
-                    height={MINA_CREATE_FLOW_WORKAROUND_H}
-                    className="h-auto w-full object-contain"
-                    unoptimized
-                    sizes="280px"
-                  />
-                </ImageLightbox>
-              </div>
-              <figcaption className="mt-3 text-center text-sm text-zinc-500">
-                Workaround: batch screen with a listing slot per item — sound
-                engineering, same manual work for parents.
-              </figcaption>
-            </figure>
-
-            <div className="max-w-3xl space-y-6 text-zinc-300 leading-relaxed">
-              <p>
-                But after going deeper on the core user pain point, I realized it
-                hadn&apos;t solved anything. Parents still had to build each
-                listing by hand. The form grind was still there.
-              </p>
-              <p>
-                I went back to the engineer with a different ask — one photo,
-                multiple listings, with AI filling in the details.
-              </p>
-            </div>
-
-            <figure className="mx-auto w-full max-w-[320px]">
-              <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 shadow-[0_20px_50px_-24px_rgba(0,0,0,0.5)]">
-                <ImageLightbox
-                  src={MINA_CREATE_FLOW_ONE_PHOTO_MULTI}
-                  alt="MINA Create listing: one photo with AI tags for Blush Bow Beanie and Alya Signature Sleepsuit, Publish button, and Ask MINA chat field"
-                  className="block w-full"
-                  disableHoverScale
-                >
-                  <Image
-                    src={MINA_CREATE_FLOW_ONE_PHOTO_MULTI}
-                    alt="MINA Create listing: one photo with AI tags for Blush Bow Beanie and Alya Signature Sleepsuit, Publish button, and Ask MINA chat field"
-                    width={MINA_CREATE_FLOW_ONE_PHOTO_MULTI_W}
-                    height={MINA_CREATE_FLOW_ONE_PHOTO_MULTI_H}
-                    className="h-auto w-full object-contain"
-                    unoptimized
-                    sizes="320px"
-                  />
-                </ImageLightbox>
-              </div>
-              <figcaption className="mt-3 text-center text-sm text-zinc-500">
-                One photo, multiple listings — AI tags on the image, then
-                publish when it feels right.
-              </figcaption>
-            </figure>
-
-            <div className="max-w-3xl space-y-6 text-zinc-300 leading-relaxed">
-              <p>
-                He was willing to try, but flagged a real edge case: blurry
-                photos would cause inaccurate detections, and the model would
-                silently generate bad data. So I added a photo-quality prompt —
-                if the image wasn&apos;t clear enough, the app would ask the
-                parent to retake it before the AI ran.
-              </p>
-              <p>
-                The final flow wasn&apos;t the original vision, and it wasn&apos;t
-                the safe workaround either. It came from pushing past the first
-                &ldquo;no&rdquo; to find what was actually possible — and then
-                designing around the edges of that.
-              </p>
             </div>
           </div>
         </CaseStudyInViewSection>
