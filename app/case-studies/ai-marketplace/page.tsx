@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -52,6 +53,12 @@ const MINA_HERO_VID_SOURCES = {
 /** Canada App Store — Mina - Resale for Parents */
 const MINA_APP_STORE =
   "https://apps.apple.com/ca/app/mina-resale-for-parents/id6754006404";
+
+/** Translucent terracotta panels — quote banner + selling-agent constraint cards */
+const MINA_TERRACOTTA_SURFACE: CSSProperties = {
+  backgroundColor: "rgba(180, 80, 55, 0.18)",
+  border: "0.5px solid rgba(200, 100, 70, 0.3)",
+};
 
 const AT_A_GLANCE_ITEMS = [
   {
@@ -365,14 +372,22 @@ export default function AiMarketplaceCaseStudy() {
         </CaseStudyInViewSection>
 
         <section
-          className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 bg-[#B75E45]/80 py-16 sm:py-24 md:py-28"
+          className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 py-16 sm:py-24 md:py-28"
           aria-label="Principle: AI and community"
         >
           <div className={SITE_SHELL_CONTAINER}>
-            <p className="text-center font-serif text-[clamp(1.5rem,4vw,3.25rem)] font-medium italic leading-[1.12] tracking-tight text-white">
-              &ldquo;The AI removes the admin. The community provides the
-              motivation.&rdquo;
-            </p>
+            <div
+              className="rounded-2xl px-5 py-10 sm:px-8 sm:py-14 md:py-16"
+              style={MINA_TERRACOTTA_SURFACE}
+            >
+              <p
+                className="text-center text-[clamp(1.5rem,4vw,3.25rem)] font-medium italic leading-[1.12] tracking-tight text-[#f0e8e4]"
+                style={{ fontFamily: "Georgia, serif" }}
+              >
+                &ldquo;The AI removes the admin. The community provides the
+                motivation.&rdquo;
+              </p>
+            </div>
           </div>
         </section>
 
@@ -411,27 +426,33 @@ export default function AiMarketplaceCaseStudy() {
             </div>
 
             <div className="grid max-w-5xl gap-5 sm:grid-cols-2 sm:gap-6">
-              <div className="flex flex-col gap-3 rounded-2xl border border-white/20 bg-[#B75E45]/80 p-5 sm:gap-4 sm:p-6">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-white/75">
+              <div
+                className="flex flex-col gap-3 rounded-2xl p-5 sm:gap-4 sm:p-6"
+                style={MINA_TERRACOTTA_SURFACE}
+              >
+                <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[rgba(220,140,110,0.7)]">
                   System constraints
                 </p>
-                <h3 className="text-base font-semibold leading-snug text-white sm:text-lg">
+                <h3 className="text-base font-semibold leading-snug text-[#f0e8e4] sm:text-lg">
                   No blocking spinner — show staged progress while AI work lands
                 </h3>
-                <p className="text-[15px] leading-relaxed text-white/90 sm:text-base">
+                <p className="text-[15px] leading-relaxed text-[rgba(220,200,190,0.7)] sm:text-base">
                   AI-generated listings aren&apos;t instant. Give parents a clear
                   sense of forward motion instead of a full-screen spinner they have to
                   stare at while models and moderation catch up.
                 </p>
               </div>
-              <div className="flex flex-col gap-3 rounded-2xl border border-white/20 bg-[#B75E45]/80 p-5 sm:gap-4 sm:p-6">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-white/75">
+              <div
+                className="flex flex-col gap-3 rounded-2xl p-5 sm:gap-4 sm:p-6"
+                style={MINA_TERRACOTTA_SURFACE}
+              >
+                <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[rgba(220,140,110,0.7)]">
                   Automation and user control
                 </p>
-                <h3 className="text-base font-semibold leading-snug text-white sm:text-lg">
+                <h3 className="text-base font-semibold leading-snug text-[#f0e8e4] sm:text-lg">
                   Preview before publish — trust-first, and true to server state
                 </h3>
-                <p className="text-[15px] leading-relaxed text-white/90 sm:text-base">
+                <p className="text-[15px] leading-relaxed text-[rgba(220,200,190,0.7)] sm:text-base">
                   Nothing ships until publish. Parents always see drafts and edits
                   first, which matches how the backend actually commits listings.
                 </p>
