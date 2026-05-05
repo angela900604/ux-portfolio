@@ -18,10 +18,10 @@ import { SplitCapsuleLink } from "@/app/components/SplitCapsuleLink";
 
 const MINA_HERO = "/case-studies/mina/mina-ai-hero.png";
 const MINA_MOCKUP_HAND = "/case-studies/mina/mockup-hand-01.png";
-/** Track A — `track a.png` in public (spaces in filename). Intrinsic px must match file on disk. */
-const MINA_TRACK_A_FLOWS = `/case-studies/mina/${encodeURIComponent("track a.png")}`;
-const MINA_TRACK_A_FLOWS_W = 7680;
-const MINA_TRACK_A_FLOWS_H = 4925;
+/** Selling agent — `selling agent.png` in public. Intrinsic px must match file on disk. */
+const MINA_SELLING_AGENT = `/case-studies/mina/${encodeURIComponent("selling agent.png")}`;
+const MINA_SELLING_AGENT_W = 2113;
+const MINA_SELLING_AGENT_H = 903;
 const MINA_OPPORTUNITY_IMAGE = "/case-studies/mina/mina-event-opportunity.png";
 const MINA_OPPORTUNITY_W = 1024;
 const MINA_OPPORTUNITY_H = 907;
@@ -37,10 +37,10 @@ const MINA_DESIGN_JOURNEY_SECTION_IDS = [
   "design-principles",
 ] as const;
 
-/** Hero screen recording — WebM (VP9) + MP4 (H.264 remux from source). */
+/** Hero screen recording — WebM (VP9) + MP4 (H.264 remux from `minaherosectionvid.mov`). */
 const MINA_HERO_VID_SOURCES = {
-  webm: "/case-studies/mina/mina-hero-vid.webm",
-  mp4: "/case-studies/mina/mina-hero-vid.mp4",
+  webm: "/case-studies/mina/minaherosectionvid.webm",
+  mp4: "/case-studies/mina/minaherosectionvid.mp4",
 } as const;
 
 /** Canada App Store — Mina - Resale for Parents */
@@ -122,13 +122,6 @@ export default function AiMarketplaceCaseStudy() {
               overnight
             </h1>
           }
-          subtitle={
-            <p className="text-lg leading-relaxed text-zinc-200 sm:text-xl">
-              A community flywheel for SF parents: IRL events, shareable listings,
-              and an AI Copilot that moves gear through the circles people already
-              trust.
-            </p>
-          }
           leadBelowSubtitle={
             <div className="space-y-6">
               <CaseStudyAtAGlance
@@ -157,7 +150,7 @@ export default function AiMarketplaceCaseStudy() {
                 loop
                 muted
                 playsInline
-                preload="metadata"
+                preload="auto"
                 aria-label="MINA hero: three iPhone flows—Parenting Copilot, create listing with AI tags, and offer flow."
               >
                 <source src={MINA_HERO_VID_SOURCES.webm} type="video/webm" />
@@ -260,7 +253,7 @@ export default function AiMarketplaceCaseStudy() {
                   The insight
                 </span>
                 <p className="mt-4 text-sm leading-relaxed text-zinc-400 sm:text-[15px]">
-                  Three ways parents want to move gear showed up in early
+                  Three ways parents want to move gear came up in early
                   conversations.
                 </p>
                 <div className="mt-4 flex flex-wrap items-baseline gap-x-3 gap-y-2 border-b border-zinc-800/80 pb-4">
@@ -268,23 +261,26 @@ export default function AiMarketplaceCaseStudy() {
                     List fast
                   </span>
                   <span className="text-lg font-medium leading-snug text-zinc-200 sm:text-xl">
-                    wants listings without form grind
+                    Wants to bulk-list items without filling out a separate form
+                    for each one
                   </span>
                 </div>
                 <div className="mt-4 flex flex-wrap items-baseline gap-x-3 gap-y-2 border-b border-zinc-800/80 pb-4">
-                  <span className="rounded-full border border-zinc-500/60 bg-zinc-800/50 px-3.5 py-1 text-sm font-semibold text-zinc-200">
+                  <span className="rounded-full border border-amber-400/70 bg-amber-500/10 px-3.5 py-1 text-sm font-semibold text-amber-200">
                     Sell fast
                   </span>
                   <span className="text-lg font-medium leading-snug text-zinc-200 sm:text-xl">
-                    wants timely picks as baby stages change
+                    Wants items gone before the baby outgrows them — timing matters
+                    more than price
                   </span>
                 </div>
                 <div className="mt-4 flex flex-wrap items-baseline gap-x-3 gap-y-2">
-                  <span className="rounded-full border border-zinc-500/60 bg-zinc-800/50 px-3.5 py-1 text-sm font-semibold text-zinc-200">
+                  <span className="rounded-full border border-amber-400/70 bg-amber-500/10 px-3.5 py-1 text-sm font-semibold text-amber-200">
                     Giveaway free fast
                   </span>
                   <span className="text-lg font-medium leading-snug text-zinc-200 sm:text-xl">
-                    big IRL drop-off + perks as return
+                    Just wants to drop off a black garbage bag and be done with it —
+                    no listings, no chats
                   </span>
                 </div>
               </div>
@@ -313,62 +309,92 @@ export default function AiMarketplaceCaseStudy() {
             </span>
             <p className="mt-4 text-sm leading-relaxed text-zinc-300 sm:text-[15px]">
               Each path uses{" "}
-              <span className="font-semibold text-zinc-100">AI where it helps</span>
-              —multimodal tagging, streaming fields from a photo, and chat-native
-              drafts—while keeping latency visible and parents in control of what
-              publishes.
+              <span className="font-semibold text-zinc-100">AI where it helps</span>{" "}
+              — removing admin work while keeping parents in control of what publishes.
             </p>
-            <div className="mt-6 space-y-6 border-t border-zinc-800/80 pt-6">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
-                  List fast
-                </p>
-                <p className="mt-2 text-lg font-semibold leading-snug text-zinc-100 sm:text-xl">
-                  Two create paths: single listing (photo-first sheet, fields fill in
-                  as the model streams) vs. multiple listings (chat agent, tags on the
-                  photo, modals per item—then one publish).
-                </p>
-              </div>
-              <div className="border-t border-zinc-800/80 pt-6">
-                <p className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
-                  Sell fast
-                </p>
-                <p className="mt-2 text-lg font-semibold leading-snug text-zinc-100 sm:text-xl">
-                  Parenting Copilot nudges buyers when their baby enters a new phase
-                  and surfaces the gear they&apos;ll need next.
-                </p>
-              </div>
-              <div className="border-t border-zinc-800/80 pt-6">
-                <p className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
-                  Giveaway free fast
-                </p>
-                <p className="mt-2 text-lg font-semibold leading-snug text-zinc-100 sm:text-xl">
-                  MINA Circle — claim free items.
-                </p>
-                <p className="mt-3 text-sm leading-relaxed text-zinc-300 sm:text-[15px]">
-                  At offline events, parents can donate a big bag of baby gear and get
-                  return value through event partner perks and coupons.
-                </p>
+            <div className="mt-6 overflow-hidden rounded-xl border border-zinc-800 bg-black">
+              <div className="divide-y divide-zinc-800">
+                <div className="px-5 py-6 sm:px-6 sm:py-8">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-zinc-500">
+                    List fast
+                  </p>
+                  <p className="mt-2 text-lg font-semibold leading-snug text-white sm:text-xl">
+                    Selling Agent — one photo, multiple listings.
+                  </p>
+                  <p className="mt-3 text-sm leading-relaxed text-zinc-400 sm:text-[15px]">
+                    Take one photo and the agent generates all your listings at once.
+                    No forms, no repetition — review and publish in one go.
+                  </p>
+                </div>
+                <div className="px-5 py-6 sm:px-6 sm:py-8">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-zinc-500">
+                    Sell fast
+                  </p>
+                  <p className="mt-2 text-lg font-semibold leading-snug text-white sm:text-xl">
+                    Parenting Copilot nudges buyers when their baby enters a new phase
+                    and surfaces the gear they&apos;ll need next.
+                  </p>
+                </div>
+                <div className="px-5 py-6 sm:px-6 sm:py-8">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-zinc-500">
+                    Giveaway free fast
+                  </p>
+                  <p className="mt-2 text-lg font-semibold leading-snug text-white sm:text-xl">
+                    MINA Circle — claim free donated items.
+                  </p>
+                  <p className="mt-3 text-sm leading-relaxed text-zinc-400 sm:text-[15px]">
+                    At offline events, parents drop off a bag of gear and walk away
+                    with partner discount coupons. No listings, no chat threads —
+                    just done.
+                  </p>
+                </div>
               </div>
             </div>
-            <p className="mt-6 border-t border-zinc-800/80 pt-6 text-sm italic leading-relaxed text-zinc-400">
-              The AI removes the admin. The community provides the motivation.
-            </p>
           </div>
         </CaseStudyInViewSection>
 
+        <section
+          className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 bg-white py-16 sm:py-24 md:py-28"
+          aria-label="Principle: AI and community"
+        >
+          <p className="mx-auto max-w-[min(92vw,52rem)] px-6 text-center text-[clamp(1.5rem,4vw,3.25rem)] font-semibold leading-[1.12] tracking-tight text-zinc-900 sm:px-10">
+            The AI removes the admin. The community provides the motivation.
+          </p>
+        </section>
+
         <CaseStudyInViewSection
-          id="track-a-impact"
+          id="selling-agent"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Track A · Business impact
+            Selling agent
           </span>
           <div className="min-w-0 space-y-8">
             <h2 className="max-w-3xl text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
-              I redesigned the listing flow end-to-end — completed listings up ~30%
-              in a cohorted A/B.
+              The redesign of the create listing flow enhanced completed listings by
+              up to 30%.
             </h2>
+
+            <div className="max-w-4xl w-full">
+              <div className="w-full overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+                <ImageLightbox
+                  src={MINA_SELLING_AGENT}
+                  alt="MINA Selling Agent: create-listing flows—photo-first single listing with fields streaming in, and multi-listing path with on-image AI tags, per-item review, and publish"
+                  className="block w-full"
+                  disableHoverScale
+                >
+                  <Image
+                    src={MINA_SELLING_AGENT}
+                    alt="MINA Selling Agent: create-listing flows—photo-first single listing with fields streaming in, and multi-listing path with on-image AI tags, per-item review, and publish"
+                    width={MINA_SELLING_AGENT_W}
+                    height={MINA_SELLING_AGENT_H}
+                    className="h-auto w-full object-contain"
+                    unoptimized
+                    sizes="(max-width: 640px) 100vw, min(896px, calc(100vw - 3rem))"
+                  />
+                </ImageLightbox>
+              </div>
+            </div>
 
             <div className="grid max-w-5xl gap-5 sm:grid-cols-2 sm:gap-6">
               <div className="flex flex-col gap-3 rounded-2xl border border-zinc-600/60 bg-zinc-900/70 p-5 sm:gap-4 sm:p-6">
@@ -395,27 +421,6 @@ export default function AiMarketplaceCaseStudy() {
                   Nothing ships until publish. Parents always see drafts and edits
                   first, which matches how the backend actually commits listings.
                 </p>
-              </div>
-            </div>
-
-            <div className="max-w-4xl w-full">
-              <div className="w-full overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
-                <ImageLightbox
-                  src={MINA_TRACK_A_FLOWS}
-                  alt="MINA: one photo to multiple listings—AI tags on image, review details per item, confirm to publish; one photo to a single listing—create listing screen with title and fields appearing progressively instead of a blocking spinner"
-                  className="block w-full"
-                  disableHoverScale
-                >
-                  <Image
-                    src={MINA_TRACK_A_FLOWS}
-                    alt="MINA: one photo to multiple listings—AI tags on image, review details per item, confirm to publish; one photo to a single listing—create listing screen with title and fields appearing progressively instead of a blocking spinner"
-                    width={MINA_TRACK_A_FLOWS_W}
-                    height={MINA_TRACK_A_FLOWS_H}
-                    className="h-auto w-full object-contain"
-                    unoptimized
-                    sizes="(max-width: 640px) 100vw, min(896px, calc(100vw - 3rem))"
-                  />
-                </ImageLightbox>
               </div>
             </div>
           </div>
