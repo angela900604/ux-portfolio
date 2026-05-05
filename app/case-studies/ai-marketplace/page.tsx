@@ -366,7 +366,7 @@ export default function AiMarketplaceCaseStudy() {
         </CaseStudyInViewSection>
 
         <section
-          className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 -mt-16 -mb-16 py-6 sm:-mt-24 sm:-mb-24 sm:py-8 md:py-10"
+          className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 py-6 sm:py-8 md:py-10"
           aria-label="Principle: AI and community"
         >
           <div
