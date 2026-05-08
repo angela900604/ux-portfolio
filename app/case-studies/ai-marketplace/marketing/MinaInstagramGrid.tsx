@@ -6,9 +6,9 @@ import { ImageLightbox } from "@/app/components/ImageLightbox";
 const IG_W = 819;
 const IG_H = 1024;
 
-/** Original asset numbers (`mina-social-NN.png`). Last six slots = bottom rows (L→R, row-major). */
+/** Original asset numbers (`mina-social-NN.png`). Row-major: top six, then middle five, then bottom six. */
 const INSTAGRAM_GRID_ORDER = [
-  2, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 1, 3, 4, 5, 6, 7,
+  13, 14, 15, 17, 9, 11, 2, 8, 10, 12, 16, 1, 3, 4, 5, 6, 7,
 ] as const;
 
 const POSTS = INSTAGRAM_GRID_ORDER.map((assetNum) => {
