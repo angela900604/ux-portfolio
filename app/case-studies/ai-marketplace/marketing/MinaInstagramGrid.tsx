@@ -6,21 +6,27 @@ import { ImageLightbox } from "@/app/components/ImageLightbox";
 const IG_W = 819;
 const IG_H = 1024;
 
-const POSTS = Array.from({ length: 17 }, (_, i) => {
-  const n = String(i + 1).padStart(2, "0");
+/** Original asset numbers (`mina-social-NN.png`). Last six slots = bottom rows (L→R, row-major). */
+const INSTAGRAM_GRID_ORDER = [
+  2, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 1, 3, 4, 5, 6, 7,
+] as const;
+
+const POSTS = INSTAGRAM_GRID_ORDER.map((assetNum) => {
+  const n = String(assetNum).padStart(2, "0");
   return {
     src: `/case-studies/mina/instagram/mina-social-${n}.png`,
-    alt: `MINA marketing Instagram-style graphic ${i + 1} — brand and product storytelling`,
+    alt: `MINA marketing Instagram-style graphic ${assetNum} — brand and product storytelling`,
+    key: n,
   };
 });
 
 export function MinaInstagramGrid() {
   return (
-      <div className="mx-auto w-full max-w-[min(100%,960px)] overflow-hidden rounded-sm ring-1 ring-zinc-800">
-        <div className="grid grid-cols-3 gap-px bg-zinc-800">
+    <div className="mx-auto w-full max-w-[min(100%,960px)] overflow-hidden rounded-sm ring-1 ring-zinc-800">
+      <div className="grid grid-cols-3 gap-px bg-zinc-800">
         {POSTS.map((post) => (
           <div
-            key={post.src}
+            key={post.key}
             className="relative aspect-square overflow-hidden bg-zinc-950"
           >
             <ImageLightbox
