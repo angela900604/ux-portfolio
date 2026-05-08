@@ -144,13 +144,18 @@ export default function AiMarketplaceCaseStudy() {
                 {...CASE_STUDY_AT_A_GLANCE_DARK_HERO_PROPS}
                 noAccentGridClassName="grid w-full min-w-0 grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-8 [&>div]:min-w-0"
               />
-              <div className="max-w-3xl">
+              <div className="flex flex-wrap items-center gap-3">
                 <SplitCapsuleLink
                   href={MINA_APP_STORE}
                   label="Mina · App Store (Canada)"
                   variant="mina"
                   target="_blank"
                   rel="noopener noreferrer"
+                />
+                <SplitCapsuleLink
+                  href="/case-studies/ai-marketplace/marketing"
+                  label="Marketing designer · Instagram grid"
+                  variant="outline"
                 />
               </div>
             </div>
