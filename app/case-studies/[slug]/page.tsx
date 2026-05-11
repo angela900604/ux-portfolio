@@ -55,7 +55,7 @@ export default function CaseStudySlugPage({
         />
       </div>
       <Link href="/" className="mt-4 text-sm text-zinc-500 hover:text-zinc-300">
-        ← Back to work
+        ← Back to home
       </Link>
     </div>
   );

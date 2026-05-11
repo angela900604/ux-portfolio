@@ -403,10 +403,6 @@ export default function BaskinRobbinsCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Reflection
           </span>
-          <h2 className="max-w-3xl text-zinc-100">
-            Please share a time when you deviated from your standard process, why you
-            did it, and what the outcome was.
-          </h2>
           <div className="max-w-3xl space-y-4 text-zinc-300 leading-relaxed">
             <p>
               Due to a tight timeline for a Baskin Robbins mobile app project, I opted
@@ -442,7 +438,7 @@ export default function BaskinRobbinsCaseStudy() {
             href="/"
             className="text-sm font-medium text-zinc-400 hover:text-zinc-100 transition"
           >
-            ← Back to work
+            ← Back to home
           </Link>
         </CaseStudyInViewSection>
       </CaseStudyContentLayout>

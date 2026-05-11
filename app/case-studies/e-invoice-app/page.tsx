@@ -1157,7 +1157,7 @@ export default function EInvoiceCaseStudy() {
             href="/"
             className="text-sm font-medium text-zinc-400 hover:text-zinc-100 transition"
           >
-            ← Back to work
+            ← Back to home
           </Link>
         </CaseStudyInViewSection>
       </CaseStudyContentLayout>

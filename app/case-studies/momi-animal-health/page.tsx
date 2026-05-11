@@ -358,7 +358,7 @@ export default function MomiAnimalHealthCaseStudy() {
             href="/"
             className="text-sm font-medium text-[#6A6358] hover:text-[#2C3E50] transition"
           >
-            ← Back to work
+            ← Back to home
           </Link>
         </CaseStudyInViewSection>
       </CaseStudyContentLayout>

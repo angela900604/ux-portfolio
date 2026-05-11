@@ -835,7 +835,7 @@ export default function PhyphyyaCaseStudy() {
             href="/"
             className="mt-8 inline-block text-sm text-[#6A6358] transition hover:text-[#2C3E50]"
           >
-            ← Back to work
+            ← Back to home
           </Link>
         </footer>
       </div>
