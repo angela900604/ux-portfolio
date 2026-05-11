@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
 import { ImageLightbox } from "@/app/components/ImageLightbox";
+import { PORTFOLIO_ASIDE_PADDING } from "@/lib/portfolio-shell";
 
 const DISPLAY_FONT =
   "var(--font-serif-display), Georgia, 'Times New Roman', serif";
@@ -17,41 +17,16 @@ const FOCUS_LINES = [
 
 const HOVER_NAV = "transition hover:text-[color:var(--nav-accent-blue)]";
 
-function useLocaleDateTime() {
-  const [label, setLabel] = useState("");
-
-  useEffect(() => {
-    const format = () =>
-      new Date().toLocaleString("en-US", {
-        month: "short",
-        day: "numeric",
-        year: "numeric",
-        hour: "numeric",
-        minute: "2-digit",
-        hour12: true,
-      });
-    setLabel(format());
-    const id = window.setInterval(() => setLabel(format()), 30_000);
-    return () => window.clearInterval(id);
-  }, []);
-
-  return label;
-}
-
 /**
- * Persistent left rail: clock, hello, profile photo, then bottom stack
- * (focus lines → divider → location & links → © + vibe-coded).
+ * Persistent left rail: hello, profile photo, spacer, bottom meta (focus →
+ * divider → location → ©). Bottom block pins to column foot on desktop.
  */
 export function PortfolioLeftColumn() {
-  const tick = useLocaleDateTime();
-
   return (
-    <aside className="flex min-h-0 shrink-0 flex-col border-b border-zinc-800 p-6 sm:p-8 lg:h-full lg:w-[min(24vw,20rem)] lg:shrink-0 lg:overflow-y-auto lg:border-b-0 lg:border-r lg:border-zinc-800 xl:w-[min(26vw,22rem)]">
-      <p className="shrink-0 text-[11px] font-medium uppercase tracking-[0.2em] text-zinc-600">
-        {tick || "\u00a0"}
-      </p>
-
-      <div className="mt-8 min-w-0 shrink-0">
+    <aside
+      className={`flex min-h-0 shrink-0 flex-col border-b border-zinc-800 ${PORTFOLIO_ASIDE_PADDING} lg:h-full lg:w-[min(24vw,calc(20rem+12px))] lg:shrink-0 lg:overflow-y-auto lg:border-b-0 lg:border-r lg:border-zinc-800 xl:w-[min(26vw,calc(22rem+12px))]`}
+    >
+      <div className="min-w-0 shrink-0">
         <h1
           className="text-[clamp(1.5rem,2.8vw,2.25rem)] font-normal leading-[1.1] tracking-[-0.02em] text-zinc-50"
           style={{ fontFamily: DISPLAY_FONT }}
@@ -81,9 +56,9 @@ export function PortfolioLeftColumn() {
         </ImageLightbox>
       </div>
 
-      <div className="min-h-4 flex-1 shrink lg:min-h-0" aria-hidden />
+      <div className="min-h-0 flex-1 shrink" aria-hidden />
 
-      <div className="mt-10 shrink-0 border-t border-zinc-800 pt-8 lg:mt-auto">
+      <div className="shrink-0 pb-0 pt-2 lg:mt-0">
         <ul
           className="space-y-2 text-[clamp(0.8rem,1.6vw,0.95rem)] font-normal leading-snug tracking-[-0.015em] text-zinc-50"
           style={{ fontFamily: DISPLAY_FONT }}
