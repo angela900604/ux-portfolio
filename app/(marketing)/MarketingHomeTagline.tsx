@@ -38,7 +38,7 @@ export function MarketingHomeTagline() {
       aria-atomic="true"
     >
       <AnimatePresence mode="wait" initial={false}>
-        <motion.h2
+        <motion.p
           key={reduceMotion ? "static" : CYCLING_PHRASES[phraseIndex]}
           role="status"
           initial={reduceMotion ? false : { opacity: 0, y: "-100%" }}
@@ -53,7 +53,7 @@ export function MarketingHomeTagline() {
           style={{ fontFamily: DISPLAY_FONT }}
         >
           {reduceMotion ? CYCLING_PHRASES[0] : CYCLING_PHRASES[phraseIndex]}
-        </motion.h2>
+        </motion.p>
       </AnimatePresence>
     </div>
   );

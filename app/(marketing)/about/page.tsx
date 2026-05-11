@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ImageLightbox } from "@/app/components/ImageLightbox";
 import { BeyondDesignGallery } from "@/app/components/BeyondDesignGallery";
 import { BEYOND_PHOTOGRAPHY_GALLERY } from "@/app/content/beyond-design-gallery";
+import { MarketingHomeLogos } from "../MarketingHomeLogos";
 
 const INTERVIEW_PHOTO_SRC = "/about/user-interviews-collage.png";
 const RESUME_PDF_SRC = "/resume/AngelaYang_Resume.pdf";
@@ -28,26 +29,16 @@ export default function AboutPage() {
         About
       </p>
       <h1
-        className="mt-4 text-3xl font-normal tracking-tight text-zinc-50 sm:text-4xl"
+        className="mt-4 text-2xl font-normal tracking-tight text-zinc-50 sm:text-3xl"
         style={{ fontFamily: DISPLAY_FONT }}
       >
-        Angela Yang
+        About
       </h1>
-      <p className="mt-3 text-[11px] font-medium uppercase tracking-[0.2em] text-zinc-500">
-        Consumer &amp; growth · B2C mobile &amp; tablet · AI-driven · Vancouver
-        (open to relocate)
+      <p className="mt-4 text-sm leading-relaxed text-zinc-500 sm:text-base">
+        Process, research, and work beyond the case studies.
       </p>
-      <p className="mt-6 text-sm leading-relaxed text-zinc-300 sm:text-base">
-        I specialize in consumer mobile experiences where design directly drives
-        user growth and retention — I&apos;ve shipped complex, multi-role UX across
-        government-scale and B2C platforms, with a strong research foundation in
-        diverse user segments. I&apos;m now focused on AI-driven consumer
-        products, with a long-term goal of shaping product direction and driving
-        meaningful impact through both design and cross-functional leadership.
-      </p>
-      <p className="mt-4 text-sm text-zinc-500 sm:text-base">
-        Based in Vancouver, BC. Open to relocation, remote, or hybrid.
-      </p>
+
+      <MarketingHomeLogos />
 
       <div className="mt-10 overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/30">
         <ImageLightbox

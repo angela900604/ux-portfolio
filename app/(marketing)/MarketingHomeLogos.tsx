@@ -13,13 +13,15 @@ const HERO_LOGOS = [
   { src: "/home/logos/chatgpt.png", alt: "ChatGPT" },
 ] as const;
 
+/** Logo strip for About — no visible heading (screen-reader label only). */
 export function MarketingHomeLogos() {
   return (
-    <div className="mt-12 border-t border-zinc-800 pt-10">
-      <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-zinc-600">
-        Tools in the loop
+    <div className="mt-10 border-t border-zinc-800 pt-10">
+      <p className="sr-only">
+        Design and AI tools used in the workflow: Figma, Claude, Cursor,
+        GitHub, Vercel, Gemini, ChatGPT
       </p>
-      <ul className="mt-6 grid grid-cols-4 justify-items-center gap-x-4 gap-y-5 sm:grid-cols-7">
+      <ul className="grid grid-cols-4 justify-items-center gap-x-4 gap-y-5 sm:grid-cols-7">
         {HERO_LOGOS.map((logo) => (
           <li
             key={logo.src}
