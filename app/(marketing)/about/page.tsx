@@ -41,26 +41,6 @@ export default function AboutPage() {
 
       <MarketingHomeLogos />
 
-      <div className="mt-10 overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/30">
-        <ImageLightbox
-          src="/about/profile-v2.png"
-          alt="Angela Yang — profile photo"
-          className="block w-full"
-          disableHoverScale
-          ariaLabel="View profile photo larger"
-        >
-          <Image
-            src="/about/profile-v2.png"
-            alt="Angela Yang — profile photo"
-            width={768}
-            height={1024}
-            className="block h-auto w-full object-contain"
-            sizes="(max-width: 672px) 100vw, 672px"
-            priority
-          />
-        </ImageLightbox>
-      </div>
-
       <section className="mt-14 border-t border-zinc-800 pt-12">
         <h2
           className="text-lg font-medium text-zinc-200 sm:text-xl"

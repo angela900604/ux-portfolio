@@ -98,9 +98,3 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     techHighlights: "Brand identity system for Instagram / eCommerce",
   },
 ] as const;
-
-export const MARKETING_FOCUS_TAGS = [
-  "Product design",
-  "Marketing design",
-  "Branding",
-] as const;

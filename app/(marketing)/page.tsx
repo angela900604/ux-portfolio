@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
-import {
-  MARKETING_FOCUS_TAGS,
-  MARKETING_SELECTED_WORK,
-} from "@/lib/marketing-work";
+import { MARKETING_SELECTED_WORK } from "@/lib/marketing-work";
 import { MarketingSelectedWorkGrid } from "./MarketingSelectedWorkGrid";
 
 export const metadata: Metadata = {
@@ -14,6 +11,9 @@ export const metadata: Metadata = {
 const DISPLAY_FONT =
   "var(--font-serif-display), Georgia, 'Times New Roman', serif";
 
+const HOME_LEAD =
+  "I design consumer-facing experiences across mobile, web, and tablets. I also value empathy and curiosity in how I approach every problem.";
+
 export default function HomePage() {
   const count = MARKETING_SELECTED_WORK.length;
 
@@ -21,19 +21,14 @@ export default function HomePage() {
     <div className="pb-12">
       <p className="sr-only">Angela Yang — product designer, Vancouver</p>
 
-      <section>
-        <ul className="flex flex-wrap gap-2">
-          {MARKETING_FOCUS_TAGS.map((tag) => (
-            <li key={tag}>
-              <span className="inline-flex rounded-full border border-zinc-700/80 bg-zinc-900/40 px-3 py-1.5 text-xs font-medium tracking-wide text-zinc-300">
-                {tag}
-              </span>
-            </li>
-          ))}
-        </ul>
-      </section>
+      <p
+        className="max-w-3xl text-[clamp(1.5rem,2.8vw,2.25rem)] font-normal leading-[1.12] tracking-[-0.02em] text-zinc-200"
+        style={{ fontFamily: DISPLAY_FONT }}
+      >
+        {HOME_LEAD}
+      </p>
 
-      <section className="mt-12 border-t border-zinc-800 pt-12">
+      <section className="mt-14">
         <h2
           className="text-lg font-medium tracking-tight text-zinc-200 sm:text-xl"
           style={{ fontFamily: DISPLAY_FONT }}

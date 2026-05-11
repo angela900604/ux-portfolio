@@ -1,9 +1,13 @@
-import { MarketingThreeColumnShell } from "./MarketingThreeColumnShell";
+import { PortfolioTwoColumnShell } from "@/app/components/PortfolioTwoColumnShell";
 
 export default function MarketingLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return <MarketingThreeColumnShell>{children}</MarketingThreeColumnShell>;
+  return (
+    <PortfolioTwoColumnShell mainWidth="editorial">
+      {children}
+    </PortfolioTwoColumnShell>
+  );
 }
