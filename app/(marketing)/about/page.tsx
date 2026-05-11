@@ -29,14 +29,15 @@ export default function AboutPage() {
         About
       </p>
       <h1
-        className="mt-4 text-2xl font-normal tracking-tight text-zinc-50 sm:text-3xl"
+        className="mt-5 max-w-2xl text-lg font-normal leading-snug tracking-[-0.02em] text-zinc-200 sm:text-xl md:text-2xl"
         style={{ fontFamily: DISPLAY_FONT }}
       >
-        About
+        A product designer for consumer mobile and growth—shipping complex,
+        multi-role UX across government-scale and B2C, with a strong research
+        foundation across diverse segments. Focused on AI-driven products and
+        cross-functional leadership; based in Vancouver, open to relocate,
+        remote, or hybrid.
       </h1>
-      <p className="mt-4 text-sm leading-relaxed text-zinc-500 sm:text-base">
-        Process, research, and work beyond the case studies.
-      </p>
 
       <MarketingHomeLogos />
 

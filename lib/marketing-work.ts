@@ -101,6 +101,6 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
 
 export const MARKETING_FOCUS_TAGS = [
   "Product design",
-  "UX research",
-  "Mobile & growth",
+  "Marketing design",
+  "Branding",
 ] as const;

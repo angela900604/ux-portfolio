@@ -28,7 +28,8 @@ function useLocaleDateTime() {
 }
 
 /**
- * Left column: clock, hello, cycling line, bio, contact / location / ©, footer line.
+ * Left column: clock, hello, cycling line, location + focus stack, contact / ©,
+ * footer line.
  */
 export function MarketingLeftIntro() {
   const tick = useLocaleDateTime();
@@ -47,19 +48,19 @@ export function MarketingLeftIntro() {
           Hello! I&apos;m Angela.
         </h1>
         <MarketingHomeTagline />
-        <p className="mt-6 text-xs leading-relaxed text-zinc-500 sm:text-sm">
-          A product designer for consumer mobile and growth—shipping complex,
-          multi-role UX across government-scale and B2C, with a strong research
-          foundation across diverse segments. Focused on AI-driven products and
-          cross-functional leadership; based in Vancouver, open to relocate,
-          remote, or hybrid.
-        </p>
       </div>
 
       <div className="mt-10 space-y-5 border-t border-zinc-800/80 pt-8 text-xs leading-relaxed text-zinc-500">
         <div className="space-y-1">
           <p>Based in Vancouver, BC</p>
-          <p>Product design · UX</p>
+          <ul
+            className="mt-4 space-y-2.5 text-[0.65rem] font-semibold uppercase tracking-[0.28em] text-zinc-500"
+            aria-label="Focus areas"
+          >
+            <li>Product design</li>
+            <li>Marketing design</li>
+            <li>Branding</li>
+          </ul>
         </div>
         <div className="space-y-1">
           <a
