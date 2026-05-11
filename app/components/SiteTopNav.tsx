@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { PORTFOLIO_EDGE_GUTTER } from "@/lib/portfolio-shell";
 
-const ACCENT_CLASS = "text-[color:var(--color-cursor-accent)]";
+const HOVER_NAV = "transition hover:text-[color:var(--nav-accent-blue)]";
 
 export function SiteTopNav() {
   const pathname = usePathname();
@@ -14,16 +15,18 @@ export function SiteTopNav() {
         ? pathname === "/"
         : pathname === href || pathname.startsWith(`${href}/`);
     return active
-      ? `font-medium ${ACCENT_CLASS}`
-      : "text-zinc-500 transition hover:text-zinc-200";
+      ? `font-medium text-[color:var(--nav-accent-blue)]`
+      : `text-zinc-500 ${HOVER_NAV}`;
   };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-[60] flex h-14 items-center border-b border-zinc-800 bg-zinc-950/90 backdrop-blur-md">
-      <div className="mx-auto flex h-full w-full max-w-[1480px] items-center justify-between gap-6 px-6 sm:px-[100px]">
+      <div
+        className={`flex h-full w-full items-center justify-between gap-6 ${PORTFOLIO_EDGE_GUTTER}`}
+      >
         <Link
           href="/"
-          className="min-w-0 shrink text-base font-medium tracking-wide text-zinc-300 transition hover:text-zinc-50"
+          className={`min-w-0 shrink text-base font-medium tracking-wide text-zinc-300 ${HOVER_NAV}`}
         >
           Angela Yang
         </Link>

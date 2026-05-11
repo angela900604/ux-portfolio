@@ -1,5 +1,4 @@
 import { PortfolioTwoColumnShell } from "@/app/components/PortfolioTwoColumnShell";
-import { SitePageFooter } from "@/app/components/SitePageFooter";
 
 export default function CaseStudiesLayout({
   children,
@@ -7,8 +6,6 @@ export default function CaseStudiesLayout({
   children: React.ReactNode;
 }) {
   return (
-    <PortfolioTwoColumnShell mainWidth="full" footer={<SitePageFooter />}>
-      {children}
-    </PortfolioTwoColumnShell>
+    <PortfolioTwoColumnShell mainWidth="full">{children}</PortfolioTwoColumnShell>
   );
 }

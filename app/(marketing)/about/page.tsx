@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ImageLightbox } from "@/app/components/ImageLightbox";
 import { BeyondDesignGallery } from "@/app/components/BeyondDesignGallery";
 import { BEYOND_PHOTOGRAPHY_GALLERY } from "@/app/content/beyond-design-gallery";
+import { AboutExperienceSection } from "./AboutExperienceSection";
 import { MarketingHomeLogos } from "../MarketingHomeLogos";
 
 const INTERVIEW_PHOTO_SRC = "/about/user-interviews-collage.png";
@@ -38,6 +39,8 @@ export default function AboutPage() {
         cross-functional leadership; based in Vancouver, open to relocate,
         remote, or hybrid.
       </h1>
+
+      <AboutExperienceSection resumeHref={RESUME_PDF_SRC} />
 
       <MarketingHomeLogos />
 
@@ -141,7 +144,7 @@ export default function AboutPage() {
         <a
           href={RESUME_PDF_SRC}
           download
-          className="inline-flex min-h-10 items-center justify-center rounded-full border border-zinc-700 bg-zinc-900/60 px-4 py-2 text-sm font-medium text-zinc-100 transition hover:border-[color:var(--color-cursor-accent)] hover:text-[color:var(--color-cursor-accent)]"
+          className="inline-flex min-h-10 items-center justify-center rounded-full border border-zinc-700 bg-zinc-900/60 px-4 py-2 text-sm font-medium text-zinc-100 transition hover:border-[color:var(--nav-accent-blue)] hover:text-[color:var(--nav-accent-blue)]"
         >
           Download resume
         </a>
@@ -149,13 +152,13 @@ export default function AboutPage() {
           href="https://linkedin.com/in/angelayangg/"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex min-h-10 items-center text-sm font-medium text-zinc-400 transition hover:text-[color:var(--color-cursor-accent)]"
+          className="inline-flex min-h-10 items-center text-sm font-medium text-zinc-400 transition hover:text-[color:var(--nav-accent-blue)]"
         >
           LinkedIn
         </a>
         <Link
           href="/"
-          className="inline-flex min-h-10 items-center text-sm font-medium text-zinc-400 transition hover:text-[color:var(--color-cursor-accent)]"
+          className="inline-flex min-h-10 items-center text-sm font-medium text-zinc-400 transition hover:text-[color:var(--nav-accent-blue)]"
         >
           Home
         </Link>

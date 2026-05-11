@@ -3,6 +3,8 @@
 :root {
   --background: #09090b;
   --foreground: #fafafa;
+  /** Soft-cursor / IDE-adjacent blue — nav hover & active (matches SoftCursor.tsx) */
+  --nav-accent-blue: #7186b9;
 }
 
 @theme inline {
@@ -11,6 +13,7 @@
   /** Cursor marketing accent (cursor.com — warm gold, not IDE purple) */
   --color-cursor-accent: #c08532;
   --color-cursor-accent-bright: #d4a14a;
+  --color-nav-accent-blue: var(--nav-accent-blue);
   --font-sans: var(--font-sans), system-ui, sans-serif;
   --font-display: var(--font-display), system-ui, sans-serif;
 }

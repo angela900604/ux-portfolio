@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ImageLightbox } from "@/app/components/ImageLightbox";
 
@@ -15,6 +14,8 @@ const FOCUS_LINES = [
   "Marketing design",
   "Branding",
 ] as const;
+
+const HOVER_NAV = "transition hover:text-[color:var(--nav-accent-blue)]";
 
 function useLocaleDateTime() {
   const [label, setLabel] = useState("");
@@ -38,13 +39,11 @@ function useLocaleDateTime() {
 }
 
 /**
- * Persistent left rail: clock, hello, optional About photo, then bottom stack
+ * Persistent left rail: clock, hello, profile photo, then bottom stack
  * (focus lines → divider → location & links → © + vibe-coded).
  */
 export function PortfolioLeftColumn() {
-  const pathname = usePathname();
   const tick = useLocaleDateTime();
-  const showAboutPhoto = pathname === "/about";
 
   return (
     <aside className="flex min-h-0 shrink-0 flex-col border-b border-zinc-800 p-6 sm:p-8 lg:h-full lg:w-[min(24vw,20rem)] lg:shrink-0 lg:overflow-y-auto lg:border-b-0 lg:border-r lg:border-zinc-800 xl:w-[min(26vw,22rem)]">
@@ -61,28 +60,26 @@ export function PortfolioLeftColumn() {
         </h1>
       </div>
 
-      {showAboutPhoto ? (
-        <div className="mt-6 w-full max-w-[280px] shrink-0 overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/30 sm:max-w-[min(100%,20rem)]">
-          <ImageLightbox
-            src={PROFILE_SRC}
-            alt="Angela Yang — profile photo"
-            className="block w-full"
-            disableHoverScale
-            ariaLabel="View profile photo larger"
-          >
-            <div className="relative aspect-[3/4] w-full">
-              <Image
-                src={PROFILE_SRC}
-                alt="Angela Yang — profile photo"
-                fill
-                className="object-cover object-[center_15%]"
-                sizes="(max-width: 1024px) 88vw, 320px"
-                priority
-              />
-            </div>
-          </ImageLightbox>
-        </div>
-      ) : null}
+      <div className="mt-6 w-full max-w-[280px] shrink-0 overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/30 sm:max-w-[min(100%,20rem)]">
+        <ImageLightbox
+          src={PROFILE_SRC}
+          alt="Angela Yang — profile photo"
+          className="block w-full"
+          disableHoverScale
+          ariaLabel="View profile photo larger"
+        >
+          <div className="relative aspect-[3/4] w-full">
+            <Image
+              src={PROFILE_SRC}
+              alt="Angela Yang — profile photo"
+              fill
+              className="object-cover object-[center_15%]"
+              sizes="(max-width: 1024px) 88vw, 320px"
+              priority
+            />
+          </div>
+        </ImageLightbox>
+      </div>
 
       <div className="min-h-4 flex-1 shrink lg:min-h-0" aria-hidden />
 
@@ -97,16 +94,13 @@ export function PortfolioLeftColumn() {
           ))}
         </ul>
 
-        <div
-          className="my-6 border-t border-zinc-800"
-          aria-hidden
-        />
+        <div className="my-6 border-t border-zinc-800" aria-hidden />
 
         <div className="space-y-2 text-xs leading-relaxed text-zinc-500">
           <p className="text-zinc-400">Based in Vancouver, BC</p>
           <a
             href="mailto:angela900604@gmail.com"
-            className="block text-zinc-400 transition hover:text-[color:var(--color-cursor-accent)]"
+            className={`block text-zinc-400 ${HOVER_NAV}`}
           >
             angela900604@gmail.com
           </a>
@@ -114,7 +108,7 @@ export function PortfolioLeftColumn() {
             href="https://linkedin.com/in/angelayangg/"
             target="_blank"
             rel="noopener noreferrer"
-            className="block text-zinc-400 transition hover:text-[color:var(--color-cursor-accent)]"
+            className={`block text-zinc-400 ${HOVER_NAV}`}
           >
             LinkedIn
           </a>

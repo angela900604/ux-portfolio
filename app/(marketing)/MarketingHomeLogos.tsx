@@ -16,7 +16,7 @@ const HERO_LOGOS = [
 /** Logo strip for About — no visible heading (screen-reader label only). */
 export function MarketingHomeLogos() {
   return (
-    <div className="mt-10 border-t border-zinc-800 pt-10">
+    <div className="mt-10">
       <p className="sr-only">
         Design and AI tools used in the workflow: Figma, Claude, Cursor,
         GitHub, Vercel, Gemini, ChatGPT
