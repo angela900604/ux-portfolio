@@ -25,6 +25,15 @@ export const metadata = {
 
 const ASSET = (name: string) => `/case-studies/baskin-robbins/${name}`;
 
+/** Full-resolution page flow (mina asset); served unoptimized to avoid recompression. */
+const PAGE_FLOW_MEMBER_ZONE_SRC = `/case-studies/mina/${encodeURIComponent("Page Flow_會員專區.png")}`;
+const PAGE_FLOW_MEMBER_ZONE = {
+  src: PAGE_FLOW_MEMBER_ZONE_SRC,
+  width: 9000,
+  height: 3883,
+  alt: "BR31 membership app — page flow for the member area (Excel), screens and transitions for alignment under a tight timeline",
+} as const;
+
 const HERO_MEMBERSHIP = {
   src: ASSET("hero-membership.png"),
   alt: "BR31 membership app hero: member benefits and digital card on phone in café setting",
@@ -386,6 +395,46 @@ export default function BaskinRobbinsCaseStudy() {
         </CaseStudyInViewSection>
 
         <AppStoreReviewsSection appStoreHref={APP_STORE_TW} />
+
+        <CaseStudyInViewSection
+          id="process-deviation"
+          className={`space-y-6 border-t border-zinc-800 pt-10 sm:pt-12 ${sectionScroll}`}
+        >
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            Reflection
+          </span>
+          <h2 className="max-w-3xl text-zinc-100">
+            Please share a time when you deviated from your standard process, why you
+            did it, and what the outcome was.
+          </h2>
+          <div className="max-w-3xl space-y-4 text-zinc-300 leading-relaxed">
+            <p>
+              Due to a tight timeline for a Baskin Robbins mobile app project, I opted
+              to expedite the process by skipping the stage of creating a sitemap and
+              functional map. Instead, I used Excel to discuss the main features and
+              layout using page flow, which I had already created during the wireframe
+              stage.
+            </p>
+          </div>
+          <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+            <ImageLightbox
+              src={PAGE_FLOW_MEMBER_ZONE.src}
+              alt={PAGE_FLOW_MEMBER_ZONE.alt}
+              className="block w-full"
+              disableHoverScale
+            >
+              <Image
+                src={PAGE_FLOW_MEMBER_ZONE.src}
+                alt={PAGE_FLOW_MEMBER_ZONE.alt}
+                width={PAGE_FLOW_MEMBER_ZONE.width}
+                height={PAGE_FLOW_MEMBER_ZONE.height}
+                unoptimized
+                className="h-auto w-full object-contain"
+                sizes="(max-width: 1280px) 100vw, 1200px"
+              />
+            </ImageLightbox>
+          </div>
+        </CaseStudyInViewSection>
 
         <CaseStudyInViewSection className="border-t border-zinc-800 pt-12 space-y-8">
           <CaseStudyPrevNext currentSlug="baskin-robbins" />
