@@ -24,6 +24,7 @@ function CoverMedia({ item }: { item: MarketingWorkItem }) {
       src={c.src}
       alt=""
       fill
+      unoptimized={item.coverUnoptimized === true}
       className="object-cover opacity-92 transition duration-500 group-hover:scale-[1.04]"
       sizes="(max-width: 639px) 100vw, (max-width: 1480px) 50vw, 720px"
     />

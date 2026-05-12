@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CaseStudyPrevNext } from "../../_components/CaseStudyPrevNext";
 import { MinaInstagramGrid } from "./MinaInstagramGrid";
 import { SITE_SHELL_CONTAINER } from "@/lib/site-shell";
 
@@ -36,6 +37,18 @@ export default function MinaMarketingPage() {
 
       <div className={`${SITE_SHELL_CONTAINER} pb-16 sm:pb-20`}>
         <MinaInstagramGrid />
+      </div>
+
+      <div
+        className={`${SITE_SHELL_CONTAINER} border-t border-zinc-800 pt-12 pb-12 space-y-8`}
+      >
+        <CaseStudyPrevNext currentSlug="ai-marketplace/marketing" />
+        <Link
+          href="/"
+          className="text-sm font-medium text-zinc-400 transition hover:text-zinc-100"
+        >
+          ← Back to home
+        </Link>
       </div>
     </article>
   );

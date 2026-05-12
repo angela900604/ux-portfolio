@@ -4,6 +4,10 @@ import Link from "next/link";
 export const CASE_STUDY_NAV: { slug: string; label: string }[] = [
   { slug: "e-invoice-app", label: "e-Invoice app" },
   { slug: "ai-marketplace", label: "MINA · community marketplace" },
+  {
+    slug: "ai-marketplace/marketing",
+    label: "MINA · Instagram & launch visuals",
+  },
   { slug: "government-backend", label: "Government backend" },
   { slug: "baskin-robbins", label: "Baskin-Robbins Taiwan" },
   { slug: "admission-hub", label: "Admission Hub" },
@@ -39,7 +43,10 @@ export function CaseStudyPrevNext({
     >
       <div className="min-w-0 flex-1">
         {prev ? (
-          <Link href={`/case-studies/${prev.slug}`} className={`inline-flex ${base}`}>
+          <Link
+            href={`/case-studies/${prev.slug}`}
+            className={`inline-flex ${base}`}
+          >
             <span className={muted}>Previous</span>
             <span className="ml-2 font-medium">{prev.label}</span>
           </Link>

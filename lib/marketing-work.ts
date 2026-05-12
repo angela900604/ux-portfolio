@@ -18,6 +18,8 @@ export type MarketingWorkItem = {
   techHighlights: string;
   /** Show green Shipped pill (core product cases) */
   showShipped?: boolean;
+  /** Serve cover PNG without Next image optimizer (full quality) */
+  coverUnoptimized?: boolean;
 };
 
 const GOV_COVER = `/case-studies/government-backend/${encodeURIComponent("rolebased backend cover.png")}`;
@@ -44,6 +46,20 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     cover: { kind: "mina" },
     techHighlights: "AI trust patterns · 0→1 design system · A/B tested",
     showShipped: true,
+  },
+  {
+    slug: "ai-marketplace/marketing",
+    href: "/case-studies/ai-marketplace/marketing",
+    title: "MINA · Instagram & launch visuals",
+    discipline: "Marketing design · Instagram & launch",
+    year: "2025",
+    cover: {
+      kind: "image",
+      src: "/case-studies/mina/cover_minamarketing.png",
+    },
+    coverUnoptimized: true,
+    techHighlights:
+      "Profile-style grid · Campaign tiles · Concierge & community storytelling",
   },
   {
     slug: "government-backend",
