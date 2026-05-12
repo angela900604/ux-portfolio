@@ -1,9 +1,10 @@
 import { SITE_GUTTER_CLASS } from "@/lib/site-shell";
 
 /**
- * Left rail + nav brand cell: same horizontal inset as the main column / nav
- * ({@link SITE_GUTTER_CLASS} — symmetric left and right). Top padding is doubled
- * vs bottom so the hello / “About me” block sits lower with more air under the nav.
+ * Left rail: same horizontal inset as the main column / nav ({@link SITE_GUTTER_CLASS}).
+ * Top padding is doubled vs bottom so the hello / “About me” block has more air under
+ * the fixed header. The nav brand cell does not use this token — it uses gutters only
+ * so “Angela Yang” stays vertically centered in the `h-14` bar.
  */
 export const PORTFOLIO_ASIDE_PADDING = `pt-12 pb-6 sm:pt-16 sm:pb-8 ${SITE_GUTTER_CLASS}`;
 

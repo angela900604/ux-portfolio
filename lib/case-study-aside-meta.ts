@@ -33,6 +33,8 @@ export type CaseStudyAsideTextLink = {
   label: string;
   /** Opens in new tab; defaults true when href starts with http */
   external?: boolean;
+  /** When set, replaces the default MINA / emerald link styling */
+  className?: string;
 };
 
 export type CaseStudyAsideMeta = {
@@ -143,6 +145,8 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
         href: "/case-studies/ai-marketplace",
         label: "← MINA product case study",
         external: false,
+        className:
+          "text-sm font-medium text-[#F2CD84] underline-offset-[5px] transition hover:text-[#e8d49a] hover:underline",
       },
     ],
   },
@@ -168,8 +172,7 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
   "baskin-robbins": {
     eyebrow: marketingDisciplineForCaseStudySlug("baskin-robbins")!,
     eyebrowAsProjectCardTag: true,
-    title:
-      "Cross-market collaboration with Japan HQ for Taiwan’s first Baskin Robbins membership app",
+    title: "Baskin Robbins membership app",
     subtitle:
       "Taiwan’s loyalty market was growing fast while BR31 still had no native app—end-to-end UX/UI for 31 Club, MVP on schedule, five-star early reviews.",
     items: [

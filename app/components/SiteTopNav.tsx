@@ -3,10 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import {
-  PORTFOLIO_ASIDE_PADDING,
-  PORTFOLIO_LEFT_RAIL_WIDTH_CLASS,
-} from "@/lib/portfolio-shell";
+import { PORTFOLIO_LEFT_RAIL_WIDTH_CLASS } from "@/lib/portfolio-shell";
 import { SITE_GUTTER_CLASS, SITE_SHELL_CONTAINER } from "@/lib/site-shell";
 
 const HOVER_NAV = "transition hover:text-[color:var(--nav-accent-blue)]";
@@ -78,7 +75,7 @@ export function SiteTopNav() {
       {/* lg+: left cell = rail width + padding; right = same shell as main column */}
       <div className="hidden h-full min-h-0 w-full min-w-0 lg:flex lg:flex-row">
         <div
-          className={`flex shrink-0 items-center border-r border-zinc-800 ${PORTFOLIO_ASIDE_PADDING} ${PORTFOLIO_LEFT_RAIL_WIDTH_CLASS}`}
+          className={`flex shrink-0 items-center border-r border-zinc-800 ${SITE_GUTTER_CLASS} ${PORTFOLIO_LEFT_RAIL_WIDTH_CLASS}`}
         >
           <Link href="/" className={brandClass}>
             Angela Yang

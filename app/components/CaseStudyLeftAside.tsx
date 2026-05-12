@@ -48,9 +48,10 @@ export function CaseStudyLeftAside() {
               const minaCaseStudy =
                 pathname === "/case-studies/ai-marketplace" ||
                 pathname.startsWith("/case-studies/ai-marketplace/");
-              const linkClass = minaCaseStudy
+              const defaultClass = minaCaseStudy
                 ? "text-sm font-medium text-[#B75E45] underline-offset-[5px] transition hover:text-[#9a4f38] hover:underline"
                 : "text-sm font-medium text-emerald-400/95 underline-offset-[5px] transition hover:text-emerald-300 hover:underline";
+              const linkClass = link.className ?? defaultClass;
               return isExternal ? (
                 <a
                   key={`${link.href}-${link.label}`}

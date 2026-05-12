@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { CaseStudyPrevNext } from "../../_components/CaseStudyPrevNext";
 import { MinaInstagramGrid } from "./MinaInstagramGrid";
-import { CASE_STUDY_BODY_GRID, SITE_SHELL_INNER } from "@/lib/site-shell";
+import { SITE_SHELL_INNER } from "@/lib/site-shell";
 
 export const metadata = {
   title:
@@ -13,19 +13,6 @@ export const metadata = {
 export default function MinaMarketingPage() {
   return (
     <article className="min-h-screen bg-zinc-950 text-zinc-100">
-      <header className="border-b border-zinc-800">
-        <div className={`${SITE_SHELL_INNER} py-10 sm:py-12`}>
-          <div className={`${CASE_STUDY_BODY_GRID} min-w-0`}>
-            <Link
-              href="/case-studies/ai-marketplace"
-              className="text-sm font-medium text-[#B75E45] underline-offset-[5px] transition hover:text-[#9a4f38] hover:underline"
-            >
-              ← Back to MINA product case study
-            </Link>
-          </div>
-        </div>
-      </header>
-
       <div className={`${SITE_SHELL_INNER} pb-16 sm:pb-20 pt-10 sm:pt-12`}>
         <MinaInstagramGrid />
       </div>
