@@ -4,15 +4,15 @@ import Link from "next/link";
 export const CASE_STUDY_NAV: { slug: string; label: string }[] = [
   { slug: "e-invoice-app", label: "e-Invoice app" },
   { slug: "ai-marketplace", label: "MINA · community marketplace" },
+  { slug: "government-backend", label: "Government backend" },
+  { slug: "baskin-robbins", label: "Baskin-Robbins Taiwan" },
   {
     slug: "ai-marketplace/marketing",
     label: "MINA · Instagram & launch visuals",
   },
-  { slug: "government-backend", label: "Government backend" },
-  { slug: "baskin-robbins", label: "Baskin-Robbins Taiwan" },
-  { slug: "admission-hub", label: "Admission Hub" },
-  { slug: "momi-animal-health", label: "MOMI Animal Health" },
   { slug: "phyphyya", label: "Haphy Living" },
+  { slug: "momi-animal-health", label: "MOMI Animal Health" },
+  { slug: "admission-hub", label: "Admission Hub" },
 ];
 
 export function CaseStudyPrevNext({
