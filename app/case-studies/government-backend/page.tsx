@@ -10,7 +10,11 @@ import { WideFigure } from "../e-invoice-app/EInvoiceFigures";
 import { GovernmentBackendCorrespondingScreensSlider } from "./GovernmentBackendCorrespondingScreensSlider";
 import { GovernmentBackendEngineeringAlignment } from "./GovernmentBackendEngineeringAlignment";
 import { GovernmentBackendHeroTldr } from "./GovernmentBackendHeroTldr";
-import { CASE_STUDY_BODY_GRID, SITE_SHELL_INNER } from "@/lib/site-shell";
+import {
+  CASE_STUDY_BODY_GRID,
+  CASE_STUDY_SECTION_TITLE_CLASS,
+  SITE_SHELL_INNER,
+} from "@/lib/site-shell";
 
 export const metadata = {
   title: "Role-Based Government Backend (600+ Staff) | Angela Yang",
@@ -90,7 +94,7 @@ export default function GovernmentBackendCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Opportunity
           </span>
-          <h2 className="max-w-3xl text-zinc-100 leading-snug">
+          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
             After the public lottery app shipped, MoF needed a single backend for
             announcements, promos, push rules, reporting, and app versions—used by{" "}
             <Metric>600+</Metric> people who expect the same familiarity
@@ -148,7 +152,7 @@ export default function GovernmentBackendCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Design &amp; engineering
           </span>
-          <h2 className="max-w-3xl text-zinc-100">
+          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
             How I aligned design with engineering
           </h2>
           <GovernmentBackendEngineeringAlignment />
@@ -169,7 +173,7 @@ export default function GovernmentBackendCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Key design iterations
           </span>
-          <h2 className="text-zinc-100">
+          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
             Two iterations that went through the longest discussions
           </h2>
           <p className="text-zinc-300 leading-relaxed">
@@ -297,7 +301,7 @@ export default function GovernmentBackendCaseStudy() {
             id="reflection"
             className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
           >
-            <h2 className="text-zinc-100">
+            <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
               Processes and interfaces, under constraints
             </h2>
             <p className="text-zinc-300 leading-relaxed">
