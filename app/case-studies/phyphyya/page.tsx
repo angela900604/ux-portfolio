@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SITE_SHELL_CONTAINER } from "@/lib/site-shell";
+import { CASE_STUDY_PRIMARY_TITLE_CLASS, SITE_SHELL_INNER } from "@/lib/site-shell";
 import {
   CaseStudyAtAGlance,
   CASE_STUDY_AT_A_GLANCE_LIGHT_HERO_PROPS,
@@ -188,7 +188,9 @@ export default function PhyphyyaCaseStudy() {
             </div>
           }
           title={
-            <h1 className="mt-5 max-w-4xl text-4xl font-semibold tracking-tight text-[#2C3E50] sm:text-5xl md:text-6xl">
+            <h1
+              className={`mt-5 max-w-4xl ${CASE_STUDY_PRIMARY_TITLE_CLASS} text-[#2C3E50]`}
+            >
               Haphy Living
             </h1>
           }
@@ -218,7 +220,7 @@ export default function PhyphyyaCaseStudy() {
         </CaseStudyHeroFullBleed>
       </header>
 
-      <div className={SITE_SHELL_CONTAINER}>
+      <div className={SITE_SHELL_INNER}>
         <CaseStudyContentLayout
           variant="light"
           omitOuterContainer

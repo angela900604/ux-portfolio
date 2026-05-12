@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ImageLightbox } from "@/app/components/ImageLightbox";
-import { SITE_SHELL_CONTAINER } from "@/lib/site-shell";
+import { CASE_STUDY_PRIMARY_TITLE_CLASS, SITE_SHELL_INNER } from "@/lib/site-shell";
 
 export const metadata = {
   title: "Case study | e-Invoice design showcase",
@@ -71,11 +71,11 @@ export default function EInvoiceDesignPage() {
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-100">
       <section className="border-b border-zinc-800">
-        <div className={`${SITE_SHELL_CONTAINER} py-16 sm:py-20`}>
+        <div className={`${SITE_SHELL_INNER} py-16 sm:py-20`}>
           <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Case study
           </p>
-          <h1 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">
+          <h1 className={`mt-3 ${CASE_STUDY_PRIMARY_TITLE_CLASS}`}>
             e-Invoice design showcase
           </h1>
           <p className="mt-4 max-w-3xl text-zinc-400 sm:text-lg">
@@ -85,7 +85,7 @@ export default function EInvoiceDesignPage() {
       </section>
 
       <section>
-        <div className={`${SITE_SHELL_CONTAINER} py-12 sm:py-16`}>
+        <div className={`${SITE_SHELL_INNER} py-12 sm:py-16`}>
           <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
             {E_INVOICE_DESIGN_IMAGES.map((item) => (
               <li key={item.src} className={item.className}>

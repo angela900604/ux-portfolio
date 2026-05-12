@@ -1,7 +1,7 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
 import { ImageLightbox } from "@/app/components/ImageLightbox";
-import { CASE_STUDY_BODY_GRID, SITE_SHELL_CONTAINER } from "@/lib/site-shell";
+import { CASE_STUDY_BODY_GRID, SITE_SHELL_INNER } from "@/lib/site-shell";
 
 /** Title band: same full-width narrative track as {@link CaseStudyContentLayout}. */
 function HeroTitleInGrid({ children }: { children: ReactNode }) {
@@ -101,7 +101,7 @@ function BelowMetaImageContained({
 }) {
   return (
     <div className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 bg-[#F5F3EF]">
-      <div className={`${SITE_SHELL_CONTAINER} py-10 sm:py-12`}>
+      <div className={`${SITE_SHELL_INNER} py-10 sm:py-12`}>
         <HeroBelowFoldFullGrid>
           <div className="flex justify-center">
             <ImageLightbox src={imageSrc} alt={imageAlt} disableHoverScale>
@@ -144,7 +144,7 @@ export function CaseStudyHeroFullBleed({
   if (imagePlacement === "below-meta") {
     return (
       <>
-        <div className={`${SITE_SHELL_CONTAINER} pt-14 pb-6 sm:pt-20 sm:pb-8`}>
+        <div className={`${SITE_SHELL_INNER} pt-14 pb-6 sm:pt-20 sm:pb-8`}>
           <HeroTitleInGrid>
             {eyebrow}
             {title}
@@ -155,7 +155,7 @@ export function CaseStudyHeroFullBleed({
           </HeroTitleInGrid>
         </div>
         {children ? (
-          <div className={`${SITE_SHELL_CONTAINER} pb-10 sm:pb-12`}>
+          <div className={`${SITE_SHELL_INNER} pb-10 sm:pb-12`}>
             <HeroBelowFoldFullGrid>{children}</HeroBelowFoldFullGrid>
           </div>
         ) : null}
@@ -208,7 +208,7 @@ export function CaseStudyHeroFullBleed({
             aria-hidden
           />
           <div className="absolute inset-0 flex flex-col justify-end pb-14 pt-28 sm:pb-20 sm:pt-36">
-            <div className={SITE_SHELL_CONTAINER}>
+            <div className={SITE_SHELL_INNER}>
               <HeroTitleInGrid>
                 {eyebrow}
                 {title}
@@ -224,7 +224,7 @@ export function CaseStudyHeroFullBleed({
         </div>
       </div>
       {children ? (
-        <div className={`${SITE_SHELL_CONTAINER} py-12 sm:py-16`}>
+        <div className={`${SITE_SHELL_INNER} py-12 sm:py-16`}>
           <HeroBelowFoldFullGrid>{children}</HeroBelowFoldFullGrid>
         </div>
       ) : null}

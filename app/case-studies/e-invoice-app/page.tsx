@@ -20,6 +20,7 @@ import { GuidedOnboardingVideoPair } from "./OnboardingDemoVideo";
 import { SettingHomeModulesVideo } from "./SettingHomeModulesVideo";
 import { LoginBeforeAfterSlider } from "./LoginBeforeAfterSlider";
 import { ProblemPersonasBlock } from "./ProblemPersonasBlock";
+import { CASE_STUDY_PRIMARY_TITLE_CLASS } from "@/lib/site-shell";
 
 export const metadata = {
   title:
@@ -329,7 +330,9 @@ export default function EInvoiceCaseStudy() {
             </div>
           }
           title={
-            <h1 className="mt-5 max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
+            <h1
+              className={`mt-5 max-w-4xl ${CASE_STUDY_PRIMARY_TITLE_CLASS} text-white`}
+            >
               Redesigning a government service used by 20 million people
             </h1>
           }

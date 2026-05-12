@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SplitCapsuleLink } from "@/app/components/SplitCapsuleLink";
 import VisualPlaceholder from "../_components/VisualPlaceholder";
+import { CASE_STUDY_PRIMARY_TITLE_CLASS } from "@/lib/site-shell";
 
 const KNOWN_SLUGS = [
   "e-invoice-app",
@@ -33,7 +34,9 @@ export default function CaseStudySlugPage({
         <span className="text-zinc-600 mx-2">·</span>
         {slug}
       </p>
-      <h1 className="text-center text-zinc-200 max-w-md">
+      <h1
+        className={`text-center ${CASE_STUDY_PRIMARY_TITLE_CLASS} text-zinc-200 max-w-md`}
+      >
         This case study is coming soon.
       </h1>
       <p className="mt-3 text-sm text-zinc-500 text-center max-w-sm">

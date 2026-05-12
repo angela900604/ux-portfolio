@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { PORTFOLIO_X_PAD } from "@/lib/portfolio-shell";
+import { SITE_SHELL_CONTAINER } from "@/lib/site-shell";
 
 const HOVER_NAV = "transition hover:text-[color:var(--nav-accent-blue)]";
 
@@ -44,7 +44,9 @@ export function SiteTopNav() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-[60] flex h-14 items-center border-b border-zinc-800 bg-zinc-950/90 backdrop-blur-md">
-      <div className={`relative flex h-full w-full items-center ${PORTFOLIO_X_PAD}`}>
+      <div
+        className={`relative flex h-full w-full items-center ${SITE_SHELL_CONTAINER}`}
+      >
         <div className="relative z-[1] flex min-w-0 flex-1 justify-start">
           <Link
             href="/"

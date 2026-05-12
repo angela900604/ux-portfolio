@@ -11,6 +11,7 @@ import { CaseStudyHeroFullBleed } from "../_components/CaseStudyHeroFullBleed";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { OutcomesMetricsChart } from "./OutcomesMetricsChart";
+import { CASE_STUDY_PRIMARY_TITLE_CLASS } from "@/lib/site-shell";
 
 const AH_ASSET = (name: string) => `/case-studies/admission-hub/${name}`;
 
@@ -101,7 +102,9 @@ export default function AdmissionHubCaseStudy() {
             </div>
           }
           title={
-            <h1 className="mt-5 max-w-4xl text-4xl font-semibold tracking-tight text-[#2C3E50] sm:text-5xl md:text-6xl">
+            <h1
+              className={`mt-5 max-w-4xl ${CASE_STUDY_PRIMARY_TITLE_CLASS} text-[#2C3E50]`}
+            >
               Admission Hub
             </h1>
           }

@@ -15,7 +15,10 @@ import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { ImageLightbox } from "@/app/components/ImageLightbox";
 import { SplitCapsuleLink } from "@/app/components/SplitCapsuleLink";
-import { SITE_GUTTER_CLASS } from "@/lib/site-shell";
+import {
+  CASE_STUDY_PRIMARY_TITLE_CLASS,
+  SITE_GUTTER_CLASS,
+} from "@/lib/site-shell";
 
 const MINA_HERO = "/case-studies/mina/mina-ai-hero.png";
 const MINA_MOCKUP_HAND = "/case-studies/mina/mockup-hand-01.png";
@@ -132,7 +135,9 @@ export default function AiMarketplaceCaseStudy() {
             </div>
           }
           title={
-            <h1 className="mt-5 max-w-4xl text-3xl font-semibold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
+            <h1
+              className={`mt-5 max-w-4xl ${CASE_STUDY_PRIMARY_TITLE_CLASS} text-white`}
+            >
               MINA — an AI-native marketplace for parents who outgrow baby gear
               overnight
             </h1>

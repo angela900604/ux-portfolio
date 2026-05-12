@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { CASE_STUDY_BODY_GRID, SITE_SHELL_CONTAINER } from "@/lib/site-shell";
+import { CASE_STUDY_BODY_GRID, SITE_SHELL_INNER } from "@/lib/site-shell";
 
 type Props = {
   children: ReactNode;
@@ -27,8 +27,8 @@ export function CaseStudyContentLayout({
 }: Props) {
   const baseContainer =
     variant === "dark"
-      ? `${SITE_SHELL_CONTAINER} py-12 sm:py-16`
-      : `${SITE_SHELL_CONTAINER} w-full py-10 sm:py-14`;
+      ? `${SITE_SHELL_INNER} py-12 sm:py-16`
+      : `${SITE_SHELL_INNER} w-full py-10 sm:py-14`;
 
   const main = (
     <div className={CASE_STUDY_BODY_GRID}>

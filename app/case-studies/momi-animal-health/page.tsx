@@ -13,6 +13,7 @@ import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { MomiOutcomesChart } from "./MomiOutcomesChart";
 import { MomiImageSlideshow } from "./MomiImageSlideshow";
 import { MomiUniformTile } from "./MomiUniformTile";
+import { CASE_STUDY_PRIMARY_TITLE_CLASS } from "@/lib/site-shell";
 
 export const metadata = {
   title: "MOMI Animal Health | Angela Yang",
@@ -132,7 +133,9 @@ export default function MomiAnimalHealthCaseStudy() {
             </div>
           }
           title={
-            <h1 className="mt-5 max-w-4xl text-4xl font-semibold tracking-tight text-[#2C3E50] sm:text-5xl md:text-6xl">
+            <h1
+              className={`mt-5 max-w-4xl ${CASE_STUDY_PRIMARY_TITLE_CLASS} text-[#2C3E50]`}
+            >
               MOMI Animal Health
             </h1>
           }

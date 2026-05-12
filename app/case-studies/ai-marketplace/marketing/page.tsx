@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { CaseStudyPrevNext } from "../../_components/CaseStudyPrevNext";
 import { MinaInstagramGrid } from "./MinaInstagramGrid";
-import { SITE_SHELL_CONTAINER } from "@/lib/site-shell";
+import { CASE_STUDY_PRIMARY_TITLE_CLASS, SITE_SHELL_INNER } from "@/lib/site-shell";
 
 export const metadata = {
   title:
@@ -13,7 +13,7 @@ export const metadata = {
 export default function MinaMarketingPage() {
   return (
     <article className="min-h-screen bg-zinc-950 text-zinc-100">
-      <div className={`${SITE_SHELL_CONTAINER} py-10 sm:py-14`}>
+      <div className={`${SITE_SHELL_INNER} py-10 sm:py-14`}>
         <Link
           href="/case-studies/ai-marketplace"
           className="text-sm font-medium text-zinc-400 transition hover:text-zinc-100"
@@ -24,7 +24,7 @@ export default function MinaMarketingPage() {
           <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Marketing designer
           </p>
-          <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+          <h1 className={CASE_STUDY_PRIMARY_TITLE_CLASS}>
             MINA · Instagram &amp; launch visuals
           </h1>
           <p className="text-[15px] leading-relaxed text-zinc-400 sm:text-base">
@@ -35,12 +35,12 @@ export default function MinaMarketingPage() {
         </header>
       </div>
 
-      <div className={`${SITE_SHELL_CONTAINER} pb-16 sm:pb-20`}>
+      <div className={`${SITE_SHELL_INNER} pb-16 sm:pb-20`}>
         <MinaInstagramGrid />
       </div>
 
       <div
-        className={`${SITE_SHELL_CONTAINER} border-t border-zinc-800 pt-12 pb-12 space-y-8`}
+        className={`${SITE_SHELL_INNER} border-t border-zinc-800 pt-12 pb-12 space-y-8`}
       >
         <CaseStudyPrevNext currentSlug="ai-marketplace/marketing" />
         <Link

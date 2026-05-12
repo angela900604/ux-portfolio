@@ -22,7 +22,7 @@ const POSTS = INSTAGRAM_GRID_ORDER.map((assetNum) => {
 
 export function MinaInstagramGrid() {
   return (
-    <div className="mx-auto w-full max-w-[min(100%,960px)] overflow-hidden rounded-sm ring-1 ring-zinc-800">
+    <div className="w-full min-w-0 overflow-hidden rounded-sm ring-1 ring-zinc-800">
       <div className="grid grid-cols-3 gap-px bg-zinc-800">
         {POSTS.map((post) => (
           <div

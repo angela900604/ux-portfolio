@@ -15,6 +15,7 @@ import { WideFigure } from "../e-invoice-app/EInvoiceFigures";
 import { GovernmentBackendCorrespondingScreensSlider } from "./GovernmentBackendCorrespondingScreensSlider";
 import { GovernmentBackendEngineeringAlignment } from "./GovernmentBackendEngineeringAlignment";
 import { GovernmentBackendHeroTldr } from "./GovernmentBackendHeroTldr";
+import { CASE_STUDY_PRIMARY_TITLE_CLASS } from "@/lib/site-shell";
 
 export const metadata = {
   title: "Role-Based Government Backend (600+ Staff) | Angela Yang",
@@ -84,7 +85,9 @@ export default function GovernmentBackendCaseStudy() {
             </div>
           }
           title={
-            <h1 className="mt-5 max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-6xl">
+            <h1
+              className={`mt-5 max-w-4xl ${CASE_STUDY_PRIMARY_TITLE_CLASS} text-white`}
+            >
               Role-based backend for 600+ government staff
             </h1>
           }

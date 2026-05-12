@@ -15,6 +15,7 @@ import {
   BaskinFinalScreensMarquee,
   type BaskinMarqueeSlide,
 } from "./BaskinFinalScreensMarquee";
+import { CASE_STUDY_PRIMARY_TITLE_CLASS } from "@/lib/site-shell";
 
 export const metadata = {
   title:
@@ -113,7 +114,9 @@ export default function BaskinRobbinsCaseStudy() {
             </div>
           }
           title={
-            <h1 className="mt-5 max-w-[min(100%,56rem)] text-3xl font-semibold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
+            <h1
+              className={`mt-5 max-w-[min(100%,56rem)] ${CASE_STUDY_PRIMARY_TITLE_CLASS} text-white`}
+            >
               Cross-market collaboration with Japan HQ for Taiwan&apos;s first
               Baskin Robbins membership app
             </h1>
