@@ -7,7 +7,7 @@ import {
   PORTFOLIO_ASIDE_PADDING,
   PORTFOLIO_LEFT_RAIL_WIDTH_CLASS,
 } from "@/lib/portfolio-shell";
-import { SITE_SHELL_CONTAINER } from "@/lib/site-shell";
+import { SITE_GUTTER_CLASS, SITE_SHELL_CONTAINER } from "@/lib/site-shell";
 
 const HOVER_NAV = "transition hover:text-[color:var(--nav-accent-blue)]";
 
@@ -54,7 +54,9 @@ export function SiteTopNav() {
   return (
     <header className="fixed top-0 left-0 right-0 z-[60] flex h-14 items-center border-b border-zinc-800 bg-zinc-950/90 backdrop-blur-md">
       {/* &lt; lg: same horizontal padding as stacked left rail */}
-      <div className="relative flex h-full w-full items-center px-6 sm:px-8 lg:hidden">
+      <div
+        className={`relative flex h-full w-full items-center ${SITE_GUTTER_CLASS} lg:hidden`}
+      >
         <div className="relative z-[1] flex min-w-0 flex-1 justify-start">
           <Link href="/" className={brandClass}>
             Angela Yang

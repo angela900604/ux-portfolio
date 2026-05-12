@@ -1,5 +1,11 @@
-/** Left rail padding (matches main horizontal padding + vertical rhythm). */
-export const PORTFOLIO_ASIDE_PADDING = "p-6 sm:p-8";
+import { SITE_GUTTER_PL_CLASS } from "@/lib/site-shell";
+
+/**
+ * Left rail + nav brand cell: same **left** inset as the main column / nav trailing
+ * gutter ({@link SITE_GUTTER_PL_CLASS}); slightly tighter **right** padding before the
+ * column border so copy doesn’t sit too far from the main pane.
+ */
+export const PORTFOLIO_ASIDE_PADDING = `py-6 sm:py-8 ${SITE_GUTTER_PL_CLASS} pr-6 sm:pr-8`;
 
 /** Width token only (no padding) — desktop nav left cell matches left rail. */
 export const PORTFOLIO_LEFT_RAIL_WIDTH_CLASS =

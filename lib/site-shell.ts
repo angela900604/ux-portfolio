@@ -5,8 +5,14 @@
 /** Editorial max width (tuned −200px from prior shell for a slightly narrower grid). */
 export const SITE_MAX_WIDTH_CLASS = "max-w-[1480px]";
 
+/** Leading (left) gutter — keep in sync with {@link SITE_GUTTER_PR_CLASS} values. */
+export const SITE_GUTTER_PL_CLASS = "pl-6 sm:pl-[100px]";
+
+/** Trailing (right) gutter — matches nav’s right padding and main column’s right edge. */
+export const SITE_GUTTER_PR_CLASS = "pr-6 sm:pr-[100px]";
+
 /** Equal left / right page gutters (used by nav, footer, heroes, layouts). */
-export const SITE_GUTTER_CLASS = "px-6 sm:px-[100px]";
+export const SITE_GUTTER_CLASS = `${SITE_GUTTER_PL_CLASS} ${SITE_GUTTER_PR_CLASS}`;
 
 /**
  * Max-width track only — use inside {@link SITE_SHELL_CONTAINER} (e.g. nested

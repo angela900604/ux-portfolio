@@ -7,6 +7,7 @@ import { MarketingHomeLogos } from "../MarketingHomeLogos";
 import {
   MARKETING_FLAGSHIP_SERIF,
   MARKETING_FLAGSHIP_SERIF_LEAD_CLASS,
+  MARKETING_FLAGSHIP_SERIF_LEAD_MAX_WIDTH_CLASS,
 } from "@/lib/marketing-flagship-serif";
 
 const INTERVIEW_PHOTO_SRC = "/about/user-interviews-collage.png";
@@ -30,7 +31,7 @@ export default function AboutPage() {
         About
       </p>
       <h1
-        className={`mt-5 max-w-2xl ${MARKETING_FLAGSHIP_SERIF_LEAD_CLASS} text-zinc-200`}
+        className={`mt-5 ${MARKETING_FLAGSHIP_SERIF_LEAD_MAX_WIDTH_CLASS} ${MARKETING_FLAGSHIP_SERIF_LEAD_CLASS} text-zinc-200`}
         style={{ fontFamily: MARKETING_FLAGSHIP_SERIF }}
       >
         A product designer for consumer mobile and growth, shipping complex,

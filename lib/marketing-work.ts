@@ -14,8 +14,8 @@ export type MarketingWorkItem = {
   discipline: string;
   year: string;
   cover: WorkCover;
-  /** One-line systems / craft signal under tags */
-  techHighlights: string;
+  /** One-line systems / craft signal under tags (omit on homepage when unused). */
+  techHighlights?: string;
   /** Show green Shipped pill (core product cases) */
   showShipped?: boolean;
   /** Serve cover PNG without Next image optimizer (full quality) */
@@ -32,7 +32,7 @@ export const E_INVOICE_HOME_TECH_HIGHLIGHTS =
 
 /** MINA product case — homepage card + left-rail ProjectCardTag (keep in sync). */
 export const MINA_HOME_DISCIPLINE_TAG =
-  "AI · COMMUNITY-DRIVEN · GROWTH & CONVERSION" as const;
+  "AI-DRIVEN COMMUNITY · MOBILE APP" as const;
 
 export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
   {
@@ -43,7 +43,6 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     discipline: E_INVOICE_HOME_DISCIPLINE_TAG,
     year: "2024–2025",
     cover: { kind: "e-invoice" },
-    techHighlights: E_INVOICE_HOME_TECH_HIGHLIGHTS,
     showShipped: true,
   },
   {
@@ -53,7 +52,6 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     discipline: MINA_HOME_DISCIPLINE_TAG,
     year: "2025–2026",
     cover: { kind: "mina" },
-    techHighlights: "AI trust patterns · 0→1 design system",
     showShipped: true,
   },
   {
@@ -63,8 +61,6 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     discipline: "Responsive · Web · 600+ Users",
     year: "2024–2025",
     cover: { kind: "image", src: GOV_COVER },
-    techHighlights:
-      "Permission matrix (600+ seats) · Reporting & audit surfaces · Version-control UX",
     showShipped: true,
   },
   {
@@ -74,8 +70,6 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     discipline: "Mobile · Cross-market JP×TW",
     year: "2024–2025",
     cover: { kind: "image", src: "/case-studies/baskin-robbins/home-cover.png" },
-    techHighlights:
-      "JP×HQ alignment · Membership & loyalty IA · Build-ready UI kit",
     showShipped: true,
   },
   {
@@ -89,8 +83,6 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
       src: "/case-studies/mina/cover_minamarketing.png",
     },
     coverUnoptimized: true,
-    techHighlights:
-      "Profile-style grid · Campaign tiles · Concierge & community storytelling",
   },
   {
     slug: "phyphyya",
@@ -99,28 +91,25 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     discipline: "Branding",
     year: "2023–2024",
     cover: { kind: "image", src: "/case-studies/phyphyya/gallery-14.png" },
-    techHighlights: "Brand identity system for Instagram / eCommerce",
   },
   {
     slug: "momi-animal-health",
     href: "/case-studies/momi-animal-health",
-    title: "MOMI Animal Health (Digital Marketing)",
+    title: "MOMI Animal Health",
     discipline: "Digital Marketing",
     year: "2021",
     cover: {
       kind: "image",
       src: "/case-studies/momi-animal-health/home-cover.png",
     },
-    techHighlights: "+75% online sales in 2 months",
   },
   {
     slug: "admission-hub",
     href: "/case-studies/admission-hub",
-    title: "Admission Hub (Digital Marketing)",
+    title: "Admission Hub",
     discipline: "Digital Marketing",
     year: "2022",
     cover: { kind: "image", src: "/case-studies/admission-hub/home-cover.png" },
-    techHighlights: "+18% organic traffic · +21% engagement",
   },
 ] as const;
 

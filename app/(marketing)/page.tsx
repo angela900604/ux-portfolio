@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import {
   MARKETING_FLAGSHIP_SERIF,
   MARKETING_FLAGSHIP_SERIF_LEAD_CLASS,
+  MARKETING_FLAGSHIP_SERIF_LEAD_MAX_WIDTH_CLASS,
 } from "@/lib/marketing-flagship-serif";
 import { MARKETING_SELECTED_WORK } from "@/lib/marketing-work";
 import { MarketingSelectedWorkGrid } from "./MarketingSelectedWorkGrid";
@@ -23,7 +24,7 @@ export default function HomePage() {
       <p className="sr-only">Angela Yang — product designer, Vancouver</p>
 
       <p
-        className={`max-w-3xl ${MARKETING_FLAGSHIP_SERIF_LEAD_CLASS} text-zinc-200`}
+        className={`${MARKETING_FLAGSHIP_SERIF_LEAD_MAX_WIDTH_CLASS} ${MARKETING_FLAGSHIP_SERIF_LEAD_CLASS} text-zinc-200`}
         style={{ fontFamily: MARKETING_FLAGSHIP_SERIF }}
       >
         {HOME_LEAD}

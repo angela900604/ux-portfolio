@@ -8,7 +8,7 @@ const HOVER_NAV_BLUE =
 
 function ExperienceRow({ row }: { row: AboutExperienceRow }) {
   return (
-    <div className="grid grid-cols-1 gap-6 border-t border-zinc-800 py-8 lg:grid-cols-[minmax(0,13rem)_1fr] lg:gap-x-16">
+    <div className="grid grid-cols-1 gap-6 border-t border-zinc-800 py-8 lg:grid-cols-[minmax(0,22rem)_1fr] lg:gap-x-12 xl:gap-x-16">
       <div className="min-w-0 space-y-1.5 font-sans">
         <p className="text-sm font-semibold text-zinc-50 sm:text-base">{row.title}</p>
         <p className="text-sm text-zinc-500">{row.company}</p>

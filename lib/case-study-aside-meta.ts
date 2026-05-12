@@ -90,10 +90,9 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
   "ai-marketplace": {
     eyebrow: MINA_HOME_DISCIPLINE_TAG,
     eyebrowAsProjectCardTag: true,
-    title:
-      "MINA — an AI-native marketplace for parents who outgrow baby gear overnight",
+    title: "MINA AI",
     subtitle:
-      "Sole designer on iOS—listing funnel, AI trust surfaces, design system, and community-led growth.",
+      "an AI-native marketplace for parents who outgrow baby gear overnight",
     items: [
       { label: "Timeline", value: "Sep 2025 – Present" },
       { label: "Role", value: "Sole product designer · 1 PM + 5 engineers" },

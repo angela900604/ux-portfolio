@@ -60,7 +60,11 @@ export function MarketingSelectedWorkGrid({
                   <ProjectCardTag>{item.discipline}</ProjectCardTag>
                   {item.showShipped ? <ProjectShippedBadge /> : null}
                 </div>
-                <ProjectTechHighlights>{item.techHighlights}</ProjectTechHighlights>
+                {item.techHighlights ? (
+                  <ProjectTechHighlights>
+                    {item.techHighlights}
+                  </ProjectTechHighlights>
+                ) : null}
                 <h3 className="mt-3 font-sans text-xl font-semibold tracking-tight text-zinc-100 group-hover:text-zinc-50 sm:text-2xl">
                   {item.title}
                 </h3>
