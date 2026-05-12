@@ -1,9 +1,5 @@
 import Link from "next/link";
 import { CASE_STUDY_PRIMARY_TITLE_CLASS, SITE_SHELL_INNER } from "@/lib/site-shell";
-import {
-  CaseStudyAtAGlance,
-  CASE_STUDY_AT_A_GLANCE_LIGHT_HERO_PROPS,
-} from "../_components/CaseStudyAtAGlance";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { CaseStudyHeroFullBleed } from "../_components/CaseStudyHeroFullBleed";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
@@ -14,19 +10,6 @@ export const metadata = {
   description:
     "Haphy Living: a live commercial experiment and personal brand IP built from bunny-inspired design to POD production and Etsy operations.",
 };
-
-const AT_A_GLANCE_ITEMS = [
-  { label: "Timeline", value: "2022 – present (ongoing)" },
-  { label: "Role", value: "Solo creator" },
-  {
-    label: "Project type",
-    value: "Brand IP · Illustration, POD, Etsy storefront",
-  },
-  {
-    label: "Focus",
-    value: "Rabbit-inspired IP · low-inventory ecommerce validation",
-  },
-] as const;
 
 const ETSY_METRICS = [
   { label: "Visits", value: "117" },
@@ -200,12 +183,6 @@ export default function PhyphyyaCaseStudy() {
               IP—illustration to POD production and Etsy storefront operations.
             </p>
           }
-          leadBelowSubtitle={
-            <CaseStudyAtAGlance
-              items={AT_A_GLANCE_ITEMS}
-              {...CASE_STUDY_AT_A_GLANCE_LIGHT_HERO_PROPS}
-            />
-          }
         >
           <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
             <a
@@ -351,7 +328,7 @@ export default function PhyphyyaCaseStudy() {
           className="relative scroll-mt-28 bg-white py-[100px] sm:scroll-mt-32"
         >
           <div
-            className="pointer-events-none absolute inset-y-0 left-1/2 -z-10 w-screen -translate-x-1/2 bg-[#FFFFFF]"
+            className="pointer-events-none absolute inset-y-0 left-0 right-0 -z-10 w-full bg-[#FFFFFF]"
             aria-hidden
           />
           <div className="text-center mb-[60px] w-full">

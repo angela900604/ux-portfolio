@@ -2,10 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { ImageLightbox } from "@/app/components/ImageLightbox";
 import type { ReactNode } from "react";
-import {
-  CaseStudyAtAGlance,
-  CASE_STUDY_AT_A_GLANCE_LIGHT_HERO_PROPS,
-} from "../_components/CaseStudyAtAGlance";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { CaseStudyHeroFullBleed } from "../_components/CaseStudyHeroFullBleed";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
@@ -14,19 +10,6 @@ import { OutcomesMetricsChart } from "./OutcomesMetricsChart";
 import { CASE_STUDY_PRIMARY_TITLE_CLASS } from "@/lib/site-shell";
 
 const AH_ASSET = (name: string) => `/case-studies/admission-hub/${name}`;
-
-const AT_A_GLANCE_ITEMS = [
-  { label: "Timeline", value: "May 2022 – Aug 2022 (4 months)" },
-  { label: "Role", value: "Digital Marketer" },
-  {
-    label: "Project type",
-    value: "Digital marketing internship · Toronto, ON · Study-abroad brand",
-  },
-  {
-    label: "Focus",
-    value: "Instagram content cadence, SEO articles, funnel analytics",
-  },
-] as const;
 
 /** Live posts that illustrate the “Canada life + calendar hooks” content shift */
 const ADMISSION_IG_EXAMPLES = [
@@ -107,12 +90,6 @@ export default function AdmissionHubCaseStudy() {
             >
               Admission Hub
             </h1>
-          }
-          leadBelowSubtitle={
-            <CaseStudyAtAGlance
-              items={AT_A_GLANCE_ITEMS}
-              {...CASE_STUDY_AT_A_GLANCE_LIGHT_HERO_PROPS}
-            />
           }
         />
       </header>

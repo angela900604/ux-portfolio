@@ -35,9 +35,9 @@ function titleCaseSlug(slug: string): string {
 const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
   "e-invoice-app": {
     eyebrow: "Public service · Mobile app",
-    title: "Redesigning a government service used by 20 million people",
+    title: "MOF Uniform Invoice Award Redemption app",
     subtitle:
-      "Designing for radical user diversity across age, language, and accessibility at national scale.",
+      "Redesigning a government service used by 20 million people",
     items: [
       { label: "Timeline", value: "Feb 2025 – Nov 2025 (10 months)" },
       { label: "Role", value: "UX/UI Designer" },

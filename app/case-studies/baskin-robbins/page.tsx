@@ -1,10 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ImageLightbox } from "@/app/components/ImageLightbox";
-import {
-  CaseStudyAtAGlance,
-  CASE_STUDY_AT_A_GLANCE_DARK_HERO_PROPS,
-} from "../_components/CaseStudyAtAGlance";
 import { CaseStudyHeroFullBleed } from "../_components/CaseStudyHeroFullBleed";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
@@ -70,23 +66,6 @@ const FINAL_PRODUCT_MARQUEE_SLIDES: readonly BaskinMarqueeSlide[] = [
   alt: `BR31 Taiwan membership app — final screen ${n}`,
 }));
 
-const AT_A_GLANCE_ITEMS = [
-  { label: "Timeline", value: "Dec 2024 – Feb 2025 (3 months)" },
-  { label: "Role", value: "Lead UX/UI Designer" },
-  {
-    label: "Project type",
-    value: "Mobile membership app · Loyalty & rewards (Taiwan)",
-  },
-  {
-    label: "Market scope",
-    value: "Taiwan launch · Aligned with Japan HQ · iOS + Android",
-  },
-  {
-    label: "Focus",
-    value: "Discovery through handoff · MVP with engineering",
-  },
-] as const;
-
 const sectionScroll =
   "scroll-mt-28 sm:scroll-mt-32";
 
@@ -127,12 +106,6 @@ export default function BaskinRobbinsCaseStudy() {
               native app—I led end-to-end UX/UI for 31 Club, shipped the phase-one MVP
               on schedule, and early Taiwan App Store reviews came in at five stars.
             </p>
-          }
-          leadBelowSubtitle={
-            <CaseStudyAtAGlance
-              items={AT_A_GLANCE_ITEMS}
-              {...CASE_STUDY_AT_A_GLANCE_DARK_HERO_PROPS}
-            />
           }
         >
           <div className="space-y-6 sm:space-y-8">

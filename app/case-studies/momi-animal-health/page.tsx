@@ -2,10 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { ImageLightbox } from "@/app/components/ImageLightbox";
 import type { ReactNode } from "react";
-import {
-  CaseStudyAtAGlance,
-  CASE_STUDY_AT_A_GLANCE_LIGHT_HERO_PROPS,
-} from "../_components/CaseStudyAtAGlance";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { CaseStudyHeroFullBleed } from "../_components/CaseStudyHeroFullBleed";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
@@ -22,22 +18,6 @@ export const metadata = {
 };
 
 const MOMI_ASSET = (n: string) => `/case-studies/momi-animal-health/${n}`;
-
-const AT_A_GLANCE_ITEMS = [
-  { label: "Timeline", value: "Feb 2021 – Sep 2021 (8 months)" },
-  {
-    label: "Role",
-    value: "Social media, eCommerce, and campaign design",
-  },
-  {
-    label: "Project type",
-    value: "Digital marketing · Taipei, Taiwan · Rabbit-care niche brand",
-  },
-  {
-    label: "Focus",
-    value: "Campaign creative, tri-fold & expo, online sales lift",
-  },
-] as const;
 
 const ECOMMERCE_SUPPORT_SLIDES = ["05", "04", "03", "02"].map((id, idx) => ({
   src: MOMI_ASSET(`what-i-did-${id}.png`),
@@ -143,12 +123,6 @@ export default function MomiAnimalHealthCaseStudy() {
             <p className="max-w-2xl text-xl leading-relaxed text-[#666]">
               Helped drive +75% online sales growth in two months.
             </p>
-          }
-          leadBelowSubtitle={
-            <CaseStudyAtAGlance
-              items={AT_A_GLANCE_ITEMS}
-              {...CASE_STUDY_AT_A_GLANCE_LIGHT_HERO_PROPS}
-            />
           }
         />
       </header>

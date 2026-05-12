@@ -1,7 +1,11 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
 import { ImageLightbox } from "@/app/components/ImageLightbox";
-import { CASE_STUDY_BODY_GRID, SITE_SHELL_INNER } from "@/lib/site-shell";
+import {
+  CASE_STUDY_BODY_GRID,
+  CASE_STUDY_COLUMN_FULL_BLEED,
+  SITE_SHELL_INNER,
+} from "@/lib/site-shell";
 
 /** Title band: same full-width narrative track as {@link CaseStudyContentLayout}. */
 function HeroTitleInGrid({ children }: { children: ReactNode }) {
@@ -66,7 +70,7 @@ function FullBleedImageOnly({
   priority,
 }: Pick<Props, "imageSrc" | "imageAlt" | "imageClassName" | "priority">) {
   return (
-    <div className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2">
+    <div className={CASE_STUDY_COLUMN_FULL_BLEED}>
       <ImageLightbox
         src={imageSrc}
         alt={imageAlt}
@@ -100,7 +104,7 @@ function BelowMetaImageContained({
   height: number;
 }) {
   return (
-    <div className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 bg-[#F5F3EF]">
+    <div className={`${CASE_STUDY_COLUMN_FULL_BLEED} bg-[#F5F3EF]`}>
       <div className={`${SITE_SHELL_INNER} py-10 sm:py-12`}>
         <HeroBelowFoldFullGrid>
           <div className="flex justify-center">
@@ -181,7 +185,7 @@ export function CaseStudyHeroFullBleed({
 
   return (
     <>
-      <div className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2">
+      <div className={CASE_STUDY_COLUMN_FULL_BLEED}>
         <div className="relative h-[min(90vh,56rem)] min-h-[80vh] w-full">
           <ImageLightbox
             src={imageSrc}

@@ -3,6 +3,7 @@
 import type { CSSProperties } from "react";
 import Image from "next/image";
 import { ImageLightbox } from "@/app/components/ImageLightbox";
+import { CASE_STUDY_COLUMN_FULL_BLEED } from "@/lib/site-shell";
 
 export type BaskinMarqueeSlide = {
   src: string;
@@ -61,7 +62,7 @@ export function BaskinFinalScreensMarquee({
 
   return (
     <div
-      className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 py-6 sm:py-8"
+      className={`${CASE_STUDY_COLUMN_FULL_BLEED} py-6 sm:py-8`}
       style={{ backgroundColor }}
       role="region"
       aria-label="Shipped product screens — auto-scrolling gallery. Pause with reduced motion in system settings."

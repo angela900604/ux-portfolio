@@ -2,10 +2,6 @@ import type { CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  CaseStudyAtAGlance,
-  CASE_STUDY_AT_A_GLANCE_DARK_HERO_PROPS,
-} from "../_components/CaseStudyAtAGlance";
-import {
   CaseStudyHeroTldr,
   type CaseStudyHeroTldrMetric,
 } from "../_components/CaseStudyHeroTldr";
@@ -16,8 +12,8 @@ import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { ImageLightbox } from "@/app/components/ImageLightbox";
 import { SplitCapsuleLink } from "@/app/components/SplitCapsuleLink";
 import {
+  CASE_STUDY_COLUMN_FULL_BLEED,
   CASE_STUDY_PRIMARY_TITLE_CLASS,
-  SITE_GUTTER_CLASS,
 } from "@/lib/site-shell";
 
 const MINA_HERO = "/case-studies/mina/mina-ai-hero.png";
@@ -64,26 +60,6 @@ const MINA_TERRACOTTA_SURFACE: CSSProperties = {
   backgroundColor: "rgba(180, 80, 55, 0.18)",
   border: "0.5px solid rgba(200, 100, 70, 0.3)",
 };
-
-const AT_A_GLANCE_ITEMS = [
-  {
-    label: "Timeline",
-    value: "Sep 2025 – Present",
-  },
-  {
-    label: "Role",
-    value: "Sole product designer · 1 PM + 5 engineers",
-  },
-  {
-    label: "Project type",
-    value: "AI-native marketplace iOS app · 0→1 consumer product",
-  },
-  {
-    label: "Focus",
-    value:
-      "Listing funnel, AI trust surfaces, design system, community-led growth",
-  },
-] as const;
 
 const MINA_TLDR_METRICS: CaseStudyHeroTldrMetric[] = [
   {
@@ -143,26 +119,19 @@ export default function AiMarketplaceCaseStudy() {
             </h1>
           }
           leadBelowSubtitle={
-            <div className="space-y-6">
-              <CaseStudyAtAGlance
-                items={AT_A_GLANCE_ITEMS}
-                {...CASE_STUDY_AT_A_GLANCE_DARK_HERO_PROPS}
-                noAccentGridClassName="grid w-full min-w-0 grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-8 [&>div]:min-w-0"
+            <div className="flex flex-wrap items-center gap-3">
+              <SplitCapsuleLink
+                href={MINA_APP_STORE}
+                label="Mina · App Store (Canada)"
+                variant="mina"
+                target="_blank"
+                rel="noopener noreferrer"
               />
-              <div className="flex flex-wrap items-center gap-3">
-                <SplitCapsuleLink
-                  href={MINA_APP_STORE}
-                  label="Mina · App Store (Canada)"
-                  variant="mina"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                />
-                <SplitCapsuleLink
-                  href="/case-studies/ai-marketplace/marketing"
-                  label="Marketing designer · Instagram grid"
-                  variant="outline"
-                />
-              </div>
+              <SplitCapsuleLink
+                href="/case-studies/ai-marketplace/marketing"
+                label="Marketing designer · Instagram grid"
+                variant="outline"
+              />
             </div>
           }
         >
@@ -384,11 +353,11 @@ export default function AiMarketplaceCaseStudy() {
         </CaseStudyInViewSection>
 
         <section
-          className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 py-6 sm:py-8 md:py-10"
+          className={`${CASE_STUDY_COLUMN_FULL_BLEED} py-6 sm:py-8 md:py-10`}
           aria-label="Principle: AI and community"
         >
           <div
-            className={`w-full py-8 sm:py-10 md:py-12 ${SITE_GUTTER_CLASS}`}
+            className="w-full py-8 sm:py-10 md:py-12"
             style={MINA_TERRACOTTA_SURFACE}
           >
             <p

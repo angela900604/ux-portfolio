@@ -21,5 +21,10 @@ export const SITE_SHELL_CONTAINER = `${SITE_SHELL_INNER} ${SITE_GUTTER_CLASS}`;
 export const CASE_STUDY_PRIMARY_TITLE_CLASS =
   "text-3xl font-semibold tracking-tight sm:text-4xl";
 
+/** Full-width band within the main column only (not 100vw — aligns with narrative when a left rail exists). */
+export const CASE_STUDY_COLUMN_FULL_BLEED =
+  "relative w-full min-w-0";
+
 /** Full-width case study body / hero title band (no sidebar column). */
 export const CASE_STUDY_BODY_GRID = "min-w-0 w-full";
+

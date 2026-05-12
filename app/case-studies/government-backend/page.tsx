@@ -2,10 +2,6 @@ import type { ReactNode } from "react";
 import Image from "next/image";
 import { ImageLightbox } from "@/app/components/ImageLightbox";
 import Link from "next/link";
-import {
-  CaseStudyAtAGlance,
-  CASE_STUDY_AT_A_GLANCE_DARK_HERO_PROPS,
-} from "../_components/CaseStudyAtAGlance";
 import { CaseStudyHeroFullBleed } from "../_components/CaseStudyHeroFullBleed";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
@@ -37,19 +33,6 @@ const BACKEND_COVER = {
   src: GOV_BACKEND_COVER_SRC,
   alt: "Role-based government backend platform — cover artwork",
 } as const;
-
-const AT_A_GLANCE_ITEMS = [
-  { label: "Timeline", value: "Jul 2025 – Sep 2025 (3 months)" },
-  { label: "Role", value: "Lead UX/UI Designer" },
-  {
-    label: "Project type",
-    value: "Backend admin platform · Government service (MoF)",
-  },
-  {
-    label: "Focus",
-    value: "RBAC, reporting, version workflows · Ship-ready UI",
-  },
-] as const;
 
 const GOV_BACKEND_JOURNEY_IDS = ["iterations"] as const;
 
@@ -98,12 +81,6 @@ export default function GovernmentBackendCaseStudy() {
               <Metric>600+</Metric> staff, faster invoice management and fewer
               errors.
             </p>
-          }
-          leadBelowSubtitle={
-            <CaseStudyAtAGlance
-              items={AT_A_GLANCE_ITEMS}
-              {...CASE_STUDY_AT_A_GLANCE_DARK_HERO_PROPS}
-            />
           }
         >
           <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">

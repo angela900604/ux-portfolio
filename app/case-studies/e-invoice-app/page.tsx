@@ -3,10 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { ImageLightbox } from "@/app/components/ImageLightbox";
 import { SplitCapsuleLink } from "@/app/components/SplitCapsuleLink";
-import {
-  CaseStudyAtAGlance,
-  CASE_STUDY_AT_A_GLANCE_DARK_HERO_PROPS,
-} from "../_components/CaseStudyAtAGlance";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { CaseStudyHeroFullBleed } from "../_components/CaseStudyHeroFullBleed";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
@@ -24,7 +20,7 @@ import { CASE_STUDY_PRIMARY_TITLE_CLASS } from "@/lib/site-shell";
 
 export const metadata = {
   title:
-    "Redesigning Taiwan Ministry of Finance's Uniform Invoice Award Redemption App | Angela Yang",
+    "MOF Uniform Invoice Award Redemption app | Angela Yang",
   description:
     "Government mobile app used by ~20 million people: trust & inclusion at national scale—multi-segment research (age, language, accessibility), competitive benchmarking, IA, ~88% prototype task success, measurable lifts in activation (onboarding) and retention (login success).",
 };
@@ -244,19 +240,6 @@ const E_INVOICE_JOURNEY_IDS = [
   "testing",
 ] as const;
 
-const AT_A_GLANCE_ITEMS = [
-  { label: "Timeline", value: "Feb 2025 – Nov 2025 (10 months)" },
-  { label: "Role", value: "UX/UI Designer" },
-  {
-    label: "Project type",
-    value: "End-to-end mobile app redesign · Government service app",
-  },
-  {
-    label: "Focus",
-    value: "Research, IA, accessibility, ship-ready UI",
-  },
-] as const;
-
 const FINAL_SOLUTION_SCREENS: {
   id: string;
   title: string;
@@ -333,29 +316,21 @@ export default function EInvoiceCaseStudy() {
             <h1
               className={`mt-5 max-w-4xl ${CASE_STUDY_PRIMARY_TITLE_CLASS} text-white`}
             >
-              Redesigning a government service used by 20 million people
+              MOF Uniform Invoice Award Redemption app
             </h1>
           }
           subtitle={
             <p className="text-lg leading-relaxed text-zinc-200 sm:text-xl">
-              Designing for radical user diversity across age, language, and
-              accessibility at national scale.
+              Redesigning a government service used by 20 million people
             </p>
           }
           leadBelowSubtitle={
-            <div className="space-y-6">
-              <CaseStudyAtAGlance
-                items={AT_A_GLANCE_ITEMS}
-                {...CASE_STUDY_AT_A_GLANCE_DARK_HERO_PROPS}
-                noAccentGridClassName="grid w-full min-w-0 grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-8 [&>div]:min-w-0"
+            <div className="max-w-3xl">
+              <SplitCapsuleLink
+                href="/user-research-journey"
+                label="View full research journey"
+                variant="emerald"
               />
-              <div className="max-w-3xl">
-                <SplitCapsuleLink
-                  href="/user-research-journey"
-                  label="View full research journey"
-                  variant="emerald"
-                />
-              </div>
             </div>
           }
         >
