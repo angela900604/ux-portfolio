@@ -5,15 +5,14 @@ import {
   CaseStudyHeroTldr,
   type CaseStudyHeroTldrMetric,
 } from "../_components/CaseStudyHeroTldr";
-import { CaseStudyHeroFullBleed } from "../_components/CaseStudyHeroFullBleed";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { ImageLightbox } from "@/app/components/ImageLightbox";
-import { SplitCapsuleLink } from "@/app/components/SplitCapsuleLink";
 import {
+  CASE_STUDY_BODY_GRID,
   CASE_STUDY_COLUMN_FULL_BLEED,
-  CASE_STUDY_PRIMARY_TITLE_CLASS,
+  SITE_SHELL_INNER,
 } from "@/lib/site-shell";
 
 const MINA_HERO = "/case-studies/mina/mina-ai-hero.png";
@@ -50,10 +49,6 @@ const MINA_HERO_VID_SOURCES = {
   mp4: "/case-studies/mina/herovideo.mp4",
   webm: "/case-studies/mina/herovideo.webm",
 } as const;
-
-/** Canada App Store — Mina - Resale for Parents */
-const MINA_APP_STORE =
-  "https://apps.apple.com/ca/app/mina-resale-for-parents/id6754006404";
 
 /** Translucent terracotta panels — quote banner + selling-agent constraint cards */
 const MINA_TERRACOTTA_SURFACE: CSSProperties = {
@@ -93,138 +88,101 @@ export default function AiMarketplaceCaseStudy() {
   return (
     <article className="min-h-screen bg-zinc-950 text-zinc-100">
       <header className="border-b border-zinc-800">
-        <CaseStudyHeroFullBleed
-          imageSrc={MINA_HERO}
-          imageAlt="MINA app showcase: AI-assisted buyer chat, marketplace home with picks and events, and community events"
-          imageClassName="object-cover object-[center_45%]"
-          eyebrow={
-            <div className="flex flex-wrap items-center gap-3">
-              <span className="inline-flex items-center rounded-full border border-emerald-400/45 bg-emerald-500/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-widest text-emerald-100">
-                Live product
-              </span>
-              <span className="inline-flex items-center rounded-full border border-amber-400/45 bg-amber-500/20 px-3 py-1 text-[11px] font-semibold uppercase tracking-widest text-amber-50">
-                Ongoing
-              </span>
-              <span className="text-xs uppercase tracking-widest text-white/70">
-                Case study · AI marketplace · Zero to one
-              </span>
-            </div>
-          }
-          title={
-            <h1
-              className={`mt-5 max-w-4xl ${CASE_STUDY_PRIMARY_TITLE_CLASS} text-white`}
-            >
-              MINA — an AI-native marketplace for parents who outgrow baby gear
-              overnight
-            </h1>
-          }
-          leadBelowSubtitle={
-            <div className="flex flex-wrap items-center gap-3">
-              <SplitCapsuleLink
-                href={MINA_APP_STORE}
-                label="Mina · App Store (Canada)"
-                variant="mina"
-                target="_blank"
-                rel="noopener noreferrer"
-              />
-              <SplitCapsuleLink
-                href="/case-studies/ai-marketplace/marketing"
-                label="Marketing designer · Instagram grid"
-                variant="outline"
-              />
-            </div>
-          }
-        >
-          <figure className="mb-8 w-full min-w-0">
-            <div
-              className="relative w-full min-h-0 overflow-hidden rounded-xl border border-zinc-800/80 bg-black shadow-[0_20px_50px_-20px_rgba(0,0,0,0.65)]"
-              style={{ aspectRatio: `${MINA_HERO_VID_W} / ${MINA_HERO_VID_H}` }}
-            >
-              <video
-                className="absolute inset-0 h-full w-full min-h-0 min-w-0 rounded-[inherit] object-contain object-center"
-                width={MINA_HERO_VID_W}
-                height={MINA_HERO_VID_H}
-                poster={MINA_HERO}
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="auto"
-                aria-label="MINA hero: three iPhone flows—Parenting Copilot, create listing with AI tags, and offer flow."
+        <div className={`${SITE_SHELL_INNER} py-12 sm:py-16`}>
+          <div
+            className={`${CASE_STUDY_BODY_GRID} min-w-0 overflow-x-hidden space-y-10 sm:space-y-12`}
+          >
+            <figure className="mb-0 w-full min-w-0">
+              <div
+                className="relative w-full min-h-0 overflow-hidden rounded-xl border border-zinc-800/80 bg-black shadow-[0_20px_50px_-20px_rgba(0,0,0,0.65)]"
+                style={{ aspectRatio: `${MINA_HERO_VID_W} / ${MINA_HERO_VID_H}` }}
               >
-                <source src={MINA_HERO_VID_SOURCES.mp4} type="video/mp4" />
-                <source src={MINA_HERO_VID_SOURCES.webm} type="video/webm" />
-              </video>
-            </div>
-          </figure>
-
-          <section>
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:items-stretch">
-              <div className="relative min-h-[min(88vw,480px)] w-full overflow-hidden rounded-xl sm:row-span-2 sm:min-h-[min(100%,640px)]">
-                <ImageLightbox
-                  src={MINA_MOCKUP_HAND}
-                  alt="MINA Parenting Copilot on iPhone, held in hand against a light textured background"
-                  className="absolute inset-0"
-                  disableHoverScale
+                <video
+                  className="absolute inset-0 h-full w-full min-h-0 min-w-0 rounded-[inherit] object-contain object-center"
+                  width={MINA_HERO_VID_W}
+                  height={MINA_HERO_VID_H}
+                  poster={MINA_HERO}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="auto"
+                  aria-label="MINA hero: three iPhone flows—Parenting Copilot, create listing with AI tags, and offer flow."
                 >
-                  <Image
+                  <source src={MINA_HERO_VID_SOURCES.mp4} type="video/mp4" />
+                  <source src={MINA_HERO_VID_SOURCES.webm} type="video/webm" />
+                </video>
+              </div>
+            </figure>
+
+            <section>
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:items-stretch">
+                <div className="relative min-h-[min(88vw,480px)] w-full overflow-hidden rounded-xl sm:row-span-2 sm:min-h-[min(100%,640px)]">
+                  <ImageLightbox
                     src={MINA_MOCKUP_HAND}
                     alt="MINA Parenting Copilot on iPhone, held in hand against a light textured background"
-                    fill
-                    className="object-cover object-center"
-                    sizes="(max-width: 640px) 100vw, 50vw"
-                  />
-                </ImageLightbox>
-              </div>
-              <div className="overflow-hidden rounded-xl">
-                <ImageLightbox
-                  src={MINA_MOCKUP_ISO}
-                  alt="MINA listing detail shown in an isometric iPhone mockup"
-                  className="block w-full"
-                  disableHoverScale
-                >
-                  <Image
+                    className="absolute inset-0"
+                    disableHoverScale
+                  >
+                    <Image
+                      src={MINA_MOCKUP_HAND}
+                      alt="MINA Parenting Copilot on iPhone, held in hand against a light textured background"
+                      fill
+                      className="object-cover object-center"
+                      sizes="(max-width: 640px) 100vw, 50vw"
+                    />
+                  </ImageLightbox>
+                </div>
+                <div className="overflow-hidden rounded-xl">
+                  <ImageLightbox
                     src={MINA_MOCKUP_ISO}
                     alt="MINA listing detail shown in an isometric iPhone mockup"
-                    width={1024}
-                    height={576}
-                    className="h-auto w-full object-cover"
-                    sizes="(max-width: 640px) 100vw, 50vw"
-                  />
-                </ImageLightbox>
-              </div>
-              <div className="overflow-hidden rounded-xl">
-                <ImageLightbox
-                  src={MINA_MOCKUP_SOFA}
-                  alt="MINA review listing screen shown on iPhone mockup on a leather sofa"
-                  className="block w-full"
-                  disableHoverScale
-                >
-                  <Image
+                    className="block w-full"
+                    disableHoverScale
+                  >
+                    <Image
+                      src={MINA_MOCKUP_ISO}
+                      alt="MINA listing detail shown in an isometric iPhone mockup"
+                      width={1024}
+                      height={576}
+                      className="h-auto w-full object-cover"
+                      sizes="(max-width: 640px) 100vw, 50vw"
+                    />
+                  </ImageLightbox>
+                </div>
+                <div className="overflow-hidden rounded-xl">
+                  <ImageLightbox
                     src={MINA_MOCKUP_SOFA}
                     alt="MINA review listing screen shown on iPhone mockup on a leather sofa"
-                    width={1024}
-                    height={576}
-                    className="h-auto w-full object-cover"
-                    sizes="(max-width: 640px) 100vw, 50vw"
-                  />
-                </ImageLightbox>
+                    className="block w-full"
+                    disableHoverScale
+                  >
+                    <Image
+                      src={MINA_MOCKUP_SOFA}
+                      alt="MINA review listing screen shown on iPhone mockup on a leather sofa"
+                      width={1024}
+                      height={576}
+                      className="h-auto w-full object-cover"
+                      sizes="(max-width: 640px) 100vw, 50vw"
+                    />
+                  </ImageLightbox>
+                </div>
               </div>
-            </div>
-          </section>
+            </section>
 
-          <div className="mt-10">
-            <CaseStudyHeroTldr
-              headline={
-                <>
-                  Sole designer on MINA — AI-native marketplace for parents ·
-                  Listing funnel, trust-first surfaces, and system work
-                </>
-              }
-              metrics={MINA_TLDR_METRICS}
-            />
+            <div className="mt-10">
+              <CaseStudyHeroTldr
+                headline={
+                  <>
+                    Sole designer on MINA — AI-native marketplace for parents ·
+                    Listing funnel, trust-first surfaces, and system work
+                  </>
+                }
+                metrics={MINA_TLDR_METRICS}
+              />
+            </div>
           </div>
-        </CaseStudyHeroFullBleed>
+        </div>
       </header>
 
       <CaseStudyContentLayout>

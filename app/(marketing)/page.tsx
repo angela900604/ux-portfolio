@@ -13,13 +13,13 @@ export const metadata: Metadata = {
 };
 
 const HOME_LEAD =
-  "I design consumer-facing experiences across mobile, web, and tablets. I also value empathy and curiosity in how I approach every problem.";
+  "I design consumer-facing experiences across mobile, web, and tablets, and I also value empathy and curiosity in how I approach every problem.";
 
 export default function HomePage() {
   const count = MARKETING_SELECTED_WORK.length;
 
   return (
-    <div className="pb-12">
+    <div className="pb-12 font-sans">
       <p className="sr-only">Angela Yang — product designer, Vancouver</p>
 
       <p

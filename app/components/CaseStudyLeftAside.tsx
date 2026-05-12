@@ -16,7 +16,10 @@ export function CaseStudyLeftAside() {
   const meta = getCaseStudyAsideMeta(pathname);
 
   return (
-    <aside className={PORTFOLIO_LEFT_RAIL_CLASS} aria-label="Project summary">
+    <aside
+      className={`${PORTFOLIO_LEFT_RAIL_CLASS} font-sans`}
+      aria-label="Project summary"
+    >
       <div className="min-w-0 shrink-0 space-y-3">
         {meta.eyebrow && meta.eyebrowAsProjectCardTag ? (
           <div className="group w-fit max-w-full">
@@ -34,6 +37,37 @@ export function CaseStudyLeftAside() {
           <p className="text-sm leading-relaxed text-zinc-400 sm:text-[15px]">
             {meta.subtitle}
           </p>
+        ) : null}
+        {meta.textLinks?.length ? (
+          <div className="mt-3 flex min-w-0 flex-col gap-2">
+            {meta.textLinks.map((link) => {
+              const isExternal =
+                link.external === true ||
+                (link.external !== false &&
+                  /^https?:\/\//i.test(link.href));
+              const linkClass =
+                "text-sm font-medium text-emerald-400/95 underline-offset-[5px] transition hover:text-emerald-300 hover:underline";
+              return isExternal ? (
+                <a
+                  key={`${link.href}-${link.label}`}
+                  href={link.href}
+                  className={linkClass}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  key={`${link.href}-${link.label}`}
+                  href={link.href}
+                  className={linkClass}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
+          </div>
         ) : null}
         {meta.primaryCta ? (
           <div className="mt-4 min-w-0">

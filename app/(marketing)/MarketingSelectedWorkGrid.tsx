@@ -34,7 +34,7 @@ export function MarketingSelectedWorkGrid({
   items: readonly MarketingWorkItem[];
 }) {
   return (
-    <ul className="mt-10 grid grid-cols-1 items-stretch gap-8 sm:grid-cols-2">
+    <ul className="mt-10 grid grid-cols-1 items-stretch gap-8 font-sans sm:grid-cols-2">
       {items.map((item, i) => (
         <li key={item.slug} className="h-full min-h-0">
           <FadeInSection className="h-full" delay={0.05 + i * 0.05}>
@@ -61,7 +61,7 @@ export function MarketingSelectedWorkGrid({
                   {item.showShipped ? <ProjectShippedBadge /> : null}
                 </div>
                 <ProjectTechHighlights>{item.techHighlights}</ProjectTechHighlights>
-                <h3 className="mt-3 text-xl font-semibold tracking-tight text-zinc-100 group-hover:text-zinc-50 sm:text-2xl">
+                <h3 className="mt-3 font-sans text-xl font-semibold tracking-tight text-zinc-100 group-hover:text-zinc-50 sm:text-2xl">
                   {item.title}
                 </h3>
                 <p className="mt-2 text-xs text-zinc-600">{item.year}</p>

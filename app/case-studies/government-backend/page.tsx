@@ -2,7 +2,6 @@ import type { ReactNode } from "react";
 import Image from "next/image";
 import { ImageLightbox } from "@/app/components/ImageLightbox";
 import Link from "next/link";
-import { CaseStudyHeroFullBleed } from "../_components/CaseStudyHeroFullBleed";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { DesignJourneyCollapsible } from "../_components/DesignJourneyCollapsible";
@@ -11,7 +10,7 @@ import { WideFigure } from "../e-invoice-app/EInvoiceFigures";
 import { GovernmentBackendCorrespondingScreensSlider } from "./GovernmentBackendCorrespondingScreensSlider";
 import { GovernmentBackendEngineeringAlignment } from "./GovernmentBackendEngineeringAlignment";
 import { GovernmentBackendHeroTldr } from "./GovernmentBackendHeroTldr";
-import { CASE_STUDY_PRIMARY_TITLE_CLASS } from "@/lib/site-shell";
+import { CASE_STUDY_BODY_GRID, SITE_SHELL_INNER } from "@/lib/site-shell";
 
 export const metadata = {
   title: "Role-Based Government Backend (600+ Staff) | Angela Yang",
@@ -54,58 +53,33 @@ export default function GovernmentBackendCaseStudy() {
   return (
     <article className="min-h-screen bg-zinc-950 text-zinc-100">
       <header className="border-b border-zinc-800">
-        <CaseStudyHeroFullBleed
-          imageSrc={GOV_BACKEND_COVER_SRC}
-          imageAlt="Role-based government backend platform — cover artwork"
-          imageClassName="object-cover object-[center_40%]"
-          eyebrow={
-            <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-white/75">
-              <span>Case Study</span>
-              <span className="text-white/45">·</span>
-              <span>Public Service</span>
-              <span className="text-white/45">·</span>
-              <span>Enterprise System</span>
-            </div>
-          }
-          title={
-            <h1
-              className={`mt-5 max-w-4xl ${CASE_STUDY_PRIMARY_TITLE_CLASS} text-white`}
-            >
-              Role-based backend for 600+ government staff
-            </h1>
-          }
-          subtitle={
-            <p className="text-lg leading-relaxed text-zinc-200 sm:text-xl">
-              Backend platform for the Ministry of Finance&apos;s Uniform Invoice
-              Lottery Redemption App—role-based access and reporting for{" "}
-              <Metric>600+</Metric> staff, faster invoice management and fewer
-              errors.
-            </p>
-          }
-        >
-          <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
-            <ImageLightbox
-              src={BACKEND_COVER.src}
-              alt={BACKEND_COVER.alt}
-              className="block w-full"
-              disableHoverScale
-            >
-              <Image
+        <div className={`${SITE_SHELL_INNER} py-12 sm:py-16`}>
+          <div
+            className={`${CASE_STUDY_BODY_GRID} min-w-0 space-y-10 sm:space-y-12`}
+          >
+            <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+              <ImageLightbox
                 src={BACKEND_COVER.src}
                 alt={BACKEND_COVER.alt}
-                width={1024}
-                height={764}
-                className="h-auto w-full object-cover"
-                sizes="(max-width: 768px) 100vw, 1080px"
-              />
-            </ImageLightbox>
-          </div>
+                className="block w-full"
+                disableHoverScale
+              >
+                <Image
+                  src={BACKEND_COVER.src}
+                  alt={BACKEND_COVER.alt}
+                  width={1024}
+                  height={764}
+                  className="h-auto w-full object-cover"
+                  sizes="(max-width: 768px) 100vw, 1080px"
+                />
+              </ImageLightbox>
+            </div>
 
-          <div className="mt-10">
-            <GovernmentBackendHeroTldr />
+            <div className="mt-10">
+              <GovernmentBackendHeroTldr />
+            </div>
           </div>
-
-        </CaseStudyHeroFullBleed>
+        </div>
       </header>
 
       <CaseStudyContentLayout>

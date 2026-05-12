@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ImageLightbox } from "@/app/components/ImageLightbox";
-import { CaseStudyHeroFullBleed } from "../_components/CaseStudyHeroFullBleed";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
@@ -11,7 +10,7 @@ import {
   BaskinFinalScreensMarquee,
   type BaskinMarqueeSlide,
 } from "./BaskinFinalScreensMarquee";
-import { CASE_STUDY_PRIMARY_TITLE_CLASS } from "@/lib/site-shell";
+import { CASE_STUDY_BODY_GRID, SITE_SHELL_INNER } from "@/lib/site-shell";
 
 export const metadata = {
   title:
@@ -79,77 +78,73 @@ export default function BaskinRobbinsCaseStudy() {
   return (
     <article className="min-h-screen bg-zinc-950 text-zinc-100">
       <header className="border-b border-zinc-800">
-        <CaseStudyHeroFullBleed
-          imageSrc={HERO_MEMBERSHIP.src}
-          imageAlt={HERO_MEMBERSHIP.alt}
-          imageClassName="object-cover object-[center_30%]"
-          eyebrow={
-            <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-white/75">
-              <span>Case Study</span>
-              <span className="text-white/45">·</span>
-              <span>Mobile · Loyalty</span>
-              <span className="text-white/45">·</span>
-              <span>Zero-to-one</span>
-            </div>
-          }
-          title={
-            <h1
-              className={`mt-5 max-w-[min(100%,56rem)] ${CASE_STUDY_PRIMARY_TITLE_CLASS} text-white`}
-            >
-              Cross-market collaboration with Japan HQ for Taiwan&apos;s first
-              Baskin Robbins membership app
-            </h1>
-          }
-          subtitle={
-            <p className="text-base leading-relaxed text-zinc-200 sm:text-lg">
-              Taiwan&apos;s loyalty market was growing fast while BR31 still had no
-              native app—I led end-to-end UX/UI for 31 Club, shipped the phase-one MVP
-              on schedule, and early Taiwan App Store reviews came in at five stars.
-            </p>
-          }
-        >
-          <div className="space-y-6 sm:space-y-8">
-            <div className="min-w-0 w-full">
+        <div className={`${SITE_SHELL_INNER} py-12 sm:py-16`}>
+          <div
+            className={`${CASE_STUDY_BODY_GRID} min-w-0 space-y-10 sm:space-y-12`}
+          >
+            <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
               <ImageLightbox
-                src={heroPrimary.src}
-                alt={heroPrimary.alt}
+                src={HERO_MEMBERSHIP.src}
+                alt={HERO_MEMBERSHIP.alt}
                 className="block w-full"
                 disableHoverScale
               >
                 <Image
-                  src={heroPrimary.src}
-                  alt={heroPrimary.alt}
-                  width={1200}
-                  height={900}
+                  src={HERO_MEMBERSHIP.src}
+                  alt={HERO_MEMBERSHIP.alt}
+                  width={1600}
+                  height={1000}
                   quality={95}
-                  className="h-auto w-full object-contain"
+                  className="h-auto w-full object-cover object-[center_30%]"
                   sizes="(max-width: 1480px) 100vw, 1200px"
                   priority
                 />
               </ImageLightbox>
             </div>
-            <div className="grid grid-cols-2 gap-4 sm:gap-6">
-              {heroSquarePair.map((img) => (
+
+            <div className="space-y-6 sm:space-y-8">
+              <div className="min-w-0 w-full">
                 <ImageLightbox
-                  key={img.src}
-                  src={img.src}
-                  alt={img.alt}
-                  className="relative aspect-square min-w-0 overflow-hidden"
+                  src={heroPrimary.src}
+                  alt={heroPrimary.alt}
+                  className="block w-full"
                   disableHoverScale
                 >
                   <Image
-                    src={img.src}
-                    alt={img.alt}
-                    fill
+                    src={heroPrimary.src}
+                    alt={heroPrimary.alt}
+                    width={1200}
+                    height={900}
                     quality={95}
-                    className="object-cover"
-                    sizes="(max-width: 768px) 50vw, 500px"
+                    className="h-auto w-full object-contain"
+                    sizes="(max-width: 1480px) 100vw, 1200px"
+                    priority
                   />
                 </ImageLightbox>
-              ))}
+              </div>
+              <div className="grid grid-cols-2 gap-4 sm:gap-6">
+                {heroSquarePair.map((img) => (
+                  <ImageLightbox
+                    key={img.src}
+                    src={img.src}
+                    alt={img.alt}
+                    className="relative aspect-square min-w-0 overflow-hidden"
+                    disableHoverScale
+                  >
+                    <Image
+                      src={img.src}
+                      alt={img.alt}
+                      fill
+                      quality={95}
+                      className="object-cover"
+                      sizes="(max-width: 768px) 50vw, 500px"
+                    />
+                  </ImageLightbox>
+                ))}
+              </div>
             </div>
           </div>
-        </CaseStudyHeroFullBleed>
+        </div>
       </header>
 
       <CaseStudyContentLayout>

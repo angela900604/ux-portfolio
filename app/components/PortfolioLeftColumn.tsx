@@ -20,7 +20,7 @@ const HOVER_NAV = "transition hover:text-[color:var(--nav-accent-blue)]";
  */
 export function PortfolioLeftColumn() {
   return (
-    <aside className={PORTFOLIO_LEFT_RAIL_CLASS}>
+    <aside className={`${PORTFOLIO_LEFT_RAIL_CLASS} font-sans`}>
       <div className="min-w-0 shrink-0">
         <h1
           className={`${MARKETING_FLAGSHIP_SERIF_LEAD_CLASS} text-zinc-50`}

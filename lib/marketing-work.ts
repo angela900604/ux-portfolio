@@ -30,6 +30,10 @@ export const E_INVOICE_HOME_DISCIPLINE_TAG =
 export const E_INVOICE_HOME_TECH_HIGHLIGHTS =
   "Research, IA, accessibility, ship-ready UI" as const;
 
+/** MINA product case — homepage card + left-rail ProjectCardTag (keep in sync). */
+export const MINA_HOME_DISCIPLINE_TAG =
+  "AI · COMMUNITY-DRIVEN · GROWTH & CONVERSION" as const;
+
 export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
   {
     slug: "e-invoice-app",
@@ -46,10 +50,10 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     slug: "ai-marketplace",
     href: "/case-studies/ai-marketplace",
     title: "MINA · AI-Powered Marketplace Community for SF Parents",
-    discipline: "AI · Community-driven · Growth & conversion",
-    year: "2025",
+    discipline: MINA_HOME_DISCIPLINE_TAG,
+    year: "2025–2026",
     cover: { kind: "mina" },
-    techHighlights: "AI trust patterns · 0→1 design system · A/B tested",
+    techHighlights: "AI trust patterns · 0→1 design system",
     showShipped: true,
   },
   {
@@ -119,3 +123,10 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     techHighlights: "+18% organic traffic · +21% engagement",
   },
 ] as const;
+
+/** Discipline line from the homepage grid for a case-study slug (if listed). */
+export function marketingDisciplineForCaseStudySlug(
+  slug: string,
+): string | undefined {
+  return MARKETING_SELECTED_WORK.find((w) => w.slug === slug)?.discipline;
+}

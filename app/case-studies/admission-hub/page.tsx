@@ -3,11 +3,10 @@ import Image from "next/image";
 import { ImageLightbox } from "@/app/components/ImageLightbox";
 import type { ReactNode } from "react";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
-import { CaseStudyHeroFullBleed } from "../_components/CaseStudyHeroFullBleed";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { OutcomesMetricsChart } from "./OutcomesMetricsChart";
-import { CASE_STUDY_PRIMARY_TITLE_CLASS } from "@/lib/site-shell";
+import { CASE_STUDY_BODY_GRID, SITE_SHELL_INNER } from "@/lib/site-shell";
 
 const AH_ASSET = (name: string) => `/case-studies/admission-hub/${name}`;
 
@@ -72,26 +71,28 @@ export default function AdmissionHubCaseStudy() {
   return (
     <article className="min-h-screen bg-[#F5F3EF] text-[#4A4A4A]">
       <header className="border-b border-[#E0D9CE]">
-        <CaseStudyHeroFullBleed
-          imagePlacement="below-meta"
-          imageSrc={AH_ASSET("case-hero-cover.png")}
-          imageAlt="Admission Hub promotional flyer mockup — Working Holiday COOP and Canada study messaging"
-          imageClassName="object-cover object-[center_40%]"
-          eyebrow={
-            <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-[#7A7A7A]">
-              <span>Digital Marketing</span>
-              <span className="text-[#B0B0B0]">·</span>
-              <span>Content + Growth</span>
+        <div className={`${SITE_SHELL_INNER} py-12 sm:py-16`}>
+          <div className={`${CASE_STUDY_BODY_GRID} min-w-0`}>
+            <div className="overflow-hidden rounded-2xl border border-[#E8E1D6] bg-white">
+              <ImageLightbox
+                src={AH_ASSET("case-hero-cover.png")}
+                alt="Admission Hub promotional flyer mockup — Working Holiday COOP and Canada study messaging"
+                className="block w-full"
+                disableHoverScale
+              >
+                <Image
+                  src={AH_ASSET("case-hero-cover.png")}
+                  alt="Admission Hub promotional flyer mockup — Working Holiday COOP and Canada study messaging"
+                  width={1200}
+                  height={675}
+                  className="h-auto w-full object-cover object-[center_40%]"
+                  sizes="(max-width: 768px) 100vw, 1080px"
+                  priority
+                />
+              </ImageLightbox>
             </div>
-          }
-          title={
-            <h1
-              className={`mt-5 max-w-4xl ${CASE_STUDY_PRIMARY_TITLE_CLASS} text-[#2C3E50]`}
-            >
-              Admission Hub
-            </h1>
-          }
-        />
+          </div>
+        </div>
       </header>
 
       <CaseStudyContentLayout

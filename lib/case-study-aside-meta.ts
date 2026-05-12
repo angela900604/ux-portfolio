@@ -6,7 +6,15 @@
 import {
   E_INVOICE_HOME_DISCIPLINE_TAG,
   E_INVOICE_HOME_TECH_HIGHLIGHTS,
+  MINA_HOME_DISCIPLINE_TAG,
+  marketingDisciplineForCaseStudySlug,
 } from "@/lib/marketing-work";
+
+const MINA_APP_STORE_CA =
+  "https://apps.apple.com/ca/app/mina-resale-for-parents/id6754006404";
+const BR31_APP_STORE_TW =
+  "https://apps.apple.com/tw/app/31%E4%BF%B1%E6%A8%82%E9%83%A8/id6755289789";
+const PHYPHYA_INSTAGRAM = "https://www.instagram.com/phyphya__/";
 
 export type CaseStudyAsideRow = {
   label: string;
@@ -19,6 +27,14 @@ export type CaseStudyAsidePrimaryCta = {
   label: string;
 };
 
+/** Extra text links under subtitle (App Store, related case study, etc.). */
+export type CaseStudyAsideTextLink = {
+  href: string;
+  label: string;
+  /** Opens in new tab; defaults true when href starts with http */
+  external?: boolean;
+};
+
 export type CaseStudyAsideMeta = {
   eyebrow?: string;
   /** Same visual as homepage {@link ProjectCardTag} (discipline line). */
@@ -27,6 +43,7 @@ export type CaseStudyAsideMeta = {
   subtitle?: string;
   items: readonly CaseStudyAsideRow[];
   primaryCta?: CaseStudyAsidePrimaryCta;
+  textLinks?: readonly CaseStudyAsideTextLink[];
 };
 
 /** Path segment after `/case-studies/` (e.g. `e-invoice-app`, `ai-marketplace/marketing`). */
@@ -71,7 +88,8 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
     },
   },
   "ai-marketplace": {
-    eyebrow: "Case study · AI marketplace · Zero to one",
+    eyebrow: MINA_HOME_DISCIPLINE_TAG,
+    eyebrowAsProjectCardTag: true,
     title:
       "MINA — an AI-native marketplace for parents who outgrow baby gear overnight",
     subtitle:
@@ -89,9 +107,22 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
           "Listing funnel, AI trust surfaces, design system, community-led growth",
       },
     ],
+    textLinks: [
+      {
+        href: MINA_APP_STORE_CA,
+        label: "Mina · App Store (Canada)",
+        external: true,
+      },
+      {
+        href: "/case-studies/ai-marketplace/marketing",
+        label: "Marketing designer · Instagram grid",
+        external: false,
+      },
+    ],
   },
   "ai-marketplace/marketing": {
-    eyebrow: "Marketing designer",
+    eyebrow: marketingDisciplineForCaseStudySlug("ai-marketplace/marketing")!,
+    eyebrowAsProjectCardTag: true,
     title: "MINA · Instagram & launch visuals",
     subtitle:
       "Campaign tiles for the MINA brand—marketplace positioning, concierge pickup, community programs, and product stories—in a profile-style grid.",
@@ -108,9 +139,17 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
           "Instagram grid, campaign tiles, concierge & community storytelling",
       },
     ],
+    textLinks: [
+      {
+        href: "/case-studies/ai-marketplace",
+        label: "← MINA product case study",
+        external: false,
+      },
+    ],
   },
   "government-backend": {
-    eyebrow: "Case study · Public service · Enterprise system",
+    eyebrow: marketingDisciplineForCaseStudySlug("government-backend")!,
+    eyebrowAsProjectCardTag: true,
     title: "Role-based backend for 600+ government staff",
     subtitle:
       "Backend platform for the Ministry of Finance’s Uniform Invoice Lottery Redemption App—role-based access and reporting for 600+ staff.",
@@ -128,7 +167,8 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
     ],
   },
   "baskin-robbins": {
-    eyebrow: "Case study · Mobile · Loyalty · Zero-to-one",
+    eyebrow: marketingDisciplineForCaseStudySlug("baskin-robbins")!,
+    eyebrowAsProjectCardTag: true,
     title:
       "Cross-market collaboration with Japan HQ for Taiwan’s first Baskin Robbins membership app",
     subtitle:
@@ -149,9 +189,17 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
         value: "Discovery through handoff · MVP with engineering",
       },
     ],
+    textLinks: [
+      {
+        href: BR31_APP_STORE_TW,
+        label: "31 Club · App Store (Taiwan)",
+        external: true,
+      },
+    ],
   },
   "phyphyya": {
-    eyebrow: "Brand IP · Illustration + Product",
+    eyebrow: marketingDisciplineForCaseStudySlug("phyphyya")!,
+    eyebrowAsProjectCardTag: true,
     title: "Haphy Living",
     subtitle:
       "A live ecommerce experiment built from a personal rabbit-inspired IP—illustration to POD production and Etsy storefront operations.",
@@ -167,9 +215,17 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
         value: "Rabbit-inspired IP · low-inventory ecommerce validation",
       },
     ],
+    textLinks: [
+      {
+        href: PHYPHYA_INSTAGRAM,
+        label: "Instagram · @phyphya__",
+        external: true,
+      },
+    ],
   },
   "momi-animal-health": {
-    eyebrow: "Digital marketing · Content + Growth",
+    eyebrow: marketingDisciplineForCaseStudySlug("momi-animal-health")!,
+    eyebrowAsProjectCardTag: true,
     title: "MOMI Animal Health",
     subtitle: "Helped drive +75% online sales growth in two months.",
     items: [
@@ -189,7 +245,8 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
     ],
   },
   "admission-hub": {
-    eyebrow: "Digital marketing · Content + Growth",
+    eyebrow: marketingDisciplineForCaseStudySlug("admission-hub")!,
+    eyebrowAsProjectCardTag: true,
     title: "Admission Hub",
     subtitle:
       "Study-abroad brand in Toronto—Instagram cadence toward Canada-life content, SEO articles, and funnel analytics.",
@@ -207,7 +264,8 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
     ],
   },
   "e-invoice-design": {
-    eyebrow: "Case study",
+    eyebrow: "Case study · UI companion",
+    eyebrowAsProjectCardTag: true,
     title: "e-Invoice design showcase",
     subtitle:
       "A visual-first page focused on the UI craft and key redesign screens.",

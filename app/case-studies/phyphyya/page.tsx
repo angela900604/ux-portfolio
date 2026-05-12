@@ -1,7 +1,11 @@
+import Image from "next/image";
 import Link from "next/link";
-import { CASE_STUDY_PRIMARY_TITLE_CLASS, SITE_SHELL_INNER } from "@/lib/site-shell";
+import { ImageLightbox } from "@/app/components/ImageLightbox";
+import {
+  CASE_STUDY_BODY_GRID,
+  SITE_SHELL_INNER,
+} from "@/lib/site-shell";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
-import { CaseStudyHeroFullBleed } from "../_components/CaseStudyHeroFullBleed";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 
@@ -158,43 +162,28 @@ export default function PhyphyyaCaseStudy() {
   return (
     <div className="min-h-screen bg-[#F5F3EF] text-[#4A4A4A]">
       <header className="border-b border-[#E0D9CE]">
-        <CaseStudyHeroFullBleed
-          imagePlacement="below-meta"
-          imageSrc="/case-studies/phyphyya/gallery-14.png"
-          imageAlt="Haphy Living brand applications overview"
-          imageClassName="object-cover object-[center_40%]"
-          eyebrow={
-            <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-[#7A7A7A]">
-              <span>Brand IP</span>
-              <span className="text-[#B0B0B0]">·</span>
-              <span>Illustration + Product</span>
+        <div className={`${SITE_SHELL_INNER} py-12 sm:py-16`}>
+          <div className={`${CASE_STUDY_BODY_GRID} min-w-0`}>
+            <div className="overflow-hidden rounded-2xl border border-[#E8E1D6] bg-white">
+              <ImageLightbox
+                src="/case-studies/phyphyya/gallery-14.png"
+                alt="Haphy Living brand applications overview"
+                className="block w-full"
+                disableHoverScale
+              >
+                <Image
+                  src="/case-studies/phyphyya/gallery-14.png"
+                  alt="Haphy Living brand applications overview"
+                  width={1200}
+                  height={675}
+                  className="h-auto w-full object-cover object-[center_40%]"
+                  sizes="(max-width: 768px) 100vw, 1080px"
+                  priority
+                />
+              </ImageLightbox>
             </div>
-          }
-          title={
-            <h1
-              className={`mt-5 max-w-4xl ${CASE_STUDY_PRIMARY_TITLE_CLASS} text-[#2C3E50]`}
-            >
-              Haphy Living
-            </h1>
-          }
-          subtitle={
-            <p className="max-w-2xl text-lg leading-relaxed text-[#666] sm:text-xl">
-              A live ecommerce experiment built from a personal rabbit-inspired
-              IP—illustration to POD production and Etsy storefront operations.
-            </p>
-          }
-        >
-          <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-            <a
-              href="https://www.instagram.com/phyphya__/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex w-fit items-center justify-center rounded-full border border-[#D4C5B0] bg-white/90 px-[18px] py-[10px] text-[#4A4A4A] text-[14px] transition hover:bg-[#D4C5B0]/30"
-            >
-              Instagram · @phyphya__
-            </a>
           </div>
-        </CaseStudyHeroFullBleed>
+        </div>
       </header>
 
       <div className={SITE_SHELL_INNER}>
