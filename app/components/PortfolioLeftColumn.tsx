@@ -2,18 +2,14 @@
 
 import Image from "next/image";
 import { ImageLightbox } from "@/app/components/ImageLightbox";
-import { PORTFOLIO_ASIDE_PADDING } from "@/lib/portfolio-shell";
+import { PORTFOLIO_LEFT_RAIL_CLASS } from "@/lib/portfolio-shell";
 
 const DISPLAY_FONT =
   "var(--font-serif-display), Georgia, 'Times New Roman', serif";
 
 const PROFILE_SRC = "/about/profile-v2.png";
 
-const FOCUS_LINES = [
-  "Product design",
-  "Marketing design",
-  "Branding",
-] as const;
+const FOCUS_LINES = ["Product design", "Marketing design"] as const;
 
 const HOVER_NAV = "transition hover:text-[color:var(--nav-accent-blue)]";
 
@@ -23,9 +19,7 @@ const HOVER_NAV = "transition hover:text-[color:var(--nav-accent-blue)]";
  */
 export function PortfolioLeftColumn() {
   return (
-    <aside
-      className={`flex min-h-0 shrink-0 flex-col border-b border-zinc-800 ${PORTFOLIO_ASIDE_PADDING} lg:h-full lg:w-[min(24vw,calc(20rem+12px))] lg:shrink-0 lg:overflow-y-auto lg:border-b-0 lg:border-r lg:border-zinc-800 xl:w-[min(26vw,calc(22rem+12px))]`}
-    >
+    <aside className={PORTFOLIO_LEFT_RAIL_CLASS}>
       <div className="min-w-0 shrink-0">
         <h1
           className="text-[clamp(1.5rem,2.8vw,2.25rem)] font-normal leading-[1.1] tracking-[-0.02em] text-zinc-50"
