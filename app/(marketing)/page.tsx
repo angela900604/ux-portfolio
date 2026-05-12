@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import {
   MARKETING_FLAGSHIP_SERIF,
-  MARKETING_FLAGSHIP_SERIF_LEAD_CLASS,
+  MARKETING_FLAGSHIP_SERIF_LEAD_COMPACT_CLASS,
   MARKETING_FLAGSHIP_SERIF_LEAD_MAX_WIDTH_CLASS,
 } from "@/lib/marketing-flagship-serif";
 import { MARKETING_SECTION_TITLE_CLASS } from "@/lib/marketing-section-title";
@@ -25,7 +25,7 @@ export default function HomePage() {
       <p className="sr-only">Angela Yang — product designer, Vancouver</p>
 
       <p
-        className={`${MARKETING_FLAGSHIP_SERIF_LEAD_MAX_WIDTH_CLASS} ${MARKETING_FLAGSHIP_SERIF_LEAD_CLASS} text-zinc-200`}
+        className={`${MARKETING_FLAGSHIP_SERIF_LEAD_MAX_WIDTH_CLASS} ${MARKETING_FLAGSHIP_SERIF_LEAD_COMPACT_CLASS} text-zinc-200`}
         style={{ fontFamily: MARKETING_FLAGSHIP_SERIF }}
       >
         {HOME_LEAD}

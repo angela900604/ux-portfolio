@@ -6,7 +6,7 @@ import { MARKETING_SECTION_TITLE_CLASS } from "@/lib/marketing-section-title";
 
 function ExperienceRow({ row }: { row: AboutExperienceRow }) {
   return (
-    <div className="grid grid-cols-1 gap-6 border-t border-zinc-800 py-8 lg:grid-cols-[minmax(0,22rem)_1fr] lg:gap-x-12 xl:gap-x-16">
+    <div className="grid grid-cols-1 gap-6 border-t border-zinc-800 py-8 lg:grid-cols-[minmax(0,17rem)_1fr] lg:gap-x-10 xl:grid-cols-[minmax(0,18rem)_1fr] xl:gap-x-14">
       <div className="min-w-0 space-y-1.5 font-sans">
         <p className="text-sm font-semibold text-zinc-50 sm:text-base">{row.title}</p>
         <p className="text-sm text-zinc-500">{row.company}</p>

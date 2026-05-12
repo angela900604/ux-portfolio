@@ -6,8 +6,8 @@ import { AboutExperienceSection } from "./AboutExperienceSection";
 import { MarketingHomeLogos } from "../MarketingHomeLogos";
 import {
   MARKETING_FLAGSHIP_SERIF,
-  MARKETING_FLAGSHIP_SERIF_LEAD_CLASS,
-  MARKETING_FLAGSHIP_SERIF_LEAD_MAX_WIDTH_CLASS,
+  MARKETING_FLAGSHIP_SERIF_LEAD_COMPACT_CLASS,
+  MARKETING_FLAGSHIP_SERIF_LEAD_MAX_WIDTH_WIDE_CLASS,
 } from "@/lib/marketing-flagship-serif";
 import { MARKETING_SECTION_TITLE_CLASS } from "@/lib/marketing-section-title";
 
@@ -28,7 +28,7 @@ export default function AboutPage() {
   return (
     <div className="pb-20 font-sans">
       <h1
-        className={`${MARKETING_FLAGSHIP_SERIF_LEAD_MAX_WIDTH_CLASS} ${MARKETING_FLAGSHIP_SERIF_LEAD_CLASS} text-zinc-200`}
+        className={`${MARKETING_FLAGSHIP_SERIF_LEAD_MAX_WIDTH_WIDE_CLASS} ${MARKETING_FLAGSHIP_SERIF_LEAD_COMPACT_CLASS} text-zinc-200`}
         style={{ fontFamily: MARKETING_FLAGSHIP_SERIF }}
       >
         Product Designer with a background in marketing design, specializing in
