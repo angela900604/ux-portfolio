@@ -3,51 +3,60 @@
 import Image from "next/image";
 import { ImageLightbox } from "@/app/components/ImageLightbox";
 
-const IG_W = 819;
-const IG_H = 1024;
+const W = 1165;
+const H = 874;
 
-/** Original asset numbers (`mina-social-NN.png`). Row-major: top six, then middle five, then bottom six. */
-const INSTAGRAM_GRID_ORDER = [
-  13, 14, 15, 17, 9, 11, 2, 8, 10, 12, 16, 1, 3, 4, 5, 6, 7,
+const MOCKUPS = [
+  {
+    src: "/case-studies/mina/instagram/portfolio-mockup-instagram-1.png",
+    alt: "MINA marketing — Instagram-style portfolio mockup 1",
+  },
+  {
+    src: "/case-studies/mina/instagram/portfolio-mockup-instagram-2.png",
+    alt: "MINA marketing — Instagram-style portfolio mockup 2",
+  },
+  {
+    src: "/case-studies/mina/instagram/portfolio-mockup-instagram-4.png",
+    alt: "MINA marketing — Instagram-style portfolio mockup 4",
+  },
+  {
+    src: "/case-studies/mina/instagram/portfolio-mockup-instagram-3.png",
+    alt: "MINA marketing — Instagram-style portfolio mockup 3",
+  },
+  {
+    src: "/case-studies/mina/instagram/portfolio-mockup-instagram.png",
+    alt: "MINA marketing — Instagram-style portfolio mockup",
+  },
 ] as const;
 
-const POSTS = INSTAGRAM_GRID_ORDER.map((assetNum) => {
-  const n = String(assetNum).padStart(2, "0");
-  return {
-    src: `/case-studies/mina/instagram/mina-social-${n}.png`,
-    alt: `MINA marketing Instagram-style graphic ${assetNum} — brand and product storytelling`,
-    key: n,
-  };
-});
-
+/** Full-width stack of launch / Instagram mockups (source PNGs, unoptimized for clarity). */
 export function MinaInstagramGrid() {
   return (
-    <div className="w-full min-w-0 overflow-hidden rounded-sm ring-1 ring-zinc-800">
-      <div className="grid grid-cols-3 gap-px bg-zinc-800">
-        {POSTS.map((post) => (
-          <div
-            key={post.key}
-            className="relative aspect-square overflow-hidden bg-zinc-950"
+    <div className="flex w-full min-w-0 flex-col gap-8 sm:gap-10">
+      {MOCKUPS.map((item, index) => (
+        <figure
+          key={item.src}
+          className="min-w-0 overflow-hidden rounded-lg border border-zinc-800 bg-zinc-950"
+        >
+          <ImageLightbox
+            src={item.src}
+            alt={item.alt}
+            className="relative block w-full"
+            disableHoverScale
           >
-            <ImageLightbox
-              src={post.src}
-              alt={post.alt}
-              className="relative block h-full w-full"
-              disableHoverScale
-            >
-              <Image
-                src={post.src}
-                alt={post.alt}
-                width={IG_W}
-                height={IG_H}
-                className="h-full w-full object-cover"
-                sizes="(max-width: 640px) 34vw, 300px"
-                unoptimized
-              />
-            </ImageLightbox>
-          </div>
-        ))}
-      </div>
+            <Image
+              src={item.src}
+              alt={item.alt}
+              width={W}
+              height={H}
+              className="h-auto w-full object-contain align-top"
+              sizes="(max-width: 1536px) min(100vw - 48px, 1400px), 1400px"
+              unoptimized
+              priority={index === 0}
+            />
+          </ImageLightbox>
+        </figure>
+      ))}
     </div>
   );
 }

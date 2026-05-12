@@ -7,7 +7,7 @@ export const metadata = {
   title:
     "MINA · Marketing designer — Instagram & launch visuals | Angela Yang",
   description:
-    "Social and launch graphics for MINA (AI marketplace for parents): Instagram-style grid of campaign visuals, concierge storytelling, and product positioning.",
+    "Social and launch graphics for MINA (AI marketplace for parents): full-width portfolio mockups for Instagram and launch, concierge storytelling, and product positioning.",
 };
 
 export default function MinaMarketingPage() {

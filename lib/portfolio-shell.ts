@@ -2,9 +2,10 @@ import { SITE_GUTTER_CLASS } from "@/lib/site-shell";
 
 /**
  * Left rail + nav brand cell: same horizontal inset as the main column / nav
- * ({@link SITE_GUTTER_CLASS} — symmetric left and right).
+ * ({@link SITE_GUTTER_CLASS} — symmetric left and right). Top padding is doubled
+ * vs bottom so the hello / “About me” block sits lower with more air under the nav.
  */
-export const PORTFOLIO_ASIDE_PADDING = `py-6 sm:py-8 ${SITE_GUTTER_CLASS}`;
+export const PORTFOLIO_ASIDE_PADDING = `pt-12 pb-6 sm:pt-16 sm:pb-8 ${SITE_GUTTER_CLASS}`;
 
 /** Width token only (no padding) — desktop nav left cell matches left rail. */
 export const PORTFOLIO_LEFT_RAIL_WIDTH_CLASS =
