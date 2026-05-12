@@ -384,27 +384,13 @@ export default function PhyphyyaCaseStudy() {
               />
             </div>
 
-            <div className="grid w-full grid-cols-1 gap-[22px] lg:grid-cols-3 lg:items-start">
+            <div className="grid w-full grid-cols-1 gap-[22px] lg:grid-cols-2 lg:items-start">
               <img
                 src="/case-studies/phyphyya/pod-stickers-diecut.png"
                 alt="Hand holding die-cut bunny stickers"
                 className="block h-auto w-full"
                 loading="lazy"
               />
-              <div className="flex min-w-0 flex-col gap-[22px]">
-                <img
-                  src="/case-studies/phyphyya/pod-stickers-sizes.png"
-                  alt="Bunny stickers in multiple sizes"
-                  className="block h-auto w-full"
-                  loading="lazy"
-                />
-                <img
-                  src="/case-studies/phyphyya/pod-sticker-laptop.png"
-                  alt="Die-cut bunny sticker on laptop"
-                  className="block h-auto w-full"
-                  loading="lazy"
-                />
-              </div>
               <img
                 src="/case-studies/phyphyya/pod-sticker-leather.png"
                 alt="Die-cut bunny sticker on leather journal"
