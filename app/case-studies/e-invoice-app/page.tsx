@@ -161,6 +161,10 @@ function StoryBeat({
   );
 }
 
+/** Same headline scale as {@link StoryBeat} with `largeHeadline` (e.g. Decision cards). */
+const STORY_OUTCOME_CALLOUT_HEADLINE_CLASS =
+  "mt-3 max-w-3xl text-lg font-semibold leading-snug tracking-tight text-zinc-50 sm:text-xl md:text-[1.6rem] md:leading-snug lg:text-[1.75rem]";
+
 /** Full-width outcome callout: no timeline rail (Section 1). Dark surface, accent rail—no mint fill. */
 function StoryOutcomeCallout({
   headline,
@@ -175,9 +179,7 @@ function StoryOutcomeCallout({
       <span className="inline-flex rounded-full border border-emerald-500/80 bg-emerald-500/80 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-emerald-50">
         Outcome
       </span>
-      <p className="case-study-section-title mt-3 max-w-3xl font-semibold tracking-tight text-zinc-100">
-        {headline}
-      </p>
+      <p className={STORY_OUTCOME_CALLOUT_HEADLINE_CLASS}>{headline}</p>
       {detail !== null && detail !== undefined && detail !== "" ? (
         <p className="mt-3 max-w-3xl text-sm font-normal leading-relaxed text-zinc-400 sm:text-base">
           {detail}
@@ -437,7 +439,7 @@ export default function EInvoiceCaseStudy() {
               <StoryBeatTimeline className="max-w-none">
                 <StoryBeat
                   label="Problem"
-                  headline="Partners wanted the sustainability outreach zone to dominate on open. Interview evidence ranked a different set of jobs first."
+                  headline="External stakeholders wanted the sustainability outreach zone to dominate on open. However, interview evidence suggested a different set of priorities first."
                   detail={
                     <>
                       <span className="block">
@@ -476,7 +478,7 @@ export default function EInvoiceCaseStudy() {
                 />
                 <StoryBeat
                   label="Conflict"
-                  headline="I brought interview evidence into government stakeholder meetings to challenge a promo-first default."
+                  headline="I brought interview evidence into government stakeholder meetings to push back"
                   detail="I understood their need to surface carbon-reduction messaging and policy outreach—but the data said job-first ordering had to win the first screen. That was the argument I used in the room."
                   largeHeadline
                 />
