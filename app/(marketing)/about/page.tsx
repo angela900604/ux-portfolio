@@ -21,7 +21,7 @@ const ABOUT_CARD_BODY_CLASS =
 export const metadata = {
   title: "About | Angela Yang",
   description:
-    "Product designer: consumer mobile and growth-focused UX, multi-role flows across government-scale and B2C, diverse user research. AI-driven consumer products. Vancouver.",
+    "Product Designer with marketing design roots—consumer mobile, growth, complex IA across AI, government, membership, and ops tools; research-led, focused on AI products and cross-functional leadership.",
 };
 
 export default function AboutPage() {
@@ -31,12 +31,13 @@ export default function AboutPage() {
         className={`${MARKETING_FLAGSHIP_SERIF_LEAD_MAX_WIDTH_CLASS} ${MARKETING_FLAGSHIP_SERIF_LEAD_CLASS} text-zinc-200`}
         style={{ fontFamily: MARKETING_FLAGSHIP_SERIF }}
       >
-        A product designer specializes in consumer mobile and growth, shipping
-        complex, multi-role information architecture across AI marketplaces,
-        government public services, membership platforms, and internal ops tools,
-        with a strong research foundation across diverse segments. Focused on
-        AI-driven products and cross-functional leadership; based in Vancouver,
-        open to relocate, remote, or hybrid.
+        Product Designer with a background in marketing design, specializing in
+        consumer mobile experiences and growth. I&apos;ve shipped complex
+        information architecture across AI marketplaces, government public
+        services, membership platforms, and internal operations tools. With a
+        strong research foundation across diverse user segments, I approach
+        problems with empathy, curiosity, and systems thinking. Currently focused
+        on AI-driven products and cross-functional leadership.
       </h1>
 
       <AboutExperienceSection />
