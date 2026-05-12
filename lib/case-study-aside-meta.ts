@@ -8,11 +8,19 @@ export type CaseStudyAsideRow = {
   value: string;
 };
 
+/** Optional CTA in the left rail (e.g. e-Invoice research journey). */
+export type CaseStudyAsidePrimaryCta = {
+  href: string;
+  label: string;
+  variant?: "emerald" | "emeraldSoft" | "ghostEmerald" | "outline" | "mina";
+};
+
 export type CaseStudyAsideMeta = {
   eyebrow?: string;
   title: string;
   subtitle?: string;
   items: readonly CaseStudyAsideRow[];
+  primaryCta?: CaseStudyAsidePrimaryCta;
 };
 
 /** Path segment after `/case-studies/` (e.g. `e-invoice-app`, `ai-marketplace/marketing`). */
@@ -50,6 +58,11 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
         value: "Research, IA, accessibility, ship-ready UI",
       },
     ],
+    primaryCta: {
+      href: "/user-research-journey",
+      label: "View full research journey",
+      variant: "emerald",
+    },
   },
   "ai-marketplace": {
     eyebrow: "Case study · AI marketplace · Zero to one",

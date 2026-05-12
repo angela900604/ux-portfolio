@@ -4,7 +4,6 @@ import Link from "next/link";
 import { ImageLightbox } from "@/app/components/ImageLightbox";
 import { SplitCapsuleLink } from "@/app/components/SplitCapsuleLink";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
-import { CaseStudyHeroFullBleed } from "../_components/CaseStudyHeroFullBleed";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { DesignJourneyCollapsible } from "../_components/DesignJourneyCollapsible";
@@ -16,7 +15,10 @@ import { GuidedOnboardingVideoPair } from "./OnboardingDemoVideo";
 import { SettingHomeModulesVideo } from "./SettingHomeModulesVideo";
 import { LoginBeforeAfterSlider } from "./LoginBeforeAfterSlider";
 import { ProblemPersonasBlock } from "./ProblemPersonasBlock";
-import { CASE_STUDY_PRIMARY_TITLE_CLASS } from "@/lib/site-shell";
+import {
+  CASE_STUDY_BODY_GRID,
+  SITE_SHELL_INNER,
+} from "@/lib/site-shell";
 
 export const metadata = {
   title:
@@ -182,12 +184,6 @@ function StoryOutcomeCallout({
   );
 }
 
-/** Full-bleed hero behind the project title (café context, scan / invoice UI). */
-const HERO_FULL_BLEED = {
-  src: "/case-studies/e-invoice/hero-fullbleed.png",
-  alt: "Hand holding a phone in a bright café: e-invoice app shows paper receipt scanning with QR codes and tab navigation",
-} as const;
-
 /** First image below the title block — paper receipts + phone. */
 const HERO_BELOW_01 = {
   src: "/case-studies/e-invoice/hero-below-01.png",
@@ -301,39 +297,10 @@ export default function EInvoiceCaseStudy() {
   return (
     <article className="min-h-screen bg-zinc-950 text-zinc-100">
       <header className="border-b border-zinc-800">
-        <CaseStudyHeroFullBleed
-          imageSrc={HERO_FULL_BLEED.src}
-          imageAlt={HERO_FULL_BLEED.alt}
-          imageClassName="object-cover object-center sm:object-[center_45%]"
-          eyebrow={
-            <div className="flex flex-wrap gap-2 text-xs uppercase tracking-widest text-white/75">
-              <span>Public Service</span>
-              <span className="text-white/45">·</span>
-              <span>Mobile App</span>
-            </div>
-          }
-          title={
-            <h1
-              className={`mt-5 max-w-4xl ${CASE_STUDY_PRIMARY_TITLE_CLASS} text-white`}
-            >
-              MOF Uniform Invoice Award Redemption app
-            </h1>
-          }
-          subtitle={
-            <p className="text-lg leading-relaxed text-zinc-200 sm:text-xl">
-              Redesigning a government service used by 20 million people
-            </p>
-          }
-          leadBelowSubtitle={
-            <div className="max-w-3xl">
-              <SplitCapsuleLink
-                href="/user-research-journey"
-                label="View full research journey"
-                variant="emerald"
-              />
-            </div>
-          }
-        >
+        <div className={`${SITE_SHELL_INNER} py-12 sm:py-16`}>
+          <div
+            className={`${CASE_STUDY_BODY_GRID} min-w-0 overflow-x-hidden space-y-10 sm:space-y-12`}
+          >
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
             <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
               <ImageLightbox
@@ -412,7 +379,8 @@ export default function EInvoiceCaseStudy() {
           <div className="mt-10">
             <EInvoiceHeroTldr />
           </div>
-        </CaseStudyHeroFullBleed>
+          </div>
+        </div>
       </header>
 
       <CaseStudyContentLayout>

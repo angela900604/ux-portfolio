@@ -1,5 +1,6 @@
 "use client";
 
+import { SplitCapsuleLink } from "@/app/components/SplitCapsuleLink";
 import { usePathname } from "next/navigation";
 import { getCaseStudyAsideMeta } from "@/lib/case-study-aside-meta";
 import { CASE_STUDY_PRIMARY_TITLE_CLASS } from "@/lib/site-shell";
@@ -28,6 +29,15 @@ export function CaseStudyLeftAside() {
           <p className="text-sm leading-relaxed text-zinc-400 sm:text-[15px]">
             {meta.subtitle}
           </p>
+        ) : null}
+        {meta.primaryCta ? (
+          <div className="mt-4 min-w-0">
+            <SplitCapsuleLink
+              href={meta.primaryCta.href}
+              label={meta.primaryCta.label}
+              variant={meta.primaryCta.variant ?? "emerald"}
+            />
+          </div>
         ) : null}
       </div>
 
