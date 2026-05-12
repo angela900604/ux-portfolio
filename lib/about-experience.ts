@@ -35,6 +35,6 @@ export const ABOUT_EXPERIENCE: readonly AboutExperienceRow[] = [
     company: "AtlasNova AI",
     dates: "Oct 2023 – Jun 2024",
     description:
-      "AtlasNova is an enterprise AI SaaS platform: tailored multi-modal solutions trained on each client’s own encrypted data, processing email, sales decks, meeting and phone recordings, charts, and video. I contributed mockups and UI flows.",
+      "Contributed to product design for an enterprise AI SaaS platform delivering tailored multimodal AI solutions trained on encrypted client data. Designed mockups and end-to-end UI flows across workflows involving email, sales decks, meeting recordings, charts, and video content.",
   },
 ] as const;
