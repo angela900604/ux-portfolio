@@ -3,10 +3,6 @@
 import type { CSSProperties } from "react";
 import Image from "next/image";
 import { ImageLightbox } from "@/app/components/ImageLightbox";
-import {
-  CASE_STUDY_BODY_BLEED_X,
-  CASE_STUDY_COLUMN_FULL_BLEED,
-} from "@/lib/site-shell";
 
 export type FinalMarqueeSlide = {
   src: string;
@@ -62,7 +58,7 @@ export function FinalScreensMarquee({
 
   return (
     <div
-      className={`${CASE_STUDY_COLUMN_FULL_BLEED} ${CASE_STUDY_BODY_BLEED_X} bg-[#5F48C6] py-6 sm:py-8`}
+      className="relative w-full min-w-0 bg-[#5F48C6] py-6 sm:py-8"
       role="region"
       aria-label="Final solution screens — auto-scrolling gallery. Pause with reduced motion in system settings."
     >

@@ -15,6 +15,8 @@ const MINA_APP_STORE_CA =
 const BR31_APP_STORE_TW =
   "https://apps.apple.com/tw/app/31%E4%BF%B1%E6%A8%82%E9%83%A8/id6755289789";
 const PHYPHYA_INSTAGRAM = "https://www.instagram.com/phyphya__/";
+const E_INVOICE_FIGMA_APP_MOCKUP =
+  "https://www.figma.com/design/xvssk9Yfmx51aiSpwWE8sv/APP-Mockup?node-id=1-8&t=MW0x7q3jDP00Fqzx-1";
 
 export type CaseStudyAsideRow = {
   label: string;
@@ -88,6 +90,13 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
       href: "/user-research-journey",
       label: "View full research journey",
     },
+    textLinks: [
+      {
+        href: E_INVOICE_FIGMA_APP_MOCKUP,
+        label: "Figma · APP mockup",
+        external: true,
+      },
+    ],
   },
   "ai-marketplace": {
     eyebrow: MINA_HOME_DISCIPLINE_TAG,

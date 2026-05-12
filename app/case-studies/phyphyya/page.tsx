@@ -15,95 +15,6 @@ export const metadata = {
     "Haphy Living: a live commercial experiment and personal brand IP built from bunny-inspired design to POD production and Etsy operations.",
 };
 
-const ETSY_METRICS = [
-  { label: "Visits", value: "117" },
-  { label: "Orders", value: "4" },
-  { label: "Conversion rate", value: "3.4%" },
-  { label: "Revenue", value: "US$83.44" },
-] as const;
-
-const ETSY_MONTHLY_VISITS = [
-  { month: "Jan", visits: 23 },
-  { month: "Feb", visits: 13 },
-  { month: "Mar", visits: 58 },
-  { month: "Apr", visits: 23 },
-] as const;
-
-const ETSY_Y_MAX = 60;
-
-function EtsyVisitsChart() {
-  const width = 760;
-  const height = 280;
-  const paddingX = 54;
-  const paddingY = 24;
-
-  const chartWidth = width - paddingX * 2;
-  const chartHeight = height - paddingY * 2;
-
-  const xFor = (index: number) =>
-    paddingX + (index / (ETSY_MONTHLY_VISITS.length - 1)) * chartWidth;
-  const yFor = (value: number) =>
-    paddingY + ((ETSY_Y_MAX - value) / ETSY_Y_MAX) * chartHeight;
-
-  const path = ETSY_MONTHLY_VISITS.map((d, i) =>
-    `${i === 0 ? "M" : "L"} ${xFor(i)} ${yFor(d.visits)}`
-  ).join(" ");
-
-  return (
-    <figure className="rounded-[10px] border border-zinc-800 bg-zinc-900/35 p-4 sm:p-6">
-      <svg
-        viewBox={`0 0 ${width} ${height}`}
-        className="h-auto w-full"
-        role="img"
-        aria-label="Etsy visits line chart from Jan to Apr 2026: 23, 13, 58, 23"
-      >
-        {[0, 15, 30, 45, 60].map((tick) => (
-          <g key={tick}>
-            <line
-              x1={paddingX}
-              y1={yFor(tick)}
-              x2={width - paddingX}
-              y2={yFor(tick)}
-              stroke="#3f3f46"
-              strokeWidth="1"
-            />
-            <text
-              x={paddingX - 14}
-              y={yFor(tick) + 4}
-              textAnchor="end"
-              fontSize="11"
-              fill="#a1a1aa"
-            >
-              {tick}
-            </text>
-          </g>
-        ))}
-
-        <path d={path} fill="none" stroke="#e4e4e7" strokeWidth="2.5" />
-
-        {ETSY_MONTHLY_VISITS.map((d, i) => (
-          <g key={d.month}>
-            <circle cx={xFor(i)} cy={yFor(d.visits)} r="5" fill="#e4e4e7" />
-            <text
-              x={xFor(i)}
-              y={height - 8}
-              textAnchor="middle"
-              fontSize="12"
-              fill="#a1a1aa"
-            >
-              {d.month}
-            </text>
-          </g>
-        ))}
-      </svg>
-      <figcaption className="mt-3 text-[12px] leading-relaxed text-zinc-500">
-        Jan – Apr 2026 Etsy performance snapshot: 117 visits, 4 orders, 3.4%
-        conversion rate, and US$83.44 revenue.
-      </figcaption>
-    </figure>
-  );
-}
-
 export default function PhyphyyaCaseStudy() {
   const logoConceptImg = "/case-studies/phyphyya/gallery-10.png";
 
@@ -421,7 +332,7 @@ export default function PhyphyyaCaseStudy() {
         {/* Etsy storefront & Print-on-Demand workflow */}
         <CaseStudyInViewSection
           id="etsy-pod"
-          className="scroll-mt-28 bg-zinc-900/35 py-[80px] sm:scroll-mt-32"
+          className="scroll-mt-28 py-[80px] sm:scroll-mt-32"
         >
           <div className="w-full min-w-0 px-5 sm:px-8 md:px-10 lg:px-12">
             <div className="text-center w-full mb-[50px]">
@@ -447,7 +358,7 @@ export default function PhyphyyaCaseStudy() {
 
             {/* Left = smaller mobile capture, right = larger desktop grid; same height on lg */}
             <div className="flex flex-col lg:flex-row gap-6 w-full mb-[40px] lg:items-stretch lg:h-[min(540px,72vh)]">
-            <div className="flex shrink-0 lg:w-[min(280px,32%)] items-center justify-center overflow-hidden rounded-[8px] bg-zinc-900/40 shadow-[0_5px_15px_rgba(0,0,0,0.08)] px-3 py-4 lg:py-6 min-h-[420px] lg:min-h-0">
+            <div className="flex shrink-0 lg:w-[min(280px,32%)] items-center justify-center overflow-hidden rounded-[8px] shadow-[0_5px_15px_rgba(0,0,0,0.08)] px-3 py-4 lg:py-6 min-h-[420px] lg:min-h-0">
               <img
                 src="/case-studies/phyphyya/etsy-shop-mobile.png"
                 alt="Haphy Living Etsy shop on mobile"
@@ -522,43 +433,8 @@ export default function PhyphyyaCaseStudy() {
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection
-          id="store-performance"
-          className="scroll-mt-28 bg-zinc-900/35 py-[80px] sm:scroll-mt-32"
-        >
-          <div className="text-center w-full mb-[40px]">
-            <h2 className="text-zinc-100 mb-[20px] relative inline-block font-sans after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-zinc-500 after:mx-auto after:mt-[15px]">
-              Store performance
-            </h2>
-            <p className="text-[16px] text-zinc-400 leading-relaxed">
-              Etsy dashboard snapshot from Jan to Apr 2026. These are the current
-              measurable outputs I have today; SKU mix and shipping strategy are
-              still being iterated.
-            </p>
-          </div>
-
-          <div className="w-full space-y-4">
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-              {ETSY_METRICS.map((metric) => (
-                <article
-                  key={metric.label}
-                  className="rounded-[10px] border border-zinc-800 bg-zinc-900/40 p-4"
-                >
-                  <p className="text-[12px] uppercase tracking-[0.8px] text-zinc-500">
-                    {metric.label}
-                  </p>
-                  <p className="mt-2 text-[26px] leading-none text-zinc-100 font-sans">
-                    {metric.value}
-                  </p>
-                </article>
-              ))}
-            </div>
-            <EtsyVisitsChart />
-          </div>
-        </CaseStudyInViewSection>
-
-        <CaseStudyInViewSection
           id="testing-next"
-          className="scroll-mt-28 bg-zinc-900/30 py-[80px] sm:scroll-mt-32"
+          className="scroll-mt-28 py-[80px] sm:scroll-mt-32"
         >
           <div className="w-full mb-[40px] text-center">
             <h2 className="text-zinc-100 mb-[20px] relative inline-block font-sans after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-zinc-500 after:mx-auto after:mt-[15px]">
@@ -571,7 +447,7 @@ export default function PhyphyyaCaseStudy() {
             </p>
           </div>
 
-          <div className="w-full rounded-2xl border border-zinc-800 bg-zinc-900/35 p-6 sm:p-8">
+          <div className="w-full rounded-2xl border border-zinc-800 p-6 sm:p-8">
             <ul className="space-y-5 text-[16px] text-zinc-400 leading-relaxed">
               <li>
                 <strong className="font-semibold text-zinc-100">

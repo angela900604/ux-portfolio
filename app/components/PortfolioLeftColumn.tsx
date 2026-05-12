@@ -56,7 +56,7 @@ export function PortfolioLeftColumn() {
         </ImageLightbox>
       </div>
 
-      <div className="min-h-0 flex-1 shrink" aria-hidden />
+      <div className="hidden min-h-0 shrink lg:block lg:flex-1" aria-hidden />
 
       <div className="shrink-0 pb-0 pt-2 lg:mt-0">
         <ul

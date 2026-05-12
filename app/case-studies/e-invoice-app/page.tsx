@@ -111,10 +111,10 @@ function StoryBeat({
 
   const headlineClass = isOutcome
     ? largeHeadline
-      ? "text-lg font-semibold leading-snug text-zinc-100 sm:text-xl md:text-[1.55rem] md:leading-snug"
+      ? "text-base font-semibold leading-snug text-zinc-100 sm:text-lg md:text-[1.35rem] md:leading-snug"
       : "text-base font-semibold leading-snug text-zinc-100 sm:text-lg md:text-xl"
     : largeHeadline
-      ? "text-lg font-semibold leading-snug tracking-tight text-zinc-50 sm:text-xl md:text-[1.6rem] md:leading-snug lg:text-[1.75rem]"
+      ? "text-base font-semibold leading-snug tracking-tight text-zinc-50 sm:text-lg md:text-[1.35rem] md:leading-snug lg:text-[1.5rem]"
       : "text-lg font-semibold leading-snug text-zinc-50 sm:text-xl md:text-2xl";
 
   const detailClass = isOutcome
@@ -163,7 +163,7 @@ function StoryBeat({
 
 /** Same headline scale as {@link StoryBeat} with `largeHeadline` (e.g. Decision cards). */
 const STORY_OUTCOME_CALLOUT_HEADLINE_CLASS =
-  "mt-3 max-w-3xl text-lg font-semibold leading-snug tracking-tight text-zinc-50 sm:text-xl md:text-[1.6rem] md:leading-snug lg:text-[1.75rem]";
+  "mt-3 max-w-3xl text-base font-semibold leading-snug tracking-tight text-zinc-50 sm:text-lg md:text-[1.35rem] md:leading-snug lg:text-[1.5rem]";
 
 /** Full-width outcome callout: no timeline rail (Section 1). Dark surface, accent rail—no mint fill. */
 function StoryOutcomeCallout({
@@ -343,14 +343,17 @@ export default function EInvoiceCaseStudy() {
 
       <CaseStudyContentLayout>
         <ProblemPersonasBlock />
+      </CaseStudyContentLayout>
 
-        <CaseStudyInViewSection
-          id="key-outcomes"
-          className="scroll-mt-28 space-y-14 sm:scroll-mt-32"
-        >
-          <FinalScreensMarquee slides={FINAL_SOLUTION_MARQUEE_SLIDES} />
+      <CaseStudyInViewSection
+        id="key-outcomes"
+        className="scroll-mt-28 mb-14 w-full sm:mb-16 sm:scroll-mt-32"
+      >
+        <FinalScreensMarquee slides={FINAL_SOLUTION_MARQUEE_SLIDES} />
+      </CaseStudyInViewSection>
 
-          <div className="space-y-16 border-t border-zinc-800/90 pt-14 sm:space-y-20 sm:pt-16">
+      <CaseStudyContentLayout containerClassName="!pt-0 sm:!pt-0">
+        <div className="space-y-16 border-t border-zinc-800/90 pt-14 sm:space-y-20 sm:pt-16">
             <section
               id="e-invoice-story-1-homepage"
               className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
@@ -555,8 +558,7 @@ export default function EInvoiceCaseStudy() {
               />
               <GuidedOnboardingVideoPair className="w-full" />
             </section>
-          </div>
-        </CaseStudyInViewSection>
+        </div>
 
         <div className="flex min-w-0 flex-col gap-10 sm:gap-12">
           <CaseStudyInViewSection
@@ -649,7 +651,7 @@ export default function EInvoiceCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Functional map
           </span>
-          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
+          <p className="max-w-3xl text-sm leading-relaxed text-zinc-300 sm:text-base">
             Before moving to wireframe, I mapped out{" "}
             <span className={JOURNEY_EMPHASIS}>functional map</span> for all
             features (login, home, prize redemptions, etc) and{" "}
@@ -663,7 +665,7 @@ export default function EInvoiceCaseStudy() {
             <span className={JOURNEY_EMPHASIS}>external stakeholders</span>{" "}
             (government staff clients) to confirm the scope was{" "}
             <span className={JOURNEY_EMPHASIS}>feasible</span>.
-          </h2>
+          </p>
           <WideFigure
             borderless
             src={FUNCTIONAL_MAP_INITIAL_DISCUSSION.src}
@@ -726,6 +728,13 @@ export default function EInvoiceCaseStudy() {
                 hierarchy legibility, and one-handed task completion in
                 real-world contexts (checkout lines, transit, crowded retail).
               </p>
+            </div>
+            <div className="min-w-0 space-y-6 lg:sticky lg:top-24 lg:self-start">
+              <WideFigure
+                borderless
+                src={ASSET("moodboard-lifestyle-hero.png")}
+                alt="Person using a phone outdoors in an urban setting, sunny lifestyle context"
+              />
               <div>
                 <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">
                   Palette
@@ -749,13 +758,6 @@ export default function EInvoiceCaseStudy() {
                   ))}
                 </ul>
               </div>
-            </div>
-            <div className="min-w-0 lg:sticky lg:top-24">
-              <WideFigure
-                borderless
-                src={ASSET("moodboard-lifestyle-hero.png")}
-                alt="Person using a phone outdoors in an urban setting, sunny lifestyle context"
-              />
             </div>
           </div>
 
@@ -862,8 +864,8 @@ export default function EInvoiceCaseStudy() {
         >
           <div className="space-y-5">
             <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
-              The hardest decision was the home density conflict between younger and
-              silver users
+              The hardest part was to balance all the various and conflicting needs
+              from all age groups.
             </h2>
             <div className="max-w-3xl space-y-4 text-zinc-300 leading-relaxed">
               <p>

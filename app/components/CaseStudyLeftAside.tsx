@@ -91,7 +91,7 @@ export function CaseStudyLeftAside() {
         ) : null}
       </div>
 
-      <div className="min-h-0 flex-1 shrink" aria-hidden />
+      <div className="hidden min-h-0 shrink lg:block lg:flex-1" aria-hidden />
 
       {meta.items.length > 0 ? (
         <dl className="min-w-0 shrink-0 space-y-4">
