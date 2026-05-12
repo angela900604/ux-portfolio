@@ -1,9 +1,17 @@
-import { SiteHeaderFooter } from "@/app/components/SiteHeaderFooter";
+import { CaseStudyLeftAside } from "@/app/components/CaseStudyLeftAside";
+import { PortfolioTwoColumnShell } from "@/app/components/PortfolioTwoColumnShell";
 
 export default function UserResearchJourneyLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return <SiteHeaderFooter>{children}</SiteHeaderFooter>;
+  return (
+    <PortfolioTwoColumnShell
+      mainWidth="full"
+      leftAside={<CaseStudyLeftAside />}
+    >
+      {children}
+    </PortfolioTwoColumnShell>
+  );
 }

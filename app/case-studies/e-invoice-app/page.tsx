@@ -17,7 +17,6 @@ import { LoginBeforeAfterSlider } from "./LoginBeforeAfterSlider";
 import { ProblemPersonasBlock } from "./ProblemPersonasBlock";
 import {
   CASE_STUDY_BODY_GRID,
-  CASE_STUDY_SECTION_SUBTITLE_CLASS,
   CASE_STUDY_SECTION_TITLE_CLASS,
   SITE_SHELL_INNER,
 } from "@/lib/site-shell";
@@ -300,7 +299,7 @@ export default function EInvoiceCaseStudy() {
           <div
             className={`${CASE_STUDY_BODY_GRID} min-w-0 overflow-x-hidden space-y-10 sm:space-y-12`}
           >
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-4 md:gap-5">
+          <div className="flex min-w-0 flex-col gap-4 sm:gap-5">
             <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
               <div className="relative aspect-[4/3] w-full overflow-hidden">
                 <ImageLightbox
@@ -314,7 +313,7 @@ export default function EInvoiceCaseStudy() {
                     alt={HERO_BELOW_01.alt}
                     fill
                     className="object-cover object-center"
-                    sizes="(max-width: 768px) 100vw, 25vw"
+                    sizes="(max-width: 1480px) 100vw, 1280px"
                   />
                 </ImageLightbox>
               </div>
@@ -332,7 +331,7 @@ export default function EInvoiceCaseStudy() {
                     alt={HERO_BELOW_02.alt}
                     fill
                     className="h-full w-full object-fill object-center"
-                    sizes="(max-width: 768px) 100vw, 25vw"
+                    sizes="(max-width: 1480px) 100vw, 1280px"
                   />
                 </ImageLightbox>
               </div>
@@ -350,7 +349,7 @@ export default function EInvoiceCaseStudy() {
                     alt={HERO_TABLET_01.alt}
                     fill
                     className="object-cover object-center"
-                    sizes="(max-width: 768px) 100vw, 25vw"
+                    sizes="(max-width: 1480px) 100vw, 1280px"
                   />
                 </ImageLightbox>
               </div>
@@ -368,7 +367,7 @@ export default function EInvoiceCaseStudy() {
                     alt={HERO_TABLET_02.alt}
                     fill
                     className="object-cover object-center"
-                    sizes="(max-width: 768px) 100vw, 25vw"
+                    sizes="(max-width: 1480px) 100vw, 1280px"
                   />
                 </ImageLightbox>
               </div>
@@ -389,23 +388,6 @@ export default function EInvoiceCaseStudy() {
           id="key-outcomes"
           className="scroll-mt-28 space-y-14 sm:scroll-mt-32"
         >
-          <div className="space-y-3">
-            <span className="text-xs font-semibold uppercase tracking-[0.14em] text-zinc-400">
-              Opportunity
-            </span>
-            <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
-              <span className="block">
-                A national e-invoice app must work for radically different ages,
-                languages, and abilities.
-              </span>
-              <span className={CASE_STUDY_SECTION_SUBTITLE_CLASS}>
-                It also had to feel obvious on first open—close to zero learning curve
-                for the tasks millions repeat every week—without trading off public
-                trust.
-              </span>
-            </h2>
-          </div>
-
           <FinalScreensMarquee slides={FINAL_SOLUTION_MARQUEE_SLIDES} />
 
           <div className="space-y-16 border-t border-zinc-800/90 pt-14 sm:space-y-20 sm:pt-16">
@@ -415,7 +397,7 @@ export default function EInvoiceCaseStudy() {
             >
               <header className="space-y-2">
                 <span className="text-xs font-semibold uppercase tracking-[0.14em] text-zinc-400">
-                  Section 1
+                  Solution 1
                 </span>
                 <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>The Homepage</h2>
               </header>
@@ -480,7 +462,7 @@ export default function EInvoiceCaseStudy() {
             >
               <header className="space-y-2">
                 <span className="text-xs font-semibold uppercase tracking-[0.14em] text-zinc-400">
-                  Section 2
+                  Solution 2
                 </span>
                 <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
                   Pushback with external stakeholders: promo-first vs. what users
@@ -553,7 +535,7 @@ export default function EInvoiceCaseStudy() {
             >
               <header className="space-y-2">
                 <span className="text-xs font-semibold uppercase tracking-[0.14em] text-zinc-400">
-                  Section 3
+                  Solution 3
                 </span>
                 <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
                   Login &amp; authentication
@@ -582,7 +564,7 @@ export default function EInvoiceCaseStudy() {
             >
               <header className="space-y-2">
                 <span className="text-xs font-semibold uppercase tracking-[0.14em] text-zinc-400">
-                  Section 4
+                  Solution 4
                 </span>
                 <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
                   Guided Onboarding Setup

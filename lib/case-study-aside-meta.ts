@@ -221,6 +221,15 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
 };
 
 export function getCaseStudyAsideMeta(pathname: string): CaseStudyAsideMeta {
+  const pathOnly = (pathname.split("?")[0] ?? "").replace(/\/+$/, "") || "/";
+  /** Same project context as e-invoice case study; hide research CTA on this page. */
+  if (pathOnly === "/user-research-journey") {
+    return {
+      ...CASE_STUDY_ASIDE_META["e-invoice-app"],
+      primaryCta: undefined,
+    };
+  }
+
   const key = caseStudyPathKey(pathname);
   if (!key) {
     return {
