@@ -31,7 +31,7 @@ export function PortfolioLeftColumn() {
           className={`${MARKETING_FLAGSHIP_SERIF_LEAD_CLASS} text-zinc-50`}
           style={{ fontFamily: MARKETING_FLAGSHIP_SERIF }}
         >
-          {isAbout ? "About me" : "Hello! I&apos;m Angela."}
+          {isAbout ? "About me" : "Hello! This is Angela."}
         </h1>
       </div>
 

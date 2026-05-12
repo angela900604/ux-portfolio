@@ -1,6 +1,6 @@
 /**
  * Fraunces stack — use **only** with inline `style={{ fontFamily: … }}` on these three lines:
- * - Left rail: “Hello! I’m Angela.”
+ * - Left rail: “Hello! This is Angela.”
  * - Home main: consumer-facing lead paragraph ({@link MARKETING_FLAGSHIP_SERIF_LEAD_MAX_WIDTH_CLASS})
  * - About: product designer lead paragraph (same max width as home)
  *

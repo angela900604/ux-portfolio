@@ -28,7 +28,7 @@ export default function AboutPage() {
   return (
     <div className="pb-20 font-sans">
       <h1
-        className={`mt-5 ${MARKETING_FLAGSHIP_SERIF_LEAD_MAX_WIDTH_CLASS} ${MARKETING_FLAGSHIP_SERIF_LEAD_CLASS} text-zinc-200`}
+        className={`${MARKETING_FLAGSHIP_SERIF_LEAD_MAX_WIDTH_CLASS} ${MARKETING_FLAGSHIP_SERIF_LEAD_CLASS} text-zinc-200`}
         style={{ fontFamily: MARKETING_FLAGSHIP_SERIF }}
       >
         A product designer specializes in consumer mobile and growth, shipping
