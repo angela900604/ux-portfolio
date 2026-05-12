@@ -10,7 +10,11 @@ import {
   BaskinFinalScreensMarquee,
   type BaskinMarqueeSlide,
 } from "./BaskinFinalScreensMarquee";
-import { CASE_STUDY_BODY_GRID, SITE_SHELL_INNER } from "@/lib/site-shell";
+import {
+  CASE_STUDY_BODY_GRID,
+  CASE_STUDY_SECTION_TITLE_CLASS,
+  SITE_SHELL_INNER,
+} from "@/lib/site-shell";
 
 export const metadata = {
   title:
@@ -155,7 +159,7 @@ export default function BaskinRobbinsCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Project background
           </span>
-          <h2 className="text-zinc-100">
+          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
             Japan&apos;s BR31 had a thriving membership app. Taiwan had nothing.
           </h2>
           <p className="text-zinc-300 leading-relaxed max-w-3xl">
@@ -196,7 +200,7 @@ export default function BaskinRobbinsCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Cross-market decisions
           </span>
-          <h2 className="max-w-3xl text-zinc-100">
+          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
             Where Japan HQ patterns met Taiwan usage—and what we negotiated
           </h2>
           <div className="max-w-3xl space-y-4 text-zinc-300 leading-relaxed">
