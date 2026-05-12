@@ -180,30 +180,6 @@ export default function PhyphyyaCaseStudy() {
       </header>
 
       <CaseStudyContentLayout contentClassName="">
-        <CaseStudyInViewSection
-          id="project-overview"
-          className="scroll-mt-28 py-[80px] sm:scroll-mt-32"
-        >
-          <div className="mt-4 max-w-3xl">
-            <article className="rounded-2xl border border-zinc-800 bg-zinc-900/35 p-6">
-              <h5 className="text-zinc-500 uppercase tracking-wide">
-                Brief / Background
-              </h5>
-              <div className="mt-2 space-y-3 text-sm text-zinc-400 leading-relaxed">
-                <p>
-                  I built Haphy Living to turn a deeply personal story—my bond
-                  with my rabbit—into a real, testable ecommerce brand.
-                </p>
-                <p>
-                  Since I already had a rabbit-focused Instagram audience (built
-                  since 2022), I used Etsy + POD to validate demand in North
-                  America with low inventory risk.
-                </p>
-              </div>
-            </article>
-          </div>
-        </CaseStudyInViewSection>
-        
         {/* Logo Concept - Soft & Rounded */}
         <CaseStudyInViewSection
           id="logo-concept"
