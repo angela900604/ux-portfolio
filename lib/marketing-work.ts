@@ -24,17 +24,22 @@ export type MarketingWorkItem = {
 
 const GOV_COVER = `/case-studies/government-backend/${encodeURIComponent("rolebased backend cover.png")}`;
 
+/** Homepage e-invoice card + case-study left-rail tag (keep in sync). */
+export const E_INVOICE_HOME_DISCIPLINE_TAG =
+  "PUBLIC SERVICE · MOBILE APP" as const;
+export const E_INVOICE_HOME_TECH_HIGHLIGHTS =
+  "Research, IA, accessibility, ship-ready UI" as const;
+
 export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
   {
     slug: "e-invoice-app",
     href: "/case-studies/e-invoice-app",
     title:
       "Redesigning Taiwan Ministry of Finance's Uniform Invoice Award Redemption App",
-    discipline: "Mobile · Activation & retention · Shipped",
+    discipline: E_INVOICE_HOME_DISCIPLINE_TAG,
     year: "2024–2025",
     cover: { kind: "e-invoice" },
-    techHighlights:
-      "Configurable module system · RBAC · Accessibility-first IA",
+    techHighlights: E_INVOICE_HOME_TECH_HIGHLIGHTS,
     showShipped: true,
   },
   {

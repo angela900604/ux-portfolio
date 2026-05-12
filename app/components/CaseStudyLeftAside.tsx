@@ -1,6 +1,7 @@
 "use client";
 
-import { SplitCapsuleLink } from "@/app/components/SplitCapsuleLink";
+import Link from "next/link";
+import { ProjectCardTag } from "@/app/components/ProjectCardTag";
 import { usePathname } from "next/navigation";
 import { getCaseStudyAsideMeta } from "@/lib/case-study-aside-meta";
 import { CASE_STUDY_PRIMARY_TITLE_CLASS } from "@/lib/site-shell";
@@ -17,7 +18,11 @@ export function CaseStudyLeftAside() {
   return (
     <aside className={PORTFOLIO_LEFT_RAIL_CLASS} aria-label="Project summary">
       <div className="min-w-0 shrink-0 space-y-3">
-        {meta.eyebrow ? (
+        {meta.eyebrow && meta.eyebrowAsProjectCardTag ? (
+          <div className="group w-fit max-w-full">
+            <ProjectCardTag>{meta.eyebrow}</ProjectCardTag>
+          </div>
+        ) : meta.eyebrow ? (
           <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             {meta.eyebrow}
           </p>
@@ -32,11 +37,12 @@ export function CaseStudyLeftAside() {
         ) : null}
         {meta.primaryCta ? (
           <div className="mt-4 min-w-0">
-            <SplitCapsuleLink
+            <Link
               href={meta.primaryCta.href}
-              label={meta.primaryCta.label}
-              variant={meta.primaryCta.variant ?? "emerald"}
-            />
+              className="text-sm font-medium text-emerald-400/95 underline-offset-[5px] transition hover:text-emerald-300 hover:underline"
+            >
+              {meta.primaryCta.label}
+            </Link>
           </div>
         ) : null}
       </div>

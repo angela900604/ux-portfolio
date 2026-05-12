@@ -17,6 +17,8 @@ import { LoginBeforeAfterSlider } from "./LoginBeforeAfterSlider";
 import { ProblemPersonasBlock } from "./ProblemPersonasBlock";
 import {
   CASE_STUDY_BODY_GRID,
+  CASE_STUDY_SECTION_SUBTITLE_CLASS,
+  CASE_STUDY_SECTION_TITLE_CLASS,
   SITE_SHELL_INNER,
 } from "@/lib/site-shell";
 
@@ -40,9 +42,6 @@ const FUNCTIONAL_MAP_INITIAL_DISCUSSION = {
     encodeURIComponent("Example of Initial Feature Discussion Stage.png"),
   alt: "Example of initial feature discussion stage: functional map and touchpoints before wireframes",
 } as const;
-
-const STORY_SECTION_TITLE_CLASS =
-  "text-2xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-3xl md:text-4xl md:leading-snug";
 
 const STORY_BEAT_PALETTE: Record<
   string,
@@ -174,7 +173,7 @@ function StoryOutcomeCallout({
       <span className="inline-flex rounded-full border border-emerald-500/80 bg-emerald-500/80 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-emerald-50">
         Outcome
       </span>
-      <p className="mt-3 text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
+      <p className="case-study-section-title mt-3 max-w-3xl font-semibold tracking-tight text-zinc-100">
         {headline}
       </p>
       <p className="mt-3 max-w-3xl text-sm font-normal leading-relaxed text-zinc-400 sm:text-base">
@@ -301,43 +300,43 @@ export default function EInvoiceCaseStudy() {
           <div
             className={`${CASE_STUDY_BODY_GRID} min-w-0 overflow-x-hidden space-y-10 sm:space-y-12`}
           >
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-4 md:gap-5">
             <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
-              <ImageLightbox
-                src={HERO_BELOW_01.src}
-                alt={HERO_BELOW_01.alt}
-                className="block w-full"
-                disableHoverScale
-              >
-                <Image
+              <div className="relative aspect-[4/3] w-full overflow-hidden">
+                <ImageLightbox
                   src={HERO_BELOW_01.src}
                   alt={HERO_BELOW_01.alt}
-                  width={1024}
-                  height={571}
-                  className="h-auto w-full object-cover"
-                  sizes="(max-width: 640px) 100vw, 50vw"
-                />
-              </ImageLightbox>
+                  className="absolute inset-0"
+                  disableHoverScale
+                >
+                  <Image
+                    src={HERO_BELOW_01.src}
+                    alt={HERO_BELOW_01.alt}
+                    fill
+                    className="object-cover object-center"
+                    sizes="(max-width: 768px) 100vw, 25vw"
+                  />
+                </ImageLightbox>
+              </div>
             </div>
             <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
-              <ImageLightbox
-                src={HERO_BELOW_02.src}
-                alt={HERO_BELOW_02.alt}
-                className="block w-full"
-                disableHoverScale
-              >
-                <Image
+              <div className="relative aspect-[4/3] w-full overflow-hidden">
+                <ImageLightbox
                   src={HERO_BELOW_02.src}
                   alt={HERO_BELOW_02.alt}
-                  width={1024}
-                  height={552}
-                  className="h-auto w-full object-cover"
-                  sizes="(max-width: 640px) 100vw, 50vw"
-                />
-              </ImageLightbox>
+                  className="absolute inset-0"
+                  disableHoverScale
+                >
+                  <Image
+                    src={HERO_BELOW_02.src}
+                    alt={HERO_BELOW_02.alt}
+                    fill
+                    className="h-full w-full object-fill object-center"
+                    sizes="(max-width: 768px) 100vw, 25vw"
+                  />
+                </ImageLightbox>
+              </div>
             </div>
-          </div>
-          <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
             <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
               <div className="relative aspect-[4/3] w-full overflow-hidden">
                 <ImageLightbox
@@ -350,8 +349,8 @@ export default function EInvoiceCaseStudy() {
                     src={HERO_TABLET_01.src}
                     alt={HERO_TABLET_01.alt}
                     fill
-                    className="object-cover object-center scale-[1.08]"
-                    sizes="(max-width: 640px) 100vw, 50vw"
+                    className="object-cover object-center"
+                    sizes="(max-width: 768px) 100vw, 25vw"
                   />
                 </ImageLightbox>
               </div>
@@ -368,8 +367,8 @@ export default function EInvoiceCaseStudy() {
                     src={HERO_TABLET_02.src}
                     alt={HERO_TABLET_02.alt}
                     fill
-                    className="object-cover object-center scale-[1.08]"
-                    sizes="(max-width: 640px) 100vw, 50vw"
+                    className="object-cover object-center"
+                    sizes="(max-width: 768px) 100vw, 25vw"
                   />
                 </ImageLightbox>
               </div>
@@ -394,12 +393,12 @@ export default function EInvoiceCaseStudy() {
             <span className="text-xs font-semibold uppercase tracking-[0.14em] text-zinc-400">
               Opportunity
             </span>
-            <h2 className="max-w-3xl text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
+            <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
               <span className="block">
                 A national e-invoice app must work for radically different ages,
                 languages, and abilities.
               </span>
-              <span className="mt-3 block text-[0.74em] font-medium leading-snug text-zinc-300 sm:mt-4">
+              <span className={CASE_STUDY_SECTION_SUBTITLE_CLASS}>
                 It also had to feel obvious on first open—close to zero learning curve
                 for the tasks millions repeat every week—without trading off public
                 trust.
@@ -418,7 +417,7 @@ export default function EInvoiceCaseStudy() {
                 <span className="text-xs font-semibold uppercase tracking-[0.14em] text-zinc-400">
                   Section 1
                 </span>
-                <h2 className={STORY_SECTION_TITLE_CLASS}>The Homepage</h2>
+                <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>The Homepage</h2>
               </header>
               <div className="grid gap-10 lg:grid-cols-2 lg:gap-12">
                 <StoryBeatTimeline className="max-w-none">
@@ -483,7 +482,7 @@ export default function EInvoiceCaseStudy() {
                 <span className="text-xs font-semibold uppercase tracking-[0.14em] text-zinc-400">
                   Section 2
                 </span>
-                <h2 className={STORY_SECTION_TITLE_CLASS}>
+                <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
                   Pushback with external stakeholders: promo-first vs. what users
                   actually open the app for
                 </h2>
@@ -556,7 +555,7 @@ export default function EInvoiceCaseStudy() {
                 <span className="text-xs font-semibold uppercase tracking-[0.14em] text-zinc-400">
                   Section 3
                 </span>
-                <h2 className={STORY_SECTION_TITLE_CLASS}>
+                <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
                   Login &amp; authentication
                 </h2>
               </header>
@@ -585,7 +584,9 @@ export default function EInvoiceCaseStudy() {
                 <span className="text-xs font-semibold uppercase tracking-[0.14em] text-zinc-400">
                   Section 4
                 </span>
-                <h2 className={STORY_SECTION_TITLE_CLASS}>Guided Onboarding Setup</h2>
+                <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
+                  Guided Onboarding Setup
+                </h2>
               </header>
               <StoryBeatTimeline className="max-w-none">
                 <StoryBeat
@@ -616,7 +617,7 @@ export default function EInvoiceCaseStudy() {
             className="scroll-mt-28 border-t border-zinc-800/90 pt-10 sm:scroll-mt-32 sm:pt-12"
           >
             <div className="max-w-4xl space-y-4">
-              <h3 className="text-lg font-semibold tracking-tight text-zinc-100 sm:text-xl">
+              <h3 className={CASE_STUDY_SECTION_TITLE_CLASS}>
                 Handoff &amp; engineering alignment
               </h3>
               <div className="text-sm leading-relaxed text-zinc-400 sm:text-base">
@@ -701,7 +702,7 @@ export default function EInvoiceCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Functional map
           </span>
-          <h2 className="max-w-3xl text-zinc-100">
+          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
             Before moving to wireframe, I mapped out{" "}
             <span className={JOURNEY_EMPHASIS}>functional map</span> for all
             features (login, home, prize redemptions, etc) and{" "}
@@ -760,7 +761,9 @@ export default function EInvoiceCaseStudy() {
               <p className="text-xs font-semibold uppercase tracking-widest text-violet-400/90">
                 Moodboard &amp; style directions
               </p>
-              <h3 className="text-zinc-100">Vibrant, Life, Fun</h3>
+              <h3 className={CASE_STUDY_SECTION_TITLE_CLASS}>
+                Vibrant, Life, Fun
+              </h3>
               <p className="text-zinc-300 leading-relaxed">
                 The approved route stayed closest to daily behavior: a
                 multi-color system where{" "}
@@ -810,7 +813,7 @@ export default function EInvoiceCaseStudy() {
           </div>
 
           <div className="max-w-3xl space-y-4 pt-2">
-                         <h3 className="text-zinc-100">
+            <h3 className={CASE_STUDY_SECTION_TITLE_CLASS}>
               Mockups &amp; design system
             </h3>
             <p className="text-zinc-300 leading-relaxed">
@@ -826,7 +829,7 @@ export default function EInvoiceCaseStudy() {
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
           <div className="max-w-3xl space-y-6">
-            <h2 className="max-w-3xl text-zinc-100">
+            <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
               Twelve moderated sessions—including low-vision users—landed at{" "}
               <span className={M_TXT}>88%</span> success and a clear fix list for login,
               invoice management, and prize flows.
@@ -911,7 +914,7 @@ export default function EInvoiceCaseStudy() {
           className="!border-t-0 !pt-0 sm:!pt-0"
         >
           <div className="space-y-5">
-            <h2 className="max-w-3xl text-zinc-100">
+            <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
               The hardest decision was the home density conflict between younger and
               silver users
             </h2>
@@ -964,7 +967,7 @@ export default function EInvoiceCaseStudy() {
               <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
                 Business constraints
               </span>
-              <h3 className="max-w-3xl text-xl font-semibold tracking-tight text-zinc-100 sm:text-2xl">
+              <h3 className={CASE_STUDY_SECTION_TITLE_CLASS}>
                 Sprint timelines, MoF policy, and backend limits meant every surface had
                 to survive legal review and what engineering could actually ship.
               </h3>
@@ -996,7 +999,7 @@ export default function EInvoiceCaseStudy() {
             </div>
 
             <div className="max-w-3xl space-y-3 border-t border-zinc-800/90 pt-8">
-              <h3 className="text-lg font-semibold tracking-tight text-zinc-100 sm:text-xl">
+              <h3 className={CASE_STUDY_SECTION_TITLE_CLASS}>
                 What I&apos;d validate next
               </h3>
               <ul className="list-disc space-y-2 pl-5 text-zinc-300 leading-relaxed marker:text-zinc-500">
@@ -1043,7 +1046,7 @@ export default function EInvoiceCaseStudy() {
           <span className="text-xs font-semibold uppercase tracking-[0.14em] text-emerald-200/85">
             Figma files
           </span>
-          <h2 className="max-w-2xl text-pretty text-lg font-semibold leading-snug tracking-tight text-zinc-100 sm:text-xl md:text-2xl">
+          <h2 className="case-study-section-title max-w-2xl text-pretty font-semibold tracking-tight text-zinc-100">
             Open the source files for wireflows, page logic, and hi-fi mocks in one
             place.
           </h2>

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ImageLightbox } from "@/app/components/ImageLightbox";
 import { SplitCapsuleLink } from "@/app/components/SplitCapsuleLink";
+import { CASE_STUDY_SECTION_TITLE_CLASS } from "@/lib/site-shell";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 
 export function ProblemPersonasBlock() {
@@ -13,7 +14,7 @@ export function ProblemPersonasBlock() {
         <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
           01 · The problem
         </span>
-        <h2 className="max-w-3xl text-zinc-100">
+        <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
           Roughly 20 million people rely on the official app—yet ~2.8★ ratings and
           broken flows were excluding elders, newcomers, and low-vision users.
         </h2>

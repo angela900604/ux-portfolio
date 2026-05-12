@@ -3,20 +3,26 @@
  * “at a glance” rows (Timeline, Role, Project type, Focus, etc.).
  */
 
+import {
+  E_INVOICE_HOME_DISCIPLINE_TAG,
+  E_INVOICE_HOME_TECH_HIGHLIGHTS,
+} from "@/lib/marketing-work";
+
 export type CaseStudyAsideRow = {
   label: string;
   value: string;
 };
 
-/** Optional CTA in the left rail (e.g. e-Invoice research journey). */
+/** Optional text CTA in the left rail (e.g. e-Invoice research journey). */
 export type CaseStudyAsidePrimaryCta = {
   href: string;
   label: string;
-  variant?: "emerald" | "emeraldSoft" | "ghostEmerald" | "outline" | "mina";
 };
 
 export type CaseStudyAsideMeta = {
   eyebrow?: string;
+  /** Same visual as homepage {@link ProjectCardTag} (discipline line). */
+  eyebrowAsProjectCardTag?: boolean;
   title: string;
   subtitle?: string;
   items: readonly CaseStudyAsideRow[];
@@ -42,7 +48,8 @@ function titleCaseSlug(slug: string): string {
 
 const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
   "e-invoice-app": {
-    eyebrow: "Public service · Mobile app",
+    eyebrow: E_INVOICE_HOME_DISCIPLINE_TAG,
+    eyebrowAsProjectCardTag: true,
     title: "MOF Uniform Invoice Award Redemption app",
     subtitle:
       "Redesigning a government service used by 20 million people",
@@ -55,13 +62,12 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
       },
       {
         label: "Focus",
-        value: "Research, IA, accessibility, ship-ready UI",
+        value: E_INVOICE_HOME_TECH_HIGHLIGHTS,
       },
     ],
     primaryCta: {
       href: "/user-research-journey",
       label: "View full research journey",
-      variant: "emerald",
     },
   },
   "ai-marketplace": {
