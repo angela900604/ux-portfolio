@@ -43,9 +43,9 @@ export default function PhyphyyaCaseStudy() {
       <header className="border-b border-zinc-800">
         <div className={`${SITE_SHELL_INNER} py-12 sm:py-16`}>
           <div
-            className={`${CASE_STUDY_BODY_GRID} flex min-w-0 flex-col gap-6 sm:gap-8`}
+            className={`${CASE_STUDY_BODY_GRID} flex min-w-0 flex-col gap-4 sm:gap-5`}
           >
-            <div className="grid w-full grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2">
+            <div className="grid w-full grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2">
               <div className="min-w-0 md:col-span-2">
                 <img
                   src="/case-studies/phyphyya/gallery-14.png"
@@ -80,7 +80,7 @@ export default function PhyphyyaCaseStudy() {
               </div>
             </div>
 
-            <div className="grid w-full grid-cols-1 gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid w-full grid-cols-1 gap-4 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3">
               <img
                 src="/case-studies/phyphyya/pod-magnets-fridge.png"
                 alt="Round bunny magnets on a fridge"
@@ -101,29 +101,14 @@ export default function PhyphyyaCaseStudy() {
               />
             </div>
 
-            <div className="grid w-full grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-2 lg:items-start">
-              <img
-                src="/case-studies/phyphyya/pod-stickers-diecut.png"
-                alt="Hand holding die-cut bunny stickers"
-                className="block h-auto w-full"
-                loading="lazy"
-              />
-              <img
-                src="/case-studies/phyphyya/pod-sticker-leather.png"
-                alt="Die-cut bunny sticker on leather journal"
-                className="block h-auto w-full"
-                loading="lazy"
-              />
-            </div>
-
-            <div className="flex w-full flex-col gap-6 sm:gap-8">
+            <div className="flex w-full flex-col gap-4 sm:gap-5">
               <img
                 src="/case-studies/phyphyya/gallery-14.png"
                 alt="Haphy Living canvas tote bag bundle"
                 className="block h-auto w-full"
                 loading="lazy"
               />
-              <div className="grid w-full grid-cols-3 gap-6 sm:gap-8">
+              <div className="grid w-full grid-cols-3 gap-4 sm:gap-5">
                 <img
                   src="/case-studies/phyphyya/gallery-01.png"
                   alt="Canvas tote bag street style"
@@ -145,7 +130,7 @@ export default function PhyphyyaCaseStudy() {
               </div>
             </div>
 
-            <div className="grid w-full grid-cols-1 gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid w-full grid-cols-1 gap-4 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {sweatshirtSeries.map((it) => (
                 <img
                   key={it.src}
@@ -170,22 +155,37 @@ export default function PhyphyyaCaseStudy() {
             <h2 className="text-zinc-100 mb-[20px] relative inline-block font-sans after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-zinc-500 after:mx-auto after:mt-[15px]">
               Logo Concept - Soft & Rounded
             </h2>
-            <p className="text-[16px] text-zinc-400">
-              A harmonious blend of vintage charm and modern freshness.
-            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-[60px] w-full">
-            <div className="w-full rounded-[4px] overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.05)]">
-              <img
-                src={logoConceptImg}
-                alt="Logo Concept"
-                className="w-full h-auto block"
-                loading="lazy"
-              />
+          <div className="grid grid-cols-1 md:grid-cols-2 items-start gap-[60px] w-full">
+            <div className="flex w-full flex-col gap-[40px]">
+              <div className="w-full rounded-[4px] overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.05)]">
+                <img
+                  src={logoConceptImg}
+                  alt="Logo Concept"
+                  className="w-full h-auto block"
+                  loading="lazy"
+                />
+              </div>
+
+              <div className="grid grid-cols-2 gap-[24px] lg:grid-cols-4 lg:gap-[30px]">
+                {mascotCards.map((c) => (
+                  <div
+                    key={c.src}
+                    className="rounded-[8px] border border-[#E5DFD4] bg-[#F5F3EF] p-[20px] text-center shadow-[0_10px_30px_rgba(0,0,0,0.06)] transition-transform duration-300 hover:-translate-y-[5px]"
+                  >
+                    <img
+                      src={c.src}
+                      alt={c.alt}
+                      className="block h-auto w-full rounded-[4px]"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
 
-            <div className="pl-[20px]">
+            <div className="pl-0 md:pl-[20px]">
               <div className="mb-[40px]">
                 <h3 className="text-zinc-100 mb-[12px] border-l-[3px] border-zinc-600 pl-[15px] font-sans">
                   Color Palette
@@ -203,98 +203,16 @@ export default function PhyphyyaCaseStudy() {
                 </div>
               </div>
 
-              <div className="mb-[40px]">
-                <h3 className="text-zinc-100 mb-[12px] border-l-[3px] border-zinc-600 pl-[15px] font-sans">
-                  Visual Effect
-                </h3>
-                <p className="text-[16px] text-zinc-400 pl-[18px]">
-                  The blue-gray adds a touch of freshness and modernity to the
-                  typography, echoing the gray-white tones of the lop-eared
-                  rabbit mascot. The overall color scheme is rich yet harmonious.
-                </p>
-              </div>
-
               <div>
                 <h3 className="text-zinc-100 mb-[12px] border-l-[3px] border-zinc-600 pl-[15px] font-sans">
                   Style Characteristics
                 </h3>
                 <p className="text-[16px] text-zinc-400 pl-[18px]">
-                  Maintains vintage British hand-drawn texture. Rounded
-                  typography with rough brush strokes. A warm brand personality with a fresh touch.
+                  Rounded typography is giving a warm brand personality. Rough
+                  hand-drawn brush strokes and paper texture, creating a warm
+                  vintage atmosphere.
                 </p>
               </div>
-            </div>
-          </div>
-        </CaseStudyInViewSection>
-
-        {/* Mascot Section - Lop-eared Rabbit */}
-        <CaseStudyInViewSection
-          id="mascot"
-          className="relative scroll-mt-28 bg-zinc-900/35 py-[100px] sm:scroll-mt-32"
-        >
-          <div
-            className="pointer-events-none absolute inset-y-0 left-0 right-0 -z-10 w-full bg-zinc-950"
-            aria-hidden
-          />
-          <div className="text-center mb-[60px] w-full">
-            <h2 className="text-zinc-100 mb-[20px] relative inline-block font-sans after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-zinc-500 after:mx-auto after:mt-[15px]">
-              Brand Mascot - Lop-eared Rabbit
-            </h2>
-            <p className="text-[16px] text-zinc-400">
-              Embodying the spirit of relaxation.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-[30px] mb-[50px]">
-            {mascotCards.map((c) => (
-              <div
-                key={c.src}
-                className="rounded-[8px] border border-[#E5DFD4] bg-[#F5F3EF] p-[20px] text-center shadow-[0_10px_30px_rgba(0,0,0,0.06)] transition-transform duration-300 hover:-translate-y-[5px]"
-              >
-                <img
-                  src={c.src}
-                  alt={c.alt}
-                  className="block h-auto w-full rounded-[4px]"
-                  loading="lazy"
-                />
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-[40px] bg-zinc-900/30 p-[40px] rounded-[12px] grid grid-cols-1 md:grid-cols-2 gap-[40px]">
-            <div>
-              <h4 className="text-zinc-100 mb-[8px] font-sans">
-                Posture
-              </h4>
-              <p className="text-[15px] text-zinc-400 mb-[20px]">
-                Inspired by my bunny&apos;s everyday napping poses at home: cute,
-                sleepy, and delightfully lazy. The relaxed vibe feels instantly
-                healing and makes you want to gently pat her head.
-              </p>
-            </div>
-            <div>
-              <h4 className="text-zinc-100 mb-[8px] font-sans">
-                Ears
-              </h4>
-              <p className="text-[15px] text-zinc-400 mb-[20px]">
-                Long droopy ears naturally falling, adding a lazy charm.
-              </p>
-            </div>
-            <div>
-              <h4 className="text-zinc-100 mb-[8px] font-sans">
-                Color
-              </h4>
-              <p className="text-[15px] text-zinc-400 mb-[20px]">
-                Gray and white dual-tone color blocks, maintaining a clean and fresh look.
-              </p>
-            </div>
-            <div>
-              <h4 className="text-zinc-100 mb-[8px] font-sans">
-                Texture
-              </h4>
-              <p className="text-[15px] text-zinc-400 mb-[20px]">
-                Rough hand-drawn brush strokes and paper texture, creating a warm vintage atmosphere.
-              </p>
             </div>
           </div>
         </CaseStudyInViewSection>

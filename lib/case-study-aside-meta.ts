@@ -223,7 +223,7 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
       },
       {
         label: "Tools",
-        value: "Procreate / Figma / Lovart / POD",
+        value: "Procreate / Figma / Lovart / Printify",
       },
     ],
     textLinks: [
