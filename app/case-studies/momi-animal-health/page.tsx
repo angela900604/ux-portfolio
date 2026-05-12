@@ -6,7 +6,6 @@ import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { MomiOutcomesChart } from "./MomiOutcomesChart";
-import { MomiUniformTile } from "./MomiUniformTile";
 import { CASE_STUDY_BODY_GRID, SITE_SHELL_INNER } from "@/lib/site-shell";
 
 export const metadata = {
@@ -17,28 +16,39 @@ export const metadata = {
 
 const MOMI_ASSET = (n: string) => `/case-studies/momi-animal-health/${n}`;
 
-/** eCommerce cover slides removed from page; 06 / 08 dropped from grid */
-const WHAT_I_DID_GRID_EXCLUDE = new Set(["02", "03", "04", "05", "06", "08"]);
-
-const WHAT_I_DID_GRID_EXTRAS = [
+/** Top-of-page gallery — served unoptimized to preserve full PNG quality. */
+const HERO_GALLERY = [
   {
-    key: "tri-fold-brochure",
-    src: MOMI_ASSET("marketing-tri-fold-brochure.png"),
-    alt: "MOMI Animal Health — tri-fold brochure mockup for rabbit nutrition (COMPLETE-G line, hay and pellet benefits, Traditional Chinese)",
+    src: MOMI_ASSET("1.png"),
+    alt: "MOMI Animal Health — promotional print and retail creative 1 of 5",
+    width: 1093,
+    height: 820,
+  },
+  {
+    src: MOMI_ASSET("2.png"),
+    alt: "MOMI Animal Health — promotional print and retail creative 2 of 5",
+    width: 1094,
+    height: 820,
+  },
+  {
+    src: MOMI_ASSET("3.png"),
+    alt: "MOMI Animal Health — promotional print and retail creative 3 of 5",
+    width: 1094,
+    height: 820,
+  },
+  {
+    src: MOMI_ASSET("4.png"),
+    alt: "MOMI Animal Health — promotional print and retail creative 4 of 5",
+    width: 1200,
+    height: 900,
+  },
+  {
+    src: MOMI_ASSET("5.png"),
+    alt: "MOMI Animal Health — promotional print and retail creative 5 of 5",
+    width: 1094,
+    height: 820,
   },
 ] as const;
-
-const WHAT_I_DID_IMAGES = [
-  ...Array.from({ length: 9 }, (_, i) => {
-    const id = String(i + 1).padStart(2, "0");
-    return {
-      key: id,
-      src: MOMI_ASSET(`what-i-did-${id}.png`),
-      alt: `MOMI Animal Health — campaign and product creative ${id}`,
-    };
-  }).filter((item) => !WHAT_I_DID_GRID_EXCLUDE.has(item.key)),
-  ...WHAT_I_DID_GRID_EXTRAS,
-];
 
 const TOUCHPOINT_CARDS = [
   {
@@ -109,25 +119,33 @@ export default function MomiAnimalHealthCaseStudy() {
     <article className="min-h-screen bg-zinc-950 text-zinc-100">
       <header className="border-b border-zinc-800">
         <div className={`${SITE_SHELL_INNER} py-12 sm:py-16`}>
-          <div className={`${CASE_STUDY_BODY_GRID} min-w-0`}>
-            <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
-              <ImageLightbox
-                src={MOMI_ASSET("case-hero-cover.png")}
-                alt="MOMI Animal Health flyer mockup — freeze dried fruit treats for rabbits"
-                className="block w-full"
-                disableHoverScale
+          <div
+            className={`${CASE_STUDY_BODY_GRID} flex min-w-0 flex-col gap-8 sm:gap-10`}
+          >
+            {HERO_GALLERY.map((img, i) => (
+              <div
+                key={img.src}
+                className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40"
               >
-                <Image
-                  src={MOMI_ASSET("case-hero-cover.png")}
-                  alt="MOMI Animal Health flyer mockup — freeze dried fruit treats for rabbits"
-                  width={1200}
-                  height={675}
-                  className="h-auto w-full object-cover object-[center_40%]"
-                  sizes="(max-width: 768px) 100vw, 1080px"
-                  priority
-                />
-              </ImageLightbox>
-            </div>
+                <ImageLightbox
+                  src={img.src}
+                  alt={img.alt}
+                  className="block w-full"
+                  disableHoverScale
+                >
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    width={img.width}
+                    height={img.height}
+                    className="h-auto w-full max-w-full"
+                    sizes="(max-width: 1480px) 100vw, 1280px"
+                    priority={i === 0}
+                    unoptimized
+                  />
+                </ImageLightbox>
+              </div>
+            ))}
           </div>
         </div>
       </header>
@@ -186,20 +204,6 @@ export default function MomiAnimalHealthCaseStudy() {
                     sizes="(max-width: 640px) 100vw, 50vw"
                   />
                 </ImageLightbox>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-10 w-full">
-            <h5 className="text-zinc-100">Campaign</h5>
-            <div className="mt-4 grid grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-12 lg:items-stretch">
-              {WHAT_I_DID_IMAGES.map((item) => (
-                <MomiUniformTile
-                  key={item.key}
-                  src={item.src}
-                  alt={item.alt}
-                  emphasis
-                />
               ))}
             </div>
           </div>

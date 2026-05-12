@@ -49,7 +49,7 @@ function Section({
   children,
 }: {
   kicker: string;
-  title: string;
+  title?: string;
   id?: string;
   children: ReactNode;
 }) {
@@ -61,7 +61,7 @@ function Section({
       <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
         {kicker}
       </span>
-      <h2 className="mt-2 text-zinc-100">{title}</h2>
+      {title ? <h2 className="mt-2 text-zinc-100">{title}</h2> : null}
       {children}
     </CaseStudyInViewSection>
   );
@@ -98,72 +98,7 @@ export default function AdmissionHubCaseStudy() {
       <CaseStudyContentLayout
         contentClassName="space-y-20 sm:space-y-24"
       >
-        <Section
-          id="project-overview"
-          kicker="00 · Project overview"
-          title="At a glance"
-        >
-          <div className="mt-4 max-w-3xl">
-            <article className="rounded-2xl border border-zinc-800 bg-zinc-900/35 p-6">
-              <h5 className="text-zinc-500 uppercase tracking-wide">
-                Brief / Background
-              </h5>
-              <p className="mt-2 text-sm text-zinc-400 leading-relaxed">
-                Admission Hub supports students and families evaluating Canadian
-                study and immigration paths, primarily in Taiwan and Hong Kong.
-                Messaging in this space has to be{" "}
-                <span className="font-medium text-zinc-100">
-                  precise and audit-ready
-                </span>
-                : I kept immigration-adjacent facts, program details, and
-                stakeholder-facing language tightly aligned so families and
-                partners could trust what they read.
-              </p>
-            </article>
-          </div>
-        </Section>
-
-        <CaseStudyInViewSection
-          id="problem"
-          className="scroll-mt-28 sm:scroll-mt-32"
-        >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            01 · Problem
-          </span>
-          <h2 className="mt-2 text-zinc-100">
-            What the digital channel looked like when I joined
-          </h2>
-          <div className="mt-4 max-w-2xl">
-            <p className="text-zinc-400 leading-relaxed">
-              <a
-                href="https://www.instagram.com/adm.tw/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-medium text-zinc-100 underline decoration-zinc-600 underline-offset-2 hover:decoration-zinc-400"
-              >
-                @adm.tw
-              </a>{" "}
-              had just over{" "}
-              <span className="font-medium text-zinc-100">
-                1,200 followers
-              </span>
-              , and typical posts landed around{" "}
-              <span className="font-medium text-zinc-100">~5 likes</span>.
-            </p>
-
-            <div className="mt-8 border-t border-zinc-800 pt-8">
-              <h3 className="text-zinc-100">
-                My goal is to earn attention, then convert it into trust.
-              </h3>
-            </div>
-          </div>
-        </CaseStudyInViewSection>
-
-        <Section
-          id="strategy"
-          kicker="02 · Strategy"
-          title="My first bet: give people a reason to come back"
-        >
+        <Section id="strategy" kicker="01 · Strategy">
           <div className="mt-4 max-w-2xl space-y-4 text-zinc-400 leading-relaxed">
             <p>
               I shifted toward{" "}
@@ -194,11 +129,29 @@ export default function AdmissionHubCaseStudy() {
               to where people were in the journey.
             </p>
           </div>
+
+          <figure className="mt-10 bg-zinc-900/25">
+            <ImageLightbox
+              src={AH_ASSET("dragon-boat-and-coop-creative.png")}
+              alt="Admission Hub — Dragon Boat Festival Instagram post mockup beside Working Holiday COOP service flyer for Canada ADM"
+              className="block w-full"
+              disableHoverScale
+            >
+              <Image
+                src={AH_ASSET("dragon-boat-and-coop-creative.png")}
+                alt="Admission Hub — Dragon Boat Festival Instagram post mockup beside Working Holiday COOP service flyer for Canada ADM"
+                width={1024}
+                height={556}
+                className="block h-auto w-full"
+                sizes="(max-width: 896px) 100vw, 896px"
+              />
+            </ImageLightbox>
+          </figure>
         </Section>
 
         <Section
           id="what-i-did"
-          kicker="03 · What I did"
+          kicker="02 · What I did"
           title="A repeatable campaign + content system"
         >
           <div className="mt-4 rounded-2xl border border-zinc-800 bg-zinc-900/35 p-6">
@@ -354,40 +307,11 @@ export default function AdmissionHubCaseStudy() {
               </ul>
             </div>
           </div>
-
-          <figure className="mt-10 bg-zinc-900/25">
-            <ImageLightbox
-              src={AH_ASSET("dragon-boat-and-coop-creative.png")}
-              alt="Admission Hub — Dragon Boat Festival Instagram post mockup beside Working Holiday COOP service flyer for Canada ADM"
-              className="block w-full"
-              disableHoverScale
-            >
-              <Image
-                src={AH_ASSET("dragon-boat-and-coop-creative.png")}
-                alt="Admission Hub — Dragon Boat Festival Instagram post mockup beside Working Holiday COOP service flyer for Canada ADM"
-                width={1024}
-                height={556}
-                className="block h-auto w-full"
-                sizes="(max-width: 896px) 100vw, 896px"
-              />
-            </ImageLightbox>
-            <figcaption className="mt-4 space-y-2 text-sm text-zinc-400 leading-relaxed">
-              <p>
-                <strong className="text-zinc-100">Left (Instagram):</strong>{" "}
-                Calendar-driven cultural post engineered for saves and shares.
-              </p>
-              <p>
-                <strong className="text-zinc-100">Right (flyer):</strong>{" "}
-                High-density Working Holiday COOP explainer—badges, proof
-                collage, QR—for comprehension and next-step contact.
-              </p>
-            </figcaption>
-          </figure>
         </Section>
 
         <Section
           id="outcomes"
-          kicker="04 · Outcomes"
+          kicker="03 · Outcomes"
           title="Measurable growth in engagement and reach"
         >
           <p className="mt-4 max-w-3xl text-sm text-zinc-400 leading-relaxed">
