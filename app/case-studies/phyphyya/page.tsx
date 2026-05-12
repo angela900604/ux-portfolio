@@ -43,9 +43,9 @@ export default function PhyphyyaCaseStudy() {
       <header className="border-b border-zinc-800">
         <div className={`${SITE_SHELL_INNER} py-12 sm:py-16`}>
           <div
-            className={`${CASE_STUDY_BODY_GRID} flex min-w-0 flex-col gap-8 sm:gap-10 md:gap-12`}
+            className={`${CASE_STUDY_BODY_GRID} flex min-w-0 flex-col gap-6 sm:gap-8`}
           >
-            <div className="grid w-full grid-cols-1 gap-[30px] md:grid-cols-2">
+            <div className="grid w-full grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2">
               <div className="min-w-0 md:col-span-2">
                 <img
                   src="/case-studies/phyphyya/gallery-14.png"
@@ -80,7 +80,7 @@ export default function PhyphyyaCaseStudy() {
               </div>
             </div>
 
-            <div className="grid w-full grid-cols-1 gap-[22px] sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid w-full grid-cols-1 gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3">
               <img
                 src="/case-studies/phyphyya/pod-magnets-fridge.png"
                 alt="Round bunny magnets on a fridge"
@@ -101,7 +101,7 @@ export default function PhyphyyaCaseStudy() {
               />
             </div>
 
-            <div className="grid w-full grid-cols-1 gap-[22px] lg:grid-cols-2 lg:items-start">
+            <div className="grid w-full grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-2 lg:items-start">
               <img
                 src="/case-studies/phyphyya/pod-stickers-diecut.png"
                 alt="Hand holding die-cut bunny stickers"
@@ -116,14 +116,14 @@ export default function PhyphyyaCaseStudy() {
               />
             </div>
 
-            <div className="flex w-full flex-col gap-[22px]">
+            <div className="flex w-full flex-col gap-6 sm:gap-8">
               <img
                 src="/case-studies/phyphyya/gallery-14.png"
                 alt="Haphy Living canvas tote bag bundle"
                 className="block h-auto w-full"
                 loading="lazy"
               />
-              <div className="grid w-full grid-cols-3 gap-[22px]">
+              <div className="grid w-full grid-cols-3 gap-6 sm:gap-8">
                 <img
                   src="/case-studies/phyphyya/gallery-01.png"
                   alt="Canvas tote bag street style"
@@ -145,7 +145,7 @@ export default function PhyphyyaCaseStudy() {
               </div>
             </div>
 
-            <div className="grid w-full grid-cols-1 gap-[30px] sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid w-full grid-cols-1 gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {sweatshirtSeries.map((it) => (
                 <img
                   key={it.src}
@@ -406,51 +406,76 @@ export default function PhyphyyaCaseStudy() {
           id="testing-next"
           className="scroll-mt-28 py-[80px] sm:scroll-mt-32"
         >
-          <div className="w-full mb-[40px] text-center">
-            <h2 className="text-zinc-100 mb-[20px] relative inline-block font-sans after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-zinc-500 after:mx-auto after:mt-[15px]">
-              What I&apos;m testing next
-            </h2>
-            <p className="text-[16px] text-zinc-400 leading-relaxed">
-              Operating hypotheses I&apos;m running against live Etsy data—shipping,
-              pricing, and SKU mix—so the shop stays a learning loop, not a one-off
-              launch.
-            </p>
-          </div>
-
-          <div className="w-full rounded-2xl border border-zinc-800 p-6 sm:p-8">
-            <ul className="space-y-5 text-[16px] text-zinc-400 leading-relaxed">
-              <li>
-                <strong className="font-semibold text-zinc-100">
-                  Shipping economics
-                </strong>
-                <span className="block mt-1">
-                  Compare POD carriers and fulfillment paths for Canada / US
-                  buyers; test whether bundled listings and higher-AOV offers absorb
-                  shipping better than single low-ticket SKUs.
+          <details className="group w-full rounded-2xl border border-zinc-800 bg-zinc-900/35 open:border-zinc-600/60">
+            <summary className="cursor-pointer list-none px-5 py-4 text-sm font-medium text-zinc-200 transition hover:bg-zinc-900/50 sm:px-6 sm:py-5 [&::-webkit-details-marker]:hidden">
+              <span className="inline-flex w-full items-center justify-between gap-3">
+                <span className="min-w-0 text-left font-sans text-base font-semibold tracking-tight text-zinc-100 sm:text-lg">
+                  What I&apos;m testing next
                 </span>
-              </li>
-              <li>
-                <strong className="font-semibold text-zinc-100">
-                  Pricing &amp; perceived value
-                </strong>
-                <span className="block mt-1">
-                  Run small, time-boxed price tests on comparable listings while
-                  keeping mockups and copy consistent—so shifts in conversion map
-                  more cleanly to price, not creative noise.
+                <span
+                  className="shrink-0 text-zinc-500 transition group-open:rotate-180"
+                  aria-hidden
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="text-current"
+                  >
+                    <path
+                      d="M4 6l4 4 4-4"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
                 </span>
-              </li>
-              <li>
-                <strong className="font-semibold text-zinc-100">
-                  SKU mix &amp; bundles
-                </strong>
-                <span className="block mt-1">
-                  Narrow the catalog to a tight hero set (stickers, magnets,
-                  apparel) and add intentional bundles (e.g. sticker + magnet) to
-                  lift order value and clarify what the brand is for at a glance.
-                </span>
-              </li>
-            </ul>
-          </div>
+              </span>
+            </summary>
+            <div className="border-t border-zinc-800/90 px-5 pb-5 pt-4 sm:px-6 sm:pb-6">
+              <p className="text-[16px] leading-relaxed text-zinc-400">
+                Operating hypotheses I&apos;m running against live Etsy
+                data—shipping, pricing, and SKU mix—so the shop stays a learning
+                loop, not a one-off launch.
+              </p>
+              <ul className="mt-5 space-y-5 text-[16px] leading-relaxed text-zinc-400">
+                <li>
+                  <strong className="font-semibold text-zinc-100">
+                    Shipping economics
+                  </strong>
+                  <span className="block mt-1">
+                    Compare POD carriers and fulfillment paths for Canada / US
+                    buyers; test whether bundled listings and higher-AOV offers
+                    absorb shipping better than single low-ticket SKUs.
+                  </span>
+                </li>
+                <li>
+                  <strong className="font-semibold text-zinc-100">
+                    Pricing &amp; perceived value
+                  </strong>
+                  <span className="block mt-1">
+                    Run small, time-boxed price tests on comparable listings while
+                    keeping mockups and copy consistent—so shifts in conversion map
+                    more cleanly to price, not creative noise.
+                  </span>
+                </li>
+                <li>
+                  <strong className="font-semibold text-zinc-100">
+                    SKU mix &amp; bundles
+                  </strong>
+                  <span className="block mt-1">
+                    Narrow the catalog to a tight hero set (stickers, magnets,
+                    apparel) and add intentional bundles (e.g. sticker + magnet)
+                    to lift order value and clarify what the brand is for at a
+                    glance.
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </details>
         </CaseStudyInViewSection>
 
         <footer className="border-t border-zinc-800 py-14">

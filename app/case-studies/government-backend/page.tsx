@@ -152,9 +152,6 @@ export default function GovernmentBackendCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Design &amp; engineering
           </span>
-          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
-            How I aligned design with engineering
-          </h2>
           <GovernmentBackendEngineeringAlignment />
         </CaseStudyInViewSection>
 

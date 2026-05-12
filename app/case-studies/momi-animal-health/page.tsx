@@ -120,7 +120,7 @@ export default function MomiAnimalHealthCaseStudy() {
       <header className="border-b border-zinc-800">
         <div className={`${SITE_SHELL_INNER} py-12 sm:py-16`}>
           <div
-            className={`${CASE_STUDY_BODY_GRID} flex min-w-0 flex-col gap-8 sm:gap-10`}
+            className={`${CASE_STUDY_BODY_GRID} flex min-w-0 flex-col gap-6 sm:gap-8`}
           >
             {HERO_GALLERY.map((img, i) => (
               <div
