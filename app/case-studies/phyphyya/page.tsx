@@ -118,25 +118,21 @@ export default function PhyphyyaCaseStudy() {
     {
       src: "/case-studies/phyphyya/gallery-14.png",
       alt: "Brand Application Overview",
-      caption: "Brand Application Overview",
       large: true,
     },
     {
       src: "/case-studies/phyphyya/gallery-04.png",
       alt: "Pet Product Packaging",
-      caption: "Pet Product Packaging",
       large: false,
     },
     {
       src: "/case-studies/phyphyya/gallery-06.png",
       alt: "Business Card & Stationery",
-      caption: "Business Card & Stationery",
       large: false,
     },
     {
       src: "/case-studies/phyphyya/gallery-17.png",
       alt: "Environmental Product Display (updated)",
-      caption: "Environmental Product Display",
       large: true,
     },
   ];
@@ -144,18 +140,15 @@ export default function PhyphyyaCaseStudy() {
   const sweatshirtSeries = [
     {
       src: "/case-studies/phyphyya/gallery-12.png",
-      alt: "Sweatshirt Hanger Display",
-      label: "Hanger Display",
+      alt: "Sweatshirt hanger display",
     },
     {
       src: "/case-studies/phyphyya/gallery-15.png",
-      alt: "Sweatshirt Lifestyle",
-      label: "Lifestyle",
+      alt: "Sweatshirt lifestyle",
     },
     {
       src: "/case-studies/phyphyya/gallery-05.png",
-      alt: "Sweatshirt Desktop Details",
-      label: "Desktop Details",
+      alt: "Sweatshirt desktop details",
     },
   ];
 
@@ -164,7 +157,7 @@ export default function PhyphyyaCaseStudy() {
       <header className="border-b border-zinc-800">
         <div className={`${SITE_SHELL_INNER} py-12 sm:py-16`}>
           <div className={`${CASE_STUDY_BODY_GRID} min-w-0`}>
-            <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/35">
+            <div className="min-w-0 overflow-hidden">
               <ImageLightbox
                 src="/case-studies/phyphyya/gallery-14.png"
                 alt="Haphy Living brand applications overview"
@@ -191,11 +184,7 @@ export default function PhyphyyaCaseStudy() {
           id="project-overview"
           className="scroll-mt-28 py-[80px] sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            00 · Project overview
-          </span>
-          <h2 className="mt-2 text-zinc-100">At a glance</h2>
-          <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
+          <div className="mt-4 max-w-3xl">
             <article className="rounded-2xl border border-zinc-800 bg-zinc-900/35 p-6">
               <h5 className="text-zinc-500 uppercase tracking-wide">
                 Brief / Background
@@ -211,31 +200,6 @@ export default function PhyphyyaCaseStudy() {
                   America with low inventory risk.
                 </p>
               </div>
-            </article>
-            <article className="rounded-2xl border border-zinc-800 bg-zinc-900/35 p-6">
-              <h5 className="text-zinc-500 uppercase tracking-wide">
-                My role
-              </h5>
-              <p className="mt-2 text-sm text-zinc-400 leading-relaxed">
-                Solo project. I owned brand identity design, illustration, product
-                design, and Etsy operations end-to-end.
-              </p>
-            </article>
-            <article className="rounded-2xl border border-zinc-800 bg-zinc-900/35 p-6">
-              <h5 className="text-zinc-500 uppercase tracking-wide">
-                Tools
-              </h5>
-              <p className="mt-2 text-sm text-zinc-400 leading-relaxed">
-                Procreate / Figma / Lovart / POD
-              </p>
-            </article>
-            <article className="rounded-2xl border border-zinc-800 bg-zinc-900/35 p-6">
-              <h5 className="text-zinc-500 uppercase tracking-wide">
-                Timeline
-              </h5>
-              <p className="mt-2 text-sm text-zinc-400 leading-relaxed">
-                2022 – present (ongoing side project)
-              </p>
             </article>
           </div>
         </CaseStudyInViewSection>
@@ -328,12 +292,12 @@ export default function PhyphyyaCaseStudy() {
             {mascotCards.map((c) => (
               <div
                 key={c.src}
-                className="bg-zinc-900/50 p-[20px] rounded-[8px] text-center transition-transform duration-300 hover:-translate-y-[5px]"
+                className="rounded-[8px] border border-[#E5DFD4] bg-[#F5F3EF] p-[20px] text-center shadow-[0_10px_30px_rgba(0,0,0,0.06)] transition-transform duration-300 hover:-translate-y-[5px]"
               >
                 <img
                   src={c.src}
                   alt={c.alt}
-                  className="w-full h-auto rounded-[4px] mix-blend-multiply"
+                  className="block h-auto w-full rounded-[4px]"
                   loading="lazy"
                 />
               </div>
@@ -375,227 +339,118 @@ export default function PhyphyyaCaseStudy() {
                 Rough hand-drawn brush strokes and paper texture, creating a warm vintage atmosphere.
               </p>
             </div>
-
-            <div className="md:col-span-2 text-center italic font-sans text-[20px] text-zinc-500 mt-[20px] border-t border-zinc-700 pt-[20px]">
-              "This posture conveys the brand philosophy of 'complete
-              relaxation and peaceful rest,' perfectly suited for the warm positioning of pet daily essentials."
-            </div>
           </div>
         </CaseStudyInViewSection>
 
-        {/* Brand Applications (core grid + POD / tote / sweatshirt) */}
         <CaseStudyInViewSection
           id="brand-applications"
-          className="scroll-mt-28 py-[80px] sm:scroll-mt-32 flex flex-col items-center"
+          className="scroll-mt-28 py-[80px] sm:scroll-mt-32"
         >
-          <div className="text-center mb-[60px] w-full">
-            <h2 className="text-zinc-100 mb-[20px] relative inline-block font-sans after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-zinc-500 after:mx-auto after:mt-[15px]">
-              Brand Applications
-            </h2>
-            <p className="text-[16px] text-zinc-400">
-              Bringing the brand to life across various touchpoints.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-[30px] w-full">
-            {brandApplications.map((it) => (
-              <div
-                key={it.src}
-                className={`relative rounded-[8px] overflow-hidden shadow-[0_5px_15px_rgba(0,0,0,0.08)] group ${it.large ? "md:col-span-2" : ""}`}
-              >
-                <div className="aspect-[4/3] w-full relative">
+          <div className="flex w-full flex-col gap-10 sm:gap-12 md:gap-14">
+            <div className="grid w-full grid-cols-1 gap-[30px] md:grid-cols-2">
+              {brandApplications.map((it) => (
+                <div
+                  key={it.src}
+                  className={it.large ? "min-w-0 md:col-span-2" : "min-w-0"}
+                >
                   <img
                     src={it.src}
                     alt={it.alt}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-[500ms] group-hover:scale-[1.02]"
+                    className="block h-auto w-full"
                     loading="lazy"
                   />
-                  <div className="absolute bottom-0 left-0 w-full px-[20px] py-[20px] bg-gradient-to-t from-black/60 to-transparent text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    {it.caption}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* New POD: magnets & stickers — nested under Brand Applications */}
-          <div
-            id="pod-products"
-            className="scroll-mt-28 w-full mt-[72px] sm:mt-[88px] pt-[56px] sm:pt-[72px] border-t border-zinc-800"
-          >
-            <div className="text-center w-full mb-[50px]">
-              <h3 className="text-zinc-100 mb-0 relative inline-block font-sans text-[1.35rem] sm:text-[1.5rem] after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-zinc-500 after:mx-auto after:mt-[15px]">
-                New products · Magnets &amp; stickers
-              </h3>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[22px] w-full">
-              {[
-                {
-                  src: "/case-studies/phyphyya/pod-magnets-fridge.png",
-                  alt: "Round bunny magnets on a fridge",
-                  label: "Magnets · fridge",
-                },
-                {
-                  src: "/case-studies/phyphyya/pod-magnets-hand.png",
-                  alt: "Hand holding bunny magnets",
-                  label: "Magnets · detail",
-                },
-                {
-                  src: "/case-studies/phyphyya/pod-stickers-flatlay.png",
-                  alt: "Die-cut bunny stickers flat lay with mug and notebook",
-                  label: "Stickers · flat lay",
-                },
-              ].map((item) => (
-                <div
-                  key={item.src}
-                  className="flex flex-col overflow-hidden rounded-[8px] bg-zinc-900/35 shadow-[0_4px_10px_rgba(0,0,0,0.04)]"
-                >
-                  <img
-                    src={item.src}
-                    alt={item.alt}
-                    className="w-full h-auto block"
-                    loading="lazy"
-                  />
-                  <p className="text-center py-[12px] text-[13px] text-zinc-500 font-sans shrink-0">
-                    {item.label}
-                  </p>
                 </div>
               ))}
             </div>
 
-            <div className="mt-[22px] grid grid-cols-1 lg:grid-cols-3 gap-[22px] w-full items-stretch lg:min-h-[520px]">
-              <div className="flex flex-col overflow-hidden rounded-[8px] bg-zinc-900/35 shadow-[0_4px_10px_rgba(0,0,0,0.04)] h-full min-h-0">
-                <div className="relative flex-1 min-h-[280px] lg:min-h-0">
-                  <img
-                    src="/case-studies/phyphyya/pod-stickers-diecut.png"
-                    alt="Hand holding die-cut bunny stickers"
-                    className="absolute inset-0 h-full w-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
-                <p className="shrink-0 text-center py-[12px] text-[13px] text-zinc-500 font-sans">
-                  Stickers · die-cut
-                </p>
-              </div>
-
-              <div className="flex flex-col overflow-hidden rounded-[8px] bg-zinc-900/35 shadow-[0_4px_10px_rgba(0,0,0,0.04)] h-full min-h-0">
-                <div className="flex min-h-0 flex-1 flex-col gap-2 p-2">
-                  <div className="relative min-h-[160px] flex-1">
-                    <img
-                      src="/case-studies/phyphyya/pod-stickers-sizes.png"
-                      alt="Bunny stickers in multiple sizes"
-                      className="absolute inset-0 h-full w-full object-cover object-center"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="relative min-h-[160px] flex-1">
-                    <img
-                      src="/case-studies/phyphyya/pod-sticker-laptop.png"
-                      alt="Die-cut bunny sticker on laptop"
-                      className="absolute inset-0 h-full w-full object-cover object-center"
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
-                <p className="shrink-0 text-center py-[12px] text-[13px] text-zinc-500 font-sans leading-snug px-2">
-                  Stickers · size range &amp; in context (laptop)
-                </p>
-              </div>
-
-              <div className="flex flex-col overflow-hidden rounded-[8px] bg-zinc-900/35 shadow-[0_4px_10px_rgba(0,0,0,0.04)] h-full min-h-0">
-                <div className="relative flex-1 min-h-[280px] lg:min-h-0">
-                  <img
-                    src="/case-studies/phyphyya/pod-sticker-leather.png"
-                    alt="Die-cut bunny sticker on leather journal"
-                    className="absolute inset-0 h-full w-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
-                <p className="shrink-0 text-center py-[12px] text-[13px] text-zinc-500 font-sans">
-                  Stickers · in context (leather)
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Canvas tote — nested under Brand Applications */}
-          <div
-            id="canvas-tote"
-            className="scroll-mt-28 w-full mt-[72px] sm:mt-[88px] pt-[56px] sm:pt-[72px] border-t border-zinc-800"
-          >
-            <div className="text-center w-full mb-[50px]">
-              <h3 className="text-zinc-100 mb-0 relative inline-block font-sans text-[1.35rem] sm:text-[1.5rem] after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-zinc-500 after:mx-auto after:mt-[15px]">
-                Canvas Tote Bag
-              </h3>
+            <div className="grid w-full grid-cols-1 gap-[22px] sm:grid-cols-2 lg:grid-cols-3">
+              <img
+                src="/case-studies/phyphyya/pod-magnets-fridge.png"
+                alt="Round bunny magnets on a fridge"
+                className="block h-auto w-full"
+                loading="lazy"
+              />
+              <img
+                src="/case-studies/phyphyya/pod-magnets-hand.png"
+                alt="Hand holding bunny magnets"
+                className="block h-auto w-full"
+                loading="lazy"
+              />
+              <img
+                src="/case-studies/phyphyya/pod-stickers-flatlay.png"
+                alt="Die-cut bunny stickers flat lay with mug and notebook"
+                className="block h-auto w-full"
+                loading="lazy"
+              />
             </div>
 
-            <div className="w-full rounded-[12px] border border-zinc-800 bg-zinc-900/35 p-4 sm:p-6 shadow-[0_4px_12px_rgba(0,0,0,0.04)]">
-              <div className="relative w-full aspect-[16/9] overflow-hidden rounded-[6px]">
+            <div className="grid w-full grid-cols-1 gap-[22px] lg:grid-cols-3 lg:items-start">
+              <img
+                src="/case-studies/phyphyya/pod-stickers-diecut.png"
+                alt="Hand holding die-cut bunny stickers"
+                className="block h-auto w-full"
+                loading="lazy"
+              />
+              <div className="flex min-w-0 flex-col gap-[22px]">
                 <img
-                  src="/case-studies/phyphyya/gallery-14.png"
-                  alt="Canvas tote bag bundle (main)"
-                  className="absolute inset-0 w-full h-full object-cover"
+                  src="/case-studies/phyphyya/pod-stickers-sizes.png"
+                  alt="Bunny stickers in multiple sizes"
+                  className="block h-auto w-full"
+                  loading="lazy"
+                />
+                <img
+                  src="/case-studies/phyphyya/pod-sticker-laptop.png"
+                  alt="Die-cut bunny sticker on laptop"
+                  className="block h-auto w-full"
                   loading="lazy"
                 />
               </div>
+              <img
+                src="/case-studies/phyphyya/pod-sticker-leather.png"
+                alt="Die-cut bunny sticker on leather journal"
+                className="block h-auto w-full"
+                loading="lazy"
+              />
+            </div>
 
-              <div className="mt-[26px] grid grid-cols-3 gap-[22px]">
-                <div className="overflow-hidden rounded-[4px]">
-                  <img
-                    src="/case-studies/phyphyya/gallery-01.png"
-                    alt="Canvas tote bag street style (thumbnail)"
-                    className="w-full aspect-[1/1] object-cover"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="overflow-hidden rounded-[4px]">
-                  <img
-                    src="/case-studies/phyphyya/gallery-11.png"
-                    alt="Canvas tote bag texture detail (thumbnail)"
-                    className="w-full aspect-[1/1] object-cover"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="overflow-hidden rounded-[4px]">
-                  <img
-                    src="/case-studies/phyphyya/gallery-07.png"
-                    alt="Canvas tote bag street environment (thumbnail)"
-                    className="w-full aspect-[1/1] object-cover"
-                    loading="lazy"
-                  />
-                </div>
+            <div className="flex w-full flex-col gap-[22px]">
+              <img
+                src="/case-studies/phyphyya/gallery-14.png"
+                alt="Canvas tote bag bundle (main)"
+                className="block h-auto w-full"
+                loading="lazy"
+              />
+              <div className="grid w-full grid-cols-3 gap-[22px]">
+                <img
+                  src="/case-studies/phyphyya/gallery-01.png"
+                  alt="Canvas tote bag street style"
+                  className="block aspect-square h-auto w-full object-cover"
+                  loading="lazy"
+                />
+                <img
+                  src="/case-studies/phyphyya/gallery-11.png"
+                  alt="Canvas tote bag texture detail"
+                  className="block aspect-square h-auto w-full object-cover"
+                  loading="lazy"
+                />
+                <img
+                  src="/case-studies/phyphyya/gallery-07.png"
+                  alt="Canvas tote bag street environment"
+                  className="block aspect-square h-auto w-full object-cover"
+                  loading="lazy"
+                />
               </div>
             </div>
-          </div>
 
-          {/* Crewneck sweatshirt — nested under Brand Applications */}
-          <div
-            id="sweatshirt"
-            className="scroll-mt-28 w-full mt-[72px] sm:mt-[88px] pt-[56px] sm:pt-[72px] border-t border-zinc-800"
-          >
-            <div className="text-center w-full mb-[50px]">
-              <h3 className="text-zinc-100 mb-0 relative inline-block font-sans text-[1.35rem] sm:text-[1.5rem] after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-zinc-500 after:mx-auto after:mt-[15px]">
-                Crewneck Sweatshirt
-              </h3>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[30px] w-full">
+            <div className="grid w-full grid-cols-1 gap-[30px] sm:grid-cols-2 lg:grid-cols-3">
               {sweatshirtSeries.map((it) => (
-                <div
+                <img
                   key={it.src}
-                  className="bg-zinc-900/35 p-[15px] border border-zinc-700 shadow-[0_4px_10px_rgba(0,0,0,0.03)]"
-                >
-                  <img
-                    src={it.src}
-                    alt={it.alt}
-                    className="w-full h-[400px] object-cover block mb-[15px]"
-                    loading="lazy"
-                  />
-                  <div className="font-sans uppercase tracking-[1px] text-[14px] text-zinc-500 text-center">
-                    {it.label}
-                  </div>
-                </div>
+                  src={it.src}
+                  alt={it.alt}
+                  className="block h-[400px] w-full object-cover sm:h-[420px]"
+                  loading="lazy"
+                />
               ))}
             </div>
           </div>

@@ -103,7 +103,7 @@ export default function AdmissionHubCaseStudy() {
           kicker="00 · Project overview"
           title="At a glance"
         >
-          <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
+          <div className="mt-4 max-w-3xl">
             <article className="rounded-2xl border border-zinc-800 bg-zinc-900/35 p-6">
               <h5 className="text-zinc-500 uppercase tracking-wide">
                 Brief / Background
@@ -118,14 +118,6 @@ export default function AdmissionHubCaseStudy() {
                 : I kept immigration-adjacent facts, program details, and
                 stakeholder-facing language tightly aligned so families and
                 partners could trust what they read.
-              </p>
-            </article>
-            <article className="rounded-2xl border border-zinc-800 bg-zinc-900/35 p-6">
-              <h5 className="text-zinc-500 uppercase tracking-wide">
-                Tools
-              </h5>
-              <p className="mt-2 text-sm text-zinc-400 leading-relaxed">
-                Mailchimp / WordPress / Figma / Instagram
               </p>
             </article>
           </div>

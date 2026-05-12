@@ -129,7 +129,7 @@ export default function MomiAnimalHealthCaseStudy() {
           kicker="00 · Project overview"
           title="At a glance"
         >
-          <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
+          <div className="mt-4 max-w-3xl">
             <article className="rounded-2xl border border-zinc-800 bg-zinc-900/35 p-6">
               <h5 className="text-zinc-500 uppercase tracking-wide">
                 Brief / Background
@@ -138,13 +138,6 @@ export default function MomiAnimalHealthCaseStudy() {
                 MOMI Animal Health is a rabbit-care brand. The project focused on
                 building clearer product communication across social channels and
                 eCommerce touchpoints to support both engagement and conversion.
-              </p>
-            </article>
-            <article className="rounded-2xl border border-zinc-800 bg-zinc-900/35 p-6">
-              <h5 className="text-zinc-500 uppercase tracking-wide">Tools</h5>
-              <p className="mt-2 text-sm text-zinc-400 leading-relaxed">
-                Adobe Photoshop / Adobe Illustrator / Excel / Facebook / MOMO /
-                Shopee
               </p>
             </article>
           </div>

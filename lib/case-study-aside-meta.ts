@@ -213,8 +213,8 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
         value: "Brand IP · Illustration, POD, Etsy storefront",
       },
       {
-        label: "Focus",
-        value: "Rabbit-inspired IP · low-inventory ecommerce validation",
+        label: "Tools",
+        value: "Procreate / Figma / Lovart / POD",
       },
     ],
     textLinks: [
@@ -222,6 +222,8 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
         href: PHYPHYA_INSTAGRAM,
         label: "Instagram · @phyphya__",
         external: true,
+        className:
+          "text-sm font-medium text-[#E5D0B9] underline-offset-[5px] transition hover:text-[#d4be9f] hover:underline",
       },
     ],
   },
@@ -241,8 +243,8 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
         value: "Digital marketing · Taipei, Taiwan · Rabbit-care niche brand",
       },
       {
-        label: "Focus",
-        value: "Campaign creative, tri-fold & expo, online sales lift",
+        label: "Tools",
+        value: "Adobe Photoshop / Adobe Illustrator / Excel / Facebook / MOMO / Shopee",
       },
     ],
   },
@@ -260,8 +262,8 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
         value: "Digital marketing internship · Toronto, ON · Study-abroad brand",
       },
       {
-        label: "Focus",
-        value: "Instagram content cadence, SEO articles, funnel analytics",
+        label: "Tools",
+        value: "Mailchimp / WordPress / Figma / Instagram",
       },
     ],
   },
