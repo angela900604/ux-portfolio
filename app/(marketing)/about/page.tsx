@@ -12,7 +12,6 @@ import {
 import { MARKETING_SECTION_TITLE_CLASS } from "@/lib/marketing-section-title";
 
 const INTERVIEW_PHOTO_SRC = "/about/user-interviews-collage.png";
-const RESUME_PDF_SRC = "/resume/AngelaYang_Resume.pdf";
 
 const ABOUT_CARD_TITLE_CLASS =
   "text-base font-semibold tracking-tight text-zinc-100 sm:text-lg";
@@ -40,7 +39,7 @@ export default function AboutPage() {
         open to relocate, remote, or hybrid.
       </h1>
 
-      <AboutExperienceSection resumeHref={RESUME_PDF_SRC} />
+      <AboutExperienceSection />
 
       <MarketingHomeLogos />
 

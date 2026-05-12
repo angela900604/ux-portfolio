@@ -78,14 +78,6 @@ export function PortfolioLeftColumn() {
           >
             angela900604@gmail.com
           </a>
-          <a
-            href="https://linkedin.com/in/angelayangg/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`block text-zinc-400 ${HOVER_NAV}`}
-          >
-            LinkedIn
-          </a>
         </div>
 
         <p className="mt-6 text-[11px] leading-relaxed text-zinc-600">

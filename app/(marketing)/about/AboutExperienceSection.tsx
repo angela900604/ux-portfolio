@@ -4,9 +4,6 @@ import {
 } from "@/lib/about-experience";
 import { MARKETING_SECTION_TITLE_CLASS } from "@/lib/marketing-section-title";
 
-const HOVER_NAV_BLUE =
-  "transition hover:text-[color:var(--nav-accent-blue)]";
-
 function ExperienceRow({ row }: { row: AboutExperienceRow }) {
   return (
     <div className="grid grid-cols-1 gap-6 border-t border-zinc-800 py-8 lg:grid-cols-[minmax(0,22rem)_1fr] lg:gap-x-12 xl:gap-x-16">
@@ -22,19 +19,10 @@ function ExperienceRow({ row }: { row: AboutExperienceRow }) {
   );
 }
 
-export function AboutExperienceSection({ resumeHref }: { resumeHref: string }) {
+export function AboutExperienceSection() {
   return (
     <section className="mt-20 font-sans sm:mt-24">
-      <div className="flex flex-wrap items-end justify-between gap-4">
-        <h2 className={MARKETING_SECTION_TITLE_CLASS}>Experience</h2>
-        <a
-          href={resumeHref}
-          download
-          className={`text-sm font-medium text-zinc-400 ${HOVER_NAV_BLUE} sm:text-base`}
-        >
-          Download CV
-        </a>
-      </div>
+      <h2 className={MARKETING_SECTION_TITLE_CLASS}>Experience</h2>
 
       <div className="mt-8">
         {ABOUT_EXPERIENCE.map((row) => (
