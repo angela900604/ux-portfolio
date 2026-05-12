@@ -42,13 +42,13 @@ export const ABOUT_EXPERIENCE: readonly AboutExperienceRow[] = [
     company: "Admission Hub",
     dates: "2022",
     description:
-      "Addressed declining visibility by rebuilding Instagram around educational and lifestyle content across Reels, posts, and Stories on a consistent schedule—followers grew from 1,085 to 1,755 (~+61%) in three months. Designed campaign graphics in Figma, Canva, and Adobe with repeatable templates; combined SEO competitor research with Instagram and site analytics to refine WordPress content and the calendar (~+18% traffic); ran Mailchimp campaigns and aligned immigration-adjacent messaging with advisors. Case study: Admission Hub — content and growth (+500 followers, +21% engagement, +18% organic traffic in three months).",
+      "Addressed declining visibility by rebuilding Instagram around educational and lifestyle content across Reels and Instagram posts on a consistent schedule. Designed campaign graphics in Figma, Canva, and Adobe with repeatable templates; combined SEO competitor research with Instagram and site analytics to refine WordPress content and the calendar.",
   },
   {
     title: "Social Media Coordinator",
     company: "MOMI Animal Health",
     dates: "2021",
     description:
-      "Owned Facebook end-to-end—editorial calendar, creative, and performance reviews—lifting engagement rate ~40% across comments, shares, and reach. Produced digital assets in Figma, Canva, Illustrator, and Photoshop for launches and seasonal promos on social and ecommerce (MOMO, PChome); designed expo banners, flyers, and branded merchandise so in-person touchpoints matched online. Case study: MOMI Animal Health — social and ecommerce (+75% online sales, +40% Facebook engagement in two months).",
+      "Produced digital assets in Figma, Canva, Illustrator, and Photoshop for launches and seasonal promos on Facebook and ecommerce (MOMO, PChome); designed expo banners, flyers, and branded merchandise so in-person touchpoints matched online.",
   },
 ] as const;
