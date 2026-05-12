@@ -12,9 +12,6 @@ import {
 import { FadeInSection } from "@/app/components/FadeInSection";
 import type { MarketingWorkItem } from "@/lib/marketing-work";
 
-const DISPLAY_FONT =
-  "var(--font-serif-display), Georgia, 'Times New Roman', serif";
-
 function CoverMedia({ item }: { item: MarketingWorkItem }) {
   const c = item.cover;
   if (c.kind === "e-invoice") return <EInvoiceHomeProjectCover />;
@@ -64,10 +61,7 @@ export function MarketingSelectedWorkGrid({
                   {item.showShipped ? <ProjectShippedBadge /> : null}
                 </div>
                 <ProjectTechHighlights>{item.techHighlights}</ProjectTechHighlights>
-                <h3
-                  className="mt-3 text-xl font-semibold tracking-tight text-zinc-100 group-hover:text-zinc-50 sm:text-2xl"
-                  style={{ fontFamily: DISPLAY_FONT }}
-                >
+                <h3 className="mt-3 text-xl font-semibold tracking-tight text-zinc-100 group-hover:text-zinc-50 sm:text-2xl">
                   {item.title}
                 </h3>
                 <p className="mt-2 text-xs text-zinc-600">{item.year}</p>

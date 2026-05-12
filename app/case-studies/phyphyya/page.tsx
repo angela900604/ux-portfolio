@@ -262,7 +262,7 @@ export default function PhyphyyaCaseStudy() {
           className="scroll-mt-28 py-[80px] sm:scroll-mt-32 flex flex-col items-center"
         >
           <div className="text-center mb-[60px] w-full">
-            <h2 className="text-[#2C3E50] mb-[20px] relative inline-block font-serif after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
+            <h2 className="text-[#2C3E50] mb-[20px] relative inline-block font-sans after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
               Logo Concept - Soft & Rounded
             </h2>
             <p className="text-[16px] text-[#666]">
@@ -282,7 +282,7 @@ export default function PhyphyyaCaseStudy() {
 
             <div className="pl-[20px]">
               <div className="mb-[40px]">
-                <h3 className="text-[#2C3E50] mb-[12px] border-l-[3px] border-[#D4C5B0] pl-[15px] font-serif">
+                <h3 className="text-[#2C3E50] mb-[12px] border-l-[3px] border-[#D4C5B0] pl-[15px] font-sans">
                   Color Palette
                 </h3>
                 <p className="text-[16px] text-[#666] pl-[18px]">
@@ -299,7 +299,7 @@ export default function PhyphyyaCaseStudy() {
               </div>
 
               <div className="mb-[40px]">
-                <h3 className="text-[#2C3E50] mb-[12px] border-l-[3px] border-[#D4C5B0] pl-[15px] font-serif">
+                <h3 className="text-[#2C3E50] mb-[12px] border-l-[3px] border-[#D4C5B0] pl-[15px] font-sans">
                   Visual Effect
                 </h3>
                 <p className="text-[16px] text-[#666] pl-[18px]">
@@ -310,7 +310,7 @@ export default function PhyphyyaCaseStudy() {
               </div>
 
               <div>
-                <h3 className="text-[#2C3E50] mb-[12px] border-l-[3px] border-[#D4C5B0] pl-[15px] font-serif">
+                <h3 className="text-[#2C3E50] mb-[12px] border-l-[3px] border-[#D4C5B0] pl-[15px] font-sans">
                   Style Characteristics
                 </h3>
                 <p className="text-[16px] text-[#666] pl-[18px]">
@@ -332,7 +332,7 @@ export default function PhyphyyaCaseStudy() {
             aria-hidden
           />
           <div className="text-center mb-[60px] w-full">
-            <h2 className="text-[#2C3E50] mb-[20px] relative inline-block font-serif after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
+            <h2 className="text-[#2C3E50] mb-[20px] relative inline-block font-sans after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
               Brand Mascot - Lop-eared Rabbit
             </h2>
             <p className="text-[16px] text-[#666]">
@@ -358,7 +358,7 @@ export default function PhyphyyaCaseStudy() {
 
           <div className="mt-[40px] bg-[#F5F3EF] p-[40px] rounded-[12px] grid grid-cols-1 md:grid-cols-2 gap-[40px]">
             <div>
-              <h4 className="text-[#2C3E50] mb-[8px] font-serif">
+              <h4 className="text-[#2C3E50] mb-[8px] font-sans">
                 Posture
               </h4>
               <p className="text-[15px] text-[#666] mb-[20px]">
@@ -368,7 +368,7 @@ export default function PhyphyyaCaseStudy() {
               </p>
             </div>
             <div>
-              <h4 className="text-[#2C3E50] mb-[8px] font-serif">
+              <h4 className="text-[#2C3E50] mb-[8px] font-sans">
                 Ears
               </h4>
               <p className="text-[15px] text-[#666] mb-[20px]">
@@ -376,7 +376,7 @@ export default function PhyphyyaCaseStudy() {
               </p>
             </div>
             <div>
-              <h4 className="text-[#2C3E50] mb-[8px] font-serif">
+              <h4 className="text-[#2C3E50] mb-[8px] font-sans">
                 Color
               </h4>
               <p className="text-[15px] text-[#666] mb-[20px]">
@@ -384,7 +384,7 @@ export default function PhyphyyaCaseStudy() {
               </p>
             </div>
             <div>
-              <h4 className="text-[#2C3E50] mb-[8px] font-serif">
+              <h4 className="text-[#2C3E50] mb-[8px] font-sans">
                 Texture
               </h4>
               <p className="text-[15px] text-[#666] mb-[20px]">
@@ -392,7 +392,7 @@ export default function PhyphyyaCaseStudy() {
               </p>
             </div>
 
-            <div className="md:col-span-2 text-center italic font-serif text-[20px] text-[#8D99AE] mt-[20px] border-t border-[#ddd] pt-[20px]">
+            <div className="md:col-span-2 text-center italic font-sans text-[20px] text-[#8D99AE] mt-[20px] border-t border-[#ddd] pt-[20px]">
               "This posture conveys the brand philosophy of 'complete
               relaxation and peaceful rest,' perfectly suited for the warm positioning of pet daily essentials."
             </div>
@@ -405,7 +405,7 @@ export default function PhyphyyaCaseStudy() {
           className="scroll-mt-28 py-[80px] sm:scroll-mt-32 flex flex-col items-center"
         >
           <div className="text-center mb-[60px] w-full">
-            <h2 className="text-[#2C3E50] mb-[20px] relative inline-block font-serif after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
+            <h2 className="text-[#2C3E50] mb-[20px] relative inline-block font-sans after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
               Brand Applications
             </h2>
             <p className="text-[16px] text-[#666]">
@@ -440,7 +440,7 @@ export default function PhyphyyaCaseStudy() {
             className="scroll-mt-28 w-full mt-[72px] sm:mt-[88px] pt-[56px] sm:pt-[72px] border-t border-[#E8E1D6]"
           >
             <div className="text-center w-full mb-[50px]">
-              <h3 className="text-[#2C3E50] mb-0 relative inline-block font-serif text-[1.35rem] sm:text-[1.5rem] after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
+              <h3 className="text-[#2C3E50] mb-0 relative inline-block font-sans text-[1.35rem] sm:text-[1.5rem] after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
                 New products · Magnets &amp; stickers
               </h3>
             </div>
@@ -473,7 +473,7 @@ export default function PhyphyyaCaseStudy() {
                     className="w-full h-auto block"
                     loading="lazy"
                   />
-                  <p className="text-center py-[12px] text-[13px] text-[#888] font-serif shrink-0">
+                  <p className="text-center py-[12px] text-[13px] text-[#888] font-sans shrink-0">
                     {item.label}
                   </p>
                 </div>
@@ -490,7 +490,7 @@ export default function PhyphyyaCaseStudy() {
                     loading="lazy"
                   />
                 </div>
-                <p className="shrink-0 text-center py-[12px] text-[13px] text-[#888] font-serif">
+                <p className="shrink-0 text-center py-[12px] text-[13px] text-[#888] font-sans">
                   Stickers · die-cut
                 </p>
               </div>
@@ -514,7 +514,7 @@ export default function PhyphyyaCaseStudy() {
                     />
                   </div>
                 </div>
-                <p className="shrink-0 text-center py-[12px] text-[13px] text-[#888] font-serif leading-snug px-2">
+                <p className="shrink-0 text-center py-[12px] text-[13px] text-[#888] font-sans leading-snug px-2">
                   Stickers · size range &amp; in context (laptop)
                 </p>
               </div>
@@ -528,7 +528,7 @@ export default function PhyphyyaCaseStudy() {
                     loading="lazy"
                   />
                 </div>
-                <p className="shrink-0 text-center py-[12px] text-[13px] text-[#888] font-serif">
+                <p className="shrink-0 text-center py-[12px] text-[13px] text-[#888] font-sans">
                   Stickers · in context (leather)
                 </p>
               </div>
@@ -541,7 +541,7 @@ export default function PhyphyyaCaseStudy() {
             className="scroll-mt-28 w-full mt-[72px] sm:mt-[88px] pt-[56px] sm:pt-[72px] border-t border-[#E8E1D6]"
           >
             <div className="text-center w-full mb-[50px]">
-              <h3 className="text-[#2C3E50] mb-0 relative inline-block font-serif text-[1.35rem] sm:text-[1.5rem] after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
+              <h3 className="text-[#2C3E50] mb-0 relative inline-block font-sans text-[1.35rem] sm:text-[1.5rem] after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
                 Canvas Tote Bag
               </h3>
             </div>
@@ -591,7 +591,7 @@ export default function PhyphyyaCaseStudy() {
             className="scroll-mt-28 w-full mt-[72px] sm:mt-[88px] pt-[56px] sm:pt-[72px] border-t border-[#E8E1D6]"
           >
             <div className="text-center w-full mb-[50px]">
-              <h3 className="text-[#2C3E50] mb-0 relative inline-block font-serif text-[1.35rem] sm:text-[1.5rem] after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
+              <h3 className="text-[#2C3E50] mb-0 relative inline-block font-sans text-[1.35rem] sm:text-[1.5rem] after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
                 Crewneck Sweatshirt
               </h3>
             </div>
@@ -608,7 +608,7 @@ export default function PhyphyyaCaseStudy() {
                     className="w-full h-[400px] object-cover block mb-[15px]"
                     loading="lazy"
                   />
-                  <div className="font-serif uppercase tracking-[1px] text-[14px] text-[#888] text-center">
+                  <div className="font-sans uppercase tracking-[1px] text-[14px] text-[#888] text-center">
                     {it.label}
                   </div>
                 </div>
@@ -624,7 +624,7 @@ export default function PhyphyyaCaseStudy() {
         >
           <div className="w-full min-w-0 px-5 sm:px-8 md:px-10 lg:px-12">
             <div className="text-center w-full mb-[50px]">
-            <h2 className="text-[#2C3E50] mb-[20px] relative inline-block font-serif after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
+            <h2 className="text-[#2C3E50] mb-[20px] relative inline-block font-sans after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
               Etsy shop &amp; Print-on-Demand
             </h2>
             <p className="text-[16px] text-[#666] leading-relaxed">
@@ -666,7 +666,7 @@ export default function PhyphyyaCaseStudy() {
 
             <div className="w-full space-y-[28px] text-[16px] text-[#666] leading-relaxed">
             <p>
-              <strong className="text-[#2C3E50] font-serif">
+              <strong className="text-[#2C3E50] font-sans">
                 1 · Design in Procreate
               </strong>
               <br />
@@ -675,7 +675,7 @@ export default function PhyphyyaCaseStudy() {
               every touchpoint before anything went to print.
             </p>
             <p>
-              <strong className="text-[#2C3E50] font-serif">
+              <strong className="text-[#2C3E50] font-sans">
                 2 · Print-on-Demand (POD) production
               </strong>
               <br />
@@ -688,7 +688,7 @@ export default function PhyphyyaCaseStudy() {
               testing which SKUs deserve deeper investment.
             </p>
             <p>
-              <strong className="text-[#2C3E50] font-serif">
+              <strong className="text-[#2C3E50] font-sans">
                 3 · Lovart for listing &amp; social visuals
               </strong>
               <br />
@@ -697,7 +697,7 @@ export default function PhyphyyaCaseStudy() {
               texture, and context (not just flat art on a white background).
             </p>
             <p>
-              <strong className="text-[#2C3E50] font-serif">
+              <strong className="text-[#2C3E50] font-sans">
                 4 · Etsy as the storefront
               </strong>
               <br />
@@ -706,7 +706,7 @@ export default function PhyphyyaCaseStudy() {
               and iterate on listings with low operational overhead.
             </p>
             <p>
-              <strong className="text-[#2C3E50] font-serif">
+              <strong className="text-[#2C3E50] font-sans">
                 Real pitfall · Shipping economics
               </strong>
               <br />
@@ -725,7 +725,7 @@ export default function PhyphyyaCaseStudy() {
           className="scroll-mt-28 bg-white py-[80px] sm:scroll-mt-32"
         >
           <div className="text-center w-full mb-[40px]">
-            <h2 className="text-[#2C3E50] mb-[20px] relative inline-block font-serif after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
+            <h2 className="text-[#2C3E50] mb-[20px] relative inline-block font-sans after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
               Store performance
             </h2>
             <p className="text-[16px] text-[#666] leading-relaxed">
@@ -745,7 +745,7 @@ export default function PhyphyyaCaseStudy() {
                   <p className="text-[12px] uppercase tracking-[0.8px] text-[#8A8379]">
                     {metric.label}
                   </p>
-                  <p className="mt-2 text-[26px] leading-none text-[#2C3E50] font-serif">
+                  <p className="mt-2 text-[26px] leading-none text-[#2C3E50] font-sans">
                     {metric.value}
                   </p>
                 </article>
@@ -760,7 +760,7 @@ export default function PhyphyyaCaseStudy() {
           className="scroll-mt-28 bg-[#F5F3EF] py-[80px] sm:scroll-mt-32"
         >
           <div className="w-full mb-[40px] text-center">
-            <h2 className="text-[#2C3E50] mb-[20px] relative inline-block font-serif after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
+            <h2 className="text-[#2C3E50] mb-[20px] relative inline-block font-sans after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
               What I&apos;m testing next
             </h2>
             <p className="text-[16px] text-[#666] leading-relaxed">

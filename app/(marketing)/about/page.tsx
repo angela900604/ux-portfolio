@@ -1,16 +1,16 @@
-import Link from "next/link";
 import Image from "next/image";
 import { ImageLightbox } from "@/app/components/ImageLightbox";
 import { BeyondDesignGallery } from "@/app/components/BeyondDesignGallery";
 import { BEYOND_PHOTOGRAPHY_GALLERY } from "@/app/content/beyond-design-gallery";
 import { AboutExperienceSection } from "./AboutExperienceSection";
 import { MarketingHomeLogos } from "../MarketingHomeLogos";
+import {
+  MARKETING_FLAGSHIP_SERIF,
+  MARKETING_FLAGSHIP_SERIF_LEAD_CLASS,
+} from "@/lib/marketing-flagship-serif";
 
 const INTERVIEW_PHOTO_SRC = "/about/user-interviews-collage.png";
 const RESUME_PDF_SRC = "/resume/AngelaYang_Resume.pdf";
-
-const DISPLAY_FONT =
-  "var(--font-serif-display), Georgia, 'Times New Roman', serif";
 
 const ABOUT_CARD_TITLE_CLASS =
   "text-base font-semibold tracking-tight text-zinc-100 sm:text-lg";
@@ -30,8 +30,8 @@ export default function AboutPage() {
         About
       </p>
       <h1
-        className="mt-5 max-w-2xl text-lg font-normal leading-snug tracking-[-0.02em] text-zinc-200 sm:text-xl md:text-2xl"
-        style={{ fontFamily: DISPLAY_FONT }}
+        className={`mt-5 max-w-2xl ${MARKETING_FLAGSHIP_SERIF_LEAD_CLASS} text-zinc-200`}
+        style={{ fontFamily: MARKETING_FLAGSHIP_SERIF }}
       >
         A product designer for consumer mobile and growth—shipping complex,
         multi-role UX across government-scale and B2C, with a strong research
@@ -45,18 +45,10 @@ export default function AboutPage() {
       <MarketingHomeLogos />
 
       <section className="mt-14 border-t border-zinc-800 pt-12">
-        <h2
-          className="text-lg font-medium text-zinc-200 sm:text-xl"
-          style={{ fontFamily: DISPLAY_FONT }}
-        >
-          User interviews
-        </h2>
+        <h2 className="text-lg font-medium text-zinc-200 sm:text-xl">User interviews</h2>
         <div className="mt-6 grid items-start gap-8 lg:grid-cols-12 lg:gap-10">
           <div className="min-w-0 space-y-4 text-sm leading-relaxed text-zinc-400 sm:text-base lg:col-span-5">
-            <p
-              className="text-lg font-medium text-zinc-100 sm:text-xl"
-              style={{ fontFamily: DISPLAY_FONT }}
-            >
+            <p className="text-lg font-medium text-zinc-100 sm:text-xl">
               The part of the job where I feel most alive.
             </p>
             <p>
@@ -88,12 +80,7 @@ export default function AboutPage() {
       </section>
 
       <section className="mt-14 border-t border-zinc-800 pt-12">
-        <h2
-          className="text-lg font-medium text-zinc-200 sm:text-xl"
-          style={{ fontFamily: DISPLAY_FONT }}
-        >
-          How I work
-        </h2>
+        <h2 className="text-lg font-medium text-zinc-200 sm:text-xl">How I work</h2>
         <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-5">
           <div className="flex min-h-0 flex-col rounded-2xl border border-zinc-800 bg-zinc-900/30 p-5 sm:p-6">
             <h3 className={ABOUT_CARD_TITLE_CLASS}>
@@ -126,12 +113,7 @@ export default function AboutPage() {
       </section>
 
       <section className="mt-14 border-t border-zinc-800 pt-12">
-        <h2
-          className="text-lg font-medium text-zinc-200 sm:text-xl"
-          style={{ fontFamily: DISPLAY_FONT }}
-        >
-          Beyond design
-        </h2>
+        <h2 className="text-lg font-medium text-zinc-200 sm:text-xl">Beyond design</h2>
         <div className="mt-6">
           <BeyondDesignGallery
             photography={BEYOND_PHOTOGRAPHY_GALLERY}
@@ -140,29 +122,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-zinc-800 pt-10">
-        <a
-          href={RESUME_PDF_SRC}
-          download
-          className="inline-flex min-h-10 items-center justify-center rounded-full border border-zinc-700 bg-zinc-900/60 px-4 py-2 text-sm font-medium text-zinc-100 transition hover:border-[color:var(--nav-accent-blue)] hover:text-[color:var(--nav-accent-blue)]"
-        >
-          Download resume
-        </a>
-        <a
-          href="https://linkedin.com/in/angelayangg/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex min-h-10 items-center text-sm font-medium text-zinc-400 transition hover:text-[color:var(--nav-accent-blue)]"
-        >
-          LinkedIn
-        </a>
-        <Link
-          href="/"
-          className="inline-flex min-h-10 items-center text-sm font-medium text-zinc-400 transition hover:text-[color:var(--nav-accent-blue)]"
-        >
-          Home
-        </Link>
-      </div>
     </div>
   );
 }

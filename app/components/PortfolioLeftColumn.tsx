@@ -2,10 +2,11 @@
 
 import Image from "next/image";
 import { ImageLightbox } from "@/app/components/ImageLightbox";
+import {
+  MARKETING_FLAGSHIP_SERIF,
+  MARKETING_FLAGSHIP_SERIF_LEAD_CLASS,
+} from "@/lib/marketing-flagship-serif";
 import { PORTFOLIO_LEFT_RAIL_CLASS } from "@/lib/portfolio-shell";
-
-const DISPLAY_FONT =
-  "var(--font-serif-display), Georgia, 'Times New Roman', serif";
 
 const PROFILE_SRC = "/about/profile-v2.png";
 
@@ -22,8 +23,8 @@ export function PortfolioLeftColumn() {
     <aside className={PORTFOLIO_LEFT_RAIL_CLASS}>
       <div className="min-w-0 shrink-0">
         <h1
-          className="text-[clamp(1.5rem,2.8vw,2.25rem)] font-normal leading-[1.1] tracking-[-0.02em] text-zinc-50"
-          style={{ fontFamily: DISPLAY_FONT }}
+          className={`${MARKETING_FLAGSHIP_SERIF_LEAD_CLASS} text-zinc-50`}
+          style={{ fontFamily: MARKETING_FLAGSHIP_SERIF }}
         >
           Hello! I&apos;m Angela.
         </h1>
@@ -55,7 +56,6 @@ export function PortfolioLeftColumn() {
       <div className="shrink-0 pb-0 pt-2 lg:mt-0">
         <ul
           className="space-y-2 text-[clamp(0.8rem,1.6vw,0.95rem)] font-normal leading-snug tracking-[-0.015em] text-zinc-50"
-          style={{ fontFamily: DISPLAY_FONT }}
           aria-label="Focus areas"
         >
           {FOCUS_LINES.map((line) => (

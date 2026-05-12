@@ -360,10 +360,7 @@ export default function AiMarketplaceCaseStudy() {
             className="w-full py-8 sm:py-10 md:py-12"
             style={MINA_TERRACOTTA_SURFACE}
           >
-            <p
-              className="text-center text-[clamp(1.5rem,4vw,3.25rem)] font-medium italic leading-[1.12] tracking-tight text-[#f0e8e4]"
-              style={{ fontFamily: "Georgia, serif" }}
-            >
+            <p className="text-center text-[clamp(1.5rem,4vw,3.25rem)] font-medium italic leading-[1.12] tracking-tight text-[#f0e8e4]">
               &ldquo;The AI removes the admin. The community provides the
               motivation.&rdquo;
             </p>

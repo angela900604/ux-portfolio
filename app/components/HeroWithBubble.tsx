@@ -8,9 +8,6 @@ import { ImageLightbox } from "@/app/components/ImageLightbox";
 const BUBBLE_SRC = "/home/header-bubble-v2.png";
 const ASPECT = 1024 / 744;
 
-const DISPLAY_FONT =
-  "var(--font-serif-display), Georgia, 'Times New Roman', serif";
-
 const CYCLING_PHRASES = [
   "I design consumer-facing experiences across mobile, web, and tablets",
   "I value empathy and curiosity in how I approach every problem",
@@ -66,10 +63,7 @@ export function HeroWithBubble() {
         <div className="relative isolate flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-8">
           <div className="relative z-10 flex min-w-0 w-full max-w-[72rem] shrink-0 flex-col items-start gap-3 text-left lg:max-w-[min(72rem,65%)]">
             <h1 className="sr-only">Angela Yang — product designer</h1>
-            <p
-              className={`${headlineClass} max-w-[min(56rem,58vw)] text-white`}
-              style={{ fontFamily: DISPLAY_FONT }}
-            >
+            <p className={`${headlineClass} max-w-[min(56rem,58vw)] text-white`}>
               Hello, I&apos;m Angela
             </p>
             <div
@@ -99,7 +93,6 @@ export function HeroWithBubble() {
                         }
                   }
                   className={`${subheadClass} text-zinc-400`}
-                  style={{ fontFamily: DISPLAY_FONT }}
                 >
                   {reduceMotion
                     ? CYCLING_PHRASES[0]
