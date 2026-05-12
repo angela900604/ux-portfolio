@@ -1,6 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ImageLightbox } from "@/app/components/ImageLightbox";
-import { SplitCapsuleLink } from "@/app/components/SplitCapsuleLink";
 import { CASE_STUDY_SECTION_TITLE_CLASS } from "@/lib/site-shell";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 
@@ -74,11 +74,12 @@ export function ProblemPersonasBlock() {
           </details>
 
           <div>
-            <SplitCapsuleLink
+            <Link
               href="/user-research-journey#e-invoice-user-pain"
-              label="View full user pain synthesis"
-              variant="ghostEmerald"
-            />
+              className="text-sm font-medium text-emerald-400/95 underline-offset-[5px] transition hover:text-emerald-300 hover:underline"
+            >
+              View full user pain synthesis
+            </Link>
           </div>
         </div>
 

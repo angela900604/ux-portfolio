@@ -153,7 +153,9 @@ function StoryBeat({
           {label}
         </span>
         <p className={`${headlineClass} mt-3`}>{headline}</p>
-        <div className={detailClass}>{detail}</div>
+        {detail !== null && detail !== "" ? (
+          <div className={detailClass}>{detail}</div>
+        ) : null}
       </div>
     </div>
   );
@@ -165,7 +167,8 @@ function StoryOutcomeCallout({
   detail,
 }: {
   headline: ReactNode;
-  detail: ReactNode;
+  /** Omitted or empty when the callout has no supporting line. */
+  detail?: ReactNode;
 }) {
   return (
     <div className="mt-8 max-w-4xl rounded-2xl border border-zinc-700/85 border-l-[4px] border-l-emerald-500/90 bg-zinc-900/80 px-6 py-7 sm:px-8 sm:py-9">
@@ -175,34 +178,42 @@ function StoryOutcomeCallout({
       <p className="case-study-section-title mt-3 max-w-3xl font-semibold tracking-tight text-zinc-100">
         {headline}
       </p>
-      <p className="mt-3 max-w-3xl text-sm font-normal leading-relaxed text-zinc-400 sm:text-base">
-        {detail}
-      </p>
+      {detail !== null && detail !== undefined && detail !== "" ? (
+        <p className="mt-3 max-w-3xl text-sm font-normal leading-relaxed text-zinc-400 sm:text-base">
+          {detail}
+        </p>
+      ) : null}
     </div>
   );
 }
 
-/** First image below the title block — paper receipts + phone. */
-const HERO_BELOW_01 = {
-  src: "/case-studies/e-invoice/hero-below-01.png",
-  alt: "Hands holding Taiwan uniform paper invoices beside a phone displaying the scanned digital receipt in the e-invoice app",
-} as const;
-
-/** Second image below the title block — lifestyle product context. */
-const HERO_BELOW_02 = {
-  src: "/case-studies/e-invoice/hero-below-02.png",
-  alt: "Person using the e-invoice mobile app: lottery and carrier barcode screen in a warm indoor setting",
-} as const;
-
-const HERO_TABLET_01 = {
-  src: "/case-studies/e-invoice/hero-tablet-01.png",
-  alt: "Person interacting with an iPad showing the e-invoice app in a neutral indoor setting",
-} as const;
-
-const HERO_TABLET_02 = {
-  src: "/case-studies/e-invoice/hero-tablet-02.png",
-  alt: "iPad Pro mockup showing the e-invoice home interface on textured fabric beside a wooden surface",
-} as const;
+/** Hero mocks: native aspect ratio, full width, sharp (unoptimized). */
+const HERO_MOCK_GALLERY = [
+  {
+    src: "/case-studies/e-invoice/mock1.png",
+    alt: "E-invoice app redesign mock — screen 1",
+    width: 1948,
+    height: 1051,
+  },
+  {
+    src: "/case-studies/e-invoice/mock2.png",
+    alt: "E-invoice app redesign mock — screen 2",
+    width: 2000,
+    height: 1500,
+  },
+  {
+    src: "/case-studies/e-invoice/mock3.png",
+    alt: "E-invoice app redesign mock — screen 3",
+    width: 1536,
+    height: 1500,
+  },
+  {
+    src: "/case-studies/e-invoice/mock4.webp",
+    alt: "E-invoice app redesign mock — screen 4",
+    width: 5483,
+    height: 3060,
+  },
+] as const;
 
 /** Handoff & engineering alignment figure */
 const HANDOFF_MODULE_SETTINGS_SPEC = {
@@ -299,79 +310,26 @@ export default function EInvoiceCaseStudy() {
           <div
             className={`${CASE_STUDY_BODY_GRID} min-w-0 overflow-x-hidden space-y-10 sm:space-y-12`}
           >
-          <div className="flex min-w-0 flex-col gap-4 sm:gap-5">
-            <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
-              <div className="relative aspect-[4/3] w-full overflow-hidden">
-                <ImageLightbox
-                  src={HERO_BELOW_01.src}
-                  alt={HERO_BELOW_01.alt}
-                  className="absolute inset-0"
-                  disableHoverScale
-                >
-                  <Image
-                    src={HERO_BELOW_01.src}
-                    alt={HERO_BELOW_01.alt}
-                    fill
-                    className="object-cover object-center"
-                    sizes="(max-width: 1480px) 100vw, 1280px"
-                  />
-                </ImageLightbox>
-              </div>
-            </div>
-            <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
-              <div className="relative aspect-[4/3] w-full overflow-hidden">
-                <ImageLightbox
-                  src={HERO_BELOW_02.src}
-                  alt={HERO_BELOW_02.alt}
-                  className="absolute inset-0"
-                  disableHoverScale
-                >
-                  <Image
-                    src={HERO_BELOW_02.src}
-                    alt={HERO_BELOW_02.alt}
-                    fill
-                    className="h-full w-full object-fill object-center"
-                    sizes="(max-width: 1480px) 100vw, 1280px"
-                  />
-                </ImageLightbox>
-              </div>
-            </div>
-            <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
-              <div className="relative aspect-[4/3] w-full overflow-hidden">
-                <ImageLightbox
-                  src={HERO_TABLET_01.src}
-                  alt={HERO_TABLET_01.alt}
-                  className="absolute inset-0"
-                  disableHoverScale
-                >
-                  <Image
-                    src={HERO_TABLET_01.src}
-                    alt={HERO_TABLET_01.alt}
-                    fill
-                    className="object-cover object-center"
-                    sizes="(max-width: 1480px) 100vw, 1280px"
-                  />
-                </ImageLightbox>
-              </div>
-            </div>
-            <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
-              <div className="relative aspect-[4/3] w-full overflow-hidden">
-                <ImageLightbox
-                  src={HERO_TABLET_02.src}
-                  alt={HERO_TABLET_02.alt}
-                  className="absolute inset-0"
-                  disableHoverScale
-                >
-                  <Image
-                    src={HERO_TABLET_02.src}
-                    alt={HERO_TABLET_02.alt}
-                    fill
-                    className="object-cover object-center"
-                    sizes="(max-width: 1480px) 100vw, 1280px"
-                  />
-                </ImageLightbox>
-              </div>
-            </div>
+          <div className="flex min-w-0 flex-col gap-8 sm:gap-10">
+            {HERO_MOCK_GALLERY.map((img) => (
+              <ImageLightbox
+                key={img.src}
+                src={img.src}
+                alt={img.alt}
+                className="block w-full"
+                disableHoverScale
+              >
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  width={img.width}
+                  height={img.height}
+                  className="h-auto w-full max-w-full"
+                  sizes="(max-width: 1480px) 100vw, 1280px"
+                  unoptimized
+                />
+              </ImageLightbox>
+            ))}
           </div>
 
           <div className="mt-10">
@@ -431,13 +389,20 @@ export default function EInvoiceCaseStudy() {
                   />
                   <StoryBeat
                     label="Key insight"
-                    headline="Foreign residents needed readable text to decode controls—not icon-only cues."
-                    detail=""
-                    largeHeadline
-                  />
-                  <StoryBeat
-                    label="Key insight"
-                    headline="Low-vision users needed Predictable and stable placement and large, labeled CTA instead of small icon."
+                    headline={
+                      <>
+                        <span className="block">
+                          <span className="font-semibold text-zinc-200">1.</span>{" "}
+                          Foreign residents needed readable text to decode controls—not
+                          icon-only cues.
+                        </span>
+                        <span className="mt-3 block">
+                          <span className="font-semibold text-zinc-200">2.</span>{" "}
+                          Low-vision users needed predictable, stable placement and
+                          large, labeled CTAs instead of small icons.
+                        </span>
+                      </>
+                    }
                     detail=""
                     largeHeadline
                   />
@@ -523,8 +488,7 @@ export default function EInvoiceCaseStudy() {
                 />
               </StoryBeatTimeline>
               <StoryOutcomeCallout
-                headline="The priority story held in testing; moderated sessions reached 88% task success."
-                detail="Across scan, donate, and redemption—including visually impaired participants and mixed ages."
+                headline="Across scan, donate, and redemption—including visually impaired participants and mixed ages, the usability sessions reached 88% task success."
               />
               <SettingHomeModulesVideo className="w-full" />
             </section>
@@ -586,7 +550,6 @@ export default function EInvoiceCaseStudy() {
               </StoryBeatTimeline>
               <StoryOutcomeCallout
                 headline="One month post-launch, client-reported missed top-tier prize redemptions moved from about 24% to 18%."
-                detail=""
               />
               <GuidedOnboardingVideoPair className="w-full" />
             </section>
