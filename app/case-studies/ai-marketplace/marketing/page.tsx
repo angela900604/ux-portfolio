@@ -4,8 +4,7 @@ import { MinaInstagramGrid } from "./MinaInstagramGrid";
 import { SITE_SHELL_INNER } from "@/lib/site-shell";
 
 export const metadata = {
-  title:
-    "MINA · Marketing designer — Instagram & launch visuals | Angela Yang",
+  title: "MINA · Instagram | Angela Yang",
   description:
     "Social and launch graphics for MINA (AI marketplace for parents): full-width portfolio mockups for Instagram and launch, concierge storytelling, and product positioning.",
 };

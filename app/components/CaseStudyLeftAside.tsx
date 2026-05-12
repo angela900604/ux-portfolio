@@ -21,7 +21,13 @@ export function CaseStudyLeftAside() {
       aria-label="Project summary"
     >
       <div className="min-w-0 shrink-0 space-y-3">
-        {meta.eyebrow && meta.eyebrowAsProjectCardTag ? (
+        {meta.eyebrowTags && meta.eyebrowTags.length > 0 ? (
+          <div className="flex w-full max-w-full flex-wrap gap-2">
+            {meta.eyebrowTags.map((tag) => (
+              <ProjectCardTag key={tag}>{tag}</ProjectCardTag>
+            ))}
+          </div>
+        ) : meta.eyebrow && meta.eyebrowAsProjectCardTag ? (
           <div className="group w-fit max-w-full">
             <ProjectCardTag>{meta.eyebrow}</ProjectCardTag>
           </div>

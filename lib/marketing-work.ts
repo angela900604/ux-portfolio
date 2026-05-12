@@ -10,13 +10,13 @@ export type MarketingWorkItem = {
   slug: string;
   href: string;
   title: string;
-  /** Short discipline line (Anthonius-style subtitle) */
-  discipline: string;
+  /** Tag pills under the title (homepage + case-study left rail when merged). */
+  disciplineTags: readonly string[];
   year: string;
   cover: WorkCover;
   /** One-line systems / craft signal under tags (omit on homepage when unused). */
   techHighlights?: string;
-  /** Show green Shipped pill (core product cases) */
+  /** Show green Shipped pill */
   showShipped?: boolean;
   /** Serve cover PNG without Next image optimizer (full quality) */
   coverUnoptimized?: boolean;
@@ -24,15 +24,20 @@ export type MarketingWorkItem = {
 
 const GOV_COVER = `/case-studies/government-backend/${encodeURIComponent("rolebased backend cover.png")}`;
 
-/** Homepage e-invoice card + case-study left-rail tag (keep in sync). */
-export const E_INVOICE_HOME_DISCIPLINE_TAG =
-  "PUBLIC SERVICE · MOBILE APP" as const;
+/** e-Invoice homepage + case study — tag pills (keep in sync with case study). */
+export const E_INVOICE_HOME_DISCIPLINE_TAGS = [
+  "PUBLIC SERVICE application",
+  "user research",
+] as const;
+
 export const E_INVOICE_HOME_TECH_HIGHLIGHTS =
   "Research, IA, accessibility, ship-ready UI" as const;
 
-/** MINA product case — homepage card + left-rail ProjectCardTag (keep in sync). */
-export const MINA_HOME_DISCIPLINE_TAG =
-  "AI-DRIVEN COMMUNITY · MOBILE APP" as const;
+/** MINA product case — homepage card + left-rail tags (keep in sync). */
+export const MINA_HOME_DISCIPLINE_TAGS = [
+  "AI-driven community",
+  "Mobile app",
+] as const;
 
 export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
   {
@@ -40,7 +45,7 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     href: "/case-studies/e-invoice-app",
     title:
       "Redesigning Taiwan Ministry of Finance's Uniform Invoice Award Redemption App",
-    discipline: E_INVOICE_HOME_DISCIPLINE_TAG,
+    disciplineTags: [...E_INVOICE_HOME_DISCIPLINE_TAGS],
     year: "2024–2025",
     cover: { kind: "e-invoice" },
     showShipped: true,
@@ -49,7 +54,7 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     slug: "ai-marketplace",
     href: "/case-studies/ai-marketplace",
     title: "MINA · AI-Powered Marketplace Community for SF Parents",
-    discipline: MINA_HOME_DISCIPLINE_TAG,
+    disciplineTags: [...MINA_HOME_DISCIPLINE_TAGS],
     year: "2025–2026",
     cover: { kind: "mina" },
     showShipped: true,
@@ -58,7 +63,7 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     slug: "government-backend",
     href: "/case-studies/government-backend",
     title: "Internal Backend Platform for 600+ government staff",
-    discipline: "Responsive · Web · 600+ Users",
+    disciplineTags: ["Responsive · Web · 600+ Users"],
     year: "2024–2025",
     cover: { kind: "image", src: GOV_COVER },
     showShipped: true,
@@ -67,7 +72,7 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     slug: "baskin-robbins",
     href: "/case-studies/baskin-robbins",
     title: "Cross-market with Japan HQ · BR31 Taiwan membership app",
-    discipline: "Mobile · Cross-market JP×TW",
+    disciplineTags: ["Mobile · Cross-market JP×TW"],
     year: "2024–2025",
     cover: { kind: "image", src: "/case-studies/baskin-robbins/home-cover.png" },
     showShipped: true,
@@ -75,47 +80,69 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
   {
     slug: "ai-marketplace/marketing",
     href: "/case-studies/ai-marketplace/marketing",
-    title: "MINA · Instagram & launch visuals",
-    discipline: "Marketing design · Instagram & launch",
+    title: "MINA · Instagram",
+    disciplineTags: ["Content strategy & creation"],
     year: "2025",
     cover: {
       kind: "image",
       src: "/case-studies/mina/cover_minamarketing.png",
     },
     coverUnoptimized: true,
+    showShipped: true,
   },
   {
     slug: "phyphyya",
     href: "/case-studies/phyphyya",
     title: "Haphy Living (Brand IP)",
-    discipline: "Branding",
+    disciplineTags: ["Branding", "ecommerce"],
     year: "2023–2024",
     cover: { kind: "image", src: "/case-studies/phyphyya/gallery-14.png" },
+    showShipped: true,
   },
   {
     slug: "momi-animal-health",
     href: "/case-studies/momi-animal-health",
     title: "MOMI Animal Health",
-    discipline: "Digital Marketing",
+    disciplineTags: [
+      "graphic design",
+      "content creation",
+      "Event coordination",
+      "ecommerce",
+    ],
     year: "2021",
     cover: {
       kind: "image",
       src: "/case-studies/momi-animal-health/home-cover.png",
     },
+    showShipped: true,
   },
   {
     slug: "admission-hub",
     href: "/case-studies/admission-hub",
     title: "Admission Hub",
-    discipline: "Digital Marketing",
+    disciplineTags: [
+      "Social media management",
+      "Content strategy",
+      "Copywriting",
+      "Search engine optimization",
+    ],
     year: "2022",
     cover: { kind: "image", src: "/case-studies/admission-hub/home-cover.png" },
+    showShipped: true,
   },
 ] as const;
 
-/** Discipline line from the homepage grid for a case-study slug (if listed). */
+/** Tag pills for a case-study slug when it appears on the homepage grid. */
+export function marketingDisciplineTagsForCaseStudySlug(
+  slug: string,
+): readonly string[] | undefined {
+  return MARKETING_SELECTED_WORK.find((w) => w.slug === slug)?.disciplineTags;
+}
+
+/** Single line for legacy call sites (joined). Prefer {@link marketingDisciplineTagsForCaseStudySlug}. */
 export function marketingDisciplineForCaseStudySlug(
   slug: string,
 ): string | undefined {
-  return MARKETING_SELECTED_WORK.find((w) => w.slug === slug)?.discipline;
+  const tags = marketingDisciplineTagsForCaseStudySlug(slug);
+  return tags?.join(" · ");
 }

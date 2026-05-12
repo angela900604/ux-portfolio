@@ -57,7 +57,9 @@ export function MarketingSelectedWorkGrid({
                 className="flex flex-1 flex-col p-6 sm:p-8"
               >
                 <div className="flex flex-wrap items-center gap-2">
-                  <ProjectCardTag>{item.discipline}</ProjectCardTag>
+                  {item.disciplineTags.map((tag) => (
+                    <ProjectCardTag key={tag}>{tag}</ProjectCardTag>
+                  ))}
                   {item.showShipped ? <ProjectShippedBadge /> : null}
                 </div>
                 {item.techHighlights ? (

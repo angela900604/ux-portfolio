@@ -8,7 +8,7 @@ export const CASE_STUDY_NAV: { slug: string; label: string }[] = [
   { slug: "baskin-robbins", label: "Baskin-Robbins Taiwan" },
   {
     slug: "ai-marketplace/marketing",
-    label: "MINA · Instagram & launch visuals",
+    label: "MINA · Instagram",
   },
   { slug: "phyphyya", label: "Haphy Living" },
   { slug: "momi-animal-health", label: "MOMI Animal Health" },

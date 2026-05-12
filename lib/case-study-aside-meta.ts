@@ -4,10 +4,10 @@
  */
 
 import {
-  E_INVOICE_HOME_DISCIPLINE_TAG,
+  E_INVOICE_HOME_DISCIPLINE_TAGS,
   E_INVOICE_HOME_TECH_HIGHLIGHTS,
-  MINA_HOME_DISCIPLINE_TAG,
-  marketingDisciplineForCaseStudySlug,
+  MINA_HOME_DISCIPLINE_TAGS,
+  marketingDisciplineTagsForCaseStudySlug,
 } from "@/lib/marketing-work";
 
 const MINA_APP_STORE_CA =
@@ -41,6 +41,8 @@ export type CaseStudyAsideTextLink = {
 
 export type CaseStudyAsideMeta = {
   eyebrow?: string;
+  /** Multiple discipline pills (homepage parity); takes precedence over {@link eyebrow} for tag row. */
+  eyebrowTags?: readonly string[];
   /** Same visual as homepage {@link ProjectCardTag} (discipline line). */
   eyebrowAsProjectCardTag?: boolean;
   title: string;
@@ -69,7 +71,7 @@ function titleCaseSlug(slug: string): string {
 
 const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
   "e-invoice-app": {
-    eyebrow: E_INVOICE_HOME_DISCIPLINE_TAG,
+    eyebrowTags: [...E_INVOICE_HOME_DISCIPLINE_TAGS],
     eyebrowAsProjectCardTag: true,
     title: "MOF Uniform Invoice Award Redemption app",
     subtitle:
@@ -99,7 +101,7 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
     ],
   },
   "ai-marketplace": {
-    eyebrow: MINA_HOME_DISCIPLINE_TAG,
+    eyebrowTags: [...MINA_HOME_DISCIPLINE_TAGS],
     eyebrowAsProjectCardTag: true,
     title: "MINA AI",
     subtitle:
@@ -131,9 +133,11 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
     ],
   },
   "ai-marketplace/marketing": {
-    eyebrow: marketingDisciplineForCaseStudySlug("ai-marketplace/marketing")!,
+    eyebrowTags: marketingDisciplineTagsForCaseStudySlug(
+      "ai-marketplace/marketing",
+    )!,
     eyebrowAsProjectCardTag: true,
-    title: "MINA · Instagram & launch visuals",
+    title: "MINA · Instagram",
     subtitle:
       "Campaign tiles for the MINA brand—marketplace positioning, concierge pickup, community programs, and product stories—in a profile-style grid.",
     items: [
@@ -160,7 +164,7 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
     ],
   },
   "government-backend": {
-    eyebrow: marketingDisciplineForCaseStudySlug("government-backend")!,
+    eyebrowTags: marketingDisciplineTagsForCaseStudySlug("government-backend")!,
     eyebrowAsProjectCardTag: true,
     title: "Role-based backend for 600+ government staff",
     subtitle:
@@ -179,7 +183,7 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
     ],
   },
   "baskin-robbins": {
-    eyebrow: marketingDisciplineForCaseStudySlug("baskin-robbins")!,
+    eyebrowTags: marketingDisciplineTagsForCaseStudySlug("baskin-robbins")!,
     eyebrowAsProjectCardTag: true,
     title: "Baskin Robbins membership app",
     subtitle:
@@ -209,7 +213,7 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
     ],
   },
   "phyphyya": {
-    eyebrow: marketingDisciplineForCaseStudySlug("phyphyya")!,
+    eyebrowTags: marketingDisciplineTagsForCaseStudySlug("phyphyya")!,
     eyebrowAsProjectCardTag: true,
     title: "Haphy Living",
     subtitle:
@@ -237,7 +241,7 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
     ],
   },
   "momi-animal-health": {
-    eyebrow: marketingDisciplineForCaseStudySlug("momi-animal-health")!,
+    eyebrowTags: marketingDisciplineTagsForCaseStudySlug("momi-animal-health")!,
     eyebrowAsProjectCardTag: true,
     title: "MOMI Animal Health",
     subtitle: "Helped drive +75% online sales growth in two months.",
@@ -258,7 +262,7 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
     ],
   },
   "admission-hub": {
-    eyebrow: marketingDisciplineForCaseStudySlug("admission-hub")!,
+    eyebrowTags: marketingDisciplineTagsForCaseStudySlug("admission-hub")!,
     eyebrowAsProjectCardTag: true,
     title: "Admission Hub",
     subtitle:
