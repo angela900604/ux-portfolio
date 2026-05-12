@@ -245,7 +245,7 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
       { label: "Timeline", value: "Feb 2021 – Sep 2021 (8 months)" },
       {
         label: "Role",
-        value: "Social media, eCommerce, and campaign design",
+        value: "Social media intern, eCommerce, and campaign design",
       },
       {
         label: "Project type",

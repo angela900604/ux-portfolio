@@ -6,7 +6,6 @@ import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { MomiOutcomesChart } from "./MomiOutcomesChart";
-import { MomiImageSlideshow } from "./MomiImageSlideshow";
 import { MomiUniformTile } from "./MomiUniformTile";
 import { CASE_STUDY_BODY_GRID, SITE_SHELL_INNER } from "@/lib/site-shell";
 
@@ -18,18 +17,8 @@ export const metadata = {
 
 const MOMI_ASSET = (n: string) => `/case-studies/momi-animal-health/${n}`;
 
-const ECOMMERCE_SUPPORT_SLIDES = ["05", "04", "03", "02"].map((id, idx) => ({
-  src: MOMI_ASSET(`what-i-did-${id}.png`),
-  alt: `MOMI Animal Health — eCommerce support creative ${idx + 1} of 4`,
-}));
-
-const ECOMMERCE_SLIDE_IDS = new Set(["02", "03", "04", "05"]);
-/** Slideshow IDs + grid slots replaced by tri-fold; 08 dropped from grid */
-const WHAT_I_DID_GRID_EXCLUDE = new Set([
-  ...ECOMMERCE_SLIDE_IDS,
-  "06",
-  "08",
-]);
+/** eCommerce cover slides removed from page; 06 / 08 dropped from grid */
+const WHAT_I_DID_GRID_EXCLUDE = new Set(["02", "03", "04", "05", "06", "08"]);
 
 const WHAT_I_DID_GRID_EXTRAS = [
   {
@@ -50,6 +39,25 @@ const WHAT_I_DID_IMAGES = [
   }).filter((item) => !WHAT_I_DID_GRID_EXCLUDE.has(item.key)),
   ...WHAT_I_DID_GRID_EXTRAS,
 ];
+
+const TOUCHPOINT_CARDS = [
+  {
+    title: "MOMO storefront covers",
+    body: "Redesigned covers so promo bundles and price stories read faster, with clearer visual hierarchy around the deal.",
+  },
+  {
+    title: "Retail & in-store promos",
+    body: "Brighter tabletop and banner-style pieces for pet-store campaigns so discounts stood out on the floor.",
+  },
+  {
+    title: "Social activations",
+    body: "Giveaway / lottery-style posts to earn shares and tags beyond static product shots.",
+  },
+  {
+    title: "Buyer touchpoints",
+    body: "Day-to-day chat and DM support on MOMO and social, using the same offer language as the storefront so expectations stayed aligned.",
+  },
+] as const;
 
 const PET_EXPO_PHOTOS = [
   {
@@ -77,7 +85,8 @@ function Section({
   children,
 }: {
   kicker: string;
-  title: string;
+  /** Omit when the section has only a kicker + body (no H2). */
+  title?: string;
   id?: string;
   children: ReactNode;
 }) {
@@ -89,7 +98,7 @@ function Section({
       <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
         {kicker}
       </span>
-      <h2 className="mt-2 text-zinc-100">{title}</h2>
+      {title ? <h2 className="mt-2 text-zinc-100">{title}</h2> : null}
       {children}
     </CaseStudyInViewSection>
   );
@@ -124,102 +133,22 @@ export default function MomiAnimalHealthCaseStudy() {
       </header>
 
       <CaseStudyContentLayout contentClassName="space-y-20 sm:space-y-24">
-        <Section
-          id="project-overview"
-          kicker="00 · Project overview"
-          title="At a glance"
-        >
-          <div className="mt-4 max-w-3xl">
-            <article className="rounded-2xl border border-zinc-800 bg-zinc-900/35 p-6">
-              <h5 className="text-zinc-500 uppercase tracking-wide">
-                Brief / Background
-              </h5>
-              <p className="mt-2 text-sm text-zinc-400 leading-relaxed">
-                MOMI Animal Health is a rabbit-care brand. The project focused on
-                building clearer product communication across social channels and
-                eCommerce touchpoints to support both engagement and conversion.
-              </p>
-            </article>
+        <Section id="what-i-did" kicker="01 · What I did">
+          <div className="mt-4 grid gap-4 sm:grid-cols-2">
+            {TOUCHPOINT_CARDS.map((card) => (
+              <article
+                key={card.title}
+                className="rounded-2xl border border-zinc-800 bg-zinc-900/35 p-5 sm:p-6"
+              >
+                <h3 className="text-sm font-semibold tracking-tight text-zinc-100 sm:text-base">
+                  {card.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-zinc-400">
+                  {card.body}
+                </p>
+              </article>
+            ))}
           </div>
-        </Section>
-
-        <Section
-          id="goal"
-          kicker="01 · Goal"
-          title="Make product value feel clear and actionable"
-        >
-          <div className="mt-4 max-w-2xl space-y-4 text-zinc-400 leading-relaxed">
-            <p>
-              Rabbit owners are a{" "}
-              <span className="font-medium text-zinc-100">
-                very small audience in Taiwan
-              </span>
-              —harder to reach at scale and with fewer category shortcuts than
-              dog- or cat-care brands.
-            </p>
-            <p>
-              MOMI Animal Health focuses on high-quality rabbit care products. The
-              marketing goal was to communicate product benefits visually while
-              supporting purchase and account questions across social and
-              eCommerce channels.
-            </p>
-          </div>
-        </Section>
-
-        <Section
-          id="what-i-did"
-          kicker="02 · What I did"
-          title="Content system across touchpoints"
-        >
-          <p className="mt-4 text-sm text-zinc-400 leading-relaxed max-w-2xl">
-            Most of this execution landed in the first ~two months of my role;
-            the +75% sales outcome in Outcomes is measured from my start date
-            through my last month. The work focused on making offers scannable
-            and consistent everywhere shoppers met the brand—especially on MOMO,
-            in pet-store displays, and on social.
-          </p>
-          <ul className="mt-4 max-w-2xl list-disc space-y-2 pl-5 text-sm text-zinc-400 leading-relaxed">
-            <li>
-              <strong className="font-semibold text-zinc-100">
-                Data entry &amp; Excel operations:
-              </strong>{" "}
-              Managed data entry for{" "}
-              <span className="font-medium text-zinc-100">
-                100+ invoices and logistics records per month
-              </span>
-              , building and maintaining Excel trackers to monitor timelines,
-              shipments, and follow-ups so marketing and fulfillment stayed in
-              sync.
-            </li>
-            <li>
-              <strong className="font-semibold text-zinc-100">
-                MOMO storefront covers:
-              </strong>{" "}
-              Redesigned covers so promo bundles and price stories read faster,
-              with clearer visual hierarchy around the deal.
-            </li>
-            <li>
-              <strong className="font-semibold text-zinc-100">
-                Retail &amp; in-store promos:
-              </strong>{" "}
-              Brighter tabletop and banner-style pieces for pet-store campaigns so
-              discounts stood out on the floor.
-            </li>
-            <li>
-              <strong className="font-semibold text-zinc-100">
-                Social activations:
-              </strong>{" "}
-              Giveaway / lottery-style posts to earn shares and tags beyond
-              static product shots.
-            </li>
-            <li>
-              <strong className="font-semibold text-zinc-100">
-                Buyer touchpoints:
-              </strong>{" "}
-              Day-to-day chat and DM support on MOMO and social, using the same
-              offer language as the storefront so expectations stayed aligned.
-            </li>
-          </ul>
 
           <div className="mt-8">
             <h5 className="text-zinc-100">Pet expo — on-site</h5>
@@ -261,42 +190,24 @@ export default function MomiAnimalHealthCaseStudy() {
             </div>
           </div>
 
-          <div className="mx-auto mt-10 w-full space-y-12">
-            <div className="w-full max-w-xl">
-              <h5 className="text-zinc-100">
-                eCommerce promotional cover variations
-              </h5>
-              <div className="mt-4 w-full">
-                <MomiImageSlideshow
-                  block
-                  slides={ECOMMERCE_SUPPORT_SLIDES}
-                  label="MOMO eCommerce cover designs"
+          <div className="mt-10 w-full">
+            <h5 className="text-zinc-100">Campaign</h5>
+            <div className="mt-4 grid grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-12 lg:items-stretch">
+              {WHAT_I_DID_IMAGES.map((item) => (
+                <MomiUniformTile
+                  key={item.key}
+                  src={item.src}
+                  alt={item.alt}
+                  emphasis
                 />
-              </div>
-            </div>
-
-            <div className="w-full">
-              <h5 className="text-zinc-100">Campaign</h5>
-              <p className="mt-2 max-w-2xl text-sm text-zinc-400 leading-relaxed">
-                Promotional and informational printed posters.
-              </p>
-              <div className="mt-6 grid grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-12 lg:items-stretch">
-                {WHAT_I_DID_IMAGES.map((item) => (
-                  <MomiUniformTile
-                    key={item.key}
-                    src={item.src}
-                    alt={item.alt}
-                    emphasis
-                  />
-                ))}
-              </div>
+              ))}
             </div>
           </div>
         </Section>
 
         <Section
           id="outcomes"
-          kicker="03 · Outcomes"
+          kicker="02 · Outcomes"
           title="A clear lift in online sales"
         >
           <p className="mt-4 text-zinc-400 leading-relaxed max-w-2xl">
