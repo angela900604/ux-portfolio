@@ -1,6 +1,4 @@
-import Image from "next/image";
 import Link from "next/link";
-import { ImageLightbox } from "@/app/components/ImageLightbox";
 import {
   CASE_STUDY_BODY_GRID,
   SITE_SHELL_INNER,
@@ -25,29 +23,6 @@ export default function PhyphyyaCaseStudy() {
     { src: "/case-studies/phyphyya/gallery-16.png", alt: "Mascot 4" },
   ];
 
-  const brandApplications = [
-    {
-      src: "/case-studies/phyphyya/gallery-14.png",
-      alt: "Brand Application Overview",
-      large: true,
-    },
-    {
-      src: "/case-studies/phyphyya/gallery-04.png",
-      alt: "Pet Product Packaging",
-      large: false,
-    },
-    {
-      src: "/case-studies/phyphyya/gallery-06.png",
-      alt: "Business Card & Stationery",
-      large: false,
-    },
-    {
-      src: "/case-studies/phyphyya/gallery-17.png",
-      alt: "Environmental Product Display (updated)",
-      large: true,
-    },
-  ];
-
   const sweatshirtSeries = [
     {
       src: "/case-studies/phyphyya/gallery-12.png",
@@ -67,24 +42,119 @@ export default function PhyphyyaCaseStudy() {
     <article className="min-h-screen bg-zinc-950 text-zinc-100">
       <header className="border-b border-zinc-800">
         <div className={`${SITE_SHELL_INNER} py-12 sm:py-16`}>
-          <div className={`${CASE_STUDY_BODY_GRID} min-w-0`}>
-            <div className="min-w-0 overflow-hidden">
-              <ImageLightbox
-                src="/case-studies/phyphyya/gallery-14.png"
-                alt="Haphy Living brand applications overview"
-                className="block w-full"
-                disableHoverScale
-              >
-                <Image
+          <div
+            className={`${CASE_STUDY_BODY_GRID} flex min-w-0 flex-col gap-8 sm:gap-10 md:gap-12`}
+          >
+            <div className="grid w-full grid-cols-1 gap-[30px] md:grid-cols-2">
+              <div className="min-w-0 md:col-span-2">
+                <img
                   src="/case-studies/phyphyya/gallery-14.png"
                   alt="Haphy Living brand applications overview"
-                  width={1200}
-                  height={675}
-                  className="h-auto w-full object-cover object-[center_40%]"
-                  sizes="(max-width: 768px) 100vw, 1080px"
-                  priority
+                  className="block h-auto w-full"
+                  fetchPriority="high"
                 />
-              </ImageLightbox>
+              </div>
+              <div className="min-w-0">
+                <img
+                  src="/case-studies/phyphyya/gallery-04.png"
+                  alt="Haphy Living pet product packaging"
+                  className="block h-auto w-full"
+                  loading="lazy"
+                />
+              </div>
+              <div className="min-w-0">
+                <img
+                  src="/case-studies/phyphyya/gallery-06.png"
+                  alt="Haphy Living business card and stationery"
+                  className="block h-auto w-full"
+                  loading="lazy"
+                />
+              </div>
+              <div className="min-w-0 md:col-span-2">
+                <img
+                  src="/case-studies/phyphyya/gallery-17.png"
+                  alt="Haphy Living environmental product display"
+                  className="block h-auto w-full"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            <div className="grid w-full grid-cols-1 gap-[22px] sm:grid-cols-2 lg:grid-cols-3">
+              <img
+                src="/case-studies/phyphyya/pod-magnets-fridge.png"
+                alt="Round bunny magnets on a fridge"
+                className="block h-auto w-full"
+                loading="lazy"
+              />
+              <img
+                src="/case-studies/phyphyya/pod-magnets-hand.png"
+                alt="Hand holding bunny magnets"
+                className="block h-auto w-full"
+                loading="lazy"
+              />
+              <img
+                src="/case-studies/phyphyya/pod-stickers-flatlay.png"
+                alt="Die-cut bunny stickers flat lay with mug and notebook"
+                className="block h-auto w-full"
+                loading="lazy"
+              />
+            </div>
+
+            <div className="grid w-full grid-cols-1 gap-[22px] lg:grid-cols-2 lg:items-start">
+              <img
+                src="/case-studies/phyphyya/pod-stickers-diecut.png"
+                alt="Hand holding die-cut bunny stickers"
+                className="block h-auto w-full"
+                loading="lazy"
+              />
+              <img
+                src="/case-studies/phyphyya/pod-sticker-leather.png"
+                alt="Die-cut bunny sticker on leather journal"
+                className="block h-auto w-full"
+                loading="lazy"
+              />
+            </div>
+
+            <div className="flex w-full flex-col gap-[22px]">
+              <img
+                src="/case-studies/phyphyya/gallery-14.png"
+                alt="Haphy Living canvas tote bag bundle"
+                className="block h-auto w-full"
+                loading="lazy"
+              />
+              <div className="grid w-full grid-cols-3 gap-[22px]">
+                <img
+                  src="/case-studies/phyphyya/gallery-01.png"
+                  alt="Canvas tote bag street style"
+                  className="block aspect-square h-auto w-full object-cover"
+                  loading="lazy"
+                />
+                <img
+                  src="/case-studies/phyphyya/gallery-11.png"
+                  alt="Canvas tote bag texture detail"
+                  className="block aspect-square h-auto w-full object-cover"
+                  loading="lazy"
+                />
+                <img
+                  src="/case-studies/phyphyya/gallery-07.png"
+                  alt="Canvas tote bag street environment"
+                  className="block aspect-square h-auto w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            <div className="grid w-full grid-cols-1 gap-[30px] sm:grid-cols-2 lg:grid-cols-3">
+              {sweatshirtSeries.map((it) => (
+                <img
+                  key={it.src}
+                  src={it.src}
+                  alt={it.alt}
+                  className="block h-[400px] w-full object-cover sm:h-[420px]"
+                  loading="lazy"
+                />
+              ))}
             </div>
           </div>
         </div>
@@ -225,106 +295,6 @@ export default function PhyphyyaCaseStudy() {
               <p className="text-[15px] text-zinc-400 mb-[20px]">
                 Rough hand-drawn brush strokes and paper texture, creating a warm vintage atmosphere.
               </p>
-            </div>
-          </div>
-        </CaseStudyInViewSection>
-
-        <CaseStudyInViewSection
-          id="brand-applications"
-          className="scroll-mt-28 py-[80px] sm:scroll-mt-32"
-        >
-          <div className="flex w-full flex-col gap-10 sm:gap-12 md:gap-14">
-            <div className="grid w-full grid-cols-1 gap-[30px] md:grid-cols-2">
-              {brandApplications.map((it) => (
-                <div
-                  key={it.src}
-                  className={it.large ? "min-w-0 md:col-span-2" : "min-w-0"}
-                >
-                  <img
-                    src={it.src}
-                    alt={it.alt}
-                    className="block h-auto w-full"
-                    loading="lazy"
-                  />
-                </div>
-              ))}
-            </div>
-
-            <div className="grid w-full grid-cols-1 gap-[22px] sm:grid-cols-2 lg:grid-cols-3">
-              <img
-                src="/case-studies/phyphyya/pod-magnets-fridge.png"
-                alt="Round bunny magnets on a fridge"
-                className="block h-auto w-full"
-                loading="lazy"
-              />
-              <img
-                src="/case-studies/phyphyya/pod-magnets-hand.png"
-                alt="Hand holding bunny magnets"
-                className="block h-auto w-full"
-                loading="lazy"
-              />
-              <img
-                src="/case-studies/phyphyya/pod-stickers-flatlay.png"
-                alt="Die-cut bunny stickers flat lay with mug and notebook"
-                className="block h-auto w-full"
-                loading="lazy"
-              />
-            </div>
-
-            <div className="grid w-full grid-cols-1 gap-[22px] lg:grid-cols-2 lg:items-start">
-              <img
-                src="/case-studies/phyphyya/pod-stickers-diecut.png"
-                alt="Hand holding die-cut bunny stickers"
-                className="block h-auto w-full"
-                loading="lazy"
-              />
-              <img
-                src="/case-studies/phyphyya/pod-sticker-leather.png"
-                alt="Die-cut bunny sticker on leather journal"
-                className="block h-auto w-full"
-                loading="lazy"
-              />
-            </div>
-
-            <div className="flex w-full flex-col gap-[22px]">
-              <img
-                src="/case-studies/phyphyya/gallery-14.png"
-                alt="Canvas tote bag bundle (main)"
-                className="block h-auto w-full"
-                loading="lazy"
-              />
-              <div className="grid w-full grid-cols-3 gap-[22px]">
-                <img
-                  src="/case-studies/phyphyya/gallery-01.png"
-                  alt="Canvas tote bag street style"
-                  className="block aspect-square h-auto w-full object-cover"
-                  loading="lazy"
-                />
-                <img
-                  src="/case-studies/phyphyya/gallery-11.png"
-                  alt="Canvas tote bag texture detail"
-                  className="block aspect-square h-auto w-full object-cover"
-                  loading="lazy"
-                />
-                <img
-                  src="/case-studies/phyphyya/gallery-07.png"
-                  alt="Canvas tote bag street environment"
-                  className="block aspect-square h-auto w-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-
-            <div className="grid w-full grid-cols-1 gap-[30px] sm:grid-cols-2 lg:grid-cols-3">
-              {sweatshirtSeries.map((it) => (
-                <img
-                  key={it.src}
-                  src={it.src}
-                  alt={it.alt}
-                  className="block h-[400px] w-full object-cover sm:h-[420px]"
-                  loading="lazy"
-                />
-              ))}
             </div>
           </div>
         </CaseStudyInViewSection>
