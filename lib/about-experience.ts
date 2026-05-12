@@ -12,29 +12,43 @@ export const ABOUT_EXPERIENCE: readonly AboutExperienceRow[] = [
   {
     title: "Product Designer",
     company: "MINA AI",
-    dates: "Sep 2025 – Present",
+    dates: "2025 – 2026",
     description:
       "Sole product designer that owned the Figma design system end-to-end, paired qualitative research with PostHog funnels to sharpen seller jobs-to-be-done, and redesigned checkout and listing flows. Shipped high-fidelity flows for AI-assisted features with emphasis on control, transparency, and edge cases; helped define MVP scope and priorities with founders as the primary design voice.",
   },
   {
     title: "Product Designer",
     company: "TurnCloud Technology Service",
-    dates: "Jul 2024 – Nov 2025",
+    dates: "2024 – 2025",
     description:
       "Shipped complex consumer and public-sector work: led UX for Taiwan’s Ministry of Finance uniform-invoice app, inclusive patterns for a diverse user base grounded in 30+ research sessions, and leadership-ready journey and IA artifacts. Led the Baskin-Robbins Taiwan membership app with cross-market alignment to Japan HQ.",
   },
   {
     title: "UX Designer",
     company: "YK Labs",
-    dates: "Feb 2024 – Jun 2024",
+    dates: "2024",
     description:
       "Improved core funnel completion by redesigning onboarding and task flow, backed by heuristics, usability testing, and PostHog. Launched a responsive marketing site in Framer to clarify the product before signup.",
   },
   {
     title: "UX/UI Designer Intern",
     company: "AtlasNova AI",
-    dates: "Oct 2023 – Jun 2024",
+    dates: "2023 – 2024",
     description:
       "Contributed to product design for an enterprise AI SaaS platform delivering tailored multimodal AI solutions trained on encrypted client data. Designed mockups and end-to-end UI flows across workflows involving email, sales decks, meeting recordings, charts, and video content.",
+  },
+  {
+    title: "Digital Marketing Coordinator",
+    company: "Admission Hub",
+    dates: "2022",
+    description:
+      "Addressed declining visibility by rebuilding Instagram around educational and lifestyle content across Reels, posts, and Stories on a consistent schedule—followers grew from 1,085 to 1,755 (~+61%) in three months. Designed campaign graphics in Figma, Canva, and Adobe with repeatable templates; combined SEO competitor research with Instagram and site analytics to refine WordPress content and the calendar (~+18% traffic); ran Mailchimp campaigns and aligned immigration-adjacent messaging with advisors. Case study: Admission Hub — content and growth (+500 followers, +21% engagement, +18% organic traffic in three months).",
+  },
+  {
+    title: "Social Media Coordinator",
+    company: "MOMI Animal Health",
+    dates: "2021",
+    description:
+      "Owned Facebook end-to-end—editorial calendar, creative, and performance reviews—lifting engagement rate ~40% across comments, shares, and reach. Produced digital assets in Figma, Canva, Illustrator, and Photoshop for launches and seasonal promos on social and ecommerce (MOMO, PChome); designed expo banners, flyers, and branded merchandise so in-person touchpoints matched online. Case study: MOMI Animal Health — social and ecommerce (+75% online sales, +40% Facebook engagement in two months).",
   },
 ] as const;
