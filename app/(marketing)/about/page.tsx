@@ -9,6 +9,7 @@ import {
   MARKETING_FLAGSHIP_SERIF_LEAD_CLASS,
   MARKETING_FLAGSHIP_SERIF_LEAD_MAX_WIDTH_CLASS,
 } from "@/lib/marketing-flagship-serif";
+import { MARKETING_SECTION_TITLE_CLASS } from "@/lib/marketing-section-title";
 
 const INTERVIEW_PHOTO_SRC = "/about/user-interviews-collage.png";
 const RESUME_PDF_SRC = "/resume/AngelaYang_Resume.pdf";
@@ -44,12 +45,11 @@ export default function AboutPage() {
       <MarketingHomeLogos />
 
       <section className="mt-14 border-t border-zinc-800 pt-12">
-        <h2 className="text-lg font-medium text-zinc-200 sm:text-xl">User interviews</h2>
+        <h2 className={MARKETING_SECTION_TITLE_CLASS}>
+          The part of the job where I feel most alive.
+        </h2>
         <div className="mt-6 grid items-start gap-8 lg:grid-cols-12 lg:gap-10">
-          <div className="min-w-0 space-y-4 text-sm leading-relaxed text-zinc-400 sm:text-base lg:col-span-5">
-            <p className="text-lg font-medium text-zinc-100 sm:text-xl">
-              The part of the job where I feel most alive.
-            </p>
+          <div className="min-w-0 text-sm leading-relaxed text-zinc-400 sm:text-base lg:col-span-5">
             <p>
               Whether it&apos;s a focus group or a 1:1 usability session, I care
               about making participants feel respected and heard, then turning what
@@ -79,7 +79,7 @@ export default function AboutPage() {
       </section>
 
       <section className="mt-14 border-t border-zinc-800 pt-12">
-        <h2 className="text-lg font-medium text-zinc-200 sm:text-xl">How I work</h2>
+        <h2 className={MARKETING_SECTION_TITLE_CLASS}>How I work</h2>
         <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-5">
           <div className="flex min-h-0 flex-col rounded-2xl border border-zinc-800 bg-zinc-900/30 p-5 sm:p-6">
             <h3 className={ABOUT_CARD_TITLE_CLASS}>
@@ -112,7 +112,7 @@ export default function AboutPage() {
       </section>
 
       <section className="mt-14 border-t border-zinc-800 pt-12">
-        <h2 className="text-lg font-medium text-zinc-200 sm:text-xl">Beyond design</h2>
+        <h2 className={MARKETING_SECTION_TITLE_CLASS}>Beyond design</h2>
         <div className="mt-6">
           <BeyondDesignGallery
             photography={BEYOND_PHOTOGRAPHY_GALLERY}

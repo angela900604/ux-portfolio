@@ -2,6 +2,7 @@ import {
   ABOUT_EXPERIENCE,
   type AboutExperienceRow,
 } from "@/lib/about-experience";
+import { MARKETING_SECTION_TITLE_CLASS } from "@/lib/marketing-section-title";
 
 const HOVER_NAV_BLUE =
   "transition hover:text-[color:var(--nav-accent-blue)]";
@@ -23,11 +24,9 @@ function ExperienceRow({ row }: { row: AboutExperienceRow }) {
 
 export function AboutExperienceSection({ resumeHref }: { resumeHref: string }) {
   return (
-    <section className="mt-12 font-sans">
+    <section className="mt-20 font-sans sm:mt-24">
       <div className="flex flex-wrap items-end justify-between gap-4">
-        <h2 className="text-2xl font-semibold tracking-tight text-zinc-50 sm:text-3xl">
-          Experience
-        </h2>
+        <h2 className={MARKETING_SECTION_TITLE_CLASS}>Experience</h2>
         <a
           href={resumeHref}
           download

@@ -4,6 +4,7 @@ import {
   MARKETING_FLAGSHIP_SERIF_LEAD_CLASS,
   MARKETING_FLAGSHIP_SERIF_LEAD_MAX_WIDTH_CLASS,
 } from "@/lib/marketing-flagship-serif";
+import { MARKETING_SECTION_TITLE_CLASS } from "@/lib/marketing-section-title";
 import { MARKETING_SELECTED_WORK } from "@/lib/marketing-work";
 import { MarketingSelectedWorkGrid } from "./MarketingSelectedWorkGrid";
 
@@ -30,8 +31,8 @@ export default function HomePage() {
         {HOME_LEAD}
       </p>
 
-      <section className="mt-14">
-        <h2 className="text-lg font-medium tracking-tight text-zinc-200 sm:text-xl">
+      <section className="mt-20 sm:mt-24">
+        <h2 className={MARKETING_SECTION_TITLE_CLASS}>
           Selected work
           <span className="ml-2 text-zinc-500">({count})</span>
         </h2>
