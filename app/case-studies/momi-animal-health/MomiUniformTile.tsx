@@ -15,8 +15,8 @@ export function MomiUniformTile({
   emphasis?: boolean;
 }) {
   const frame = emphasis
-    ? "relative aspect-[5/7] w-full overflow-hidden rounded-[28px] bg-zinc-900/20 ring-1 ring-[#C4B8A8]/80"
-    : "relative aspect-[4/5] w-full overflow-hidden rounded-[20px] bg-zinc-900/30 ring-1 ring-zinc-800/50";
+    ? "relative aspect-[5/7] w-full overflow-hidden rounded-[28px] bg-zinc-900/40 ring-1 ring-zinc-700/70"
+    : "relative aspect-[4/5] w-full overflow-hidden rounded-[20px] bg-zinc-900/40 ring-1 ring-zinc-800/60";
 
   const sizes = emphasis
     ? "(max-width: 640px) 100vw, min(50vw, 600px)"

@@ -11,7 +11,7 @@ import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { ImageLightbox } from "@/app/components/ImageLightbox";
 import {
   CASE_STUDY_BODY_GRID,
-  CASE_STUDY_COLUMN_FULL_BLEED,
+  CASE_STUDY_SECTION_TITLE_CLASS,
   SITE_SHELL_INNER,
 } from "@/lib/site-shell";
 
@@ -90,9 +90,9 @@ export default function AiMarketplaceCaseStudy() {
       <header className="border-b border-zinc-800">
         <div className={`${SITE_SHELL_INNER} py-12 sm:py-16`}>
           <div
-            className={`${CASE_STUDY_BODY_GRID} min-w-0 overflow-x-hidden space-y-10 sm:space-y-12`}
+            className={`${CASE_STUDY_BODY_GRID} flex min-w-0 flex-col overflow-x-hidden`}
           >
-            <figure className="mb-0 w-full min-w-0">
+            <figure className="w-full min-w-0">
               <div
                 className="relative w-full min-h-0 overflow-hidden rounded-xl border border-zinc-800/80 bg-black shadow-[0_20px_50px_-20px_rgba(0,0,0,0.65)]"
                 style={{ aspectRatio: `${MINA_HERO_VID_W} / ${MINA_HERO_VID_H}` }}
@@ -115,7 +115,7 @@ export default function AiMarketplaceCaseStudy() {
               </div>
             </figure>
 
-            <section>
+            <section className="mt-8 w-full min-w-0 sm:mt-12">
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:items-stretch">
                 <div className="relative min-h-[min(88vw,480px)] w-full overflow-hidden rounded-xl sm:row-span-2 sm:min-h-[min(100%,640px)]">
                   <ImageLightbox
@@ -170,8 +170,9 @@ export default function AiMarketplaceCaseStudy() {
               </div>
             </section>
 
-            <div className="mt-10">
+            <div className="mt-10 sm:mt-12">
               <CaseStudyHeroTldr
+                metricValueClassName="text-[#B75E45]"
                 headline={
                   <>
                     Sole designer on MINA — AI-native marketplace for parents ·
@@ -195,7 +196,7 @@ export default function AiMarketplaceCaseStudy() {
           </span>
           <div className="max-w-3xl space-y-8">
             <div className="space-y-3">
-              <h2 className="text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
+              <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
                 No moms wants to list 47 baby items one by one.
               </h2>
               <p className="text-zinc-300 leading-relaxed">
@@ -261,7 +262,7 @@ export default function AiMarketplaceCaseStudy() {
             </ImageLightbox>
           </div>
           <div className="mt-8 max-w-3xl rounded-2xl border border-zinc-800/80 bg-zinc-900/45 p-5 sm:p-6">
-            <span className="inline-flex rounded-full border border-emerald-300/60 bg-emerald-400/20 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-emerald-100">
+            <span className="inline-flex rounded-full border border-[#B75E45]/55 bg-[#B75E45]/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#e8c9bf]">
               The design response
             </span>
             <p className="mt-4 text-sm leading-relaxed text-zinc-300 sm:text-[15px]">
@@ -310,21 +311,6 @@ export default function AiMarketplaceCaseStudy() {
           </div>
         </CaseStudyInViewSection>
 
-        <section
-          className={`${CASE_STUDY_COLUMN_FULL_BLEED} py-6 sm:py-8 md:py-10`}
-          aria-label="Principle: AI and community"
-        >
-          <div
-            className="w-full py-8 sm:py-10 md:py-12"
-            style={MINA_TERRACOTTA_SURFACE}
-          >
-            <p className="text-center text-[clamp(1.5rem,4vw,3.25rem)] font-medium italic leading-[1.12] tracking-tight text-[#f0e8e4]">
-              &ldquo;The AI removes the admin. The community provides the
-              motivation.&rdquo;
-            </p>
-          </div>
-        </section>
-
         <CaseStudyInViewSection
           id="selling-agent"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
@@ -333,7 +319,7 @@ export default function AiMarketplaceCaseStudy() {
             Selling agent
           </span>
           <div className="min-w-0 space-y-8">
-            <h2 className="max-w-3xl text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
+            <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
               The redesign of the create listing flow enhanced completed listings by
               up to 30%.
             </h2>
@@ -403,7 +389,7 @@ export default function AiMarketplaceCaseStudy() {
             Parenting copilot
           </span>
           <div className="min-w-0 space-y-5">
-            <h2 className="max-w-3xl text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
+            <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
               Babies grow fast. The Copilot notices when a phase is ending and asks:
               ready to pass this along?
             </h2>
@@ -443,7 +429,7 @@ export default function AiMarketplaceCaseStudy() {
             Create listing
           </span>
           <div className="min-w-0 space-y-8">
-            <h2 className="max-w-3xl text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
+            <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
               How the create-listing flow evolved
             </h2>
             <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-12 lg:gap-12">
@@ -552,7 +538,7 @@ export default function AiMarketplaceCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Design system
           </span>
-          <h2 className="max-w-3xl text-xl font-semibold leading-snug tracking-tight text-zinc-100 sm:text-2xl md:text-[1.65rem] md:leading-snug">
+          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
             50+ components so engineering could move without redesigning atoms
           </h2>
           <p className="max-w-3xl text-zinc-300 leading-relaxed">

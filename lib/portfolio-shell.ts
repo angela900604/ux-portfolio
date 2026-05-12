@@ -1,11 +1,10 @@
-import { SITE_GUTTER_PL_CLASS } from "@/lib/site-shell";
+import { SITE_GUTTER_CLASS } from "@/lib/site-shell";
 
 /**
- * Left rail + nav brand cell: same **left** inset as the main column / nav trailing
- * gutter ({@link SITE_GUTTER_PL_CLASS}); slightly tighter **right** padding before the
- * column border so copy doesn’t sit too far from the main pane.
+ * Left rail + nav brand cell: same horizontal inset as the main column / nav
+ * ({@link SITE_GUTTER_CLASS} — symmetric left and right).
  */
-export const PORTFOLIO_ASIDE_PADDING = `py-6 sm:py-8 ${SITE_GUTTER_PL_CLASS} pr-6 sm:pr-8`;
+export const PORTFOLIO_ASIDE_PADDING = `py-6 sm:py-8 ${SITE_GUTTER_CLASS}`;
 
 /** Width token only (no padding) — desktop nav left cell matches left rail. */
 export const PORTFOLIO_LEFT_RAIL_WIDTH_CLASS =

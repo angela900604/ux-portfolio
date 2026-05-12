@@ -50,7 +50,7 @@ function EtsyVisitsChart() {
   ).join(" ");
 
   return (
-    <figure className="rounded-[10px] border border-[#E8E1D6] bg-white p-4 sm:p-6">
+    <figure className="rounded-[10px] border border-zinc-800 bg-zinc-900/35 p-4 sm:p-6">
       <svg
         viewBox={`0 0 ${width} ${height}`}
         className="h-auto w-full"
@@ -64,7 +64,7 @@ function EtsyVisitsChart() {
               y1={yFor(tick)}
               x2={width - paddingX}
               y2={yFor(tick)}
-              stroke="#ECE7DE"
+              stroke="#3f3f46"
               strokeWidth="1"
             />
             <text
@@ -72,31 +72,31 @@ function EtsyVisitsChart() {
               y={yFor(tick) + 4}
               textAnchor="end"
               fontSize="11"
-              fill="#8A8379"
+              fill="#a1a1aa"
             >
               {tick}
             </text>
           </g>
         ))}
 
-        <path d={path} fill="none" stroke="#2C3E50" strokeWidth="2.5" />
+        <path d={path} fill="none" stroke="#e4e4e7" strokeWidth="2.5" />
 
         {ETSY_MONTHLY_VISITS.map((d, i) => (
           <g key={d.month}>
-            <circle cx={xFor(i)} cy={yFor(d.visits)} r="5" fill="#2C3E50" />
+            <circle cx={xFor(i)} cy={yFor(d.visits)} r="5" fill="#e4e4e7" />
             <text
               x={xFor(i)}
               y={height - 8}
               textAnchor="middle"
               fontSize="12"
-              fill="#6D665D"
+              fill="#a1a1aa"
             >
               {d.month}
             </text>
           </g>
         ))}
       </svg>
-      <figcaption className="mt-3 text-[12px] leading-relaxed text-[#7B746B]">
+      <figcaption className="mt-3 text-[12px] leading-relaxed text-zinc-500">
         Jan – Apr 2026 Etsy performance snapshot: 117 visits, 4 orders, 3.4%
         conversion rate, and US$83.44 revenue.
       </figcaption>
@@ -160,11 +160,11 @@ export default function PhyphyyaCaseStudy() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#F5F3EF] text-[#4A4A4A]">
-      <header className="border-b border-[#E0D9CE]">
+    <article className="min-h-screen bg-zinc-950 text-zinc-100">
+      <header className="border-b border-zinc-800">
         <div className={`${SITE_SHELL_INNER} py-12 sm:py-16`}>
           <div className={`${CASE_STUDY_BODY_GRID} min-w-0`}>
-            <div className="overflow-hidden rounded-2xl border border-[#E8E1D6] bg-white">
+            <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/35">
               <ImageLightbox
                 src="/case-studies/phyphyya/gallery-14.png"
                 alt="Haphy Living brand applications overview"
@@ -186,26 +186,21 @@ export default function PhyphyyaCaseStudy() {
         </div>
       </header>
 
-      <div className={SITE_SHELL_INNER}>
-        <CaseStudyContentLayout
-          variant="light"
-          omitOuterContainer
-          contentClassName=""
-        >
+      <CaseStudyContentLayout contentClassName="">
         <CaseStudyInViewSection
           id="project-overview"
           className="scroll-mt-28 py-[80px] sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-[#8D99AE]">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             00 · Project overview
           </span>
-          <h2 className="mt-2 text-[#2C3E50]">At a glance</h2>
+          <h2 className="mt-2 text-zinc-100">At a glance</h2>
           <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
-            <article className="rounded-2xl border border-[#E8E1D6] bg-white p-6">
-              <h5 className="text-[#7B746B] uppercase tracking-wide">
+            <article className="rounded-2xl border border-zinc-800 bg-zinc-900/35 p-6">
+              <h5 className="text-zinc-500 uppercase tracking-wide">
                 Brief / Background
               </h5>
-              <div className="mt-2 space-y-3 text-sm text-[#666] leading-relaxed">
+              <div className="mt-2 space-y-3 text-sm text-zinc-400 leading-relaxed">
                 <p>
                   I built Haphy Living to turn a deeply personal story—my bond
                   with my rabbit—into a real, testable ecommerce brand.
@@ -217,28 +212,28 @@ export default function PhyphyyaCaseStudy() {
                 </p>
               </div>
             </article>
-            <article className="rounded-2xl border border-[#E8E1D6] bg-white p-6">
-              <h5 className="text-[#7B746B] uppercase tracking-wide">
+            <article className="rounded-2xl border border-zinc-800 bg-zinc-900/35 p-6">
+              <h5 className="text-zinc-500 uppercase tracking-wide">
                 My role
               </h5>
-              <p className="mt-2 text-sm text-[#666] leading-relaxed">
+              <p className="mt-2 text-sm text-zinc-400 leading-relaxed">
                 Solo project. I owned brand identity design, illustration, product
                 design, and Etsy operations end-to-end.
               </p>
             </article>
-            <article className="rounded-2xl border border-[#E8E1D6] bg-white p-6">
-              <h5 className="text-[#7B746B] uppercase tracking-wide">
+            <article className="rounded-2xl border border-zinc-800 bg-zinc-900/35 p-6">
+              <h5 className="text-zinc-500 uppercase tracking-wide">
                 Tools
               </h5>
-              <p className="mt-2 text-sm text-[#666] leading-relaxed">
+              <p className="mt-2 text-sm text-zinc-400 leading-relaxed">
                 Procreate / Figma / Lovart / POD
               </p>
             </article>
-            <article className="rounded-2xl border border-[#E8E1D6] bg-white p-6">
-              <h5 className="text-[#7B746B] uppercase tracking-wide">
+            <article className="rounded-2xl border border-zinc-800 bg-zinc-900/35 p-6">
+              <h5 className="text-zinc-500 uppercase tracking-wide">
                 Timeline
               </h5>
-              <p className="mt-2 text-sm text-[#666] leading-relaxed">
+              <p className="mt-2 text-sm text-zinc-400 leading-relaxed">
                 2022 – present (ongoing side project)
               </p>
             </article>
@@ -251,10 +246,10 @@ export default function PhyphyyaCaseStudy() {
           className="scroll-mt-28 py-[80px] sm:scroll-mt-32 flex flex-col items-center"
         >
           <div className="text-center mb-[60px] w-full">
-            <h2 className="text-[#2C3E50] mb-[20px] relative inline-block font-sans after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
+            <h2 className="text-zinc-100 mb-[20px] relative inline-block font-sans after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-zinc-500 after:mx-auto after:mt-[15px]">
               Logo Concept - Soft & Rounded
             </h2>
-            <p className="text-[16px] text-[#666]">
+            <p className="text-[16px] text-zinc-400">
               A harmonious blend of vintage charm and modern freshness.
             </p>
           </div>
@@ -271,10 +266,10 @@ export default function PhyphyyaCaseStudy() {
 
             <div className="pl-[20px]">
               <div className="mb-[40px]">
-                <h3 className="text-[#2C3E50] mb-[12px] border-l-[3px] border-[#D4C5B0] pl-[15px] font-sans">
+                <h3 className="text-zinc-100 mb-[12px] border-l-[3px] border-zinc-600 pl-[15px] font-sans">
                   Color Palette
                 </h3>
-                <p className="text-[16px] text-[#666] pl-[18px]">
+                <p className="text-[16px] text-zinc-400 pl-[18px]">
                   Incorporating soft blue-gray as one of the primary tones,
                   paired with warm gray and beige. The blue-gray and beige tones
                   coexist harmoniously, offering both freshness and warm vintage ambiance.
@@ -288,10 +283,10 @@ export default function PhyphyyaCaseStudy() {
               </div>
 
               <div className="mb-[40px]">
-                <h3 className="text-[#2C3E50] mb-[12px] border-l-[3px] border-[#D4C5B0] pl-[15px] font-sans">
+                <h3 className="text-zinc-100 mb-[12px] border-l-[3px] border-zinc-600 pl-[15px] font-sans">
                   Visual Effect
                 </h3>
-                <p className="text-[16px] text-[#666] pl-[18px]">
+                <p className="text-[16px] text-zinc-400 pl-[18px]">
                   The blue-gray adds a touch of freshness and modernity to the
                   typography, echoing the gray-white tones of the lop-eared
                   rabbit mascot. The overall color scheme is rich yet harmonious.
@@ -299,10 +294,10 @@ export default function PhyphyyaCaseStudy() {
               </div>
 
               <div>
-                <h3 className="text-[#2C3E50] mb-[12px] border-l-[3px] border-[#D4C5B0] pl-[15px] font-sans">
+                <h3 className="text-zinc-100 mb-[12px] border-l-[3px] border-zinc-600 pl-[15px] font-sans">
                   Style Characteristics
                 </h3>
-                <p className="text-[16px] text-[#666] pl-[18px]">
+                <p className="text-[16px] text-zinc-400 pl-[18px]">
                   Maintains vintage British hand-drawn texture. Rounded
                   typography with rough brush strokes. A warm brand personality with a fresh touch.
                 </p>
@@ -314,17 +309,17 @@ export default function PhyphyyaCaseStudy() {
         {/* Mascot Section - Lop-eared Rabbit */}
         <CaseStudyInViewSection
           id="mascot"
-          className="relative scroll-mt-28 bg-white py-[100px] sm:scroll-mt-32"
+          className="relative scroll-mt-28 bg-zinc-900/35 py-[100px] sm:scroll-mt-32"
         >
           <div
-            className="pointer-events-none absolute inset-y-0 left-0 right-0 -z-10 w-full bg-[#FFFFFF]"
+            className="pointer-events-none absolute inset-y-0 left-0 right-0 -z-10 w-full bg-zinc-950"
             aria-hidden
           />
           <div className="text-center mb-[60px] w-full">
-            <h2 className="text-[#2C3E50] mb-[20px] relative inline-block font-sans after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
+            <h2 className="text-zinc-100 mb-[20px] relative inline-block font-sans after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-zinc-500 after:mx-auto after:mt-[15px]">
               Brand Mascot - Lop-eared Rabbit
             </h2>
-            <p className="text-[16px] text-[#666]">
+            <p className="text-[16px] text-zinc-400">
               Embodying the spirit of relaxation.
             </p>
           </div>
@@ -333,7 +328,7 @@ export default function PhyphyyaCaseStudy() {
             {mascotCards.map((c) => (
               <div
                 key={c.src}
-                className="bg-[#F9F9F9] p-[20px] rounded-[8px] text-center transition-transform duration-300 hover:-translate-y-[5px]"
+                className="bg-zinc-900/50 p-[20px] rounded-[8px] text-center transition-transform duration-300 hover:-translate-y-[5px]"
               >
                 <img
                   src={c.src}
@@ -345,43 +340,43 @@ export default function PhyphyyaCaseStudy() {
             ))}
           </div>
 
-          <div className="mt-[40px] bg-[#F5F3EF] p-[40px] rounded-[12px] grid grid-cols-1 md:grid-cols-2 gap-[40px]">
+          <div className="mt-[40px] bg-zinc-900/30 p-[40px] rounded-[12px] grid grid-cols-1 md:grid-cols-2 gap-[40px]">
             <div>
-              <h4 className="text-[#2C3E50] mb-[8px] font-sans">
+              <h4 className="text-zinc-100 mb-[8px] font-sans">
                 Posture
               </h4>
-              <p className="text-[15px] text-[#666] mb-[20px]">
+              <p className="text-[15px] text-zinc-400 mb-[20px]">
                 Inspired by my bunny&apos;s everyday napping poses at home: cute,
                 sleepy, and delightfully lazy. The relaxed vibe feels instantly
                 healing and makes you want to gently pat her head.
               </p>
             </div>
             <div>
-              <h4 className="text-[#2C3E50] mb-[8px] font-sans">
+              <h4 className="text-zinc-100 mb-[8px] font-sans">
                 Ears
               </h4>
-              <p className="text-[15px] text-[#666] mb-[20px]">
+              <p className="text-[15px] text-zinc-400 mb-[20px]">
                 Long droopy ears naturally falling, adding a lazy charm.
               </p>
             </div>
             <div>
-              <h4 className="text-[#2C3E50] mb-[8px] font-sans">
+              <h4 className="text-zinc-100 mb-[8px] font-sans">
                 Color
               </h4>
-              <p className="text-[15px] text-[#666] mb-[20px]">
+              <p className="text-[15px] text-zinc-400 mb-[20px]">
                 Gray and white dual-tone color blocks, maintaining a clean and fresh look.
               </p>
             </div>
             <div>
-              <h4 className="text-[#2C3E50] mb-[8px] font-sans">
+              <h4 className="text-zinc-100 mb-[8px] font-sans">
                 Texture
               </h4>
-              <p className="text-[15px] text-[#666] mb-[20px]">
+              <p className="text-[15px] text-zinc-400 mb-[20px]">
                 Rough hand-drawn brush strokes and paper texture, creating a warm vintage atmosphere.
               </p>
             </div>
 
-            <div className="md:col-span-2 text-center italic font-sans text-[20px] text-[#8D99AE] mt-[20px] border-t border-[#ddd] pt-[20px]">
+            <div className="md:col-span-2 text-center italic font-sans text-[20px] text-zinc-500 mt-[20px] border-t border-zinc-700 pt-[20px]">
               "This posture conveys the brand philosophy of 'complete
               relaxation and peaceful rest,' perfectly suited for the warm positioning of pet daily essentials."
             </div>
@@ -394,10 +389,10 @@ export default function PhyphyyaCaseStudy() {
           className="scroll-mt-28 py-[80px] sm:scroll-mt-32 flex flex-col items-center"
         >
           <div className="text-center mb-[60px] w-full">
-            <h2 className="text-[#2C3E50] mb-[20px] relative inline-block font-sans after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
+            <h2 className="text-zinc-100 mb-[20px] relative inline-block font-sans after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-zinc-500 after:mx-auto after:mt-[15px]">
               Brand Applications
             </h2>
-            <p className="text-[16px] text-[#666]">
+            <p className="text-[16px] text-zinc-400">
               Bringing the brand to life across various touchpoints.
             </p>
           </div>
@@ -426,10 +421,10 @@ export default function PhyphyyaCaseStudy() {
           {/* New POD: magnets & stickers — nested under Brand Applications */}
           <div
             id="pod-products"
-            className="scroll-mt-28 w-full mt-[72px] sm:mt-[88px] pt-[56px] sm:pt-[72px] border-t border-[#E8E1D6]"
+            className="scroll-mt-28 w-full mt-[72px] sm:mt-[88px] pt-[56px] sm:pt-[72px] border-t border-zinc-800"
           >
             <div className="text-center w-full mb-[50px]">
-              <h3 className="text-[#2C3E50] mb-0 relative inline-block font-sans text-[1.35rem] sm:text-[1.5rem] after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
+              <h3 className="text-zinc-100 mb-0 relative inline-block font-sans text-[1.35rem] sm:text-[1.5rem] after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-zinc-500 after:mx-auto after:mt-[15px]">
                 New products · Magnets &amp; stickers
               </h3>
             </div>
@@ -454,7 +449,7 @@ export default function PhyphyyaCaseStudy() {
               ].map((item) => (
                 <div
                   key={item.src}
-                  className="flex flex-col overflow-hidden rounded-[8px] bg-white shadow-[0_4px_10px_rgba(0,0,0,0.04)]"
+                  className="flex flex-col overflow-hidden rounded-[8px] bg-zinc-900/35 shadow-[0_4px_10px_rgba(0,0,0,0.04)]"
                 >
                   <img
                     src={item.src}
@@ -462,7 +457,7 @@ export default function PhyphyyaCaseStudy() {
                     className="w-full h-auto block"
                     loading="lazy"
                   />
-                  <p className="text-center py-[12px] text-[13px] text-[#888] font-sans shrink-0">
+                  <p className="text-center py-[12px] text-[13px] text-zinc-500 font-sans shrink-0">
                     {item.label}
                   </p>
                 </div>
@@ -470,7 +465,7 @@ export default function PhyphyyaCaseStudy() {
             </div>
 
             <div className="mt-[22px] grid grid-cols-1 lg:grid-cols-3 gap-[22px] w-full items-stretch lg:min-h-[520px]">
-              <div className="flex flex-col overflow-hidden rounded-[8px] bg-white shadow-[0_4px_10px_rgba(0,0,0,0.04)] h-full min-h-0">
+              <div className="flex flex-col overflow-hidden rounded-[8px] bg-zinc-900/35 shadow-[0_4px_10px_rgba(0,0,0,0.04)] h-full min-h-0">
                 <div className="relative flex-1 min-h-[280px] lg:min-h-0">
                   <img
                     src="/case-studies/phyphyya/pod-stickers-diecut.png"
@@ -479,12 +474,12 @@ export default function PhyphyyaCaseStudy() {
                     loading="lazy"
                   />
                 </div>
-                <p className="shrink-0 text-center py-[12px] text-[13px] text-[#888] font-sans">
+                <p className="shrink-0 text-center py-[12px] text-[13px] text-zinc-500 font-sans">
                   Stickers · die-cut
                 </p>
               </div>
 
-              <div className="flex flex-col overflow-hidden rounded-[8px] bg-white shadow-[0_4px_10px_rgba(0,0,0,0.04)] h-full min-h-0">
+              <div className="flex flex-col overflow-hidden rounded-[8px] bg-zinc-900/35 shadow-[0_4px_10px_rgba(0,0,0,0.04)] h-full min-h-0">
                 <div className="flex min-h-0 flex-1 flex-col gap-2 p-2">
                   <div className="relative min-h-[160px] flex-1">
                     <img
@@ -503,12 +498,12 @@ export default function PhyphyyaCaseStudy() {
                     />
                   </div>
                 </div>
-                <p className="shrink-0 text-center py-[12px] text-[13px] text-[#888] font-sans leading-snug px-2">
+                <p className="shrink-0 text-center py-[12px] text-[13px] text-zinc-500 font-sans leading-snug px-2">
                   Stickers · size range &amp; in context (laptop)
                 </p>
               </div>
 
-              <div className="flex flex-col overflow-hidden rounded-[8px] bg-white shadow-[0_4px_10px_rgba(0,0,0,0.04)] h-full min-h-0">
+              <div className="flex flex-col overflow-hidden rounded-[8px] bg-zinc-900/35 shadow-[0_4px_10px_rgba(0,0,0,0.04)] h-full min-h-0">
                 <div className="relative flex-1 min-h-[280px] lg:min-h-0">
                   <img
                     src="/case-studies/phyphyya/pod-sticker-leather.png"
@@ -517,7 +512,7 @@ export default function PhyphyyaCaseStudy() {
                     loading="lazy"
                   />
                 </div>
-                <p className="shrink-0 text-center py-[12px] text-[13px] text-[#888] font-sans">
+                <p className="shrink-0 text-center py-[12px] text-[13px] text-zinc-500 font-sans">
                   Stickers · in context (leather)
                 </p>
               </div>
@@ -527,15 +522,15 @@ export default function PhyphyyaCaseStudy() {
           {/* Canvas tote — nested under Brand Applications */}
           <div
             id="canvas-tote"
-            className="scroll-mt-28 w-full mt-[72px] sm:mt-[88px] pt-[56px] sm:pt-[72px] border-t border-[#E8E1D6]"
+            className="scroll-mt-28 w-full mt-[72px] sm:mt-[88px] pt-[56px] sm:pt-[72px] border-t border-zinc-800"
           >
             <div className="text-center w-full mb-[50px]">
-              <h3 className="text-[#2C3E50] mb-0 relative inline-block font-sans text-[1.35rem] sm:text-[1.5rem] after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
+              <h3 className="text-zinc-100 mb-0 relative inline-block font-sans text-[1.35rem] sm:text-[1.5rem] after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-zinc-500 after:mx-auto after:mt-[15px]">
                 Canvas Tote Bag
               </h3>
             </div>
 
-            <div className="w-full rounded-[12px] border border-[#E8E1D6] bg-white p-4 sm:p-6 shadow-[0_4px_12px_rgba(0,0,0,0.04)]">
+            <div className="w-full rounded-[12px] border border-zinc-800 bg-zinc-900/35 p-4 sm:p-6 shadow-[0_4px_12px_rgba(0,0,0,0.04)]">
               <div className="relative w-full aspect-[16/9] overflow-hidden rounded-[6px]">
                 <img
                   src="/case-studies/phyphyya/gallery-14.png"
@@ -577,10 +572,10 @@ export default function PhyphyyaCaseStudy() {
           {/* Crewneck sweatshirt — nested under Brand Applications */}
           <div
             id="sweatshirt"
-            className="scroll-mt-28 w-full mt-[72px] sm:mt-[88px] pt-[56px] sm:pt-[72px] border-t border-[#E8E1D6]"
+            className="scroll-mt-28 w-full mt-[72px] sm:mt-[88px] pt-[56px] sm:pt-[72px] border-t border-zinc-800"
           >
             <div className="text-center w-full mb-[50px]">
-              <h3 className="text-[#2C3E50] mb-0 relative inline-block font-sans text-[1.35rem] sm:text-[1.5rem] after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
+              <h3 className="text-zinc-100 mb-0 relative inline-block font-sans text-[1.35rem] sm:text-[1.5rem] after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-zinc-500 after:mx-auto after:mt-[15px]">
                 Crewneck Sweatshirt
               </h3>
             </div>
@@ -589,7 +584,7 @@ export default function PhyphyyaCaseStudy() {
               {sweatshirtSeries.map((it) => (
                 <div
                   key={it.src}
-                  className="bg-white p-[15px] border border-[#eee] shadow-[0_4px_10px_rgba(0,0,0,0.03)]"
+                  className="bg-zinc-900/35 p-[15px] border border-zinc-700 shadow-[0_4px_10px_rgba(0,0,0,0.03)]"
                 >
                   <img
                     src={it.src}
@@ -597,7 +592,7 @@ export default function PhyphyyaCaseStudy() {
                     className="w-full h-[400px] object-cover block mb-[15px]"
                     loading="lazy"
                   />
-                  <div className="font-sans uppercase tracking-[1px] text-[14px] text-[#888] text-center">
+                  <div className="font-sans uppercase tracking-[1px] text-[14px] text-zinc-500 text-center">
                     {it.label}
                   </div>
                 </div>
@@ -609,20 +604,20 @@ export default function PhyphyyaCaseStudy() {
         {/* Etsy storefront & Print-on-Demand workflow */}
         <CaseStudyInViewSection
           id="etsy-pod"
-          className="scroll-mt-28 bg-white py-[80px] sm:scroll-mt-32"
+          className="scroll-mt-28 bg-zinc-900/35 py-[80px] sm:scroll-mt-32"
         >
           <div className="w-full min-w-0 px-5 sm:px-8 md:px-10 lg:px-12">
             <div className="text-center w-full mb-[50px]">
-            <h2 className="text-[#2C3E50] mb-[20px] relative inline-block font-sans after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
+            <h2 className="text-zinc-100 mb-[20px] relative inline-block font-sans after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-zinc-500 after:mx-auto after:mt-[15px]">
               Etsy shop &amp; Print-on-Demand
             </h2>
-            <p className="text-[16px] text-[#666] leading-relaxed">
+            <p className="text-[16px] text-zinc-400 leading-relaxed">
               I launched{" "}
               <a
                 href="https://www.etsy.com/ca/shop/HaphyLiving"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#2C3E50] underline underline-offset-2 hover:text-[#8D99AE]"
+                className="text-zinc-100 underline underline-offset-2 hover:text-zinc-500"
               >
                 Haphy Living on Etsy
               </a>{" "}
@@ -635,7 +630,7 @@ export default function PhyphyyaCaseStudy() {
 
             {/* Left = smaller mobile capture, right = larger desktop grid; same height on lg */}
             <div className="flex flex-col lg:flex-row gap-6 w-full mb-[40px] lg:items-stretch lg:h-[min(540px,72vh)]">
-            <div className="flex shrink-0 lg:w-[min(280px,32%)] items-center justify-center overflow-hidden rounded-[8px] bg-[#faf9f7] shadow-[0_5px_15px_rgba(0,0,0,0.08)] px-3 py-4 lg:py-6 min-h-[420px] lg:min-h-0">
+            <div className="flex shrink-0 lg:w-[min(280px,32%)] items-center justify-center overflow-hidden rounded-[8px] bg-zinc-900/40 shadow-[0_5px_15px_rgba(0,0,0,0.08)] px-3 py-4 lg:py-6 min-h-[420px] lg:min-h-0">
               <img
                 src="/case-studies/phyphyya/etsy-shop-mobile.png"
                 alt="Haphy Living Etsy shop on mobile"
@@ -653,9 +648,9 @@ export default function PhyphyyaCaseStudy() {
             </div>
             </div>
 
-            <div className="w-full space-y-[28px] text-[16px] text-[#666] leading-relaxed">
+            <div className="w-full space-y-[28px] text-[16px] text-zinc-400 leading-relaxed">
             <p>
-              <strong className="text-[#2C3E50] font-sans">
+              <strong className="text-zinc-100 font-sans">
                 1 · Design in Procreate
               </strong>
               <br />
@@ -664,7 +659,7 @@ export default function PhyphyyaCaseStudy() {
               every touchpoint before anything went to print.
             </p>
             <p>
-              <strong className="text-[#2C3E50] font-sans">
+              <strong className="text-zinc-100 font-sans">
                 2 · Print-on-Demand (POD) production
               </strong>
               <br />
@@ -677,7 +672,7 @@ export default function PhyphyyaCaseStudy() {
               testing which SKUs deserve deeper investment.
             </p>
             <p>
-              <strong className="text-[#2C3E50] font-sans">
+              <strong className="text-zinc-100 font-sans">
                 3 · Lovart for listing &amp; social visuals
               </strong>
               <br />
@@ -686,7 +681,7 @@ export default function PhyphyyaCaseStudy() {
               texture, and context (not just flat art on a white background).
             </p>
             <p>
-              <strong className="text-[#2C3E50] font-sans">
+              <strong className="text-zinc-100 font-sans">
                 4 · Etsy as the storefront
               </strong>
               <br />
@@ -695,7 +690,7 @@ export default function PhyphyyaCaseStudy() {
               and iterate on listings with low operational overhead.
             </p>
             <p>
-              <strong className="text-[#2C3E50] font-sans">
+              <strong className="text-zinc-100 font-sans">
                 Real pitfall · Shipping economics
               </strong>
               <br />
@@ -711,13 +706,13 @@ export default function PhyphyyaCaseStudy() {
 
         <CaseStudyInViewSection
           id="store-performance"
-          className="scroll-mt-28 bg-white py-[80px] sm:scroll-mt-32"
+          className="scroll-mt-28 bg-zinc-900/35 py-[80px] sm:scroll-mt-32"
         >
           <div className="text-center w-full mb-[40px]">
-            <h2 className="text-[#2C3E50] mb-[20px] relative inline-block font-sans after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
+            <h2 className="text-zinc-100 mb-[20px] relative inline-block font-sans after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-zinc-500 after:mx-auto after:mt-[15px]">
               Store performance
             </h2>
-            <p className="text-[16px] text-[#666] leading-relaxed">
+            <p className="text-[16px] text-zinc-400 leading-relaxed">
               Etsy dashboard snapshot from Jan to Apr 2026. These are the current
               measurable outputs I have today; SKU mix and shipping strategy are
               still being iterated.
@@ -729,12 +724,12 @@ export default function PhyphyyaCaseStudy() {
               {ETSY_METRICS.map((metric) => (
                 <article
                   key={metric.label}
-                  className="rounded-[10px] border border-[#E8E1D6] bg-[#FDFBF8] p-4"
+                  className="rounded-[10px] border border-zinc-800 bg-zinc-900/40 p-4"
                 >
-                  <p className="text-[12px] uppercase tracking-[0.8px] text-[#8A8379]">
+                  <p className="text-[12px] uppercase tracking-[0.8px] text-zinc-500">
                     {metric.label}
                   </p>
-                  <p className="mt-2 text-[26px] leading-none text-[#2C3E50] font-sans">
+                  <p className="mt-2 text-[26px] leading-none text-zinc-100 font-sans">
                     {metric.value}
                   </p>
                 </article>
@@ -746,23 +741,23 @@ export default function PhyphyyaCaseStudy() {
 
         <CaseStudyInViewSection
           id="testing-next"
-          className="scroll-mt-28 bg-[#F5F3EF] py-[80px] sm:scroll-mt-32"
+          className="scroll-mt-28 bg-zinc-900/30 py-[80px] sm:scroll-mt-32"
         >
           <div className="w-full mb-[40px] text-center">
-            <h2 className="text-[#2C3E50] mb-[20px] relative inline-block font-sans after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-[#8D99AE] after:mx-auto after:mt-[15px]">
+            <h2 className="text-zinc-100 mb-[20px] relative inline-block font-sans after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-zinc-500 after:mx-auto after:mt-[15px]">
               What I&apos;m testing next
             </h2>
-            <p className="text-[16px] text-[#666] leading-relaxed">
+            <p className="text-[16px] text-zinc-400 leading-relaxed">
               Operating hypotheses I&apos;m running against live Etsy data—shipping,
               pricing, and SKU mix—so the shop stays a learning loop, not a one-off
               launch.
             </p>
           </div>
 
-          <div className="w-full rounded-2xl border border-[#E8E1D6] bg-white p-6 sm:p-8">
-            <ul className="space-y-5 text-[16px] text-[#666] leading-relaxed">
+          <div className="w-full rounded-2xl border border-zinc-800 bg-zinc-900/35 p-6 sm:p-8">
+            <ul className="space-y-5 text-[16px] text-zinc-400 leading-relaxed">
               <li>
-                <strong className="font-semibold text-[#2C3E50]">
+                <strong className="font-semibold text-zinc-100">
                   Shipping economics
                 </strong>
                 <span className="block mt-1">
@@ -772,7 +767,7 @@ export default function PhyphyyaCaseStudy() {
                 </span>
               </li>
               <li>
-                <strong className="font-semibold text-[#2C3E50]">
+                <strong className="font-semibold text-zinc-100">
                   Pricing &amp; perceived value
                 </strong>
                 <span className="block mt-1">
@@ -782,7 +777,7 @@ export default function PhyphyyaCaseStudy() {
                 </span>
               </li>
               <li>
-                <strong className="font-semibold text-[#2C3E50]">
+                <strong className="font-semibold text-zinc-100">
                   SKU mix &amp; bundles
                 </strong>
                 <span className="block mt-1">
@@ -795,19 +790,17 @@ export default function PhyphyyaCaseStudy() {
           </div>
         </CaseStudyInViewSection>
 
-        </CaseStudyContentLayout>
-
-        <footer className="border-t border-[#E0D9CE] bg-[#F5F3EF] py-14">
-          <CaseStudyPrevNext currentSlug="phyphyya" variant="light" />
+        <footer className="border-t border-zinc-800 py-14">
+          <CaseStudyPrevNext currentSlug="phyphyya" />
           <Link
             href="/"
-            className="mt-8 inline-block text-sm text-[#6A6358] transition hover:text-[#2C3E50]"
+            className="mt-8 inline-block text-sm text-zinc-400 transition hover:text-zinc-100"
           >
             ← Back to home
           </Link>
         </footer>
-      </div>
-    </div>
+      </CaseStudyContentLayout>
+    </article>
   );
 }
 

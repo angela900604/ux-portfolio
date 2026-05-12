@@ -113,10 +113,7 @@ export function BeyondDesignGallery({
     <div className="mt-10">
       <div className="space-y-12">
         <section>
-          <h3 className="text-lg font-semibold tracking-tight text-zinc-100 sm:text-xl">
-            Photography &amp; travel
-          </h3>
-          <div className="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-3 lg:grid-cols-4 lg:grid-rows-[repeat(4,minmax(0,auto))] lg:gap-3">
+          <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-3 lg:grid-cols-4 lg:grid-rows-[repeat(4,minmax(0,auto))] lg:gap-3">
             {photography.map((item) => (
               <GalleryTile
                 key={item.src}

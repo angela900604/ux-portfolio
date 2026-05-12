@@ -45,8 +45,12 @@ export function CaseStudyLeftAside() {
                 link.external === true ||
                 (link.external !== false &&
                   /^https?:\/\//i.test(link.href));
-              const linkClass =
-                "text-sm font-medium text-emerald-400/95 underline-offset-[5px] transition hover:text-emerald-300 hover:underline";
+              const minaCaseStudy =
+                pathname === "/case-studies/ai-marketplace" ||
+                pathname.startsWith("/case-studies/ai-marketplace/");
+              const linkClass = minaCaseStudy
+                ? "text-sm font-medium text-[#B75E45] underline-offset-[5px] transition hover:text-[#9a4f38] hover:underline"
+                : "text-sm font-medium text-emerald-400/95 underline-offset-[5px] transition hover:text-emerald-300 hover:underline";
               return isExternal ? (
                 <a
                   key={`${link.href}-${link.label}`}
@@ -73,7 +77,12 @@ export function CaseStudyLeftAside() {
           <div className="mt-4 min-w-0">
             <Link
               href={meta.primaryCta.href}
-              className="text-sm font-medium text-emerald-400/95 underline-offset-[5px] transition hover:text-emerald-300 hover:underline"
+              className={
+                pathname === "/case-studies/ai-marketplace" ||
+                pathname.startsWith("/case-studies/ai-marketplace/")
+                  ? "text-sm font-medium text-[#B75E45] underline-offset-[5px] transition hover:text-[#9a4f38] hover:underline"
+                  : "text-sm font-medium text-emerald-400/95 underline-offset-[5px] transition hover:text-emerald-300 hover:underline"
+              }
             >
               {meta.primaryCta.label}
             </Link>

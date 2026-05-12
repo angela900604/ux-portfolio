@@ -29,12 +29,18 @@ export type CaseStudyHeroTldrMetric = {
 type Props = {
   headline: ReactNode;
   metrics: readonly CaseStudyHeroTldrMetric[];
+  /** Metric value color (default emerald for e-invoice). */
+  metricValueClassName?: string;
 };
 
 /**
  * Light TL;DR band (e-invoice hero style): centered headline + metric cards.
  */
-export function CaseStudyHeroTldr({ headline, metrics }: Props) {
+export function CaseStudyHeroTldr({
+  headline,
+  metrics,
+  metricValueClassName = "text-emerald-600",
+}: Props) {
   const gridClass =
     metrics.length >= 4
       ? "sm:grid-cols-2 lg:grid-cols-4"
@@ -61,7 +67,9 @@ export function CaseStudyHeroTldr({ headline, metrics }: Props) {
             <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500">
               {m.kicker}
             </p>
-            <p className="mt-3 text-2xl font-bold tabular-nums tracking-tight text-emerald-600 sm:text-3xl">
+            <p
+              className={`mt-3 text-2xl font-bold tabular-nums tracking-tight sm:text-3xl ${metricValueClassName}`.trim()}
+            >
               {m.value}
             </p>
             <p className="mt-2 text-sm font-semibold leading-snug text-zinc-900">

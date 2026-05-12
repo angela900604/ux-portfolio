@@ -57,18 +57,18 @@ export function MomiImageSlideshow({
   const isCompact = compact && !block;
 
   const shell = block
-    ? "w-full max-w-none rounded-xl border border-[#E8E1D6] bg-white p-3 sm:p-4"
+    ? "w-full max-w-none rounded-xl border border-zinc-800 bg-zinc-900/40 p-3 sm:p-4"
     : isCompact
-      ? "mx-0 w-full max-w-[200px] rounded-lg border border-[#E8E1D6] bg-white p-2 sm:max-w-[220px]"
-      : "mx-auto w-full max-w-md rounded-xl border border-[#E8E1D6] bg-white p-3 sm:max-w-lg sm:p-4";
+      ? "mx-0 w-full max-w-[200px] rounded-lg border border-zinc-800 bg-zinc-900/40 p-2 sm:max-w-[220px]"
+      : "mx-auto w-full max-w-md rounded-xl border border-zinc-800 bg-zinc-900/40 p-3 sm:max-w-lg sm:p-4";
 
   const frame = isCompact
-    ? "relative aspect-square w-full overflow-hidden rounded-md border border-[#E8E1D6] bg-[#FDFBF8]"
-    : "relative aspect-[4/3] w-full overflow-hidden rounded-lg border border-[#E8E1D6] bg-[#FDFBF8]";
+    ? "relative aspect-square w-full overflow-hidden rounded-md border border-zinc-800 bg-zinc-950/80"
+    : "relative aspect-[4/3] w-full overflow-hidden rounded-lg border border-zinc-800 bg-zinc-950/80";
 
   const navBtn = isCompact
-    ? "pointer-events-auto rounded-full border border-[#D6CBB8] bg-white/90 px-2 py-1 text-xs text-[#4A4A4A] transition hover:bg-[#F5F0E8]"
-    : "pointer-events-auto rounded-full border border-[#D6CBB8] bg-white/90 px-3 py-1.5 text-sm text-[#4A4A4A] transition hover:bg-[#F5F0E8]";
+    ? "pointer-events-auto rounded-full border border-zinc-600 bg-zinc-800/95 px-2 py-1 text-xs text-zinc-100 transition hover:bg-zinc-700"
+    : "pointer-events-auto rounded-full border border-zinc-600 bg-zinc-800/95 px-3 py-1.5 text-sm text-zinc-100 transition hover:bg-zinc-700";
 
   const dotWrap = isCompact ? "mt-2" : "mt-3";
 
@@ -140,8 +140,8 @@ export function MomiImageSlideshow({
                 isCompact ? "h-1.5 w-1.5" : "h-2 w-2"
               } ${
                 i === safeIndex
-                  ? "bg-[#8D99AE]"
-                  : "bg-[#D2C8BA] hover:bg-[#B9AE9F]"
+                  ? "bg-zinc-400"
+                  : "bg-zinc-600 hover:bg-zinc-500"
               }`}
             />
           ))}
@@ -149,7 +149,7 @@ export function MomiImageSlideshow({
       ) : null}
 
       <p
-        className={`mt-1.5 text-center text-[#7A7A7A] ${isCompact ? "text-[10px] leading-tight" : "text-[11px]"}`}
+        className={`mt-1.5 text-center text-zinc-500 ${isCompact ? "text-[10px] leading-tight" : "text-[11px]"}`}
       >
         {label} ({safeIndex + 1}/{total})
       </p>

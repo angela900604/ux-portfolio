@@ -18,7 +18,7 @@ export default function MinaMarketingPage() {
           <div className={`${CASE_STUDY_BODY_GRID} min-w-0`}>
             <Link
               href="/case-studies/ai-marketplace"
-              className="text-sm font-medium text-emerald-400/95 underline-offset-[5px] transition hover:text-emerald-300 hover:underline"
+              className="text-sm font-medium text-[#B75E45] underline-offset-[5px] transition hover:text-[#9a4f38] hover:underline"
             >
               ← Back to MINA product case study
             </Link>
