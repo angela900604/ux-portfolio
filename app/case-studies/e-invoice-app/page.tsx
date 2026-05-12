@@ -347,7 +347,7 @@ export default function EInvoiceCaseStudy() {
 
       <CaseStudyInViewSection
         id="key-outcomes"
-        className="scroll-mt-28 mb-14 w-full sm:mb-16 sm:scroll-mt-32"
+        className="scroll-mt-28 mb-14 min-w-0 w-full sm:mb-16 sm:scroll-mt-32"
       >
         <FinalScreensMarquee slides={FINAL_SOLUTION_MARQUEE_SLIDES} />
       </CaseStudyInViewSection>

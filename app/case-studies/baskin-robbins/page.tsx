@@ -242,11 +242,16 @@ export default function BaskinRobbinsCaseStudy() {
             </p>
           </div>
         </CaseStudyInViewSection>
+      </CaseStudyContentLayout>
 
-        <div id="final-product" className={sectionScroll}>
-          <BaskinFinalScreensMarquee slides={FINAL_PRODUCT_MARQUEE_SLIDES} />
-        </div>
+      <CaseStudyInViewSection
+        id="final-product"
+        className={`min-w-0 w-full ${sectionScroll}`}
+      >
+        <BaskinFinalScreensMarquee slides={FINAL_PRODUCT_MARQUEE_SLIDES} />
+      </CaseStudyInViewSection>
 
+      <CaseStudyContentLayout containerClassName="!pt-0 sm:!pt-0">
         <CaseStudyInViewSection
           className={`min-w-0 w-full border-t border-zinc-800 pt-10 sm:pt-12 ${sectionScroll}`}
         >
