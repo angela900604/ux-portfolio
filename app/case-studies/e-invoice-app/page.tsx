@@ -8,7 +8,6 @@ import {
   CASE_STUDY_AT_A_GLANCE_DARK_HERO_PROPS,
 } from "../_components/CaseStudyAtAGlance";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
-import { CaseStudyExpandable } from "../_components/CaseStudyExpandable";
 import { CaseStudyHeroFullBleed } from "../_components/CaseStudyHeroFullBleed";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
@@ -233,6 +232,8 @@ const M_TXT =
   "rounded-md bg-emerald-500/20 px-1.5 py-0.5 font-semibold tabular-nums text-emerald-200";
 const M_TIME =
   "rounded-md bg-amber-500/15 px-1.5 py-0.5 font-medium tabular-nums text-amber-100/95";
+/** Labels in testing recap — emerald accent */
+const E_INVOICE_ACCENT_LABEL = "font-semibold text-emerald-300";
 /** Design journey copy — emerald emphasis on key terms */
 const JOURNEY_EMPHASIS = "font-semibold text-emerald-200";
 
@@ -784,9 +785,6 @@ export default function EInvoiceCaseStudy() {
           className="scroll-mt-28 space-y-12 sm:scroll-mt-32"
         >
           <div className="max-w-3xl space-y-4">
-            <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-              03 · Page flow, UI direction &amp; design system
-            </span>
             <p className="max-w-3xl text-sm leading-relaxed text-zinc-300 sm:text-base">
               In user interviews, people described how they wanted the app to
               feel in everyday use—easy to scan, calm, and not overwhelming.
@@ -799,9 +797,9 @@ export default function EInvoiceCaseStudy() {
             </p>
             <ul
               className="flex flex-wrap gap-2.5"
-              aria-label="User interview keywords (Chinese)"
+              aria-label="User interview keywords (English)"
             >
-              {(["直覺", "簡約", "清爽", "現代"] as const).map((word) => (
+              {(["Intuitive", "Minimal", "Fresh", "Modern"] as const).map((word) => (
                 <li key={word}>
                   <span className="inline-flex rounded-lg border border-emerald-500/45 bg-emerald-500/10 px-3 py-1.5 text-base font-semibold tracking-wide text-emerald-100 sm:text-lg">
                     {word}
@@ -814,11 +812,9 @@ export default function EInvoiceCaseStudy() {
           <div className="grid gap-10 lg:grid-cols-2 lg:items-start lg:gap-14">
             <div className="min-w-0 space-y-6">
               <p className="text-xs font-semibold uppercase tracking-widest text-violet-400/90">
-                Concept development
+                Moodboard &amp; style directions
               </p>
-                           <h3 className="text-zinc-100">
-                Moodboard &amp; style directions · 01 Friendly lifestyle
-              </h3>
+              <h3 className="text-zinc-100">Vibrant, Life, Fun</h3>
               <p className="text-zinc-300 leading-relaxed">
                 The approved route stayed closest to daily behavior: a
                 multi-color system where{" "}
@@ -857,16 +853,6 @@ export default function EInvoiceCaseStudy() {
                   ))}
                 </ul>
               </div>
-              <div className="flex flex-wrap gap-2 pt-1">
-                {["Vibrant", "Life", "Fun"].map((word) => (
-                  <span
-                    key={word}
-                    className="rounded-full border border-zinc-700/80 bg-zinc-900/60 px-3 py-1 text-xs font-medium text-zinc-300"
-                  >
-                    {word}
-                  </span>
-                ))}
-              </div>
             </div>
             <div className="min-w-0 lg:sticky lg:top-24">
               <WideFigure
@@ -894,9 +880,6 @@ export default function EInvoiceCaseStudy() {
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
           <div className="max-w-3xl space-y-6">
-            <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-              04 · Testing &amp; iterations · Accessibility in the protocol
-            </span>
             <h2 className="max-w-3xl text-zinc-100">
               Twelve moderated sessions—including low-vision users—landed at{" "}
               <span className={M_TXT}>88%</span> success and a clear fix list for login,
@@ -907,19 +890,6 @@ export default function EInvoiceCaseStudy() {
               VoiceOver paths, visual hierarchy, and plain-language fixes could ship
               before launch—not relegated to a late &quot;a11y pass.&quot;
             </p>
-            <h6 className="text-zinc-400">
-              Five core test tasks
-            </h6>
-            <ul className="list-disc pl-5 space-y-2 text-zinc-300 marker:text-zinc-500">
-              <li>Login &amp; registration — verify account creation and access.</li>
-              <li>Carrier binding — link and manage invoice carriers.</li>
-              <li>Invoice wallet &amp; donation — store invoices and test donation.</li>
-              <li>
-                Scan &amp; prize redemption — scan invoices, check results, claim
-                prizes.
-              </li>
-              <li>Spending analysis — view and interpret expense breakdowns.</li>
-            </ul>
             <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-6">
               <h4 className="text-zinc-100">
                 Results summary (prototype)
@@ -958,14 +928,14 @@ export default function EInvoiceCaseStudy() {
                 <span className={M_TIME}>~2m 20s</span> avg.).
               </p>
               <p className="mt-3 text-sm text-zinc-300">
-                <span className="text-zinc-200">What worked:</span> scan &amp; prize check
-                with visual/audio feedback; homepage layout (especially for elderly);
-                spending charts valued by younger users.
+                <span className={E_INVOICE_ACCENT_LABEL}>What worked:</span> scan &amp;
+                prize check with visual/audio feedback; homepage layout (especially for
+                elderly); spending charts valued by younger users.
               </p>
               <p className="mt-2 text-sm text-zinc-300">
-                <span className="text-zinc-200">What didn&apos;t:</span> first-run
-                length still a tension for some (optional steps skipped); multi-language
-                prompts unclear; prize redemption steps confusing.
+                <span className={E_INVOICE_ACCENT_LABEL}>What didn&apos;t:</span>{" "}
+                first-run length still a tension for some (optional steps skipped);
+                multi-language prompts unclear; prize redemption steps confusing.
               </p>
             </div>
             <div className="grid gap-6 sm:grid-cols-2 max-w-4xl">
@@ -1079,7 +1049,10 @@ export default function EInvoiceCaseStudy() {
               </div>
             </div>
 
-            <CaseStudyExpandable label="What I&apos;d validate next">
+            <div className="max-w-3xl space-y-3 border-t border-zinc-800/90 pt-8">
+              <h3 className="text-lg font-semibold tracking-tight text-zinc-100 sm:text-xl">
+                What I&apos;d validate next
+              </h3>
               <ul className="list-disc space-y-2 pl-5 text-zinc-300 leading-relaxed marker:text-zinc-500">
                 <li>
                   Production experiment on{" "}
@@ -1098,7 +1071,7 @@ export default function EInvoiceCaseStudy() {
                   IA stabilization—not just pass/fail in one lab cycle.
                 </li>
               </ul>
-            </CaseStudyExpandable>
+            </div>
             <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
               <ImageLightbox
                 src="/case-studies/e-invoice/photo-stakeholder-meeting.png"
