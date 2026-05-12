@@ -339,7 +339,7 @@ export default function AiMarketplaceCaseStudy() {
                     height={MINA_SELLING_AGENT_H}
                     className="h-auto w-full object-contain"
                     unoptimized
-                    sizes="(max-width: 640px) 100vw, min(896px, calc(100vw - 3rem))"
+                    sizes="(max-width: 640px) 100vw, min(896px, calc(100vw - 126px))"
                   />
                 </ImageLightbox>
               </div>
@@ -413,7 +413,7 @@ export default function AiMarketplaceCaseStudy() {
                     height={MINA_COPILOT_FLOW_H}
                     className="h-auto w-full object-contain"
                     unoptimized
-                    sizes="(max-width: 640px) 100vw, min(896px, calc(100vw - 3rem))"
+                    sizes="(max-width: 640px) 100vw, min(896px, calc(100vw - 126px))"
                   />
                 </ImageLightbox>
               </figure>

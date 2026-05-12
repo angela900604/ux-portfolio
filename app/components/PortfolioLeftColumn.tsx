@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { ImageLightbox } from "@/app/components/ImageLightbox";
 import {
   MARKETING_FLAGSHIP_SERIF,
@@ -15,10 +16,14 @@ const FOCUS_LINES = ["Product design", "Marketing design"] as const;
 const HOVER_NAV = "transition hover:text-[color:var(--nav-accent-blue)]";
 
 /**
- * Persistent left rail: hello, profile photo, spacer, bottom meta (focus →
- * divider → location → ©). Bottom block pins to column foot on desktop.
+ * Persistent left rail: hello (home) or about label, profile photo, spacer,
+ * bottom meta (focus → divider → location → ©).
  */
 export function PortfolioLeftColumn() {
+  const pathname = usePathname() ?? "";
+  const isAbout =
+    pathname === "/about" || pathname.startsWith("/about/");
+
   return (
     <aside className={`${PORTFOLIO_LEFT_RAIL_CLASS} font-sans`}>
       <div className="min-w-0 shrink-0">
@@ -26,7 +31,7 @@ export function PortfolioLeftColumn() {
           className={`${MARKETING_FLAGSHIP_SERIF_LEAD_CLASS} text-zinc-50`}
           style={{ fontFamily: MARKETING_FLAGSHIP_SERIF }}
         >
-          Hello! I&apos;m Angela.
+          {isAbout ? "About me" : "Hello! I&apos;m Angela."}
         </h1>
       </div>
 

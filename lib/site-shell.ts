@@ -5,11 +5,14 @@
 /** Editorial max width (tuned −200px from prior shell for a slightly narrower grid). */
 export const SITE_MAX_WIDTH_CLASS = "max-w-[1480px]";
 
-/** Leading (left) gutter — keep in sync with {@link SITE_GUTTER_PR_CLASS} values. */
-export const SITE_GUTTER_PL_CLASS = "pl-6 sm:pl-[100px]";
+/** Fixed horizontal gutter (px) — left rail, nav, and main column use the same value. */
+export const SITE_GUTTER_PX = 63;
 
-/** Trailing (right) gutter — matches nav’s right padding and main column’s right edge. */
-export const SITE_GUTTER_PR_CLASS = "pr-6 sm:pr-[100px]";
+/** Leading (left) gutter — keep in sync with {@link SITE_GUTTER_PR_CLASS}. */
+export const SITE_GUTTER_PL_CLASS = "pl-[63px]";
+
+/** Trailing (right) gutter — same width as {@link SITE_GUTTER_PL_CLASS}. */
+export const SITE_GUTTER_PR_CLASS = "pr-[63px]";
 
 /** Equal left / right page gutters (used by nav, footer, heroes, layouts). */
 export const SITE_GUTTER_CLASS = `${SITE_GUTTER_PL_CLASS} ${SITE_GUTTER_PR_CLASS}`;
@@ -40,10 +43,10 @@ export const CASE_STUDY_SECTION_SUBTITLE_CLASS =
 
 /**
  * Counteract {@link SITE_GUTTER_CLASS} so a band (e.g. marquee) spans the full padded
- * main column edge-to-edge.
+ * main column edge-to-edge (two × {@link SITE_GUTTER_PX}px).
  */
 export const CASE_STUDY_BODY_BLEED_X =
-  "-mx-6 w-[calc(100%+3rem)] sm:-mx-[100px] sm:w-[calc(100%+200px)]";
+  "-mx-[63px] w-[calc(100%+126px)]";
 
 /** Full-width band within the main column only (not 100vw — aligns with narrative when a left rail exists). */
 export const CASE_STUDY_COLUMN_FULL_BLEED =

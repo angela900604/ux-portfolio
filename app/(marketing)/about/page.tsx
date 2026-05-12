@@ -27,18 +27,16 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <div className="pb-20 font-sans">
-      <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-zinc-600">
-        About
-      </p>
       <h1
         className={`mt-5 ${MARKETING_FLAGSHIP_SERIF_LEAD_MAX_WIDTH_CLASS} ${MARKETING_FLAGSHIP_SERIF_LEAD_CLASS} text-zinc-200`}
         style={{ fontFamily: MARKETING_FLAGSHIP_SERIF }}
       >
-        A product designer for consumer mobile and growth, shipping complex,
-        multi-role UX across government-scale and B2C, with a strong research
-        foundation across diverse segments. Focused on AI-driven products and
-        cross-functional leadership; based in Vancouver, open to relocate,
-        remote, or hybrid.
+        A product designer specializes in consumer mobile and growth, shipping
+        complex, multi-role information architecture across AI marketplaces,
+        government public services, membership platforms, and internal ops tools,
+        with a strong research foundation across diverse segments. Focused on
+        AI-driven products and cross-functional leadership; based in Vancouver,
+        open to relocate, remote, or hybrid.
       </h1>
 
       <AboutExperienceSection resumeHref={RESUME_PDF_SRC} />
