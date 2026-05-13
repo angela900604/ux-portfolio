@@ -6,10 +6,15 @@ export type WorkCover =
   | { kind: "mina" }
   | { kind: "image"; src: string };
 
+/** Homepage left-rail filter: product vs marketing case cards. */
+export type PortfolioWorkFocus = "product" | "marketing";
+
 export type MarketingWorkItem = {
   slug: string;
   href: string;
   title: string;
+  /** Used with left-rail “Product design” / “Marketing design” on the home grid. */
+  portfolioFocus: PortfolioWorkFocus;
   /** Tag pills under the title (homepage + case-study left rail when merged). */
   disciplineTags: readonly string[];
   year: string;
@@ -43,6 +48,7 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
   {
     slug: "e-invoice-app",
     href: "/case-studies/e-invoice-app",
+    portfolioFocus: "product",
     title:
       "Redesigning Taiwan Ministry of Finance's Uniform Invoice Award Redemption App",
     disciplineTags: [...E_INVOICE_HOME_DISCIPLINE_TAGS],
@@ -53,6 +59,7 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
   {
     slug: "ai-marketplace",
     href: "/case-studies/ai-marketplace",
+    portfolioFocus: "product",
     title: "MINA · AI-Powered Marketplace Community for SF Parents",
     disciplineTags: [...MINA_HOME_DISCIPLINE_TAGS],
     year: "2025–2026",
@@ -62,6 +69,7 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
   {
     slug: "government-backend",
     href: "/case-studies/government-backend",
+    portfolioFocus: "product",
     title: "Internal Backend Platform for 600+ government staff",
     disciplineTags: ["Responsive · Web · 600+ Users"],
     year: "2024–2025",
@@ -71,6 +79,7 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
   {
     slug: "baskin-robbins",
     href: "/case-studies/baskin-robbins",
+    portfolioFocus: "product",
     title: "Cross-market with Japan HQ · BR31 Taiwan membership app",
     disciplineTags: ["Mobile · Cross-market JP×TW"],
     year: "2024–2025",
@@ -80,6 +89,7 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
   {
     slug: "ai-marketplace/marketing",
     href: "/case-studies/ai-marketplace/marketing",
+    portfolioFocus: "marketing",
     title: "MINA · Instagram",
     disciplineTags: ["Content strategy & creation"],
     year: "2025",
@@ -93,6 +103,7 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
   {
     slug: "phyphyya",
     href: "/case-studies/phyphyya",
+    portfolioFocus: "marketing",
     title: "Haphy Living (Brand IP)",
     disciplineTags: ["Branding", "ecommerce"],
     year: "2023–2024",
@@ -102,6 +113,7 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
   {
     slug: "momi-animal-health",
     href: "/case-studies/momi-animal-health",
+    portfolioFocus: "marketing",
     title: "MOMI Animal Health",
     disciplineTags: [
       "graphic design",
@@ -119,6 +131,7 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
   {
     slug: "admission-hub",
     href: "/case-studies/admission-hub",
+    portfolioFocus: "marketing",
     title: "Admission Hub",
     disciplineTags: [
       "Social media management",

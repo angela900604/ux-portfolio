@@ -111,7 +111,7 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
       { label: "Role", value: "Sole product designer · 1 PM + 5 engineers" },
       {
         label: "Project type",
-        value: "AI-native marketplace iOS app · 0→1 consumer product",
+        value: "AI-native marketplace iOS app — growth & iteration on a live product",
       },
       {
         label: "Focus",

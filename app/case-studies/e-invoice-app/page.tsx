@@ -907,6 +907,21 @@ export default function EInvoiceCaseStudy() {
                 . Inclusive design here meant scenario language and mental models, not
                 only bigger type.
               </p>
+              <p>
+                On the engineering side, one of the hardest stretches while shaping each
+                screen and flow was staying in lockstep with{" "}
+                <span className="text-zinc-100">backend engineers</span> and with{" "}
+                <span className="text-zinc-100">
+                  engineers who maintained the legacy system
+                </span>
+                . We had to walk through{" "}
+                <span className="text-zinc-100">every API</span> and{" "}
+                <span className="text-zinc-100">each system judgment path</span>{" "}
+                together—clarifying what would be sent back at which stage, and exactly
+                what data each page needed to display and to hand off to the next step.
+                Without that shared map, the experience looked complete in design but
+                could not line up with what we could ship with confidence.
+              </p>
             </div>
 
             <div

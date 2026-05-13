@@ -1,13 +1,9 @@
-import { PortfolioTwoColumnShell } from "@/app/components/PortfolioTwoColumnShell";
+import { MarketingLayoutClient } from "./MarketingLayoutClient";
 
 export default function MarketingLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <PortfolioTwoColumnShell mainWidth="editorial">
-      {children}
-    </PortfolioTwoColumnShell>
-  );
+  return <MarketingLayoutClient>{children}</MarketingLayoutClient>;
 }

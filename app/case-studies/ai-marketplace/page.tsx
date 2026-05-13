@@ -67,7 +67,7 @@ const MINA_TLDR_METRICS: CaseStudyHeroTldrMetric[] = [
   {
     kicker: "Shipped",
     value: "50+",
-    title: "0→1 design system (50+ components) + 3 major flows",
+    title: "Design system (50+ components) + 3 major flows",
   },
   {
     kicker: "Team",
@@ -214,32 +214,19 @@ export default function AiMarketplaceCaseStudy() {
                   Three ways parents want to move gear came up in early
                   conversations.
                 </p>
-                <div className="mt-4 flex flex-wrap items-baseline gap-x-3 gap-y-2 border-b border-zinc-800/80 pb-4">
-                  <span className="rounded-full border border-amber-400/70 bg-amber-500/10 px-3.5 py-1 text-sm font-semibold text-amber-200">
-                    List fast
-                  </span>
-                  <span className="text-lg font-medium leading-snug text-zinc-200 sm:text-xl">
-                    Wants to bulk-list items without filling out a separate form
-                    for each one
-                  </span>
-                </div>
-                <div className="mt-4 flex flex-wrap items-baseline gap-x-3 gap-y-2 border-b border-zinc-800/80 pb-4">
-                  <span className="rounded-full border border-amber-400/70 bg-amber-500/10 px-3.5 py-1 text-sm font-semibold text-amber-200">
-                    Sell fast
-                  </span>
-                  <span className="text-lg font-medium leading-snug text-zinc-200 sm:text-xl">
-                    Wants items gone before the baby outgrows them — timing matters
-                    more than price
-                  </span>
-                </div>
-                <div className="mt-4 flex flex-wrap items-baseline gap-x-3 gap-y-2">
-                  <span className="rounded-full border border-amber-400/70 bg-amber-500/10 px-3.5 py-1 text-sm font-semibold text-amber-200">
-                    Giveaway free fast
-                  </span>
-                  <span className="text-lg font-medium leading-snug text-zinc-200 sm:text-xl">
-                    Just wants to drop off a black garbage bag and be done with it —
-                    no listings, no chats
-                  </span>
+                <div className="mt-4 divide-y divide-zinc-800/80">
+                  <p className="pb-4 text-lg font-medium leading-snug text-zinc-200 sm:text-xl">
+                    Wants to bulk-list items without filling out a separate form for
+                    each one
+                  </p>
+                  <p className="py-4 text-lg font-medium leading-snug text-zinc-200 sm:text-xl">
+                    Wants items gone before the baby outgrows them — timing matters more
+                    than price
+                  </p>
+                  <p className="pt-4 text-lg font-medium leading-snug text-zinc-200 sm:text-xl">
+                    Just wants to drop off a black garbage bag and be done with it — no
+                    listings, no chats
+                  </p>
                 </div>
               </div>
             </div>
