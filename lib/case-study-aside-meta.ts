@@ -138,19 +138,16 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
     )!,
     eyebrowAsProjectCardTag: true,
     title: "MINA · Instagram",
-    subtitle:
-      "Campaign tiles for the MINA brand—marketplace positioning, concierge pickup, community programs, and product stories—in a profile-style grid.",
     items: [
-      { label: "Timeline", value: "2025 · alongside product launch" },
+      { label: "Timeline", value: "2026" },
       { label: "Role", value: "Marketing designer" },
       {
         label: "Project type",
         value: "Social & launch campaign graphics · MINA (AI marketplace)",
       },
       {
-        label: "Focus",
-        value:
-          "Instagram grid, campaign tiles, concierge & community storytelling",
+        label: "Tools",
+        value: "Canva, Figma, Lovart, Instagram",
       },
     ],
     textLinks: [

@@ -6,7 +6,7 @@ import { SITE_SHELL_INNER } from "@/lib/site-shell";
 export const metadata = {
   title: "MINA · Instagram | Angela Yang",
   description:
-    "Social and launch graphics for MINA (AI marketplace for parents): full-width portfolio mockups for Instagram and launch, concierge storytelling, and product positioning.",
+    "MINA marketing work — social and launch graphics, Instagram grid, Canva, Figma, Lovart.",
 };
 
 export default function MinaMarketingPage() {
