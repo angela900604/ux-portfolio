@@ -7,10 +7,8 @@ import {
 } from "@/lib/marketing-flagship-serif";
 import { usePortfolioWorkFocus } from "@/app/components/PortfolioWorkFocusContext";
 
-const HOME_LEAD_DEFAULT =
-  "I design consumer-facing experiences across mobile, web, and tablets, and I also value empathy and curiosity in how I approach every problem.";
-
-const HOME_LEAD_PRODUCT =
+/** Default (8 cards) + Product filter — same positioning line. */
+const HOME_LEAD_ROOTED =
   "Rooted in curiosity and empathy, I design consumer-facing experiences that bridge complex logic with intuitive solutions, solving real frustrations to make digital spaces feel accessible and effortless";
 
 const HOME_LEAD_MARKETING =
@@ -20,11 +18,7 @@ export function HomeLeadByFocus() {
   const { focus } = usePortfolioWorkFocus();
 
   const text =
-    focus === "product"
-      ? HOME_LEAD_PRODUCT
-      : focus === "marketing"
-        ? HOME_LEAD_MARKETING
-        : HOME_LEAD_DEFAULT;
+    focus === "marketing" ? HOME_LEAD_MARKETING : HOME_LEAD_ROOTED;
 
   return (
     <p

@@ -2,12 +2,18 @@
 
 import {
   createContext,
+  Suspense,
   useCallback,
   useContext,
+  useEffect,
   useMemo,
-  useState,
   type ReactNode,
 } from "react";
+import {
+  usePathname,
+  useRouter,
+  useSearchParams,
+} from "next/navigation";
 import type { MarketingWorkItem } from "@/lib/marketing-work";
 
 export type PortfolioWorkFocusFilter = "all" | "product" | "marketing";
@@ -24,15 +30,80 @@ type PortfolioWorkFocusContextValue = {
 const PortfolioWorkFocusContext =
   createContext<PortfolioWorkFocusContextValue | null>(null);
 
-export function PortfolioWorkFocusProvider({ children }: { children: ReactNode }) {
-  const [focus, setFocus] = useState<PortfolioWorkFocusFilter>("all");
+function parseFocusParam(raw: string | null): PortfolioWorkFocusFilter {
+  if (raw === "product") return "product";
+  if (raw === "marketing") return "marketing";
+  return "all";
+}
 
-  const toggleFocus = useCallback((line: "product" | "marketing") => {
-    setFocus((prev) => {
+/**
+ * Pre-hydration / Suspense fallback: URL-driven navigation only; grid shows all
+ * until search params are ready (usually immediate).
+ */
+function PortfolioWorkFocusStaticBridge({ children }: { children: ReactNode }) {
+  const router = useRouter();
+  const pathname = usePathname() ?? "";
+
+  const value = useMemo<PortfolioWorkFocusContextValue>(
+    () => ({
+      focus: "all",
+      setFocus: (next) => {
+        if (pathname !== "/") return;
+        if (next === "all") router.replace("/", { scroll: false });
+        else router.replace(`/?focus=${next}`, { scroll: false });
+      },
+      toggleFocus: (line) => {
+        if (pathname !== "/") return;
+        const target = line === "product" ? "product" : "marketing";
+        router.replace(`/?focus=${target}`, { scroll: false });
+      },
+      itemsForCurrentFocus: (items) => items,
+    }),
+    [router, pathname],
+  );
+
+  return (
+    <PortfolioWorkFocusContext.Provider value={value}>
+      {children}
+    </PortfolioWorkFocusContext.Provider>
+  );
+}
+
+function PortfolioWorkFocusProviderBody({ children }: { children: ReactNode }) {
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname() ?? "";
+
+  const focus = useMemo(
+    () => parseFocusParam(searchParams.get("focus")),
+    [searchParams],
+  );
+
+  useEffect(() => {
+    const raw = searchParams.get("focus");
+    if (raw && raw !== "product" && raw !== "marketing") {
+      router.replace("/", { scroll: false });
+    }
+  }, [searchParams, router]);
+
+  const setFocus = useCallback(
+    (next: PortfolioWorkFocusFilter) => {
+      if (pathname !== "/") return;
+      if (next === "all") router.replace("/", { scroll: false });
+      else router.replace(`/?focus=${next}`, { scroll: false });
+    },
+    [pathname, router],
+  );
+
+  const toggleFocus = useCallback(
+    (line: "product" | "marketing") => {
+      if (pathname !== "/") return;
       const target = line === "product" ? "product" : "marketing";
-      return prev === target ? "all" : target;
-    });
-  }, []);
+      if (focus === target) setFocus("all");
+      else setFocus(target);
+    },
+    [pathname, focus, setFocus],
+  );
 
   const itemsForCurrentFocus = useCallback(
     (items: readonly MarketingWorkItem[]) => {
@@ -49,13 +120,27 @@ export function PortfolioWorkFocusProvider({ children }: { children: ReactNode }
       toggleFocus,
       itemsForCurrentFocus,
     }),
-    [focus, toggleFocus, itemsForCurrentFocus],
+    [focus, setFocus, toggleFocus, itemsForCurrentFocus],
   );
 
   return (
     <PortfolioWorkFocusContext.Provider value={value}>
       {children}
     </PortfolioWorkFocusContext.Provider>
+  );
+}
+
+export function PortfolioWorkFocusProvider({ children }: { children: ReactNode }) {
+  return (
+    <Suspense
+      fallback={
+        <PortfolioWorkFocusStaticBridge>
+          {children}
+        </PortfolioWorkFocusStaticBridge>
+      }
+    >
+      <PortfolioWorkFocusProviderBody>{children}</PortfolioWorkFocusProviderBody>
+    </Suspense>
   );
 }
 
