@@ -7,9 +7,9 @@ import {
 } from "@/lib/marketing-flagship-serif";
 import { usePortfolioWorkFocus } from "@/app/components/PortfolioWorkFocusContext";
 
-/** Default (8 cards) + Product filter — same positioning line. */
+/** Default (8 cards) + Product filter — personal intro line. */
 const HOME_LEAD_ROOTED =
-  "Rooted in curiosity and empathy, I design consumer-facing experiences that bridge complex logic with intuitive solutions, solving real frustrations to make digital spaces feel accessible and effortless";
+  "I left a government-scale project in Taiwan for Vancouver, chasing environments that take user needs seriously. In teams, I'm the one who mirrors back what people mean — and pulls the conversation back when it drifts.";
 
 const HOME_LEAD_MARKETING =
   "Driven by empathy, I turn business goals into visual experiences that truly resonate with people.";

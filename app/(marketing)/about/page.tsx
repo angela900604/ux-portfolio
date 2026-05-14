@@ -21,7 +21,7 @@ const ABOUT_CARD_BODY_CLASS =
 export const metadata = {
   title: "About | Angela Yang",
   description:
-    "Product Designer with a digital marketing background—high-growth consumer experiences and complex IA across AI marketplaces, government services, membership, and ops tools; cross-functional leadership, deep research, systems thinking.",
+    "Product Designer with digital marketing roots—high-growth consumer experiences across AI marketplaces, government services, and membership platforms; builds in the open and swaps notes on design workflows as tools evolve.",
 };
 
 export default function AboutPage() {
@@ -33,15 +33,13 @@ export default function AboutPage() {
       >
         <span className="block">
           Product Designer with a digital marketing background, specializing in
-          building high-growth consumer experiences. I&apos;ve shipped complex
-          information architecture across AI marketplaces, government public
-          services, membership platforms, and internal operations tools.
+          high-growth consumer experiences across AI marketplaces, government
+          services, and membership platforms.
         </span>
         <span className="mt-4 block sm:mt-5">
-          With a foundation in cross-functional leadership and deep user research, I
-          approach every problem with empathy, curiosity, and systems thinking,
-          ensuring that every pixel not only solves a user frustration but also fuels
-          business growth.
+          I adapt by doing. This site is vibe-coded by me, and I&apos;m regularly
+          swapping notes with other designers on what&apos;s actually working in their
+          design workflows when new tools come out.
         </span>
       </h1>
 
