@@ -17,11 +17,11 @@ export function HomeSelectedWorkSection() {
 
       <MarketingSelectedWorkGrid items={TIER_1} />
 
-      <div className="mt-10">
+      <div className="mt-10 flex flex-col items-center border-t border-zinc-800 pt-8">
         <button
           type="button"
           onClick={() => setMoreOpen((v) => !v)}
-          className="text-sm font-normal tracking-[-0.01em] text-zinc-500 transition hover:text-zinc-300"
+          className="flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-900/60 px-5 py-2.5 text-sm font-medium tracking-[-0.01em] text-zinc-300 transition hover:border-zinc-500 hover:bg-zinc-800 hover:text-zinc-100"
         >
           {moreOpen ? "Less ↑" : "More work ↓"}
         </button>
