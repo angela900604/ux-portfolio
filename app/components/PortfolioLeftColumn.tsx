@@ -58,7 +58,7 @@ export function PortfolioLeftColumn() {
 
       <div className="shrink-0 pb-0 pt-2 lg:mt-0">
         <p className="text-[clamp(0.8rem,1.6vw,0.95rem)] font-normal leading-snug tracking-[-0.015em] text-zinc-50">
-          Product Designer · Research-led · Shipped at scale
+          Product Designer
         </p>
 
         <div className="my-6 border-t border-zinc-800" aria-hidden />
