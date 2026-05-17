@@ -21,9 +21,8 @@ export type MarketingWorkItem = {
   cover: WorkCover;
   /** One-line systems / craft signal under tags (omit on homepage when unused). */
   techHighlights?: string;
-  /** Show green Shipped pill; optionally override the label text. */
+  /** Show "end-to-end" + "launched" green pills. */
   showShipped?: boolean;
-  shippedLabel?: string;
   /** Serve cover PNG without Next image optimizer (full quality) */
   coverUnoptimized?: boolean;
 };
@@ -56,7 +55,6 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     year: "2024–2025",
     cover: { kind: "e-invoice" },
     showShipped: true,
-    shippedLabel: "end-to-end · launched",
   },
   {
     slug: "ai-marketplace",
@@ -67,7 +65,6 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     year: "2025–2026",
     cover: { kind: "mina" },
     showShipped: true,
-    shippedLabel: "end-to-end · launched",
   },
   {
     slug: "government-backend",
@@ -78,7 +75,6 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     year: "2024–2025",
     cover: { kind: "image", src: GOV_COVER },
     showShipped: true,
-    shippedLabel: "end-to-end · launched",
   },
   {
     slug: "baskin-robbins",
@@ -89,7 +85,6 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     year: "2024–2025",
     cover: { kind: "image", src: "/case-studies/baskin-robbins/home-cover.png" },
     showShipped: true,
-    shippedLabel: "end-to-end · launched",
   },
   {
     slug: "ai-marketplace/marketing",
