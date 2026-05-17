@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { MARKETING_SECTION_TITLE_CLASS } from "@/lib/marketing-section-title";
 import { MARKETING_SELECTED_WORK } from "@/lib/marketing-work";
 import { MarketingSelectedWorkGrid } from "./MarketingSelectedWorkGrid";
 
@@ -24,9 +23,7 @@ export function HomeSelectedWorkSection() {
   }
 
   return (
-    <section className="mt-20 sm:mt-24">
-      <h2 className={MARKETING_SECTION_TITLE_CLASS}>Selected work</h2>
-
+    <section className="mt-12 sm:mt-16">
       <MarketingSelectedWorkGrid items={TIER_1} />
 
       <div className="mt-10 flex flex-col items-center border-t border-zinc-800 pt-8">
