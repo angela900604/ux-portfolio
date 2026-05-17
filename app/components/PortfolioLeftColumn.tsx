@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { ImageLightbox } from "@/app/components/ImageLightbox";
-import { usePortfolioWorkFocus } from "@/app/components/PortfolioWorkFocusContext";
 import {
   MARKETING_FLAGSHIP_SERIF,
   MARKETING_FLAGSHIP_SERIF_LEAD_CLASS,
@@ -12,15 +11,7 @@ import { PORTFOLIO_LEFT_RAIL_CLASS } from "@/lib/portfolio-shell";
 
 const PROFILE_SRC = "/about/profile-v2.png";
 
-const FOCUS_LINES = ["Product design", "Marketing design"] as const;
-
 const HOVER_NAV = "transition hover:text-[color:var(--nav-accent-blue)]";
-
-const FOCUS_KEY_BY_LINE: Record<(typeof FOCUS_LINES)[number], "product" | "marketing"> =
-  {
-    "Product design": "product",
-    "Marketing design": "marketing",
-  };
 
 /**
  * Persistent left rail: hello (home) or about label, profile photo, spacer,
@@ -30,8 +21,6 @@ export function PortfolioLeftColumn() {
   const pathname = usePathname() ?? "";
   const isAbout =
     pathname === "/about" || pathname.startsWith("/about/");
-  const isHome = pathname === "/";
-  const { focus, toggleFocus } = usePortfolioWorkFocus();
 
   return (
     <aside className={`${PORTFOLIO_LEFT_RAIL_CLASS} font-sans`}>
@@ -40,7 +29,7 @@ export function PortfolioLeftColumn() {
           className={`${MARKETING_FLAGSHIP_SERIF_LEAD_CLASS} text-zinc-50`}
           style={{ fontFamily: MARKETING_FLAGSHIP_SERIF }}
         >
-          {isAbout ? "About me" : "Hello! This is Angela."}
+          {isAbout ? "About me" : "Hi, I'm Angela."}
         </h1>
       </div>
 
@@ -68,36 +57,9 @@ export function PortfolioLeftColumn() {
       <div className="hidden min-h-0 shrink lg:block lg:flex-1" aria-hidden />
 
       <div className="shrink-0 pb-0 pt-2 lg:mt-0">
-        <ul
-          className="space-y-2 text-[clamp(0.8rem,1.6vw,0.95rem)] font-normal leading-snug tracking-[-0.015em] text-zinc-50"
-          aria-label={isHome ? "Filter selected work by focus" : "Focus areas"}
-        >
-          {FOCUS_LINES.map((line) => {
-            const key = FOCUS_KEY_BY_LINE[line];
-            const isActive = focus === key;
-
-            if (!isHome) {
-              return <li key={line}>{line}</li>;
-            }
-
-            return (
-              <li key={line}>
-                <button
-                  type="button"
-                  onClick={() => toggleFocus(key)}
-                  aria-pressed={isActive}
-                  className={`rounded-sm text-left outline-none focus-visible:ring-2 focus-visible:ring-white/40 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950 ${HOVER_NAV} ${
-                    isActive
-                      ? "text-[color:var(--nav-accent-blue)]"
-                      : "text-zinc-50"
-                  }`}
-                >
-                  {line}
-                </button>
-              </li>
-            );
-          })}
-        </ul>
+        <p className="text-[clamp(0.8rem,1.6vw,0.95rem)] font-normal leading-snug tracking-[-0.015em] text-zinc-50">
+          Product Designer · Research-led · Shipped at scale
+        </p>
 
         <div className="my-6 border-t border-zinc-800" aria-hidden />
 

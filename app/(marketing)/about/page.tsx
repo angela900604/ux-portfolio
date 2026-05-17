@@ -32,9 +32,8 @@ export default function AboutPage() {
         style={{ fontFamily: MARKETING_FLAGSHIP_SERIF }}
       >
         <span className="block">
-          Product Designer with a digital marketing background, specializing in
-          high-growth consumer experiences across AI marketplaces, government
-          services, and membership platforms.
+          Product Designer specializing in complex, research-driven experiences,
+          shipped at government scale and consumer scale.
         </span>
         <span className="mt-4 block sm:mt-5">
           I adapt by doing. This site is vibe-coded by me, and I&apos;m regularly
