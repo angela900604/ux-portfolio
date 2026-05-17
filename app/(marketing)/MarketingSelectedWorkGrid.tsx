@@ -60,7 +60,7 @@ export function MarketingSelectedWorkGrid({
                   {item.disciplineTags.map((tag) => (
                     <ProjectCardTag key={tag}>{tag}</ProjectCardTag>
                   ))}
-                  {item.showShipped ? <ProjectShippedBadge /> : null}
+                  {item.showShipped ? <ProjectShippedBadge label={item.shippedLabel} /> : null}
                 </div>
                 {item.techHighlights ? (
                   <ProjectTechHighlights>

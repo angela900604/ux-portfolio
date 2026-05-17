@@ -21,8 +21,9 @@ export type MarketingWorkItem = {
   cover: WorkCover;
   /** One-line systems / craft signal under tags (omit on homepage when unused). */
   techHighlights?: string;
-  /** Show green Shipped pill */
+  /** Show green Shipped pill; optionally override the label text. */
   showShipped?: boolean;
+  shippedLabel?: string;
   /** Serve cover PNG without Next image optimizer (full quality) */
   coverUnoptimized?: boolean;
 };
@@ -51,20 +52,22 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     portfolioFocus: "product",
     title:
       "Redesigning Taiwan Ministry of Finance's Uniform Invoice Award Redemption App",
-    disciplineTags: [...E_INVOICE_HOME_DISCIPLINE_TAGS],
+    disciplineTags: ["PUBLIC SERVICE application · user research"],
     year: "2024–2025",
     cover: { kind: "e-invoice" },
     showShipped: true,
+    shippedLabel: "end-to-end · launched",
   },
   {
     slug: "ai-marketplace",
     href: "/case-studies/ai-marketplace",
     portfolioFocus: "product",
     title: "MINA · AI-Powered Marketplace Community for SF Parents",
-    disciplineTags: [...MINA_HOME_DISCIPLINE_TAGS],
+    disciplineTags: ["AI-driven community · Mobile app"],
     year: "2025–2026",
     cover: { kind: "mina" },
     showShipped: true,
+    shippedLabel: "end-to-end · launched",
   },
   {
     slug: "government-backend",
@@ -75,6 +78,7 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     year: "2024–2025",
     cover: { kind: "image", src: GOV_COVER },
     showShipped: true,
+    shippedLabel: "end-to-end · launched",
   },
   {
     slug: "baskin-robbins",
@@ -85,6 +89,7 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     year: "2024–2025",
     cover: { kind: "image", src: "/case-studies/baskin-robbins/home-cover.png" },
     showShipped: true,
+    shippedLabel: "end-to-end · launched",
   },
   {
     slug: "ai-marketplace/marketing",
