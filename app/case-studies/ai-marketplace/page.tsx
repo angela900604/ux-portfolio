@@ -92,6 +92,19 @@ export default function AiMarketplaceCaseStudy() {
           <div
             className={`${CASE_STUDY_BODY_GRID} flex min-w-0 flex-col overflow-x-hidden`}
           >
+            <div className="mb-10 sm:mb-12">
+              <CaseStudyHeroTldr
+                metricValueClassName="text-[#B75E45]"
+                headline={
+                  <>
+                    Sole designer on MINA — AI-native marketplace for parents ·
+                    Listing funnel, trust-first surfaces, and system work
+                  </>
+                }
+                metrics={MINA_TLDR_METRICS}
+              />
+            </div>
+
             <figure className="w-full min-w-0">
               <div
                 className="relative w-full min-h-0 overflow-hidden rounded-xl border border-zinc-800/80 bg-black shadow-[0_20px_50px_-20px_rgba(0,0,0,0.65)]"
@@ -170,18 +183,6 @@ export default function AiMarketplaceCaseStudy() {
               </div>
             </section>
 
-            <div className="mt-10 sm:mt-12">
-              <CaseStudyHeroTldr
-                metricValueClassName="text-[#B75E45]"
-                headline={
-                  <>
-                    Sole designer on MINA — AI-native marketplace for parents ·
-                    Listing funnel, trust-first surfaces, and system work
-                  </>
-                }
-                metrics={MINA_TLDR_METRICS}
-              />
-            </div>
           </div>
         </div>
       </header>

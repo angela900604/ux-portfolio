@@ -61,6 +61,10 @@ export default function GovernmentBackendCaseStudy() {
           <div
             className={`${CASE_STUDY_BODY_GRID} min-w-0 space-y-10 sm:space-y-12`}
           >
+            <div>
+              <GovernmentBackendHeroTldr />
+            </div>
+
             <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
               <ImageLightbox
                 src={BACKEND_COVER.src}
@@ -77,10 +81,6 @@ export default function GovernmentBackendCaseStudy() {
                   sizes="(max-width: 768px) 100vw, 1080px"
                 />
               </ImageLightbox>
-            </div>
-
-            <div className="mt-10">
-              <GovernmentBackendHeroTldr />
             </div>
           </div>
         </div>

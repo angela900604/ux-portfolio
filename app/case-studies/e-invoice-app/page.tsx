@@ -312,6 +312,10 @@ export default function EInvoiceCaseStudy() {
           <div
             className={`${CASE_STUDY_BODY_GRID} min-w-0 overflow-x-hidden space-y-10 sm:space-y-12`}
           >
+          <div>
+            <EInvoiceHeroTldr />
+          </div>
+
           <div className="flex min-w-0 flex-col gap-8 sm:gap-10">
             {HERO_MOCK_GALLERY.map((img) => (
               <ImageLightbox
@@ -332,10 +336,6 @@ export default function EInvoiceCaseStudy() {
                 />
               </ImageLightbox>
             ))}
-          </div>
-
-          <div className="mt-10">
-            <EInvoiceHeroTldr />
           </div>
           </div>
         </div>
