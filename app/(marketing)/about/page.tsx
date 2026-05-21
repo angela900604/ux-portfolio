@@ -23,7 +23,7 @@ export default function AboutPage() {
   return (
     <div className="pb-20 font-sans">
       <h1
-        className="max-w-3xl font-sans text-base leading-relaxed text-zinc-300 text-pretty sm:text-lg"
+        className="max-w-3xl font-sans text-lg leading-relaxed text-zinc-300 text-pretty sm:text-xl"
       >
         <span className="block">
           I&apos;m a Product Designer specializing in delivering end-to-end solutions
