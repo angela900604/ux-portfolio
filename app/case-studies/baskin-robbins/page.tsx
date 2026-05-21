@@ -1,6 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ImageLightbox } from "@/app/components/ImageLightbox";
+import {
+  CaseStudyHeroTldr,
+  type CaseStudyHeroTldrMetric,
+} from "../_components/CaseStudyHeroTldr";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
@@ -15,6 +19,37 @@ import {
   CASE_STUDY_SECTION_TITLE_CLASS,
   SITE_SHELL_INNER,
 } from "@/lib/site-shell";
+
+const BR_TLDR_METRICS: CaseStudyHeroTldrMetric[] = [
+  {
+    kicker: "Timeline",
+    value: "3 months",
+    title: "Zero to App Store",
+    detail:
+      "Requirements, Japan HQ sign-off, build-ready UI kit, and store UAT — all within 90 days.",
+  },
+  {
+    kicker: "Reference benchmark",
+    value: "10M+",
+    title: "Japan 31Club members",
+    detail:
+      "Japan's 31Club launched in 2014; member purchases account for 40%+ of total sales — the loyalty loop this app needed to replicate for Taiwan.",
+  },
+  {
+    kicker: "Cross-market",
+    value: "JP × TW",
+    title: "Japan HQ alignment",
+    detail:
+      "Interpreter-supported design reviews with documented divergence rationale — HQ sign-off secured before engineering started.",
+  },
+  {
+    kicker: "Shipped",
+    value: "Sept 2025",
+    title: "Taiwan App Store launch",
+    detail:
+      "Taiwan's first BR31 membership app, live on the App Store with POS barcode integration validated through pre-launch UAT.",
+  },
+];
 
 export const metadata = {
   title:
@@ -86,6 +121,19 @@ export default function BaskinRobbinsCaseStudy() {
           <div
             className={`${CASE_STUDY_BODY_GRID} min-w-0 space-y-10 sm:space-y-12`}
           >
+            <div>
+              <CaseStudyHeroTldr
+                metricValueClassName="text-pink-400"
+                headline={
+                  <>
+                    Lead designer on Taiwan&apos;s first BR31 membership app ·
+                    Cross-market Japan HQ alignment · Shipped in 3 months
+                  </>
+                }
+                metrics={BR_TLDR_METRICS}
+              />
+            </div>
+
             <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
               <ImageLightbox
                 src={HERO_MEMBERSHIP.src}
