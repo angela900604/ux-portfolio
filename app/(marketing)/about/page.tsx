@@ -26,20 +26,30 @@ export default function AboutPage() {
         className="max-w-3xl font-sans text-lg leading-relaxed text-zinc-300 text-pretty sm:text-xl"
       >
         <span className="block">
-          I&apos;m a Product Designer specializing in delivering end-to-end solutions
-          across consumer-facing mobile apps and webs, such as AI-driven marketplaces,
-          membership platforms, and public service platforms.
+          I&apos;m a Product Designer specializing in delivering{" "}
+          <span className="text-[color:var(--nav-accent-blue)]">end-to-end solutions</span>
+          {" "}across consumer-facing mobile apps and webs, such as{" "}
+          <span className="text-[color:var(--nav-accent-blue)]">AI-driven marketplaces</span>,{" "}
+          <span className="text-[color:var(--nav-accent-blue)]">membership platforms</span>, and{" "}
+          <span className="text-[color:var(--nav-accent-blue)]">public service platforms</span>.
         </span>
         <span className="mt-4 block sm:mt-5">
-          I enjoy diving into user research to understand what people need, what the
-          business wants to achieve, and what technical limitations we&apos;re working
-          with. This helps us make sure the design is both possible and works well with
-          the engineering team.
+          I enjoy diving into{" "}
+          <span className="text-[color:var(--nav-accent-blue)]">user research</span>
+          {" "}to understand what people need, what the business wants to achieve, and
+          what technical limitations we&apos;re working with. This helps us make sure
+          the design is both possible and works well with the engineering team.
         </span>
         <span className="mt-4 block sm:mt-5">
-          Being very adaptable in an AI-based workflow, using tools like Stitch, Claude,
-          Figma, and Cursor, lets me quickly turn ideas from sketches into detailed,
-          ready-to-use prototypes for developers.
+          Being very{" "}
+          <span className="text-[color:var(--nav-accent-blue)]">adaptable</span>
+          {" "}in an{" "}
+          <span className="text-[color:var(--nav-accent-blue)]">AI-based workflow</span>
+          , using tools like{" "}
+          <span className="text-[color:var(--nav-accent-blue)]">Stitch, Claude, Figma, and Cursor</span>
+          , lets me quickly turn ideas from{" "}
+          <span className="text-[color:var(--nav-accent-blue)]">sketches into detailed, ready-to-use prototypes</span>
+          {" "}for developers.
         </span>
       </h1>
 
