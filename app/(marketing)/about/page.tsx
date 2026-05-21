@@ -4,10 +4,6 @@ import { BeyondDesignGallery } from "@/app/components/BeyondDesignGallery";
 import { BEYOND_PHOTOGRAPHY_GALLERY } from "@/app/content/beyond-design-gallery";
 import { AboutExperienceSection } from "./AboutExperienceSection";
 import { MarketingHomeLogos } from "../MarketingHomeLogos";
-import {
-  MARKETING_FLAGSHIP_SERIF_LEAD_COMPACT_CLASS,
-  MARKETING_FLAGSHIP_SERIF_LEAD_MAX_WIDTH_WIDE_CLASS,
-} from "@/lib/marketing-flagship-serif";
 import { MARKETING_SECTION_TITLE_CLASS } from "@/lib/marketing-section-title";
 
 const INTERVIEW_PHOTO_SRC = "/about/user-interviews-collage.png";
@@ -27,7 +23,7 @@ export default function AboutPage() {
   return (
     <div className="pb-20 font-sans">
       <h1
-        className={`${MARKETING_FLAGSHIP_SERIF_LEAD_MAX_WIDTH_WIDE_CLASS} ${MARKETING_FLAGSHIP_SERIF_LEAD_COMPACT_CLASS} font-sans text-zinc-200`}
+        className="max-w-3xl font-sans text-base leading-relaxed text-zinc-300 text-pretty sm:text-lg"
       >
         <span className="block">
           I&apos;m a Product Designer specializing in delivering end-to-end solutions
