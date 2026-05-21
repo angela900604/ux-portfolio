@@ -5,7 +5,6 @@ import { BEYOND_PHOTOGRAPHY_GALLERY } from "@/app/content/beyond-design-gallery"
 import { AboutExperienceSection } from "./AboutExperienceSection";
 import { MarketingHomeLogos } from "../MarketingHomeLogos";
 import {
-  MARKETING_FLAGSHIP_SERIF,
   MARKETING_FLAGSHIP_SERIF_LEAD_COMPACT_CLASS,
   MARKETING_FLAGSHIP_SERIF_LEAD_MAX_WIDTH_WIDE_CLASS,
 } from "@/lib/marketing-flagship-serif";
@@ -28,8 +27,7 @@ export default function AboutPage() {
   return (
     <div className="pb-20 font-sans">
       <h1
-        className={`${MARKETING_FLAGSHIP_SERIF_LEAD_MAX_WIDTH_WIDE_CLASS} ${MARKETING_FLAGSHIP_SERIF_LEAD_COMPACT_CLASS} text-zinc-200`}
-        style={{ fontFamily: MARKETING_FLAGSHIP_SERIF }}
+        className={`${MARKETING_FLAGSHIP_SERIF_LEAD_MAX_WIDTH_WIDE_CLASS} ${MARKETING_FLAGSHIP_SERIF_LEAD_COMPACT_CLASS} font-sans text-zinc-200`}
       >
         <span className="block">
           I&apos;m a Product Designer specializing in delivering end-to-end solutions
