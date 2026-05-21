@@ -32,13 +32,20 @@ export default function AboutPage() {
         style={{ fontFamily: MARKETING_FLAGSHIP_SERIF }}
       >
         <span className="block">
-          Product Designer specializing in complex, research-driven experiences,
-          shipped at government scale and consumer scale.
+          I&apos;m a Product Designer specializing in delivering end-to-end solutions
+          across consumer-facing mobile apps and webs, such as AI-driven marketplaces,
+          membership platforms, and public service platforms.
         </span>
         <span className="mt-4 block sm:mt-5">
-          I adapt by doing. This site is vibe-coded by me, and I&apos;m regularly
-          swapping notes with other designers on what&apos;s actually working in their
-          design workflows when new tools come out.
+          I enjoy diving into user research to understand what people need, what the
+          business wants to achieve, and what technical limitations we&apos;re working
+          with. This helps us make sure the design is both possible and works well with
+          the engineering team.
+        </span>
+        <span className="mt-4 block sm:mt-5">
+          Being very adaptable in an AI-based workflow, using tools like Stitch, Claude,
+          Figma, and Cursor, lets me quickly turn ideas from sketches into detailed,
+          ready-to-use prototypes for developers.
         </span>
       </h1>
 

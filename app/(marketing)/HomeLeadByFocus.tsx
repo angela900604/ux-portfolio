@@ -9,7 +9,7 @@ import { usePortfolioWorkFocus } from "@/app/components/PortfolioWorkFocusContex
 
 /** Default (8 cards) + Product filter — personal intro line. */
 const HOME_LEAD_ROOTED =
-  "I left a government-scale project in Taiwan for Vancouver, chasing environments that take user needs seriously. In teams, I'm the one who mirrors back what people mean — and pulls the conversation back when it drifts.";
+  "I left a government-scale project in Taiwan for Vancouver, chasing environments that take user needs seriously. Also, this site is vibe-coded by me :)";
 
 const HOME_LEAD_MARKETING =
   "Driven by empathy, I turn business goals into visual experiences that truly resonate with people.";
