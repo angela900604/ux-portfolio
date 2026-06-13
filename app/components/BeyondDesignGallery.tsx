@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useId, useState } from "react";
+import { createPortal } from "react-dom";
 import type { BeyondGalleryItem } from "../content/beyond-design-gallery";
 
 function Lightbox({
@@ -29,9 +30,11 @@ function Lightbox({
     return () => window.removeEventListener("keydown", onKey);
   }, [onClose]);
 
-  return (
+  if (typeof document === "undefined") return null;
+
+  return createPortal(
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-zinc-950/95 p-3 sm:p-6 backdrop-blur-sm"
+      className="fixed inset-0 z-[11000] flex items-center justify-center bg-zinc-950/96 backdrop-blur-sm"
       role="dialog"
       aria-modal="true"
       aria-labelledby={labelId}
@@ -43,25 +46,24 @@ function Lightbox({
       <button
         type="button"
         onClick={onClose}
-        className="absolute right-4 top-4 rounded-full border border-zinc-600 bg-zinc-900/90 px-3 py-1.5 text-sm font-medium text-zinc-200 transition hover:border-zinc-400 hover:text-white"
+        className="absolute right-3 top-3 z-[1] rounded-full border border-zinc-600 bg-zinc-900/90 px-3 py-1.5 text-sm font-medium text-zinc-200 transition hover:border-zinc-400 hover:text-white sm:right-4 sm:top-4"
       >
         Close
       </button>
       <div
-        className="relative max-h-[96vh] max-w-[96vw]"
+        className="flex h-[100dvh] w-[100dvw] items-center justify-center"
         onClick={(e) => e.stopPropagation()}
       >
-        <Image
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
           src={item.src}
           alt={item.alt}
-          width={item.width}
-          height={item.height}
-          className="h-auto max-h-[96vh] w-auto max-w-[96vw] object-contain"
-          sizes="96vw"
-          priority
+          className="h-[100dvh] w-[100vw] object-contain"
+          draggable={false}
         />
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }
 

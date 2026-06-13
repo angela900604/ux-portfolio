@@ -70,20 +70,22 @@ export default function AboutPage() {
               most energized and where the best product bets show up.
             </p>
           </div>
-          <figure className="min-w-0 lg:col-span-7">
+          <figure className="min-w-0 w-full lg:col-span-7">
             <ImageLightbox
               src={INTERVIEW_PHOTO_SRC}
               alt="Collage: Angela facilitating user research—in group sessions, one-on-one interviews, and conversations with participants across ages and contexts."
               className="block w-full"
               disableHoverScale
             >
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+              <div className="relative w-full overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
                 <Image
                   src={INTERVIEW_PHOTO_SRC}
                   alt="Collage: Angela facilitating user research—in group sessions, one-on-one interviews, and conversations with participants across ages and contexts."
-                  fill
-                  className="object-contain object-center"
-                  sizes="(max-width: 1024px) 100vw, 560px"
+                  width={1024}
+                  height={768}
+                  className="h-auto w-full object-contain object-center"
+                  sizes="(max-width: 1024px) 100vw, 640px"
+                  priority
                 />
               </div>
             </ImageLightbox>
