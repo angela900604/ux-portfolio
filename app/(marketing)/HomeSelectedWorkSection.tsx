@@ -4,8 +4,8 @@ import { useRef, useState } from "react";
 import { MARKETING_SELECTED_WORK } from "@/lib/marketing-work";
 import { MarketingSelectedWorkGrid } from "./MarketingSelectedWorkGrid";
 
-const TIER_1 = MARKETING_SELECTED_WORK.slice(0, 6);
-const TIER_2 = MARKETING_SELECTED_WORK.slice(6);
+const TIER_1 = MARKETING_SELECTED_WORK.slice(0, 4);
+const TIER_2 = MARKETING_SELECTED_WORK.slice(4);
 
 export function HomeSelectedWorkSection() {
   const [moreOpen, setMoreOpen] = useState(false);
