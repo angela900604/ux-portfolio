@@ -103,7 +103,7 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     disciplineTags: ["Enterprise AI · macOS · Document generation"],
     year: "2023–2024",
     techHighlights: ATLAS_NOVA_HOME_TECH_HIGHLIGHTS,
-    cover: { kind: "image", src: "/case-studies/atlas-nova/home-cover.svg" },
+    cover: { kind: "image", src: "/case-studies/atlas-nova/home-cover.png" },
   },
   {
     slug: "ai-marketplace/marketing",
