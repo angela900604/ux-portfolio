@@ -174,6 +174,21 @@ export default function PerfectInterviewCaseStudy() {
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection
+          id="mockups"
+          className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
+        >
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            Mockups
+          </span>
+          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>Hi-fi screens</h2>
+          <div className="space-y-8">
+            {SCREENS.map((screen) => (
+              <ScreenFigure key={screen.src} {...screen} />
+            ))}
+          </div>
+        </CaseStudyInViewSection>
+
+        <CaseStudyInViewSection
           id="problem"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
@@ -255,21 +270,6 @@ export default function PerfectInterviewCaseStudy() {
               <li key={item}>{item}</li>
             ))}
           </ul>
-        </CaseStudyInViewSection>
-
-        <CaseStudyInViewSection
-          id="mockups"
-          className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
-        >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Mockups
-          </span>
-          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>Hi-fi screens</h2>
-          <div className="space-y-8">
-            {SCREENS.map((screen) => (
-              <ScreenFigure key={screen.src} {...screen} />
-            ))}
-          </div>
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection
