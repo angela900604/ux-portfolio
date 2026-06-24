@@ -12,7 +12,7 @@ export const CASE_STUDY_NAV: { slug: string; label: string }[] = [
   },
   { slug: "phyphyya", label: "Haphy Living" },
   { slug: "atlas-nova", label: "AtlasNova" },
-  { slug: "perfect-interview", label: "PerfectInterview.ai" },
+  // { slug: "perfect-interview", label: "PerfectInterview.ai" }, // hidden for now
   { slug: "momi-animal-health", label: "MOMI Animal Health" },
   { slug: "admission-hub", label: "Admission Hub" },
 ];

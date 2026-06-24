@@ -63,7 +63,7 @@ export const PERFECT_INTERVIEW_HOME_DISCIPLINE_TAGS = [
 export const PERFECT_INTERVIEW_HOME_TECH_HIGHLIGHTS =
   "Heuristic evaluation · UI design · Framer" as const;
 
-const PERFECT_INTERVIEW_COVER = "/case-studies/perfect-interview/cover.png";
+// const PERFECT_INTERVIEW_COVER = "/case-studies/perfect-interview/cover.png"; // hidden for now
 
 export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
   {
@@ -139,16 +139,17 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     techHighlights: ATLAS_NOVA_HOME_TECH_HIGHLIGHTS,
     cover: { kind: "image", src: ATLAS_NOVA_COVER },
   },
-  {
-    slug: "perfect-interview",
-    href: "/case-studies/perfect-interview",
-    portfolioFocus: "product",
-    title: "PerfectInterview.ai · An AI-driven mock interview platform",
-    disciplineTags: ["AI · Mock interviews · Responsive web"],
-    year: "2024",
-    techHighlights: PERFECT_INTERVIEW_HOME_TECH_HIGHLIGHTS,
-    cover: { kind: "image", src: PERFECT_INTERVIEW_COVER },
-  },
+  // Hidden for now — restore when ready to publish
+  // {
+  //   slug: "perfect-interview",
+  //   href: "/case-studies/perfect-interview",
+  //   portfolioFocus: "product",
+  //   title: "PerfectInterview.ai · An AI-driven mock interview platform",
+  //   disciplineTags: ["AI · Mock interviews · Responsive web"],
+  //   year: "2024",
+  //   techHighlights: PERFECT_INTERVIEW_HOME_TECH_HIGHLIGHTS,
+  //   cover: { kind: "image", src: PERFECT_INTERVIEW_COVER },
+  // },
   {
     slug: "momi-animal-health",
     href: "/case-studies/momi-animal-health",
