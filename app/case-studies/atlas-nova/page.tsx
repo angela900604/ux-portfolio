@@ -1,5 +1,7 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 import Link from "next/link";
+import { ImageLightbox } from "@/app/components/ImageLightbox";
 import {
   CaseStudyHeroTldr,
   type CaseStudyHeroTldrMetric,
@@ -7,7 +9,6 @@ import {
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
-import VisualPlaceholder from "../_components/VisualPlaceholder";
 import {
   CASE_STUDY_BODY_GRID,
   CASE_STUDY_SECTION_TITLE_CLASS,
@@ -16,36 +17,92 @@ import {
 
 const ATLAS_ACCENT = "#6366F1";
 const ATLAS_ACCENT_BG = "rgba(99, 102, 241, 0.16)";
-const ATLAS_ACCENT_BORDER = "rgba(129, 140, 248, 0.35)";
+
+const HOME_COVER = "/case-studies/atlas-nova/home-cover.png";
+const UI_FLOW_SRC = `/case-studies/atlas-nova/${encodeURIComponent("UI flow.png")}`;
+const UI_FLOW_W = 20554;
+const UI_FLOW_H = 9924;
 
 const ATLAS_TLDR_METRICS: CaseStudyHeroTldrMetric[] = [
   {
     kicker: "Product",
     value: "macOS",
-    title: "AI document generation for product teams",
-    detail:
-      "Connect a knowledge base, configure a template, and progressively generate each PRD section—without starting from a blank page.",
+    title: "AI document generation",
+    detail: "Connect a knowledge base, pick a template, generate each section step by step.",
   },
   {
     kicker: "Approach",
     value: "Human-in-loop",
     title: "AI-assisted, not AI-replaced",
-    detail:
-      "Persistent chat keeps the user in control while the model surfaces what it indexed, read, and generated in real time.",
+    detail: "Persistent chat + visible generation status keep the user in control.",
   },
   {
     kicker: "Role",
     value: "Intern",
-    title: "UX/UI design across core workflows",
-    detail:
-      "Mockups and end-to-end UI flows for split-pane layout, generation status, @mention context, and project settings.",
+    title: "UX/UI design",
+    detail: "Mockups and end-to-end UI flows.",
   },
 ];
+
+const SKETCHES = [
+  {
+    src: "/case-studies/atlas-nova/sketch-ia-overview.png",
+    width: 771,
+    height: 1024,
+    alt: "Whiteboard sketch — IA overview with split-pane doc view and Home → workspace → doc hierarchy",
+    caption: "IA — Home, workspaces, PRD / Research doc types.",
+  },
+  {
+    src: "/case-studies/atlas-nova/sketch-ia-workspace-flow.png",
+    width: 802,
+    height: 1024,
+    alt: "Whiteboard sketch — workspace navigation, tagging, and AI affordances",
+    caption: "Nav, tagging, and AI touchpoints.",
+  },
+  {
+    src: "/case-studies/atlas-nova/sketch-welcome-dashboard.png",
+    width: 771,
+    height: 1024,
+    alt: "Whiteboard sketch — home dashboard with Welcome and Suggested Actions",
+    caption: "Home — Welcome, suggested actions, project grid.",
+  },
+  {
+    src: "/case-studies/atlas-nova/sketch-split-pane-document.png",
+    width: 802,
+    height: 1024,
+    alt: "Whiteboard sketch — document canvas with project-scoped sidebar feed",
+    caption: "Split-pane — document left, project feed right.",
+  },
+] as const;
+
+const MOCKUPS = [
+  {
+    src: "/case-studies/atlas-nova/3.png",
+    width: 1512,
+    height: 982,
+    alt: "AtlasNova home dashboard — recents, expert templates, and workspace sidebar",
+    caption: "Home — recents, templates, workspace nav.",
+  },
+  {
+    src: "/case-studies/atlas-nova/2.png",
+    width: 3024,
+    height: 1964,
+    alt: "AtlasNova file import — drag-and-drop upload with Google Drive and OneDrive",
+    caption: "Import — local files, Google Drive, OneDrive.",
+  },
+  {
+    src: "/case-studies/atlas-nova/1.png",
+    width: 1512,
+    height: 982,
+    alt: "AtlasNova split-pane workspace — PRD document with chat, @mentions, and project settings",
+    caption: "Workspace — document left, chat and @mentions right.",
+  },
+] as const;
 
 export const metadata = {
   title: "AtlasNova · AI-assisted document generation for product teams | Angela Yang",
   description:
-    "UX/UI design for AtlasNova—AI-assisted document generation for product teams: mockups and UI flows for split-pane layout, transparent LLM progress, @mention context, and project settings.",
+    "UX/UI design for AtlasNova — mockups and UI flows for AI-assisted document generation.",
 };
 
 function Highlight({ children }: { children: ReactNode }) {
@@ -59,26 +116,40 @@ function Highlight({ children }: { children: ReactNode }) {
   );
 }
 
-function PrincipleCard({
-  title,
-  body,
+function Figure({
+  src,
+  alt,
+  width,
+  height,
+  caption,
+  unoptimized = false,
 }: {
-  title: string;
-  body: string;
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  caption?: string;
+  unoptimized?: boolean;
 }) {
   return (
-    <div
-      className="rounded-2xl p-5 sm:p-6"
-      style={{
-        backgroundColor: ATLAS_ACCENT_BG,
-        border: `1px solid ${ATLAS_ACCENT_BORDER}`,
-      }}
-    >
-      <h3 className="text-base font-semibold text-zinc-100 sm:text-lg">{title}</h3>
-      <p className="mt-2 text-sm leading-relaxed text-zinc-300 sm:text-[0.9375rem]">
-        {body}
-      </p>
-    </div>
+    <figure className="space-y-3">
+      <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+        <ImageLightbox src={src} alt={alt} className="block w-full" disableHoverScale>
+          <Image
+            src={src}
+            alt={alt}
+            width={width}
+            height={height}
+            unoptimized={unoptimized}
+            className="h-auto w-full object-contain"
+            sizes="(max-width: 768px) 100vw, 1080px"
+          />
+        </ImageLightbox>
+      </div>
+      {caption ? (
+        <figcaption className="text-sm text-zinc-500">{caption}</figcaption>
+      ) : null}
+    </figure>
   );
 }
 
@@ -93,22 +164,29 @@ export default function AtlasNovaCaseStudy() {
             <div className="mb-10 sm:mb-12">
               <CaseStudyHeroTldr
                 metricValueClassName="text-[#6366F1]"
-                headline={
-                  <>
-                    AtlasNova — AI-assisted document generation for product
-                    teams, with transparent progress, split-pane layout, and
-                    user-controlled workflows
-                  </>
-                }
+                headline="AtlasNova — AI-assisted document generation for product teams"
                 metrics={ATLAS_TLDR_METRICS}
               />
             </div>
 
-            <VisualPlaceholder
-              label="Hero cover — split-pane macOS UI: document canvas + persistent chat panel"
-              hint="Replace with final cover art or screen recording when assets are ready."
-              aspect="video"
-            />
+            <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+              <ImageLightbox
+                src={HOME_COVER}
+                alt="AtlasNova — AI auto-reply flow with brand tone and review context"
+                className="block w-full"
+                disableHoverScale
+              >
+                <Image
+                  src={HOME_COVER}
+                  alt="AtlasNova — AI auto-reply flow with brand tone and review context"
+                  width={1024}
+                  height={682}
+                  className="h-auto w-full object-cover"
+                  sizes="(max-width: 768px) 100vw, 1080px"
+                  priority
+                />
+              </ImageLightbox>
+            </div>
           </div>
         </div>
       </header>
@@ -116,221 +194,119 @@ export default function AtlasNovaCaseStudy() {
       <CaseStudyContentLayout>
         <CaseStudyInViewSection
           id="context"
-          className="scroll-mt-28 space-y-6 sm:scroll-mt-32 sm:space-y-8"
+          className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Project context
+            Context
           </span>
-          <div className="max-w-3xl space-y-5">
-            <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
-              What is AtlasNova?
-            </h2>
-            <p className="text-zinc-300 leading-relaxed">
-              AtlasNova is an <Highlight>AI-powered macOS document generation tool</Highlight>{" "}
-              built for product teams. Instead of writing a PRD from scratch, you
-              open AtlasNova, connect your knowledge base, configure a template
-              (format, page count, detail level, output type), and the AI{" "}
-              <Highlight>progressively generates each section</Highlight> of the
-              document—surfacing what it found, what it&apos;s reading, and what
-              it&apos;s generating in real time.
-            </p>
-            <p className="text-zinc-400 leading-relaxed">
-              The core bet: make AI feel like a{" "}
-              <span className="text-zinc-200">collaborative drafting partner</span>,
-              not a black box that drops a finished doc on your desk. That meant
-              designing for trust, inspectability, and user override at every step.
-            </p>
-          </div>
-        </CaseStudyInViewSection>
-
-        <CaseStudyInViewSection
-          id="problem"
-          className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
-        >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Opportunity
-          </span>
-          <h2 className={`${CASE_STUDY_SECTION_TITLE_CLASS} max-w-3xl`}>
-            Product teams lose hours to blank-page PRDs—and generic AI outputs
-            that ignore existing context
-          </h2>
-          <div className="max-w-3xl space-y-4 text-zinc-300 leading-relaxed">
-            <p>
-              Teams already have research notes, competitor comparisons, meeting
-              transcripts, and prior specs scattered across tools. Starting a new
-              PRD means re-assembling that context manually—or trusting an opaque
-              prompt that may hallucinate requirements.
-            </p>
-            <p>
-              AtlasNova needed UX that made{" "}
-              <span className="text-zinc-100">context visible</span>,{" "}
-              <span className="text-zinc-100">generation legible</span>, and{" "}
-              <span className="text-zinc-100">corrections lightweight</span> through
-              a side-by-side document and chat workflow native to macOS.
-            </p>
-          </div>
+          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>What is AtlasNova?</h2>
+          <p className="max-w-3xl text-zinc-300 leading-relaxed">
+            AtlasNova is a <Highlight>macOS document tool</Highlight> for product
+            teams. Connect your knowledge base, configure a template, and the AI{" "}
+            <Highlight>generates each section</Highlight> in real time—showing what
+            it indexed, read, and wrote. A persistent chat keeps you in control.
+          </p>
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection
           id="principles"
-          className="scroll-mt-28 space-y-8 sm:scroll-mt-32"
+          className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Design principles
+            Principles
+          </span>
+          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>What we designed for</h2>
+          <ul className="max-w-3xl space-y-3 text-zinc-300 leading-relaxed">
+            <li>
+              <span className="text-zinc-100">AI-assisted, not replaced</span> —
+              chat stays open while the doc updates.
+            </li>
+            <li>
+              <span className="text-zinc-100">Transparent generation</span> —
+              indexed → reading → generating per section.
+            </li>
+            <li>
+              <span className="text-zinc-100">Split-pane layout</span> — document
+              left, chat right.
+            </li>
+            <li>
+              <span className="text-zinc-100">@mention context</span> — pull
+              existing docs into the prompt.
+            </li>
+          </ul>
+        </CaseStudyInViewSection>
+
+        <CaseStudyInViewSection
+          id="early-sketches"
+          className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
+        >
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            Sketches
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
-            Four ideas that shaped the interface
+            Whiteboard from team discussions
           </h2>
-          <div className="grid gap-4 sm:grid-cols-2">
-            <PrincipleCard
-              title="AI-assisted, not AI-replaced"
-              body="A persistent chat panel keeps the user in the loop—steering tone, scope, and corrections while the document updates alongside the conversation."
-            />
-            <PrincipleCard
-              title="Transparent LLM “thinking”"
-              body="Each document section exposes step-by-step status—indexed, reading, generating—so users can see progress instead of waiting on a spinner."
-            />
-            <PrincipleCard
-              title="Split-pane, macOS-native layout"
-              body="Document canvas and chat share one window with a calm, desktop-first hierarchy: read on the left, refine on the right."
-            />
-            <PrincipleCard
-              title="Context via @mention pills"
-              body="@mention pills (e.g. @ Google Maps vs Apple Maps) inject existing docs into the chat so the model grounds answers in team knowledge."
-            />
+          <p className="max-w-3xl text-zinc-400 leading-relaxed">
+            Early IA, home dashboard, and split-pane layout—before hi-fi mockups.
+          </p>
+          <div className="grid gap-6 sm:grid-cols-2">
+            {SKETCHES.map((sketch) => (
+              <Figure key={sketch.src} {...sketch} />
+            ))}
           </div>
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection
-          id="split-pane"
+          id="mockups"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Core layout
+            Mockups
           </span>
-          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
-            Document + chat side-by-side
-          </h2>
-          <p className="max-w-3xl text-zinc-300 leading-relaxed">
-            The primary workspace is a{" "}
-            <Highlight>split-pane macOS layout</Highlight>: generated sections
-            render in a scrollable document view while chat stays pinned for
-            follow-ups, rewrites, and scoped edits. Users never lose context
-            switching between “reading the doc” and “directing the AI.”
+          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>Hi-fi screens</h2>
+          <p className="max-w-3xl text-zinc-400 leading-relaxed">
+            Home → import → split-pane workspace.
           </p>
-          <VisualPlaceholder
-            label="Split-pane layout — document canvas (left) + persistent chat (right)"
-            hint="macOS window chrome, section headings, and chat input with send affordance."
-            aspect="video"
-          />
+          <div className="space-y-8">
+            {MOCKUPS.map((screen) => (
+              <Figure key={screen.src} {...screen} />
+            ))}
+          </div>
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection
-          id="generation-status"
+          id="ui-flow"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Trust & transparency
+            UI flow
           </span>
-          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
-            Progressive generation with visible LLM status
-          </h2>
+          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>New project onboarding</h2>
           <p className="max-w-3xl text-zinc-300 leading-relaxed">
-            Rather than blocking the whole document behind one loading state, each
-            section communicates where the model is in its pipeline—{" "}
-            <span className="text-zinc-100">indexed</span>,{" "}
-            <span className="text-zinc-100">reading</span>,{" "}
-            <span className="text-zinc-100">generating</span>. That step-by-step
-            feedback reduces anxiety during long runs and gives PMs a hook to
-            intervene early if the wrong sources were pulled in.
+            Dashboard → prompt → AI clarifying questions → template pick → file
+            upload. The LLM narrows scope before generation starts.
           </p>
-          <VisualPlaceholder
-            label="Section generation status — indexed → reading → generating per block"
-            hint="Inline status chips or timeline per PRD section; partial content visible while later sections still load."
-            aspect="wide"
-          />
-        </CaseStudyInViewSection>
-
-        <CaseStudyInViewSection
-          id="mentions"
-          className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
-        >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Context referencing
-          </span>
-          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
-            @mention pills to inject existing docs into chat
-          </h2>
-          <p className="max-w-3xl text-zinc-300 leading-relaxed">
-            Chat supports{" "}
-            <Highlight>@mention pills</Highlight> that reference knowledge-base
-            artifacts—competitive analyses, prior specs, research summaries. A PM
-            can type <span className="text-zinc-100">@ Google Maps vs Apple Maps</span>{" "}
-            to pull a comparison doc into the prompt, keeping generated copy aligned
-            with material the team already trusts.
-          </p>
-          <VisualPlaceholder
-            label="Chat composer with @mention pills and referenced document chips"
-            hint="Autocomplete dropdown, selected pill styling, and linked source preview."
-            aspect="video"
-          />
-        </CaseStudyInViewSection>
-
-        <CaseStudyInViewSection
-          id="settings"
-          className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
-        >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Configuration
-          </span>
-          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
-            Project Settings — template, length, tone, and output format
-          </h2>
-          <p className="max-w-3xl text-zinc-300 leading-relaxed">
-            Before generation starts, the{" "}
-            <Highlight>Project Settings</Highlight> panel lets teams configure
-            template structure, target page count, detail level, tone, and output
-            type. Surfacing these controls up front prevents “regenerate everything”
-            loops and sets expectations for what the AI will produce.
-          </p>
-          <VisualPlaceholder
-            label="Project Settings panel — template, page count, detail level, tone, output type"
-            hint="macOS sheet or inspector-style panel with grouped fields and sensible defaults."
-            aspect="tall"
+          <Figure
+            src={UI_FLOW_SRC}
+            alt="AtlasNova UI flow — new project from dashboard through prompt, AI Q&A, template selection, and file upload"
+            width={UI_FLOW_W}
+            height={UI_FLOW_H}
+            unoptimized
           />
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection
           id="learnings"
-          className="scroll-mt-28 space-y-6 border-t border-zinc-800 pt-12 sm:scroll-mt-32"
+          className="scroll-mt-28 space-y-5 border-t border-zinc-800 pt-12 sm:scroll-mt-32"
         >
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Learnings
           </span>
-          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
-            What I took away from designing for enterprise AI on desktop
-          </h2>
-          <ul className="max-w-3xl list-disc space-y-3 pl-5 text-zinc-300 leading-relaxed marker:text-zinc-500">
-            <li>
-              <span className="text-zinc-100">Transparency beats speed claims.</span>{" "}
-              Users tolerated longer runs when they could see indexing and reading
-              steps—not when a single spinner hid all activity.
-            </li>
-            <li>
-              <span className="text-zinc-100">Chat belongs beside the artifact.</span>{" "}
-              Split-pane layout reduced mode-switching and made corrections feel
-              like comments on the doc, not a separate tool.
-            </li>
-            <li>
-              <span className="text-zinc-100">Grounding UI is product UI.</span>{" "}
-              @mention pills turned “use our existing research” from a prompt
-              engineering trick into a visible, repeatable interaction pattern.
-            </li>
-            <li>
-              <span className="text-zinc-100">Settings are part of the first run.</span>{" "}
-              Template and output controls needed to live in onboarding—not buried
-              in an advanced menu—so teams trusted the first draft.
-            </li>
+          <ul className="max-w-3xl list-disc space-y-2 pl-5 text-zinc-300 leading-relaxed marker:text-zinc-500">
+            <li>Show generation steps—not one spinner.</li>
+            <li>Keep chat beside the doc, not in another tool.</li>
+            <li>@mentions make context visible, not hidden in prompts.</li>
+            <li>Template settings belong upfront, not buried in menus.</li>
           </ul>
         </CaseStudyInViewSection>
 
