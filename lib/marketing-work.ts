@@ -28,6 +28,7 @@ export type MarketingWorkItem = {
 };
 
 const GOV_COVER = `/case-studies/government-backend/${encodeURIComponent("rolebased backend cover.png")}`;
+const ATLAS_NOVA_COVER = `/case-studies/atlas-nova/${encodeURIComponent("cover image.png")}`;
 
 /** e-Invoice homepage + case study — tag pills (keep in sync with case study). */
 export const E_INVOICE_HOME_DISCIPLINE_TAGS = [
@@ -103,7 +104,7 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     disciplineTags: ["Enterprise AI · macOS · Document generation"],
     year: "2023",
     techHighlights: ATLAS_NOVA_HOME_TECH_HIGHLIGHTS,
-    cover: { kind: "image", src: "/case-studies/atlas-nova/home-cover.png" },
+    cover: { kind: "image", src: ATLAS_NOVA_COVER },
   },
   {
     slug: "ai-marketplace/marketing",
