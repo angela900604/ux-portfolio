@@ -19,7 +19,7 @@ const PHYPHYA_INSTAGRAM = "https://www.instagram.com/phyphya__/";
 const E_INVOICE_FIGMA_APP_MOCKUP =
   "https://www.figma.com/design/xvssk9Yfmx51aiSpwWE8sv/APP-Mockup?node-id=1-8&t=MW0x7q3jDP00Fqzx-1";
 const ATLAS_NOVA_FIGMA_SKETCHES =
-  "https://www.figma.com/design/ZUjHBVW7bdo7S2zh4iz4sy/AtlasNova-New-Sketches?node-id=0-1&t=3mwRzbehk4lAGNoD-1";
+  "https://www.figma.com/design/LMIFzRY2vOAL5YfKXMrhLR/AtlasNova-New-Sketches?node-id=0-1&t=bSBihOHyTQfXdArv-1";
 const ATLAS_NOVA_WEBSITE = "https://www.atlasnova.ai/";
 
 export type CaseStudyAsideRow = {
