@@ -99,6 +99,13 @@ const MOCKUPS = [
     alt: "AtlasNova split-pane workspace — PRD document with chat, @mentions, and project settings",
     caption: "Workspace — document left, chat and @mentions right.",
   },
+  {
+    src: GMAIL_CONNECT_SRC,
+    width: 1562,
+    height: 1007,
+    alt: "AtlasNova Gmail connect — Google OAuth sign-in modal over split-pane workspace with open document tabs",
+    caption: "Gmail connect — choose an account to continue to AtlasNova.",
+  },
 ] as const;
 
 export const metadata = {
@@ -307,36 +314,13 @@ export default function AtlasNovaCaseStudy() {
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>Hi-fi screens</h2>
           <p className="max-w-3xl text-zinc-400 leading-relaxed">
             Hi-fi screens I delivered for the document generation flow—home →
-            import sources → split-pane workspace.
+            import sources → split-pane workspace → platform connect.
           </p>
           <div className="space-y-8">
             {MOCKUPS.map((screen) => (
               <Figure key={screen.src} {...screen} />
             ))}
           </div>
-        </CaseStudyInViewSection>
-
-        <CaseStudyInViewSection
-          id="platform-connect"
-          className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
-        >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Mockups
-          </span>
-          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
-            Connecting external platforms
-          </h2>
-          <p className="max-w-3xl text-zinc-400 leading-relaxed">
-            Hi-fi for platform connect—Gmail sign-in as an example of bringing
-            external context into the document generation workflow.
-          </p>
-          <Figure
-            src={GMAIL_CONNECT_SRC}
-            alt="AtlasNova Gmail connect — Google OAuth sign-in modal over split-pane workspace with open document tabs"
-            width={1562}
-            height={1007}
-            caption="Gmail connect — choose an account to continue to AtlasNova."
-          />
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection
