@@ -182,9 +182,11 @@ export default function AtlasNovaCaseStudy() {
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>What is AtlasNova?</h2>
           <p className="max-w-3xl text-zinc-300 leading-relaxed">
             AtlasNova is a <Highlight>macOS document tool</Highlight> for product
-            teams. Connect your knowledge base, configure a template, and the AI{" "}
-            <Highlight>generates each section</Highlight> in real time—showing what
-            it indexed, read, and wrote. A persistent chat keeps you in control.
+            teams writing PRDs and research docs. Instead of a blank page, you
+            connect a knowledge base, configure a template, and the AI{" "}
+            <Highlight>generates each section</Highlight> in real time—surfacing
+            what it indexed, read, and wrote. A persistent chat keeps you in
+            control of tone, scope, and rewrites as the draft builds.
           </p>
         </CaseStudyInViewSection>
 
@@ -196,22 +198,68 @@ export default function AtlasNovaCaseStudy() {
             Principles
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>What we designed for</h2>
-          <ul className="max-w-3xl space-y-3 text-zinc-300 leading-relaxed">
-            <li>
-              <span className="text-zinc-100">AI-assisted, not replaced</span> —
-              chat stays open while the doc updates.
+          <p className="max-w-3xl text-zinc-300 leading-relaxed">
+            PMs using AtlasNova sit between two failure modes: AI that feels like a
+            black box, and workflows that split &ldquo;the document&rdquo; from
+            &ldquo;the conversation.&rdquo; In whiteboard sessions with eng and PM,
+            we kept returning to the same trust questions—so each principle below
+            maps to a design decision, not a mood board line.
+          </p>
+          <ul className="max-w-3xl space-y-8 text-zinc-300 leading-relaxed">
+            <li className="space-y-2">
+              <p className="font-semibold text-zinc-100">
+                AI-assisted, not AI-replaced
+              </p>
+              <p>
+                Generation is step-by-step, but the PM stays in the loop. Chat stays
+                open while the doc updates—steering a section or asking for a rewrite
+                feels like commenting on the artifact, not switching to another app
+                mid-draft.
+              </p>
             </li>
-            <li>
-              <span className="text-zinc-100">Transparent generation</span> —
-              indexed → reading → generating per section.
+            <li className="space-y-2">
+              <p className="font-semibold text-zinc-100">Transparent generation</p>
+              <p>
+                Long runs erode trust when one spinner hides everything. Each section
+                surfaces where the model is in its pipeline—{" "}
+                <span className="text-zinc-100">indexed</span>,{" "}
+                <span className="text-zinc-100">reading</span>,{" "}
+                <span className="text-zinc-100">generating</span>—so users tolerate
+                wait time and can catch bad source pulls before the whole PRD is
+                wrong.
+              </p>
             </li>
-            <li>
-              <span className="text-zinc-100">Split-pane layout</span> — document
-              left, chat right.
+            <li className="space-y-2">
+              <p className="font-semibold text-zinc-100">Split-pane layout</p>
+              <p>
+                The primary workspace is document left, chat right—one macOS window,
+                desktop-first hierarchy. Users never lose context toggling between
+                reading generated copy and directing the AI; both live in the same
+                frame.
+              </p>
             </li>
-            <li>
-              <span className="text-zinc-100">@mention context</span> — pull
-              existing docs into the prompt.
+            <li className="space-y-2">
+              <p className="font-semibold text-zinc-100">
+                Context you can see (@mentions)
+              </p>
+              <p>
+                Team knowledge shouldn&apos;t live only in hidden prompts.{" "}
+                <Highlight>@mention pills</Highlight> reference knowledge-base
+                artifacts—competitive analyses, prior specs, research summaries—so
+                grounding the model is a visible, repeatable interaction, not prompt
+                engineering behind the scenes.
+              </p>
+            </li>
+            <li className="space-y-2">
+              <p className="font-semibold text-zinc-100">
+                Template settings upfront
+              </p>
+              <p>
+                Format, page count, detail level, and output type belong in
+                onboarding—not an advanced menu after a bad first draft. Surfacing
+                controls before generation starts sets expectations and cuts
+                &ldquo;regenerate everything&rdquo; loops.
+              </p>
             </li>
           </ul>
         </CaseStudyInViewSection>
@@ -227,7 +275,8 @@ export default function AtlasNovaCaseStudy() {
             Whiteboard from team discussions
           </h2>
           <p className="max-w-3xl text-zinc-400 leading-relaxed">
-            Early IA, home dashboard, and split-pane layout—before hi-fi mockups.
+            Early IA, home dashboard, and split-pane layout—translated from those
+            principles before we moved to hi-fi.
           </p>
           <div className="grid gap-6 sm:grid-cols-2">
             {SKETCHES.map((sketch) => (
@@ -245,7 +294,8 @@ export default function AtlasNovaCaseStudy() {
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>Hi-fi screens</h2>
           <p className="max-w-3xl text-zinc-400 leading-relaxed">
-            Home → import → split-pane workspace.
+            Home → import sources → split-pane workspace—the path from blank project
+            to editable PRD.
           </p>
           <div className="space-y-8">
             {MOCKUPS.map((screen) => (
@@ -263,8 +313,11 @@ export default function AtlasNovaCaseStudy() {
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>New project onboarding</h2>
           <p className="max-w-3xl text-zinc-300 leading-relaxed">
-            Dashboard → prompt → AI clarifying questions → template pick → file
-            upload. The LLM narrows scope before generation starts.
+            Before the split-pane workspace, new projects pass through a guided
+            flow: dashboard → prompt → AI clarifying questions → template pick →
+            file upload. The LLM narrows scope early so the first generation
+            isn&apos;t a guess—and template settings land here, not in a buried
+            menu.
           </p>
           <Figure
             src={UI_FLOW_SRC}
@@ -273,21 +326,6 @@ export default function AtlasNovaCaseStudy() {
             height={UI_FLOW_H}
             unoptimized
           />
-        </CaseStudyInViewSection>
-
-        <CaseStudyInViewSection
-          id="learnings"
-          className="scroll-mt-28 space-y-5 border-t border-zinc-800 pt-12 sm:scroll-mt-32"
-        >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Learnings
-          </span>
-          <ul className="max-w-3xl list-disc space-y-2 pl-5 text-zinc-300 leading-relaxed marker:text-zinc-500">
-            <li>Show generation steps—not one spinner.</li>
-            <li>Keep chat beside the doc, not in another tool.</li>
-            <li>@mentions make context visible, not hidden in prompts.</li>
-            <li>Template settings belong upfront, not buried in menus.</li>
-          </ul>
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection className="border-t border-zinc-800 pt-12 space-y-8">
