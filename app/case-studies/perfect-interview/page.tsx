@@ -46,8 +46,8 @@ const PI_ASSET = (name: string) =>
 const SCREENS = [
   {
     src: PI_ASSET("Question Bank.png"),
-    width: 7312,
-    height: 3203,
+    width: 7032,
+    height: 2923,
     alt: "PerfectInterview.ai — Question Bank",
     unoptimized: true,
   },
@@ -83,12 +83,6 @@ const MVP_1_ITEMS = [
   "Clarified value proposition: mock interviews + question bank",
   "Redesigned pricing/subscription management pages",
   "Improved interview feedback page hierarchy",
-] as const;
-
-const REFLECTION_ITEMS = [
-  "Balance user needs with business constraints in a high-speed environment",
-  "Communicate directly with founders and engineers to ship fast",
-  "Use small UX details (progressive learning, confetti, clear pricing) to build user trust and delight",
 ] as const;
 
 export const metadata = {
@@ -267,28 +261,6 @@ export default function PerfectInterviewCaseStudy() {
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>Redesign foundations</h2>
           <ul className="max-w-3xl list-disc space-y-2 pl-5 text-zinc-300 leading-relaxed marker:text-zinc-500">
             {MVP_1_ITEMS.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </CaseStudyInViewSection>
-
-        <CaseStudyInViewSection
-          id="reflection"
-          className="scroll-mt-28 space-y-6 border-t border-zinc-800 pt-12 sm:scroll-mt-32"
-        >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            Reflection
-          </span>
-          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
-            Owning design at a startup
-          </h2>
-          <p className="max-w-3xl text-zinc-300 leading-relaxed">
-            This project started with a simple outreach email and turned into a
-            3-month journey owning design at a startup. With no prior design
-            infrastructure, I learned to:
-          </p>
-          <ul className="max-w-3xl list-disc space-y-2 pl-5 text-zinc-300 leading-relaxed marker:text-zinc-500">
-            {REFLECTION_ITEMS.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
