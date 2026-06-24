@@ -51,7 +51,7 @@ export const ATLAS_NOVA_HOME_DISCIPLINE_TAGS = [
 ] as const;
 
 export const ATLAS_NOVA_HOME_TECH_HIGHLIGHTS =
-  "Mockups and UI flows" as const;
+  "Document generation feature · mockups & UI flows" as const;
 
 export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
   {
@@ -99,7 +99,7 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     slug: "atlas-nova",
     href: "/case-studies/atlas-nova",
     portfolioFocus: "product",
-    title: "AtlasNova · AI-assisted document generation for product teams",
+    title: "AtlasNova · UI for AI-assisted document generation",
     disciplineTags: ["Enterprise AI · macOS · Document generation"],
     year: "2023",
     techHighlights: ATLAS_NOVA_HOME_TECH_HIGHLIGHTS,

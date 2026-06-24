@@ -35,7 +35,7 @@ export const ABOUT_EXPERIENCE: readonly AboutExperienceRow[] = [
     company: "AtlasNova AI",
     dates: "2023",
     description:
-      "Contributed to product design for an enterprise AI SaaS platform delivering tailored multimodal AI solutions trained on encrypted client data. Designed mockups and end-to-end UI flows across workflows involving email, sales decks, meeting recordings, charts, and video content.",
+      "Owned UX/UI for the AI-assisted document generation feature on AtlasNova's enterprise macOS platform—a product suite with multiple AI solutions. Delivered mockups and end-to-end UI flows for onboarding, split-pane workspace, and generation-status patterns.",
   },
   {
     title: "Digital Marketing Coordinator",

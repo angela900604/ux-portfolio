@@ -24,22 +24,24 @@ const UI_FLOW_H = 9924;
 
 const ATLAS_TLDR_METRICS: CaseStudyHeroTldrMetric[] = [
   {
-    kicker: "Product",
-    value: "macOS",
-    title: "AI document generation",
-    detail: "Connect a knowledge base, pick a template, generate each section step by step.",
+    kicker: "Platform",
+    value: "AtlasNova AI",
+    title: "Enterprise macOS suite",
+    detail:
+      "Multiple AI product solutions—this case study covers one feature: document generation.",
   },
   {
-    kicker: "Approach",
-    value: "Human-in-loop",
-    title: "AI-assisted, not AI-replaced",
-    detail: "Persistent chat + visible generation status keep the user in control.",
+    kicker: "Feature",
+    value: "Doc generation",
+    title: "AI-assisted PRDs & research docs",
+    detail:
+      "Knowledge base, templates, step-by-step section generation, persistent chat.",
   },
   {
-    kicker: "Role",
+    kicker: "My role",
     value: "Intern",
-    title: "UX/UI design",
-    detail: "Mockups and end-to-end UI flows.",
+    title: "UX/UI for this feature",
+    detail: "Mockups and end-to-end UI flows—not the full platform or other solutions.",
   },
 ];
 
@@ -99,9 +101,9 @@ const MOCKUPS = [
 ] as const;
 
 export const metadata = {
-  title: "AtlasNova · AI-assisted document generation for product teams | Angela Yang",
+  title: "AtlasNova · UI for AI-assisted document generation | Angela Yang",
   description:
-    "UX/UI design for AtlasNova — mockups and UI flows for AI-assisted document generation.",
+    "UX/UI design for AtlasNova's document generation feature—mockups and UI flows on an enterprise macOS AI platform.",
 };
 
 function Highlight({ children }: { children: ReactNode }) {
@@ -163,7 +165,7 @@ export default function AtlasNovaCaseStudy() {
             <div className="mb-10 sm:mb-12">
               <CaseStudyHeroTldr
                 metricValueClassName="text-[#6366F1]"
-                headline="AtlasNova — AI-assisted document generation for product teams"
+                headline="AtlasNova — UI for AI-assisted document generation"
                 metrics={ATLAS_TLDR_METRICS}
               />
             </div>
@@ -179,14 +181,23 @@ export default function AtlasNovaCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Context
           </span>
-          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>What is AtlasNova?</h2>
+          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
+            One feature inside a larger platform
+          </h2>
           <p className="max-w-3xl text-zinc-300 leading-relaxed">
-            AtlasNova is a <Highlight>macOS document tool</Highlight> for product
-            teams writing PRDs and research docs. Instead of a blank page, you
-            connect a knowledge base, configure a template, and the AI{" "}
-            <Highlight>generates each section</Highlight> in real time—surfacing
-            what it indexed, read, and wrote. A persistent chat keeps you in
-            control of tone, scope, and rewrites as the draft builds.
+            <Highlight>AtlasNova AI</Highlight> is an enterprise macOS platform
+            with multiple AI product solutions. This case study is scoped to one
+            of them: <Highlight>AI-assisted document generation</Highlight> for
+            product teams writing PRDs and research docs—connect a knowledge base,
+            configure a template, and generate each section with persistent chat
+            beside the draft.
+          </p>
+          <p className="max-w-3xl text-zinc-400 leading-relaxed">
+            As a UX/UI design intern, I owned the{" "}
+            <span className="text-zinc-200">UI for this feature</span>—mockups
+            and end-to-end flows from whiteboard sketches through hi-fi screens.
+            Other AtlasNova solutions (email, decks, recordings, and more) were
+            out of scope.
           </p>
         </CaseStudyInViewSection>
 
@@ -197,13 +208,13 @@ export default function AtlasNovaCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Principles
           </span>
-          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>What we designed for</h2>
+          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>What I designed for</h2>
           <p className="max-w-3xl text-zinc-300 leading-relaxed">
-            PMs using AtlasNova sit between two failure modes: AI that feels like a
-            black box, and workflows that split &ldquo;the document&rdquo; from
-            &ldquo;the conversation.&rdquo; In whiteboard sessions with eng and PM,
-            we kept returning to the same trust questions—so each principle below
-            maps to a design decision, not a mood board line.
+            PMs using this feature sit between two failure modes: AI that feels
+            like a black box, and workflows that split &ldquo;the document&rdquo;
+            from &ldquo;the conversation.&rdquo; In whiteboard sessions with eng
+            and PM, the team aligned on trust requirements for document
+            generation—I translated those into UI patterns below.
           </p>
           <ul className="max-w-3xl space-y-8 text-zinc-300 leading-relaxed">
             <li className="space-y-2">
@@ -275,8 +286,8 @@ export default function AtlasNovaCaseStudy() {
             Whiteboard from team discussions
           </h2>
           <p className="max-w-3xl text-zinc-400 leading-relaxed">
-            Early IA, home dashboard, and split-pane layout—translated from those
-            principles before we moved to hi-fi.
+            Early IA and layout explorations for this feature—before hi-fi
+            mockups.
           </p>
           <div className="grid gap-6 sm:grid-cols-2">
             {SKETCHES.map((sketch) => (
@@ -294,8 +305,8 @@ export default function AtlasNovaCaseStudy() {
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>Hi-fi screens</h2>
           <p className="max-w-3xl text-zinc-400 leading-relaxed">
-            Home → import sources → split-pane workspace—the path from blank project
-            to editable PRD.
+            Hi-fi screens I delivered for the document generation flow—home →
+            import sources → split-pane workspace.
           </p>
           <div className="space-y-8">
             {MOCKUPS.map((screen) => (
@@ -313,11 +324,10 @@ export default function AtlasNovaCaseStudy() {
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>New project onboarding</h2>
           <p className="max-w-3xl text-zinc-300 leading-relaxed">
-            Before the split-pane workspace, new projects pass through a guided
-            flow: dashboard → prompt → AI clarifying questions → template pick →
-            file upload. The LLM narrows scope early so the first generation
-            isn&apos;t a guess—and template settings land here, not in a buried
-            menu.
+            Onboarding UI for new document projects: dashboard → prompt → AI
+            clarifying questions → template pick → file upload. The flow narrows
+            scope before generation—and surfaces template settings upfront, not
+            in a buried menu.
           </p>
           <Figure
             src={UI_FLOW_SRC}

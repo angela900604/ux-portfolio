@@ -7,7 +7,6 @@ import {
   E_INVOICE_HOME_DISCIPLINE_TAGS,
   E_INVOICE_HOME_TECH_HIGHLIGHTS,
   ATLAS_NOVA_HOME_DISCIPLINE_TAGS,
-  ATLAS_NOVA_HOME_TECH_HIGHLIGHTS,
   MINA_HOME_DISCIPLINE_TAGS,
   marketingDisciplineTagsForCaseStudySlug,
 } from "@/lib/marketing-work";
@@ -218,12 +217,12 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
     eyebrowTags: [...ATLAS_NOVA_HOME_DISCIPLINE_TAGS],
     eyebrowAsProjectCardTag: true,
     title: "AtlasNova",
-    subtitle: "AI-assisted document generation for product teams",
+    subtitle: "Enterprise AI platform · document generation UI",
     items: [
       { label: "Timeline", value: "2023" },
       { label: "Role", value: "UX/UI Designer Intern" },
       { label: "Project type", value: "AtlasNova AI" },
-      { label: "Focus", value: ATLAS_NOVA_HOME_TECH_HIGHLIGHTS },
+      { label: "Scope", value: "UI for the document generation feature" },
     ],
     textLinks: [
       {
