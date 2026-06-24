@@ -148,7 +148,6 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     year: "2024",
     techHighlights: PERFECT_INTERVIEW_HOME_TECH_HIGHLIGHTS,
     cover: { kind: "image", src: PERFECT_INTERVIEW_COVER },
-    showShipped: true,
   },
   {
     slug: "momi-animal-health",
