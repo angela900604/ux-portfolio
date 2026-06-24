@@ -208,68 +208,59 @@ export default function AtlasNovaCaseStudy() {
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Principles
           </span>
-          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>What I designed for</h2>
+          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>What we designed for</h2>
           <p className="max-w-3xl text-zinc-300 leading-relaxed">
-            PMs using this feature sit between two failure modes: AI that feels
-            like a black box, and workflows that split &ldquo;the document&rdquo;
-            from &ldquo;the conversation.&rdquo; In whiteboard sessions with eng
-            and PM, the team aligned on trust requirements for document
-            generation—I translated those into UI patterns below.
+            PMs using AtlasNova sit between two failure modes: AI that feels like a
+            black box, and workflows that split the document from the conversation.
+            Each principle below maps directly to a design decision.
           </p>
-          <ul className="max-w-3xl space-y-8 text-zinc-300 leading-relaxed">
-            <li className="space-y-2">
-              <p className="font-semibold text-zinc-100">
-                AI-assisted, not AI-replaced
-              </p>
+          <ul className="max-w-3xl space-y-5 text-zinc-300 leading-relaxed">
+            <li>
               <p>
-                Generation is step-by-step, but the PM stays in the loop. Chat stays
-                open while the doc updates—steering a section or asking for a rewrite
-                feels like commenting on the artifact, not switching to another app
-                mid-draft.
+                <span className="font-semibold text-zinc-100">
+                  AI-assisted, not AI-replaced
+                </span>{" "}
+                — Generation is step-by-step, but the PM stays in the loop. Chat
+                stays open while the doc updates, so steering a section feels like
+                commenting on the artifact—not switching apps mid-draft.
               </p>
             </li>
-            <li className="space-y-2">
-              <p className="font-semibold text-zinc-100">Transparent generation</p>
+            <li>
               <p>
-                Long runs erode trust when one spinner hides everything. Each section
-                surfaces where the model is in its pipeline—{" "}
-                <span className="text-zinc-100">indexed</span>,{" "}
-                <span className="text-zinc-100">reading</span>,{" "}
-                <span className="text-zinc-100">generating</span>—so users tolerate
-                wait time and can catch bad source pulls before the whole PRD is
-                wrong.
+                <span className="font-semibold text-zinc-100">
+                  Transparent generation
+                </span>{" "}
+                — Each section surfaces where the model is in its pipeline (indexed
+                → reading → generating), so users can tolerate wait time and catch
+                bad source pulls before the whole PRD is wrong.
               </p>
             </li>
-            <li className="space-y-2">
-              <p className="font-semibold text-zinc-100">Split-pane layout</p>
+            <li>
               <p>
-                The primary workspace is document left, chat right—one macOS window,
-                desktop-first hierarchy. Users never lose context toggling between
-                reading generated copy and directing the AI; both live in the same
-                frame.
+                <span className="font-semibold text-zinc-100">Split-pane layout</span>{" "}
+                — Document left, chat right, one macOS window. Users never lose
+                context toggling between generated copy and directing the AI.
               </p>
             </li>
-            <li className="space-y-2">
-              <p className="font-semibold text-zinc-100">
-                Context you can see (@mentions)
-              </p>
+            <li>
               <p>
-                Team knowledge shouldn&apos;t live only in hidden prompts.{" "}
-                <Highlight>@mention pills</Highlight> reference knowledge-base
-                artifacts—competitive analyses, prior specs, research summaries—so
-                grounding the model is a visible, repeatable interaction, not prompt
-                engineering behind the scenes.
+                <span className="font-semibold text-zinc-100">
+                  Context you can see (@mentions)
+                </span>{" "}
+                — @mention pills reference knowledge-base artifacts—competitive
+                analyses, prior specs, research summaries—so grounding the model is
+                a visible, repeatable interaction, not hidden prompt engineering.
               </p>
             </li>
-            <li className="space-y-2">
-              <p className="font-semibold text-zinc-100">
-                Template settings upfront
-              </p>
+            <li>
               <p>
-                Format, page count, detail level, and output type belong in
-                onboarding—not an advanced menu after a bad first draft. Surfacing
-                controls before generation starts sets expectations and cuts
-                &ldquo;regenerate everything&rdquo; loops.
+                <span className="font-semibold text-zinc-100">
+                  Template settings upfront
+                </span>{" "}
+                — Format, page count, detail level, and output type belong in
+                onboarding, not an advanced menu after a bad first draft. Surfacing
+                controls before generation cuts &ldquo;regenerate everything&rdquo;
+                loops.
               </p>
             </li>
           </ul>
