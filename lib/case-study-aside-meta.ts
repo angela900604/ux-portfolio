@@ -7,6 +7,8 @@ import {
   E_INVOICE_HOME_DISCIPLINE_TAGS,
   E_INVOICE_HOME_TECH_HIGHLIGHTS,
   ATLAS_NOVA_HOME_DISCIPLINE_TAGS,
+  PERFECT_INTERVIEW_HOME_DISCIPLINE_TAGS,
+  PERFECT_INTERVIEW_HOME_TECH_HIGHLIGHTS,
   MINA_HOME_DISCIPLINE_TAGS,
   marketingDisciplineTagsForCaseStudySlug,
 } from "@/lib/marketing-work";
@@ -21,6 +23,7 @@ const E_INVOICE_FIGMA_APP_MOCKUP =
 const ATLAS_NOVA_FIGMA_SKETCHES =
   "https://www.figma.com/design/LMIFzRY2vOAL5YfKXMrhLR/AtlasNova-New-Sketches?node-id=0-1&t=bSBihOHyTQfXdArv-1";
 const ATLAS_NOVA_WEBSITE = "https://www.atlasnova.ai/";
+const PERFECT_INTERVIEW_WEBSITE = "https://perfectinterview.ai/";
 
 export type CaseStudyAsideRow = {
   label: string;
@@ -233,6 +236,28 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
       {
         href: ATLAS_NOVA_FIGMA_SKETCHES,
         label: "Figma · New Sketches",
+        external: true,
+      },
+    ],
+  },
+  "perfect-interview": {
+    eyebrowTags: [...PERFECT_INTERVIEW_HOME_DISCIPLINE_TAGS],
+    eyebrowAsProjectCardTag: true,
+    title: "PerfectInterview.ai",
+    subtitle: "An AI-driven mock interview platform for job seekers",
+    items: [
+      { label: "Timeline", value: "2024" },
+      { label: "Role", value: "Sole UX/UI Designer" },
+      {
+        label: "Project type",
+        value: "Heuristic Evaluation · UI Design",
+      },
+      { label: "Focus", value: PERFECT_INTERVIEW_HOME_TECH_HIGHLIGHTS },
+    ],
+    textLinks: [
+      {
+        href: PERFECT_INTERVIEW_WEBSITE,
+        label: "PerfectInterview.ai",
         external: true,
       },
     ],

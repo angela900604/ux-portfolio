@@ -54,6 +54,17 @@ export const ATLAS_NOVA_HOME_DISCIPLINE_TAGS = [
 export const ATLAS_NOVA_HOME_TECH_HIGHLIGHTS =
   "Document generation feature · mockups & UI flows" as const;
 
+/** PerfectInterview — homepage card + left-rail tags (keep in sync). */
+export const PERFECT_INTERVIEW_HOME_DISCIPLINE_TAGS = [
+  "AI · Mock interviews",
+  "Responsive web",
+] as const;
+
+export const PERFECT_INTERVIEW_HOME_TECH_HIGHLIGHTS =
+  "Heuristic evaluation · UI design · Framer" as const;
+
+const PERFECT_INTERVIEW_COVER = "/case-studies/perfect-interview/cover.png";
+
 export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
   {
     slug: "e-invoice-app",
@@ -105,6 +116,17 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     year: "2023",
     techHighlights: ATLAS_NOVA_HOME_TECH_HIGHLIGHTS,
     cover: { kind: "image", src: ATLAS_NOVA_COVER },
+  },
+  {
+    slug: "perfect-interview",
+    href: "/case-studies/perfect-interview",
+    portfolioFocus: "product",
+    title: "PerfectInterview.ai · An AI-driven mock interview platform",
+    disciplineTags: ["AI · Mock interviews · Responsive web"],
+    year: "2024",
+    techHighlights: PERFECT_INTERVIEW_HOME_TECH_HIGHLIGHTS,
+    cover: { kind: "image", src: PERFECT_INTERVIEW_COVER },
+    showShipped: true,
   },
   {
     slug: "ai-marketplace/marketing",

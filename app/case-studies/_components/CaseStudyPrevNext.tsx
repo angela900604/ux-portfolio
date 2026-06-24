@@ -7,6 +7,7 @@ export const CASE_STUDY_NAV: { slug: string; label: string }[] = [
   { slug: "government-backend", label: "Government backend" },
   { slug: "baskin-robbins", label: "Baskin-Robbins Taiwan" },
   { slug: "atlas-nova", label: "AtlasNova" },
+  { slug: "perfect-interview", label: "PerfectInterview.ai" },
   {
     slug: "ai-marketplace/marketing",
     label: "MINA · Instagram",
