@@ -6,13 +6,13 @@ export const CASE_STUDY_NAV: { slug: string; label: string }[] = [
   { slug: "ai-marketplace", label: "MINA · community marketplace" },
   { slug: "government-backend", label: "Government backend" },
   { slug: "baskin-robbins", label: "Baskin-Robbins Taiwan" },
-  { slug: "atlas-nova", label: "AtlasNova" },
-  { slug: "perfect-interview", label: "PerfectInterview.ai" },
   {
     slug: "ai-marketplace/marketing",
     label: "MINA · Instagram",
   },
   { slug: "phyphyya", label: "Haphy Living" },
+  { slug: "atlas-nova", label: "AtlasNova" },
+  { slug: "perfect-interview", label: "PerfectInterview.ai" },
   { slug: "momi-animal-health", label: "MOMI Animal Health" },
   { slug: "admission-hub", label: "Admission Hub" },
 ];
