@@ -21,6 +21,7 @@ const ATLAS_ACCENT_BG = "rgba(99, 102, 241, 0.16)";
 const UI_FLOW_SRC = `/case-studies/atlas-nova/${encodeURIComponent("UI flow.png")}`;
 const UI_FLOW_W = 20554;
 const UI_FLOW_H = 9924;
+const GMAIL_CONNECT_SRC = `/case-studies/atlas-nova/${encodeURIComponent("Gmail connect.png")}`;
 
 const ATLAS_TLDR_METRICS: CaseStudyHeroTldrMetric[] = [
   {
@@ -196,8 +197,6 @@ export default function AtlasNovaCaseStudy() {
             As a UX/UI design intern, I owned the{" "}
             <span className="text-zinc-200">UI for this feature</span>—mockups
             and end-to-end flows from whiteboard sketches through hi-fi screens.
-            Other AtlasNova solutions (email, decks, recordings, and more) were
-            out of scope.
           </p>
         </CaseStudyInViewSection>
 
@@ -263,6 +262,17 @@ export default function AtlasNovaCaseStudy() {
                 loops.
               </p>
             </li>
+            <li>
+              <p>
+                <span className="font-semibold text-zinc-100">
+                  Connected platforms
+                </span>{" "}
+                — Document generation pulls from scattered team knowledge. Connect
+                flows for Gmail, Google Drive, and other platforms let users import
+                context without leaving AtlasNova—familiar OAuth-style sign-in keeps
+                the handoff trustworthy.
+              </p>
+            </li>
           </ul>
         </CaseStudyInViewSection>
 
@@ -304,6 +314,29 @@ export default function AtlasNovaCaseStudy() {
               <Figure key={screen.src} {...screen} />
             ))}
           </div>
+        </CaseStudyInViewSection>
+
+        <CaseStudyInViewSection
+          id="platform-connect"
+          className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
+        >
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+            Mockups
+          </span>
+          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
+            Connecting external platforms
+          </h2>
+          <p className="max-w-3xl text-zinc-400 leading-relaxed">
+            Hi-fi for platform connect—Gmail sign-in as an example of bringing
+            external context into the document generation workflow.
+          </p>
+          <Figure
+            src={GMAIL_CONNECT_SRC}
+            alt="AtlasNova Gmail connect — Google OAuth sign-in modal over split-pane workspace with open document tabs"
+            width={1562}
+            height={1007}
+            caption="Gmail connect — choose an account to continue to AtlasNova."
+          />
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection
