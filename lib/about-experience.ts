@@ -33,7 +33,7 @@ export const ABOUT_EXPERIENCE: readonly AboutExperienceRow[] = [
   {
     title: "UX/UI Designer Intern",
     company: "AtlasNova AI",
-    dates: "2023 – 2024",
+    dates: "2023",
     description:
       "Contributed to product design for an enterprise AI SaaS platform delivering tailored multimodal AI solutions trained on encrypted client data. Designed mockups and end-to-end UI flows across workflows involving email, sales decks, meeting recordings, charts, and video content.",
   },

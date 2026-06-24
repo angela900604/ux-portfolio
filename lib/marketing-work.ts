@@ -101,7 +101,7 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     portfolioFocus: "product",
     title: "AtlasNova · AI-assisted document generation for product teams",
     disciplineTags: ["Enterprise AI · macOS · Document generation"],
-    year: "2023–2024",
+    year: "2023",
     techHighlights: ATLAS_NOVA_HOME_TECH_HIGHLIGHTS,
     cover: { kind: "image", src: "/case-studies/atlas-nova/home-cover.png" },
   },

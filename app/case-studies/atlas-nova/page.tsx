@@ -18,7 +18,6 @@ import {
 const ATLAS_ACCENT = "#6366F1";
 const ATLAS_ACCENT_BG = "rgba(99, 102, 241, 0.16)";
 
-const HOME_COVER = "/case-studies/atlas-nova/home-cover.png";
 const UI_FLOW_SRC = `/case-studies/atlas-nova/${encodeURIComponent("UI flow.png")}`;
 const UI_FLOW_W = 20554;
 const UI_FLOW_H = 9924;
@@ -167,25 +166,6 @@ export default function AtlasNovaCaseStudy() {
                 headline="AtlasNova — AI-assisted document generation for product teams"
                 metrics={ATLAS_TLDR_METRICS}
               />
-            </div>
-
-            <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
-              <ImageLightbox
-                src={HOME_COVER}
-                alt="AtlasNova — AI auto-reply flow with brand tone and review context"
-                className="block w-full"
-                disableHoverScale
-              >
-                <Image
-                  src={HOME_COVER}
-                  alt="AtlasNova — AI auto-reply flow with brand tone and review context"
-                  width={1024}
-                  height={682}
-                  className="h-auto w-full object-cover"
-                  sizes="(max-width: 768px) 100vw, 1080px"
-                  priority
-                />
-              </ImageLightbox>
             </div>
           </div>
         </div>

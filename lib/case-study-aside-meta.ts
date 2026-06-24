@@ -220,7 +220,7 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
     title: "AtlasNova",
     subtitle: "AI-assisted document generation for product teams",
     items: [
-      { label: "Timeline", value: "2023 – 2024" },
+      { label: "Timeline", value: "2023" },
       { label: "Role", value: "UX/UI Designer Intern" },
       { label: "Project type", value: "AtlasNova AI" },
       { label: "Focus", value: ATLAS_NOVA_HOME_TECH_HIGHLIGHTS },
