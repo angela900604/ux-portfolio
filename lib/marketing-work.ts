@@ -44,6 +44,15 @@ export const MINA_HOME_DISCIPLINE_TAGS = [
   "Mobile app",
 ] as const;
 
+/** AtlasNova — homepage card + left-rail tags (keep in sync). */
+export const ATLAS_NOVA_HOME_DISCIPLINE_TAGS = [
+  "Enterprise AI · macOS",
+  "Document generation",
+] as const;
+
+export const ATLAS_NOVA_HOME_TECH_HIGHLIGHTS =
+  "Mockups and UI flows" as const;
+
 export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
   {
     slug: "e-invoice-app",
@@ -85,6 +94,16 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     year: "2024–2025",
     cover: { kind: "image", src: "/case-studies/baskin-robbins/home-cover.png" },
     showShipped: true,
+  },
+  {
+    slug: "atlas-nova",
+    href: "/case-studies/atlas-nova",
+    portfolioFocus: "product",
+    title: "AtlasNova · AI-assisted document generation for product teams",
+    disciplineTags: ["Enterprise AI · macOS · Document generation"],
+    year: "2023–2024",
+    techHighlights: ATLAS_NOVA_HOME_TECH_HIGHLIGHTS,
+    cover: { kind: "image", src: "/case-studies/atlas-nova/home-cover.svg" },
   },
   {
     slug: "ai-marketplace/marketing",

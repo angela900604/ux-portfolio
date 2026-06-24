@@ -6,6 +6,8 @@
 import {
   E_INVOICE_HOME_DISCIPLINE_TAGS,
   E_INVOICE_HOME_TECH_HIGHLIGHTS,
+  ATLAS_NOVA_HOME_DISCIPLINE_TAGS,
+  ATLAS_NOVA_HOME_TECH_HIGHLIGHTS,
   MINA_HOME_DISCIPLINE_TAGS,
   marketingDisciplineTagsForCaseStudySlug,
 } from "@/lib/marketing-work";
@@ -207,6 +209,18 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
         label: "31 Club · App Store (Taiwan)",
         external: true,
       },
+    ],
+  },
+  "atlas-nova": {
+    eyebrowTags: [...ATLAS_NOVA_HOME_DISCIPLINE_TAGS],
+    eyebrowAsProjectCardTag: true,
+    title: "AtlasNova",
+    subtitle: "AI-assisted document generation for product teams",
+    items: [
+      { label: "Timeline", value: "2023 – 2024" },
+      { label: "Role", value: "UX/UI Designer Intern" },
+      { label: "Project type", value: "AtlasNova AI" },
+      { label: "Focus", value: ATLAS_NOVA_HOME_TECH_HIGHLIGHTS },
     ],
   },
   "phyphyya": {
