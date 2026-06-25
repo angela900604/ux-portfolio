@@ -108,6 +108,16 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     showShipped: true,
   },
   {
+    slug: "atlas-nova",
+    href: "/case-studies/atlas-nova",
+    portfolioFocus: "product",
+    title: "AtlasNova · UI for AI-assisted document generation",
+    disciplineTags: ["Enterprise AI · macOS · Document generation"],
+    year: "2023",
+    techHighlights: ATLAS_NOVA_HOME_TECH_HIGHLIGHTS,
+    cover: { kind: "image", src: ATLAS_NOVA_COVER },
+  },
+  {
     slug: "ai-marketplace/marketing",
     href: "/case-studies/ai-marketplace/marketing",
     portfolioFocus: "marketing",
@@ -128,16 +138,6 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     disciplineTags: ["Branding · ecommerce"],
     year: "2023–2024",
     cover: { kind: "image", src: "/case-studies/phyphyya/gallery-14.png" },
-  },
-  {
-    slug: "atlas-nova",
-    href: "/case-studies/atlas-nova",
-    portfolioFocus: "product",
-    title: "AtlasNova · UI for AI-assisted document generation",
-    disciplineTags: ["Enterprise AI · macOS · Document generation"],
-    year: "2023",
-    techHighlights: ATLAS_NOVA_HOME_TECH_HIGHLIGHTS,
-    cover: { kind: "image", src: ATLAS_NOVA_COVER },
   },
   // Hidden for now — restore when ready to publish
   // {
