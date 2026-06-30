@@ -16,7 +16,6 @@ import {
 } from "@/lib/site-shell";
 import {
   EA_ASSET,
-  FeaturedEventsList,
   PersonaBlock,
   ResearchStatsGrid,
   TaskFlowSteps,
@@ -325,9 +324,8 @@ export default function EaCommunityConceptCaseStudy() {
           <p className="max-w-3xl text-zinc-300 leading-relaxed">
             From Community Profile, users pick an event and land on a detail
             screen with summary, Join Event CTA, and similar-event
-            recommendations. Featured franchise events from the sprint:
+            recommendations.
           </p>
-          <FeaturedEventsList />
           <Figure {...EVENTS_WIREFRAME} unoptimized />
         </CaseStudyInViewSection>
 

@@ -69,33 +69,6 @@ export const TASK_FLOW_STEPS: FlowStep[] = [
   { kind: "end", label: "End" },
 ];
 
-export const FEATURED_EVENTS = [
-  {
-    date: "July 8, 2021 · 10AM",
-    title: "The Future of FPS",
-    host: "Stella Chung",
-    franchises: "Apex Legends · Battlefield 2042",
-  },
-  {
-    date: "July 13, 2021 · 10AM",
-    title: "EA Originals ♥s Independent Studios",
-    host: "Todd Martens",
-    franchises: "EA Originals",
-  },
-  {
-    date: "July 19, 2021 · 4PM",
-    title: "Madden NFL 22 All-Access: Scouting",
-    host: "Nick Mizesko",
-    franchises: "Madden NFL 22",
-  },
-  {
-    date: "July 20, 2021 · 10AM",
-    title: "FIFA Next Gen Gameplay Powered by HyperMotion Technology",
-    host: "Amit Katwala",
-    franchises: "FIFA 22",
-  },
-] as const;
-
 const FLOW_KIND_LABEL: Record<FlowStepKind, string> = {
   start: "Start",
   end: "End",
@@ -217,32 +190,5 @@ export function TaskFlowSteps() {
         </li>
       ))}
     </ol>
-  );
-}
-
-export function FeaturedEventsList() {
-  return (
-    <div className="max-w-3xl overflow-hidden rounded-2xl border border-zinc-800">
-      <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)_minmax(0,1fr)] gap-3 border-b border-zinc-800 bg-zinc-900/60 px-4 py-3 text-[10px] font-semibold uppercase tracking-wider text-zinc-500 sm:px-5">
-        <span>When</span>
-        <span>Event</span>
-        <span className="hidden sm:block">Host</span>
-      </div>
-      <ul className="divide-y divide-zinc-800/90">
-        {FEATURED_EVENTS.map((event) => (
-          <li
-            key={event.title}
-            className="grid grid-cols-1 gap-1 px-4 py-4 sm:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)_minmax(0,1fr)] sm:items-start sm:gap-3 sm:px-5"
-          >
-            <p className="text-xs tabular-nums text-zinc-500 sm:text-sm">{event.date}</p>
-            <div>
-              <p className="font-medium text-zinc-100">{event.title}</p>
-              <p className="mt-1 text-xs text-zinc-500">{event.franchises}</p>
-            </div>
-            <p className="text-sm text-zinc-400 sm:text-right">{event.host}</p>
-          </li>
-        ))}
-      </ul>
-    </div>
   );
 }
