@@ -1,0 +1,248 @@
+const EA_ACCENT = "#F97316";
+
+export const EA_ASSET = (name: string) =>
+  `/case-studies/ea-community-concept/${encodeURIComponent(name)}`;
+
+export const RESEARCH_STATS = [
+  {
+    value: "41%",
+    caption: "of teens report participating in online groups centered around hobbies",
+  },
+  {
+    value: "84%",
+    caption:
+      "of respondents emphasized connecting with like-minded gamers for engagement",
+  },
+  {
+    value: "40%",
+    caption: "of teens participate in groups with a focus on humor",
+  },
+] as const;
+
+export const ALEX_PERSONA = {
+  name: "Alex Lewis",
+  role: "Graphic Designer",
+  age: 24,
+  location: "Vancouver, CA",
+  quote:
+    "I find it challenging to connect with other gamers who have different interests and experiences, so I don't see a compelling reason to interact with them",
+  scenario:
+    "Alex is a passionate gamer who spends most of his free time playing games on his Mac. He has developed strong skills across genres—but Mac lacks social features for adding friends in-game. He struggles to find common interests outside gaming, which limits conversations with others.",
+  behaviour:
+    "Enjoys multiplayer games and connecting with other gamers to play together and share experiences.",
+  painPoints:
+    "Hard to talk with strangers outside gaming—feels he doesn't have enough shared interests to sustain a conversation.",
+  motivation:
+    "Wants to make connections with other gamers who share his interests—not just the same game library.",
+} as const;
+
+export type FlowStepKind = "start" | "end" | "screen" | "action" | "system";
+
+export type FlowStep = {
+  kind: FlowStepKind;
+  label: string;
+  note?: string;
+};
+
+export const TASK_FLOW_STEPS: FlowStep[] = [
+  { kind: "start", label: "Start" },
+  { kind: "screen", label: "Community Screen" },
+  { kind: "action", label: "Input keyword in search bar" },
+  {
+    kind: "system",
+    label: "Show communities matching keywords",
+    note: "Surfaces groups where users can meet people with common interests—not just shared game titles.",
+  },
+  { kind: "action", label: "Select a community to join" },
+  {
+    kind: "screen",
+    label: "Community Profile",
+    note: "Bio description · member count · offline & online event list",
+  },
+  { kind: "action", label: "Select an event" },
+  {
+    kind: "screen",
+    label: "Event Screen",
+    note: "Join Event CTA · event summary · details · similar event recommendations",
+  },
+  { kind: "action", label: "Register for event" },
+  { kind: "end", label: "End" },
+];
+
+export const FEATURED_EVENTS = [
+  {
+    date: "July 8, 2021 · 10AM",
+    title: "The Future of FPS",
+    host: "Stella Chung",
+    franchises: "Apex Legends · Battlefield 2042",
+  },
+  {
+    date: "July 13, 2021 · 10AM",
+    title: "EA Originals ♥s Independent Studios",
+    host: "Todd Martens",
+    franchises: "EA Originals",
+  },
+  {
+    date: "July 19, 2021 · 4PM",
+    title: "Madden NFL 22 All-Access: Scouting",
+    host: "Nick Mizesko",
+    franchises: "Madden NFL 22",
+  },
+  {
+    date: "July 20, 2021 · 10AM",
+    title: "FIFA Next Gen Gameplay Powered by HyperMotion Technology",
+    host: "Amit Katwala",
+    franchises: "FIFA 22",
+  },
+] as const;
+
+const FLOW_KIND_LABEL: Record<FlowStepKind, string> = {
+  start: "Start",
+  end: "End",
+  screen: "Screen",
+  action: "Action",
+  system: "System",
+};
+
+const FLOW_KIND_STYLE: Record<FlowStepKind, string> = {
+  start: "border-zinc-600 bg-zinc-800/80 text-zinc-300",
+  end: "border-zinc-600 bg-zinc-800/80 text-zinc-300",
+  screen: "border-fuchsia-500/40 bg-fuchsia-950/30 text-fuchsia-100",
+  action: "border-sky-500/40 bg-sky-950/30 text-sky-100",
+  system: "border-orange-500/40 bg-orange-950/25 text-orange-100",
+};
+
+export function ResearchStatsGrid() {
+  return (
+    <div className="grid gap-4 sm:grid-cols-3">
+      {RESEARCH_STATS.map((stat) => (
+        <div
+          key={stat.value + stat.caption.slice(0, 12)}
+          className="flex flex-col rounded-2xl border border-zinc-800 bg-zinc-900/50 p-5 sm:p-6"
+        >
+          <p
+            className="text-4xl font-bold tabular-nums tracking-tight sm:text-5xl"
+            style={{ color: EA_ACCENT }}
+          >
+            {stat.value}
+          </p>
+          <p className="mt-3 text-sm leading-relaxed text-zinc-400">{stat.caption}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export function PersonaBlock() {
+  const p = ALEX_PERSONA;
+  return (
+    <div className="max-w-3xl space-y-6 rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6 sm:p-8">
+      <div className="space-y-2">
+        <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500">
+          Persona
+        </p>
+        <p className="text-xl font-semibold text-zinc-100">{p.name}</p>
+        <p className="text-sm text-zinc-500">
+          {p.role} · Age {p.age} · {p.location}
+        </p>
+      </div>
+
+      <blockquote className="border-l-2 pl-4" style={{ borderColor: EA_ACCENT }}>
+        <p className="text-base italic leading-relaxed text-zinc-200 sm:text-lg">
+          &ldquo;{p.quote}&rdquo;
+        </p>
+      </blockquote>
+
+      <div className="space-y-2">
+        <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500">
+          Scenario
+        </p>
+        <p className="text-sm leading-relaxed text-zinc-300 sm:text-base">
+          {p.scenario}
+        </p>
+      </div>
+
+      <dl className="grid gap-4 sm:grid-cols-3">
+        <div>
+          <dt className="text-[11px] font-semibold uppercase tracking-wider text-zinc-500">
+            Behaviour
+          </dt>
+          <dd className="mt-1.5 text-sm leading-relaxed text-zinc-300">{p.behaviour}</dd>
+        </div>
+        <div>
+          <dt className="text-[11px] font-semibold uppercase tracking-wider text-zinc-500">
+            Pain points
+          </dt>
+          <dd className="mt-1.5 text-sm leading-relaxed text-zinc-300">{p.painPoints}</dd>
+        </div>
+        <div>
+          <dt className="text-[11px] font-semibold uppercase tracking-wider text-zinc-500">
+            Motivation
+          </dt>
+          <dd className="mt-1.5 text-sm leading-relaxed text-zinc-300">{p.motivation}</dd>
+        </div>
+      </dl>
+    </div>
+  );
+}
+
+export function TaskFlowSteps() {
+  return (
+    <ol className="max-w-3xl space-y-0">
+      {TASK_FLOW_STEPS.map((step, index) => (
+        <li key={step.label} className="relative flex gap-4 pb-6 last:pb-0">
+          {index < TASK_FLOW_STEPS.length - 1 ? (
+            <span
+              className="absolute left-[1.125rem] top-10 bottom-0 w-px bg-zinc-700/80"
+              aria-hidden
+            />
+          ) : null}
+          <div
+            className={`relative z-[1] flex h-9 w-9 shrink-0 items-center justify-center rounded-full border text-[10px] font-bold uppercase tracking-wide ${FLOW_KIND_STYLE[step.kind]}`}
+            aria-hidden
+          >
+            {index + 1}
+          </div>
+          <div className="min-w-0 flex-1 pt-0.5">
+            <div className="flex flex-wrap items-center gap-2">
+              <p className="font-semibold text-zinc-100">{step.label}</p>
+              <span className="rounded-full border border-zinc-700 bg-zinc-900/60 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-zinc-500">
+                {FLOW_KIND_LABEL[step.kind]}
+              </span>
+            </div>
+            {step.note ? (
+              <p className="mt-2 text-sm leading-relaxed text-zinc-400">{step.note}</p>
+            ) : null}
+          </div>
+        </li>
+      ))}
+    </ol>
+  );
+}
+
+export function FeaturedEventsList() {
+  return (
+    <div className="max-w-3xl overflow-hidden rounded-2xl border border-zinc-800">
+      <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)_minmax(0,1fr)] gap-3 border-b border-zinc-800 bg-zinc-900/60 px-4 py-3 text-[10px] font-semibold uppercase tracking-wider text-zinc-500 sm:px-5">
+        <span>When</span>
+        <span>Event</span>
+        <span className="hidden sm:block">Host</span>
+      </div>
+      <ul className="divide-y divide-zinc-800/90">
+        {FEATURED_EVENTS.map((event) => (
+          <li
+            key={event.title}
+            className="grid grid-cols-1 gap-1 px-4 py-4 sm:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)_minmax(0,1fr)] sm:items-start sm:gap-3 sm:px-5"
+          >
+            <p className="text-xs tabular-nums text-zinc-500 sm:text-sm">{event.date}</p>
+            <div>
+              <p className="font-medium text-zinc-100">{event.title}</p>
+              <p className="mt-1 text-xs text-zinc-500">{event.franchises}</p>
+            </div>
+            <p className="text-sm text-zinc-400 sm:text-right">{event.host}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}

@@ -7,6 +7,8 @@ import {
   E_INVOICE_HOME_DISCIPLINE_TAGS,
   E_INVOICE_HOME_TECH_HIGHLIGHTS,
   ATLAS_NOVA_HOME_DISCIPLINE_TAGS,
+  EA_COMMUNITY_HOME_DISCIPLINE_TAGS,
+  EA_COMMUNITY_HOME_TECH_HIGHLIGHTS,
   PERFECT_INTERVIEW_HOME_DISCIPLINE_TAGS,
   PERFECT_INTERVIEW_HOME_TECH_HIGHLIGHTS,
   MINA_HOME_DISCIPLINE_TAGS,
@@ -23,6 +25,8 @@ const E_INVOICE_FIGMA_APP_MOCKUP =
 const ATLAS_NOVA_FIGMA_SKETCHES =
   "https://www.figma.com/design/LMIFzRY2vOAL5YfKXMrhLR/AtlasNova-New-Sketches?node-id=0-1&t=bSBihOHyTQfXdArv-1";
 const ATLAS_NOVA_WEBSITE = "https://www.atlasnova.ai/";
+const EA_COMMUNITY_FIGMA =
+  "https://www.figma.com/design/XziE5IHalaSAHnPNwXX6Ml/Industry-Project";
 const PERFECT_INTERVIEW_WEBSITE = "https://perfectinterview.ai/";
 
 export type CaseStudyAsideRow = {
@@ -236,6 +240,32 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
       {
         href: ATLAS_NOVA_FIGMA_SKETCHES,
         label: "Figma · New Sketches",
+        external: true,
+      },
+    ],
+  },
+  "ea-community-concept": {
+    eyebrowTags: [...EA_COMMUNITY_HOME_DISCIPLINE_TAGS],
+    eyebrowAsProjectCardTag: true,
+    title: "EA Community Concept",
+    subtitle: "Helping gamers connect through shared interests",
+    items: [
+      { label: "Timeline", value: "2023" },
+      { label: "Role", value: "UX Designer (sole)" },
+      {
+        label: "Project type",
+        value: "Industry Hackathon, sponsored by Electronic Arts",
+      },
+      {
+        label: "Scope",
+        value:
+          "Research, persona, and task-flow design for a 4-person team (2 frontend engineers, 1 data scientist) within a 24-hour sprint",
+      },
+    ],
+    textLinks: [
+      {
+        href: EA_COMMUNITY_FIGMA,
+        label: "Figma · Industry Project",
         external: true,
       },
     ],

@@ -29,6 +29,7 @@ export type MarketingWorkItem = {
 
 const GOV_COVER = `/case-studies/government-backend/${encodeURIComponent("rolebased backend cover.png")}`;
 const ATLAS_NOVA_COVER = `/case-studies/atlas-nova/${encodeURIComponent("cover image.png")}`;
+const EA_COMMUNITY_COVER = `/case-studies/ea-community-concept/${encodeURIComponent("Community Screen_Interest inserted.png")}`;
 
 /** e-Invoice homepage + case study — tag pills (keep in sync with case study). */
 export const E_INVOICE_HOME_DISCIPLINE_TAGS = [
@@ -53,6 +54,15 @@ export const ATLAS_NOVA_HOME_DISCIPLINE_TAGS = [
 
 export const ATLAS_NOVA_HOME_TECH_HIGHLIGHTS =
   "Document generation feature · mockups & UI flows" as const;
+
+/** EA Community Concept — homepage card + left-rail tags (keep in sync). */
+export const EA_COMMUNITY_HOME_DISCIPLINE_TAGS = [
+  "Industry Hackathon · 24 Hours",
+  "Social Discovery",
+] as const;
+
+export const EA_COMMUNITY_HOME_TECH_HIGHLIGHTS =
+  "Research, persona, and task-flow design" as const;
 
 /** PerfectInterview — homepage card + left-rail tags (keep in sync). */
 export const PERFECT_INTERVIEW_HOME_DISCIPLINE_TAGS = [
@@ -138,6 +148,17 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     disciplineTags: ["Branding · ecommerce"],
     year: "2023–2024",
     cover: { kind: "image", src: "/case-studies/phyphyya/gallery-14.png" },
+  },
+  {
+    slug: "ea-community-concept",
+    href: "/case-studies/ea-community-concept",
+    portfolioFocus: "product",
+    title:
+      "Community & Social Discovery Concept — EA Industry Hackathon",
+    disciplineTags: ["Hackathon · Social Discovery · Concept"],
+    year: "2023",
+    techHighlights: EA_COMMUNITY_HOME_TECH_HIGHLIGHTS,
+    cover: { kind: "image", src: EA_COMMUNITY_COVER },
   },
   // Hidden for now — restore when ready to publish
   // {

@@ -12,6 +12,7 @@ export const CASE_STUDY_NAV: { slug: string; label: string }[] = [
     label: "MINA · Instagram",
   },
   { slug: "phyphyya", label: "Haphy Living" },
+  { slug: "ea-community-concept", label: "EA Community Concept" },
   // { slug: "perfect-interview", label: "PerfectInterview.ai" }, // hidden for now
   { slug: "momi-animal-health", label: "MOMI Animal Health" },
   { slug: "admission-hub", label: "Admission Hub" },
