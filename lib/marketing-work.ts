@@ -128,6 +128,17 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     cover: { kind: "image", src: ATLAS_NOVA_COVER },
   },
   {
+    slug: "ea-community-concept",
+    href: "/case-studies/ea-community-concept",
+    portfolioFocus: "product",
+    title:
+      "Community & Social Discovery Concept — EA Industry Hackathon",
+    disciplineTags: ["Hackathon · Social Discovery · Concept"],
+    year: "2023",
+    techHighlights: EA_COMMUNITY_HOME_TECH_HIGHLIGHTS,
+    cover: { kind: "image", src: EA_COMMUNITY_COVER },
+  },
+  {
     slug: "ai-marketplace/marketing",
     href: "/case-studies/ai-marketplace/marketing",
     portfolioFocus: "marketing",
@@ -148,17 +159,6 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     disciplineTags: ["Branding · ecommerce"],
     year: "2023–2024",
     cover: { kind: "image", src: "/case-studies/phyphyya/gallery-14.png" },
-  },
-  {
-    slug: "ea-community-concept",
-    href: "/case-studies/ea-community-concept",
-    portfolioFocus: "product",
-    title:
-      "Community & Social Discovery Concept — EA Industry Hackathon",
-    disciplineTags: ["Hackathon · Social Discovery · Concept"],
-    year: "2023",
-    techHighlights: EA_COMMUNITY_HOME_TECH_HIGHLIGHTS,
-    cover: { kind: "image", src: EA_COMMUNITY_COVER },
   },
   // Hidden for now — restore when ready to publish
   // {
