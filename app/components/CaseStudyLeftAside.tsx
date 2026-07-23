@@ -6,13 +6,21 @@ import {
   getCaseStudyAsideMeta,
   type CaseStudyAsideMeta,
 } from "@/lib/case-study-aside-meta";
-import { CASE_STUDY_PRIMARY_TITLE_CLASS } from "@/lib/site-shell";
+import { CASE_STUDY_SIDEBAR_TITLE_CLASS } from "@/lib/site-shell";
 import { PORTFOLIO_LEFT_RAIL_CLASS } from "@/lib/portfolio-shell";
 
 function projectTypeTags(meta: CaseStudyAsideMeta): string[] {
   if (meta.eyebrowTags?.length) return [...meta.eyebrowTags];
   if (meta.eyebrow && meta.eyebrowAsProjectCardTag) return [meta.eyebrow];
   return [];
+}
+
+function formatProjectTypeLine(tags: string[], value: string): string {
+  const tagLine = tags.join(" · ");
+  const detail = value.trim();
+  if (!tagLine) return detail;
+  if (!detail) return tagLine;
+  return `${tagLine} · ${detail}`;
 }
 
 /**
@@ -29,13 +37,13 @@ export function CaseStudyLeftAside() {
       className={`${PORTFOLIO_LEFT_RAIL_CLASS} font-sans`}
       aria-label="Project summary"
     >
-      <div className="min-w-0 shrink-0 space-y-3">
+      <div className="min-w-0 shrink-0 space-y-4">
         {meta.eyebrow && !meta.eyebrowAsProjectCardTag && !meta.eyebrowTags?.length ? (
           <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-zinc-500">
             {meta.eyebrow}
           </p>
         ) : null}
-        <p className={`${CASE_STUDY_PRIMARY_TITLE_CLASS} text-zinc-50`}>
+        <p className={`${CASE_STUDY_SIDEBAR_TITLE_CLASS} text-zinc-50`}>
           {meta.title}
         </p>
         {meta.subtitle ? (
@@ -99,7 +107,7 @@ export function CaseStudyLeftAside() {
       <div className="hidden min-h-0 shrink lg:block lg:flex-1" aria-hidden />
 
       {meta.items.length > 0 ? (
-        <dl className="min-w-0 shrink-0 space-y-4">
+        <dl className="min-w-0 shrink-0 space-y-4 pt-10 lg:pt-12">
           {meta.items.map((row) => {
             const isProjectType = row.label === "Project type";
             return (
@@ -107,11 +115,12 @@ export function CaseStudyLeftAside() {
                 <dt className="text-[11px] font-medium uppercase tracking-[0.2em] text-zinc-500">
                   {row.label}
                 </dt>
-                <dd className="mt-0.5 space-y-1 text-sm font-medium leading-snug text-zinc-200">
-                  {isProjectType && typeTags.length > 0 ? (
-                    <p>{typeTags.join(" · ")}</p>
-                  ) : null}
-                  <p>{row.value}</p>
+                <dd className="mt-0.5 text-sm font-medium leading-snug text-zinc-200">
+                  {isProjectType ? (
+                    <p>{formatProjectTypeLine(typeTags, row.value)}</p>
+                  ) : (
+                    <p>{row.value}</p>
+                  )}
                 </dd>
               </div>
             );

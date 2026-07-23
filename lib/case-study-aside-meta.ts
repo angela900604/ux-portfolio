@@ -92,7 +92,7 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
       { label: "Role", value: "UX/UI Designer" },
       {
         label: "Project type",
-        value: "End-to-end mobile app redesign · Government service app",
+        value: "End-to-end mobile app redesign",
       },
       {
         label: "Focus",
@@ -122,7 +122,7 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
       { label: "Role", value: "Sole product designer · 1 PM + 5 engineers" },
       {
         label: "Project type",
-        value: "AI-native marketplace iOS app — growth & iteration on a live product",
+        value: "Growth & iteration on a live product",
       },
       {
         label: "Focus",
@@ -154,7 +154,7 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
       { label: "Role", value: "Marketing designer" },
       {
         label: "Project type",
-        value: "Social & launch campaign graphics · MINA (AI marketplace)",
+        value: "Social & launch campaign graphics",
       },
       {
         label: "Tools",
@@ -182,7 +182,7 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
       { label: "Role", value: "Lead UX/UI Designer" },
       {
         label: "Project type",
-        value: "Backend admin platform · Government service (MoF)",
+        value: "Backend admin platform · MoF lottery operations",
       },
       {
         label: "Focus",
@@ -201,7 +201,7 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
       { label: "Role", value: "Lead UX/UI Designer" },
       {
         label: "Project type",
-        value: "Mobile membership app · Loyalty & rewards (Taiwan)",
+        value: "Membership app · Loyalty & rewards (Taiwan)",
       },
       {
         label: "Market scope",
@@ -228,7 +228,7 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
     items: [
       { label: "Timeline", value: "2023" },
       { label: "Role", value: "UX/UI Designer Intern" },
-      { label: "Project type", value: "AtlasNova AI" },
+      { label: "Project type", value: "" },
       { label: "Scope", value: "UI for the document generation feature" },
     ],
     textLinks: [
@@ -254,7 +254,7 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
       { label: "Role", value: "UX Designer (sole)" },
       {
         label: "Project type",
-        value: "Industry Hackathon, sponsored by Electronic Arts",
+        value: "EA-sponsored concept sprint",
       },
       {
         label: "Scope",
@@ -278,10 +278,7 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
     items: [
       { label: "Timeline", value: "2024" },
       { label: "Role", value: "Sole UX/UI Designer" },
-      {
-        label: "Project type",
-        value: "Heuristic Evaluation · UI Design",
-      },
+      { label: "Project type", value: "" },
       { label: "Focus", value: PERFECT_INTERVIEW_HOME_TECH_HIGHLIGHTS },
     ],
     textLinks: [
@@ -303,7 +300,7 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
       { label: "Role", value: "Solo creator" },
       {
         label: "Project type",
-        value: "Brand IP · Illustration, POD, Etsy storefront",
+        value: "Illustration · POD · Etsy storefront",
       },
       {
         label: "Tools",
@@ -333,7 +330,7 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
       },
       {
         label: "Project type",
-        value: "Digital marketing · Taipei, Taiwan · Rabbit-care niche brand",
+        value: "Taipei, Taiwan · Rabbit-care niche brand",
       },
       {
         label: "Tools",
@@ -352,7 +349,7 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
       { label: "Role", value: "Digital Marketer" },
       {
         label: "Project type",
-        value: "Digital marketing internship · Toronto, ON · Study-abroad brand",
+        value: "Internship · Toronto · Study-abroad brand",
       },
       {
         label: "Tools",

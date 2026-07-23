@@ -27,6 +27,10 @@ export const SITE_SHELL_INNER = `mx-auto w-full min-w-0 ${SITE_MAX_WIDTH_CLASS}`
 export const SITE_SHELL_CONTAINER = `${SITE_SHELL_INNER} ${SITE_GUTTER_CLASS}`;
 
 /** Primary project title scale (case study left rail). */
+export const CASE_STUDY_SIDEBAR_TITLE_CLASS =
+  "text-[1.375rem] font-medium leading-[1.25] tracking-[-0.02em] sm:text-[1.5rem]";
+
+/** Primary project title scale (in-page heroes). */
 export const CASE_STUDY_PRIMARY_TITLE_CLASS =
   "text-[2.6875rem] font-medium leading-[1.1] tracking-[-0.025em] sm:text-[2.6875rem]";
 
