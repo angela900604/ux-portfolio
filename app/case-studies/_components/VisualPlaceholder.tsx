@@ -21,17 +21,17 @@ export default function VisualPlaceholder({
   return (
     <figure className="mt-8">
       <div
-        className={`relative w-full ${aspectClass} overflow-hidden rounded-2xl border border-zinc-700/60 bg-zinc-900/20`}
+        className={`relative w-full ${aspectClass} overflow-hidden rounded-2xl border border-ink-line bg-paper-soft`}
       >
-        <div className="absolute inset-0 border-2 border-dashed border-zinc-700/70" />
+        <div className="absolute inset-0 border-2 border-dashed border-ink-line" />
         <div className="absolute inset-0 flex items-center justify-center p-6">
           <div className="text-center max-w-xl">
-            <p className="text-xs font-semibold uppercase tracking-widest text-zinc-400">
+            <p className="text-xs font-normal uppercase tracking-widest text-ink-muted">
               Image placeholder
             </p>
-            <p className="mt-2 text-sm font-semibold text-zinc-100">{label}</p>
+            <p className="mt-2 text-sm font-medium text-ink">{label}</p>
             {hint && (
-              <p className="mt-2 text-xs text-zinc-400 leading-relaxed">{hint}</p>
+              <p className="mt-2 text-xs font-normal text-ink-soft leading-relaxed">{hint}</p>
             )}
           </div>
         </div>
@@ -39,4 +39,3 @@ export default function VisualPlaceholder({
     </figure>
   );
 }
-

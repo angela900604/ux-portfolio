@@ -6,10 +6,10 @@ import { useEffect, useState } from "react";
 import { PORTFOLIO_LEFT_RAIL_WIDTH_CLASS } from "@/lib/portfolio-shell";
 import { SITE_GUTTER_CLASS, SITE_SHELL_CONTAINER } from "@/lib/site-shell";
 
-const HOVER_NAV = "transition hover:text-[color:var(--nav-accent-blue)]";
+const HOVER_NAV = "transition hover:text-ink";
 
 const CLOCK_CLASS =
-  "pointer-events-none absolute left-1/2 top-1/2 z-0 max-w-[min(100%,14rem)] -translate-x-1/2 -translate-y-1/2 truncate text-center text-[10px] font-medium uppercase leading-tight tracking-[0.18em] text-zinc-600 sm:max-w-none sm:text-[11px] sm:tracking-[0.2em]";
+  "pointer-events-none absolute left-1/2 top-1/2 z-0 max-w-[min(100%,14rem)] -translate-x-1/2 -translate-y-1/2 truncate text-center text-[10px] font-normal uppercase leading-tight tracking-[0.18em] text-ink-faint sm:max-w-none sm:text-[11px] sm:tracking-[0.2em]";
 
 function useLocaleDateTime() {
   const [label, setLabel] = useState("");
@@ -42,14 +42,14 @@ export function SiteTopNav() {
         ? pathname === "/"
         : pathname === href || pathname.startsWith(`${href}/`);
     return active
-      ? `font-medium text-[color:var(--nav-accent-blue)]`
-      : `text-zinc-500 ${HOVER_NAV}`;
+      ? "font-medium text-ink"
+      : `text-ink-muted ${HOVER_NAV}`;
   };
 
-  const brandClass = `min-w-0 shrink text-base font-medium tracking-wide text-zinc-300 ${HOVER_NAV}`;
+  const brandClass = `min-w-0 shrink text-base font-normal tracking-wide text-ink-soft ${HOVER_NAV}`;
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-[60] flex h-14 items-center border-b border-zinc-800 bg-zinc-950/90 backdrop-blur-md">
+    <header className="fixed top-0 left-0 right-0 z-[60] flex h-14 items-center border-b border-ink-line bg-paper/90 backdrop-blur-md">
       {/* &lt; lg: same horizontal padding as stacked left rail */}
       <div
         className={`relative flex h-full w-full items-center ${SITE_GUTTER_CLASS} lg:hidden`}
@@ -75,7 +75,7 @@ export function SiteTopNav() {
       {/* lg+: left cell = rail width + padding; right = same shell as main column */}
       <div className="hidden h-full min-h-0 w-full min-w-0 lg:flex lg:flex-row">
         <div
-          className={`flex shrink-0 items-center border-r border-zinc-800 ${SITE_GUTTER_CLASS} ${PORTFOLIO_LEFT_RAIL_WIDTH_CLASS}`}
+          className={`flex shrink-0 items-center border-r border-ink-line ${SITE_GUTTER_CLASS} ${PORTFOLIO_LEFT_RAIL_WIDTH_CLASS}`}
         >
           <Link href="/" className={brandClass}>
             Angela Yang

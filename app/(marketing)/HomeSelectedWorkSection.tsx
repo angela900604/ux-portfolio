@@ -26,11 +26,11 @@ export function HomeSelectedWorkSection() {
     <section className="mt-12 sm:mt-16">
       <MarketingSelectedWorkGrid items={TIER_1} />
 
-      <div className="mt-10 flex flex-col items-center border-t border-zinc-800 pt-8">
+      <div className="mt-10 flex flex-col items-center border-t border-ink-line pt-8">
         <button
           type="button"
           onClick={handleToggle}
-          className="flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-900/60 px-5 py-2.5 text-sm font-medium tracking-[-0.01em] text-zinc-300 transition hover:border-zinc-500 hover:bg-zinc-800 hover:text-zinc-100"
+          className="flex items-center gap-2 rounded-full border border-ink-line bg-paper px-5 py-2.5 text-sm font-normal tracking-[-0.01em] text-ink-soft transition hover:border-ink hover:text-ink"
         >
           {moreOpen ? "Less ↑" : "More work ↓"}
         </button>

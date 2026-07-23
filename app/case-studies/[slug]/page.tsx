@@ -28,18 +28,18 @@ export default function CaseStudySlugPage({
   }
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-zinc-100 flex flex-col items-center justify-center px-6">
-      <p className="text-xs font-medium uppercase tracking-widest text-zinc-500 mb-2">
+    <div className="min-h-screen bg-paper text-ink flex flex-col items-center justify-center px-6">
+      <p className="text-xs font-medium uppercase tracking-widest text-ink-muted mb-2">
         Case study
-        <span className="text-zinc-600 mx-2">·</span>
+        <span className="text-ink-faint mx-2">·</span>
         {slug}
       </p>
       <h1
-        className={`text-center ${CASE_STUDY_PRIMARY_TITLE_CLASS} text-zinc-200 max-w-md`}
+        className={`text-center ${CASE_STUDY_PRIMARY_TITLE_CLASS} text-ink-soft max-w-md`}
       >
         This case study is coming soon.
       </h1>
-      <p className="mt-3 text-sm text-zinc-500 text-center max-w-sm">
+      <p className="mt-3 text-sm text-ink-muted text-center max-w-sm">
         Content and visuals for this project will be added here. For now, check
         out the e-Invoice flagship case.
       </p>
@@ -57,7 +57,7 @@ export default function CaseStudySlugPage({
           variant="outline"
         />
       </div>
-      <Link href="/" className="mt-4 text-sm text-zinc-500 hover:text-zinc-300">
+      <Link href="/" className="mt-4 text-sm text-ink-muted hover:text-ink-soft">
         ← Back to home
       </Link>
     </div>

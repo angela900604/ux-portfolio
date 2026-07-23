@@ -62,7 +62,7 @@ function renderInlineMarkdown(text: string) {
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[color:var(--nav-accent-blue)] underline underline-offset-2 transition hover:text-zinc-100"
+            className="text-ink underline underline-offset-[6px] decoration-ink/30 transition hover:text-ink"
           >
             {label}
           </a>
@@ -72,7 +72,7 @@ function renderInlineMarkdown(text: string) {
         <Link
           key={index}
           href={href}
-          className="text-[color:var(--nav-accent-blue)] underline underline-offset-2 transition hover:text-zinc-100"
+          className="text-ink underline underline-offset-[6px] decoration-ink/30 transition hover:text-ink-soft"
         >
           {label}
         </Link>
@@ -86,7 +86,7 @@ function AgentMessageBody({ content }: { content: string }) {
   const blocks = content.split(/\n{2,}/);
 
   return (
-    <div className="space-y-3 text-sm leading-relaxed text-zinc-300 sm:text-[15px]">
+    <div className="space-y-3 text-sm font-normal leading-relaxed text-ink-soft sm:text-[15px]">
       {blocks.map((block, blockIndex) => {
         const lines = block.split("\n");
         const isList = lines.every(
@@ -97,7 +97,7 @@ function AgentMessageBody({ content }: { content: string }) {
           return (
             <ul
               key={blockIndex}
-              className="list-disc space-y-1.5 pl-5 marker:text-zinc-500"
+              className="list-disc space-y-1.5 pl-5 marker:text-ink-faint"
             >
               {lines
                 .map((line) => line.replace(/^[-*•]\s+/, "").trim())
@@ -156,7 +156,7 @@ function AskInputForm({
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col gap-2.5 rounded-3xl border border-zinc-700/80 bg-zinc-900/50 px-4 pb-3 pt-3.5 transition-colors focus-within:border-zinc-500"
+      className="flex flex-col gap-2.5 rounded-3xl border border-ink/20 bg-paper px-4 pb-3 pt-3.5 transition-colors focus-within:border-ink"
     >
       <div className="flex items-end gap-2">
         <textarea
@@ -172,13 +172,13 @@ function AskInputForm({
           }}
           placeholder={placeholder}
           aria-label={ariaLabel}
-          className="min-w-0 flex-1 resize-none overflow-hidden bg-transparent px-1 py-1 text-base leading-normal text-zinc-100 outline-none placeholder:text-zinc-500"
+          className="min-w-0 flex-1 resize-none overflow-hidden bg-transparent px-1 py-1 text-base font-normal leading-normal text-ink outline-none placeholder:text-ink-muted"
         />
         <button
           type="submit"
           disabled={disabled || !value.trim()}
           aria-label="Send question"
-          className="grid h-10 w-10 shrink-0 place-items-center rounded-full text-zinc-200 transition-colors hover:bg-zinc-800 disabled:opacity-30 disabled:hover:bg-transparent"
+          className="grid h-10 w-10 shrink-0 place-items-center rounded-full text-ink transition-colors hover:bg-ink/10 disabled:opacity-30 disabled:hover:bg-transparent"
         >
           <SendArrowIcon />
         </button>
@@ -191,7 +191,7 @@ function AskInputForm({
               <button
                 type="button"
                 onClick={() => onPromptClick?.(prompt)}
-                className="whitespace-nowrap rounded-full border border-zinc-700 px-3.5 py-1.5 text-[13px] text-zinc-400 transition-colors hover:border-zinc-500 hover:text-zinc-100"
+                className="whitespace-nowrap rounded-full border border-ink-line px-3.5 py-1.5 text-[13px] font-normal text-ink-soft transition-colors hover:border-ink hover:text-ink"
               >
                 {prompt}
               </button>
@@ -313,7 +313,7 @@ export function HomePortfolioAgent() {
   return (
     <>
       <section aria-label="Ask Angela" className="mb-8 sm:mb-10">
-        <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.14em] text-zinc-500">
+        <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.14em] text-ink-muted">
           Ask Angela
         </p>
         <AskInputForm
@@ -350,16 +350,17 @@ export function HomePortfolioAgent() {
                     role="dialog"
                     aria-modal="true"
                     aria-labelledby={panelTitleId}
-                    className="fixed inset-y-0 left-0 z-[90] flex w-full max-w-md flex-col border-r border-zinc-800 bg-zinc-950 shadow-2xl sm:max-w-lg"
+                    className="fixed inset-y-0 left-0 z-[90] flex w-full max-w-md flex-col border-r border-ink-line bg-paper shadow-2xl sm:max-w-lg"
                     initial={{ x: "-100%" }}
                     animate={{ x: 0 }}
                     exit={{ x: "-100%" }}
                     transition={{ type: "spring", stiffness: 380, damping: 36 }}
                   >
-              <div className="flex items-center justify-between border-b border-zinc-800 px-5 py-3.5 sm:px-6">
+              <div className="flex items-center justify-between border-b border-ink-line px-5 py-3.5 sm:px-6">
                 <span
                   id={panelTitleId}
-                  className="font-sans text-lg font-medium tracking-tight text-zinc-100"
+                  className="font-serif text-lg font-normal tracking-tight text-ink"
+                  style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
                 >
                   Ask Angela
                 </span>
@@ -367,7 +368,7 @@ export function HomePortfolioAgent() {
                   type="button"
                   aria-label="Close"
                   onClick={() => setPanelOpen(false)}
-                  className="grid h-8 w-8 place-items-center text-zinc-500 transition-colors hover:text-zinc-200"
+                  className="grid h-8 w-8 place-items-center text-ink-muted transition-colors hover:text-ink"
                 >
                   <CloseIcon />
                 </button>
@@ -378,7 +379,7 @@ export function HomePortfolioAgent() {
                 className="min-h-0 flex-1 overflow-y-auto px-5 py-5 sm:px-6"
               >
                 {messages.length === 0 && !loading ? (
-                  <p className="text-sm leading-relaxed text-zinc-500">
+                  <p className="text-sm leading-relaxed text-ink-muted">
                     Explore Angela&apos;s work, process, and experience through
                     her case studies and background.
                   </p>
@@ -388,8 +389,8 @@ export function HomePortfolioAgent() {
                   {messages.map((message, index) => (
                     <div key={`${message.role}-${index}`}>
                       {message.role === "user" ? (
-                        <div className="rounded-2xl border border-zinc-800 bg-zinc-900/60 px-4 py-3">
-                          <p className="text-sm font-medium leading-relaxed text-zinc-100 sm:text-[15px]">
+                        <div className="rounded-2xl border border-ink-line bg-paper-soft px-4 py-3">
+                          <p className="text-sm font-normal leading-relaxed text-ink sm:text-[15px]">
                             {message.content}
                           </p>
                         </div>
@@ -400,7 +401,7 @@ export function HomePortfolioAgent() {
                   ))}
 
                   {loading ? (
-                    <p className="text-sm text-zinc-500" aria-live="polite">
+                    <p className="text-sm text-ink-muted" aria-live="polite">
                       Thinking…
                     </p>
                   ) : null}
@@ -413,8 +414,8 @@ export function HomePortfolioAgent() {
                 </div>
 
                 {!loading && followups.length > 0 ? (
-                  <div className="mt-8 border-t border-zinc-800 pt-5">
-                    <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.14em] text-zinc-500">
+                  <div className="mt-8 border-t border-ink-line pt-5">
+                    <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.14em] text-ink-muted">
                       Ask a follow-up…
                     </p>
                     <ul className="flex flex-col gap-2">
@@ -423,7 +424,7 @@ export function HomePortfolioAgent() {
                           <button
                             type="button"
                             onClick={() => askQuestion(prompt)}
-                            className="w-full rounded-full border border-zinc-700 px-3.5 py-2 text-left text-[13px] text-zinc-400 transition-colors hover:border-zinc-500 hover:text-zinc-100"
+                            className="w-full rounded-full border border-ink-line px-3.5 py-2 text-left text-[13px] font-normal text-ink-soft transition-colors hover:border-ink hover:text-ink"
                           >
                             {prompt}
                           </button>
@@ -434,7 +435,7 @@ export function HomePortfolioAgent() {
                 ) : null}
               </div>
 
-              <div className="border-t border-zinc-800 px-5 py-4 sm:px-6">
+              <div className="border-t border-ink-line px-5 py-4 sm:px-6">
                 <AskInputForm
                   value={panelDraft}
                   onChange={setPanelDraft}

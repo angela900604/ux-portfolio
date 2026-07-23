@@ -1,5 +1,5 @@
 const DEFAULT_BULLET =
-  "mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-violet-400/90";
+  "mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-violet-500/80";
 
 export function CaseStudyScanSummary({
   title = "Read in ~30 seconds",
@@ -12,11 +12,11 @@ export function CaseStudyScanSummary({
   bulletClassName?: string;
 }) {
   return (
-    <div className="rounded-xl border border-zinc-800/90 bg-zinc-900/45 p-5 sm:p-6">
-      <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+    <div className="rounded-xl border border-ink-line bg-paper-soft p-5 sm:p-6">
+      <p className="text-xs font-normal uppercase tracking-widest text-ink-muted">
         {title}
       </p>
-      <ul className="mt-4 list-none space-y-3 text-base leading-[1.65] text-zinc-300 sm:text-lg">
+      <ul className="mt-4 list-none space-y-3 text-base font-normal leading-[1.65] text-ink-soft sm:text-lg">
         {items.map((line) => (
           <li key={line} className="flex gap-3">
             <span

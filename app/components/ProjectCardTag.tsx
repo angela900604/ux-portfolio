@@ -10,13 +10,12 @@ export function ProjectCardTag({
   className = "",
 }: ProjectCardTagProps) {
   const base =
-    "inline-flex w-fit max-w-full items-center rounded-full border bg-gradient-to-r px-2.5 py-1 text-[10px] font-medium uppercase tracking-widest shadow-[inset_0_1px_0_0_rgba(255,255,255,0.07)] transition duration-300";
+    "inline-flex w-fit max-w-full items-center rounded-full border px-2.5 py-1 text-[10px] font-normal uppercase tracking-widest transition duration-300";
 
-  /** Cursor brand gold (cursor.com accent) — subtle gradient + warm glow */
   const variantClass =
     variant === "flagship"
-      ? "border-cursor-accent-bright/55 from-cursor-accent/25 via-amber-800/15 to-cursor-accent-bright/20 text-amber-50 group-hover:border-cursor-accent-bright/70 group-hover:from-cursor-accent/32 group-hover:via-amber-700/18 group-hover:to-cursor-accent-bright/25 group-hover:shadow-[0_0_28px_-8px_rgba(192,133,50,0.45)]"
-      : "border-cursor-accent/40 from-cursor-accent/[0.14] via-transparent to-cursor-accent-bright/10 text-amber-100/95 group-hover:border-cursor-accent-bright/45 group-hover:from-cursor-accent/22 group-hover:to-cursor-accent-bright/16 group-hover:text-amber-50 group-hover:shadow-[0_0_22px_-10px_rgba(192,133,50,0.28)]";
+      ? "border-ink bg-paper text-ink-soft group-hover:border-ink group-hover:text-ink"
+      : "border-ink-line bg-paper text-ink-muted group-hover:border-ink group-hover:text-ink-soft";
 
   return (
     <span className={`${base} ${variantClass} ${className}`.trim()}>
@@ -35,7 +34,7 @@ export function ProjectTechHighlights({
 }) {
   return (
     <p
-      className={`mt-2 text-[11px] font-medium leading-snug text-zinc-500 sm:text-xs sm:text-zinc-400 ${className}`.trim()}
+      className={`mt-2 text-[11px] font-normal leading-snug text-ink-muted sm:text-xs ${className}`.trim()}
     >
       <span className="sr-only">Technical highlights: </span>
       {children}
@@ -53,7 +52,7 @@ export function ProjectShippedBadge({
 }) {
   return (
     <span
-      className={`inline-flex w-fit shrink-0 items-center rounded-full border border-emerald-400/45 bg-emerald-500/[0.14] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-widest text-emerald-200/95 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.07)] transition duration-300 group-hover:border-emerald-400/55 group-hover:bg-emerald-500/20 group-hover:text-emerald-100 ${className}`.trim()}
+      className={`inline-flex w-fit shrink-0 items-center rounded-full border border-emerald-700/25 bg-emerald-50 px-2.5 py-1 text-[10px] font-normal uppercase tracking-widest text-emerald-800 transition duration-300 group-hover:border-emerald-700/40 group-hover:bg-emerald-50/90 ${className}`.trim()}
     >
       {label}
     </span>

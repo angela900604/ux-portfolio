@@ -18,7 +18,7 @@ export default function SolutionGallery({ items }: { items: SolutionItem[] }) {
       {items.map((item) => (
         <div key={item.src + item.label} className="flex min-w-0 flex-col">
           <ImageLightbox src={item.src} alt={item.alt} className="block w-full">
-            <div className="relative aspect-[9/19] w-full overflow-hidden rounded-[20px] bg-zinc-950">
+            <div className="relative aspect-[9/19] w-full overflow-hidden rounded-[20px] bg-paper">
               <Image
               src={item.src}
               alt={item.alt}
@@ -28,7 +28,7 @@ export default function SolutionGallery({ items }: { items: SolutionItem[] }) {
             />
             </div>
           </ImageLightbox>
-          <p className="mt-2 text-[11px] leading-snug text-zinc-400">
+          <p className="mt-2 text-[11px] leading-snug text-ink-soft">
             {item.label}
           </p>
         </div>

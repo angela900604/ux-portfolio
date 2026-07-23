@@ -10,14 +10,14 @@ export function HomeLeadByFocus() {
 
   if (focus === "marketing") {
     return (
-      <p className="max-w-2xl font-sans text-lg leading-relaxed text-zinc-300 text-pretty sm:text-xl">
+      <p className="max-w-2xl font-sans text-lg font-normal leading-relaxed text-ink-soft text-pretty sm:text-xl">
         {HOME_LEAD_MARKETING}
       </p>
     );
   }
 
   return (
-    <div className="max-w-2xl space-y-3 font-sans text-lg leading-relaxed text-zinc-300 sm:text-xl">
+    <div className="max-w-2xl space-y-3 font-sans text-lg font-normal leading-relaxed text-ink-soft sm:text-xl">
       <p>
         Previously designing government-scale products in Taiwan, now based in
         Vancouver exploring more human-centered digital experiences.

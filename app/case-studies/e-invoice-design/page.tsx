@@ -69,16 +69,16 @@ const E_INVOICE_DESIGN_IMAGES = [
 
 export default function EInvoiceDesignPage() {
   return (
-    <div className="min-h-screen bg-zinc-950 text-zinc-100">
-      <section className="border-b border-zinc-800">
+    <div className="min-h-screen bg-paper text-ink">
+      <section className="border-b border-ink-line">
         <div className={`${SITE_SHELL_INNER} py-16 sm:py-20`}>
-          <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+          <p className="text-xs font-medium uppercase tracking-widest text-ink-muted">
             Case study
           </p>
           <h1 className={`mt-3 ${CASE_STUDY_PRIMARY_TITLE_CLASS}`}>
             e-Invoice design showcase
           </h1>
-          <p className="mt-4 max-w-3xl text-zinc-400 sm:text-lg">
+          <p className="mt-4 max-w-3xl text-ink-soft sm:text-lg">
             A visual-first page focused on the UI craft and key redesign screens.
           </p>
         </div>
@@ -92,7 +92,7 @@ export default function EInvoiceDesignPage() {
                 <ImageLightbox
                   src={item.src}
                   alt={item.alt}
-                  className="relative block w-full overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40"
+                  className="relative block w-full overflow-hidden rounded-2xl border border-ink-line bg-paper-soft"
                   disableHoverScale
                 >
                   <Image
@@ -111,7 +111,7 @@ export default function EInvoiceDesignPage() {
           <div className="mt-12">
             <Link
               href="/case-studies/e-invoice-app"
-              className="inline-flex items-center rounded-full border border-cursor-accent/50 bg-zinc-900/60 px-5 py-2.5 text-sm font-medium text-zinc-100 transition hover:border-cursor-accent-bright hover:bg-zinc-900"
+              className="inline-flex items-center rounded-full border border-cursor-accent/50 bg-paper-soft px-5 py-2.5 text-sm font-medium text-ink transition hover:border-cursor-accent-bright hover:bg-paper-soft"
             >
               View full case study
             </Link>

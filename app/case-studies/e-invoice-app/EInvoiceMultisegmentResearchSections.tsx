@@ -19,11 +19,11 @@ function PainBlock({
 }) {
   return (
     <div
-      className={`rounded-2xl border border-zinc-700/80 bg-zinc-900/55 p-5 shadow-[0_1px_0_rgba(255,255,255,0.03)_inset] sm:p-6 ${cardAccentClassName}`}
+      className={`rounded-2xl border border-ink-line bg-paper-soft p-5 shadow-[0_1px_0_rgba(255,255,255,0.03)_inset] sm:p-6 ${cardAccentClassName}`}
     >
       <div className="min-w-0 max-w-3xl space-y-4">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="inline-flex rounded-full border border-zinc-600 bg-zinc-800/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-100">
+          <span className="inline-flex rounded-full border border-ink-line bg-paper-soft px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-ink">
             {badge}
           </span>
           {segments.map((seg) => (
@@ -35,21 +35,21 @@ function PainBlock({
             </span>
           ))}
         </div>
-        <h4 className="text-2xl font-semibold tracking-tight text-zinc-50 sm:text-[1.85rem]">
+        <h4 className="text-2xl font-semibold tracking-tight text-ink sm:text-[1.85rem]">
           {title}
         </h4>
-        <p className="text-base leading-relaxed text-zinc-300 sm:text-[1.05rem]">
+        <p className="text-base leading-relaxed text-ink-soft sm:text-[1.05rem]">
           {body}
         </p>
         {quotes.map((q, i) => {
           const quoteClasses =
             q.quoteStyle === "synthesis"
-              ? "text-sm leading-relaxed text-zinc-300 sm:text-base"
-              : "text-sm italic leading-relaxed text-zinc-200 sm:text-base";
+              ? "text-sm leading-relaxed text-ink-soft sm:text-base"
+              : "text-sm italic leading-relaxed text-ink-soft sm:text-base";
           return (
             <figure
               key={i}
-              className="border-l-2 border-zinc-600 pl-4 pt-1"
+              className="border-l-2 border-ink-line pl-4 pt-1"
             >
               <blockquote className={quoteClasses}>
                 {q.quoteStyle === "synthesis" ? (
@@ -61,7 +61,7 @@ function PainBlock({
                 )}
               </blockquote>
               {q.quoteSource ? (
-                <figcaption className="mt-2 text-xs text-zinc-500">
+                <figcaption className="mt-2 text-xs text-ink-muted">
                   {q.quoteSource}
                 </figcaption>
               ) : null}
@@ -178,25 +178,25 @@ export function EInvoiceMultisegmentResearchSections() {
       </section>
 
       {/* Shared truth + conflict insights */}
-      <section className="space-y-4 border-t border-zinc-800/90 pt-5 sm:space-y-5 sm:pt-6">
-        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-zinc-500">
+      <section className="space-y-4 border-t border-ink-line pt-5 sm:space-y-5 sm:pt-6">
+        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-muted">
           Cross-group findings
         </p>
         <div className="grid gap-4 sm:gap-5 lg:grid-cols-2 lg:gap-6">
-          <div className="flex min-h-0 flex-col rounded-2xl border border-zinc-700/80 border-l-[3px] border-l-emerald-500 bg-zinc-900/55 p-5 shadow-[0_1px_0_rgba(255,255,255,0.03)_inset] sm:p-6">
+          <div className="flex min-h-0 flex-col rounded-2xl border border-ink-line border-l-[3px] border-l-emerald-500 bg-paper-soft p-5 shadow-[0_1px_0_rgba(255,255,255,0.03)_inset] sm:p-6">
             <p className="inline-flex w-fit rounded-full bg-emerald-600 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-white">
             Shared truth
             </p>
-            <p className="mt-4 text-lg font-semibold leading-relaxed text-zinc-100 sm:text-xl">
+            <p className="mt-4 text-lg font-semibold leading-relaxed text-ink sm:text-xl">
             Everyone has the same entry behavior of showing the carrier barcode and
             scanning paper invoices.
             </p>
           </div>
-          <div className="flex min-h-0 flex-col rounded-2xl border border-zinc-700/80 border-l-[3px] border-l-orange-500 bg-zinc-900/55 p-5 shadow-[0_1px_0_rgba(255,255,255,0.03)_inset] sm:p-6">
+          <div className="flex min-h-0 flex-col rounded-2xl border border-ink-line border-l-[3px] border-l-orange-500 bg-paper-soft p-5 shadow-[0_1px_0_rgba(255,255,255,0.03)_inset] sm:p-6">
             <p className="inline-flex w-fit rounded-full bg-orange-600 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-white">
             Conflict insights
             </p>
-            <p className="mt-4 text-lg font-semibold leading-relaxed text-zinc-100 sm:text-xl">
+            <p className="mt-4 text-lg font-semibold leading-relaxed text-ink sm:text-xl">
             On the home screen, older and low-vision groups wanted fewer items, more
             whitespace, and vivid color for fast recognition—while younger groups
             wanted a denser dashboard—more modules, promos, and shortcuts—and a

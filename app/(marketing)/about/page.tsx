@@ -9,9 +9,10 @@ import { MARKETING_SECTION_TITLE_CLASS } from "@/lib/marketing-section-title";
 const INTERVIEW_PHOTO_SRC = "/about/user-interviews-collage.png";
 
 const ABOUT_CARD_TITLE_CLASS =
-  "text-base font-semibold tracking-tight text-zinc-100 sm:text-lg";
+  "text-base font-medium tracking-tight text-ink sm:text-lg";
 const ABOUT_CARD_BODY_CLASS =
-  "mt-2 text-sm leading-relaxed text-zinc-400 sm:text-base";
+  "mt-2 text-sm font-normal leading-relaxed text-ink-soft sm:text-base";
+const ABOUT_ACCENT_CLASS = "text-ink underline underline-offset-[6px] decoration-ink/30";
 
 export const metadata = {
   title: "About | Angela Yang",
@@ -23,32 +24,32 @@ export default function AboutPage() {
   return (
     <div className="pb-20 font-sans">
       <h1
-        className="max-w-3xl font-sans text-lg leading-relaxed text-zinc-300 text-pretty sm:text-xl"
+        className="max-w-3xl font-sans text-lg font-normal leading-relaxed text-ink-soft text-pretty sm:text-xl"
       >
         <span className="block">
           I&apos;m a Product Designer specializing in delivering{" "}
-          <span className="text-[color:var(--nav-accent-blue)]">end-to-end solutions</span>
+          <span className={ABOUT_ACCENT_CLASS}>end-to-end solutions</span>
           {" "}across consumer-facing mobile apps and webs, such as{" "}
-          <span className="text-[color:var(--nav-accent-blue)]">AI-driven marketplaces</span>,{" "}
-          <span className="text-[color:var(--nav-accent-blue)]">membership platforms</span>, and{" "}
-          <span className="text-[color:var(--nav-accent-blue)]">public service platforms</span>.
+          <span className={ABOUT_ACCENT_CLASS}>AI-driven marketplaces</span>,{" "}
+          <span className={ABOUT_ACCENT_CLASS}>membership platforms</span>, and{" "}
+          <span className={ABOUT_ACCENT_CLASS}>public service platforms</span>.
         </span>
         <span className="mt-4 block sm:mt-5">
           I enjoy diving into{" "}
-          <span className="text-[color:var(--nav-accent-blue)]">user research</span>
+          <span className={ABOUT_ACCENT_CLASS}>user research</span>
           {" "}to understand what people need, what the business wants to achieve, and
           what technical limitations we&apos;re working with. This helps us make sure
           the design is both possible and works well with the engineering team.
         </span>
         <span className="mt-4 block sm:mt-5">
           Being very{" "}
-          <span className="text-[color:var(--nav-accent-blue)]">adaptable</span>
+          <span className={ABOUT_ACCENT_CLASS}>adaptable</span>
           {" "}in an{" "}
-          <span className="text-[color:var(--nav-accent-blue)]">AI-based workflow</span>
+          <span className={ABOUT_ACCENT_CLASS}>AI-based workflow</span>
           , using tools like{" "}
-          <span className="text-[color:var(--nav-accent-blue)]">Stitch, Claude, Figma, and Cursor</span>
+          <span className={ABOUT_ACCENT_CLASS}>Stitch, Claude, Figma, and Cursor</span>
           , lets me quickly turn ideas from{" "}
-          <span className="text-[color:var(--nav-accent-blue)]">sketches into detailed, ready-to-use prototypes</span>
+          <span className={ABOUT_ACCENT_CLASS}>sketches into detailed, ready-to-use prototypes</span>
           {" "}for developers.
         </span>
       </h1>
@@ -57,12 +58,12 @@ export default function AboutPage() {
 
       <MarketingHomeLogos />
 
-      <section className="mt-14 border-t border-zinc-800 pt-12">
+      <section className="mt-14 border-t border-ink-line pt-12">
         <h2 className={MARKETING_SECTION_TITLE_CLASS}>
           The part of the job where I feel most alive.
         </h2>
         <div className="mt-6 grid items-start gap-8 lg:grid-cols-12 lg:gap-10">
-          <div className="min-w-0 text-sm leading-relaxed text-zinc-400 sm:text-base lg:col-span-5">
+          <div className="min-w-0 text-sm font-normal leading-relaxed text-ink-soft sm:text-base lg:col-span-5">
             <p>
               Whether it&apos;s a focus group or a 1:1 usability session, I care
               about making participants feel respected and heard, then turning what
@@ -77,7 +78,7 @@ export default function AboutPage() {
               className="block w-full"
               disableHoverScale
             >
-              <div className="relative w-full overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+              <div className="relative w-full overflow-hidden rounded-2xl border border-ink-line bg-paper-soft">
                 <Image
                   src={INTERVIEW_PHOTO_SRC}
                   alt="Collage: Angela facilitating user research—in group sessions, one-on-one interviews, and conversations with participants across ages and contexts."
@@ -93,10 +94,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="mt-14 border-t border-zinc-800 pt-12">
+      <section className="mt-14 border-t border-ink-line pt-12">
         <h2 className={MARKETING_SECTION_TITLE_CLASS}>How I work</h2>
         <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-5">
-          <div className="flex min-h-0 flex-col rounded-2xl border border-zinc-800 bg-zinc-900/30 p-5 sm:p-6">
+          <div className="flex min-h-0 flex-col rounded-2xl border border-ink-line bg-paper-soft p-5 sm:p-6">
             <h3 className={ABOUT_CARD_TITLE_CLASS}>
               Engineering-led collaboration
             </h3>
@@ -107,7 +108,7 @@ export default function AboutPage() {
               buildable.
             </p>
           </div>
-          <div className="flex min-h-0 flex-col rounded-2xl border border-zinc-800 bg-zinc-900/30 p-5 sm:p-6">
+          <div className="flex min-h-0 flex-col rounded-2xl border border-ink-line bg-paper-soft p-5 sm:p-6">
             <h3 className={ABOUT_CARD_TITLE_CLASS}>PMs, clients &amp; delivery</h3>
             <p className={`${ABOUT_CARD_BODY_CLASS} flex-1`}>
               I&apos;m comfortable helping lead a thread: aligning with PMs on scope
@@ -115,7 +116,7 @@ export default function AboutPage() {
               decisions legible so the team ships on schedule.
             </p>
           </div>
-          <div className="flex min-h-0 flex-col rounded-2xl border border-zinc-800 bg-zinc-900/30 p-5 sm:p-6">
+          <div className="flex min-h-0 flex-col rounded-2xl border border-ink-line bg-paper-soft p-5 sm:p-6">
             <h3 className={ABOUT_CARD_TITLE_CLASS}>AI-enhanced workflow</h3>
             <p className={`${ABOUT_CARD_BODY_CLASS} flex-1`}>
               I constantly test new AI tools (such as Cursor, Claude, and Figma AI),
@@ -126,7 +127,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="mt-14 border-t border-zinc-800 pt-12">
+      <section className="mt-14 border-t border-ink-line pt-12">
         <h2 className={MARKETING_SECTION_TITLE_CLASS}>Beyond design</h2>
         <div className="mt-6">
           <BeyondDesignGallery

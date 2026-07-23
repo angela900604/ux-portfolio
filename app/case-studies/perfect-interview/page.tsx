@@ -117,7 +117,7 @@ function ScreenFigure({
 }) {
   return (
     <figure>
-      <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+      <div className="overflow-hidden rounded-2xl border border-ink-line bg-paper-soft">
         <ImageLightbox src={src} alt={alt} className="block w-full" disableHoverScale>
           <Image
             src={src}
@@ -136,8 +136,8 @@ function ScreenFigure({
 
 export default function PerfectInterviewCaseStudy() {
   return (
-    <article className="min-h-screen bg-zinc-950 text-zinc-100">
-      <header className="border-b border-zinc-800">
+    <article className="min-h-screen bg-paper text-ink">
+      <header className="border-b border-ink-line">
         <div className={`${SITE_SHELL_INNER} py-12 sm:py-16`}>
           <div
             className={`${CASE_STUDY_BODY_GRID} flex min-w-0 flex-col overflow-x-hidden`}
@@ -156,11 +156,11 @@ export default function PerfectInterviewCaseStudy() {
           id="context"
           className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+          <span className="text-xs font-medium uppercase tracking-widest text-ink-muted">
             Context
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>What is PerfectInterview.ai?</h2>
-          <p className="max-w-3xl text-zinc-300 leading-relaxed">
+          <p className="max-w-3xl text-ink-soft leading-relaxed">
             <Highlight>PerfectInterview.ai</Highlight> is an AI-powered platform
             that supports job seekers with mock interviews, question banks, and
             confidence-building tools through responsive web experiences.
@@ -171,7 +171,7 @@ export default function PerfectInterviewCaseStudy() {
           id="mockups"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+          <span className="text-xs font-medium uppercase tracking-widest text-ink-muted">
             Mockups
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>Hi-fi screens</h2>
@@ -186,18 +186,18 @@ export default function PerfectInterviewCaseStudy() {
           id="problem"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+          <span className="text-xs font-medium uppercase tracking-widest text-ink-muted">
             Problem
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
             Early product, no design team
           </h2>
-          <p className="max-w-3xl text-zinc-300 leading-relaxed">
+          <p className="max-w-3xl text-ink-soft leading-relaxed">
             PerfectInterview.ai set out to help job seekers practice interviews
             with AI. But as an early-stage startup with no design
             infrastructure, the product struggled with:
           </p>
-          <ul className="max-w-3xl list-disc space-y-2 pl-5 text-zinc-300 leading-relaxed marker:text-zinc-500">
+          <ul className="max-w-3xl list-disc space-y-2 pl-5 text-ink-soft leading-relaxed marker:text-ink-muted">
             {PROBLEM_ITEMS.map((item) => (
               <li key={item}>{item}</li>
             ))}
@@ -208,16 +208,16 @@ export default function PerfectInterviewCaseStudy() {
           id="process"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+          <span className="text-xs font-medium uppercase tracking-widest text-ink-muted">
             Process
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
             From cold email to sole designer
           </h2>
-          <div className="max-w-3xl space-y-4 text-zinc-300 leading-relaxed">
+          <div className="max-w-3xl space-y-4 text-ink-soft leading-relaxed">
             <p>
               My journey began with a cold email to founder{" "}
-              <span className="text-zinc-100">Andrew Meng</span>, where I
+              <span className="text-ink">Andrew Meng</span>, where I
               proposed a feature based on behavioral psychology: a{" "}
               <Highlight>progressive interview mode</Highlight> that lets users
               build confidence from text → audio → video. The idea resonated,
@@ -231,7 +231,7 @@ export default function PerfectInterviewCaseStudy() {
               structure, I:
             </p>
           </div>
-          <ul className="max-w-3xl list-disc space-y-2 pl-5 text-zinc-300 leading-relaxed marker:text-zinc-500">
+          <ul className="max-w-3xl list-disc space-y-2 pl-5 text-ink-soft leading-relaxed marker:text-ink-muted">
             <li>
               Integrated lightweight engagement experiments (e.g., confetti
               animations, IG Stories voting) to test delight and retention
@@ -246,7 +246,7 @@ export default function PerfectInterviewCaseStudy() {
             </li>
             <li>
               Built and shipped responsive pages in{" "}
-              <span className="text-zinc-100">Framer</span> to accelerate launch
+              <span className="text-ink">Framer</span> to accelerate launch
             </li>
           </ul>
         </CaseStudyInViewSection>
@@ -255,22 +255,22 @@ export default function PerfectInterviewCaseStudy() {
           id="mvp-1"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+          <span className="text-xs font-medium uppercase tracking-widest text-ink-muted">
             MVP 1
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>Redesign foundations</h2>
-          <ul className="max-w-3xl list-disc space-y-2 pl-5 text-zinc-300 leading-relaxed marker:text-zinc-500">
+          <ul className="max-w-3xl list-disc space-y-2 pl-5 text-ink-soft leading-relaxed marker:text-ink-muted">
             {MVP_1_ITEMS.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
         </CaseStudyInViewSection>
 
-        <CaseStudyInViewSection className="border-t border-zinc-800 pt-12 space-y-8">
+        <CaseStudyInViewSection className="border-t border-ink-line pt-12 space-y-8">
           <CaseStudyPrevNext currentSlug="perfect-interview" />
           <Link
             href="/"
-            className="inline-flex text-sm font-medium text-zinc-400 transition hover:text-zinc-200"
+            className="inline-flex text-sm font-medium text-ink-soft transition hover:text-ink"
           >
             ← Back to home
           </Link>

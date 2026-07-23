@@ -47,13 +47,13 @@ const METRICS = [
 
 export function GovernmentBackendHeroTldr() {
   return (
-    <div className="rounded-[1.75rem] bg-white/80 p-6 text-zinc-900 shadow-[inset_0_1px_0_rgba(255,255,255,0.55)] ring-1 ring-white/40 backdrop-blur-sm sm:p-8 md:p-10">
+    <div className="rounded-[1.75rem] bg-paper-soft p-6 text-ink shadow-sm ring-1 ring-ink-line sm:p-8 md:p-10">
       <div className="flex flex-col items-center text-center">
-        <span className="inline-flex items-center gap-1.5 rounded-full bg-zinc-900 px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-white">
+        <span className="inline-flex items-center gap-1.5 rounded-full bg-ink px-3.5 py-1.5 text-[10px] font-normal uppercase tracking-[0.14em] text-white">
           <TldrTargetIcon className="h-3.5 w-3.5 opacity-90" />
           TL;DR
         </span>
-        <h2 className="mt-5 w-full max-w-5xl text-pretty text-2xl font-bold leading-[1.15] tracking-tight sm:text-3xl md:max-w-6xl md:text-[2rem] md:leading-[1.12]">
+        <h2 className="mt-5 w-full max-w-5xl text-pretty text-2xl font-normal leading-[1.15] tracking-tight text-ink sm:text-3xl md:max-w-6xl md:text-[2rem] md:leading-[1.12]">
           Supporting{" "}
           <span
             className="whitespace-nowrap rounded-md px-1.5 py-0.5 tabular-nums"
@@ -70,21 +70,21 @@ export function GovernmentBackendHeroTldr() {
         {METRICS.map((m) => (
           <div
             key={m.kicker}
-            className="flex min-w-0 flex-col rounded-2xl border border-zinc-200/90 bg-white p-5 shadow-sm"
+            className="flex min-w-0 flex-col rounded-2xl border border-ink-line bg-paper p-5 shadow-sm"
           >
-            <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500">
+            <p className="text-[10px] font-normal uppercase tracking-[0.12em] text-ink-muted">
               {m.kicker}
             </p>
             <p
-              className="mt-3 text-2xl font-bold tabular-nums tracking-tight sm:text-3xl"
+              className="mt-3 text-2xl font-normal tabular-nums tracking-tight sm:text-3xl"
               style={{ color: CYAN_600 }}
             >
               {m.value}
             </p>
-            <p className="mt-2 text-sm font-semibold leading-snug text-zinc-900">
+            <p className="mt-2 text-sm font-medium leading-snug text-ink">
               {m.title}
             </p>
-            <p className="mt-2 text-xs leading-relaxed text-zinc-600 sm:text-sm">
+            <p className="mt-2 text-xs font-normal leading-relaxed text-ink-soft sm:text-sm">
               {m.detail}
             </p>
           </div>

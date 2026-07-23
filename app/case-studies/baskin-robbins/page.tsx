@@ -115,8 +115,8 @@ export default function BaskinRobbinsCaseStudy() {
   const [heroPrimary, ...heroSquarePair] = HERO_MOCKUP_IMAGES;
 
   return (
-    <article className="min-h-screen bg-zinc-950 text-zinc-100">
-      <header className="border-b border-zinc-800">
+    <article className="min-h-screen bg-paper text-ink">
+      <header className="border-b border-ink-line">
         <div className={`${SITE_SHELL_INNER} py-12 sm:py-16`}>
           <div
             className={`${CASE_STUDY_BODY_GRID} min-w-0 space-y-10 sm:space-y-12`}
@@ -134,7 +134,7 @@ export default function BaskinRobbinsCaseStudy() {
               />
             </div>
 
-            <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+            <div className="overflow-hidden rounded-2xl border border-ink-line bg-paper-soft">
               <ImageLightbox
                 src={HERO_MEMBERSHIP.src}
                 alt={HERO_MEMBERSHIP.alt}
@@ -204,13 +204,13 @@ export default function BaskinRobbinsCaseStudy() {
           id="project-background"
           className={`space-y-6 ${sectionScroll}`}
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+          <span className="text-xs font-medium uppercase tracking-widest text-ink-muted">
             Project background
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
             Japan&apos;s BR31 had a thriving membership app. Taiwan had nothing.
           </h2>
-          <p className="text-zinc-300 leading-relaxed max-w-3xl">
+          <p className="text-ink-soft leading-relaxed max-w-3xl">
             Japan&apos;s 31Club launched in 2014 and grew to over 10 million
             members by 2025. Member purchases now account for more than 40% of
             total sales — proof that the loyalty loop directly drives revenue.
@@ -218,11 +218,11 @@ export default function BaskinRobbinsCaseStudy() {
             programs on mobile. There was no dedicated digital rewards surface—no
             way to turn a one-time scoop buyer into a repeat member.
           </p>
-          <p className="text-zinc-300 leading-relaxed max-w-3xl">
+          <p className="text-ink-soft leading-relaxed max-w-3xl">
             I was brought in to close that gap — design Taiwan&apos;s first BR31
             membership app from zero, aligned with Japan HQ, shipped in 3 months.
           </p>
-          <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+          <div className="overflow-hidden rounded-2xl border border-ink-line bg-paper-soft">
             <ImageLightbox
               src={ASSET("japan-hq-cross-market-meeting.png")}
               alt="Video call with Japan HQ and Taiwan stakeholders—cross-market alignment for BR31 membership app, interpreter-supported reviews before build"
@@ -243,23 +243,23 @@ export default function BaskinRobbinsCaseStudy() {
 
         <CaseStudyInViewSection
           id="cross-market-decisions"
-          className={`space-y-6 border-t border-zinc-800 pt-10 sm:pt-12 ${sectionScroll}`}
+          className={`space-y-6 border-t border-ink-line pt-10 sm:pt-12 ${sectionScroll}`}
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+          <span className="text-xs font-medium uppercase tracking-widest text-ink-muted">
             Cross-market decisions
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
             Where Japan HQ patterns met Taiwan usage—and what we negotiated
           </h2>
-          <div className="max-w-3xl space-y-4 text-zinc-300 leading-relaxed">
+          <div className="max-w-3xl space-y-4 text-ink-soft leading-relaxed">
             <p>
               Japan&apos;s 31Club reference skews{" "}
-              <span className="text-zinc-100">
+              <span className="text-ink">
                 calm density, points-first loyalty, and a minimal white/pink shell
               </span>
               built for a market that has used the app for years. Taiwan launch
               skewed{" "}
-              <span className="text-zinc-100">
+              <span className="text-ink">
                 in-store urgency: barcode ready at the counter, faster scan paths,
                 and promo surfaces
               </span>{" "}
@@ -267,7 +267,7 @@ export default function BaskinRobbinsCaseStudy() {
               “ignore HQ”—it was which layers had to stay globally legible (brand
               color, illustration tone, component vocabulary) versus which could flex
               for local CRM reality and retail rhythm. My trade-off was to{" "}
-              <span className="text-zinc-100">
+              <span className="text-ink">
                 keep parent-brand primitives and review gates
               </span>{" "}
               while refusing a pixel-copy of Japan: IA, density, and tier storytelling
@@ -276,19 +276,19 @@ export default function BaskinRobbinsCaseStudy() {
             </p>
             <p>
               The decision that{" "}
-              <span className="text-zinc-100">
+              <span className="text-ink">
                 actually rewired the design direction—after alignment, not before
               </span>
               —was loyalty mechanics: HQ&apos;s mental model centers on{" "}
-              <span className="text-zinc-100">points and redemption</span>, but
+              <span className="text-ink">points and redemption</span>, but
               Taiwan&apos;s phase-one backend was{" "}
-              <span className="text-zinc-100">spend-based tiers without point
+              <span className="text-ink">spend-based tiers without point
               burn</span>. Once engineering and client confirmed that gap in
               workshops, we stopped designing “mini Japan” flows and reframed the MVP
-              around <span className="text-zinc-100">spend progress, tier unlocks,
+              around <span className="text-ink">spend progress, tier unlocks,
               and voucher redemption</span>—then chose the sweeter, more campaign-forward
               visual direction (A) because it matched how Taiwan needed to{" "}
-              <span className="text-zinc-100">merchandise benefits</span>, while
+              <span className="text-ink">merchandise benefits</span>, while
               direction B (closer to Japan&apos;s quieter white shell) would have
               under-communicated value in a market still learning the program.
             </p>
@@ -305,7 +305,7 @@ export default function BaskinRobbinsCaseStudy() {
 
       <CaseStudyContentLayout containerClassName="!pt-0 sm:!pt-0">
         <CaseStudyInViewSection
-          className={`min-w-0 w-full border-t border-zinc-800 pt-10 sm:pt-12 ${sectionScroll}`}
+          className={`min-w-0 w-full border-t border-ink-line pt-10 sm:pt-12 ${sectionScroll}`}
         >
           <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-8">
             <div className="min-w-0 flex-1">
@@ -321,10 +321,10 @@ export default function BaskinRobbinsCaseStudy() {
                   id="design-journey-req"
                   className={`space-y-4 ${sectionScroll}`}
                 >
-                  <h3 className="text-lg font-semibold tracking-tight text-zinc-100 sm:text-xl">
+                  <h3 className="text-lg font-semibold tracking-tight text-ink sm:text-xl">
                     Requirement interviews &amp; functional map
                   </h3>
-                  <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
+                  <p className="text-sm leading-relaxed text-ink-soft sm:text-base">
                     Interviews with the client and backend team locked feasibility and
                     scope early. Japan tied tiers to points; Taiwan&apos;s CRM used
                     spend, with no initial point-redemption plan—we redesigned loyalty
@@ -337,20 +337,20 @@ export default function BaskinRobbinsCaseStudy() {
                   id="design-journey-visual"
                   className={`space-y-4 ${sectionScroll}`}
                 >
-                  <h3 className="text-lg font-semibold tracking-tight text-zinc-100 sm:text-xl">
+                  <h3 className="text-lg font-semibold tracking-tight text-ink sm:text-xl">
                     Visual style proposal
                   </h3>
-                  <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
+                  <p className="text-sm leading-relaxed text-ink-soft sm:text-base">
                     Three directions under time pressure:{" "}
-                    <span className="text-zinc-300">
+                    <span className="text-ink-soft">
                       A — sweet &amp; energetic (pink-forward)
                     </span>
                     ;{" "}
-                    <span className="text-zinc-300">
+                    <span className="text-ink-soft">
                       B — minimal &amp; fresh (white + pink accents, close to Japan)
                     </span>
                     ;{" "}
-                    <span className="text-zinc-300">
+                    <span className="text-ink-soft">
                       C — gradient &amp; premium
                     </span>
                     . The client chose A; I locked pink and blue primaries with neutral
@@ -362,10 +362,10 @@ export default function BaskinRobbinsCaseStudy() {
                   id="design-journey-flow"
                   className={`space-y-4 ${sectionScroll}`}
                 >
-                  <h3 className="text-lg font-semibold tracking-tight text-zinc-100 sm:text-xl">
+                  <h3 className="text-lg font-semibold tracking-tight text-ink sm:text-xl">
                     Page flow &amp; interaction logic
                   </h3>
-                  <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
+                  <p className="text-sm leading-relaxed text-ink-soft sm:text-base">
                     After mockup approval, a detailed page flow captured transitions,
                     decision logic, scroll vs. fixed regions, and states—not just arrows.
                     Figma links let engineers walk the logic without slack threads.
@@ -376,10 +376,10 @@ export default function BaskinRobbinsCaseStudy() {
                   id="design-journey-hq"
                   className={`space-y-4 ${sectionScroll}`}
                 >
-                  <h3 className="text-lg font-semibold tracking-tight text-zinc-100 sm:text-xl">
+                  <h3 className="text-lg font-semibold tracking-tight text-ink sm:text-xl">
                     Cross-market review with Japan HQ
                   </h3>
-                  <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
+                  <p className="text-sm leading-relaxed text-ink-soft sm:text-base">
                     HQ sign-off gated engineering. I presented through
                     interpreter-supported calls with both market rationale and screens—why
                     Taiwan diverged where it had to—so we avoided expensive post-launch
@@ -391,10 +391,10 @@ export default function BaskinRobbinsCaseStudy() {
                   id="design-journey-handoff"
                   className={`space-y-4 ${sectionScroll}`}
                 >
-                  <h3 className="text-lg font-semibold tracking-tight text-zinc-100 sm:text-xl">
+                  <h3 className="text-lg font-semibold tracking-tight text-ink sm:text-xl">
                     Handoff &amp; UAT
                   </h3>
-                  <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
+                  <p className="text-sm leading-relaxed text-ink-soft sm:text-base">
                     Handoff was two Figmas: full mockups with slice notes (dimensions,
                     constraints, scroll regions) and a UI kit (components, color, type,
                     icons). Pre-launch UAT stressed voucher redemption—POS scans of
@@ -426,12 +426,12 @@ export default function BaskinRobbinsCaseStudy() {
 
         <CaseStudyInViewSection
           id="process-deviation"
-          className={`space-y-6 border-t border-zinc-800 pt-10 sm:pt-12 ${sectionScroll}`}
+          className={`space-y-6 border-t border-ink-line pt-10 sm:pt-12 ${sectionScroll}`}
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+          <span className="text-xs font-medium uppercase tracking-widest text-ink-muted">
             Reflection
           </span>
-          <div className="max-w-3xl space-y-4 text-zinc-300 leading-relaxed">
+          <div className="max-w-3xl space-y-4 text-ink-soft leading-relaxed">
             <p>
               Due to a tight timeline for a Baskin Robbins mobile app project, I opted
               to expedite the process by skipping the stage of creating a sitemap and
@@ -440,7 +440,7 @@ export default function BaskinRobbinsCaseStudy() {
               stage.
             </p>
           </div>
-          <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+          <div className="overflow-hidden rounded-2xl border border-ink-line bg-paper-soft">
             <ImageLightbox
               src={PAGE_FLOW_MEMBER_ZONE.src}
               alt={PAGE_FLOW_MEMBER_ZONE.alt}
@@ -460,11 +460,11 @@ export default function BaskinRobbinsCaseStudy() {
           </div>
         </CaseStudyInViewSection>
 
-        <CaseStudyInViewSection className="border-t border-zinc-800 pt-12 space-y-8">
+        <CaseStudyInViewSection className="border-t border-ink-line pt-12 space-y-8">
           <CaseStudyPrevNext currentSlug="baskin-robbins" />
           <Link
             href="/"
-            className="text-sm font-medium text-zinc-400 hover:text-zinc-100 transition"
+            className="text-sm font-medium text-ink-soft hover:text-ink transition"
           >
             ← Back to home
           </Link>

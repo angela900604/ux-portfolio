@@ -16,23 +16,23 @@ export function MarketSizingCharts() {
   return (
     <figure className="cs-data-viz space-y-8">
       <div className="grid gap-8 lg:grid-cols-2 lg:gap-10">
-        <div className="rounded-xl border border-zinc-800/90 bg-zinc-900/40 p-5 sm:p-6">
-          <h5 className="text-zinc-100">
+        <div className="rounded-xl border border-ink-line bg-paper-soft p-5 sm:p-6">
+          <h5 className="text-ink">
             Growth indicators
           </h5>
-          <p className="mt-1 text-xs text-zinc-500">
+          <p className="mt-1 text-xs text-ink-muted">
             Taiwan loyalty market — annual growth references
           </p>
           <div className="mt-6 space-y-5">
             <div>
               <div className="flex items-baseline justify-between gap-2 text-sm">
-                <span className="text-zinc-400">2019–2023 CAGR</span>
-                <span className="tabular-nums font-semibold text-zinc-100">
+                <span className="text-ink-soft">2019–2023 CAGR</span>
+                <span className="tabular-nums font-semibold text-ink">
                   {CAGR}%
                 </span>
               </div>
               <div
-                className="mt-2 h-3 overflow-hidden rounded-full bg-zinc-800"
+                className="mt-2 h-3 overflow-hidden rounded-full bg-paper-soft"
                 role="presentation"
               >
                 <div
@@ -43,13 +43,13 @@ export function MarketSizingCharts() {
             </div>
             <div>
               <div className="flex items-baseline justify-between gap-2 text-sm">
-                <span className="text-zinc-400">2024 projected growth</span>
-                <span className="tabular-nums font-semibold text-zinc-100">
+                <span className="text-ink-soft">2024 projected growth</span>
+                <span className="tabular-nums font-semibold text-ink">
                   {YOY_2024}%
                 </span>
               </div>
               <div
-                className="mt-2 h-3 overflow-hidden rounded-full bg-zinc-800"
+                className="mt-2 h-3 overflow-hidden rounded-full bg-paper-soft"
                 role="presentation"
               >
                 <div
@@ -59,24 +59,24 @@ export function MarketSizingCharts() {
               </div>
             </div>
           </div>
-          <p className="mt-4 text-xs text-zinc-500">
+          <p className="mt-4 text-xs text-ink-muted">
             Bars scaled to {BAR_MAX_PCT}% max for comparison.
           </p>
         </div>
 
-        <div className="rounded-xl border border-zinc-800/90 bg-zinc-900/40 p-5 sm:p-6">
-          <h5 className="text-zinc-100">
+        <div className="rounded-xl border border-ink-line bg-paper-soft p-5 sm:p-6">
+          <h5 className="text-ink">
             Projected market size
           </h5>
-          <p className="mt-1 text-xs text-zinc-500">
+          <p className="mt-1 text-xs text-ink-muted">
             Taiwan loyalty market (2024 projection)
           </p>
-          <p className="mt-6 text-3xl font-semibold tracking-tight text-zinc-100 sm:text-4xl">
+          <p className="mt-6 text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
             US${MARKET_B}B
           </p>
-          <p className="mt-1 text-sm text-zinc-400">approx. total market value</p>
+          <p className="mt-1 text-sm text-ink-soft">approx. total market value</p>
           <div
-            className="mt-6 h-4 overflow-hidden rounded-full bg-zinc-800"
+            className="mt-6 h-4 overflow-hidden rounded-full bg-paper-soft"
             role="presentation"
             aria-label={`Relative scale: ${MARKET_B} billion US dollars of 2 billion US dollars reference`}
           >
@@ -85,12 +85,12 @@ export function MarketSizingCharts() {
               style={{ width: `${sizeWidth}%` }}
             />
           </div>
-          <p className="mt-2 text-xs text-zinc-500">
+          <p className="mt-2 text-xs text-ink-muted">
             Bar length vs a US$2B reference scale (visual only).
           </p>
         </div>
       </div>
-      <figcaption className="text-xs text-zinc-500">
+      <figcaption className="text-xs text-ink-muted">
         Figures cited from industry reporting (e.g. Business Wire) as referenced in
         the case narrative; charts are illustrative for scan-friendly comparison.
       </figcaption>

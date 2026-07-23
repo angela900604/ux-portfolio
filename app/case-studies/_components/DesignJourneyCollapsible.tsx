@@ -19,7 +19,7 @@ function AccordionChevron({ open }: { open: boolean }) {
   return (
     <span
       aria-hidden
-      className={`shrink-0 text-zinc-400 transition-transform duration-200 ${
+      className={`shrink-0 text-ink-muted transition-transform duration-200 ${
         open ? "rotate-180" : ""
       }`}
     >
@@ -103,23 +103,23 @@ export function DesignJourneyCollapsible({
 
   return (
     <div
-      className={`scroll-mt-28 border-t border-zinc-800 pt-10 sm:scroll-mt-32 sm:pt-12 ${className}`.trim()}
+      className={`scroll-mt-28 border-t border-ink-line pt-10 sm:scroll-mt-32 sm:pt-12 ${className}`.trim()}
     >
-      <div className="overflow-hidden rounded-xl border border-zinc-800/90 bg-zinc-900/40">
+      <div className="overflow-hidden rounded-xl border border-ink-line bg-paper-soft">
         <button
           type="button"
           id={navAnchorId}
           onClick={toggle}
           aria-expanded={open}
           aria-controls={panelId}
-          className="flex w-full items-center justify-between gap-4 px-4 py-4 text-left transition hover:bg-zinc-900/55 sm:px-5 sm:py-4"
+          className="flex w-full items-center justify-between gap-4 px-4 py-4 text-left transition hover:bg-paper sm:px-5 sm:py-4"
         >
           <span id={headingId} className="min-w-0">
-            <span className="block text-base font-semibold tracking-tight text-zinc-100 sm:text-lg">
+            <span className="block text-base font-medium tracking-tight text-ink sm:text-lg">
               {title}
             </span>
             {subtitle ? (
-              <span className="mt-1 block text-sm leading-snug text-zinc-400">
+              <span className="mt-1 block text-sm font-normal leading-snug text-ink-soft">
                 {subtitle}
               </span>
             ) : null}
@@ -133,7 +133,7 @@ export function DesignJourneyCollapsible({
           hidden={!open}
           className={
             open
-              ? "border-t border-zinc-800/90 px-4 pb-6 pt-2 sm:px-5 sm:pb-8"
+              ? "border-t border-ink-line px-4 pb-6 pt-2 sm:px-5 sm:pb-8"
               : "hidden"
           }
         >

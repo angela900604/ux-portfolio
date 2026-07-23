@@ -1,21 +1,19 @@
 import type { Metadata } from "next";
-import { DM_Sans, Fraunces, Space_Grotesk } from "next/font/google";
+import { Cormorant_Garamond, Inter } from "next/font/google";
 import { SoftCursor } from "./components/SoftCursor";
 import "./globals.css";
 
-const sans = DM_Sans({
+const sans = Inter({
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
   variable: "--font-sans",
 });
 
-const display = Space_Grotesk({
+const serif = Cormorant_Garamond({
   subsets: ["latin"],
-  variable: "--font-display",
-});
-
-const serifDisplay = Fraunces({
-  subsets: ["latin"],
-  variable: "--font-serif-display",
+  weight: ["400", "500"],
+  style: ["normal", "italic"],
+  variable: "--font-serif",
 });
 
 export const metadata: Metadata = {
@@ -46,9 +44,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${sans.variable} ${display.variable} ${serifDisplay.variable} scroll-smooth`}
+      className={`${sans.variable} ${serif.variable} scroll-smooth`}
     >
-      <body className="min-h-screen overflow-x-hidden">
+      <body className="min-h-screen overflow-x-hidden bg-paper text-ink">
         <SoftCursor />
         {children}
       </body>

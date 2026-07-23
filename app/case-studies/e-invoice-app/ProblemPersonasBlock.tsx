@@ -12,7 +12,7 @@ export function ProblemPersonasBlock() {
     >
       <div className="grid min-w-0 gap-10 lg:grid-cols-2 lg:items-start lg:gap-12">
         <div className="min-w-0 space-y-6">
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+          <span className="text-xs font-medium uppercase tracking-widest text-ink-muted">
             01 · The problem
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
@@ -30,12 +30,12 @@ export function ProblemPersonasBlock() {
             </Link>
           </div>
 
-          <details className="group max-w-3xl rounded-xl border border-zinc-800 bg-zinc-900/35 open:border-emerald-500/25">
-            <summary className="cursor-pointer list-none px-4 py-3.5 text-sm font-medium text-emerald-300/95 transition hover:bg-zinc-900/50 hover:text-emerald-200 [&::-webkit-details-marker]:hidden">
+          <details className="group max-w-3xl rounded-xl border border-ink-line bg-paper-soft/35 open:border-emerald-500/25">
+            <summary className="cursor-pointer list-none px-4 py-3.5 text-sm font-medium text-emerald-300/95 transition hover:bg-paper-soft hover:text-emerald-200 [&::-webkit-details-marker]:hidden">
               <span className="inline-flex w-full items-center justify-between gap-3">
                 <span>Context and design goal</span>
                 <span
-                  className="shrink-0 text-zinc-500 transition group-open:rotate-180"
+                  className="shrink-0 text-ink-muted transition group-open:rotate-180"
                   aria-hidden
                 >
                   <svg
@@ -57,24 +57,24 @@ export function ProblemPersonasBlock() {
                 </span>
               </span>
             </summary>
-            <div className="border-t border-zinc-800/90 px-4 pb-4 pt-1 text-sm leading-relaxed text-zinc-300 sm:text-[15px]">
+            <div className="border-t border-ink-line px-4 pb-4 pt-1 text-sm leading-relaxed text-ink-soft sm:text-[15px]">
               <p>
                 In Taiwan, retail purchases always come with a{" "}
-                <span className="text-zinc-100">uniform invoice</span>{" "}
-                <span className="text-zinc-500">(統一發票)</span>, often paper with a
+                <span className="text-ink">uniform invoice</span>{" "}
+                <span className="text-ink-muted">(統一發票)</span>, often paper with a
                 lottery number and QR code. The Ministry of Finance{" "}
-                <span className="text-zinc-100">cloud invoice / e-invoice ecosystem</span>{" "}
-                <span className="text-zinc-500">(電子發票)</span> lets people store digital
+                <span className="text-ink">cloud invoice / e-invoice ecosystem</span>{" "}
+                <span className="text-ink-muted">(電子發票)</span> lets people store digital
                 copies, bind a{" "}
-                <span className="text-zinc-100">mobile carrier barcode</span>{" "}
-                <span className="text-zinc-500">(手機條碼)</span> for automatic matching,
+                <span className="text-ink">mobile carrier barcode</span>{" "}
+                <span className="text-ink-muted">(手機條碼)</span> for automatic matching,
                 scan paper receipts into the app, and claim or donate prizes.
               </p>
               <p className="mt-4">
-                <span className="font-medium text-zinc-200">Design goal:</span> To
+                <span className="font-medium text-ink-soft">Design goal:</span> To
                 redesign the information architecture, flow and UI to make those core jobs
                 obvious and trustworthy for{" "}
-                <span className="text-zinc-100">
+                <span className="text-ink">
                   elders, newcomers, foreign residents, and low-vision users
                 </span>
                 .
@@ -84,7 +84,7 @@ export function ProblemPersonasBlock() {
         </div>
 
         <div className="min-w-0 lg:sticky lg:top-24">
-          <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+          <div className="overflow-hidden rounded-2xl border border-ink-line bg-paper-soft">
             <ImageLightbox
               src="/case-studies/e-invoice/photo-invoice-receipts.png"
               alt="Paper receipts commonly collected for Taiwan's invoice lottery"

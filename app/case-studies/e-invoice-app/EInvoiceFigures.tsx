@@ -48,7 +48,7 @@ export function WideFigure({
           : `block overflow-hidden rounded-[20px] ${
               borderless
                 ? "bg-transparent"
-                : "border border-zinc-700/60 bg-zinc-900/30"
+                : "border border-ink-line bg-paper-soft"
             }`
       }
     >
@@ -85,7 +85,7 @@ export function WideFigure({
       <figure className={`min-w-0 space-y-0 ${className}`}>
         <div className="bg-white px-4 py-5 sm:px-6 sm:py-7">{image}</div>
         {caption && (
-          <figcaption className="mt-3 max-w-3xl text-xs leading-relaxed text-zinc-500">
+          <figcaption className="mt-3 max-w-3xl text-xs leading-relaxed text-ink-muted">
             {caption}
           </figcaption>
         )}
@@ -97,7 +97,7 @@ export function WideFigure({
     <figure className={`min-w-0 space-y-2 ${className}`}>
       {image}
       {caption && (
-        <figcaption className="max-w-3xl text-xs text-zinc-500">{caption}</figcaption>
+        <figcaption className="max-w-3xl text-xs text-ink-muted">{caption}</figcaption>
       )}
     </figure>
   );
@@ -128,7 +128,7 @@ export function PhoneMockup({
 }) {
   const screenInner = (
     <div
-      className={`overflow-hidden bg-zinc-950 ${chromeless ? "rounded-[1.35rem]" : `${R_SCREEN} ring-1 ring-zinc-800/90`}`}
+      className={`overflow-hidden bg-paper ${chromeless ? "rounded-[1.35rem]" : `${R_SCREEN} ring-1 ring-zinc-800/90`}`}
     >
       <Image
         src={src}
@@ -142,7 +142,7 @@ export function PhoneMockup({
   );
 
   const device = (
-    <div className="relative rounded-[3rem] bg-gradient-to-b from-zinc-600 via-zinc-800 to-zinc-950 p-[11px] shadow-[0_28px_56px_-16px_rgba(0,0,0,0.75)] ring-1 ring-white/[0.12]">
+    <div className="relative rounded-[3rem] bg-gradient-to-b from-zinc-600 via-zinc-800 to-paper p-[11px] shadow-[0_28px_56px_-16px_rgba(0,0,0,0.75)] ring-1 ring-white/[0.12]">
       <div
         className="absolute -left-[3px] top-[22%] h-9 w-[3px] rounded-l-md bg-zinc-500/90 shadow-sm"
         aria-hidden
@@ -191,7 +191,7 @@ export function PhoneMockup({
         >
           {uniform ? (
             <div
-              className="flex items-center justify-center rounded-[12px] border border-zinc-800/80 bg-zinc-950/50"
+              className="flex items-center justify-center rounded-[12px] border border-ink-line bg-paper/50"
               style={{
                 width: APP_SHOT_SLOT_W,
                 height: APP_SHOT_SLOT_H,
@@ -209,9 +209,9 @@ export function PhoneMockup({
       )}
       {!hideCaption && (
         <figcaption className="px-1 text-center">
-          <p className="text-xs font-medium leading-snug text-zinc-200">{label}</p>
+          <p className="text-xs font-medium leading-snug text-ink-soft">{label}</p>
           {hint && (
-            <p className="mt-1 text-[11px] leading-snug text-zinc-500">{hint}</p>
+            <p className="mt-1 text-[11px] leading-snug text-ink-muted">{hint}</p>
           )}
         </figcaption>
       )}
@@ -245,7 +245,7 @@ export function FlatAppShot({
       className={
         frameless
           ? "mx-auto block max-h-full max-w-full bg-transparent"
-          : "mx-auto block w-full max-w-[280px] overflow-hidden rounded-[20px] border border-zinc-700/60 bg-zinc-900/30"
+          : "mx-auto block w-full max-w-[280px] overflow-hidden rounded-[20px] border border-ink-line bg-paper-soft"
       }
     >
       <Image
@@ -265,8 +265,8 @@ export function FlatAppShot({
     <div
       className={
         frameless
-          ? "flex items-center justify-center bg-zinc-950/50"
-          : "flex items-center justify-center rounded-[12px] border border-zinc-800/80 bg-zinc-950/50"
+          ? "flex items-center justify-center bg-paper/50"
+          : "flex items-center justify-center rounded-[12px] border border-ink-line bg-paper/50"
       }
       style={{
         width: APP_SHOT_SLOT_W,
@@ -286,7 +286,7 @@ export function FlatAppShot({
     >
       {visual}
       <figcaption className="text-center">
-        <p className="text-xs font-medium leading-snug text-zinc-200">{label}</p>
+        <p className="text-xs font-medium leading-snug text-ink-soft">{label}</p>
       </figcaption>
     </figure>
   );
@@ -312,7 +312,7 @@ export function PortraitTile({
       className={
         borderless
           ? `block w-full overflow-hidden rounded-xl bg-transparent ${className}`
-          : `block w-full overflow-hidden rounded-xl border border-zinc-700/50 bg-zinc-900/40 ${className}`
+          : `block w-full overflow-hidden rounded-xl border border-ink-line/50 bg-paper-soft ${className}`
       }
     >
       <Image

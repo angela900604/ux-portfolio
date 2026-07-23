@@ -10,7 +10,7 @@ export const YOUTUBE_A11Y_URL =
 export function EInvoiceVoiceOverAccessibilityPanel() {
   return (
     <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-10">
-      <div className="min-w-0 flex-1 space-y-5 leading-relaxed text-zinc-300">
+      <div className="min-w-0 flex-1 space-y-5 leading-relaxed text-ink-soft">
         <p>
           One of the most impactful parts of this project was working with visually
           impaired users. I interviewed two blind participants and recorded how one
@@ -31,7 +31,7 @@ export function EInvoiceVoiceOverAccessibilityPanel() {
         </p>
       </div>
       <div className="mx-auto w-full max-w-[280px] shrink-0 lg:mx-0">
-        <div className="relative aspect-[9/16] overflow-hidden rounded-[20px] border border-zinc-700 bg-black">
+        <div className="relative aspect-[9/16] overflow-hidden rounded-[20px] border border-ink-line bg-black">
           <iframe
             src={YOUTUBE_A11Y_EMBED}
             title="VoiceOver accessibility research — e-invoice app"
@@ -40,13 +40,13 @@ export function EInvoiceVoiceOverAccessibilityPanel() {
             className="absolute inset-0 h-full w-full"
           />
         </div>
-        <p className="mt-2 text-center text-[11px] text-zinc-500">
+        <p className="mt-2 text-center text-[11px] text-ink-muted">
           Short clip ·{" "}
           <a
             href={YOUTUBE_A11Y_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-zinc-400 underline hover:text-zinc-200"
+            className="text-ink-soft underline hover:text-ink"
           >
             Open on YouTube
           </a>

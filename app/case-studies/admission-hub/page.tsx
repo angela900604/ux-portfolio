@@ -58,10 +58,10 @@ function Section({
       id={id}
       className={id ? "scroll-mt-28 sm:scroll-mt-32" : undefined}
     >
-      <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+      <span className="text-xs font-medium uppercase tracking-widest text-ink-muted">
         {kicker}
       </span>
-      {title ? <h2 className="mt-2 text-zinc-100">{title}</h2> : null}
+      {title ? <h2 className="mt-2 text-ink">{title}</h2> : null}
       {children}
     </CaseStudyInViewSection>
   );
@@ -69,11 +69,11 @@ function Section({
 
 export default function AdmissionHubCaseStudy() {
   return (
-    <article className="min-h-screen bg-zinc-950 text-zinc-100">
-      <header className="border-b border-zinc-800">
+    <article className="min-h-screen bg-paper text-ink">
+      <header className="border-b border-ink-line">
         <div className={`${SITE_SHELL_INNER} py-12 sm:py-16`}>
           <div className={`${CASE_STUDY_BODY_GRID} min-w-0`}>
-            <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+            <div className="overflow-hidden rounded-2xl border border-ink-line bg-paper-soft">
               <ImageLightbox
                 src={AH_ASSET("case-hero-cover.png")}
                 alt="Admission Hub promotional flyer mockup — Working Holiday COOP and Canada study messaging"
@@ -99,14 +99,14 @@ export default function AdmissionHubCaseStudy() {
         contentClassName="space-y-20 sm:space-y-24"
       >
         <Section id="strategy" kicker="01 · Strategy">
-          <div className="mt-4 max-w-2xl space-y-4 text-zinc-400 leading-relaxed">
+          <div className="mt-4 max-w-2xl space-y-4 text-ink-soft leading-relaxed">
             <p>
               I shifted toward{" "}
-              <span className="font-medium text-zinc-100">
+              <span className="font-medium text-ink">
                 life-in-Canada storytelling
               </span>
               —holidays, customs, fun facts, and slang—at{" "}
-              <span className="font-medium text-zinc-100">
+              <span className="font-medium text-ink">
                 five posts per week
               </span>
               , with two tied to immigration and study services and three
@@ -121,7 +121,7 @@ export default function AdmissionHubCaseStudy() {
             <p>
               Email marketing and long-form WordPress content worked as the
               slower, higher-intent layer: together they helped{" "}
-              <span className="font-medium text-zinc-100">
+              <span className="font-medium text-ink">
                 attract and nurture prospective clients
               </span>{" "}
               (lead generation) by moving curious readers from discovery into
@@ -130,7 +130,7 @@ export default function AdmissionHubCaseStudy() {
             </p>
           </div>
 
-          <figure className="mt-10 bg-zinc-900/25">
+          <figure className="mt-10 bg-paper-soft/25">
             <ImageLightbox
               src={AH_ASSET("dragon-boat-and-coop-creative.png")}
               alt="Admission Hub — Dragon Boat Festival Instagram post mockup beside Working Holiday COOP service flyer for Canada ADM"
@@ -154,42 +154,42 @@ export default function AdmissionHubCaseStudy() {
           kicker="02 · What I did"
           title="A repeatable campaign + content system"
         >
-          <div className="mt-4 rounded-2xl border border-zinc-800 bg-zinc-900/35 p-6">
-            <h5 className="text-zinc-100">
+          <div className="mt-4 rounded-2xl border border-ink-line bg-paper-soft/35 p-6">
+            <h5 className="text-ink">
               Email (Mailchimp) — how sends were structured
             </h5>
-            <p className="mt-2 text-sm text-zinc-400 leading-relaxed max-w-3xl">
+            <p className="mt-2 text-sm text-ink-soft leading-relaxed max-w-3xl">
               Mailchimp execution—templates, segmentation, and cadence tied to
               site content—so sends consistently fed the pipeline of{" "}
-              <span className="font-medium text-zinc-100">
+              <span className="font-medium text-ink">
                 prospective clients
               </span>{" "}
               researching Canada options (lead generation), not just one-off
               announcements.
             </p>
-            <p className="mt-2 text-xs text-zinc-500 leading-relaxed max-w-3xl">
+            <p className="mt-2 text-xs text-ink-muted leading-relaxed max-w-3xl">
               Original campaign screenshots weren&apos;t preserved.
             </p>
-            <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-zinc-400 leading-relaxed max-w-3xl">
+            <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-ink-soft leading-relaxed max-w-3xl">
               <li>
-                <strong className="font-medium text-zinc-100">Cadence:</strong>{" "}
+                <strong className="font-medium text-ink">Cadence:</strong>{" "}
                 Sends aligned with blog publishes and seasonal hooks so
                 newsletters weren&apos;t one-off blasts.
               </li>
               <li>
-                <strong className="font-medium text-zinc-100">
+                <strong className="font-medium text-ink">
                   Subject + preheader:
                 </strong>{" "}
                 Clarity-first lines with Canada keywords; preheader used when it
                 added a second beat without repeating the title.
               </li>
               <li>
-                <strong className="font-medium text-zinc-100">Template:</strong>{" "}
+                <strong className="font-medium text-ink">Template:</strong>{" "}
                 Repeatable blocks (hero, body, single primary CTA) to reduce
                 layout drift between campaigns.
               </li>
               <li>
-                <strong className="font-medium text-zinc-100">Channel fit:</strong>{" "}
+                <strong className="font-medium text-ink">Channel fit:</strong>{" "}
                 Email pointed back to deep pages; Instagram carried the weekly
                 habit—same story, different depth.
               </li>
@@ -205,7 +205,7 @@ export default function AdmissionHubCaseStudy() {
               ).map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full border border-zinc-700 bg-zinc-900/50 px-3 py-1 text-xs text-zinc-400"
+                  className="rounded-full border border-ink-line bg-paper-soft px-3 py-1 text-xs text-ink-soft"
                 >
                   {tag}
                 </span>
@@ -213,19 +213,19 @@ export default function AdmissionHubCaseStudy() {
             </div>
           </div>
 
-          <div className="mt-10 rounded-2xl border border-zinc-800 bg-zinc-900/35 p-6">
-            <h5 className="text-zinc-100">
+          <div className="mt-10 rounded-2xl border border-ink-line bg-paper-soft/35 p-6">
+            <h5 className="text-ink">
               SEO + WordPress
             </h5>
-            <p className="mt-2 text-sm text-zinc-400 leading-relaxed max-w-3xl">
+            <p className="mt-2 text-sm text-ink-soft leading-relaxed max-w-3xl">
               Utility articles and on-page structure to support organic
               discovery.
             </p>
-            <p className="mt-3 text-sm text-zinc-400 leading-relaxed max-w-3xl">
+            <p className="mt-3 text-sm text-ink-soft leading-relaxed max-w-3xl">
               Long posts with clear outlines and sidebars so Taiwan- and Hong
               Kong–based readers could self-serve before consulting.
             </p>
-            <figure className="mt-6 bg-zinc-900/20">
+            <figure className="mt-6 bg-paper-soft">
               <ImageLightbox
                 src={AH_ASSET("wordpress-blog-life-in-canada-50-facts.png")}
                 alt="Admission Hub WordPress blog article — 50 interesting facts about Canada, desktop layout with hero image and sidebar widgets"
@@ -241,8 +241,8 @@ export default function AdmissionHubCaseStudy() {
                   sizes="(max-width: 896px) 100vw, 896px"
                 />
               </ImageLightbox>
-              <figcaption className="mt-4 text-sm text-zinc-400 leading-relaxed">
-                <span className="font-semibold text-zinc-100">
+              <figcaption className="mt-4 text-sm text-ink-soft leading-relaxed">
+                <span className="font-semibold text-ink">
                   Featured articles (live)
                 </span>
                 <ul className="mt-2 flex flex-col gap-2">
@@ -252,11 +252,11 @@ export default function AdmissionHubCaseStudy() {
                         href={item.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-zinc-100 underline decoration-zinc-600 underline-offset-2 hover:decoration-zinc-400"
+                        className="text-ink underline decoration-ink-muted underline-offset-2 hover:decoration-ink-soft"
                       >
                         {item.label}
                       </a>
-                      <span className="text-zinc-500"> · WordPress</span>
+                      <span className="text-ink-muted"> · WordPress</span>
                     </li>
                   ))}
                 </ul>
@@ -265,28 +265,28 @@ export default function AdmissionHubCaseStudy() {
           </div>
 
           <div className="mt-10 grid gap-6 lg:grid-cols-2 lg:items-start">
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/35 p-6">
-              <h5 className="text-zinc-100">
+            <div className="rounded-2xl border border-ink-line bg-paper-soft/35 p-6">
+              <h5 className="text-ink">
                 Visuals for web + social
               </h5>
-              <p className="mt-2 text-sm text-zinc-400 leading-relaxed">
+              <p className="mt-2 text-sm text-ink-soft leading-relaxed">
                 Figma graphics for the site and Instagram—supporting +500
                 followers and +21% engagement over roughly three months.
               </p>
-              <p className="mt-3 text-sm text-zinc-400 leading-relaxed">
+              <p className="mt-3 text-sm text-ink-soft leading-relaxed">
                 I locked hero hierarchy and promo clarity so culture posts and
                 conversion flyers still read as one ADM system.
               </p>
-              <p className="mt-3 text-sm text-zinc-400 leading-relaxed">
+              <p className="mt-3 text-sm text-ink-soft leading-relaxed">
                 Campaign and blog visuals so email, web, and social pointed to
                 the same story and CTAs.
               </p>
             </div>
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/35 p-6">
-              <h5 className="text-zinc-100">
+            <div className="rounded-2xl border border-ink-line bg-paper-soft/35 p-6">
+              <h5 className="text-ink">
                 Calendar hooks &amp; “utility” social
               </h5>
-              <p className="mt-2 text-sm text-zinc-400 leading-relaxed">
+              <p className="mt-2 text-sm text-ink-soft leading-relaxed">
                 I chased utility moments people actually search for on Instagram
                 (times, places, seasonal hooks).
               </p>
@@ -297,11 +297,11 @@ export default function AdmissionHubCaseStudy() {
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-zinc-100 underline decoration-zinc-600 underline-offset-2 hover:decoration-zinc-400"
+                      className="text-ink underline decoration-ink-muted underline-offset-2 hover:decoration-ink-soft"
                     >
                       {item.label}
                     </a>
-                    <span className="text-zinc-500"> · Instagram</span>
+                    <span className="text-ink-muted"> · Instagram</span>
                   </li>
                 ))}
               </ul>
@@ -314,13 +314,13 @@ export default function AdmissionHubCaseStudy() {
           kicker="03 · Outcomes"
           title="Measurable growth in engagement and reach"
         >
-          <p className="mt-4 max-w-3xl text-sm text-zinc-400 leading-relaxed">
+          <p className="mt-4 max-w-3xl text-sm text-ink-soft leading-relaxed">
             The numbers below are anchored in{" "}
             <a
               href="https://www.instagram.com/adm.tw/"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-medium text-zinc-100 underline decoration-zinc-600 underline-offset-2 hover:decoration-zinc-400"
+              className="font-medium text-ink underline decoration-ink-muted underline-offset-2 hover:decoration-ink-soft"
             >
               @adm.tw
             </a>{" "}
@@ -329,22 +329,22 @@ export default function AdmissionHubCaseStudy() {
             account during the same stretch.
           </p>
 
-          <p className="mt-3 text-xs font-medium uppercase tracking-widest text-zinc-500">
+          <p className="mt-3 text-xs font-medium uppercase tracking-widest text-ink-muted">
             Instagram · typical post likes
           </p>
           <div className="mt-2 flex flex-wrap items-center gap-2 sm:gap-3">
-            <span className="inline-flex items-center rounded-full border border-zinc-700 bg-zinc-900/40 px-4 py-2 text-sm font-medium tabular-nums text-zinc-100">
+            <span className="inline-flex items-center rounded-full border border-ink-line bg-paper-soft px-4 py-2 text-sm font-medium tabular-nums text-ink">
               ~5 likes
-              <span className="ml-2 text-xs font-normal text-zinc-500">
+              <span className="ml-2 text-xs font-normal text-ink-muted">
                 typical post (before)
               </span>
             </span>
-            <span className="text-zinc-500" aria-hidden>
+            <span className="text-ink-muted" aria-hidden>
               →
             </span>
-            <span className="inline-flex items-center rounded-full border border-zinc-700 bg-zinc-900/40 px-4 py-2 text-sm font-medium tabular-nums text-zinc-100">
+            <span className="inline-flex items-center rounded-full border border-ink-line bg-paper-soft px-4 py-2 text-sm font-medium tabular-nums text-ink">
               ~30 likes
-              <span className="ml-2 text-xs font-normal text-zinc-500">
+              <span className="ml-2 text-xs font-normal text-ink-muted">
                 typical post (during)
               </span>
             </span>
@@ -355,11 +355,11 @@ export default function AdmissionHubCaseStudy() {
           </div>
         </Section>
 
-        <CaseStudyInViewSection className="space-y-8 border-t border-zinc-800 pt-12">
+        <CaseStudyInViewSection className="space-y-8 border-t border-ink-line pt-12">
           <CaseStudyPrevNext currentSlug="admission-hub" />
           <Link
             href="/"
-            className="text-sm font-medium text-zinc-400 transition hover:text-zinc-100"
+            className="text-sm font-medium text-ink-soft transition hover:text-ink"
           >
             ← Back to home
           </Link>

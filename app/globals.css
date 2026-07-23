@@ -1,46 +1,69 @@
 @import "tailwindcss";
 
 :root {
-  --background: #09090b;
-  --foreground: #fafafa;
-  /** Soft-cursor / IDE-adjacent blue — nav hover & active (matches SoftCursor.tsx) */
-  --nav-accent-blue: #7186b9;
+  --background: #ffffff;
+  --foreground: #111111;
+  /** Joseph Chen–style ink palette */
+  --ink: #111111;
+  --ink-soft: #2e2e2e;
+  --ink-muted: #6e6e6e;
+  --ink-faint: #9c9c9c;
+  --ink-line: #e4e4e4;
+  --paper: #ffffff;
+  --paper-soft: #f7f7f7;
+  /** Nav hover / active — ink on light paper */
+  --nav-accent-blue: #111111;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-faint: var(--ink-faint);
+  --color-ink-line: var(--ink-line);
+  --color-paper: var(--paper);
+  --color-paper-soft: var(--paper-soft);
   /** Cursor marketing accent (cursor.com — warm gold, not IDE purple) */
   --color-cursor-accent: #c08532;
   --color-cursor-accent-bright: #d4a14a;
   --color-nav-accent-blue: var(--nav-accent-blue);
-  --font-sans: var(--font-sans), system-ui, sans-serif;
-  --font-display: var(--font-display), system-ui, sans-serif;
+  --font-sans: var(--font-sans), "Helvetica Neue", Helvetica, Arial, system-ui,
+    sans-serif;
+  --font-serif: var(--font-serif), "EB Garamond", "Iowan Old Style", Georgia,
+    "Times New Roman", serif;
+  --font-display: var(--font-sans), system-ui, sans-serif;
 }
 
 @layer base {
-  /* Unified type scale — prefer semantic h1–h6; keep color/spacing on elements. */
+  /* Unified type scale — Inter body; lighter weights like josephchenux.com */
   h1 {
-    @apply font-sans font-semibold tracking-tight text-3xl leading-tight sm:text-4xl md:text-5xl;
+    @apply font-sans font-normal tracking-tight text-3xl leading-tight text-ink sm:text-4xl md:text-5xl;
   }
   h2 {
-    @apply font-sans font-semibold tracking-tight text-2xl leading-snug;
+    @apply font-sans font-normal tracking-tight text-2xl leading-snug text-ink;
   }
   h3 {
-    @apply font-sans font-semibold text-lg leading-snug;
+    @apply font-sans font-medium text-lg leading-snug text-ink;
   }
   h4 {
-    @apply font-sans font-semibold text-base leading-snug;
+    @apply font-sans font-medium text-base leading-snug text-ink;
   }
   h5 {
-    @apply font-sans font-semibold text-sm leading-snug;
+    @apply font-sans font-medium text-sm leading-snug text-ink;
   }
   h6 {
-    @apply font-sans font-semibold text-xs leading-snug tracking-wide;
+    @apply font-sans font-medium text-xs leading-snug tracking-wide text-ink-muted;
   }
 
   body {
-    @apply bg-[var(--background)] text-[var(--foreground)] text-base leading-[1.65] antialiased font-sans sm:text-lg;
+    @apply bg-paper text-ink text-base font-normal leading-[1.65] antialiased font-sans sm:text-lg;
+  }
+
+  ::selection {
+    background: #111111;
+    color: #ffffff;
   }
 }
 
@@ -102,7 +125,8 @@ html.soft-cursor :disabled:hover {
   font-size: clamp(1.625rem, 1.15rem + 1.65vw, 2.625rem);
   line-height: 1.12;
   letter-spacing: -0.028em;
-  font-weight: 600;
+  font-weight: 400;
+  color: var(--ink);
 }
 
 /* Match left-rail primary title (text-3xl / sm:text-4xl); beats rule above via specificity */
@@ -112,7 +136,8 @@ html.soft-cursor :disabled:hover {
   font-size: 1.875rem;
   line-height: 1.25;
   letter-spacing: -0.025em;
-  font-weight: 600;
+  font-weight: 400;
+  color: var(--ink);
 }
 
 @media (min-width: 640px) {
@@ -128,7 +153,8 @@ html.soft-cursor :disabled:hover {
   font-size: clamp(1.2rem, 1.02rem + 0.75vw, 1.75rem);
   line-height: 1.2;
   letter-spacing: -0.022em;
-  font-weight: 600;
+  font-weight: 500;
+  color: var(--ink);
 }
 
 @keyframes homeBubbleFloat {

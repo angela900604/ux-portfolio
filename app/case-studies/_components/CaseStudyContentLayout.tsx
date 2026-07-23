@@ -20,7 +20,7 @@ type Props = {
  */
 export function CaseStudyContentLayout({
   children,
-  variant = "dark",
+  variant = "light",
   contentClassName = "space-y-24 sm:space-y-28",
   containerClassName = "",
   omitOuterContainer = false,
