@@ -25,21 +25,21 @@ export function CaseStudyExpandable({
 }: Props) {
   const shell =
     accent === "mina"
-      ? "border-emerald-700/25 bg-emerald-50 open:border-emerald-700/35 open:bg-emerald-50/90"
-      : "border-ink-line bg-paper-soft open:border-ink open:bg-paper";
+      ? "border-emerald-400/45 bg-emerald-500/15 open:border-emerald-400/50 open:bg-emerald-500/[0.18]"
+      : "border-zinc-800/90 bg-zinc-900/30 open:border-zinc-700/90 open:bg-zinc-900/45";
 
   const summaryTone =
     accent === "mina"
-      ? "text-emerald-800 hover:text-emerald-900"
-      : "text-ink hover:text-ink-soft";
+      ? "text-emerald-100 hover:text-emerald-50"
+      : "text-emerald-400/95 hover:text-emerald-300";
 
   const decoration =
     accent === "mina"
-      ? "decoration-emerald-600/35"
-      : "decoration-ink/25";
+      ? "decoration-emerald-300/45"
+      : "decoration-emerald-500/40";
 
   const showLessTone =
-    accent === "mina" ? "text-emerald-700/80" : "text-ink-muted";
+    accent === "mina" ? "text-emerald-200/80" : "text-zinc-500";
 
   return (
     <details
@@ -57,7 +57,7 @@ export function CaseStudyExpandable({
           Show less
         </span>
       </summary>
-      <div className="border-t border-ink-line px-4 pb-4 pt-3 text-sm font-normal leading-relaxed text-ink-soft">
+      <div className="border-t border-zinc-800/80 px-4 pb-4 pt-3 text-sm leading-relaxed text-zinc-300">
         {children}
       </div>
     </details>

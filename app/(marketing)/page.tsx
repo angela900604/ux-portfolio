@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { HomeLeadByFocus } from "./HomeLeadByFocus";
 import { HomePortfolioAgent } from "./HomePortfolioAgent";
 import { HomeSelectedWorkSection } from "./HomeSelectedWorkSection";
 
@@ -15,8 +14,6 @@ export default function HomePage() {
       <p className="sr-only">Angela Yang — product designer, Vancouver</p>
 
       <HomePortfolioAgent />
-
-      <HomeLeadByFocus />
 
       <HomeSelectedWorkSection />
     </div>

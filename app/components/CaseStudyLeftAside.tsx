@@ -32,15 +32,15 @@ export function CaseStudyLeftAside() {
             <ProjectCardTag>{meta.eyebrow}</ProjectCardTag>
           </div>
         ) : meta.eyebrow ? (
-          <p className="text-xs font-normal uppercase tracking-widest text-ink-muted">
+          <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             {meta.eyebrow}
           </p>
         ) : null}
-        <p className={`${CASE_STUDY_PRIMARY_TITLE_CLASS} text-ink`}>
+        <p className={`${CASE_STUDY_PRIMARY_TITLE_CLASS} text-zinc-50`}>
           {meta.title}
         </p>
         {meta.subtitle ? (
-          <p className="text-sm font-normal leading-relaxed text-ink-soft sm:text-[15px]">
+          <p className="text-sm leading-relaxed text-zinc-400 sm:text-[15px]">
             {meta.subtitle}
           </p>
         ) : null}
@@ -103,10 +103,10 @@ export function CaseStudyLeftAside() {
         <dl className="min-w-0 shrink-0 space-y-4">
           {meta.items.map((row) => (
             <div key={row.label}>
-              <dt className="text-[11px] font-normal uppercase tracking-wider text-ink-muted">
+              <dt className="text-[11px] font-semibold uppercase tracking-wider text-zinc-500">
                 {row.label}
               </dt>
-              <dd className="mt-0.5 text-sm font-normal leading-snug text-ink-soft">
+              <dd className="mt-0.5 text-sm font-medium leading-snug text-zinc-200">
                 {row.value}
               </dd>
             </div>

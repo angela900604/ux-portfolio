@@ -121,7 +121,7 @@ export function GovernmentBackendCorrespondingScreensSlider({
           }}
         />
         <div
-          className="pointer-events-none absolute top-1/2 z-[3] flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white bg-paper-soft/90 text-white shadow-lg ring-2 ring-ink/15"
+          className="pointer-events-none absolute top-1/2 z-[3] flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white bg-paper-soft/90 text-white shadow-lg ring-2 ring-zinc-950/40"
           style={{ left: `${pos * 100}%` }}
           aria-hidden
         >

@@ -152,7 +152,7 @@ export default function PhyphyyaCaseStudy() {
           className="scroll-mt-28 py-[80px] sm:scroll-mt-32 flex flex-col items-center"
         >
           <div className="text-center mb-[60px] w-full">
-            <h2 className="text-ink mb-[20px] relative inline-block font-sans after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-ink-muted after:mx-auto after:mt-[15px]">
+            <h2 className="text-ink mb-[20px] relative inline-block font-sans after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-zinc-500 after:mx-auto after:mt-[15px]">
               Logo Concept - Soft & Rounded
             </h2>
           </div>
@@ -224,7 +224,7 @@ export default function PhyphyyaCaseStudy() {
         >
           <div className="w-full min-w-0 px-5 sm:px-8 md:px-10 lg:px-12">
             <div className="text-center w-full mb-[50px]">
-            <h2 className="text-ink mb-[20px] relative inline-block font-sans after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-ink-muted after:mx-auto after:mt-[15px]">
+            <h2 className="text-ink mb-[20px] relative inline-block font-sans after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-zinc-500 after:mx-auto after:mt-[15px]">
               Etsy shop &amp; Print-on-Demand
             </h2>
             <p className="text-[16px] text-ink-soft leading-relaxed">
@@ -233,7 +233,7 @@ export default function PhyphyyaCaseStudy() {
                 href="https://www.etsy.com/ca/shop/HaphyLiving"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-ink underline underline-offset-2 hover:text-ink-muted"
+                className="text-ink underline underline-offset-2 hover:text-ink0"
               >
                 Haphy Living on Etsy
               </a>{" "}
@@ -331,7 +331,7 @@ export default function PhyphyyaCaseStudy() {
                   What I&apos;m testing next
                 </span>
                 <span
-                  className="shrink-0 text-ink-muted transition group-open:rotate-180"
+                  className="shrink-0 text-ink0 transition group-open:rotate-180"
                   aria-hidden
                 >
                   <svg

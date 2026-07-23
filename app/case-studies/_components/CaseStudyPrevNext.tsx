@@ -20,11 +20,11 @@ export const CASE_STUDY_NAV: { slug: string; label: string }[] = [
 
 export function CaseStudyPrevNext({
   currentSlug,
-  variant: theme = "light",
+  variant: theme = "dark",
 }: {
   currentSlug: string;
-  /** `cream` for Haphy Living (phyphyya) brand UI */
-  variant?: "light" | "cream";
+  /** `light` for Haphy Living (phyphyya) cream UI */
+  variant?: "dark" | "light";
 }) {
   const i = CASE_STUDY_NAV.findIndex((x) => x.slug === currentSlug);
   if (i < 0) return null;
@@ -32,12 +32,12 @@ export function CaseStudyPrevNext({
   const next = i < CASE_STUDY_NAV.length - 1 ? CASE_STUDY_NAV[i + 1] : null;
 
   const base =
-    theme === "cream"
+    theme === "light"
       ? "rounded-[22px] border border-[#D5C9B7] bg-[#F5F3EF] px-6 py-3 text-sm text-[#4A4A4A] transition hover:border-[#B8AA95] hover:bg-[#F8F5F0]"
-      : "rounded-xl border border-ink-line bg-paper-soft px-4 py-3 text-sm font-normal text-ink-soft transition hover:border-ink hover:bg-paper hover:text-ink";
+      : "rounded-xl border border-zinc-700/60 bg-zinc-900/40 px-4 py-3 text-sm text-zinc-300 transition hover:border-zinc-600 hover:bg-zinc-900/60 hover:text-zinc-100";
 
   const muted =
-    theme === "cream" ? "text-[#9A8F82] text-xs" : "text-ink-muted text-xs";
+    theme === "light" ? "text-[#9A8F82] text-xs" : "text-zinc-500 text-xs";
 
   return (
     <nav

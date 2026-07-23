@@ -11,9 +11,9 @@ export const CASE_STUDY_AT_A_GLANCE_DARK_HERO_PROPS = {
   hideTitle: true,
   showAccent: false,
   labelClassName:
-    "text-[11px] font-normal uppercase tracking-wider text-ink-muted",
+    "text-[11px] font-semibold uppercase tracking-wider text-zinc-400",
   valueClassName:
-    "mt-0.5 text-base font-normal leading-[1.65] text-ink-soft sm:text-lg",
+    "mt-0.5 text-base font-medium leading-[1.65] text-zinc-300 sm:text-lg sm:text-zinc-200",
 } as const;
 
 /** Cream / light `below-meta` hero band (Admission Hub, MOMI, Haphy Living). */
@@ -58,8 +58,8 @@ export function CaseStudyAtAGlance({
   showAccent = true,
   noAccentGridClassName,
   hideTitle = false,
-  labelClassName = "text-[11px] font-normal uppercase tracking-wider text-ink-muted",
-  valueClassName = "mt-0.5 text-base font-normal leading-[1.65] text-ink sm:text-lg",
+  labelClassName = "text-[11px] font-semibold uppercase tracking-wider text-zinc-500",
+  valueClassName = "mt-0.5 text-base font-medium leading-[1.65] text-white/90 sm:text-lg",
 }: Props) {
   const bar = ACCENT_BAR[accent];
 
@@ -112,7 +112,7 @@ export function CaseStudyAtAGlance({
 
   return (
     <div className="space-y-2">
-      <p className="text-xs font-normal uppercase tracking-widest text-ink-muted">
+      <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
         At a glance
       </p>
       {body}

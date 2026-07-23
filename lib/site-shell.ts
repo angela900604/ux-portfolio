@@ -28,18 +28,18 @@ export const SITE_SHELL_CONTAINER = `${SITE_SHELL_INNER} ${SITE_GUTTER_CLASS}`;
 
 /** Primary project title scale (matches MINA marketing page h1). */
 export const CASE_STUDY_PRIMARY_TITLE_CLASS =
-  "text-3xl font-normal tracking-tight text-ink sm:text-4xl";
+  "text-3xl font-medium tracking-tight sm:text-4xl";
 
 /**
  * Case-study body section headline — same scale as {@link CASE_STUDY_PRIMARY_TITLE_CLASS}.
  * Pair with global `.case-study-section-title` so size wins over `.case-study-prose h2`.
  */
 export const CASE_STUDY_SECTION_TITLE_CLASS =
-  "case-study-section-title max-w-3xl font-normal tracking-tight text-ink";
+  "case-study-section-title max-w-3xl font-medium tracking-tight text-zinc-100";
 
 /** Smaller supporting line directly under a section headline. */
 export const CASE_STUDY_SECTION_SUBTITLE_CLASS =
-  "mt-3 block max-w-3xl text-base font-normal leading-relaxed text-ink-soft sm:mt-4 sm:text-lg";
+  "mt-3 block max-w-3xl text-base font-medium leading-relaxed text-zinc-400 sm:mt-4 sm:text-lg";
 
 /**
  * Counteract {@link SITE_GUTTER_CLASS} so a band (e.g. marquee) spans the full padded

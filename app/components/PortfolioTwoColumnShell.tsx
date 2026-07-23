@@ -28,7 +28,7 @@ export function PortfolioTwoColumnShell({
   // Mobile: let the page grow and use normal document scroll (fixed `dvh` + `overflow-hidden`
   // without `main` overflow was clipping content). Desktop: lock height and scroll `main`.
   return (
-    <div className="flex min-h-dvh flex-col overflow-x-hidden bg-paper text-ink lg:h-dvh lg:max-h-dvh lg:overflow-hidden">
+    <div className="flex min-h-dvh flex-col overflow-x-hidden bg-zinc-950 text-zinc-100 lg:h-dvh lg:max-h-dvh lg:overflow-hidden">
       <SiteTopNav />
       <div className="flex flex-col pt-14 lg:min-h-0 lg:flex-1 lg:flex-row lg:overflow-hidden">
         {leftAside ?? <PortfolioLeftColumn />}

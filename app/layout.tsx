@@ -5,15 +5,15 @@ import "./globals.css";
 
 const sans = Inter({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
   variable: "--font-sans",
+  weight: ["400", "500", "600"],
 });
 
-const serif = Cormorant_Garamond({
+const serifDisplay = Cormorant_Garamond({
   subsets: ["latin"],
+  variable: "--font-serif-display",
   weight: ["400", "500"],
   style: ["normal", "italic"],
-  variable: "--font-serif",
 });
 
 export const metadata: Metadata = {
@@ -44,9 +44,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${sans.variable} ${serif.variable} scroll-smooth`}
+      className={`${sans.variable} ${serifDisplay.variable} scroll-smooth`}
     >
-      <body className="min-h-screen overflow-x-hidden bg-paper text-ink">
+      <body className="min-h-screen overflow-x-hidden">
         <SoftCursor />
         {children}
       </body>

@@ -129,7 +129,7 @@ function StoryBeat({
         className={
           isOutcome
             ? "absolute left-[15px] top-[1.35rem] z-[1] h-2 w-2 -translate-x-1/2 rounded-full ring-2 ring-emerald-500/35"
-            : "absolute left-[15px] top-[1.35rem] z-[1] h-2 w-2 -translate-x-1/2 rounded-full ring-2 ring-paper"
+            : "absolute left-[15px] top-[1.35rem] z-[1] h-2 w-2 -translate-x-1/2 rounded-full ring-2 ring-zinc-950"
         }
         style={{ backgroundColor: colors.dot }}
         aria-hidden
@@ -648,7 +648,7 @@ export default function EInvoiceCaseStudy() {
           id="functional-map"
           className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-ink-muted">
+          <span className="text-xs font-medium uppercase tracking-widest text-ink0">
             Functional map
           </span>
           <p className="max-w-3xl text-sm leading-relaxed text-ink-soft sm:text-base">
@@ -688,7 +688,7 @@ export default function EInvoiceCaseStudy() {
               stiff or crowded. Those conversations kept circling back to the
               same qualities, which we captured as:
             </p>
-            <p className="text-xs font-medium uppercase tracking-wider text-ink-muted">
+            <p className="text-xs font-medium uppercase tracking-wider text-ink0">
               Interview keywords
             </p>
             <ul
@@ -736,7 +736,7 @@ export default function EInvoiceCaseStudy() {
                 alt="Person using a phone outdoors in an urban setting, sunny lifestyle context"
               />
               <div>
-                <p className="text-xs font-medium uppercase tracking-wider text-ink-muted">
+                <p className="text-xs font-medium uppercase tracking-wider text-ink0">
                   Palette
                 </p>
                 <ul className="mt-3 flex flex-wrap gap-3">
@@ -750,7 +750,7 @@ export default function EInvoiceCaseStudy() {
                         style={{ backgroundColor: s.hex }}
                         title={s.hex}
                       />
-                      <span className="max-w-[5.5rem] text-[10px] leading-tight text-ink-muted">
+                      <span className="max-w-[5.5rem] text-[10px] leading-tight text-ink0">
                         {s.name}
                         <span className="block font-mono text-ink-soft">{s.hex}</span>
                       </span>
@@ -928,7 +928,7 @@ export default function EInvoiceCaseStudy() {
               id="business-constraints"
               className="scroll-mt-28 space-y-5 border-t border-ink-line pt-10 sm:scroll-mt-32 sm:pt-12"
             >
-              <span className="text-xs font-medium uppercase tracking-widest text-ink-muted">
+              <span className="text-xs font-medium uppercase tracking-widest text-ink0">
                 Business constraints
               </span>
               <h3 className={CASE_STUDY_SECTION_TITLE_CLASS}>
@@ -966,7 +966,7 @@ export default function EInvoiceCaseStudy() {
               <h3 className={CASE_STUDY_SECTION_TITLE_CLASS}>
                 What I&apos;d validate next
               </h3>
-              <ul className="list-disc space-y-2 pl-5 text-ink-soft leading-relaxed marker:text-ink-muted">
+              <ul className="list-disc space-y-2 pl-5 text-ink-soft leading-relaxed marker:text-ink0">
                 <li>
                   Production experiment on{" "}
                   <span className="text-ink-soft">when</span> optional home modules
