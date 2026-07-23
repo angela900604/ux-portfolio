@@ -1,5 +1,10 @@
 import { EInvoiceVoiceOverAccessibilityPanel } from "@/app/case-studies/e-invoice-app/EInvoiceVoiceOverAccessibilityPanel";
 import { SplitCapsuleLink } from "@/app/components/SplitCapsuleLink";
+import {
+  RESEARCH_SECTION_HEADER,
+  RESEARCH_SECTION_LABEL,
+  RESEARCH_SECTION_TITLE,
+} from "@/lib/case-study-theme";
 
 export function AccessibilityVoiceoverMain({
   showViewProject = true,
@@ -8,11 +13,9 @@ export function AccessibilityVoiceoverMain({
 }) {
   return (
     <>
-      <header className="max-w-3xl space-y-4">
-        <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-          User research · Accessibility
-        </p>
-        <h2 className="text-3xl font-semibold tracking-tight text-zinc-100 sm:text-4xl">
+      <header className={RESEARCH_SECTION_HEADER}>
+        <p className={RESEARCH_SECTION_LABEL}>User research · Accessibility</p>
+        <h2 className={RESEARCH_SECTION_TITLE}>
           Accessibility Work – Screen Reader Focus
         </h2>
       </header>

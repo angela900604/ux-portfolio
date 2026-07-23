@@ -36,6 +36,19 @@ export const CS_SECTION_DIVIDER =
 /** Image / video frame — borderless */
 export const CS_MEDIA_FRAME = "overflow-hidden";
 
+/** User-research journey section kicker (tighter tracking than case-study default). */
+export const RESEARCH_SECTION_LABEL =
+  "text-xs font-medium uppercase tracking-[0.12em] text-zinc-500";
+
+/** User-research journey section header stack. */
+export const RESEARCH_SECTION_HEADER = "max-w-3xl space-y-3";
+
+export const RESEARCH_SECTION_TITLE =
+  "text-2xl font-semibold leading-[1.2] tracking-[-0.02em] text-zinc-100 sm:text-3xl sm:leading-[1.15]";
+
+export const RESEARCH_SECTION_BODY =
+  "max-w-2xl text-base leading-[1.65] text-zinc-300";
+
 /** Soft content band (charts, tables) — no outer stroke */
 export const CS_CONTENT_BAND = "bg-zinc-900/40 p-5 sm:p-6";
 

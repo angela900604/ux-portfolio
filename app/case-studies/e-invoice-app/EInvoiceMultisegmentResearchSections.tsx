@@ -19,7 +19,7 @@ function PainBlock({
 }) {
   return (
     <div
-      className={`border-t border-zinc-800 pt-5 sm:pt-6 ${cardAccentClassName}`}
+      className={`border-t border-zinc-800 pt-5 pl-4 sm:pt-6 sm:pl-5 ${cardAccentClassName}`}
     >
       <div className="min-w-0 max-w-3xl space-y-4">
         <div className="flex flex-wrap items-center gap-2">
@@ -73,11 +73,16 @@ function PainBlock({
   );
 }
 
-const BADGE_SEGMENT_YOUNGER = "bg-amber-100 text-amber-900";
-const BADGE_SEGMENT_MIDDLE = "bg-amber-100 text-amber-900";
-const BADGE_SEGMENT_SILVER = "bg-indigo-100 text-indigo-900";
-const BADGE_SEGMENT_FOREIGN = "bg-sky-100 text-sky-900";
-const BADGE_SEGMENT_LOW_VISION = "bg-emerald-100 text-emerald-900";
+const BADGE_SEGMENT_YOUNGER =
+  "border border-amber-500/25 bg-amber-500/15 text-amber-100/95";
+const BADGE_SEGMENT_MIDDLE =
+  "border border-amber-500/25 bg-amber-500/15 text-amber-100/95";
+const BADGE_SEGMENT_SILVER =
+  "border border-indigo-400/25 bg-indigo-500/15 text-indigo-100/95";
+const BADGE_SEGMENT_FOREIGN =
+  "border border-sky-400/25 bg-sky-500/15 text-sky-100/95";
+const BADGE_SEGMENT_LOW_VISION =
+  "border border-emerald-400/25 bg-emerald-500/15 text-emerald-100/95";
 
 /**
  * Condensed user-pain narrative (App Store + interviews + sessions) for the MoF
@@ -178,29 +183,29 @@ export function EInvoiceMultisegmentResearchSections() {
       </section>
 
       {/* Shared truth + conflict insights */}
-      <section className="space-y-4 border-t border-zinc-800 pt-5 sm:space-y-5 sm:pt-6">
-        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-zinc-500">
+      <section className="space-y-5 border-t border-zinc-800 pt-8 sm:space-y-6 sm:pt-10">
+        <p className="text-xs font-medium uppercase tracking-[0.12em] text-zinc-400">
           Cross-group findings
         </p>
-        <div className="grid gap-4 sm:gap-5 lg:grid-cols-2 lg:gap-6">
-          <div className="flex min-h-0 flex-col border-t border-zinc-600 pt-5 sm:pt-6">
-            <p className="inline-flex w-fit rounded-full bg-emerald-600 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-white">
-            Shared truth
+        <div className="grid gap-5 sm:gap-6 lg:grid-cols-2 lg:gap-8">
+          <div className="flex min-h-0 flex-col border-t border-zinc-700/80 pt-5 sm:pt-6">
+            <p className="inline-flex w-fit rounded-full border border-emerald-500/30 bg-emerald-500/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.1em] text-emerald-200">
+              Shared truth
             </p>
-            <p className="mt-4 text-lg font-semibold leading-relaxed text-zinc-100 sm:text-xl">
-            Everyone has the same entry behavior of showing the carrier barcode and
-            scanning paper invoices.
+            <p className="mt-4 text-base font-medium leading-[1.65] text-zinc-200 sm:text-lg sm:leading-[1.6]">
+              Everyone has the same entry behavior of showing the carrier barcode and
+              scanning paper invoices.
             </p>
           </div>
-          <div className="flex min-h-0 flex-col border-t border-zinc-600 pt-5 sm:pt-6">
-            <p className="inline-flex w-fit rounded-full bg-orange-600 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-white">
-            Conflict insights
+          <div className="flex min-h-0 flex-col border-t border-zinc-700/80 pt-5 sm:pt-6">
+            <p className="inline-flex w-fit rounded-full border border-orange-500/30 bg-orange-500/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.1em] text-orange-200">
+              Conflict insights
             </p>
-            <p className="mt-4 text-lg font-semibold leading-relaxed text-zinc-100 sm:text-xl">
-            On the home screen, older and low-vision groups wanted fewer items, more
-            whitespace, and vivid color for fast recognition—while younger groups
-            wanted a denser dashboard—more modules, promos, and shortcuts—and a
-            cooler, minimal palette. One layout; two incompatible defaults.
+            <p className="mt-4 text-base font-medium leading-[1.65] text-zinc-200 sm:text-lg sm:leading-[1.6]">
+              On the home screen, older and low-vision groups wanted fewer items, more
+              whitespace, and vivid color for fast recognition—while younger groups
+              wanted a denser dashboard—more modules, promos, and shortcuts—and a
+              cooler, minimal palette. One layout; two incompatible defaults.
             </p>
           </div>
         </div>

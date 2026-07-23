@@ -13,10 +13,10 @@ export function MultisegmentInterviewsResearchBody() {
       {/* Layer 1 — App Store */}
       <div className="space-y-5">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-widest text-amber-400/90">
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-amber-400/90">
             Layer 1 · Where the problem showed up first
           </p>
-          <h3 className="mt-2 text-zinc-100">
+          <h3 className="mt-2.5 text-lg font-semibold leading-snug text-zinc-100 sm:text-xl">
             2.8★ App Store reviews (Taiwan · ~Mar 2024–Mar 2025)
           </h3>
         </div>
@@ -70,7 +70,7 @@ export function MultisegmentInterviewsResearchBody() {
       >
         <div className="space-y-5">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-widest text-emerald-400/90">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-emerald-400/90">
               Layer 2 · Interviews across five audiences—including low vision
             </p>
           </div>

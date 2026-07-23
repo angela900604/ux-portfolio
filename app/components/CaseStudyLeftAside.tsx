@@ -8,6 +8,13 @@ import {
 } from "@/lib/case-study-aside-meta";
 import { CASE_STUDY_SIDEBAR_TITLE_CLASS } from "@/lib/site-shell";
 import { PORTFOLIO_LEFT_RAIL_CLASS } from "@/lib/portfolio-shell";
+import { caseStudySidebarLinkClass } from "@/lib/case-study-sidebar-accent";
+
+function sentenceCaseSegment(segment: string): string {
+  const trimmed = segment.trim();
+  if (!trimmed) return trimmed;
+  return trimmed.charAt(0).toUpperCase() + trimmed.slice(1).toLowerCase();
+}
 
 function projectTypeTags(meta: CaseStudyAsideMeta): string[] {
   if (meta.eyebrowTags?.length) return [...meta.eyebrowTags];
@@ -16,11 +23,11 @@ function projectTypeTags(meta: CaseStudyAsideMeta): string[] {
 }
 
 function formatProjectTypeLine(tags: string[], value: string): string {
-  const tagLine = tags.join(" · ");
-  const detail = value.trim();
-  if (!tagLine) return detail;
-  if (!detail) return tagLine;
-  return `${tagLine} · ${detail}`;
+  const parts = [
+    ...tags,
+    ...(value.trim() ? [value.trim()] : []),
+  ];
+  return parts.map(sentenceCaseSegment).join(" · ");
 }
 
 /**
@@ -31,6 +38,7 @@ export function CaseStudyLeftAside() {
   const pathname = usePathname() ?? "";
   const meta = getCaseStudyAsideMeta(pathname);
   const typeTags = projectTypeTags(meta);
+  const sidebarLinkClass = caseStudySidebarLinkClass(pathname);
 
   return (
     <aside
@@ -58,13 +66,7 @@ export function CaseStudyLeftAside() {
                 link.external === true ||
                 (link.external !== false &&
                   /^https?:\/\//i.test(link.href));
-              const minaCaseStudy =
-                pathname === "/case-studies/ai-marketplace" ||
-                pathname.startsWith("/case-studies/ai-marketplace/");
-              const defaultClass = minaCaseStudy
-                ? "text-sm font-medium text-[#B75E45] underline-offset-[5px] transition hover:text-[#9a4f38] hover:underline"
-                : "text-sm font-medium text-emerald-400/95 underline-offset-[5px] transition hover:text-emerald-300 hover:underline";
-              const linkClass = link.className ?? defaultClass;
+              const linkClass = link.className ?? sidebarLinkClass;
               return isExternal ? (
                 <a
                   key={`${link.href}-${link.label}`}
@@ -91,12 +93,7 @@ export function CaseStudyLeftAside() {
           <div className="mt-4 min-w-0">
             <Link
               href={meta.primaryCta.href}
-              className={
-                pathname === "/case-studies/ai-marketplace" ||
-                pathname.startsWith("/case-studies/ai-marketplace/")
-                  ? "text-sm font-medium text-[#B75E45] underline-offset-[5px] transition hover:text-[#9a4f38] hover:underline"
-                  : "text-sm font-medium text-emerald-400/95 underline-offset-[5px] transition hover:text-emerald-300 hover:underline"
-              }
+              className={sidebarLinkClass}
             >
               {meta.primaryCta.label}
             </Link>

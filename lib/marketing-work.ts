@@ -35,8 +35,8 @@ const EA_COMMUNITY_COVER = `/case-studies/ea-community-concept/${encodeURICompon
 
 /** e-Invoice homepage + case study — tag pills (keep in sync with case study). */
 export const E_INVOICE_HOME_DISCIPLINE_TAGS = [
-  "PUBLIC SERVICE application",
-  "user research",
+  "Public service application",
+  "User research",
 ] as const;
 
 export const E_INVOICE_HOME_TECH_HIGHLIGHTS =
@@ -86,7 +86,7 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
       "Redesigning Taiwan Ministry of Finance's Uniform Invoice Award Redemption App",
     description:
       "A government service used by 20M people—research-led IA, accessibility, and ship-ready UI across 30+ sessions.",
-    disciplineTags: ["PUBLIC SERVICE application · user research"],
+    disciplineTags: ["Public service application · User research"],
     year: "2024–2025",
     cover: { kind: "e-invoice" },
     showShipped: true,

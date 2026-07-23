@@ -1,5 +1,11 @@
 import { SplitCapsuleLink } from "@/app/components/SplitCapsuleLink";
 import { MultisegmentInterviewsResearchBody } from "./MultisegmentInterviewsResearchBody";
+import {
+  RESEARCH_SECTION_BODY,
+  RESEARCH_SECTION_HEADER,
+  RESEARCH_SECTION_LABEL,
+  RESEARCH_SECTION_TITLE,
+} from "@/lib/case-study-theme";
 
 export function MultisegmentInterviewsMain({
   showViewProject = true,
@@ -8,14 +14,14 @@ export function MultisegmentInterviewsMain({
 }) {
   return (
     <>
-      <header className="max-w-3xl space-y-4">
-        <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+      <header className={RESEARCH_SECTION_HEADER}>
+        <p className={RESEARCH_SECTION_LABEL}>
           User research · Multisegment interviews
         </p>
-        <h2 className="text-3xl font-semibold tracking-tight text-zinc-100 sm:text-4xl">
+        <h2 className={RESEARCH_SECTION_TITLE}>
           From public reviews to five audience groups—including low vision
         </h2>
-        <p className="text-sm leading-relaxed text-zinc-300">
+        <p className={RESEARCH_SECTION_BODY}>
           Layered evidence for the Ministry of Finance Cloud Invoice App: what showed
           up in App Store feedback, then what diverged and converged across age,
           language, and ability in moderated research—with sketch personas to keep

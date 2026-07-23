@@ -1,8 +1,12 @@
 import { CompetitorLandscapeTable } from "@/app/case-studies/e-invoice-app/CompetitorLandscapeTable";
 import { SplitCapsuleLink } from "@/app/components/SplitCapsuleLink";
+import {
+  RESEARCH_SECTION_BODY,
+  RESEARCH_SECTION_HEADER,
+  RESEARCH_SECTION_LABEL,
+  RESEARCH_SECTION_TITLE,
+} from "@/lib/case-study-theme";
 
-const LABEL = "text-xs font-semibold uppercase tracking-widest text-zinc-500";
-const BODY = "text-base leading-relaxed text-zinc-300";
 const LIST = "mt-3 list-disc space-y-2 pl-5 text-base leading-relaxed text-zinc-300 marker:text-zinc-600";
 
 export function CompetitorAnalysisMain({
@@ -12,27 +16,27 @@ export function CompetitorAnalysisMain({
 }) {
   return (
     <>
-      <header className="max-w-3xl space-y-4">
-        <p className={LABEL}>User research · Competitor analysis</p>
-        <h2 className="text-3xl font-semibold tracking-tight text-zinc-100 sm:text-4xl">
+      <header className={RESEARCH_SECTION_HEADER}>
+        <p className={RESEARCH_SECTION_LABEL}>User research · Competitor analysis</p>
+        <h2 className={RESEARCH_SECTION_TITLE}>
           MoF app vs. mature third parties and LINE—where trust, habit, and speed
           diverge
         </h2>
-        <p className={BODY}>
+        <p className={RESEARCH_SECTION_BODY}>
           Ministry of Finance Cloud Invoice redesign (Feb–Nov 2025): App Store
           signals plus screen-level benchmarks before IA and UI.
         </p>
       </header>
 
       <section className="space-y-5" aria-labelledby="comp-landscape-heading">
-        <p id="comp-landscape-heading" className={LABEL}>
+        <p id="comp-landscape-heading" className={RESEARCH_SECTION_LABEL}>
           Landscape
         </p>
         <CompetitorLandscapeTable />
       </section>
 
       <section className="space-y-4" aria-labelledby="comp-scope-heading">
-        <p id="comp-scope-heading" className={LABEL}>
+        <p id="comp-scope-heading" className={RESEARCH_SECTION_LABEL}>
           Compared
         </p>
         <ul className={LIST}>
@@ -43,7 +47,7 @@ export function CompetitorAnalysisMain({
       </section>
 
       <section className="space-y-4" aria-labelledby="comp-line-heading">
-        <p id="comp-line-heading" className={LABEL}>
+        <p id="comp-line-heading" className={RESEARCH_SECTION_LABEL}>
           Patterns we mirrored (within policy)
         </p>
         <ul className={LIST}>
@@ -73,7 +77,7 @@ export function CompetitorAnalysisMain({
       </section>
 
       <section className="space-y-4" aria-labelledby="comp-filter-heading">
-        <p id="comp-filter-heading" className={LABEL}>
+        <p id="comp-filter-heading" className={RESEARCH_SECTION_LABEL}>
           Cut or adapted
         </p>
         <ul className={LIST}>

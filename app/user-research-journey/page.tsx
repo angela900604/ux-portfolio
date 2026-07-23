@@ -5,6 +5,12 @@ import { CaseStudyContentLayout } from "@/app/case-studies/_components/CaseStudy
 import { CompetitorAnalysisMain } from "@/app/competitor-analysis/CompetitorAnalysisMain";
 import { MultisegmentInterviewsMain } from "@/app/multisegment-interviews/MultisegmentInterviewsMain";
 import { EInvoiceMultisegmentResearchSections } from "@/app/case-studies/e-invoice-app/EInvoiceMultisegmentResearchSections";
+import {
+  RESEARCH_SECTION_BODY,
+  RESEARCH_SECTION_HEADER,
+  RESEARCH_SECTION_LABEL,
+  RESEARCH_SECTION_TITLE,
+} from "@/lib/case-study-theme";
 
 export const metadata = {
   title: "User research journey — Taiwan MoF e-invoice app | Angela Yang",
@@ -34,14 +40,14 @@ export default function UserResearchJourneyPage() {
           </Link>
         </nav>
 
-        <header className="max-w-3xl space-y-4 pb-10 sm:pb-12">
-          <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+        <header className={`${RESEARCH_SECTION_HEADER} pb-10 sm:pb-12`}>
+          <p className={RESEARCH_SECTION_LABEL}>
             Ministry of Finance Cloud Invoice · User research
           </p>
-          <h1 className="text-3xl font-semibold tracking-tight text-zinc-100 sm:text-4xl">
+          <h1 className={`${RESEARCH_SECTION_TITLE} sm:text-4xl`}>
             User research journey
           </h1>
-          <p className="text-sm leading-relaxed text-zinc-300 sm:text-base">
+          <p className={RESEARCH_SECTION_BODY}>
             Competitor analysis, multisegment interviews, and accessibility—one
             thread from evidence to shipped patterns (Feb–Nov 2025).
           </p>
@@ -56,14 +62,12 @@ export default function UserResearchJourneyPage() {
         </section>
 
         <section id="e-invoice-user-pain" className={SECTION_WRAP}>
-          <div className="max-w-3xl space-y-3">
-            <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-              E-invoice app · Synthesis
-            </p>
-            <h2 className="text-2xl font-semibold tracking-tight text-zinc-100 sm:text-3xl">
+          <div className={`${RESEARCH_SECTION_HEADER} mb-8 sm:mb-10`}>
+            <p className={RESEARCH_SECTION_LABEL}>E-invoice app · Synthesis</p>
+            <h2 className={RESEARCH_SECTION_TITLE}>
               User pain by segment &amp; cross-group findings
             </h2>
-            <p className="text-sm leading-relaxed text-zinc-300 sm:text-base">
+            <p className={RESEARCH_SECTION_BODY}>
               App Store reviews, interviews, and moderated tests—distilled into
               segment cards, a shared scan/barcode truth, and the home-screen density
               conflict that drove configurable modules in the case study.
