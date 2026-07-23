@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { HomeLeadByFocus } from "./HomeLeadByFocus";
+import { HomePortfolioAgent } from "./HomePortfolioAgent";
 import { HomeSelectedWorkSection } from "./HomeSelectedWorkSection";
 
 export const metadata: Metadata = {
@@ -12,6 +13,8 @@ export default function HomePage() {
   return (
     <div className="pb-12 font-sans">
       <p className="sr-only">Angela Yang — product designer, Vancouver</p>
+
+      <HomePortfolioAgent />
 
       <HomeLeadByFocus />
 
