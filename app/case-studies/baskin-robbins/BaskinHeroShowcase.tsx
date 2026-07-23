@@ -24,7 +24,7 @@ export function BaskinHeroShowcase({
         <ImageLightbox
           src={primary.src}
           alt={primary.alt}
-          className="block w-full rounded-2xl border border-ink-line bg-paper-soft"
+          className="block w-full overflow-hidden"
         >
           <div className="relative aspect-[256/140] w-full overflow-hidden sm:aspect-[1024/560]">
             <Image
@@ -49,7 +49,7 @@ export function BaskinHeroShowcase({
             key={img.src}
             src={img.src}
             alt={img.alt}
-            className="block h-full min-h-0 rounded-2xl border border-ink-line bg-paper-soft"
+            className="block h-full min-h-0 overflow-hidden"
           >
             <div className="relative aspect-[4/3] w-full overflow-hidden sm:aspect-[16/10]">
               <Image

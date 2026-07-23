@@ -3,7 +3,7 @@
 export function MomiOutcomesChart() {
   return (
     <div
-      className="cs-data-viz rounded-2xl border border-ink-line bg-paper-soft p-6 sm:p-8"
+      className="cs-data-viz overflow-hidden p-6 sm:p-8"
       role="img"
       aria-label="Outcomes: 75 percent growth in ecommerce platform sales from role start through role end"
     >

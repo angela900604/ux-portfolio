@@ -8,7 +8,7 @@ import { PortraitTile } from "./EInvoiceFigures";
 const ASSET = (name: string) => `/case-studies/e-invoice/case-assets/${name}`;
 
 const CARD =
-  "flex w-full cursor-pointer gap-3 rounded-xl border border-ink-line bg-paper-soft p-3 text-left transition hover:border-emerald-500/35 hover:bg-paper-soft focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/70 focus-visible:ring-offset-2 focus-visible:ring-offset-paper";
+  "flex w-full cursor-pointer gap-3 overflow-hidden p-3 text-left transition hover:border-emerald-500/35 hover:bg-paper-soft focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/70 focus-visible:ring-offset-2 focus-visible:ring-offset-paper";
 
 type SketchId = "yiting" | "david" | "chen" | "meiling" | "alex";
 
@@ -247,7 +247,7 @@ export function SketchPersonasExpandable() {
           onClick={(e) => e.target === e.currentTarget && close()}
         >
           <div
-            className="relative w-full max-w-4xl rounded-2xl border border-ink-line bg-paper shadow-2xl"
+            className="relative w-full max-w-4xl overflow-hidden bg-paper shadow-2xl"
             role="dialog"
             aria-modal="true"
             aria-label="Full persona"
@@ -276,7 +276,7 @@ export function SketchPersonasExpandable() {
 
 function FullPersonaYiTing() {
   return (
-    <article className="flex flex-col overflow-hidden rounded-2xl border border-ink-line bg-paper-soft/35 sm:flex-row">
+    <article className="flex flex-col overflow-hidden/35 sm:flex-row">
       <div className="shrink-0 sm:w-[42%]">
         <PortraitTile
           borderless
@@ -328,7 +328,7 @@ function FullPersonaYiTing() {
 
 function FullPersonaDavid() {
   return (
-    <article className="flex flex-col overflow-hidden rounded-2xl border border-ink-line bg-paper-soft/35 sm:flex-row">
+    <article className="flex flex-col overflow-hidden/35 sm:flex-row">
       <div className="shrink-0 sm:w-[42%]">
         <PortraitTile
           borderless
@@ -384,7 +384,7 @@ function FullPersonaDavid() {
 
 function FullPersonaMeiLing() {
   return (
-    <article className="flex flex-col overflow-hidden rounded-2xl border border-ink-line bg-paper-soft/35 sm:flex-row">
+    <article className="flex flex-col overflow-hidden/35 sm:flex-row">
       <div className="shrink-0 sm:w-[42%]">
         <PortraitTile
           borderless
@@ -439,7 +439,7 @@ function FullPersonaMeiLing() {
 
 function FullPersonaAlex() {
   return (
-    <article className="flex flex-col overflow-hidden rounded-2xl border border-ink-line bg-paper-soft/35 sm:flex-row">
+    <article className="flex flex-col overflow-hidden/35 sm:flex-row">
       <div className="shrink-0 sm:w-[42%]">
         <PortraitTile
           borderless
@@ -491,7 +491,7 @@ function FullPersonaAlex() {
 
 function FullPersonaChen() {
   return (
-    <article className="flex flex-col overflow-hidden rounded-2xl border border-ink-line bg-paper-soft/35 sm:flex-row">
+    <article className="flex flex-col overflow-hidden/35 sm:flex-row">
       <div className="shrink-0 sm:w-[42%]">
         <PortraitTile
           borderless

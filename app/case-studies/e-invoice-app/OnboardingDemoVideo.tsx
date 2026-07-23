@@ -25,7 +25,7 @@ function LoopingScreenRecording({
 }: LoopingRecordingProps) {
   return (
     <figure className={`min-w-0 ${className}`.trim()}>
-      <div className="relative aspect-square w-full overflow-hidden rounded-2xl border border-ink-line bg-paper-soft">
+      <div className="relative aspect-square w-full overflow-hidden">
         <video
           className="absolute inset-0 z-10 h-full w-full object-cover object-center"
           autoPlay

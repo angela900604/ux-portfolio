@@ -39,17 +39,27 @@ function useLocaleDateTime() {
   return label;
 }
 
-export function SiteTopNav() {
+export function SiteTopNav({ theme = "dark" }: { theme?: "dark" | "paper" }) {
   const pathname = usePathname();
   const tick = useLocaleDateTime();
+  const isPaper = theme === "paper";
 
-  const brandClass = `min-w-0 shrink text-base font-normal text-zinc-300 ${HOVER_NAV}`;
+  const brandClass = isPaper
+    ? "min-w-0 shrink text-base font-normal text-ink transition hover:opacity-70"
+    : `min-w-0 shrink text-base font-normal text-zinc-300 ${HOVER_NAV}`;
 
   const navLinkClass = (href: string) => {
     const active =
       href === "/"
         ? pathname === "/"
         : pathname === href || pathname.startsWith(`${href}/`);
+    if (isPaper) {
+      return `${NAV_LINK_BASE} ${
+        active
+          ? "text-ink opacity-100"
+          : "text-ink-muted opacity-80 hover:text-ink hover:opacity-100"
+      }`;
+    }
     return `${NAV_LINK_BASE} ${
       active
         ? "opacity-100 text-zinc-200"
@@ -57,8 +67,18 @@ export function SiteTopNav() {
     }`;
   };
 
+  const headerClass = isPaper
+    ? "fixed top-0 left-0 right-0 z-[60] flex h-14 items-center border-b border-ink-line bg-paper/90 backdrop-blur-md"
+    : "fixed top-0 left-0 right-0 z-[60] flex h-14 items-center border-b border-zinc-800 bg-zinc-950/90 backdrop-blur-md";
+
+  const clockClass = isPaper
+    ? "pointer-events-none absolute left-1/2 top-1/2 z-0 max-w-[min(100%,14rem)] -translate-x-1/2 -translate-y-1/2 truncate text-center text-[10px] font-medium uppercase leading-tight tracking-[0.18em] text-ink-muted sm:max-w-none sm:text-[11px] sm:tracking-[0.2em]"
+    : CLOCK_CLASS;
+
+  const railBorderClass = isPaper ? "border-ink-line" : "border-zinc-800";
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-[60] flex h-14 items-center border-b border-zinc-800 bg-zinc-950/90 backdrop-blur-md">
+    <header className={headerClass}>
       {/* &lt; lg: same horizontal padding as stacked left rail */}
       <div
         className={`relative flex h-full w-full items-center ${SITE_GUTTER_CLASS} lg:hidden`}
@@ -68,10 +88,12 @@ export function SiteTopNav() {
             Angela Yang
           </Link>
         </div>
-        <p className={CLOCK_CLASS} aria-live="polite" aria-atomic="true">
+        <p className={clockClass} aria-live="polite" aria-atomic="true">
           {tick || "\u00a0"}
         </p>
-        <nav className={`relative z-[1] flex flex-1 shrink-0 items-center justify-end ${NAV_LINKS_CLASS}`}>
+        <nav
+          className={`relative z-[1] flex flex-1 shrink-0 items-center justify-end ${NAV_LINKS_CLASS}`}
+        >
           <Link href="/" className={navLinkClass("/")}>
             Home
           </Link>
@@ -84,7 +106,7 @@ export function SiteTopNav() {
       {/* lg+: left cell = rail width + padding; right = same shell as main column */}
       <div className="hidden h-full min-h-0 w-full min-w-0 lg:flex lg:flex-row">
         <div
-          className={`flex shrink-0 items-center border-r border-zinc-800 ${SITE_GUTTER_CLASS} ${PORTFOLIO_LEFT_RAIL_WIDTH_CLASS}`}
+          className={`flex shrink-0 items-center border-r ${railBorderClass} ${SITE_GUTTER_CLASS} ${PORTFOLIO_LEFT_RAIL_WIDTH_CLASS}`}
         >
           <Link href="/" className={brandClass}>
             Angela Yang
@@ -94,10 +116,12 @@ export function SiteTopNav() {
           className={`flex min-h-0 min-w-0 flex-1 items-stretch ${SITE_SHELL_CONTAINER}`}
         >
           <div className="relative flex h-full w-full min-w-0 items-center">
-            <p className={CLOCK_CLASS} aria-live="polite" aria-atomic="true">
+            <p className={clockClass} aria-live="polite" aria-atomic="true">
               {tick || "\u00a0"}
             </p>
-            <nav className={`relative z-[1] flex flex-1 shrink-0 items-center justify-end ${NAV_LINKS_CLASS}`}>
+            <nav
+              className={`relative z-[1] flex flex-1 shrink-0 items-center justify-end ${NAV_LINKS_CLASS}`}
+            >
               <Link href="/" className={navLinkClass("/")}>
                 Home
               </Link>

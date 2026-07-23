@@ -30,7 +30,7 @@ export function ProblemPersonasBlock() {
             </Link>
           </div>
 
-          <details className="group max-w-3xl rounded-xl border border-ink-line bg-paper-soft/35 open:border-emerald-500/25">
+          <details className="group max-w-3xl overflow-hidden/35 open:border-emerald-500/25">
             <summary className="cursor-pointer list-none px-4 py-3.5 text-sm font-medium text-emerald-300/95 transition hover:bg-paper-soft hover:text-emerald-200 [&::-webkit-details-marker]:hidden">
               <span className="inline-flex w-full items-center justify-between gap-3">
                 <span>Context and design goal</span>
@@ -84,7 +84,7 @@ export function ProblemPersonasBlock() {
         </div>
 
         <div className="min-w-0 lg:sticky lg:top-24">
-          <div className="overflow-hidden rounded-2xl border border-ink-line bg-paper-soft">
+          <div className="overflow-hidden">
             <ImageLightbox
               src="/case-studies/e-invoice/photo-invoice-receipts.png"
               alt="Paper receipts commonly collected for Taiwan's invoice lottery"

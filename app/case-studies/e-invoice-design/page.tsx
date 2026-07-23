@@ -92,7 +92,7 @@ export default function EInvoiceDesignPage() {
                 <ImageLightbox
                   src={item.src}
                   alt={item.alt}
-                  className="relative block w-full overflow-hidden rounded-2xl border border-ink-line bg-paper-soft"
+                  className="relative block w-full overflow-hidden"
                   disableHoverScale
                 >
                   <Image

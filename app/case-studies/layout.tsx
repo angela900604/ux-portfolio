@@ -9,6 +9,7 @@ export default function CaseStudiesLayout({
   return (
     <PortfolioTwoColumnShell
       mainWidth="full"
+      theme="paper"
       leftAside={<CaseStudyLeftAside />}
     >
       {children}

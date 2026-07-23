@@ -23,7 +23,7 @@ export function HomeBeforeAfterSlider() {
     <figure className="w-full min-w-0">
       <div
         ref={containerRef}
-        className="relative w-full cursor-ew-resize overflow-hidden rounded-2xl border border-ink-line bg-paper-soft touch-none select-none outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-paper"
+        className="relative w-full cursor-ew-resize overflow-hidden touch-none select-none outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-paper"
         style={{ aspectRatio: ASPECT }}
         onDragStartCapture={(e) => e.preventDefault()}
         onPointerDown={(e) => {

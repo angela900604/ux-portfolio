@@ -45,10 +45,8 @@ export function WideFigure({
       className={
         frame === "white"
           ? "block min-h-[200px] w-full overflow-hidden bg-white"
-          : `block overflow-hidden rounded-[20px] ${
-              borderless
-                ? "bg-transparent"
-                : "border border-ink-line bg-paper-soft"
+          : `block overflow-hidden ${
+              borderless ? "bg-transparent" : "bg-paper-soft"
             }`
       }
     >
@@ -69,7 +67,7 @@ export function WideFigure({
   const image =
     cropTopBottomPx > 0 ? (
       <div
-        className="overflow-hidden rounded-[20px]"
+        className="overflow-hidden"
         style={{
           clipPath: `inset(${cropTopBottomPx}px 0 ${cropTopBottomPx}px 0)`,
         }}
@@ -191,7 +189,7 @@ export function PhoneMockup({
         >
           {uniform ? (
             <div
-              className="flex items-center justify-center rounded-[12px] border border-ink-line bg-paper/50"
+              className="flex items-center justify-center bg-paper/50"
               style={{
                 width: APP_SHOT_SLOT_W,
                 height: APP_SHOT_SLOT_H,
@@ -245,7 +243,7 @@ export function FlatAppShot({
       className={
         frameless
           ? "mx-auto block max-h-full max-w-full bg-transparent"
-          : "mx-auto block w-full max-w-[280px] overflow-hidden rounded-[20px] border border-ink-line bg-paper-soft"
+          : "mx-auto block w-full max-w-[280px] overflow-hidden bg-paper-soft"
       }
     >
       <Image
@@ -266,7 +264,7 @@ export function FlatAppShot({
       className={
         frameless
           ? "flex items-center justify-center bg-paper/50"
-          : "flex items-center justify-center rounded-[12px] border border-ink-line bg-paper/50"
+          : "flex items-center justify-center bg-paper/50"
       }
       style={{
         width: APP_SHOT_SLOT_W,
@@ -312,7 +310,7 @@ export function PortraitTile({
       className={
         borderless
           ? `block w-full overflow-hidden rounded-xl bg-transparent ${className}`
-          : `block w-full overflow-hidden rounded-xl border border-ink-line/50 bg-paper-soft ${className}`
+          : `block w-full overflow-hidden ${className}`
       }
     >
       <Image

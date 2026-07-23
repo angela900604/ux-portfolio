@@ -16,7 +16,7 @@ export function MarketSizingCharts() {
   return (
     <figure className="cs-data-viz space-y-8">
       <div className="grid gap-8 lg:grid-cols-2 lg:gap-10">
-        <div className="rounded-xl border border-ink-line bg-paper-soft p-5 sm:p-6">
+        <div className="overflow-hidden p-5 sm:p-6">
           <h5 className="text-ink">
             Growth indicators
           </h5>
@@ -64,7 +64,7 @@ export function MarketSizingCharts() {
           </p>
         </div>
 
-        <div className="rounded-xl border border-ink-line bg-paper-soft p-5 sm:p-6">
+        <div className="overflow-hidden p-5 sm:p-6">
           <h5 className="text-ink">
             Projected market size
           </h5>

@@ -233,7 +233,7 @@ export default function PhyphyyaCaseStudy() {
                 href="https://www.etsy.com/ca/shop/HaphyLiving"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-ink underline underline-offset-2 hover:text-ink0"
+                className="text-ink underline underline-offset-2 hover:text-ink-muted"
               >
                 Haphy Living on Etsy
               </a>{" "}
@@ -324,14 +324,14 @@ export default function PhyphyyaCaseStudy() {
           id="testing-next"
           className="scroll-mt-28 py-[80px] sm:scroll-mt-32"
         >
-          <details className="group w-full rounded-2xl border border-ink-line bg-paper-soft/35 open:border-ink-line/60">
+          <details className="group w-full overflow-hidden/35 open:border-ink-line/60">
             <summary className="cursor-pointer list-none px-5 py-4 text-sm font-medium text-ink-soft transition hover:bg-paper-soft sm:px-6 sm:py-5 [&::-webkit-details-marker]:hidden">
               <span className="inline-flex w-full items-center justify-between gap-3">
                 <span className="min-w-0 text-left font-sans text-base font-semibold tracking-tight text-ink sm:text-lg">
                   What I&apos;m testing next
                 </span>
                 <span
-                  className="shrink-0 text-ink0 transition group-open:rotate-180"
+                  className="shrink-0 text-ink-muted transition group-open:rotate-180"
                   aria-hidden
                 >
                   <svg
@@ -397,7 +397,7 @@ export default function PhyphyyaCaseStudy() {
         </CaseStudyInViewSection>
 
         <footer className="border-t border-ink-line py-14">
-          <CaseStudyPrevNext currentSlug="phyphyya" />
+          <CaseStudyPrevNext currentSlug="phyphyya" variant="phyphyya" />
           <Link
             href="/"
             className="mt-8 inline-block text-sm text-ink-soft transition hover:text-ink"

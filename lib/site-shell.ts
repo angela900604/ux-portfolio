@@ -26,20 +26,19 @@ export const SITE_SHELL_INNER = `mx-auto w-full min-w-0 ${SITE_MAX_WIDTH_CLASS}`
 /** Centered shell: max width + symmetric horizontal padding. */
 export const SITE_SHELL_CONTAINER = `${SITE_SHELL_INNER} ${SITE_GUTTER_CLASS}`;
 
-/** Primary project title scale (matches MINA marketing page h1). */
+/** Primary project title scale (Joseph case study left rail). */
 export const CASE_STUDY_PRIMARY_TITLE_CLASS =
-  "text-3xl font-medium tracking-tight sm:text-4xl";
+  "text-[2.6875rem] font-medium leading-[1.1] tracking-[-0.025em] text-ink sm:text-[2.6875rem]";
 
 /**
- * Case-study body section headline — same scale as {@link CASE_STUDY_PRIMARY_TITLE_CLASS}.
- * Pair with global `.case-study-section-title` so size wins over `.case-study-prose h2`.
+ * Case-study body section headline — Joseph h2 scale (34px / medium).
  */
 export const CASE_STUDY_SECTION_TITLE_CLASS =
-  "case-study-section-title max-w-3xl font-medium tracking-tight text-zinc-100";
+  "case-study-section-title max-w-3xl font-medium tracking-[-0.025em] text-ink";
 
 /** Smaller supporting line directly under a section headline. */
 export const CASE_STUDY_SECTION_SUBTITLE_CLASS =
-  "mt-3 block max-w-3xl text-base font-medium leading-relaxed text-zinc-400 sm:mt-4 sm:text-lg";
+  "mt-3 block max-w-3xl text-[17px] font-normal leading-[1.7] text-ink-soft sm:mt-4";
 
 /**
  * Counteract {@link SITE_GUTTER_CLASS} so a band (e.g. marquee) spans the full padded

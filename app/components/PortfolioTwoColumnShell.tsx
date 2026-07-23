@@ -3,6 +3,7 @@ import { PortfolioLeftColumn } from "@/app/components/PortfolioLeftColumn";
 import { SITE_GUTTER_CLASS, SITE_SHELL_CONTAINER } from "@/lib/site-shell";
 
 type MainWidth = "editorial" | "full";
+type ShellTheme = "dark" | "paper";
 
 /**
  * Editorial main (home / about): top padding matches the left rail’s top inset
@@ -19,17 +20,23 @@ export function PortfolioTwoColumnShell({
   children,
   mainWidth = "editorial",
   leftAside,
+  theme = "dark",
 }: {
   children: React.ReactNode;
   mainWidth?: MainWidth;
   /** When set, replaces the default profile / focus left rail (e.g. case study meta). */
   leftAside?: React.ReactNode;
+  /** `paper` — Joseph-style light case study shell. */
+  theme?: ShellTheme;
 }) {
-  // Mobile: let the page grow and use normal document scroll (fixed `dvh` + `overflow-hidden`
-  // without `main` overflow was clipping content). Desktop: lock height and scroll `main`.
+  const shellClass =
+    theme === "paper"
+      ? "flex min-h-dvh flex-col overflow-x-hidden bg-paper text-ink lg:h-dvh lg:max-h-dvh lg:overflow-hidden"
+      : "flex min-h-dvh flex-col overflow-x-hidden bg-zinc-950 text-zinc-100 lg:h-dvh lg:max-h-dvh lg:overflow-hidden";
+
   return (
-    <div className="flex min-h-dvh flex-col overflow-x-hidden bg-zinc-950 text-zinc-100 lg:h-dvh lg:max-h-dvh lg:overflow-hidden">
-      <SiteTopNav />
+    <div className={shellClass}>
+      <SiteTopNav theme={theme} />
       <div className="flex flex-col pt-14 lg:min-h-0 lg:flex-1 lg:flex-row lg:overflow-hidden">
         {leftAside ?? <PortfolioLeftColumn />}
 

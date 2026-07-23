@@ -107,7 +107,7 @@ export default function AiMarketplaceCaseStudy() {
 
             <figure className="w-full min-w-0">
               <div
-                className="relative w-full min-h-0 overflow-hidden rounded-xl border border-ink-line bg-black shadow-[0_20px_50px_-20px_rgba(0,0,0,0.65)]"
+                className="relative w-full min-h-0 overflow-hidden overflow-hidden bg-black shadow-[0_20px_50px_-20px_rgba(0,0,0,0.65)]"
                 style={{ aspectRatio: `${MINA_HERO_VID_W} / ${MINA_HERO_VID_H}` }}
               >
                 <video
@@ -207,7 +207,7 @@ export default function AiMarketplaceCaseStudy() {
               </p>
             </div>
             <div className="max-w-3xl">
-              <div className="rounded-2xl border border-ink-line bg-paper-soft p-5 sm:p-6">
+              <div className="overflow-hidden p-5 sm:p-6">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-ink-muted">
                   The insight
                 </p>
@@ -232,7 +232,7 @@ export default function AiMarketplaceCaseStudy() {
               </div>
             </div>
           </div>
-          <div className="mt-6 max-w-3xl overflow-hidden rounded-xl border border-ink-line/50 bg-paper-soft">
+          <div className="mt-6 max-w-3xl overflow-hidden">
             <ImageLightbox
               src={MINA_OPPORTUNITY_IMAGE}
               alt="MINA IRL event: tabletop signage with PSA, register QR and perks, and tips; parents trying the app together"
@@ -249,7 +249,7 @@ export default function AiMarketplaceCaseStudy() {
               />
             </ImageLightbox>
           </div>
-          <div className="mt-8 max-w-3xl rounded-2xl border border-ink-line bg-paper-soft p-5 sm:p-6">
+          <div className="mt-8 max-w-3xl overflow-hidden p-5 sm:p-6">
             <span className="inline-flex rounded-full border border-[#B75E45]/55 bg-[#B75E45]/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#e8c9bf]">
               The design response
             </span>
@@ -258,7 +258,7 @@ export default function AiMarketplaceCaseStudy() {
               <span className="font-semibold text-ink">AI where it helps</span>{" "}
               — removing admin work while keeping parents in control of what publishes.
             </p>
-            <div className="mt-6 overflow-hidden rounded-xl border border-ink-line bg-black">
+            <div className="mt-6 overflow-hidden overflow-hidden bg-black">
               <div className="divide-y divide-ink-line">
                 <div className="px-5 py-6 sm:px-6 sm:py-8">
                   <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-ink-muted">
@@ -313,7 +313,7 @@ export default function AiMarketplaceCaseStudy() {
             </h2>
 
             <div className="max-w-4xl w-full">
-              <div className="w-full overflow-hidden rounded-2xl border border-ink-line bg-paper-soft">
+              <div className="w-full overflow-hidden">
                 <ImageLightbox
                   src={MINA_SELLING_AGENT}
                   alt="MINA Selling Agent: create-listing flows—photo-first single listing with fields streaming in, and multi-listing path with on-image AI tags, per-item review, and publish"
@@ -424,7 +424,7 @@ export default function AiMarketplaceCaseStudy() {
                   </div>
                   <aside className="mx-auto w-full max-w-xl lg:sticky lg:top-28 lg:col-span-5 lg:mx-0 lg:max-w-none lg:self-start">
                     <div className="flex min-w-0 flex-row items-center justify-center gap-2 sm:gap-3">
-                      <div className="min-w-0 flex-1 overflow-hidden rounded-2xl border border-ink-line bg-paper-soft/70 shadow-[0_20px_50px_-24px_rgba(0,0,0,0.55)]">
+                      <div className="min-w-0 flex-1 overflow-hidden/70 shadow-[0_20px_50px_-24px_rgba(0,0,0,0.55)]">
                         <ImageLightbox
                           src={MINA_CREATE_FLOW_WORKAROUND}
                           alt="MINA Create workaround: Listing #1 with multi-photo grid, cover tag, remove controls, Add Another Listing, and Next"
@@ -461,7 +461,7 @@ export default function AiMarketplaceCaseStudy() {
                           />
                         </svg>
                       </div>
-                      <div className="min-w-0 flex-1 overflow-hidden rounded-2xl border border-ink-line bg-paper-soft/70 shadow-[0_20px_50px_-24px_rgba(0,0,0,0.55)]">
+                      <div className="min-w-0 flex-1 overflow-hidden/70 shadow-[0_20px_50px_-24px_rgba(0,0,0,0.55)]">
                         <ImageLightbox
                           src={MINA_CREATE_FLOW_ONE_PHOTO_MULTI}
                           alt="MINA Create listing: one photo with AI tags for Blush Bow Beanie and Alya Signature Sleepsuit, Publish button, and Ask MINA chat field"
@@ -505,7 +505,7 @@ export default function AiMarketplaceCaseStudy() {
               and how to move items out kindly.
             </p>
             <div className="max-w-4xl w-full">
-              <figure className="w-full overflow-hidden rounded-2xl border border-ink-line bg-paper-soft">
+              <figure className="w-full overflow-hidden">
                 <ImageLightbox
                   src={MINA_COPILOT_FLOW}
                   alt="Parenting Copilot flow: lock-screen stage nudge, in-app exploration stage and gear picks, what to expect next, then chat to request an item, MINA confirms, and pickup is scheduled with order details"
@@ -543,7 +543,7 @@ export default function AiMarketplaceCaseStudy() {
             multiple complex flows fast without one-off specs.
           </p>
           <div className="w-full max-w-3xl space-y-3">
-            <div className="overflow-hidden rounded-xl border border-ink-line bg-paper-soft">
+            <div className="overflow-hidden">
               <iframe
                 title="MINA UI component library portfolio (HTML)"
                 src="/case-studies/mina/ui_component_library_portfolio.html"

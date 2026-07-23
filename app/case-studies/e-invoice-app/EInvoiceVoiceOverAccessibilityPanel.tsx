@@ -31,7 +31,7 @@ export function EInvoiceVoiceOverAccessibilityPanel() {
         </p>
       </div>
       <div className="mx-auto w-full max-w-[280px] shrink-0 lg:mx-0">
-        <div className="relative aspect-[9/16] overflow-hidden rounded-[20px] border border-ink-line bg-black">
+        <div className="relative aspect-[9/16] overflow-hidden overflow-hidden bg-black">
           <iframe
             src={YOUTUBE_A11Y_EMBED}
             title="VoiceOver accessibility research — e-invoice app"

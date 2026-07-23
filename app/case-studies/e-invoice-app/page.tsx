@@ -103,11 +103,7 @@ function StoryBeat({
   const isConflict = kind === "conflict";
   const isOutcome = kind === "outcome";
 
-  const cardClass = isOutcome
-    ? "rounded-xl border border-ink-line/80 border-l-[3px] border-l-emerald-500/85 bg-paper-soft/80 px-4 py-4 shadow-sm sm:px-5 sm:py-5"
-    : isConflict
-      ? "rounded-r-xl rounded-l-none border border-t border-r border-b border-ink-line border-l-[3px] border-l-[#EF9F27] bg-paper-soft px-4 py-4 sm:px-5 sm:py-5"
-      : "rounded-r-xl rounded-l-md border border-t border-r border-b border-ink-line border-l-transparent bg-paper-soft px-4 py-4 sm:px-5 sm:py-5";
+  const cardClass = "border-t border-ink pt-4";
 
   const headlineClass = isOutcome
     ? largeHeadline
@@ -175,7 +171,7 @@ function StoryOutcomeCallout({
   detail?: ReactNode;
 }) {
   return (
-    <div className="mt-8 max-w-4xl rounded-2xl border border-ink-line/85 border-l-[4px] border-l-emerald-500/90 bg-paper-soft/80 px-6 py-7 sm:px-8 sm:py-9">
+    <div className="mt-8 max-w-4xl border-t border-ink pt-6 sm:pt-7">
       <span className="inline-flex rounded-full border border-emerald-500/80 bg-emerald-500/80 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-emerald-50">
         Outcome
       </span>
@@ -617,7 +613,7 @@ export default function EInvoiceCaseStudy() {
                   </li>
                 </ul>
               </div>
-              <figure className="mt-6 overflow-hidden rounded-2xl border border-ink-line bg-paper-soft">
+              <figure className="mt-6 overflow-hidden">
                 <ImageLightbox
                   src={HANDOFF_MODULE_SETTINGS_SPEC.src}
                   alt={HANDOFF_MODULE_SETTINGS_SPEC.alt}
@@ -648,7 +644,7 @@ export default function EInvoiceCaseStudy() {
           id="functional-map"
           className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-ink0">
+          <span className="text-xs font-medium uppercase tracking-widest text-ink-muted">
             Functional map
           </span>
           <p className="max-w-3xl text-sm leading-relaxed text-ink-soft sm:text-base">
@@ -688,7 +684,7 @@ export default function EInvoiceCaseStudy() {
               stiff or crowded. Those conversations kept circling back to the
               same qualities, which we captured as:
             </p>
-            <p className="text-xs font-medium uppercase tracking-wider text-ink0">
+            <p className="text-xs font-medium uppercase tracking-wider text-ink-muted">
               Interview keywords
             </p>
             <ul
@@ -736,7 +732,7 @@ export default function EInvoiceCaseStudy() {
                 alt="Person using a phone outdoors in an urban setting, sunny lifestyle context"
               />
               <div>
-                <p className="text-xs font-medium uppercase tracking-wider text-ink0">
+                <p className="text-xs font-medium uppercase tracking-wider text-ink-muted">
                   Palette
                 </p>
                 <ul className="mt-3 flex flex-wrap gap-3">
@@ -750,7 +746,7 @@ export default function EInvoiceCaseStudy() {
                         style={{ backgroundColor: s.hex }}
                         title={s.hex}
                       />
-                      <span className="max-w-[5.5rem] text-[10px] leading-tight text-ink0">
+                      <span className="max-w-[5.5rem] text-[10px] leading-tight text-ink-muted">
                         {s.name}
                         <span className="block font-mono text-ink-soft">{s.hex}</span>
                       </span>
@@ -788,7 +784,7 @@ export default function EInvoiceCaseStudy() {
               VoiceOver paths, visual hierarchy, and plain-language fixes could ship
               before launch—not relegated to a late &quot;a11y pass.&quot;
             </p>
-            <div className="rounded-xl border border-ink-line bg-paper-soft p-6">
+            <div className="overflow-hidden p-6">
               <h4 className="text-ink">
                 Results summary (prototype)
               </h4>
@@ -928,7 +924,7 @@ export default function EInvoiceCaseStudy() {
               id="business-constraints"
               className="scroll-mt-28 space-y-5 border-t border-ink-line pt-10 sm:scroll-mt-32 sm:pt-12"
             >
-              <span className="text-xs font-medium uppercase tracking-widest text-ink0">
+              <span className="text-xs font-medium uppercase tracking-widest text-ink-muted">
                 Business constraints
               </span>
               <h3 className={CASE_STUDY_SECTION_TITLE_CLASS}>
@@ -936,14 +932,14 @@ export default function EInvoiceCaseStudy() {
                 to survive legal review and what engineering could actually ship.
               </h3>
               <div className="grid gap-4 sm:grid-cols-3">
-                <div className="rounded-xl border border-ink-line bg-paper-soft/35 p-4">
+                <div className="overflow-hidden/35 p-4">
                   <p className="text-xs font-semibold text-violet-400">Timeline</p>
                   <p className="mt-2 text-sm text-ink-soft">
                     Tight deadlines for research, design, and testing—solutions needed
                     to ship in sprints without delaying release schedules.
                   </p>
                 </div>
-                <div className="rounded-xl border border-ink-line bg-paper-soft/35 p-4">
+                <div className="overflow-hidden/35 p-4">
                   <p className="text-xs font-semibold text-violet-400">Stakeholders</p>
                   <p className="mt-2 text-sm text-ink-soft">
                     As a Ministry of Finance government service, features must follow
@@ -951,7 +947,7 @@ export default function EInvoiceCaseStudy() {
                     partnerships or private-business campaigns.
                   </p>
                 </div>
-                <div className="rounded-xl border border-ink-line bg-paper-soft/35 p-4">
+                <div className="overflow-hidden/35 p-4">
                   <p className="text-xs font-semibold text-violet-400">Technical</p>
                   <p className="mt-2 text-sm text-ink-soft">
                     Existing backends limit real-time integration for spending analysis
@@ -966,7 +962,7 @@ export default function EInvoiceCaseStudy() {
               <h3 className={CASE_STUDY_SECTION_TITLE_CLASS}>
                 What I&apos;d validate next
               </h3>
-              <ul className="list-disc space-y-2 pl-5 text-ink-soft leading-relaxed marker:text-ink0">
+              <ul className="list-disc space-y-2 pl-5 text-ink-soft leading-relaxed marker:text-ink-muted">
                 <li>
                   Production experiment on{" "}
                   <span className="text-ink-soft">when</span> optional home modules
@@ -985,7 +981,7 @@ export default function EInvoiceCaseStudy() {
                 </li>
               </ul>
             </div>
-            <div className="overflow-hidden rounded-2xl border border-ink-line bg-paper-soft">
+            <div className="overflow-hidden">
               <ImageLightbox
                 src="/case-studies/e-invoice/photo-stakeholder-meeting.png"
                 alt="Stakeholder meeting during the e-Invoice redesign project"
@@ -1005,7 +1001,7 @@ export default function EInvoiceCaseStudy() {
         </DesignJourneyCollapsible>
         <CaseStudyInViewSection
           id="figma-resources"
-          className="scroll-mt-28 space-y-4 rounded-2xl border border-ink-line bg-paper-soft p-6 sm:scroll-mt-32 sm:space-y-5 sm:p-8"
+          className="scroll-mt-28 space-y-4 overflow-hidden p-6 sm:scroll-mt-32 sm:space-y-5 sm:p-8"
         >
           <span className="text-xs font-semibold uppercase tracking-[0.14em] text-emerald-200/85">
             Figma files

@@ -1,23 +1,5 @@
 import type { ReactNode } from "react";
-
-function TldrTargetIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={2}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden
-    >
-      <circle cx="12" cy="12" r="10" />
-      <circle cx="12" cy="12" r="4" />
-      <path d="M12 2v2M12 20v2M2 12h2M20 12h2" />
-    </svg>
-  );
-}
+import { CS_META_LABEL, CS_SECTION_EYEBROW } from "@/lib/case-study-theme";
 
 export type CaseStudyHeroTldrMetric = {
   kicker: string;
@@ -29,58 +11,57 @@ export type CaseStudyHeroTldrMetric = {
 type Props = {
   headline: ReactNode;
   metrics: readonly CaseStudyHeroTldrMetric[];
-  /** Metric value color (default emerald for e-invoice). */
+  /** Section kicker above the headline (default Overview). */
+  sectionLabel?: string;
+  /** Metric value color (default ink). */
   metricValueClassName?: string;
 };
 
 /**
- * Light TL;DR band (e-invoice hero style): centered headline + metric cards.
+ * Overview band — Joseph Chen case study style: eyebrow, headline, border-top meta grid.
  */
 export function CaseStudyHeroTldr({
   headline,
   metrics,
-  metricValueClassName = "text-emerald-600",
+  sectionLabel = "Overview",
+  metricValueClassName = "text-ink",
 }: Props) {
   const gridClass =
     metrics.length >= 4
-      ? "sm:grid-cols-2 lg:grid-cols-4"
-      : "sm:grid-cols-2 lg:grid-cols-3";
+      ? "grid-cols-2 sm:grid-cols-4"
+      : metrics.length === 3
+        ? "grid-cols-1 sm:grid-cols-3"
+        : "grid-cols-1 sm:grid-cols-2";
 
   return (
-    <div className="rounded-[1.75rem] bg-white/80 p-6 text-zinc-900 backdrop-blur-sm sm:p-8 md:p-10">
-      <div className="flex flex-col items-center text-center">
-        <span className="inline-flex items-center gap-1.5 rounded-full bg-paper-soft px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-white">
-          <TldrTargetIcon className="h-3.5 w-3.5 opacity-90" />
-          TL;DR
-        </span>
-        <h2 className="mt-5 w-full max-w-5xl text-pretty text-2xl font-bold leading-[1.15] tracking-tight sm:text-3xl md:max-w-6xl md:text-[2rem] md:leading-[1.12]">
-          {headline}
-        </h2>
-      </div>
+    <div className="min-w-0">
+      <span className={CS_SECTION_EYEBROW}>{sectionLabel}</span>
+      <h2 className="mt-4 max-w-4xl text-pretty text-[2.125rem] font-medium leading-[1.25] tracking-[-0.025em] text-ink sm:mt-5">
+        {headline}
+      </h2>
 
-      <div className={`mt-8 grid gap-4 ${gridClass}`}>
+      <dl
+        className={`mt-8 grid ${gridClass} gap-x-6 gap-y-6 border-t border-ink-line pt-6`}
+      >
         {metrics.map((m) => (
-          <div
-            key={m.kicker + m.title}
-            className="flex flex-col rounded-2xl border border-zinc-200/90 bg-white p-5 shadow-sm"
-          >
-            <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-ink0">
-              {m.kicker}
-            </p>
-            <p
-              className={`mt-3 text-2xl font-bold tabular-nums tracking-tight sm:text-3xl ${metricValueClassName}`.trim()}
+          <div key={m.kicker + m.title} className="min-w-0">
+            <dt className={CS_META_LABEL}>{m.kicker}</dt>
+            <dd
+              className={`text-2xl font-medium tabular-nums tracking-tight sm:text-[1.75rem] ${metricValueClassName}`.trim()}
             >
               {m.value}
-            </p>
-            <p className="mt-2 text-sm font-semibold leading-snug text-zinc-900">
+            </dd>
+            <dd className="mt-2 text-sm font-medium leading-snug text-ink">
               {m.title}
-            </p>
+            </dd>
             {m.detail ? (
-              <p className="mt-2 text-xs leading-relaxed text-ink-faint">{m.detail}</p>
+              <dd className="mt-2 text-[15px] leading-[1.7] text-ink-soft">
+                {m.detail}
+              </dd>
             ) : null}
           </div>
         ))}
-      </div>
+      </dl>
     </div>
   );
 }

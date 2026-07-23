@@ -10,7 +10,7 @@ const ROLE_CHART_ALT =
 
 export function GovernmentBackendRoleChartLightbox() {
   return (
-    <div className="w-full rounded-xl border border-ink-line bg-paper-soft">
+    <div className="w-full overflow-hidden">
       <ImageLightbox
         src={ROLE_CHART_SRC}
         alt={ROLE_CHART_ALT}

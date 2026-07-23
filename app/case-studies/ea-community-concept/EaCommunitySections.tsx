@@ -91,7 +91,7 @@ export function ResearchStatsGrid() {
       {RESEARCH_STATS.map((stat) => (
         <div
           key={stat.value + stat.caption.slice(0, 12)}
-          className="flex flex-col rounded-2xl border border-ink-line bg-paper-soft p-5 sm:p-6"
+          className="flex flex-col overflow-hidden p-5 sm:p-6"
         >
           <p
             className="text-4xl font-bold tabular-nums tracking-tight sm:text-5xl"
@@ -109,7 +109,7 @@ export function ResearchStatsGrid() {
 export function PersonaBlock() {
   const p = ALEX_PERSONA;
   return (
-    <div className="max-w-3xl space-y-6 rounded-2xl border border-ink-line bg-paper-soft p-6 sm:p-8">
+    <div className="max-w-3xl space-y-6 overflow-hidden p-6 sm:p-8">
       <div className="space-y-2">
         <p className="text-xs font-semibold uppercase tracking-widest text-ink-muted">
           Persona

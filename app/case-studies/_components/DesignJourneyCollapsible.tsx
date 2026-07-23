@@ -19,7 +19,7 @@ function AccordionChevron({ open }: { open: boolean }) {
   return (
     <span
       aria-hidden
-      className={`shrink-0 text-zinc-400 transition-transform duration-200 ${
+      className={`shrink-0 text-ink-muted transition-transform duration-200 ${
         open ? "rotate-180" : ""
       }`}
     >
@@ -54,15 +54,10 @@ export function DesignJourneyCollapsible({
 }: {
   children: ReactNode;
   journeySectionIds: readonly string[];
-  /** Anchor id for the toggle row (TOC link target). */
   navAnchorId?: string;
-  /** Unique id for the collapsible panel (`aria-controls`). */
   panelId: string;
-  /** Accordion trigger title (e.g. “Design journey”, “Reflection”). */
   title?: string;
-  /** Optional secondary line under the title. */
   subtitle?: string;
-  /** Extra classes on the outer wrapper (spacing between stacked accordions). */
   className?: string;
 }) {
   const headingId = useId();
@@ -103,42 +98,36 @@ export function DesignJourneyCollapsible({
 
   return (
     <div
-      className={`scroll-mt-28 border-t border-zinc-800 pt-10 sm:scroll-mt-32 sm:pt-12 ${className}`.trim()}
+      className={`scroll-mt-28 border-t border-ink-line pt-10 sm:scroll-mt-32 sm:pt-12 ${className}`.trim()}
     >
-      <div className="overflow-hidden rounded-xl border border-zinc-800/90 bg-zinc-900/40">
-        <button
-          type="button"
-          id={navAnchorId}
-          onClick={toggle}
-          aria-expanded={open}
-          aria-controls={panelId}
-          className="flex w-full items-center justify-between gap-4 px-4 py-4 text-left transition hover:bg-zinc-900/55 sm:px-5 sm:py-4"
-        >
-          <span id={headingId} className="min-w-0">
-            <span className="block text-base font-semibold tracking-tight text-zinc-100 sm:text-lg">
-              {title}
-            </span>
-            {subtitle ? (
-              <span className="mt-1 block text-sm leading-snug text-zinc-400">
-                {subtitle}
-              </span>
-            ) : null}
+      <button
+        type="button"
+        id={navAnchorId}
+        onClick={toggle}
+        aria-expanded={open}
+        aria-controls={panelId}
+        className="flex w-full items-center justify-between gap-4 border-t border-ink py-4 text-left transition hover:opacity-80"
+      >
+        <span id={headingId} className="min-w-0">
+          <span className="block text-[15px] font-medium tracking-tight text-ink sm:text-base">
+            {title}
           </span>
-          <AccordionChevron open={open} />
-        </button>
-        <div
-          id={panelId}
-          role="region"
-          aria-labelledby={headingId}
-          hidden={!open}
-          className={
-            open
-              ? "border-t border-zinc-800/90 px-4 pb-6 pt-2 sm:px-5 sm:pb-8"
-              : "hidden"
-          }
-        >
-          {open ? <div className="pt-4">{children}</div> : null}
-        </div>
+          {subtitle ? (
+            <span className="mt-1 block text-[15px] leading-[1.7] text-ink-soft">
+              {subtitle}
+            </span>
+          ) : null}
+        </span>
+        <AccordionChevron open={open} />
+      </button>
+      <div
+        id={panelId}
+        role="region"
+        aria-labelledby={headingId}
+        hidden={!open}
+        className={open ? "pb-6 pt-2 sm:pb-8" : "hidden"}
+      >
+        {open ? <div className="pt-4">{children}</div> : null}
       </div>
     </div>
   );

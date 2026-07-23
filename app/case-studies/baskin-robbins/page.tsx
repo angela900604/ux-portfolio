@@ -134,7 +134,7 @@ export default function BaskinRobbinsCaseStudy() {
               />
             </div>
 
-            <div className="overflow-hidden rounded-2xl border border-ink-line bg-paper-soft">
+            <div className="overflow-hidden">
               <ImageLightbox
                 src={HERO_MEMBERSHIP.src}
                 alt={HERO_MEMBERSHIP.alt}
@@ -222,7 +222,7 @@ export default function BaskinRobbinsCaseStudy() {
             I was brought in to close that gap — design Taiwan&apos;s first BR31
             membership app from zero, aligned with Japan HQ, shipped in 3 months.
           </p>
-          <div className="overflow-hidden rounded-2xl border border-ink-line bg-paper-soft">
+          <div className="overflow-hidden">
             <ImageLightbox
               src={ASSET("japan-hq-cross-market-meeting.png")}
               alt="Video call with Japan HQ and Taiwan stakeholders—cross-market alignment for BR31 membership app, interpreter-supported reviews before build"
@@ -440,7 +440,7 @@ export default function BaskinRobbinsCaseStudy() {
               stage.
             </p>
           </div>
-          <div className="overflow-hidden rounded-2xl border border-ink-line bg-paper-soft">
+          <div className="overflow-hidden">
             <ImageLightbox
               src={PAGE_FLOW_MEMBER_ZONE.src}
               alt={PAGE_FLOW_MEMBER_ZONE.alt}

@@ -65,7 +65,7 @@ export default function GovernmentBackendCaseStudy() {
               <GovernmentBackendHeroTldr />
             </div>
 
-            <div className="overflow-hidden rounded-2xl border border-ink-line bg-paper-soft">
+            <div className="overflow-hidden">
               <ImageLightbox
                 src={BACKEND_COVER.src}
                 alt={BACKEND_COVER.alt}
@@ -127,7 +127,7 @@ export default function GovernmentBackendCaseStudy() {
           id="final-result"
           className="scroll-mt-28 sm:scroll-mt-32"
         >
-          <div className="overflow-hidden rounded-[20px] border border-ink-line bg-paper-soft">
+          <div className="overflow-hidden">
             <div className="relative w-full aspect-video">
               <video
                 className="absolute inset-0 h-full w-full bg-black object-contain"

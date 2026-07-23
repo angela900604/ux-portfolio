@@ -117,7 +117,7 @@ function ScreenFigure({
 }) {
   return (
     <figure>
-      <div className="overflow-hidden rounded-2xl border border-ink-line bg-paper-soft">
+      <div className="overflow-hidden">
         <ImageLightbox src={src} alt={alt} className="block w-full" disableHoverScale>
           <Image
             src={src}

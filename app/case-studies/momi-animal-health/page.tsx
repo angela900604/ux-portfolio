@@ -125,7 +125,7 @@ export default function MomiAnimalHealthCaseStudy() {
             {HERO_GALLERY.map((img, i) => (
               <div
                 key={img.src}
-                className="overflow-hidden rounded-2xl border border-ink-line bg-paper-soft"
+                className="overflow-hidden"
               >
                 <ImageLightbox
                   src={img.src}
@@ -156,7 +156,7 @@ export default function MomiAnimalHealthCaseStudy() {
             {TOUCHPOINT_CARDS.map((card) => (
               <article
                 key={card.title}
-                className="rounded-2xl border border-ink-line bg-paper-soft/35 p-5 sm:p-6"
+                className="overflow-hidden/35 p-5 sm:p-6"
               >
                 <h3 className="text-sm font-semibold tracking-tight text-ink sm:text-base">
                   {card.title}
@@ -193,7 +193,7 @@ export default function MomiAnimalHealthCaseStudy() {
                   key={photo.src}
                   src={photo.src}
                   alt={photo.alt}
-                  className="relative aspect-[4/3] w-full overflow-hidden rounded-xl border border-ink-line bg-paper-soft"
+                  className="relative aspect-[4/3] w-full overflow-hidden"
                   disableHoverScale
                 >
                   <Image

@@ -19,11 +19,11 @@ function PainBlock({
 }) {
   return (
     <div
-      className={`rounded-2xl border border-ink-line bg-paper-soft p-5 sm:p-6 ${cardAccentClassName}`}
+      className={`border-t border-ink-line pt-5 sm:pt-6 ${cardAccentClassName}`}
     >
       <div className="min-w-0 max-w-3xl space-y-4">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="inline-flex rounded-full border border-ink-line bg-paper-soft px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-ink">
+          <span className="inline-flex rounded-full bg-paper-soft px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-ink">
             {badge}
           </span>
           {segments.map((seg) => (
@@ -183,7 +183,7 @@ export function EInvoiceMultisegmentResearchSections() {
           Cross-group findings
         </p>
         <div className="grid gap-4 sm:gap-5 lg:grid-cols-2 lg:gap-6">
-          <div className="flex min-h-0 flex-col rounded-2xl border border-ink-line border-l-[3px] border-l-emerald-500 bg-paper-soft p-5 sm:p-6">
+          <div className="flex min-h-0 flex-col border-t border-ink pt-5 sm:pt-6">
             <p className="inline-flex w-fit rounded-full bg-emerald-600 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-white">
             Shared truth
             </p>
@@ -192,7 +192,7 @@ export function EInvoiceMultisegmentResearchSections() {
             scanning paper invoices.
             </p>
           </div>
-          <div className="flex min-h-0 flex-col rounded-2xl border border-ink-line border-l-[3px] border-l-orange-500 bg-paper-soft p-5 sm:p-6">
+          <div className="flex min-h-0 flex-col border-t border-ink pt-5 sm:pt-6">
             <p className="inline-flex w-fit rounded-full bg-orange-600 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-white">
             Conflict insights
             </p>

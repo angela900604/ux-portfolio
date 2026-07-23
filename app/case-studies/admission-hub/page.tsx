@@ -58,7 +58,7 @@ function Section({
       id={id}
       className={id ? "scroll-mt-28 sm:scroll-mt-32" : undefined}
     >
-      <span className="text-xs font-medium uppercase tracking-widest text-ink0">
+      <span className="text-xs font-medium uppercase tracking-widest text-ink-muted">
         {kicker}
       </span>
       {title ? <h2 className="mt-2 text-ink">{title}</h2> : null}
@@ -73,7 +73,7 @@ export default function AdmissionHubCaseStudy() {
       <header className="border-b border-ink-line">
         <div className={`${SITE_SHELL_INNER} py-12 sm:py-16`}>
           <div className={`${CASE_STUDY_BODY_GRID} min-w-0`}>
-            <div className="overflow-hidden rounded-2xl border border-ink-line bg-paper-soft">
+            <div className="overflow-hidden">
               <ImageLightbox
                 src={AH_ASSET("case-hero-cover.png")}
                 alt="Admission Hub promotional flyer mockup — Working Holiday COOP and Canada study messaging"
@@ -154,7 +154,7 @@ export default function AdmissionHubCaseStudy() {
           kicker="02 · What I did"
           title="A repeatable campaign + content system"
         >
-          <div className="mt-4 rounded-2xl border border-ink-line bg-paper-soft/35 p-6">
+          <div className="mt-4 overflow-hidden/35 p-6">
             <h5 className="text-ink">
               Email (Mailchimp) — how sends were structured
             </h5>
@@ -167,7 +167,7 @@ export default function AdmissionHubCaseStudy() {
               researching Canada options (lead generation), not just one-off
               announcements.
             </p>
-            <p className="mt-2 text-xs text-ink0 leading-relaxed max-w-3xl">
+            <p className="mt-2 text-xs text-ink-muted leading-relaxed max-w-3xl">
               Original campaign screenshots weren&apos;t preserved.
             </p>
             <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-ink-soft leading-relaxed max-w-3xl">
@@ -213,7 +213,7 @@ export default function AdmissionHubCaseStudy() {
             </div>
           </div>
 
-          <div className="mt-10 rounded-2xl border border-ink-line bg-paper-soft/35 p-6">
+          <div className="mt-10 overflow-hidden/35 p-6">
             <h5 className="text-ink">
               SEO + WordPress
             </h5>
@@ -256,7 +256,7 @@ export default function AdmissionHubCaseStudy() {
                       >
                         {item.label}
                       </a>
-                      <span className="text-ink0"> · WordPress</span>
+                      <span className="text-ink-muted"> · WordPress</span>
                     </li>
                   ))}
                 </ul>
@@ -265,7 +265,7 @@ export default function AdmissionHubCaseStudy() {
           </div>
 
           <div className="mt-10 grid gap-6 lg:grid-cols-2 lg:items-start">
-            <div className="rounded-2xl border border-ink-line bg-paper-soft/35 p-6">
+            <div className="overflow-hidden/35 p-6">
               <h5 className="text-ink">
                 Visuals for web + social
               </h5>
@@ -282,7 +282,7 @@ export default function AdmissionHubCaseStudy() {
                 the same story and CTAs.
               </p>
             </div>
-            <div className="rounded-2xl border border-ink-line bg-paper-soft/35 p-6">
+            <div className="overflow-hidden/35 p-6">
               <h5 className="text-ink">
                 Calendar hooks &amp; “utility” social
               </h5>
@@ -301,7 +301,7 @@ export default function AdmissionHubCaseStudy() {
                     >
                       {item.label}
                     </a>
-                    <span className="text-ink0"> · Instagram</span>
+                    <span className="text-ink-muted"> · Instagram</span>
                   </li>
                 ))}
               </ul>
@@ -329,22 +329,22 @@ export default function AdmissionHubCaseStudy() {
             account during the same stretch.
           </p>
 
-          <p className="mt-3 text-xs font-medium uppercase tracking-widest text-ink0">
+          <p className="mt-3 text-xs font-medium uppercase tracking-widest text-ink-muted">
             Instagram · typical post likes
           </p>
           <div className="mt-2 flex flex-wrap items-center gap-2 sm:gap-3">
             <span className="inline-flex items-center rounded-full border border-ink-line bg-paper-soft px-4 py-2 text-sm font-medium tabular-nums text-ink">
               ~5 likes
-              <span className="ml-2 text-xs font-normal text-ink0">
+              <span className="ml-2 text-xs font-normal text-ink-muted">
                 typical post (before)
               </span>
             </span>
-            <span className="text-ink0" aria-hidden>
+            <span className="text-ink-muted" aria-hidden>
               →
             </span>
             <span className="inline-flex items-center rounded-full border border-ink-line bg-paper-soft px-4 py-2 text-sm font-medium tabular-nums text-ink">
               ~30 likes
-              <span className="ml-2 text-xs font-normal text-ink0">
+              <span className="ml-2 text-xs font-normal text-ink-muted">
                 typical post (during)
               </span>
             </span>
