@@ -1,11 +1,19 @@
 "use client";
 
 import Link from "next/link";
-import { ProjectCardTag } from "@/app/components/ProjectCardTag";
 import { usePathname } from "next/navigation";
-import { getCaseStudyAsideMeta } from "@/lib/case-study-aside-meta";
+import {
+  getCaseStudyAsideMeta,
+  type CaseStudyAsideMeta,
+} from "@/lib/case-study-aside-meta";
 import { CASE_STUDY_PRIMARY_TITLE_CLASS } from "@/lib/site-shell";
 import { PORTFOLIO_LEFT_RAIL_CLASS } from "@/lib/portfolio-shell";
+
+function projectTypeTags(meta: CaseStudyAsideMeta): string[] {
+  if (meta.eyebrowTags?.length) return [...meta.eyebrowTags];
+  if (meta.eyebrow && meta.eyebrowAsProjectCardTag) return [meta.eyebrow];
+  return [];
+}
 
 /**
  * Case-study layout: left rail shows project title, subtitle, and at-a-glance
@@ -14,6 +22,7 @@ import { PORTFOLIO_LEFT_RAIL_CLASS } from "@/lib/portfolio-shell";
 export function CaseStudyLeftAside() {
   const pathname = usePathname() ?? "";
   const meta = getCaseStudyAsideMeta(pathname);
+  const typeTags = projectTypeTags(meta);
 
   return (
     <aside
@@ -21,17 +30,7 @@ export function CaseStudyLeftAside() {
       aria-label="Project summary"
     >
       <div className="min-w-0 shrink-0 space-y-3">
-        {meta.eyebrowTags && meta.eyebrowTags.length > 0 ? (
-          <div className="flex w-full max-w-full flex-wrap gap-2">
-            {meta.eyebrowTags.map((tag) => (
-              <ProjectCardTag key={tag}>{tag}</ProjectCardTag>
-            ))}
-          </div>
-        ) : meta.eyebrow && meta.eyebrowAsProjectCardTag ? (
-          <div className="group w-fit max-w-full">
-            <ProjectCardTag>{meta.eyebrow}</ProjectCardTag>
-          </div>
-        ) : meta.eyebrow ? (
+        {meta.eyebrow && !meta.eyebrowAsProjectCardTag && !meta.eyebrowTags?.length ? (
           <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-zinc-500">
             {meta.eyebrow}
           </p>
@@ -101,16 +100,22 @@ export function CaseStudyLeftAside() {
 
       {meta.items.length > 0 ? (
         <dl className="min-w-0 shrink-0 space-y-4">
-          {meta.items.map((row) => (
-            <div key={row.label}>
-              <dt className="text-[11px] font-medium uppercase tracking-[0.2em] text-zinc-500">
-                {row.label}
-              </dt>
-              <dd className="mt-0.5 text-sm font-medium leading-snug text-zinc-200">
-                {row.value}
-              </dd>
-            </div>
-          ))}
+          {meta.items.map((row) => {
+            const isProjectType = row.label === "Project type";
+            return (
+              <div key={row.label}>
+                <dt className="text-[11px] font-medium uppercase tracking-[0.2em] text-zinc-500">
+                  {row.label}
+                </dt>
+                <dd className="mt-0.5 space-y-1 text-sm font-medium leading-snug text-zinc-200">
+                  {isProjectType && typeTags.length > 0 ? (
+                    <p>{typeTags.join(" · ")}</p>
+                  ) : null}
+                  <p>{row.value}</p>
+                </dd>
+              </div>
+            );
+          })}
         </dl>
       ) : null}
     </aside>
