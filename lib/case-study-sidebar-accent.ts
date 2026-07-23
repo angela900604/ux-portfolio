@@ -23,6 +23,10 @@ const BY_SLUG: Record<string, CaseStudySidebarAccent> = {
     link: "text-[#6366F1]",
     linkHover: "hover:text-[#818cf8]",
   },
+  "ea-community-concept": {
+    link: "text-[#F97316]",
+    linkHover: "hover:text-[#fb923c]",
+  },
 };
 
 /** Sidebar link + CTA accent — matches each project’s in-page brand color. */
