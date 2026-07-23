@@ -40,7 +40,7 @@ export function MarketingSelectedWorkGrid({
         <li key={item.slug} className="min-h-0">
           <FadeInSection className="h-full" delay={0.05 + i * 0.05}>
             <Link href={item.href} className="group flex h-full flex-col">
-              <div className="relative aspect-[16/9] overflow-hidden bg-zinc-900/50">
+              <div className="relative aspect-[16/9] overflow-hidden rounded-xl bg-zinc-900/50">
                 <CoverMedia item={item} />
               </div>
 

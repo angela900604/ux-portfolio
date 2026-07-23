@@ -21,7 +21,7 @@ export function SettingHomeModulesVideo({
   return (
     <figure className={`w-full min-w-0 ${className}`.trim()}>
       <div
-        className="relative w-full max-w-full overflow-hidden rounded-xl border border-ink-line bg-paper-soft shadow-[inset_0_0_0_1px_rgba(255,255,255,0.04)]"
+        className="relative w-full max-w-full overflow-hidden rounded-xl border border-ink-line bg-paper-soft"
         style={{ aspectRatio: FRAME_ASPECT }}
       >
         <video

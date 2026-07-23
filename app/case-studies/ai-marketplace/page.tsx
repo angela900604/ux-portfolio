@@ -373,7 +373,7 @@ export default function AiMarketplaceCaseStudy() {
           id="create-listing-evolution"
           className="scroll-mt-28 sm:scroll-mt-32"
         >
-          <div className="relative overflow-hidden rounded-2xl border border-[#B75E45]/35 bg-gradient-to-br from-[#B75E45]/[0.14] via-paper/95 to-paper p-6 shadow-[0_28px_90px_-36px_rgba(183,94,69,0.45)] ring-1 ring-inset ring-white/[0.06] sm:rounded-3xl sm:p-8 lg:p-10">
+          <div className="relative overflow-hidden rounded-2xl border border-[#B75E45]/35 bg-gradient-to-br from-[#B75E45]/[0.14] via-paper/95 to-paper p-6 shadow-[0_28px_90px_-36px_rgba(183,94,69,0.45)] sm:rounded-3xl sm:p-8 lg:p-10">
             <div
               className="pointer-events-none absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-[#e8a090] via-[#B75E45] to-[#6b3828]"
               aria-hidden
@@ -543,7 +543,7 @@ export default function AiMarketplaceCaseStudy() {
             multiple complex flows fast without one-off specs.
           </p>
           <div className="w-full max-w-3xl space-y-3">
-            <div className="overflow-hidden rounded-xl border border-ink-line bg-paper-soft shadow-[0_0_0_1px_rgba(255,255,255,0.04)_inset]">
+            <div className="overflow-hidden rounded-xl border border-ink-line bg-paper-soft">
               <iframe
                 title="MINA UI component library portfolio (HTML)"
                 src="/case-studies/mina/ui_component_library_portfolio.html"

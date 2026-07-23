@@ -5,7 +5,7 @@
 export function MinaPrototypeVideo() {
   return (
     <div className="w-full max-w-[300px] min-w-0 shrink-0">
-      <div className="relative mx-auto rounded-[3rem] bg-gradient-to-b from-zinc-600 via-zinc-800 to-paper p-[11px] shadow-[0_28px_56px_-16px_rgba(0,0,0,0.75)] ring-1 ring-white/[0.12]">
+      <div className="relative mx-auto rounded-[3rem] bg-gradient-to-b from-zinc-600 via-zinc-800 to-paper p-[11px] shadow-[0_28px_56px_-16px_rgba(0,0,0,0.75)]">
         <div
           className="absolute -left-[3px] top-[22%] h-9 w-[3px] rounded-l-md bg-zinc-500/90 shadow-sm"
           aria-hidden

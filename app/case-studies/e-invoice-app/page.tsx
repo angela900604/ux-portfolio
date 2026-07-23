@@ -746,7 +746,7 @@ export default function EInvoiceCaseStudy() {
                       className="flex flex-col items-center gap-1.5 text-center"
                     >
                       <span
-                        className="h-11 w-11 rounded-xl shadow-md ring-1 ring-white/10 sm:h-12 sm:w-12"
+                        className="h-11 w-11 rounded-xl shadow-md sm:h-12 sm:w-12"
                         style={{ backgroundColor: s.hex }}
                         title={s.hex}
                       />

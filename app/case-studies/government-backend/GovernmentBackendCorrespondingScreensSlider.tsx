@@ -40,7 +40,7 @@ export function GovernmentBackendCorrespondingScreensSlider({
     <figure className="w-full min-w-0 max-w-4xl">
       <div
         ref={containerRef}
-        className="relative w-full cursor-ew-resize overflow-hidden rounded-2xl border border-ink-line bg-paper-soft shadow-[inset_0_0_0_1px_rgba(255,255,255,0.04)] touch-none select-none outline-none focus-visible:ring-2 focus-visible:ring-[#05C3DD]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-paper"
+        className="relative w-full cursor-ew-resize overflow-hidden rounded-2xl border border-ink-line bg-paper-soft touch-none select-none outline-none focus-visible:ring-2 focus-visible:ring-[#05C3DD]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-paper"
         style={{ aspectRatio: aspect }}
         onDragStartCapture={(e) => e.preventDefault()}
         onPointerDown={(e) => {
@@ -121,7 +121,7 @@ export function GovernmentBackendCorrespondingScreensSlider({
           }}
         />
         <div
-          className="pointer-events-none absolute top-1/2 z-[3] flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white bg-paper-soft/90 text-white shadow-lg ring-2 ring-zinc-950/40"
+          className="pointer-events-none absolute top-1/2 z-[3] flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-paper-soft/90 text-ink shadow-lg ring-2 ring-zinc-400/50"
           style={{ left: `${pos * 100}%` }}
           aria-hidden
         >

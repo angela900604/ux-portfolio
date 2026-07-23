@@ -47,7 +47,7 @@ export function CaseStudyHeroTldr({
       : "sm:grid-cols-2 lg:grid-cols-3";
 
   return (
-    <div className="rounded-[1.75rem] bg-white/80 p-6 text-zinc-900 shadow-[inset_0_1px_0_rgba(255,255,255,0.55)] ring-1 ring-white/40 backdrop-blur-sm sm:p-8 md:p-10">
+    <div className="rounded-[1.75rem] bg-white/80 p-6 text-zinc-900 backdrop-blur-sm sm:p-8 md:p-10">
       <div className="flex flex-col items-center text-center">
         <span className="inline-flex items-center gap-1.5 rounded-full bg-paper-soft px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-white">
           <TldrTargetIcon className="h-3.5 w-3.5 opacity-90" />

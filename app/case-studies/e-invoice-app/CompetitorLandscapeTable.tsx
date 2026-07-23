@@ -78,7 +78,7 @@ function CompetitorCard({
   summary: string;
 }) {
   return (
-    <div className="rounded-xl border border-ink-line bg-paper-soft/25 px-4 py-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)] sm:px-5 sm:py-4">
+    <div className="rounded-xl border border-ink-line bg-paper-soft/25 px-4 py-4 sm:px-5 sm:py-4">
       <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
         <p className="text-base font-semibold tracking-tight text-ink">{name}</p>
         <span className={`text-[11px] font-medium uppercase tracking-wide ${tagClass}`}>

@@ -196,10 +196,10 @@ export default function PhyphyyaCaseStudy() {
                   coexist harmoniously, offering both freshness and warm vintage ambiance.
                 </p>
                 <div className="flex gap-[15px] mt-[15px] pl-[18px]">
-                  <div className="w-[40px] h-[40px] rounded-full border-2 border-white shadow-[0_2px_5px_rgba(0,0,0,0.1)]" style={{ backgroundColor: "#8D99AE" }} />
-                  <div className="w-[40px] h-[40px] rounded-full border-2 border-white shadow-[0_2px_5px_rgba(0,0,0,0.1)]" style={{ backgroundColor: "#D4C5B0" }} />
-                  <div className="w-[40px] h-[40px] rounded-full border-2 border-white shadow-[0_2px_5px_rgba(0,0,0,0.1)]" style={{ backgroundColor: "#F5F3EF" }} />
-                  <div className="w-[40px] h-[40px] rounded-full border-2 border-white shadow-[0_2px_5px_rgba(0,0,0,0.1)]" style={{ backgroundColor: "#4A4A4A" }} />
+                  <div className="w-[40px] h-[40px] rounded-full shadow-[0_2px_5px_rgba(0,0,0,0.1)]" style={{ backgroundColor: "#8D99AE" }} />
+                  <div className="w-[40px] h-[40px] rounded-full shadow-[0_2px_5px_rgba(0,0,0,0.1)]" style={{ backgroundColor: "#D4C5B0" }} />
+                  <div className="w-[40px] h-[40px] rounded-full shadow-[0_2px_5px_rgba(0,0,0,0.1)]" style={{ backgroundColor: "#F5F3EF" }} />
+                  <div className="w-[40px] h-[40px] rounded-full shadow-[0_2px_5px_rgba(0,0,0,0.1)]" style={{ backgroundColor: "#4A4A4A" }} />
                 </div>
               </div>
 
