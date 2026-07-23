@@ -15,7 +15,7 @@ type AskRequestBody = {
   history?: HistoryMessage[];
 };
 
-const ANTHROPIC_MODEL = "claude-sonnet-4-20250514";
+const ANTHROPIC_MODEL = "claude-sonnet-5";
 
 export async function POST(request: Request) {
   let body: AskRequestBody;
