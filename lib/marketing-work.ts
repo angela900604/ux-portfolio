@@ -13,6 +13,8 @@ export type MarketingWorkItem = {
   slug: string;
   href: string;
   title: string;
+  /** One-line summary under the title on the homepage grid. */
+  description: string;
   /** Used with left-rail “Product design” / “Marketing design” on the home grid. */
   portfolioFocus: PortfolioWorkFocus;
   /** Tag pills under the title (homepage + case-study left rail when merged). */
@@ -82,6 +84,8 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     portfolioFocus: "product",
     title:
       "Redesigning Taiwan Ministry of Finance's Uniform Invoice Award Redemption App",
+    description:
+      "A government service used by 20M people—research-led IA, accessibility, and ship-ready UI across 30+ sessions.",
     disciplineTags: ["PUBLIC SERVICE application · user research"],
     year: "2024–2025",
     cover: { kind: "e-invoice" },
@@ -92,6 +96,8 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     href: "/case-studies/ai-marketplace",
     portfolioFocus: "product",
     title: "MINA · AI-Powered Marketplace Community for SF Parents",
+    description:
+      "Sole designer on a live iOS marketplace—listing funnel lift, AI trust surfaces, and a 50+ component design system.",
     disciplineTags: ["AI-driven community · Mobile app"],
     year: "2025–2026",
     cover: { kind: "mina" },
@@ -102,6 +108,8 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     href: "/case-studies/government-backend",
     portfolioFocus: "product",
     title: "Internal Backend Platform for 600+ government staff",
+    description:
+      "Role-based admin platform for Ministry of Finance staff supporting Taiwan's e-invoice lottery operations.",
     disciplineTags: ["Responsive · Web · 600+ Users"],
     year: "2024–2025",
     cover: { kind: "image", src: GOV_COVER },
@@ -112,6 +120,8 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     href: "/case-studies/baskin-robbins",
     portfolioFocus: "product",
     title: "Cross-market with Japan HQ · BR31 Taiwan membership app",
+    description:
+      "End-to-end UX/UI for Taiwan's 31 Club loyalty app—cross-market alignment with Japan HQ, MVP on schedule.",
     disciplineTags: ["Mobile · Cross-market JP×TW"],
     year: "2024–2025",
     cover: { kind: "image", src: "/case-studies/baskin-robbins/home-cover.png" },
@@ -122,6 +132,8 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     href: "/case-studies/atlas-nova",
     portfolioFocus: "product",
     title: "AtlasNova · UI for AI-assisted document generation",
+    description:
+      "Document generation UI for an enterprise macOS AI platform—onboarding, split-pane workspace, and status patterns.",
     disciplineTags: ["Enterprise AI · macOS · Document generation"],
     year: "2023",
     techHighlights: ATLAS_NOVA_HOME_TECH_HIGHLIGHTS,
@@ -133,6 +145,8 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     portfolioFocus: "product",
     title:
       "Community & Social Discovery Concept — EA Industry Hackathon",
+    description:
+      "A 24-hour EA-sponsored hackathon concept—research, personas, and task flows for social discovery among gamers.",
     disciplineTags: ["Hackathon · Social Discovery · Concept"],
     year: "2023",
     techHighlights: EA_COMMUNITY_HOME_TECH_HIGHLIGHTS,
@@ -143,6 +157,8 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     href: "/case-studies/ai-marketplace/marketing",
     portfolioFocus: "marketing",
     title: "MINA · Instagram",
+    description:
+      "Launch and community content for MINA—Instagram grid, campaign graphics, and social storytelling.",
     disciplineTags: ["Content strategy & creation"],
     year: "2025",
     cover: {
@@ -156,6 +172,8 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     href: "/case-studies/phyphyya",
     portfolioFocus: "marketing",
     title: "Haphy Living (Brand IP)",
+    description:
+      "A rabbit-inspired brand IP from illustration through POD production to an Etsy storefront.",
     disciplineTags: ["Branding · ecommerce"],
     year: "2023–2024",
     cover: { kind: "image", src: "/case-studies/phyphyya/gallery-14.png" },
@@ -176,6 +194,8 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     href: "/case-studies/momi-animal-health",
     portfolioFocus: "marketing",
     title: "MOMI Animal Health",
+    description:
+      "Social, event, and ecommerce graphics for a Taiwan animal-health brand across digital and in-person touchpoints.",
     disciplineTags: ["graphic design · content creation · Event coordination · ecommerce"],
     year: "2021",
     cover: {
@@ -188,6 +208,8 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     href: "/case-studies/admission-hub",
     portfolioFocus: "marketing",
     title: "Admission Hub",
+    description:
+      "Instagram, SEO, and long-form content for a study-abroad consultancy rebuilding visibility and trust.",
     disciplineTags: ["Social media management · Content strategy · Copywriting · Search engine optimization"],
     year: "2022",
     cover: { kind: "image", src: "/case-studies/admission-hub/home-cover.png" },

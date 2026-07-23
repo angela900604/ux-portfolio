@@ -43,6 +43,23 @@ export function ProjectTechHighlights({
   );
 }
 
+/** Joseph Chen–style category pill on the homepage work grid. */
+export function HomeProjectCategoryBadge({
+  children,
+  className = "",
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <span
+      className={`inline-flex items-center whitespace-nowrap rounded-full border border-zinc-700 px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.2em] text-zinc-500 ${className}`.trim()}
+    >
+      {children}
+    </span>
+  );
+}
+
 /** Green shipped pill for homepage UX / product case cards. */
 export function ProjectShippedBadge({
   className = "",

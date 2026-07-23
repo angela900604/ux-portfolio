@@ -8,6 +8,13 @@ import { SITE_GUTTER_CLASS, SITE_SHELL_CONTAINER } from "@/lib/site-shell";
 
 const HOVER_NAV = "transition hover:text-[color:var(--nav-accent-blue)]";
 
+/** Joseph Chen–style nav: 12px uppercase links with wide tracking. */
+const NAV_LINKS_CLASS =
+  "flex items-center gap-6 text-[12px] font-medium uppercase tracking-[0.16em] sm:gap-8";
+
+const NAV_LINK_BASE =
+  "inline-flex min-h-[44px] items-center px-1 transition-opacity";
+
 const CLOCK_CLASS =
   "pointer-events-none absolute left-1/2 top-1/2 z-0 max-w-[min(100%,14rem)] -translate-x-1/2 -translate-y-1/2 truncate text-center text-[10px] font-medium uppercase leading-tight tracking-[0.18em] text-zinc-600 sm:max-w-none sm:text-[11px] sm:tracking-[0.2em]";
 
@@ -36,18 +43,18 @@ export function SiteTopNav() {
   const pathname = usePathname();
   const tick = useLocaleDateTime();
 
-  const brandClass = `min-w-0 shrink text-base font-normal uppercase tracking-[0.14em] text-zinc-300 ${HOVER_NAV}`;
+  const brandClass = `min-w-0 shrink text-base font-normal text-zinc-300 ${HOVER_NAV}`;
 
   const navLinkClass = (href: string) => {
     const active =
       href === "/"
         ? pathname === "/"
         : pathname === href || pathname.startsWith(`${href}/`);
-    return `${
+    return `${NAV_LINK_BASE} ${
       active
-        ? "font-medium text-[color:var(--nav-accent-blue)]"
-        : `text-zinc-500 ${HOVER_NAV}`
-    } uppercase tracking-[0.14em]`;
+        ? "opacity-100 text-zinc-200"
+        : `opacity-80 text-zinc-500 hover:opacity-100 ${HOVER_NAV}`
+    }`;
   };
 
   return (
@@ -64,7 +71,7 @@ export function SiteTopNav() {
         <p className={CLOCK_CLASS} aria-live="polite" aria-atomic="true">
           {tick || "\u00a0"}
         </p>
-        <nav className="relative z-[1] flex flex-1 shrink-0 items-center justify-end gap-6 text-sm sm:gap-8 sm:text-base">
+        <nav className={`relative z-[1] flex flex-1 shrink-0 items-center justify-end ${NAV_LINKS_CLASS}`}>
           <Link href="/" className={navLinkClass("/")}>
             Home
           </Link>
@@ -90,7 +97,7 @@ export function SiteTopNav() {
             <p className={CLOCK_CLASS} aria-live="polite" aria-atomic="true">
               {tick || "\u00a0"}
             </p>
-            <nav className="relative z-[1] flex flex-1 shrink-0 items-center justify-end gap-6 text-sm sm:gap-8 sm:text-base">
+            <nav className={`relative z-[1] flex flex-1 shrink-0 items-center justify-end ${NAV_LINKS_CLASS}`}>
               <Link href="/" className={navLinkClass("/")}>
                 Home
               </Link>
