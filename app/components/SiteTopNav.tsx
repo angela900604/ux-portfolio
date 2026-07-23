@@ -44,9 +44,12 @@ export function SiteTopNav({ theme = "dark" }: { theme?: "dark" | "paper" }) {
   const tick = useLocaleDateTime();
   const isPaper = theme === "paper";
 
+  const brandTypography =
+    "text-[12px] font-medium uppercase tracking-[0.16em]";
+
   const brandClass = isPaper
-    ? "min-w-0 shrink text-base font-normal text-ink transition hover:opacity-70"
-    : `min-w-0 shrink text-base font-normal text-zinc-300 ${HOVER_NAV}`;
+    ? `${NAV_LINK_BASE} ${brandTypography} text-ink transition hover:opacity-80`
+    : `${NAV_LINK_BASE} ${brandTypography} text-zinc-300 ${HOVER_NAV}`;
 
   const navLinkClass = (href: string) => {
     const active =

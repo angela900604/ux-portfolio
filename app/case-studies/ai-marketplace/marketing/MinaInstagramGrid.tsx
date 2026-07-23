@@ -36,7 +36,7 @@ export function MinaInstagramGrid() {
       {MOCKUPS.map((item, index) => (
         <figure
           key={item.src}
-          className="min-w-0 overflow-hidden overflow-hidden bg-paper"
+          className="min-w-0 overflow-hidden bg-zinc-900"
         >
           <ImageLightbox
             src={item.src}

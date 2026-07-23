@@ -103,21 +103,21 @@ function StoryBeat({
   const isConflict = kind === "conflict";
   const isOutcome = kind === "outcome";
 
-  const cardClass = "border-t border-ink pt-4";
+  const cardClass = "border-t border-zinc-600 pt-4";
 
   const headlineClass = isOutcome
     ? largeHeadline
-      ? "text-base font-semibold leading-snug text-ink sm:text-lg md:text-[1.35rem] md:leading-snug"
-      : "text-base font-semibold leading-snug text-ink sm:text-lg md:text-xl"
+      ? "text-base font-semibold leading-snug text-zinc-100 sm:text-lg md:text-[1.35rem] md:leading-snug"
+      : "text-base font-semibold leading-snug text-zinc-100 sm:text-lg md:text-xl"
     : largeHeadline
-      ? "text-base font-semibold leading-snug tracking-tight text-ink sm:text-lg md:text-[1.35rem] md:leading-snug lg:text-[1.5rem]"
-      : "text-lg font-semibold leading-snug text-ink sm:text-xl md:text-2xl";
+      ? "text-base font-semibold leading-snug tracking-tight text-zinc-100 sm:text-lg md:text-[1.35rem] md:leading-snug lg:text-[1.5rem]"
+      : "text-lg font-semibold leading-snug text-zinc-100 sm:text-xl md:text-2xl";
 
   const detailClass = isOutcome
-    ? "mt-1 text-[13px] font-normal leading-relaxed text-ink-soft sm:text-sm"
+    ? "mt-1 text-[13px] font-normal leading-relaxed text-zinc-400 sm:text-sm"
     : largeHeadline
-      ? "mt-2 text-sm font-normal leading-relaxed text-ink-soft sm:text-[0.9375rem]"
-      : "mt-2 text-sm font-normal leading-relaxed text-ink-soft sm:text-[0.9375rem]";
+      ? "mt-2 text-sm font-normal leading-relaxed text-zinc-400 sm:text-[0.9375rem]"
+      : "mt-2 text-sm font-normal leading-relaxed text-zinc-400 sm:text-[0.9375rem]";
 
   return (
     <div className={isConflict ? "relative my-2 pl-10" : "relative pl-10"}>
@@ -159,7 +159,7 @@ function StoryBeat({
 
 /** Same headline scale as {@link StoryBeat} with `largeHeadline` (e.g. Decision cards). */
 const STORY_OUTCOME_CALLOUT_HEADLINE_CLASS =
-  "mt-3 max-w-3xl text-base font-semibold leading-snug tracking-tight text-ink sm:text-lg md:text-[1.35rem] md:leading-snug lg:text-[1.5rem]";
+  "mt-3 max-w-3xl text-base font-semibold leading-snug tracking-tight text-zinc-100 sm:text-lg md:text-[1.35rem] md:leading-snug lg:text-[1.5rem]";
 
 /** Full-width outcome callout: no timeline rail (Section 1). Dark surface, accent rail—no mint fill. */
 function StoryOutcomeCallout({
@@ -171,13 +171,13 @@ function StoryOutcomeCallout({
   detail?: ReactNode;
 }) {
   return (
-    <div className="mt-8 max-w-4xl border-t border-ink pt-6 sm:pt-7">
+    <div className="mt-8 max-w-4xl border-t border-zinc-600 pt-6 sm:pt-7">
       <span className="inline-flex rounded-full border border-emerald-500/80 bg-emerald-500/80 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-emerald-50">
         Outcome
       </span>
       <p className={STORY_OUTCOME_CALLOUT_HEADLINE_CLASS}>{headline}</p>
       {detail !== null && detail !== undefined && detail !== "" ? (
-        <p className="mt-3 max-w-3xl text-sm font-normal leading-relaxed text-ink-soft sm:text-base">
+        <p className="mt-3 max-w-3xl text-sm font-normal leading-relaxed text-zinc-400 sm:text-base">
           {detail}
         </p>
       ) : null}
@@ -302,8 +302,8 @@ const FINAL_SOLUTION_MARQUEE_SLIDES = FINAL_SOLUTION_SCREENS.flatMap((item) => {
 
 export default function EInvoiceCaseStudy() {
   return (
-    <article className="min-h-screen bg-paper text-ink">
-      <header className="border-b border-ink-line">
+    <article className="min-h-screen">
+      <header className="border-b border-zinc-800">
         <div className={`${SITE_SHELL_INNER} py-12 sm:py-16`}>
           <div
             className={`${CASE_STUDY_BODY_GRID} min-w-0 overflow-x-hidden space-y-10 sm:space-y-12`}
@@ -349,13 +349,13 @@ export default function EInvoiceCaseStudy() {
       </CaseStudyInViewSection>
 
       <CaseStudyContentLayout containerClassName="!pt-0 sm:!pt-0">
-        <div className="space-y-16 border-t border-ink-line pt-14 sm:space-y-20 sm:pt-16">
+        <div className="space-y-16 border-t border-zinc-800 pt-14 sm:space-y-20 sm:pt-16">
             <section
               id="e-invoice-story-1-homepage"
               className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
             >
               <header className="space-y-2">
-                <span className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-soft">
+                <span className="text-xs font-semibold uppercase tracking-[0.14em] text-zinc-400">
                   Solution 1
                 </span>
                 <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>The Homepage</h2>
@@ -393,12 +393,12 @@ export default function EInvoiceCaseStudy() {
                     headline={
                       <>
                         <span className="block">
-                          <span className="font-semibold text-ink-soft">1.</span>{" "}
+                          <span className="font-semibold text-zinc-400">1.</span>{" "}
                           Foreign residents needed readable text to decode controls—not
                           icon-only cues.
                         </span>
                         <span className="mt-3 block">
-                          <span className="font-semibold text-ink-soft">2.</span>{" "}
+                          <span className="font-semibold text-zinc-400">2.</span>{" "}
                           Low-vision users needed predictable, stable placement and
                           large, labeled CTAs instead of small icons.
                         </span>
@@ -424,10 +424,10 @@ export default function EInvoiceCaseStudy() {
 
             <section
               id="e-invoice-story-2-accessibility"
-              className="scroll-mt-28 space-y-6 border-t border-ink-line pt-14 sm:scroll-mt-32 sm:pt-16"
+              className="scroll-mt-28 space-y-6 border-t border-zinc-800 pt-14 sm:scroll-mt-32 sm:pt-16"
             >
               <header className="space-y-2">
-                <span className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-soft">
+                <span className="text-xs font-semibold uppercase tracking-[0.14em] text-zinc-400">
                   Solution 2
                 </span>
                 <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
@@ -448,21 +448,21 @@ export default function EInvoiceCaseStudy() {
                       <span className="mt-3 block">
                         What showed up consistently in interviews was a shared priority
                         order: a prominent{" "}
-                        <span className="text-ink-soft">scan paper invoice</span>{" "}
+                        <span className="text-zinc-400">scan paper invoice</span>{" "}
                         action first; then the{" "}
-                        <span className="text-ink-soft">in-app carrier barcode</span>{" "}
+                        <span className="text-zinc-400">in-app carrier barcode</span>{" "}
                         for people who don&apos;t use iPhone or Android home-screen
                         widgets and need to show the code as soon as they open the app;
                         then{" "}
-                        <span className="text-ink-soft">
+                        <span className="text-zinc-400">
                           not missing prize / lottery information
                         </span>{" "}
                         for younger and middle-aged users; then{" "}
-                        <span className="text-ink-soft">spending analysis</span> for
+                        <span className="text-zinc-400">spending analysis</span> for
                         younger users—often richer here than in standalone budgeting
                         apps. The outreach zone wasn&apos;t among the top reasons people
                         launched the app.{" "}
-                        <span className="text-ink-soft">Prototype testing</span> fed back
+                        <span className="text-zinc-400">Prototype testing</span> fed back
                         the same story.
                       </span>
                     </>
@@ -496,10 +496,10 @@ export default function EInvoiceCaseStudy() {
 
             <section
               id="e-invoice-story-3-login"
-              className="scroll-mt-28 space-y-6 border-t border-ink-line pt-14 sm:scroll-mt-32 sm:pt-16"
+              className="scroll-mt-28 space-y-6 border-t border-zinc-800 pt-14 sm:scroll-mt-32 sm:pt-16"
             >
               <header className="space-y-2">
-                <span className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-soft">
+                <span className="text-xs font-semibold uppercase tracking-[0.14em] text-zinc-400">
                   Solution 3
                 </span>
                 <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
@@ -525,10 +525,10 @@ export default function EInvoiceCaseStudy() {
 
             <section
               id="e-invoice-story-4-onboarding"
-              className="scroll-mt-28 space-y-6 border-t border-ink-line pt-14 sm:scroll-mt-32 sm:pt-16"
+              className="scroll-mt-28 space-y-6 border-t border-zinc-800 pt-14 sm:scroll-mt-32 sm:pt-16"
             >
               <header className="space-y-2">
-                <span className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-soft">
+                <span className="text-xs font-semibold uppercase tracking-[0.14em] text-zinc-400">
                   Solution 4
                 </span>
                 <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
@@ -559,14 +559,14 @@ export default function EInvoiceCaseStudy() {
         <div className="flex min-w-0 flex-col gap-10 sm:gap-12">
           <CaseStudyInViewSection
             id="e-invoice-handoff"
-            className="scroll-mt-28 border-t border-ink-line pt-10 sm:scroll-mt-32 sm:pt-12"
+            className="scroll-mt-28 border-t border-zinc-800 pt-10 sm:scroll-mt-32 sm:pt-12"
           >
             <div className="max-w-4xl space-y-4">
               <h3 className={CASE_STUDY_SECTION_TITLE_CLASS}>
                 Handoff &amp; engineering alignment
               </h3>
-              <div className="text-sm leading-relaxed text-ink-soft sm:text-base">
-                <p className="font-medium text-ink-soft">
+              <div className="text-sm leading-relaxed text-zinc-400 sm:text-base">
+                <p className="font-medium text-zinc-400">
                   Handoff included three layers:
                 </p>
                 <ul className="mt-4 list-none space-y-3.5">
@@ -576,7 +576,7 @@ export default function EInvoiceCaseStudy() {
                       aria-hidden
                     />
                     <span>
-                      <span className="font-semibold text-ink-soft">
+                      <span className="font-semibold text-zinc-400">
                         API state matrix
                       </span>
                       {" — "}
@@ -590,7 +590,7 @@ export default function EInvoiceCaseStudy() {
                       aria-hidden
                     />
                     <span>
-                      <span className="font-semibold text-ink-soft">
+                      <span className="font-semibold text-zinc-400">
                         Screen reader annotation
                       </span>
                       {" — "}
@@ -603,7 +603,7 @@ export default function EInvoiceCaseStudy() {
                       aria-hidden
                     />
                     <span>
-                      <span className="font-semibold text-ink-soft">
+                      <span className="font-semibold text-zinc-400">
                         Component specs
                       </span>
                       {" — "}
@@ -644,10 +644,10 @@ export default function EInvoiceCaseStudy() {
           id="functional-map"
           className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-ink-muted">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Functional map
           </span>
-          <p className="max-w-3xl text-sm leading-relaxed text-ink-soft sm:text-base">
+          <p className="max-w-3xl text-sm leading-relaxed text-zinc-400 sm:text-base">
             Before moving to wireframe, I mapped out{" "}
             <span className={JOURNEY_EMPHASIS}>functional map</span> for all
             features (login, home, prize redemptions, etc) and{" "}
@@ -677,14 +677,14 @@ export default function EInvoiceCaseStudy() {
           className="scroll-mt-28 space-y-12 sm:scroll-mt-32"
         >
           <div className="max-w-3xl space-y-4">
-            <p className="max-w-3xl text-sm leading-relaxed text-ink-soft sm:text-base">
+            <p className="max-w-3xl text-sm leading-relaxed text-zinc-400 sm:text-base">
               In user interviews, people described how they wanted the app to
               feel in everyday use—easy to scan, calm, and not overwhelming.
               They said they wanted something that felt familiar and light, not
               stiff or crowded. Those conversations kept circling back to the
               same qualities, which we captured as:
             </p>
-            <p className="text-xs font-medium uppercase tracking-wider text-ink-muted">
+            <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">
               Interview keywords
             </p>
             <ul
@@ -709,15 +709,15 @@ export default function EInvoiceCaseStudy() {
               <h3 className={CASE_STUDY_SECTION_TITLE_CLASS}>
                 Vibrant, Life, Fun
               </h3>
-              <p className="text-ink-soft leading-relaxed">
+              <p className="text-zinc-400 leading-relaxed">
                 The approved route stayed closest to daily behavior: a
                 multi-color system where{" "}
-                <span className="text-ink-soft">hue signals function</span>, larger
+                <span className="text-zinc-400">hue signals function</span>, larger
                 readable type, and rounded cards/buttons that lower intimidation
                 for mixed-skill users. This matched interview keywords
                 (intuitive, simple, clean) while keeping public-service trust.
               </p>
-              <p className="text-ink-soft leading-relaxed">
+              <p className="text-zinc-400 leading-relaxed">
                 Compared with modern minimal and professional practical, this
                 direction best balanced recognition speed for silver users and
                 visual clarity for younger users. It improved scan-findability,
@@ -732,7 +732,7 @@ export default function EInvoiceCaseStudy() {
                 alt="Person using a phone outdoors in an urban setting, sunny lifestyle context"
               />
               <div>
-                <p className="text-xs font-medium uppercase tracking-wider text-ink-muted">
+                <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">
                   Palette
                 </p>
                 <ul className="mt-3 flex flex-wrap gap-3">
@@ -746,9 +746,9 @@ export default function EInvoiceCaseStudy() {
                         style={{ backgroundColor: s.hex }}
                         title={s.hex}
                       />
-                      <span className="max-w-[5.5rem] text-[10px] leading-tight text-ink-muted">
+                      <span className="max-w-[5.5rem] text-[10px] leading-tight text-zinc-500">
                         {s.name}
-                        <span className="block font-mono text-ink-soft">{s.hex}</span>
+                        <span className="block font-mono text-zinc-400">{s.hex}</span>
                       </span>
                     </li>
                   ))}
@@ -761,7 +761,7 @@ export default function EInvoiceCaseStudy() {
             <h3 className={CASE_STUDY_SECTION_TITLE_CLASS}>
               Mockups &amp; design system
             </h3>
-            <p className="text-ink-soft leading-relaxed">
+            <p className="text-zinc-400 leading-relaxed">
               High-fidelity work used the iOS / iPadOS UI Kit as a baseline—native
               components, predictable spacing, and patterns that engineering could map
               quickly to production constraints.
@@ -779,54 +779,54 @@ export default function EInvoiceCaseStudy() {
               <span className={M_TXT}>88%</span> success and a clear fix list for login,
               invoice management, and prize flows.
             </h2>
-            <p className="max-w-3xl text-sm leading-relaxed text-ink-soft">
+            <p className="max-w-3xl text-sm leading-relaxed text-zinc-400">
               One-on-one observation on core tasks; errors and satisfaction tracked so
               VoiceOver paths, visual hierarchy, and plain-language fixes could ship
               before launch—not relegated to a late &quot;a11y pass.&quot;
             </p>
             <div className="overflow-hidden p-6">
-              <h4 className="text-ink">
+              <h4 className="text-zinc-100">
                 Results summary (prototype)
               </h4>
               <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 text-sm">
-                <div className="flex justify-between gap-4 border-b border-ink-line py-2">
-                  <span className="text-ink-soft">Overall</span>
+                <div className="flex justify-between gap-4 border-b border-zinc-800 py-2">
+                  <span className="text-zinc-400">Overall</span>
                   <span className={M_TXT}>88%</span>
                 </div>
-                <div className="flex justify-between gap-4 border-b border-ink-line py-2">
-                  <span className="text-ink-soft">Login &amp; registration</span>
+                <div className="flex justify-between gap-4 border-b border-zinc-800 py-2">
+                  <span className="text-zinc-400">Login &amp; registration</span>
                   <span className={M_TXT}>75%</span>
                 </div>
-                <div className="flex justify-between gap-4 border-b border-ink-line py-2">
-                  <span className="text-ink-soft">Carrier binding</span>
+                <div className="flex justify-between gap-4 border-b border-zinc-800 py-2">
+                  <span className="text-zinc-400">Carrier binding</span>
                   <span className={M_TXT}>67%</span>
                 </div>
-                <div className="flex justify-between gap-4 border-b border-ink-line py-2">
-                  <span className="text-ink-soft">Invoice wallet &amp; donation</span>
+                <div className="flex justify-between gap-4 border-b border-zinc-800 py-2">
+                  <span className="text-zinc-400">Invoice wallet &amp; donation</span>
                   <span className={M_TXT}>83%</span>
                 </div>
-                <div className="flex justify-between gap-4 border-b border-ink-line py-2">
-                  <span className="text-ink-soft">Scan &amp; prize redemption</span>
+                <div className="flex justify-between gap-4 border-b border-zinc-800 py-2">
+                  <span className="text-zinc-400">Scan &amp; prize redemption</span>
                   <span className={M_TXT}>92%</span>
                 </div>
-                <div className="flex justify-between gap-4 border-b border-ink-line py-2">
-                  <span className="text-ink-soft">Spending analysis</span>
+                <div className="flex justify-between gap-4 border-b border-zinc-800 py-2">
+                  <span className="text-zinc-400">Spending analysis</span>
                   <span className={M_TXT}>100%</span>
                 </div>
               </div>
-              <p className="mt-4 text-sm text-ink-soft">
+              <p className="mt-4 text-sm text-zinc-400">
                 Errors: average{" "}
                 <span className={M_TIME}>1.3</span> errors per participant—mostly form
                 entry and unclear prompts. Shortest task: scan &amp; prize redemption (
                 <span className={M_TIME}>~40s</span> avg.). Longest: carrier binding (
                 <span className={M_TIME}>~2m 20s</span> avg.).
               </p>
-              <p className="mt-3 text-sm text-ink-soft">
+              <p className="mt-3 text-sm text-zinc-400">
                 <span className={E_INVOICE_ACCENT_LABEL}>What worked:</span> scan &amp;
                 prize check with visual/audio feedback; homepage layout (especially for
                 elderly); spending charts valued by younger users.
               </p>
-              <p className="mt-2 text-sm text-ink-soft">
+              <p className="mt-2 text-sm text-zinc-400">
                 <span className={E_INVOICE_ACCENT_LABEL}>What didn&apos;t:</span>{" "}
                 first-run length still a tension for some (optional steps skipped);
                 multi-language prompts unclear; prize redemption steps confusing.
@@ -863,13 +863,13 @@ export default function EInvoiceCaseStudy() {
               The hardest part was to balance all the various and conflicting needs
               from all age groups.
             </h2>
-            <div className="max-w-3xl space-y-4 text-ink-soft leading-relaxed">
+            <div className="max-w-3xl space-y-4 text-zinc-400 leading-relaxed">
               <p>
                 Interviews were unambiguous: one group needed the sparsest possible
                 home and loud visual anchors; another wanted a richer dashboard with
                 shortcuts and status surfacing immediately. A single static default
                 would always read as &quot;wrong&quot; to half the base. I chose{" "}
-                <span className="text-ink">
+                <span className="text-zinc-100">
                   configurability—optional home modules with fixed rails
                 </span>{" "}
                 over picking one designed default and accepting that we&apos;d quietly
@@ -877,19 +877,19 @@ export default function EInvoiceCaseStudy() {
               </p>
               <p>
                 The cost showed up in testing:{" "}
-                <span className="text-ink">
+                <span className="text-zinc-100">
                   first launch picked up cognitive overhead
                 </span>{" "}
                 because people encountered density choices before they had finished a
                 single high-confidence task. If I were redesigning today, I&apos;d
                 validate a{" "}
-                <span className="text-ink">
+                <span className="text-zinc-100">
                   tiered onboarding sequence in production
                 </span>
                 —complete one core job (e.g. scan or passbook) with a sane default,
                 then surface module toggles with clearer presets. Same principle as
                 progressive disclosure in trust-heavy products:{" "}
-                <span className="text-ink">
+                <span className="text-zinc-100">
                   earn comprehension before preference complexity
                 </span>
                 , and A/B test when that handoff happens.
@@ -897,7 +897,7 @@ export default function EInvoiceCaseStudy() {
               <p>
                 A second lesson sat in the data tail: the weakest tasks were rarely
                 about motor skill—they were about{" "}
-                <span className="text-ink">
+                <span className="text-zinc-100">
                   whether people understood why a step existed
                 </span>
                 . Inclusive design here meant scenario language and mental models, not
@@ -906,13 +906,13 @@ export default function EInvoiceCaseStudy() {
               <p>
                 On the engineering side, one of the hardest stretches while shaping each
                 screen and flow was staying in lockstep with{" "}
-                <span className="text-ink">backend engineers</span> and with{" "}
-                <span className="text-ink">
+                <span className="text-zinc-100">backend engineers</span> and with{" "}
+                <span className="text-zinc-100">
                   engineers who maintained the legacy system
                 </span>
                 . We had to walk through{" "}
-                <span className="text-ink">every API</span> and{" "}
-                <span className="text-ink">each system judgment path</span>{" "}
+                <span className="text-zinc-100">every API</span> and{" "}
+                <span className="text-zinc-100">each system judgment path</span>{" "}
                 together—clarifying what would be sent back at which stage, and exactly
                 what data each page needed to display and to hand off to the next step.
                 Without that shared map, the experience looked complete in design but
@@ -922,9 +922,9 @@ export default function EInvoiceCaseStudy() {
 
             <div
               id="business-constraints"
-              className="scroll-mt-28 space-y-5 border-t border-ink-line pt-10 sm:scroll-mt-32 sm:pt-12"
+              className="scroll-mt-28 space-y-5 border-t border-zinc-800 pt-10 sm:scroll-mt-32 sm:pt-12"
             >
-              <span className="text-xs font-medium uppercase tracking-widest text-ink-muted">
+              <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
                 Business constraints
               </span>
               <h3 className={CASE_STUDY_SECTION_TITLE_CLASS}>
@@ -932,24 +932,24 @@ export default function EInvoiceCaseStudy() {
                 to survive legal review and what engineering could actually ship.
               </h3>
               <div className="grid gap-4 sm:grid-cols-3">
-                <div className="overflow-hidden/35 p-4">
+                <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-4">
                   <p className="text-xs font-semibold text-violet-400">Timeline</p>
-                  <p className="mt-2 text-sm text-ink-soft">
+                  <p className="mt-2 text-sm text-zinc-400">
                     Tight deadlines for research, design, and testing—solutions needed
                     to ship in sprints without delaying release schedules.
                   </p>
                 </div>
-                <div className="overflow-hidden/35 p-4">
+                <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-4">
                   <p className="text-xs font-semibold text-violet-400">Stakeholders</p>
-                  <p className="mt-2 text-sm text-ink-soft">
+                  <p className="mt-2 text-sm text-zinc-400">
                     As a Ministry of Finance government service, features must follow
                     official regulations and public-sector standards—no commercial
                     partnerships or private-business campaigns.
                   </p>
                 </div>
-                <div className="overflow-hidden/35 p-4">
+                <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-4">
                   <p className="text-xs font-semibold text-violet-400">Technical</p>
-                  <p className="mt-2 text-sm text-ink-soft">
+                  <p className="mt-2 text-sm text-zinc-400">
                     Existing backends limit real-time integration for spending analysis
                     and multi-language support. Performance must stay smooth despite
                     biometric login, push notifications, and donation batch processing.
@@ -958,25 +958,25 @@ export default function EInvoiceCaseStudy() {
               </div>
             </div>
 
-            <div className="max-w-3xl space-y-3 border-t border-ink-line pt-8">
+            <div className="max-w-3xl space-y-3 border-t border-zinc-800 pt-8">
               <h3 className={CASE_STUDY_SECTION_TITLE_CLASS}>
                 What I&apos;d validate next
               </h3>
-              <ul className="list-disc space-y-2 pl-5 text-ink-soft leading-relaxed marker:text-ink-muted">
+              <ul className="list-disc space-y-2 pl-5 text-zinc-400 leading-relaxed marker:text-zinc-500">
                 <li>
                   Production experiment on{" "}
-                  <span className="text-ink-soft">when</span> optional home modules
+                  <span className="text-zinc-400">when</span> optional home modules
                   are introduced (after first successful task vs. first session).
                 </li>
                 <li>
                   Deeper pairing with policy/legal on{" "}
-                  <span className="text-ink-soft">how much scenario copy</span> we
+                  <span className="text-zinc-400">how much scenario copy</span> we
                   can show in technical setup flows without over-promising merchant
                   coverage.
                 </li>
                 <li>
                   Longitudinal study on{" "}
-                  <span className="text-ink-soft">VoiceOver task time</span> after
+                  <span className="text-zinc-400">VoiceOver task time</span> after
                   IA stabilization—not just pass/fail in one lab cycle.
                 </li>
               </ul>
@@ -1006,11 +1006,11 @@ export default function EInvoiceCaseStudy() {
           <span className="text-xs font-semibold uppercase tracking-[0.14em] text-emerald-200/85">
             Figma files
           </span>
-          <h2 className="case-study-section-title max-w-2xl text-pretty font-semibold tracking-tight text-ink">
+          <h2 className="case-study-section-title max-w-2xl text-pretty font-semibold tracking-tight text-zinc-100">
             Open the source files for wireflows, page logic, and hi-fi mocks in one
             place.
           </h2>
-          <p className="max-w-2xl text-sm text-ink-soft">
+          <p className="max-w-2xl text-sm text-zinc-400">
             Hi-fi mockups and page flow first; wireframes and wireflow for IA and
             early logic.
           </p>
@@ -1033,11 +1033,11 @@ export default function EInvoiceCaseStudy() {
         </CaseStudyInViewSection>
         </div>
 
-        <CaseStudyInViewSection className="border-t border-ink-line pt-12 space-y-8">
+        <CaseStudyInViewSection className="border-t border-zinc-800 pt-12 space-y-8">
           <CaseStudyPrevNext currentSlug="e-invoice-app" />
           <Link
             href="/"
-            className="text-sm font-medium text-ink-soft hover:text-ink transition"
+            className="text-sm font-medium text-zinc-400 hover:text-zinc-100 transition"
           >
             ← Back to home
           </Link>

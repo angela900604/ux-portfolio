@@ -23,7 +23,7 @@ export function HomeBeforeAfterSlider() {
     <figure className="w-full min-w-0">
       <div
         ref={containerRef}
-        className="relative w-full cursor-ew-resize overflow-hidden touch-none select-none outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-paper"
+        className="relative w-full cursor-ew-resize overflow-hidden touch-none select-none outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950"
         style={{ aspectRatio: ASPECT }}
         onDragStartCapture={(e) => e.preventDefault()}
         onPointerDown={(e) => {
@@ -62,10 +62,10 @@ export function HomeBeforeAfterSlider() {
         aria-valuenow={Math.round(pos * 100)}
         aria-label="Compare home screen before and after redesign. Drag horizontally."
       >
-        <span className="pointer-events-none absolute left-3 top-3 z-[2] rounded-md bg-paper/75 px-2 py-1 text-[10px] font-semibold uppercase tracking-wider text-ink-soft ring-1 ring-zinc-700/80">
+        <span className="pointer-events-none absolute left-3 top-3 z-[2] rounded-md bg-zinc-950/75 px-2 py-1 text-[10px] font-semibold uppercase tracking-wider text-zinc-400 ring-1 ring-zinc-700/80">
           Before
         </span>
-        <span className="pointer-events-none absolute right-3 top-3 z-[2] rounded-md bg-paper/75 px-2 py-1 text-[10px] font-semibold uppercase tracking-wider text-ink-soft ring-1 ring-zinc-700/80">
+        <span className="pointer-events-none absolute right-3 top-3 z-[2] rounded-md bg-zinc-950/75 px-2 py-1 text-[10px] font-semibold uppercase tracking-wider text-zinc-400 ring-1 ring-zinc-700/80">
           After
         </span>
 
@@ -107,7 +107,7 @@ export function HomeBeforeAfterSlider() {
           }}
         />
         <div
-          className="pointer-events-none absolute top-1/2 z-[3] flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-paper-soft/90 text-ink shadow-lg ring-2 ring-zinc-400/50"
+          className="pointer-events-none absolute top-1/2 z-[3] flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-zinc-900/40/90 text-zinc-100 shadow-lg ring-2 ring-zinc-400/50"
           style={{ left: `${pos * 100}%` }}
           aria-hidden
         >

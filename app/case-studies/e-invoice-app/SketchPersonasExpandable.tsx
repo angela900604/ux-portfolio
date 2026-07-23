@@ -8,7 +8,7 @@ import { PortraitTile } from "./EInvoiceFigures";
 const ASSET = (name: string) => `/case-studies/e-invoice/case-assets/${name}`;
 
 const CARD =
-  "flex w-full cursor-pointer gap-3 overflow-hidden p-3 text-left transition hover:border-emerald-500/35 hover:bg-paper-soft focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/70 focus-visible:ring-offset-2 focus-visible:ring-offset-paper";
+  "flex w-full cursor-pointer gap-3 overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/40 p-3 text-left transition hover:border-emerald-500/35 hover:bg-zinc-900/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/70 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950";
 
 type SketchId = "yiting" | "david" | "chen" | "meiling" | "alex";
 
@@ -49,7 +49,7 @@ export function SketchPersonasExpandable() {
           <ImageLightbox
             src={ASSET("persona-portrait-01.png")}
             alt="Sketch portrait: Yi-Ting, 18–30"
-            className="relative h-[4.5rem] w-14 shrink-0 overflow-hidden rounded-lg bg-paper-soft"
+            className="relative h-[4.5rem] w-14 shrink-0 overflow-hidden rounded-lg bg-zinc-900/40"
             stopTriggerPropagation
             disableHoverScale
           >
@@ -62,8 +62,8 @@ export function SketchPersonasExpandable() {
             />
           </ImageLightbox>
           <div className="min-w-0 text-xs leading-snug">
-            <p className="font-medium text-ink">Yi-Ting · 18–30</p>
-            <p className="mt-1 text-ink-muted">
+            <p className="font-medium text-zinc-100">Yi-Ting · 18–30</p>
+            <p className="mt-1 text-zinc-500">
               Wants speed, aesthetics, dense shortcuts—barcode first, ads never.
             </p>
             <p className="mt-2 text-[10px] font-medium uppercase tracking-wider text-emerald-400/80">
@@ -90,7 +90,7 @@ export function SketchPersonasExpandable() {
           <ImageLightbox
             src={ASSET("persona-portrait-02.png")}
             alt="Sketch portrait: David, 31–50"
-            className="relative h-[4.5rem] w-14 shrink-0 overflow-hidden rounded-lg bg-paper-soft"
+            className="relative h-[4.5rem] w-14 shrink-0 overflow-hidden rounded-lg bg-zinc-900/40"
             stopTriggerPropagation
             disableHoverScale
           >
@@ -103,8 +103,8 @@ export function SketchPersonasExpandable() {
             />
           </ImageLightbox>
           <div className="min-w-0 text-xs leading-snug">
-            <p className="font-medium text-ink">David · 31–50</p>
-            <p className="mt-1 text-ink-muted">
+            <p className="font-medium text-zinc-100">David · 31–50</p>
+            <p className="mt-1 text-zinc-500">
               Balanced power user—biometrics, reminders, reliable at checkout.
             </p>
             <p className="mt-2 text-[10px] font-medium uppercase tracking-wider text-emerald-400/80">
@@ -131,7 +131,7 @@ export function SketchPersonasExpandable() {
           <ImageLightbox
             src={ASSET("persona-portrait-vi-session.png")}
             alt="Sketch portrait: Teacher Chen, low vision"
-            className="relative h-[4.5rem] w-14 shrink-0 overflow-hidden rounded-lg bg-paper-soft"
+            className="relative h-[4.5rem] w-14 shrink-0 overflow-hidden rounded-lg bg-zinc-900/40"
             stopTriggerPropagation
             disableHoverScale
           >
@@ -144,8 +144,8 @@ export function SketchPersonasExpandable() {
             />
           </ImageLightbox>
           <div className="min-w-0 text-xs leading-snug">
-            <p className="font-medium text-ink">Teacher Chen · low vision</p>
-            <p className="mt-1 text-ink-muted">
+            <p className="font-medium text-zinc-100">Teacher Chen · low vision</p>
+            <p className="mt-1 text-zinc-500">
               Needs predictable layout, VoiceOver that doesn&apos;t shout, family
               assist today.
             </p>
@@ -173,7 +173,7 @@ export function SketchPersonasExpandable() {
           <ImageLightbox
             src={ASSET("persona-portrait-03.png")}
             alt="Sketch portrait: Mei-Ling, 51+"
-            className="relative h-[4.5rem] w-14 shrink-0 overflow-hidden rounded-lg bg-paper-soft"
+            className="relative h-[4.5rem] w-14 shrink-0 overflow-hidden rounded-lg bg-zinc-900/40"
             stopTriggerPropagation
             disableHoverScale
           >
@@ -186,8 +186,8 @@ export function SketchPersonasExpandable() {
             />
           </ImageLightbox>
           <div className="min-w-0 text-xs leading-snug">
-            <p className="font-medium text-ink">Mei-Ling · 51+ · Silver</p>
-            <p className="mt-1 text-ink-muted">
+            <p className="font-medium text-zinc-100">Mei-Ling · 51+ · Silver</p>
+            <p className="mt-1 text-zinc-500">
               Maze-like flows, small type—needs one clear next step and trust when
               donating.
             </p>
@@ -215,7 +215,7 @@ export function SketchPersonasExpandable() {
           <ImageLightbox
             src={ASSET("persona-portrait-04.png")}
             alt="Sketch portrait: Alex, foreign resident"
-            className="relative h-[4.5rem] w-14 shrink-0 overflow-hidden rounded-lg bg-paper-soft"
+            className="relative h-[4.5rem] w-14 shrink-0 overflow-hidden rounded-lg bg-zinc-900/40"
             stopTriggerPropagation
             disableHoverScale
           >
@@ -228,8 +228,8 @@ export function SketchPersonasExpandable() {
             />
           </ImageLightbox>
           <div className="min-w-0 text-xs leading-snug">
-            <p className="font-medium text-ink">Alex · Foreign resident</p>
-            <p className="mt-1 text-ink-muted">
+            <p className="font-medium text-zinc-100">Alex · Foreign resident</p>
+            <p className="mt-1 text-zinc-500">
               Dense Chinese UI and icons—needs calm hierarchy and obvious paths to
               scan and claim.
             </p>
@@ -247,7 +247,7 @@ export function SketchPersonasExpandable() {
           onClick={(e) => e.target === e.currentTarget && close()}
         >
           <div
-            className="relative w-full max-w-4xl overflow-hidden bg-paper shadow-2xl"
+            className="relative w-full max-w-4xl overflow-hidden bg-zinc-900 shadow-2xl"
             role="dialog"
             aria-modal="true"
             aria-label="Full persona"
@@ -256,7 +256,7 @@ export function SketchPersonasExpandable() {
             <button
               type="button"
               onClick={close}
-              className="absolute right-3 top-3 z-10 rounded-full border border-ink-line bg-paper-soft/90 px-3 py-1.5 text-xs font-medium text-ink-soft hover:border-ink hover:text-ink"
+              className="absolute right-3 top-3 z-10 rounded-full border border-zinc-800 bg-zinc-900/90 px-3 py-1.5 text-xs font-medium text-zinc-400 hover:border-zinc-600 hover:text-zinc-100"
             >
               Close
             </button>
@@ -276,7 +276,7 @@ export function SketchPersonasExpandable() {
 
 function FullPersonaYiTing() {
   return (
-    <article className="flex flex-col overflow-hidden/35 sm:flex-row">
+    <article className="flex flex-col overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/40 sm:flex-row">
       <div className="shrink-0 sm:w-[42%]">
         <PortraitTile
           borderless
@@ -289,17 +289,17 @@ function FullPersonaYiTing() {
         <p className="text-xs font-semibold uppercase tracking-wider text-violet-400/95">
           Persona 01 · 18–30 · Young professionals
         </p>
-        <p className="font-medium text-ink">
+        <p className="font-medium text-zinc-100">
           Yi-Ting · 26 · Taiwan · Planner / creative
         </p>
-        <p className="text-ink-soft">
-          <span className="text-ink-soft">Tech:</span> High digital fluency—iOS,
+        <p className="text-zinc-400">
+          <span className="text-zinc-400">Tech:</span> High digital fluency—iOS,
           wearables, widgets &amp; Wallet for carrier barcodes; tracks spending and
           promos; uses third-party invoice tools for draws.
         </p>
         <div>
-          <p className="text-xs font-semibold text-ink-muted">Pain points</p>
-          <ul className="mt-1 list-disc pl-4 text-ink-soft marker:text-ink-faint">
+          <p className="text-xs font-semibold text-zinc-500">Pain points</p>
+          <ul className="mt-1 list-disc pl-4 text-zinc-400 marker:text-zinc-600">
             <li>Busy UI; slow cold start and intrusive ads before the barcode</li>
             <li>Carrier binding still feels “browser-heavy” and fragmented</li>
             <li>Merchant names inconsistent in history—hard to search wins</li>
@@ -308,15 +308,15 @@ function FullPersonaYiTing() {
           </ul>
         </div>
         <div>
-          <p className="text-xs font-semibold text-ink-muted">Goals</p>
-          <ul className="mt-1 list-disc pl-4 text-ink-soft marker:text-ink-faint">
+          <p className="text-xs font-semibold text-zinc-500">Goals</p>
+          <ul className="mt-1 list-disc pl-4 text-zinc-400 marker:text-zinc-600">
             <li>Cleaner visual style; barcode-first home</li>
             <li>Accurate spending search &amp; categories</li>
             <li>Stronger win &amp; payout notifications</li>
             <li>Biometrics / pattern login; stable scan</li>
           </ul>
         </div>
-        <p className="border-l-2 border-violet-500/50 pl-3 italic text-ink-soft">
+        <p className="border-l-2 border-violet-500/50 pl-3 italic text-zinc-400">
           &ldquo;I move fast—I need the carrier barcode immediately. I care how the
           UI looks, track spend for habits and deals, but waiting on a slow app or
           closing ads just to copy a barcode drives me nuts.&rdquo;
@@ -328,7 +328,7 @@ function FullPersonaYiTing() {
 
 function FullPersonaDavid() {
   return (
-    <article className="flex flex-col overflow-hidden/35 sm:flex-row">
+    <article className="flex flex-col overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/40 sm:flex-row">
       <div className="shrink-0 sm:w-[42%]">
         <PortraitTile
           borderless
@@ -341,18 +341,18 @@ function FullPersonaDavid() {
         <p className="text-xs font-semibold uppercase tracking-wider text-violet-400/95">
           Persona 02 · 31–50 · Established professionals
         </p>
-        <p className="font-medium text-ink">
+        <p className="font-medium text-zinc-100">
           David · 41 · Taiwan · Service PM
         </p>
-        <p className="text-ink-soft">
-          <span className="text-ink-soft">Tech:</span> High digital usage—mobile
+        <p className="text-zinc-400">
+          <span className="text-zinc-400">Tech:</span> High digital usage—mobile
           payment apps (e.g. LINE Pay, JKOPAY, Taiwan Pay), widgets, Apple Wallet /
           printed barcodes; shops online &amp; offline; checks promos and rough
           monthly spend.
         </p>
         <div>
-          <p className="text-xs font-semibold text-ink-muted">Pain points</p>
-          <ul className="mt-1 list-disc pl-4 text-ink-soft marker:text-ink-faint">
+          <p className="text-xs font-semibold text-zinc-500">Pain points</p>
+          <ul className="mt-1 list-disc pl-4 text-zinc-400 marker:text-zinc-600">
             <li>Often forgets the MoF app password / verification code</li>
             <li>Win emails feel wordy; wants clearer push when numbers drop</li>
             <li>Needs rock-solid stability—can&apos;t wait on checkout load</li>
@@ -361,18 +361,18 @@ function FullPersonaDavid() {
           </ul>
         </div>
         <div>
-          <p className="text-xs font-semibold text-ink-muted">Goals</p>
-          <ul className="mt-1 list-disc pl-4 text-ink-soft marker:text-ink-faint">
+          <p className="text-xs font-semibold text-zinc-500">Goals</p>
+          <ul className="mt-1 list-disc pl-4 text-zinc-400 marker:text-zinc-600">
             <li>Biometrics &amp; quick login; stronger win reminders</li>
             <li>Smoother performance &amp; reward / streak mechanics</li>
             <li>
-              Real <span className="text-ink-soft">consumption analysis</span> tied
+              Real <span className="text-zinc-400">consumption analysis</span> tied
               to invoices
             </li>
             <li>Faster barcode surface at payment</li>
           </ul>
         </div>
-        <p className="border-l-2 border-violet-500/50 pl-3 italic text-ink-soft">
+        <p className="border-l-2 border-violet-500/50 pl-3 italic text-zinc-400">
           &ldquo;My phone is my second wallet—I want payments, invoices, and
           membership in one flow. At the counter I can&apos;t afford a sluggish app;
           I also want to see where my money goes, not fight the UI.&rdquo;
@@ -384,7 +384,7 @@ function FullPersonaDavid() {
 
 function FullPersonaMeiLing() {
   return (
-    <article className="flex flex-col overflow-hidden/35 sm:flex-row">
+    <article className="flex flex-col overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/40 sm:flex-row">
       <div className="shrink-0 sm:w-[42%]">
         <PortraitTile
           borderless
@@ -397,17 +397,17 @@ function FullPersonaMeiLing() {
         <p className="text-xs font-semibold uppercase tracking-wider text-violet-400/95">
           Persona · 51+ · Silver generation
         </p>
-        <p className="font-medium text-ink">
+        <p className="font-medium text-zinc-100">
           Mei-Ling · 68 · Taiwan · Retired nurse
         </p>
-        <p className="text-ink-soft">
-          <span className="text-ink-soft">Tech:</span> Low digital literacy—cash
+        <p className="text-zinc-400">
+          <span className="text-zinc-400">Tech:</span> Low digital literacy—cash
           &amp; cards; long habit of donating paper invoices; prize checks and
           in-store claims; needs guidance for anything beyond basics.
         </p>
         <div>
-          <p className="text-xs font-semibold text-ink-muted">Pain points</p>
-          <ul className="mt-1 list-disc pl-4 text-ink-soft marker:text-ink-faint">
+          <p className="text-xs font-semibold text-zinc-500">Pain points</p>
+          <ul className="mt-1 list-disc pl-4 text-zinc-400 marker:text-zinc-600">
             <li>Apps feel like a maze—unclear next step, small type &amp; taps</li>
             <li>Monochrome or crowded screens hide primary actions</li>
             <li>
@@ -420,14 +420,14 @@ function FullPersonaMeiLing() {
           </ul>
         </div>
         <div>
-          <p className="text-xs font-semibold text-ink-muted">Goals</p>
-          <ul className="mt-1 list-disc pl-4 text-ink-soft marker:text-ink-faint">
+          <p className="text-xs font-semibold text-zinc-500">Goals</p>
+          <ul className="mt-1 list-disc pl-4 text-zinc-400 marker:text-zinc-600">
             <li>Large text, color-coded main tasks, obvious help</li>
             <li>Simple donation path with clear org info</li>
             <li>Easier prize check &amp; claim—including online tutorials</li>
           </ul>
         </div>
-        <p className="border-l-2 border-violet-500/50 pl-3 italic text-ink-soft">
+        <p className="border-l-2 border-violet-500/50 pl-3 italic text-zinc-400">
           &ldquo;This app is like a labyrinth—I don&apos;t know the next step or how
           to exit. I want to donate paper invoices with confidence and understand
           what I&apos;m tapping.&rdquo;
@@ -439,7 +439,7 @@ function FullPersonaMeiLing() {
 
 function FullPersonaAlex() {
   return (
-    <article className="flex flex-col overflow-hidden/35 sm:flex-row">
+    <article className="flex flex-col overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/40 sm:flex-row">
       <div className="shrink-0 sm:w-[42%]">
         <PortraitTile
           borderless
@@ -452,18 +452,18 @@ function FullPersonaAlex() {
         <p className="text-xs font-semibold uppercase tracking-wider text-violet-400/95">
           Persona · Foreign resident · Heavy mobile user
         </p>
-        <p className="font-medium text-ink">
+        <p className="font-medium text-zinc-100">
           Alex · 29 · Malaysia / Taiwan · Animator
         </p>
-        <p className="text-ink-soft">
-          <span className="text-ink-soft">Tech:</span> Heavy iOS use; mobile
+        <p className="text-zinc-400">
+          <span className="text-zinc-400">Tech:</span> Heavy iOS use; mobile
           payments &amp; member apps; home-screen widgets for barcodes; tracks monthly
           categories; wants one-handed flows and clear visual hierarchy (Chinese is
           not his first language).
         </p>
         <div>
-          <p className="text-xs font-semibold text-ink-muted">Pain points</p>
-          <ul className="mt-1 list-disc pl-4 text-ink-soft marker:text-ink-faint">
+          <p className="text-xs font-semibold text-zinc-500">Pain points</p>
+          <ul className="mt-1 list-disc pl-4 text-zinc-400 marker:text-zinc-600">
             <li>Didn&apos;t know paper receipts could be claimed online at first</li>
             <li>Busy or “ugly” layouts; dense copy slows scanning</li>
             <li>Ambiguous icons raise cognitive load for non-native readers</li>
@@ -471,15 +471,15 @@ function FullPersonaAlex() {
           </ul>
         </div>
         <div>
-          <p className="text-xs font-semibold text-ink-muted">Goals</p>
-          <ul className="mt-1 list-disc pl-4 text-ink-soft marker:text-ink-faint">
+          <p className="text-xs font-semibold text-zinc-500">Goals</p>
+          <ul className="mt-1 list-disc pl-4 text-zinc-400 marker:text-zinc-600">
             <li>Short tutorials highlighting online prize claim</li>
             <li>Cleaner visuals &amp; icon system that bridges language gaps</li>
             <li>Integrated bookkeeping / spend view with invoices</li>
             <li>Faster launch; barcode copy &amp; display in more contexts</li>
           </ul>
         </div>
-        <p className="border-l-2 border-violet-500/50 pl-3 italic text-ink-soft">
+        <p className="border-l-2 border-violet-500/50 pl-3 italic text-zinc-400">
           &ldquo;Classmates got me onto cloud invoices—I dislike trekking to a store
           to claim. Give me a calm interface and obvious icons; long paragraphs are
           exhausting when Chinese isn&apos;t my first language.&rdquo;
@@ -491,7 +491,7 @@ function FullPersonaAlex() {
 
 function FullPersonaChen() {
   return (
-    <article className="flex flex-col overflow-hidden/35 sm:flex-row">
+    <article className="flex flex-col overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/40 sm:flex-row">
       <div className="shrink-0 sm:w-[42%]">
         <PortraitTile
           borderless
@@ -504,17 +504,17 @@ function FullPersonaChen() {
         <p className="text-xs font-semibold uppercase tracking-wider text-violet-400/95">
           Persona · Visually impaired user
         </p>
-        <p className="font-medium text-ink">
+        <p className="font-medium text-zinc-100">
           Teacher Chen · Retired elementary teacher · Severe low vision
         </p>
-        <p className="text-ink-soft">
-          <span className="text-ink-soft">Tech:</span> Macular degeneration—mostly
+        <p className="text-zinc-400">
+          <span className="text-zinc-400">Tech:</span> Macular degeneration—mostly
           light and shadow; uses Android with family help; avoids payment barcodes
           when she can&apos;t confirm what will be scanned.
         </p>
         <div>
-          <p className="text-xs font-semibold text-ink-muted">Pain points</p>
-          <ul className="mt-1 list-disc pl-4 text-ink-soft marker:text-ink-faint">
+          <p className="text-xs font-semibold text-zinc-500">Pain points</p>
+          <ul className="mt-1 list-disc pl-4 text-zinc-400 marker:text-zinc-600">
             <li>Cannot operate most apps independently—feels helpless</li>
             <li>Fear of scams and wrong barcode scans</li>
             <li>Screen reader prompts feel overwhelming</li>
@@ -522,15 +522,15 @@ function FullPersonaChen() {
           </ul>
         </div>
         <div>
-          <p className="text-xs font-semibold text-ink-muted">Goals</p>
-          <ul className="mt-1 list-disc pl-4 text-ink-soft marker:text-ink-faint">
+          <p className="text-xs font-semibold text-zinc-500">Goals</p>
+          <ul className="mt-1 list-disc pl-4 text-zinc-400 marker:text-zinc-600">
             <li>Fixed button positions and predictable layout</li>
             <li>High contrast, large type, minimal noise</li>
             <li>Clear voice guidance and calmer screen-reader behavior</li>
             <li>Distinct success sounds; caregiver-friendly setup flows</li>
           </ul>
         </div>
-        <p className="border-l-2 border-violet-500/50 pl-3 italic text-ink-soft">
+        <p className="border-l-2 border-violet-500/50 pl-3 italic text-zinc-400">
           &ldquo;The words and buttons are unclear. I have to ask my daughter every
           time for e-invoice—I&apos;m afraid the clerk will scan the wrong barcode. I
           hope the app can be voice-controlled so I can do more myself.&rdquo;

@@ -56,7 +56,7 @@ export function AnnotatedFlowSlideshow({ items }: { items: SlideshowSlide[] }) {
           src={current.src}
           alt={current.alt}
           ariaLabel={`${current.alt} — slide ${safeIndex + 1} of ${n}, tap to enlarge`}
-          className="block w-full overflow-hidden rounded-[20px] bg-paper-soft"
+          className="block w-full overflow-hidden rounded-[20px] bg-zinc-900/40"
         >
           <Image
             src={current.src}
@@ -72,7 +72,7 @@ export function AnnotatedFlowSlideshow({ items }: { items: SlideshowSlide[] }) {
           <button
             type="button"
             onClick={() => go(-1)}
-            className="pointer-events-auto rounded-full border border-ink-line/80 bg-paper/85 px-3 py-2 text-sm text-ink shadow-lg backdrop-blur-sm transition hover:bg-paper-soft hover:text-white focus:outline-none focus:ring-2 focus:ring-[#F20C90]"
+            className="pointer-events-auto rounded-full border border-zinc-800/80 bg-zinc-950/85 px-3 py-2 text-sm text-zinc-100 shadow-lg backdrop-blur-sm transition hover:bg-zinc-900/40 hover:text-white focus:outline-none focus:ring-2 focus:ring-[#F20C90]"
             aria-label="Previous slide"
           >
             ←
@@ -80,7 +80,7 @@ export function AnnotatedFlowSlideshow({ items }: { items: SlideshowSlide[] }) {
           <button
             type="button"
             onClick={() => go(1)}
-            className="pointer-events-auto rounded-full border border-ink-line/80 bg-paper/85 px-3 py-2 text-sm text-ink shadow-lg backdrop-blur-sm transition hover:bg-paper-soft hover:text-white focus:outline-none focus:ring-2 focus:ring-[#F20C90]"
+            className="pointer-events-auto rounded-full border border-zinc-800/80 bg-zinc-950/85 px-3 py-2 text-sm text-zinc-100 shadow-lg backdrop-blur-sm transition hover:bg-zinc-900/40 hover:text-white focus:outline-none focus:ring-2 focus:ring-[#F20C90]"
             aria-label="Next slide"
           >
             →
@@ -101,7 +101,7 @@ export function AnnotatedFlowSlideshow({ items }: { items: SlideshowSlide[] }) {
           />
         ))}
       </div>
-      <p className="text-center text-xs text-ink-muted">
+      <p className="text-center text-xs text-zinc-500">
         {safeIndex + 1} / {n}
       </p>
     </div>

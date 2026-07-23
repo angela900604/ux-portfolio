@@ -19,7 +19,7 @@ function AccordionChevron({ open }: { open: boolean }) {
   return (
     <span
       aria-hidden
-      className={`shrink-0 text-ink-muted transition-transform duration-200 ${
+      className={`shrink-0 text-zinc-400 transition-transform duration-200 ${
         open ? "rotate-180" : ""
       }`}
     >
@@ -98,7 +98,7 @@ export function DesignJourneyCollapsible({
 
   return (
     <div
-      className={`scroll-mt-28 border-t border-ink-line pt-10 sm:scroll-mt-32 sm:pt-12 ${className}`.trim()}
+      className={`scroll-mt-28 border-t border-zinc-800 pt-10 sm:scroll-mt-32 sm:pt-12 ${className}`.trim()}
     >
       <button
         type="button"
@@ -106,14 +106,14 @@ export function DesignJourneyCollapsible({
         onClick={toggle}
         aria-expanded={open}
         aria-controls={panelId}
-        className="flex w-full items-center justify-between gap-4 border-t border-ink py-4 text-left transition hover:opacity-80"
+        className="flex w-full items-center justify-between gap-4 border-t border-zinc-600 py-4 text-left transition hover:opacity-80"
       >
         <span id={headingId} className="min-w-0">
-          <span className="block text-[15px] font-medium tracking-tight text-ink sm:text-base">
+          <span className="block text-[15px] font-medium tracking-tight text-zinc-100 sm:text-base">
             {title}
           </span>
           {subtitle ? (
-            <span className="mt-1 block text-[15px] leading-[1.7] text-ink-soft">
+            <span className="mt-1 block text-[15px] leading-[1.7] text-zinc-400">
               {subtitle}
             </span>
           ) : null}

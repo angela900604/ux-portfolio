@@ -91,9 +91,9 @@ export function OutcomeAutoSlideshow({
         </div>
       ) : null}
       <div className="px-1">
-        <p className="text-xs font-medium text-ink-soft">{label}</p>
+        <p className="text-xs font-medium text-zinc-400">{label}</p>
         {hint ? (
-          <p className="mt-1 text-[11px] text-ink-muted">{hint}</p>
+          <p className="mt-1 text-[11px] text-zinc-500">{hint}</p>
         ) : null}
       </div>
     </div>

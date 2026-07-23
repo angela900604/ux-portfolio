@@ -40,7 +40,7 @@ export function GovernmentBackendCorrespondingScreensSlider({
     <figure className="w-full min-w-0 max-w-4xl">
       <div
         ref={containerRef}
-        className="relative w-full cursor-ew-resize overflow-hidden touch-none select-none outline-none focus-visible:ring-2 focus-visible:ring-[#05C3DD]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-paper"
+        className="relative w-full cursor-ew-resize overflow-hidden touch-none select-none outline-none focus-visible:ring-2 focus-visible:ring-[#05C3DD]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950"
         style={{ aspectRatio: aspect }}
         onDragStartCapture={(e) => e.preventDefault()}
         onPointerDown={(e) => {
@@ -79,10 +79,10 @@ export function GovernmentBackendCorrespondingScreensSlider({
         aria-valuenow={Math.round(pos * 100)}
         aria-label="Compare backend annotation with corresponding app UI. Drag horizontally."
       >
-        <span className="pointer-events-none absolute left-3 top-3 z-[2] rounded-md bg-paper/75 px-2 py-1 text-[10px] font-semibold uppercase tracking-wider text-[#05C3DD] ring-1 ring-[#05C3DD]/60">
+        <span className="pointer-events-none absolute left-3 top-3 z-[2] rounded-md bg-zinc-950/75 px-2 py-1 text-[10px] font-semibold uppercase tracking-wider text-[#05C3DD] ring-1 ring-[#05C3DD]/60">
           Backend
         </span>
-        <span className="pointer-events-none absolute right-3 top-3 z-[2] rounded-md bg-paper/75 px-2 py-1 text-[10px] font-semibold uppercase tracking-wider text-[#05C3DD] ring-1 ring-[#05C3DD]/60">
+        <span className="pointer-events-none absolute right-3 top-3 z-[2] rounded-md bg-zinc-950/75 px-2 py-1 text-[10px] font-semibold uppercase tracking-wider text-[#05C3DD] ring-1 ring-[#05C3DD]/60">
           App
         </span>
 
@@ -92,7 +92,7 @@ export function GovernmentBackendCorrespondingScreensSlider({
           fill
           unoptimized
           draggable={false}
-          className="pointer-events-none select-none bg-paper object-contain object-center [-webkit-user-drag:none]"
+          className="pointer-events-none select-none bg-zinc-900 object-contain object-center [-webkit-user-drag:none]"
           sizes="(max-width: 1024px) 100vw, 896px"
         />
 
@@ -108,7 +108,7 @@ export function GovernmentBackendCorrespondingScreensSlider({
             fill
             unoptimized
             draggable={false}
-            className="pointer-events-none select-none bg-paper object-contain object-center [-webkit-user-drag:none]"
+            className="pointer-events-none select-none bg-zinc-900 object-contain object-center [-webkit-user-drag:none]"
             sizes="(max-width: 1024px) 100vw, 896px"
           />
         </div>
@@ -121,7 +121,7 @@ export function GovernmentBackendCorrespondingScreensSlider({
           }}
         />
         <div
-          className="pointer-events-none absolute top-1/2 z-[3] flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-paper-soft/90 text-ink shadow-lg ring-2 ring-zinc-400/50"
+          className="pointer-events-none absolute top-1/2 z-[3] flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-zinc-900/40/90 text-zinc-100 shadow-lg ring-2 ring-zinc-400/50"
           style={{ left: `${pos * 100}%` }}
           aria-hidden
         >

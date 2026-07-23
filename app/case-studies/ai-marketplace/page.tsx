@@ -86,8 +86,8 @@ export const metadata = {
 
 export default function AiMarketplaceCaseStudy() {
   return (
-    <article className="min-h-screen bg-paper text-ink">
-      <header className="border-b border-ink-line">
+    <article className="min-h-screen">
+      <header className="border-b border-zinc-800">
         <div className={`${SITE_SHELL_INNER} py-12 sm:py-16`}>
           <div
             className={`${CASE_STUDY_BODY_GRID} flex min-w-0 flex-col overflow-x-hidden`}
@@ -107,7 +107,7 @@ export default function AiMarketplaceCaseStudy() {
 
             <figure className="w-full min-w-0">
               <div
-                className="relative w-full min-h-0 overflow-hidden overflow-hidden bg-black shadow-[0_20px_50px_-20px_rgba(0,0,0,0.65)]"
+                className="relative w-full min-h-0 overflow-hidden bg-black shadow-[0_20px_50px_-20px_rgba(0,0,0,0.65)]"
                 style={{ aspectRatio: `${MINA_HERO_VID_W} / ${MINA_HERO_VID_H}` }}
               >
                 <video
@@ -192,7 +192,7 @@ export default function AiMarketplaceCaseStudy() {
           id="context"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32 sm:space-y-8"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-ink-muted">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Opportunity
           </span>
           <div className="max-w-3xl space-y-8">
@@ -200,7 +200,7 @@ export default function AiMarketplaceCaseStudy() {
               <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
                 No moms wants to list 47 baby items one by one.
               </h2>
-              <p className="text-ink-soft leading-relaxed">
+              <p className="text-zinc-400 leading-relaxed">
                 SF moms in tight spaces cycle through baby gear every few months.
                 They knew about Facebook Marketplace. They just couldn&apos;t
                 face creating listings one by one for a bag full of onesies.
@@ -208,23 +208,23 @@ export default function AiMarketplaceCaseStudy() {
             </div>
             <div className="max-w-3xl">
               <div className="overflow-hidden p-5 sm:p-6">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-ink-muted">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-zinc-500">
                   The insight
                 </p>
-                <p className="mt-4 text-sm leading-relaxed text-ink-soft sm:text-[15px]">
+                <p className="mt-4 text-sm leading-relaxed text-zinc-400 sm:text-[15px]">
                   Three ways parents want to move gear came up in early
                   conversations.
                 </p>
-                <div className="mt-4 divide-y divide-ink-line/80">
-                  <p className="pb-4 text-lg font-medium leading-snug text-ink-soft sm:text-xl">
+                <div className="mt-4 divide-y divide-zinc-800/80">
+                  <p className="pb-4 text-lg font-medium leading-snug text-zinc-400 sm:text-xl">
                     Wants to bulk-list items without filling out a separate form for
                     each one
                   </p>
-                  <p className="py-4 text-lg font-medium leading-snug text-ink-soft sm:text-xl">
+                  <p className="py-4 text-lg font-medium leading-snug text-zinc-400 sm:text-xl">
                     Wants items gone before the baby outgrows them — timing matters more
                     than price
                   </p>
-                  <p className="pt-4 text-lg font-medium leading-snug text-ink-soft sm:text-xl">
+                  <p className="pt-4 text-lg font-medium leading-snug text-zinc-400 sm:text-xl">
                     Just wants to drop off a black garbage bag and be done with it — no
                     listings, no chats
                   </p>
@@ -253,27 +253,27 @@ export default function AiMarketplaceCaseStudy() {
             <span className="inline-flex rounded-full border border-[#B75E45]/55 bg-[#B75E45]/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#e8c9bf]">
               The design response
             </span>
-            <p className="mt-4 text-sm leading-relaxed text-ink-soft sm:text-[15px]">
+            <p className="mt-4 text-sm leading-relaxed text-zinc-400 sm:text-[15px]">
               Each path uses{" "}
-              <span className="font-semibold text-ink">AI where it helps</span>{" "}
+              <span className="font-semibold text-zinc-100">AI where it helps</span>{" "}
               — removing admin work while keeping parents in control of what publishes.
             </p>
-            <div className="mt-6 overflow-hidden overflow-hidden bg-black">
-              <div className="divide-y divide-ink-line">
+            <div className="mt-6 overflow-hidden bg-black">
+              <div className="divide-y divide-zinc-800">
                 <div className="px-5 py-6 sm:px-6 sm:py-8">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-ink-muted">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-zinc-500">
                     List fast
                   </p>
                   <p className="mt-2 text-lg font-semibold leading-snug text-white sm:text-xl">
                     Selling Agent — one photo, multiple listings.
                   </p>
-                  <p className="mt-3 text-sm leading-relaxed text-ink-soft sm:text-[15px]">
+                  <p className="mt-3 text-sm leading-relaxed text-zinc-400 sm:text-[15px]">
                     Take one photo and the agent generates all your listings at once.
                     No forms, no repetition — review and publish in one go.
                   </p>
                 </div>
                 <div className="px-5 py-6 sm:px-6 sm:py-8">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-ink-muted">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-zinc-500">
                     Sell fast
                   </p>
                   <p className="mt-2 text-lg font-semibold leading-snug text-white sm:text-xl">
@@ -282,13 +282,13 @@ export default function AiMarketplaceCaseStudy() {
                   </p>
                 </div>
                 <div className="px-5 py-6 sm:px-6 sm:py-8">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-ink-muted">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-zinc-500">
                     Giveaway free fast
                   </p>
                   <p className="mt-2 text-lg font-semibold leading-snug text-white sm:text-xl">
                     MINA Circle — claim free donated items.
                   </p>
-                  <p className="mt-3 text-sm leading-relaxed text-ink-soft sm:text-[15px]">
+                  <p className="mt-3 text-sm leading-relaxed text-zinc-400 sm:text-[15px]">
                     At offline events, parents drop off a bag of gear and walk away
                     with partner discount coupons. No listings, no chat threads —
                     just done.
@@ -303,7 +303,7 @@ export default function AiMarketplaceCaseStudy() {
           id="selling-agent"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-ink-muted">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Selling agent
           </span>
           <div className="min-w-0 space-y-8">
@@ -373,7 +373,7 @@ export default function AiMarketplaceCaseStudy() {
           id="create-listing-evolution"
           className="scroll-mt-28 sm:scroll-mt-32"
         >
-          <div className="relative overflow-hidden rounded-2xl border border-[#B75E45]/35 bg-gradient-to-br from-[#B75E45]/[0.14] via-paper/95 to-paper p-6 shadow-[0_28px_90px_-36px_rgba(183,94,69,0.45)] sm:rounded-3xl sm:p-8 lg:p-10">
+          <div className="relative overflow-hidden rounded-2xl border border-[#B75E45]/35 bg-gradient-to-br from-[#B75E45]/[0.14] via-zinc-950/95 to-zinc-950 p-6 shadow-[0_28px_90px_-36px_rgba(183,94,69,0.45)] sm:rounded-3xl sm:p-8 lg:p-10">
             <div
               className="pointer-events-none absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-[#e8a090] via-[#B75E45] to-[#6b3828]"
               aria-hidden
@@ -387,7 +387,7 @@ export default function AiMarketplaceCaseStudy() {
                   How the create-listing flow evolved
                 </h2>
                 <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-12 lg:gap-12">
-                  <div className="min-w-0 space-y-6 text-ink-soft leading-relaxed lg:col-span-7">
+                  <div className="min-w-0 space-y-6 text-zinc-400 leading-relaxed lg:col-span-7">
                     <p>
                       The original vision was simple: a parent dumps a pile of photos,
                       and AI figures out which ones belong to the same listing. The
@@ -424,7 +424,7 @@ export default function AiMarketplaceCaseStudy() {
                   </div>
                   <aside className="mx-auto w-full max-w-xl lg:sticky lg:top-28 lg:col-span-5 lg:mx-0 lg:max-w-none lg:self-start">
                     <div className="flex min-w-0 flex-row items-center justify-center gap-2 sm:gap-3">
-                      <div className="min-w-0 flex-1 overflow-hidden/70 shadow-[0_20px_50px_-24px_rgba(0,0,0,0.55)]">
+                      <div className="min-w-0 flex-1 overflow-hidden bg-zinc-900/70 shadow-[0_20px_50px_-24px_rgba(0,0,0,0.55)]">
                         <ImageLightbox
                           src={MINA_CREATE_FLOW_WORKAROUND}
                           alt="MINA Create workaround: Listing #1 with multi-photo grid, cover tag, remove controls, Add Another Listing, and Next"
@@ -461,7 +461,7 @@ export default function AiMarketplaceCaseStudy() {
                           />
                         </svg>
                       </div>
-                      <div className="min-w-0 flex-1 overflow-hidden/70 shadow-[0_20px_50px_-24px_rgba(0,0,0,0.55)]">
+                      <div className="min-w-0 flex-1 overflow-hidden bg-zinc-900/70 shadow-[0_20px_50px_-24px_rgba(0,0,0,0.55)]">
                         <ImageLightbox
                           src={MINA_CREATE_FLOW_ONE_PHOTO_MULTI}
                           alt="MINA Create listing: one photo with AI tags for Blush Bow Beanie and Alya Signature Sleepsuit, Publish button, and Ask MINA chat field"
@@ -491,7 +491,7 @@ export default function AiMarketplaceCaseStudy() {
           id="parenting-copilot"
           className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-ink-muted">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Parenting copilot
           </span>
           <div className="min-w-0 space-y-5">
@@ -499,7 +499,7 @@ export default function AiMarketplaceCaseStudy() {
               Babies grow fast. The Copilot notices when a phase is ending and asks:
               ready to pass this along?
             </h2>
-            <p className="max-w-3xl text-ink-soft leading-relaxed">
+            <p className="max-w-3xl text-zinc-400 leading-relaxed">
               The copilot is a life-stage triggered circulation system: it helps
               parents notice when a phase is ending, what gear tends to matter next,
               and how to move items out kindly.
@@ -531,13 +531,13 @@ export default function AiMarketplaceCaseStudy() {
           id="design-system"
           className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-ink-muted">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Design system
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
             50+ components so engineering could move without redesigning atoms
           </h2>
-          <p className="max-w-3xl text-ink-soft leading-relaxed">
+          <p className="max-w-3xl text-zinc-400 leading-relaxed">
             I owned a scalable Figma system that mirrored iOS—using standardized
             variants, spacing, and component props—so a small team could ship
             multiple complex flows fast without one-off specs.
@@ -554,11 +554,11 @@ export default function AiMarketplaceCaseStudy() {
           </div>
         </CaseStudyInViewSection>
 
-        <CaseStudyInViewSection className="border-t border-ink-line pt-12 space-y-8">
+        <CaseStudyInViewSection className="border-t border-zinc-800 pt-12 space-y-8">
           <CaseStudyPrevNext currentSlug="ai-marketplace" />
           <Link
             href="/"
-            className="text-sm font-medium text-ink-soft hover:text-ink transition"
+            className="text-sm font-medium text-zinc-400 hover:text-zinc-100 transition"
           >
             ← Back to home
           </Link>

@@ -64,14 +64,14 @@ function StarRow() {
 
 function ReviewCard({ review }: { review: AppStoreReview }) {
   return (
-    <div className="rounded-2xl border border-ink-line bg-[#1a1a1a] p-4 sm:p-5 shadow-sm">
+    <div className="rounded-2xl border border-zinc-800 bg-[#1a1a1a] p-4 sm:p-5 shadow-sm">
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0 flex-1">
           {review.leadEmoji ? (
             <p className="mb-1 text-lg leading-none">{review.leadEmoji}</p>
           ) : null}
           {review.title ? (
-            <p className="font-semibold text-ink leading-snug">
+            <p className="font-semibold text-zinc-100 leading-snug">
               {review.title}
             </p>
           ) : null}
@@ -79,14 +79,14 @@ function ReviewCard({ review }: { review: AppStoreReview }) {
             <StarRow />
           </div>
         </div>
-        <div className="shrink-0 text-right text-xs text-ink-muted">
+        <div className="shrink-0 text-right text-xs text-zinc-500">
           <p className="tabular-nums">{review.date}</p>
-          <p className="mt-0.5 max-w-[140px] truncate text-ink-muted" title={review.user}>
+          <p className="mt-0.5 max-w-[140px] truncate text-zinc-500" title={review.user}>
             {review.user}
           </p>
         </div>
       </div>
-      <p className="mt-3 text-sm leading-relaxed text-ink-soft">{review.body}</p>
+      <p className="mt-3 text-sm leading-relaxed text-zinc-400">{review.body}</p>
     </div>
   );
 }
@@ -96,13 +96,13 @@ export function AppStoreReviewsSection({ appStoreHref }: { appStoreHref: string 
     <div className="mt-12 space-y-6">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <p className="text-xs font-medium uppercase tracking-widest text-ink-muted">
+          <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             App Store
           </p>
-          <h3 className="mt-1 text-ink">
+          <h3 className="mt-1 text-zinc-100">
             User feedback
           </h3>
-          <p className="mt-1 max-w-xl text-sm text-ink-muted">
+          <p className="mt-1 max-w-xl text-sm text-zinc-500">
             Excerpts from Taiwan App Store reviews (all ratings are 5 stars).
           </p>
         </div>
@@ -110,10 +110,10 @@ export function AppStoreReviewsSection({ appStoreHref }: { appStoreHref: string 
           href={appStoreHref}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full border border-ink-line bg-paper-soft px-5 py-2.5 text-sm font-medium text-ink transition hover:border-ink hover:bg-paper-soft sm:self-start"
+          className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full border border-zinc-800 bg-zinc-900/40 px-5 py-2.5 text-sm font-medium text-zinc-100 transition hover:border-zinc-500 hover:bg-zinc-900/55 sm:self-start"
         >
           31 Club · App Store (Taiwan)
-          <span aria-hidden className="text-ink-muted">
+          <span aria-hidden className="text-zinc-500">
             ↗
           </span>
         </a>

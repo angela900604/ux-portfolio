@@ -46,7 +46,7 @@ export function WideFigure({
         frame === "white"
           ? "block min-h-[200px] w-full overflow-hidden bg-white"
           : `block overflow-hidden ${
-              borderless ? "bg-transparent" : "bg-paper-soft"
+              borderless ? "bg-transparent" : "bg-zinc-900/40"
             }`
       }
     >
@@ -83,7 +83,7 @@ export function WideFigure({
       <figure className={`min-w-0 space-y-0 ${className}`}>
         <div className="bg-white px-4 py-5 sm:px-6 sm:py-7">{image}</div>
         {caption && (
-          <figcaption className="mt-3 max-w-3xl text-xs leading-relaxed text-ink-muted">
+          <figcaption className="mt-3 max-w-3xl text-xs leading-relaxed text-zinc-500">
             {caption}
           </figcaption>
         )}
@@ -95,7 +95,7 @@ export function WideFigure({
     <figure className={`min-w-0 space-y-2 ${className}`}>
       {image}
       {caption && (
-        <figcaption className="max-w-3xl text-xs text-ink-muted">{caption}</figcaption>
+        <figcaption className="max-w-3xl text-xs text-zinc-500">{caption}</figcaption>
       )}
     </figure>
   );
@@ -126,7 +126,7 @@ export function PhoneMockup({
 }) {
   const screenInner = (
     <div
-      className={`overflow-hidden bg-paper ${chromeless ? "rounded-[1.35rem]" : `${R_SCREEN} ring-1 ring-zinc-800/90`}`}
+      className={`overflow-hidden bg-zinc-900 ${chromeless ? "rounded-[1.35rem]" : `${R_SCREEN} ring-1 ring-zinc-800/90`}`}
     >
       <Image
         src={src}
@@ -140,7 +140,7 @@ export function PhoneMockup({
   );
 
   const device = (
-    <div className="relative rounded-[3rem] bg-gradient-to-b from-zinc-600 via-zinc-800 to-paper p-[11px] shadow-[0_28px_56px_-16px_rgba(0,0,0,0.75)]">
+    <div className="relative rounded-[3rem] bg-gradient-to-b from-zinc-600 via-zinc-800 to-zinc-950 p-[11px] shadow-[0_28px_56px_-16px_rgba(0,0,0,0.75)]">
       <div
         className="absolute -left-[3px] top-[22%] h-9 w-[3px] rounded-l-md bg-zinc-500/90 shadow-sm"
         aria-hidden
@@ -189,7 +189,7 @@ export function PhoneMockup({
         >
           {uniform ? (
             <div
-              className="flex items-center justify-center bg-paper/50"
+              className="flex items-center justify-center bg-zinc-900/50"
               style={{
                 width: APP_SHOT_SLOT_W,
                 height: APP_SHOT_SLOT_H,
@@ -207,9 +207,9 @@ export function PhoneMockup({
       )}
       {!hideCaption && (
         <figcaption className="px-1 text-center">
-          <p className="text-xs font-medium leading-snug text-ink-soft">{label}</p>
+          <p className="text-xs font-medium leading-snug text-zinc-400">{label}</p>
           {hint && (
-            <p className="mt-1 text-[11px] leading-snug text-ink-muted">{hint}</p>
+            <p className="mt-1 text-[11px] leading-snug text-zinc-500">{hint}</p>
           )}
         </figcaption>
       )}
@@ -243,7 +243,7 @@ export function FlatAppShot({
       className={
         frameless
           ? "mx-auto block max-h-full max-w-full bg-transparent"
-          : "mx-auto block w-full max-w-[280px] overflow-hidden bg-paper-soft"
+          : "mx-auto block w-full max-w-[280px] overflow-hidden bg-zinc-900/40"
       }
     >
       <Image
@@ -263,8 +263,8 @@ export function FlatAppShot({
     <div
       className={
         frameless
-          ? "flex items-center justify-center bg-paper/50"
-          : "flex items-center justify-center bg-paper/50"
+          ? "flex items-center justify-center bg-zinc-900/50"
+          : "flex items-center justify-center bg-zinc-900/50"
       }
       style={{
         width: APP_SHOT_SLOT_W,
@@ -284,7 +284,7 @@ export function FlatAppShot({
     >
       {visual}
       <figcaption className="text-center">
-        <p className="text-xs font-medium leading-snug text-ink-soft">{label}</p>
+        <p className="text-xs font-medium leading-snug text-zinc-400">{label}</p>
       </figcaption>
     </figure>
   );

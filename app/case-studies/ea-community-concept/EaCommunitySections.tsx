@@ -78,8 +78,8 @@ const FLOW_KIND_LABEL: Record<FlowStepKind, string> = {
 };
 
 const FLOW_KIND_STYLE: Record<FlowStepKind, string> = {
-  start: "border-ink-line bg-paper-soft text-ink-soft",
-  end: "border-ink-line bg-paper-soft text-ink-soft",
+  start: "border-zinc-800 bg-zinc-900/40 text-zinc-400",
+  end: "border-zinc-800 bg-zinc-900/40 text-zinc-400",
   screen: "border-fuchsia-500/40 bg-fuchsia-950/30 text-fuchsia-100",
   action: "border-sky-500/40 bg-sky-950/30 text-sky-100",
   system: "border-orange-500/40 bg-orange-950/25 text-orange-100",
@@ -99,7 +99,7 @@ export function ResearchStatsGrid() {
           >
             {stat.value}
           </p>
-          <p className="mt-3 text-sm leading-relaxed text-ink-soft">{stat.caption}</p>
+          <p className="mt-3 text-sm leading-relaxed text-zinc-400">{stat.caption}</p>
         </div>
       ))}
     </div>
@@ -111,48 +111,48 @@ export function PersonaBlock() {
   return (
     <div className="max-w-3xl space-y-6 overflow-hidden p-6 sm:p-8">
       <div className="space-y-2">
-        <p className="text-xs font-semibold uppercase tracking-widest text-ink-muted">
+        <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500">
           Persona
         </p>
-        <p className="text-xl font-semibold text-ink">{p.name}</p>
-        <p className="text-sm text-ink-muted">
+        <p className="text-xl font-semibold text-zinc-100">{p.name}</p>
+        <p className="text-sm text-zinc-500">
           {p.role} · Age {p.age} · {p.location}
         </p>
       </div>
 
       <blockquote className="border-l-2 pl-4" style={{ borderColor: EA_ACCENT }}>
-        <p className="text-base italic leading-relaxed text-ink-soft sm:text-lg">
+        <p className="text-base italic leading-relaxed text-zinc-400 sm:text-lg">
           &ldquo;{p.quote}&rdquo;
         </p>
       </blockquote>
 
       <div className="space-y-2">
-        <p className="text-xs font-semibold uppercase tracking-widest text-ink-muted">
+        <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500">
           Scenario
         </p>
-        <p className="text-sm leading-relaxed text-ink-soft sm:text-base">
+        <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
           {p.scenario}
         </p>
       </div>
 
       <dl className="grid gap-4 sm:grid-cols-3">
         <div>
-          <dt className="text-[11px] font-semibold uppercase tracking-wider text-ink-muted">
+          <dt className="text-[11px] font-semibold uppercase tracking-wider text-zinc-500">
             Behaviour
           </dt>
-          <dd className="mt-1.5 text-sm leading-relaxed text-ink-soft">{p.behaviour}</dd>
+          <dd className="mt-1.5 text-sm leading-relaxed text-zinc-400">{p.behaviour}</dd>
         </div>
         <div>
-          <dt className="text-[11px] font-semibold uppercase tracking-wider text-ink-muted">
+          <dt className="text-[11px] font-semibold uppercase tracking-wider text-zinc-500">
             Pain points
           </dt>
-          <dd className="mt-1.5 text-sm leading-relaxed text-ink-soft">{p.painPoints}</dd>
+          <dd className="mt-1.5 text-sm leading-relaxed text-zinc-400">{p.painPoints}</dd>
         </div>
         <div>
-          <dt className="text-[11px] font-semibold uppercase tracking-wider text-ink-muted">
+          <dt className="text-[11px] font-semibold uppercase tracking-wider text-zinc-500">
             Motivation
           </dt>
-          <dd className="mt-1.5 text-sm leading-relaxed text-ink-soft">{p.motivation}</dd>
+          <dd className="mt-1.5 text-sm leading-relaxed text-zinc-400">{p.motivation}</dd>
         </div>
       </dl>
     </div>
@@ -178,13 +178,13 @@ export function TaskFlowSteps() {
           </div>
           <div className="min-w-0 flex-1 pt-0.5">
             <div className="flex flex-wrap items-center gap-2">
-              <p className="font-semibold text-ink">{step.label}</p>
-              <span className="rounded-full border border-ink-line bg-paper-soft px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-ink-muted">
+              <p className="font-semibold text-zinc-100">{step.label}</p>
+              <span className="rounded-full border border-zinc-800 bg-zinc-900/40 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-zinc-500">
                 {FLOW_KIND_LABEL[step.kind]}
               </span>
             </div>
             {step.note ? (
-              <p className="mt-2 text-sm leading-relaxed text-ink-soft">{step.note}</p>
+              <p className="mt-2 text-sm leading-relaxed text-zinc-400">{step.note}</p>
             ) : null}
           </div>
         </li>

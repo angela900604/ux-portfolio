@@ -24,11 +24,11 @@ export const CASE_STUDY_NAV: { slug: string; label: string }[] = [
 
 export function CaseStudyPrevNext({
   currentSlug,
-  variant = "paper",
+  variant = "dark",
 }: {
   currentSlug: string;
   /** `phyphyya` keeps the cream brand styling for Haphy Living */
-  variant?: "paper" | "phyphyya";
+  variant?: "dark" | "phyphyya";
 }) {
   const i = CASE_STUDY_NAV.findIndex((x) => x.slug === currentSlug);
   if (i < 0) return null;

@@ -105,10 +105,10 @@ function Section({
       id={id}
       className={id ? "scroll-mt-28 sm:scroll-mt-32" : undefined}
     >
-      <span className="text-xs font-medium uppercase tracking-widest text-ink-muted">
+      <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
         {kicker}
       </span>
-      {title ? <h2 className="mt-2 text-ink">{title}</h2> : null}
+      {title ? <h2 className="mt-2 text-zinc-100">{title}</h2> : null}
       {children}
     </CaseStudyInViewSection>
   );
@@ -116,8 +116,8 @@ function Section({
 
 export default function MomiAnimalHealthCaseStudy() {
   return (
-    <article className="min-h-screen bg-paper text-ink">
-      <header className="border-b border-ink-line">
+    <article className="min-h-screen">
+      <header className="border-b border-zinc-800">
         <div className={`${SITE_SHELL_INNER} py-12 sm:py-16`}>
           <div
             className={`${CASE_STUDY_BODY_GRID} flex min-w-0 flex-col gap-6 sm:gap-8`}
@@ -156,12 +156,12 @@ export default function MomiAnimalHealthCaseStudy() {
             {TOUCHPOINT_CARDS.map((card) => (
               <article
                 key={card.title}
-                className="overflow-hidden/35 p-5 sm:p-6"
+                className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5 sm:p-6"
               >
-                <h3 className="text-sm font-semibold tracking-tight text-ink sm:text-base">
+                <h3 className="text-sm font-semibold tracking-tight text-zinc-100 sm:text-base">
                   {card.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink-soft">
+                <p className="mt-2 text-sm leading-relaxed text-zinc-400">
                   {card.body}
                 </p>
               </article>
@@ -169,21 +169,21 @@ export default function MomiAnimalHealthCaseStudy() {
           </div>
 
           <div className="mt-8">
-            <h5 className="text-ink">Pet expo — on-site</h5>
-            <p className="mt-2 text-sm text-ink-soft leading-relaxed max-w-2xl">
+            <h5 className="text-zinc-100">Pet expo — on-site</h5>
+            <p className="mt-2 text-sm text-zinc-400 leading-relaxed max-w-2xl">
               Coordinated{" "}
-              <span className="font-medium text-ink">
+              <span className="font-medium text-zinc-100">
                 internal teams and external partners
               </span>{" "}
               around exhibition logistics—supporting booth build, on-site
               operations, and{" "}
-              <span className="font-medium text-ink">
+              <span className="font-medium text-zinc-100">
                 tradeshow-style follow-up
               </span>{" "}
               so leads and retail relationships picked up at the show could move
               forward cleanly after the event.
             </p>
-            <p className="mt-2 text-sm text-ink-soft leading-relaxed max-w-2xl">
+            <p className="mt-2 text-sm text-zinc-400 leading-relaxed max-w-2xl">
               Photos from the pet exhibition floor: booth footprint, wall
               display, and live rabbit on hay next to product.
             </p>
@@ -214,7 +214,7 @@ export default function MomiAnimalHealthCaseStudy() {
           kicker="02 · Outcomes"
           title="A clear lift in online sales"
         >
-          <p className="mt-4 text-ink-soft leading-relaxed max-w-2xl">
+          <p className="mt-4 text-zinc-400 leading-relaxed max-w-2xl">
             The +75% figure is growth in ecommerce platform sales from when I
             joined through my last month—the same period when MOMO covers, retail
             promo pieces, and social giveaways were refreshed.
@@ -224,11 +224,11 @@ export default function MomiAnimalHealthCaseStudy() {
           </div>
         </Section>
 
-        <CaseStudyInViewSection className="space-y-8 border-t border-ink-line pt-12">
+        <CaseStudyInViewSection className="space-y-8 border-t border-zinc-800 pt-12">
           <CaseStudyPrevNext currentSlug="momi-animal-health" />
           <Link
             href="/"
-            className="text-sm font-medium text-ink-soft transition hover:text-ink"
+            className="text-sm font-medium text-zinc-400 transition hover:text-zinc-100"
           >
             ← Back to home
           </Link>

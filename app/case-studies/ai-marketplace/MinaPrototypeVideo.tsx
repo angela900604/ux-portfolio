@@ -5,7 +5,7 @@
 export function MinaPrototypeVideo() {
   return (
     <div className="w-full max-w-[300px] min-w-0 shrink-0">
-      <div className="relative mx-auto rounded-[3rem] bg-gradient-to-b from-zinc-600 via-zinc-800 to-paper p-[11px] shadow-[0_28px_56px_-16px_rgba(0,0,0,0.75)]">
+      <div className="relative mx-auto rounded-[3rem] bg-gradient-to-b from-zinc-600 via-zinc-800 to-zinc-950 p-[11px] shadow-[0_28px_56px_-16px_rgba(0,0,0,0.75)]">
         <div
           className="absolute -left-[3px] top-[22%] h-9 w-[3px] rounded-l-md bg-zinc-500/90 shadow-sm"
           aria-hidden
@@ -23,7 +23,7 @@ export function MinaPrototypeVideo() {
             className="pointer-events-none absolute left-1/2 top-[10px] z-10 h-[27px] w-[92px] -translate-x-1/2 rounded-full bg-black ring-1 ring-zinc-800"
             aria-hidden
           />
-          <div className="aspect-[9/19.5] overflow-hidden rounded-[1.35rem] bg-paper ring-1 ring-zinc-800/90">
+          <div className="aspect-[9/19.5] overflow-hidden rounded-[1.35rem] bg-zinc-900 ring-1 ring-zinc-800/90">
             <video
               className="h-full w-full object-cover object-top"
               autoPlay

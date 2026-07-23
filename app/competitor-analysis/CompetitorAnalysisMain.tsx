@@ -18,7 +18,7 @@ export function CompetitorAnalysisMain({
           MoF app vs. mature third parties and LINE—where trust, habit, and speed
           diverge
         </h2>
-        <p className={`${BODY} text-zinc-400`}>
+        <p className={BODY}>
           Ministry of Finance Cloud Invoice redesign (Feb–Nov 2025): App Store
           signals plus screen-level benchmarks before IA and UI.
         </p>

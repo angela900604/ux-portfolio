@@ -15,7 +15,7 @@ export function MultisegmentInterviewsMain({
         <h2 className="text-3xl font-semibold tracking-tight text-zinc-100 sm:text-4xl">
           From public reviews to five audience groups—including low vision
         </h2>
-        <p className="text-sm leading-relaxed text-zinc-400">
+        <p className="text-sm leading-relaxed text-zinc-300">
           Layered evidence for the Ministry of Finance Cloud Invoice App: what showed
           up in App Store feedback, then what diverged and converged across age,
           language, and ability in moderated research—with sketch personas to keep

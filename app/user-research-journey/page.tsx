@@ -41,7 +41,7 @@ export default function UserResearchJourneyPage() {
           <h1 className="text-3xl font-semibold tracking-tight text-zinc-100 sm:text-4xl">
             User research journey
           </h1>
-          <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
+          <p className="text-sm leading-relaxed text-zinc-300 sm:text-base">
             Competitor analysis, multisegment interviews, and accessibility—one
             thread from evidence to shipped patterns (Feb–Nov 2025).
           </p>
@@ -63,7 +63,7 @@ export default function UserResearchJourneyPage() {
             <h2 className="text-2xl font-semibold tracking-tight text-zinc-100 sm:text-3xl">
               User pain by segment &amp; cross-group findings
             </h2>
-            <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
+            <p className="text-sm leading-relaxed text-zinc-300 sm:text-base">
               App Store reviews, interviews, and moderated tests—distilled into
               segment cards, a shared scan/barcode truth, and the home-screen density
               conflict that drove configurable modules in the case study.

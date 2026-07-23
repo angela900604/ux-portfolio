@@ -156,7 +156,7 @@ function Figure({
         </ImageLightbox>
       </div>
       {caption ? (
-        <figcaption className="text-sm text-ink-muted">{caption}</figcaption>
+        <figcaption className="text-sm text-zinc-500">{caption}</figcaption>
       ) : null}
     </figure>
   );
@@ -164,8 +164,8 @@ function Figure({
 
 export default function AtlasNovaCaseStudy() {
   return (
-    <article className="min-h-screen bg-paper text-ink">
-      <header className="border-b border-ink-line">
+    <article className="min-h-screen">
+      <header className="border-b border-zinc-800">
         <div className={`${SITE_SHELL_INNER} py-12 sm:py-16`}>
           <div
             className={`${CASE_STUDY_BODY_GRID} flex min-w-0 flex-col overflow-x-hidden`}
@@ -186,13 +186,13 @@ export default function AtlasNovaCaseStudy() {
           id="context"
           className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-ink-muted">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Context
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
             One feature inside a larger platform
           </h2>
-          <p className="max-w-3xl text-ink-soft leading-relaxed">
+          <p className="max-w-3xl text-zinc-400 leading-relaxed">
             <Highlight>AtlasNova AI</Highlight> is an enterprise macOS platform
             with multiple AI product solutions. This case study is scoped to one
             of them: <Highlight>AI-assisted document generation</Highlight> for
@@ -200,9 +200,9 @@ export default function AtlasNovaCaseStudy() {
             configure a template, and generate each section with persistent chat
             beside the draft.
           </p>
-          <p className="max-w-3xl text-ink-soft leading-relaxed">
+          <p className="max-w-3xl text-zinc-400 leading-relaxed">
             As a UX/UI design intern, I owned the{" "}
-            <span className="text-ink-soft">UI for this feature</span>—mockups
+            <span className="text-zinc-400">UI for this feature</span>—mockups
             and end-to-end flows from whiteboard sketches through hi-fi screens.
           </p>
         </CaseStudyInViewSection>
@@ -211,19 +211,19 @@ export default function AtlasNovaCaseStudy() {
           id="principles"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-ink-muted">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Principles
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>What we designed for</h2>
-          <p className="max-w-3xl text-ink-soft leading-relaxed">
+          <p className="max-w-3xl text-zinc-400 leading-relaxed">
             PMs using AtlasNova sit between two failure modes: AI that feels like a
             black box, and workflows that split the document from the conversation.
             Each principle below maps directly to a design decision.
           </p>
-          <ul className="max-w-3xl space-y-5 text-ink-soft leading-relaxed">
+          <ul className="max-w-3xl space-y-5 text-zinc-400 leading-relaxed">
             <li>
               <p>
-                <span className="font-semibold text-ink">
+                <span className="font-semibold text-zinc-100">
                   AI-assisted, not AI-replaced
                 </span>{" "}
                 — Generation is step-by-step, but the PM stays in the loop. Chat
@@ -233,7 +233,7 @@ export default function AtlasNovaCaseStudy() {
             </li>
             <li>
               <p>
-                <span className="font-semibold text-ink">
+                <span className="font-semibold text-zinc-100">
                   Transparent generation
                 </span>{" "}
                 — Each section surfaces where the model is in its pipeline (indexed
@@ -243,14 +243,14 @@ export default function AtlasNovaCaseStudy() {
             </li>
             <li>
               <p>
-                <span className="font-semibold text-ink">Split-pane layout</span>{" "}
+                <span className="font-semibold text-zinc-100">Split-pane layout</span>{" "}
                 — Document left, chat right, one macOS window. Users never lose
                 context toggling between generated copy and directing the AI.
               </p>
             </li>
             <li>
               <p>
-                <span className="font-semibold text-ink">
+                <span className="font-semibold text-zinc-100">
                   Context you can see (@mentions)
                 </span>{" "}
                 — @mention pills reference knowledge-base artifacts—competitive
@@ -260,7 +260,7 @@ export default function AtlasNovaCaseStudy() {
             </li>
             <li>
               <p>
-                <span className="font-semibold text-ink">
+                <span className="font-semibold text-zinc-100">
                   Template settings upfront
                 </span>{" "}
                 — Format, page count, detail level, and output type belong in
@@ -271,7 +271,7 @@ export default function AtlasNovaCaseStudy() {
             </li>
             <li>
               <p>
-                <span className="font-semibold text-ink">
+                <span className="font-semibold text-zinc-100">
                   Connected platforms
                 </span>{" "}
                 — Document generation pulls from scattered team knowledge. Connect
@@ -287,13 +287,13 @@ export default function AtlasNovaCaseStudy() {
           id="early-sketches"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-ink-muted">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Sketches
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
             Whiteboard from team discussions
           </h2>
-          <p className="max-w-3xl text-ink-soft leading-relaxed">
+          <p className="max-w-3xl text-zinc-400 leading-relaxed">
             Early IA and layout explorations for this feature—before hi-fi
             mockups.
           </p>
@@ -308,11 +308,11 @@ export default function AtlasNovaCaseStudy() {
           id="mockups"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-ink-muted">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Mockups
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>Hi-fi screens</h2>
-          <p className="max-w-3xl text-ink-soft leading-relaxed">
+          <p className="max-w-3xl text-zinc-400 leading-relaxed">
             Hi-fi screens I delivered for the document generation flow—home →
             import sources → split-pane workspace → platform connect.
           </p>
@@ -327,11 +327,11 @@ export default function AtlasNovaCaseStudy() {
           id="ui-flow"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-ink-muted">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             UI flow
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>New project onboarding</h2>
-          <p className="max-w-3xl text-ink-soft leading-relaxed">
+          <p className="max-w-3xl text-zinc-400 leading-relaxed">
             Onboarding UI for new document projects: dashboard → prompt → AI
             clarifying questions → template pick → file upload. The flow narrows
             scope before generation—and surfaces template settings upfront, not
@@ -346,11 +346,11 @@ export default function AtlasNovaCaseStudy() {
           />
         </CaseStudyInViewSection>
 
-        <CaseStudyInViewSection className="border-t border-ink-line pt-12 space-y-8">
+        <CaseStudyInViewSection className="border-t border-zinc-800 pt-12 space-y-8">
           <CaseStudyPrevNext currentSlug="atlas-nova" />
           <Link
             href="/"
-            className="inline-flex text-sm font-medium text-ink-soft transition hover:text-ink"
+            className="inline-flex text-sm font-medium text-zinc-400 transition hover:text-zinc-100"
           >
             ← Back to home
           </Link>

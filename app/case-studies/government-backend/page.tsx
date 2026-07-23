@@ -55,8 +55,8 @@ function Metric({ children }: { children: ReactNode }) {
 
 export default function GovernmentBackendCaseStudy() {
   return (
-    <article className="min-h-screen bg-paper text-ink">
-      <header className="border-b border-ink-line">
+    <article className="min-h-screen">
+      <header className="border-b border-zinc-800">
         <div className={`${SITE_SHELL_INNER} py-12 sm:py-16`}>
           <div
             className={`${CASE_STUDY_BODY_GRID} min-w-0 space-y-10 sm:space-y-12`}
@@ -91,7 +91,7 @@ export default function GovernmentBackendCaseStudy() {
           id="project-background"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-ink-muted">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Opportunity
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
@@ -102,14 +102,14 @@ export default function GovernmentBackendCaseStudy() {
           </h2>
 
           <div className="space-y-3 pt-4">
-            <h5 className="text-ink">
+            <h5 className="text-zinc-100">
               Example of corresponding screens
             </h5>
-            <p className="max-w-3xl text-sm text-ink-soft leading-relaxed">
+            <p className="max-w-3xl text-sm text-zinc-400 leading-relaxed">
               Staff compose notification content in the backend, set publish timing,
               and schedule delivery in advance. End users receive{" "}
-              <span className="text-ink-soft">push notifications</span>, then open the
-              in-app <span className="text-ink-soft">notification center</span> and
+              <span className="text-zinc-400">push notifications</span>, then open the
+              in-app <span className="text-zinc-400">notification center</span> and
               message details—aligned with those backend rules.
             </p>
             <GovernmentBackendCorrespondingScreensSlider
@@ -149,7 +149,7 @@ export default function GovernmentBackendCaseStudy() {
           id="design-engineering-alignment"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-ink-muted">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Design &amp; engineering
           </span>
           <GovernmentBackendEngineeringAlignment />
@@ -167,39 +167,39 @@ export default function GovernmentBackendCaseStudy() {
           id="iterations"
           className="scroll-mt-28 space-y-8 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-ink-muted">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Key design iterations
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
             Two iterations that went through the longest discussions
           </h2>
-          <p className="text-ink-soft leading-relaxed">
+          <p className="text-zinc-400 leading-relaxed">
             There were many iterations when discussing API capabilities, data
             sources, and staffing needs. I chose the following two features because
             those iterations went through the longest discussions.
           </p>
 
           <div className="space-y-4">
-            <h5 className="text-ink">
+            <h5 className="text-zinc-100">
               Design iteration 1 · Data reporting
             </h5>
-            <p className="text-ink-soft leading-relaxed">
-              <span className="text-ink-soft font-semibold">Before:</span> Reporting
+            <p className="text-zinc-400 leading-relaxed">
+              <span className="text-zinc-400 font-semibold">Before:</span> Reporting
               worked, but the layout made it harder to answer common questions in one
               place: how membership trended over a chosen year, how to read peaks
               quickly in meetings, and how to export without second-guessing the
               time range.
             </p>
-            <p className="text-ink-soft leading-relaxed">
-              <span className="text-ink-soft font-semibold">After:</span> I iterated
+            <p className="text-zinc-400 leading-relaxed">
+              <span className="text-zinc-400 font-semibold">After:</span> I iterated
               on the same metrics with clearer filters (for example, statistical
               year), stronger chart hierarchy and hover detail, and explicit
               weekly/monthly views—so staff could prep for reviews and audits
               without rebuilding tables by hand. Engineers noted that large user
               datasets still needed sensible time bounds and export limits.
             </p>
-            <p className="text-ink-soft leading-relaxed">
-              <span className="text-ink-soft font-semibold">Impact:</span> Present{" "}
+            <p className="text-zinc-400 leading-relaxed">
+              <span className="text-zinc-400 font-semibold">Impact:</span> Present{" "}
               <span
                 className="rounded-md px-1.5 py-0.5 font-medium"
                 style={{
@@ -256,17 +256,17 @@ export default function GovernmentBackendCaseStudy() {
           </div>
 
           <div className="space-y-4 max-w-3xl">
-            <h5 className="text-ink">
+            <h5 className="text-zinc-100">
               Design iteration 2 · App update version control
             </h5>
-            <p className="text-ink-soft leading-relaxed">
+            <p className="text-zinc-400 leading-relaxed">
               With engineers, I aligned how the UI should surface{" "}
-              <span className="text-ink-soft">mandatory vs. optional updates</span>,{" "}
-              <span className="text-ink-soft">duplicate version checks</span>, and
+              <span className="text-zinc-400">mandatory vs. optional updates</span>,{" "}
+              <span className="text-zinc-400">duplicate version checks</span>, and
               feedback when saves fail—so staff always understand what the system
               will do before data is committed.
             </p>
-            <p className="text-ink-soft leading-relaxed">
+            <p className="text-zinc-400 leading-relaxed">
               The flow diagram below maps user actions to backend judgment: for
               example, whether an update is forced, whether a version number already
               exists, and how errors surface (inline validation, confirmation
@@ -301,21 +301,21 @@ export default function GovernmentBackendCaseStudy() {
             <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
               Processes and interfaces, under constraints
             </h2>
-            <p className="text-ink-soft leading-relaxed">
+            <p className="text-zinc-400 leading-relaxed">
               This project taught me that designing government-scale platforms
               isn&apos;t just about new features—it&apos;s about integrating with
               established habits, hierarchies, and system logic. The biggest challenge
               was balancing existing workflows with a scalable backend architecture,
               all under a tight timeline.
             </p>
-            <p className="text-ink-soft leading-relaxed">
+            <p className="text-zinc-400 leading-relaxed">
               I made intentional trade-offs: instead of building a full functional
               map, I validated requirements directly through annotated mockups and
               page flows. This accelerated collaboration but required refining details
               live during discussions. It was a valuable lesson in designing under
               constraints while still maintaining trust and accuracy.
             </p>
-            <p className="text-ink-soft leading-relaxed">
+            <p className="text-zinc-400 leading-relaxed">
               Most importantly, I learned that in enterprise-scale projects, solving
               problems often means designing processes as much as interfaces. This
               strengthened my ability to align system logic with human workflows,
@@ -326,11 +326,11 @@ export default function GovernmentBackendCaseStudy() {
         </DesignJourneyCollapsible>
         </div>
 
-        <CaseStudyInViewSection className="border-t border-ink-line pt-12 space-y-8">
+        <CaseStudyInViewSection className="border-t border-zinc-800 pt-12 space-y-8">
           <CaseStudyPrevNext currentSlug="government-backend" />
           <Link
             href="/"
-            className="text-sm font-medium text-ink-soft hover:text-ink transition"
+            className="text-sm font-medium text-zinc-400 hover:text-zinc-100 transition"
           >
             ← Back to home
           </Link>

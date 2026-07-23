@@ -5,7 +5,7 @@ import { ProjectCardTag } from "@/app/components/ProjectCardTag";
 import { usePathname } from "next/navigation";
 import { getCaseStudyAsideMeta } from "@/lib/case-study-aside-meta";
 import { CASE_STUDY_PRIMARY_TITLE_CLASS } from "@/lib/site-shell";
-import { PORTFOLIO_LEFT_RAIL_PAPER_CLASS } from "@/lib/portfolio-shell";
+import { PORTFOLIO_LEFT_RAIL_CLASS } from "@/lib/portfolio-shell";
 
 /**
  * Case-study layout: left rail shows project title, subtitle, and at-a-glance
@@ -17,7 +17,7 @@ export function CaseStudyLeftAside() {
 
   return (
     <aside
-      className={`${PORTFOLIO_LEFT_RAIL_PAPER_CLASS} font-sans`}
+      className={`${PORTFOLIO_LEFT_RAIL_CLASS} font-sans`}
       aria-label="Project summary"
     >
       <div className="min-w-0 shrink-0 space-y-3">
@@ -32,13 +32,15 @@ export function CaseStudyLeftAside() {
             <ProjectCardTag>{meta.eyebrow}</ProjectCardTag>
           </div>
         ) : meta.eyebrow ? (
-          <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-ink-muted">
+          <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-zinc-500">
             {meta.eyebrow}
           </p>
         ) : null}
-        <p className={CASE_STUDY_PRIMARY_TITLE_CLASS}>{meta.title}</p>
+        <p className={`${CASE_STUDY_PRIMARY_TITLE_CLASS} text-zinc-50`}>
+          {meta.title}
+        </p>
         {meta.subtitle ? (
-          <p className="text-[15px] leading-[1.7] text-ink-soft sm:text-[17px]">
+          <p className="text-[15px] leading-[1.7] text-zinc-400 sm:text-[17px]">
             {meta.subtitle}
           </p>
         ) : null}
@@ -101,10 +103,10 @@ export function CaseStudyLeftAside() {
         <dl className="min-w-0 shrink-0 space-y-4">
           {meta.items.map((row) => (
             <div key={row.label}>
-              <dt className="text-[11px] font-medium uppercase tracking-[0.2em] text-ink-muted">
+              <dt className="text-[11px] font-medium uppercase tracking-[0.2em] text-zinc-500">
                 {row.label}
               </dt>
-              <dd className="mt-0.5 text-sm font-medium leading-snug text-ink">
+              <dd className="mt-0.5 text-sm font-medium leading-snug text-zinc-200">
                 {row.value}
               </dd>
             </div>

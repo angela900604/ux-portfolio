@@ -7,7 +7,7 @@ export function OutcomesMetricsChart() {
       role="img"
       aria-label="Outcome metrics over three months: plus 500 Instagram followers net new, plus 21 percent Instagram engagement versus baseline, plus 18 percent organic site traffic in sessions"
     >
-      <p className="text-xs font-medium uppercase tracking-widest text-ink-muted">
+      <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
         Outcomes at a glance (3 months)
       </p>
       <div className="mt-6 space-y-7">
@@ -58,17 +58,17 @@ function MetricRow({
   return (
     <div>
       <div className="flex flex-wrap items-baseline justify-between gap-2">
-        <span className="text-sm text-ink-soft">{label}</span>
+        <span className="text-sm text-zinc-400">{label}</span>
         <div className="text-right">
           <span
             className={`text-lg font-semibold tabular-nums ${valueClass}`}
           >
             {value}
           </span>
-          <span className="ml-2 text-xs text-ink-muted">{valueNote}</span>
+          <span className="ml-2 text-xs text-zinc-500">{valueNote}</span>
         </div>
       </div>
-      <div className="mt-2 h-2.5 overflow-hidden rounded-full bg-paper-soft">
+      <div className="mt-2 h-2.5 overflow-hidden rounded-full bg-zinc-900/40">
         <div
           className={`h-full rounded-full transition-[width] ${barClass}`}
           style={{ width: `${Math.min(100, Math.max(0, barWidth))}%` }}

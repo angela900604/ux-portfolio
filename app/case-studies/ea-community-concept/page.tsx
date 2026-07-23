@@ -132,7 +132,7 @@ function Figure({
         </ImageLightbox>
       </div>
       {caption ? (
-        <figcaption className="text-sm text-ink-muted">{caption}</figcaption>
+        <figcaption className="text-sm text-zinc-500">{caption}</figcaption>
       ) : null}
     </figure>
   );
@@ -140,8 +140,8 @@ function Figure({
 
 export default function EaCommunityConceptCaseStudy() {
   return (
-    <article className="min-h-screen bg-paper text-ink">
-      <header className="border-b border-ink-line">
+    <article className="min-h-screen">
+      <header className="border-b border-zinc-800">
         <div className={`${SITE_SHELL_INNER} py-12 sm:py-16`}>
           <div
             className={`${CASE_STUDY_BODY_GRID} flex min-w-0 flex-col overflow-x-hidden`}
@@ -171,19 +171,19 @@ export default function EaCommunityConceptCaseStudy() {
           id="context"
           className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-ink-muted">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Context
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
             A 24-hour industry hackathon, sponsored by EA
           </h2>
-          <p className="max-w-3xl text-ink-soft leading-relaxed">
+          <p className="max-w-3xl text-zinc-400 leading-relaxed">
             This was an <Highlight>industry hackathon</Highlight> format: one
             day, one problem brief, one cross-functional team. I joined as the
             sole UX designer alongside two frontend engineers and one data
             scientist—everyone building toward a demo by the end of the sprint.
           </p>
-          <p className="max-w-3xl text-ink-soft leading-relaxed">
+          <p className="max-w-3xl text-zinc-400 leading-relaxed">
             I&apos;m including a non-shipped concept project because the problem
             maps directly to live-service and social game features: how players
             discover communities, find shared interests beyond a game title, and
@@ -198,13 +198,13 @@ export default function EaCommunityConceptCaseStudy() {
           id="research"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-ink-muted">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Research
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
             Secondary research and a target persona
           </h2>
-          <p className="max-w-3xl text-ink-soft leading-relaxed">
+          <p className="max-w-3xl text-zinc-400 leading-relaxed">
             With no time for primary interviews, we grounded the concept in
             secondary research on how teens and young adults form interest-based
             groups online—and where gaming social layers fall short.
@@ -218,21 +218,21 @@ export default function EaCommunityConceptCaseStudy() {
           id="principles"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-ink-muted">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Principles
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
             What we designed for
           </h2>
-          <p className="max-w-3xl text-ink-soft leading-relaxed">
+          <p className="max-w-3xl text-zinc-400 leading-relaxed">
             Alex needs to find people through shared interests—not just game
             titles. Each principle below drove a specific decision in the task
             flow and wireframes.
           </p>
-          <ul className="max-w-3xl space-y-5 text-ink-soft leading-relaxed">
+          <ul className="max-w-3xl space-y-5 text-zinc-400 leading-relaxed">
             <li>
               <p>
-                <span className="font-semibold text-ink">
+                <span className="font-semibold text-zinc-100">
                   Search before browse
                 </span>{" "}
                 — Keyword search surfaces relevant communities immediately
@@ -242,7 +242,7 @@ export default function EaCommunityConceptCaseStudy() {
             </li>
             <li>
               <p>
-                <span className="font-semibold text-ink">
+                <span className="font-semibold text-zinc-100">
                   Interest over title
                 </span>{" "}
                 — Search results group communities, events, and people around a
@@ -252,7 +252,7 @@ export default function EaCommunityConceptCaseStudy() {
             </li>
             <li>
               <p>
-                <span className="font-semibold text-ink">
+                <span className="font-semibold text-zinc-100">
                   Join with context
                 </span>{" "}
                 — Community profiles preview bio, member count, and upcoming
@@ -261,7 +261,7 @@ export default function EaCommunityConceptCaseStudy() {
             </li>
             <li>
               <p>
-                <span className="font-semibold text-ink">
+                <span className="font-semibold text-zinc-100">
                   Events as on-ramps
                 </span>{" "}
                 — Event cards with host, schedule, and a Details CTA give a
@@ -276,13 +276,13 @@ export default function EaCommunityConceptCaseStudy() {
           id="task-flow"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-ink-muted">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Task flow
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
             Community discovery end-to-end
           </h2>
-          <p className="max-w-3xl text-ink-soft leading-relaxed">
+          <p className="max-w-3xl text-zinc-400 leading-relaxed">
             The flow I delivered for the team—color-coded by step type in the
             original diagram (screens, user actions, system responses). Search and
             keyword matching sit early; event registration closes the loop.
@@ -294,13 +294,13 @@ export default function EaCommunityConceptCaseStudy() {
           id="wireframes"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-ink-muted">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Wireframes
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
             Browse vs. interest-based search
           </h2>
-          <p className="max-w-3xl text-ink-soft leading-relaxed">
+          <p className="max-w-3xl text-zinc-400 leading-relaxed">
             Two states of the Community Screen—default game-based recommendations,
             then keyword-driven results when Alex searches for a shared interest.
           </p>
@@ -315,13 +315,13 @@ export default function EaCommunityConceptCaseStudy() {
           id="events"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-ink-muted">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Events
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
             Event discovery and registration path
           </h2>
-          <p className="max-w-3xl text-ink-soft leading-relaxed">
+          <p className="max-w-3xl text-zinc-400 leading-relaxed">
             From Community Profile, users pick an event and land on a detail
             screen with summary, Join Event CTA, and similar-event
             recommendations.
@@ -333,20 +333,20 @@ export default function EaCommunityConceptCaseStudy() {
           id="more-time"
           className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-ink-muted">
+          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Honest close
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
             What I&apos;d do with more time
           </h2>
-          <p className="max-w-3xl text-ink-soft leading-relaxed">
+          <p className="max-w-3xl text-zinc-400 leading-relaxed">
             This project stayed at flow and wireframe stage—the 24-hour constraint
             meant prioritizing direction over pixels. With more time, I&apos;d
             validate the search-first IA with quick usability tests, flesh out
             community profile content hierarchy, and pressure-test event
             registration against real player mental models.
           </p>
-          <p className="max-w-3xl text-ink-soft leading-relaxed">
+          <p className="max-w-3xl text-zinc-400 leading-relaxed">
             The engineering team did build a working prototype that validated
             technical feasibility. I don&apos;t have a visual record of that
             build—what&apos;s documented here is the UX direction I owned before
@@ -354,11 +354,11 @@ export default function EaCommunityConceptCaseStudy() {
           </p>
         </CaseStudyInViewSection>
 
-        <CaseStudyInViewSection className="border-t border-ink-line pt-12 space-y-8">
+        <CaseStudyInViewSection className="border-t border-zinc-800 pt-12 space-y-8">
           <CaseStudyPrevNext currentSlug="ea-community-concept" />
           <Link
             href="/"
-            className="inline-flex text-sm font-medium text-ink-soft transition hover:text-ink"
+            className="inline-flex text-sm font-medium text-zinc-400 transition hover:text-zinc-100"
           >
             ← Back to home
           </Link>

@@ -7,12 +7,12 @@ export function CompetitorLandscapeTable() {
       <CompetitorCard
         name="MoF Cloud Invoice"
         tag="Official"
-        tagClass="text-ink-muted"
+        tagClass="text-zinc-500"
         ratingLine={
           <>
             <Star />{" "}
-            <span className="tabular-nums font-medium text-ink-soft">2.5</span>
-            <span className="text-ink-muted"> · ~9K reviews</span>
+            <span className="tabular-nums font-medium text-zinc-400">2.5</span>
+            <span className="text-zinc-500"> · ~9K reviews</span>
           </>
         }
         summary="Trust and policy-complete features; weak on speed, spending insight, and approachable density for silver users."
@@ -24,8 +24,8 @@ export function CompetitorLandscapeTable() {
         ratingLine={
           <>
             <Star />{" "}
-            <span className="tabular-nums font-medium text-ink-soft">4.8</span>
-            <span className="text-ink-muted"> · ~320K reviews</span>
+            <span className="tabular-nums font-medium text-zinc-400">4.8</span>
+            <span className="text-zinc-500"> · ~320K reviews</span>
           </>
         }
         summary="Habit-forming UX—charts, widgets, draw alerts with sound; advanced corners can feel crowded."
@@ -37,8 +37,8 @@ export function CompetitorLandscapeTable() {
         ratingLine={
           <>
             <Star />{" "}
-            <span className="tabular-nums font-medium text-ink-soft">4.8</span>
-            <span className="text-ink-muted"> · ~240K reviews</span>
+            <span className="tabular-nums font-medium text-zinc-400">4.8</span>
+            <span className="text-zinc-500"> · ~240K reviews</span>
           </>
         }
         summary="Clean UI and gentle onboarding; strong on analytics and quick barcode access via widgets."
@@ -48,7 +48,7 @@ export function CompetitorLandscapeTable() {
         tag="LINE mini-app"
         tagClass="text-emerald-400/75"
         ratingLine={
-          <span className="text-ink-muted">No standalone store listing</span>
+          <span className="text-zinc-500">No standalone store listing</span>
         }
         summary="Zero extra install inside LINE; simple flows and social context—advanced needs still spill to other tools."
       />
@@ -78,15 +78,15 @@ function CompetitorCard({
   summary: string;
 }) {
   return (
-    <div className="overflow-hidden/25 px-4 py-4 sm:px-5 sm:py-4">
+    <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 px-4 py-4 sm:px-5 sm:py-4">
       <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-        <p className="text-base font-semibold tracking-tight text-ink">{name}</p>
+        <p className="text-base font-semibold tracking-tight text-zinc-100">{name}</p>
         <span className={`text-[11px] font-medium uppercase tracking-wide ${tagClass}`}>
           {tag}
         </span>
       </div>
-      <p className="mt-2 text-sm leading-snug text-ink-soft">{ratingLine}</p>
-      <p className="mt-2 text-sm leading-relaxed text-ink-soft">{summary}</p>
+      <p className="mt-2 text-sm leading-snug text-zinc-400">{ratingLine}</p>
+      <p className="mt-2 text-sm leading-relaxed text-zinc-300">{summary}</p>
     </div>
   );
 }

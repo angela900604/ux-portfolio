@@ -24,7 +24,7 @@ export function CaseStudyHeroTldr({
   headline,
   metrics,
   sectionLabel = "Overview",
-  metricValueClassName = "text-ink",
+  metricValueClassName = "text-zinc-100",
 }: Props) {
   const gridClass =
     metrics.length >= 4
@@ -36,12 +36,12 @@ export function CaseStudyHeroTldr({
   return (
     <div className="min-w-0">
       <span className={CS_SECTION_EYEBROW}>{sectionLabel}</span>
-      <h2 className="mt-4 max-w-4xl text-pretty text-[2.125rem] font-medium leading-[1.25] tracking-[-0.025em] text-ink sm:mt-5">
+      <h2 className="mt-4 max-w-4xl text-pretty text-[2.125rem] font-medium leading-[1.25] tracking-[-0.025em] text-zinc-100 sm:mt-5">
         {headline}
       </h2>
 
       <dl
-        className={`mt-8 grid ${gridClass} gap-x-6 gap-y-6 border-t border-ink-line pt-6`}
+        className={`mt-8 grid ${gridClass} gap-x-6 gap-y-6 border-t border-zinc-800 pt-6`}
       >
         {metrics.map((m) => (
           <div key={m.kicker + m.title} className="min-w-0">
@@ -51,11 +51,11 @@ export function CaseStudyHeroTldr({
             >
               {m.value}
             </dd>
-            <dd className="mt-2 text-sm font-medium leading-snug text-ink">
+            <dd className="mt-2 text-sm font-medium leading-snug text-zinc-100">
               {m.title}
             </dd>
             {m.detail ? (
-              <dd className="mt-2 text-[15px] leading-[1.7] text-ink-soft">
+              <dd className="mt-2 text-[15px] leading-[1.7] text-zinc-400">
                 {m.detail}
               </dd>
             ) : null}
