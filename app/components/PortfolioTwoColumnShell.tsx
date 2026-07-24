@@ -11,9 +11,9 @@ type ShellTheme = "dark" | "paper";
  * “Hello! This is Angela.” / “About me”. Bottom stays looser for long pages.
  */
 const MAIN_INNER: Record<MainWidth, string> = {
-  editorial: `${SITE_SHELL_CONTAINER} pt-12 pb-10 sm:pt-16 sm:pb-12`,
+  editorial: `${SITE_SHELL_CONTAINER} pt-8 pb-8 sm:pt-12 sm:pb-10 lg:pt-16 lg:pb-12`,
   /** Case studies: full width of main (between gutters) so full-bleed bands can span the column. */
-  full: `w-full min-w-0 ${SITE_GUTTER_CLASS} py-8 sm:py-10`,
+  full: `w-full min-w-0 ${SITE_GUTTER_CLASS} py-6 sm:py-8 lg:py-10`,
 };
 
 export function PortfolioTwoColumnShell({
@@ -40,7 +40,7 @@ export function PortfolioTwoColumnShell({
       <div className="flex flex-col pt-14 lg:min-h-0 lg:flex-1 lg:flex-row lg:overflow-hidden">
         {leftAside ?? <PortfolioLeftColumn />}
 
-        <main className="min-w-0 w-full flex-1 overflow-x-hidden font-sans lg:min-h-0 lg:overflow-y-auto">
+        <main className="order-2 min-w-0 w-full flex-1 overflow-x-hidden font-sans lg:order-none lg:min-h-0 lg:overflow-y-auto">
           <div className={MAIN_INNER[mainWidth]}>{children}</div>
         </main>
       </div>

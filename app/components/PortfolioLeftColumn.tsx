@@ -7,15 +7,28 @@ import {
   MARKETING_FLAGSHIP_SERIF,
   MARKETING_FLAGSHIP_SERIF_LEAD_CLASS,
 } from "@/lib/marketing-flagship-serif";
-import { PORTFOLIO_LEFT_RAIL_CLASS } from "@/lib/portfolio-shell";
+import {
+  PORTFOLIO_LEFT_RAIL_CLASS,
+} from "@/lib/portfolio-shell";
 
 const PROFILE_SRC = "/about/profile-v2.png";
 
 const HOVER_NAV = "transition hover:text-[color:var(--nav-accent-blue)]";
 
+/** Mobile-only shell for the top block (hello + photo) — sits above main content. */
+const MOBILE_RAIL_TOP =
+  "max-lg:order-1 max-lg:border-b max-lg:border-zinc-800 max-lg:px-5 max-lg:pt-8 max-lg:pb-5 sm:max-lg:px-10 sm:max-lg:pt-12 sm:max-lg:pb-6";
+
+/** Mobile-only shell for contact meta — sits below main content. */
+const MOBILE_RAIL_FOOTER =
+  "max-lg:order-3 max-lg:border-b max-lg:border-zinc-800 max-lg:px-5 max-lg:py-5 sm:max-lg:px-10 sm:max-lg:py-6";
+
 /**
  * Persistent left rail: hello (home) or about label, profile photo, spacer,
  * bottom meta (focus → divider → location → ©).
+ *
+ * On mobile, main content (Ask Angela + work) sits between the photo and contact
+ * footer via flex `order` + `max-lg:contents` on the aside.
  */
 export function PortfolioLeftColumn() {
   const pathname = usePathname() ?? "";
@@ -23,45 +36,45 @@ export function PortfolioLeftColumn() {
     pathname === "/about" || pathname.startsWith("/about/");
 
   return (
-    <aside className={`${PORTFOLIO_LEFT_RAIL_CLASS} font-sans`}>
-      <div className="min-w-0 shrink-0">
+    <aside className={`max-lg:contents ${PORTFOLIO_LEFT_RAIL_CLASS} font-sans`}>
+      <div className={`min-w-0 shrink-0 lg:shrink-0 ${MOBILE_RAIL_TOP}`}>
         <h1
           className={`${MARKETING_FLAGSHIP_SERIF_LEAD_CLASS} text-zinc-50`}
           style={{ fontFamily: MARKETING_FLAGSHIP_SERIF }}
         >
           {isAbout ? "About me" : "Hi, I'm Angela."}
         </h1>
-      </div>
 
-      <div className="mt-6 w-full max-w-[280px] shrink-0 overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/30 sm:max-w-[min(100%,20rem)]">
-        <ImageLightbox
-          src={PROFILE_SRC}
-          alt="Angela Yang — profile photo"
-          className="block w-full"
-          disableHoverScale
-          ariaLabel="View profile photo larger"
-        >
-          <div className="relative aspect-[3/4] w-full">
-            <Image
-              src={PROFILE_SRC}
-              alt="Angela Yang — profile photo"
-              fill
-              className="object-cover object-[center_15%]"
-              sizes="(max-width: 1024px) 88vw, 320px"
-              priority
-            />
-          </div>
-        </ImageLightbox>
+        <div className="mt-5 w-full max-w-[280px] shrink-0 overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/30 sm:mt-6 sm:max-w-[min(100%,20rem)]">
+          <ImageLightbox
+            src={PROFILE_SRC}
+            alt="Angela Yang — profile photo"
+            className="block w-full"
+            disableHoverScale
+            ariaLabel="View profile photo larger"
+          >
+            <div className="relative aspect-[3/4] w-full">
+              <Image
+                src={PROFILE_SRC}
+                alt="Angela Yang — profile photo"
+                fill
+                className="object-cover object-[center_15%]"
+                sizes="(max-width: 1024px) 88vw, 320px"
+                priority
+              />
+            </div>
+          </ImageLightbox>
+        </div>
       </div>
 
       <div className="hidden min-h-0 shrink lg:block lg:flex-1" aria-hidden />
 
-      <div className="shrink-0 pb-0 pt-2 lg:mt-0">
+      <div className={`shrink-0 lg:pb-0 lg:pt-2 ${MOBILE_RAIL_FOOTER}`}>
         <p className="text-[clamp(0.8rem,1.6vw,0.95rem)] font-normal leading-snug tracking-[-0.015em] text-zinc-50">
           Product Designer
         </p>
 
-        <div className="my-6 border-t border-zinc-800" aria-hidden />
+        <div className="my-5 border-t border-zinc-800 sm:my-6" aria-hidden />
 
         <div className="space-y-2 text-xs leading-relaxed text-zinc-500">
           <p className="text-zinc-400">Based in Vancouver, BC</p>
@@ -115,7 +128,7 @@ export function PortfolioLeftColumn() {
           </div>
         </div>
 
-        <p className="mt-6 text-[11px] leading-relaxed text-zinc-600">
+        <p className="mt-5 text-[11px] leading-relaxed text-zinc-600 sm:mt-6">
           © {new Date().getFullYear()} · vibe-coded by me.
         </p>
       </div>

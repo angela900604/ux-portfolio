@@ -6,7 +6,8 @@ import { SITE_GUTTER_CLASS } from "@/lib/site-shell";
  * the fixed header. The nav brand cell does not use this token — it uses gutters only
  * so “Angela Yang” stays vertically centered in the `h-14` bar.
  */
-export const PORTFOLIO_ASIDE_PADDING = `pt-12 pb-6 sm:pt-16 sm:pb-8 ${SITE_GUTTER_CLASS}`;
+export const PORTFOLIO_ASIDE_PADDING =
+  "pt-8 pb-5 sm:pt-12 sm:pb-6 lg:pt-16 lg:pb-8 " + SITE_GUTTER_CLASS;
 
 /** Width token only (no padding) — desktop nav left cell matches left rail. */
 export const PORTFOLIO_LEFT_RAIL_WIDTH_CLASS =

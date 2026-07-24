@@ -16,7 +16,7 @@ const NAV_LINK_BASE =
   "inline-flex min-h-[44px] items-center px-1 transition-opacity";
 
 const CLOCK_CLASS =
-  "pointer-events-none absolute left-1/2 top-1/2 z-0 max-w-[min(100%,14rem)] -translate-x-1/2 -translate-y-1/2 truncate text-center text-[10px] font-medium uppercase leading-tight tracking-[0.18em] text-zinc-600 sm:max-w-none sm:text-[11px] sm:tracking-[0.2em]";
+  "pointer-events-none absolute left-1/2 top-1/2 z-0 hidden max-w-[min(100%,14rem)] -translate-x-1/2 -translate-y-1/2 truncate text-center text-[10px] font-medium uppercase leading-tight tracking-[0.18em] text-zinc-600 sm:block sm:max-w-none sm:text-[11px] sm:tracking-[0.2em]";
 
 function useLocaleDateTime() {
   const [label, setLabel] = useState("");
@@ -75,7 +75,7 @@ export function SiteTopNav({ theme = "dark" }: { theme?: "dark" | "paper" }) {
     : "fixed top-0 left-0 right-0 z-[60] flex h-14 items-center border-b border-zinc-800 bg-zinc-950/90 backdrop-blur-md";
 
   const clockClass = isPaper
-    ? "pointer-events-none absolute left-1/2 top-1/2 z-0 max-w-[min(100%,14rem)] -translate-x-1/2 -translate-y-1/2 truncate text-center text-[10px] font-medium uppercase leading-tight tracking-[0.18em] text-ink-muted sm:max-w-none sm:text-[11px] sm:tracking-[0.2em]"
+    ? "pointer-events-none absolute left-1/2 top-1/2 z-0 hidden max-w-[min(100%,14rem)] -translate-x-1/2 -translate-y-1/2 truncate text-center text-[10px] font-medium uppercase leading-tight tracking-[0.18em] text-ink-muted sm:block sm:max-w-none sm:text-[11px] sm:tracking-[0.2em]"
     : CLOCK_CLASS;
 
   const railBorderClass = isPaper ? "border-ink-line" : "border-zinc-800";

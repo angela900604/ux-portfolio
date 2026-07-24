@@ -55,7 +55,7 @@ export function CaseStudyLeftAside() {
           {meta.title}
         </p>
         {meta.subtitle ? (
-          <p className="text-[15px] leading-[1.7] text-zinc-400 sm:text-[17px]">
+          <p className="text-sm leading-[1.65] text-zinc-400 sm:text-[15px] sm:leading-[1.7] lg:text-[17px]">
             {meta.subtitle}
           </p>
         ) : null}
@@ -104,7 +104,7 @@ export function CaseStudyLeftAside() {
       <div className="hidden min-h-0 shrink lg:block lg:flex-1" aria-hidden />
 
       {meta.items.length > 0 ? (
-        <dl className="min-w-0 shrink-0 space-y-4 pt-10 lg:pt-12">
+        <dl className="min-w-0 shrink-0 space-y-3 pt-6 sm:space-y-4 sm:pt-8 lg:pt-12">
           {meta.items.map((row) => {
             const isProjectType = row.label === "Project type";
             return (

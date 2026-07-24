@@ -36,7 +36,7 @@ export function CaseStudyHeroTldr({
   return (
     <div className="min-w-0">
       <span className={CS_SECTION_EYEBROW}>{sectionLabel}</span>
-      <h2 className="mt-4 max-w-4xl text-pretty text-[2.125rem] font-medium leading-[1.25] tracking-[-0.025em] text-zinc-100 sm:mt-5">
+      <h2 className="mt-3 max-w-4xl text-pretty text-[1.625rem] font-medium leading-[1.28] tracking-[-0.025em] text-zinc-100 sm:mt-5 sm:text-[2.125rem] sm:leading-[1.25]">
         {headline}
       </h2>
 

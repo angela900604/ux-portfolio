@@ -27,8 +27,8 @@ export function CaseStudyContentLayout({
 }: Props) {
   const baseContainer =
     variant === "dark"
-      ? `${SITE_SHELL_INNER} py-12 sm:py-16`
-      : `${SITE_SHELL_INNER} w-full py-10 sm:py-14`;
+      ? `${SITE_SHELL_INNER} py-8 sm:py-12 lg:py-16`
+      : `${SITE_SHELL_INNER} w-full py-8 sm:py-10 lg:py-14`;
 
   const main = (
     <div className={CASE_STUDY_BODY_GRID}>

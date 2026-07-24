@@ -26,29 +26,37 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <div className="pb-20 font-sans">
-      <h1 className="max-w-4xl text-[17px] font-normal leading-[1.7] text-zinc-400 text-pretty xl:max-w-5xl">
-        I&apos;m a Product Designer specializing in delivering{" "}
-        <span className={ABOUT_EMPHASIS_CLASS}>end-to-end solutions</span>
-        {" "}across consumer-facing mobile apps and webs, such as{" "}
-        <span className={ABOUT_EMPHASIS_CLASS}>AI-driven marketplaces</span>,{" "}
-        <span className={ABOUT_EMPHASIS_CLASS}>membership platforms</span>, and{" "}
-        <span className={ABOUT_EMPHASIS_CLASS}>public service platforms</span>.
-        {" "}I enjoy diving into{" "}
-        <span className={ABOUT_EMPHASIS_CLASS}>user research</span>
-        {" "}to understand what people need, what the business wants to achieve, and what
-        technical limitations we&apos;re working with. This helps us make sure the design is
-        both possible and works well with the engineering team. Being very{" "}
-        <span className={ABOUT_EMPHASIS_CLASS}>adaptable</span>
-        {" "}in an{" "}
-        <span className={ABOUT_EMPHASIS_CLASS}>AI-based workflow</span>
-        , using tools like{" "}
-        <span className={ABOUT_EMPHASIS_CLASS}>Stitch, Claude, Figma, and Cursor</span>
-        , lets me quickly turn ideas from{" "}
-        <span className={ABOUT_EMPHASIS_CLASS}>
-          sketches into detailed, ready-to-use prototypes
-        </span>
-        {" "}for developers. And yes, this site was vibe-coded by me :)
-      </h1>
+      <div className="max-w-4xl space-y-4 text-[17px] font-normal leading-[1.7] text-zinc-400 text-pretty xl:max-w-5xl">
+        <p>
+          I&apos;m a Product Designer specializing in delivering{" "}
+          <span className={ABOUT_EMPHASIS_CLASS}>end-to-end solutions</span>
+          {" "}across consumer-facing mobile apps and webs, such as{" "}
+          <span className={ABOUT_EMPHASIS_CLASS}>AI-driven marketplaces</span>,{" "}
+          <span className={ABOUT_EMPHASIS_CLASS}>membership platforms</span>, and{" "}
+          <span className={ABOUT_EMPHASIS_CLASS}>public service platforms</span>.
+        </p>
+        <p>
+          I enjoy diving into{" "}
+          <span className={ABOUT_EMPHASIS_CLASS}>user research</span>
+          {" "}to understand what people need, what the business wants to achieve, and what
+          technical limitations we&apos;re working with. This helps us make sure the design is
+          both possible and works well with the engineering team.
+        </p>
+        <p>
+          Being very{" "}
+          <span className={ABOUT_EMPHASIS_CLASS}>adaptable</span>
+          {" "}in an{" "}
+          <span className={ABOUT_EMPHASIS_CLASS}>AI-based workflow</span>
+          , using tools like{" "}
+          <span className={ABOUT_EMPHASIS_CLASS}>Stitch, Claude, Figma, and Cursor</span>
+          , lets me quickly turn ideas from{" "}
+          <span className={ABOUT_EMPHASIS_CLASS}>
+            sketches into detailed, ready-to-use prototypes
+          </span>
+          {" "}for developers.
+        </p>
+        <p>And yes, this site was vibe-coded by me :)</p>
+      </div>
 
       <AboutExperienceSection />
 
