@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "build:agent-knowledge": "node scripts/build-agent-knowledge.mjs",
+    "prebuild": "npm run build:agent-knowledge",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
@@ -21,6 +23,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
+    "pdf-parse": "^1.1.1",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
