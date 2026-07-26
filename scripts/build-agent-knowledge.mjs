@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 /**
- * Builds the Ask Angela knowledge base from:
+ * Builds the Ask Angela static knowledge base from:
  * - Resume PDFs in content/agent/source-resumes/
- * - Full case study / research / about TSX page copy
  * - Structured site metadata (aside meta, experience, homepage work grid)
+ * - Live rendered HTML snapshot of all case study + research pages (fallback)
+ *
+ * Runtime /api/ask refreshes live crawl hourly; this snapshot covers cold starts / failures.
  *
  * Run: node scripts/build-agent-knowledge.mjs
  * Hooked into `npm run build` via prebuild.
@@ -20,9 +22,14 @@ const ROOT = path.resolve(import.meta.dirname, "..");
 const OUT_DIR = path.join(ROOT, "lib", "generated");
 const OUT_FILE = path.join(OUT_DIR, "agent-knowledge.ts");
 const RESUME_DIR = path.join(ROOT, "content", "agent", "source-resumes");
+const CRAWL_ROUTES = JSON.parse(
+  fs.readFileSync(path.join(ROOT, "content/agent/crawl-routes.json"), "utf8"),
+);
 
-const MAX_CHARS_PER_PAGE = 12_000;
-const MAX_TOTAL_CHARS = 180_000;
+const MAX_CHARS_PER_ROUTE = 14_000;
+const MAX_STATIC_CHARS = 80_000;
+const MAX_LIVE_FALLBACK_CHARS = 120_000;
+const FETCH_TIMEOUT_MS = 12_000;
 
 const RESUME_FILES = [
   {
@@ -37,56 +44,10 @@ const RESUME_FILES = [
   },
 ];
 
-const PAGE_GLOBS = [
-  "app/case-studies/**/page.tsx",
-  "app/user-research-journey/page.tsx",
-  "app/competitor-analysis/**/*.tsx",
-  "app/multisegment-interviews/**/*.tsx",
-  "app/accessibility-voiceover/**/*.tsx",
-  "app/(marketing)/about/**/*.tsx",
-];
-
-const SKIP_PATH_PARTS = [
-  "/_components/",
-  "/[slug]/",
-  "node_modules",
-];
-
-/** @param {string} dir @param {string[]} acc */
-function walkTsx(dir, acc = []) {
-  if (!fs.existsSync(dir)) return acc;
-  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-    const full = path.join(dir, entry.name);
-    if (entry.isDirectory()) {
-      if (entry.name.startsWith(".") || entry.name === "node_modules") continue;
-      walkTsx(full, acc);
-    } else if (entry.name.endsWith(".tsx")) {
-      acc.push(full);
-    }
-  }
-  return acc;
-}
-
-/** @returns {string[]} */
-function collectSourceFiles() {
-  const files = new Set();
-  for (const rel of [
-    "app/case-studies",
-    "app/user-research-journey",
-    "app/competitor-analysis",
-    "app/multisegment-interviews",
-    "app/accessibility-voiceover",
-    path.join("app", "(marketing)", "about"),
-  ]) {
-    for (const f of walkTsx(path.join(ROOT, rel))) {
-      files.add(f);
-    }
-  }
-  return [...files]
-    .filter((f) => !SKIP_PATH_PARTS.some((p) => f.includes(p)))
-    .filter((f) => !f.endsWith(`${path.sep}layout.tsx`))
-    .filter((f) => !f.endsWith("[slug]/page.tsx"))
-    .sort();
+function getCrawlBaseUrl() {
+  const explicit = process.env.SITE_CRAWL_URL?.trim();
+  if (explicit) return explicit.replace(/\/$/, "");
+  return "https://www.ycnangelayang.com";
 }
 
 /** @param {string} text */
@@ -120,17 +81,6 @@ function isLikelyProse(s) {
 }
 
 /** @param {string} source */
-function extractMetadata(source) {
-  const title =
-    source.match(/title:\s*\n?\s*["'`]([\s\S]*?)["'`]\s*,/m)?.[1] ??
-    source.match(/title:\s*["'`]([^"'`]+)["'`]/)?.[1];
-  const description =
-    source.match(/description:\s*\n?\s*["'`]([\s\S]*?)["'`]\s*,/m)?.[1] ??
-    source.match(/description:\s*["'`]([^"'`]+)["'`]/)?.[1];
-  return { title: title?.trim(), description: description?.trim() };
-}
-
-/** @param {string} source */
 function extractStringLiterals(source) {
   const cleaned = source
     .replace(/^import[\s\S]*?from\s+["'][^"']+["'];?\s*$/gm, "")
@@ -138,8 +88,6 @@ function extractStringLiterals(source) {
     .replace(/\/\/.*$/gm, "");
 
   const found = new Set();
-
-  // Template-ish concatenations: "text" {" "} "more"
   const quoted =
     /"((?:\\.|[^"\\])*)"|'((?:\\.|[^'\\])*)'|`((?:\\.|[^`\\])*)`/g;
   let m;
@@ -151,27 +99,7 @@ function extractStringLiterals(source) {
       .replace(/\\"/g, '"');
     if (isLikelyProse(unescaped)) found.add(unescaped.trim());
   }
-
   return [...found];
-}
-
-/** @param {string} filePath */
-function extractPageKnowledge(filePath) {
-  const source = fs.readFileSync(filePath, "utf8");
-  const rel = path.relative(ROOT, filePath).replace(/\\/g, "/");
-  const meta = extractMetadata(source);
-  const literals = extractStringLiterals(source);
-  let body = literals.join("\n\n");
-  body = normalizeWhitespace(body);
-  if (body.length > MAX_CHARS_PER_PAGE) {
-    body = `${body.slice(0, MAX_CHARS_PER_PAGE)}\n\n[…truncated for agent context]`;
-  }
-
-  const lines = [`## Page source: ${rel}`];
-  if (meta.title) lines.push(`Title: ${meta.title}`);
-  if (meta.description) lines.push(`Description: ${meta.description}`);
-  if (body) lines.push("", body);
-  return lines.join("\n");
 }
 
 /** @param {string} filePath @param {string} heading */
@@ -190,6 +118,76 @@ async function extractPdfText(pdfPath) {
   return normalizeWhitespace(data.text ?? "");
 }
 
+/** @param {string} html */
+function htmlToAgentText(html) {
+  let chunk = html;
+  const mainMatch = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i);
+  if (mainMatch?.[1]) chunk = mainMatch[1];
+
+  chunk = chunk
+    .replace(/<script[\s\S]*?<\/script>/gi, " ")
+    .replace(/<style[\s\S]*?<\/style>/gi, " ")
+    .replace(/<noscript[\s\S]*?<\/noscript>/gi, " ")
+    .replace(/<svg[\s\S]*?<\/svg>/gi, " ")
+    .replace(/<!--[\s\S]*?-->/g, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ");
+
+  return normalizeWhitespace(chunk);
+}
+
+/** @param {string} baseUrl @param {string} route */
+async function fetchRouteText(baseUrl, route) {
+  const url = `${baseUrl}${route}`;
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
+  try {
+    const response = await fetch(url, {
+      signal: controller.signal,
+      headers: {
+        Accept: "text/html",
+        "User-Agent": "AngelaPortfolioAgent/1.0 (build-time knowledge crawl)",
+      },
+    });
+    if (!response.ok) {
+      console.warn(`Live crawl failed (${response.status}): ${url}`);
+      return null;
+    }
+    let text = htmlToAgentText(await response.text());
+    if (text.length > MAX_CHARS_PER_ROUTE) {
+      text = `${text.slice(0, MAX_CHARS_PER_ROUTE)}\n[…truncated]`;
+    }
+    return { route, text };
+  } catch (error) {
+    console.warn(`Live crawl error for ${url}:`, error);
+    return null;
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
+/** @param {string} baseUrl */
+async function crawlLiveSite(baseUrl) {
+  const results = await Promise.all(
+    CRAWL_ROUTES.map((route) => fetchRouteText(baseUrl, route)),
+  );
+  const sections = results
+    .filter((entry) => entry?.text?.trim())
+    .map(
+      ({ route, text }) =>
+        `### Live page: ${route}\n\nURL: ${baseUrl}${route}\n\n${text}`,
+    );
+
+  if (sections.length === 0) return "";
+
+  return [
+    `## Live rendered site snapshot (${baseUrl})`,
+    `Crawled ${sections.length} routes at build time`,
+    "",
+    sections.join("\n\n---\n\n"),
+  ].join("\n");
+}
+
 /** @param {string} s */
 function escapeForTemplate(s) {
   return s.replace(/\\/g, "\\\\").replace(/`/g, "\\`").replace(/\$\{/g, "\\${");
@@ -199,7 +197,7 @@ async function main() {
   const sections = [];
 
   sections.push(
-    `# Auto-generated knowledge (${new Date().toISOString().slice(0, 10)})\n\nThis section is rebuilt on each deploy from resume PDFs and live site page source.`,
+    `# Static knowledge (${new Date().toISOString().slice(0, 10)})\n\nResumes and structured metadata. Case study copy comes from live site crawl (refreshed at request time; build-time snapshot is fallback).`,
   );
 
   sections.push("## Resume — extracted from PDFs\n");
@@ -233,23 +231,32 @@ async function main() {
     ),
   );
 
-  sections.push("## Full case study & research page copy\n");
-  const pageFiles = collectSourceFiles();
-  for (const file of pageFiles) {
-    sections.push(extractPageKnowledge(file));
-    console.log(`Extracted page: ${path.relative(ROOT, file)}`);
+  let staticKnowledge = sections.filter(Boolean).join("\n\n---\n\n");
+  if (staticKnowledge.length > MAX_STATIC_CHARS) {
+    staticKnowledge = `${staticKnowledge.slice(0, MAX_STATIC_CHARS)}\n\n[…static knowledge truncated]`;
+    console.warn(`Truncated static knowledge to ${MAX_STATIC_CHARS} chars`);
   }
 
-  let knowledge = sections.filter(Boolean).join("\n\n---\n\n");
-  if (knowledge.length > MAX_TOTAL_CHARS) {
-    knowledge = `${knowledge.slice(0, MAX_TOTAL_CHARS)}\n\n[…knowledge base truncated at ${MAX_TOTAL_CHARS} chars]`;
-    console.warn(`Truncated knowledge base to ${MAX_TOTAL_CHARS} chars`);
+  const crawlBase = getCrawlBaseUrl();
+  console.log(`Crawling live site for fallback snapshot: ${crawlBase}`);
+  let liveFallback = await crawlLiveSite(crawlBase);
+  if (liveFallback.length > MAX_LIVE_FALLBACK_CHARS) {
+    liveFallback = `${liveFallback.slice(0, MAX_LIVE_FALLBACK_CHARS)}\n\n[…live fallback truncated]`;
+    console.warn(`Truncated live fallback to ${MAX_LIVE_FALLBACK_CHARS} chars`);
   }
+  console.log(`Live fallback: ${liveFallback.length} chars from ${CRAWL_ROUTES.length} routes`);
 
   fs.mkdirSync(OUT_DIR, { recursive: true });
-  const out = `/** AUTO-GENERATED by scripts/build-agent-knowledge.mjs — do not edit manually. */\nexport const GENERATED_AGENT_KNOWLEDGE = \`${escapeForTemplate(knowledge)}\`;\n`;
+  const out = `/** AUTO-GENERATED by scripts/build-agent-knowledge.mjs — do not edit manually. */
+export const GENERATED_AGENT_KNOWLEDGE = \`${escapeForTemplate(staticKnowledge)}\`;
+
+/** Build-time live HTML snapshot — used when runtime crawl fails. */
+export const GENERATED_LIVE_SITE_FALLBACK = \`${escapeForTemplate(liveFallback)}\`;
+`;
   fs.writeFileSync(OUT_FILE, out, "utf8");
-  console.log(`Wrote ${OUT_FILE} (${knowledge.length} chars)`);
+  console.log(
+    `Wrote ${OUT_FILE} (static ${staticKnowledge.length} chars, live fallback ${liveFallback.length} chars)`,
+  );
 }
 
 main().catch((err) => {

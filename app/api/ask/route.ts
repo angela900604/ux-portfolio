@@ -1,3 +1,4 @@
+import { getCachedLiveSiteKnowledge } from "@/lib/agent-live-crawl";
 import {
   buildPortfolioAgentSystemPrompt,
   parseAgentResponse,
@@ -50,6 +51,11 @@ export async function POST(request: Request) {
     return Response.json(fallback);
   }
 
+  const liveSiteContent = await getCachedLiveSiteKnowledge().catch((error) => {
+    console.warn("Live site crawl failed, using build-time fallback:", error);
+    return "";
+  });
+
   const anthropicResponse = await fetch("https://api.anthropic.com/v1/messages", {
     method: "POST",
     headers: {
@@ -60,7 +66,7 @@ export async function POST(request: Request) {
     body: JSON.stringify({
       model: ANTHROPIC_MODEL,
       max_tokens: 1200,
-      system: buildPortfolioAgentSystemPrompt(),
+      system: buildPortfolioAgentSystemPrompt(liveSiteContent),
       messages: [
         ...history.map((message) => ({
           role: message.role,

@@ -1,4 +1,7 @@
-import { GENERATED_AGENT_KNOWLEDGE } from "@/lib/generated/agent-knowledge";
+import {
+  GENERATED_AGENT_KNOWLEDGE,
+  GENERATED_LIVE_SITE_FALLBACK,
+} from "@/lib/generated/agent-knowledge";
 
 export const PORTFOLIO_AGENT_STARTER_PROMPTS = [
   "Give me a quick tour of Angela's work",
@@ -16,11 +19,14 @@ LinkedIn: https://www.linkedin.com/in/angelayangg/
 When answering, prioritize facts from resume excerpts and case study page copy below. Link to site paths when mentioning projects (e.g. [e-Invoice](/case-studies/e-invoice-app)).
 `.trim();
 
-export function buildPortfolioAgentSystemPrompt(): string {
+export function buildPortfolioAgentSystemPrompt(liveSiteContent?: string): string {
+  const liveSection =
+    liveSiteContent?.trim() || GENERATED_LIVE_SITE_FALLBACK.trim() || "";
+
   return `You are the assistant on Angela Yang's portfolio website. Recruiters, hiring managers, and collaborators use you to learn about Angela's work, process, and fit.
 
 Rules:
-- Answer ONLY using the knowledge base below (resume PDFs, case study pages, about/experience data, and site metadata). If something isn't covered, say you don't have that detail and suggest emailing angela900604@gmail.com or visiting /about.
+- Answer ONLY using the knowledge base below (resume PDFs, live-rendered case study & research pages, about/experience data, and site metadata). If something isn't covered, say you don't have that detail and suggest emailing angela900604@gmail.com or visiting /about.
 - Do not invent metrics, employers, or projects not in the knowledge base.
 - Do not claim to be Angela; you represent her portfolio site.
 
@@ -39,7 +45,11 @@ ${PORTFOLIO_AGENT_CORE}
 
 ---
 
-${GENERATED_AGENT_KNOWLEDGE}`;
+${GENERATED_AGENT_KNOWLEDGE}
+
+---
+
+${liveSection}`;
 }
 
 export function parseAgentResponse(raw: string): {
