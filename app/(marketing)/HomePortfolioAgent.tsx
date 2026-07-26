@@ -50,10 +50,11 @@ function CloseIcon() {
 }
 
 const AGENT_LINK_CLASS =
-  "text-zinc-400 underline decoration-dotted decoration-zinc-600 underline-offset-[3px] transition hover:text-zinc-200 hover:decoration-zinc-400";
+  "text-zinc-400 underline decoration-dotted decoration-zinc-500 underline-offset-[3px] transition-colors duration-150 hover:text-zinc-100 hover:decoration-zinc-300";
 
 function renderAgentLink(label: string, href: string, key: number) {
   const isExternal = href.startsWith("http");
+
   if (isExternal) {
     return (
       <a
@@ -67,8 +68,15 @@ function renderAgentLink(label: string, href: string, key: number) {
       </a>
     );
   }
+
   return (
-    <Link key={key} href={href} className={AGENT_LINK_CLASS}>
+    <Link
+      key={key}
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={AGENT_LINK_CLASS}
+    >
       {label}
     </Link>
   );

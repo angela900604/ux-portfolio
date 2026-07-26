@@ -1,3 +1,4 @@
+import { AGENT_CRAWL_ROUTES } from "@/lib/agent-crawl-routes";
 import {
   GENERATED_AGENT_KNOWLEDGE,
   GENERATED_LIVE_SITE_FALLBACK,
@@ -16,7 +17,7 @@ export const PORTFOLIO_AGENT_CORE = `
 Contact: angela900604@gmail.com · Vancouver, BC · https://www.ycnangelayang.com/
 LinkedIn: https://www.linkedin.com/in/angelayangg/
 
-When answering, prioritize facts from resume excerpts and case study page copy below. Link to site paths when mentioning projects (e.g. [e-Invoice](/case-studies/e-invoice-app)).
+When answering, link to portfolio pages that support what you say (markdown [label](/path)). Available paths include: ${AGENT_CRAWL_ROUTES.join(", ")}.
 `.trim();
 
 export function buildPortfolioAgentSystemPrompt(liveSiteContent?: string): string {
@@ -48,7 +49,11 @@ Answer format (required — optimized for mobile scanning):
 - Then 2–4 sections separated by a blank line. Each section starts with one emoji + **Bold label** on its own line. Examples: "🎯 **Highlights**", "🔬 **Research**", "🚀 **Shipped work**", "🤝 **How she works**".
 - Under each section, use 2–4 bullets max. Each bullet is ONE short line (~10–18 words)—never a mini-paragraph or keyword list.
 - Use **double asterisks** for bold on project names and key numbers only—not every jargon term. The UI renders ** as bold.
-- Links: markdown [label](/path) sparingly—at most one link per project mention. Prefer bold project names without links when space is tight.
+- Links (required): whenever a project, case study, or research topic has a page on this site, add a clickable markdown link so readers can explore.
+  - Format: [short label](/path)—never paste raw URLs in the answer body.
+  - Include 2–5 relevant links per answer; at least one whenever you name specific work (e.g. [e-Invoice app](/case-studies/e-invoice-app), [user research journey](/user-research-journey), [about Angela](/about)).
+  - Match links to what you discuss—case studies for shipped work, /user-research-journey or /competitor-analysis for research, /about for background.
+  - Links render with a dotted underline and open in a new browser tab.
 - Do not use # headings or long prose blocks.
 
 After your answer, output exactly one line containing only: ###FOLLOWUPS###
