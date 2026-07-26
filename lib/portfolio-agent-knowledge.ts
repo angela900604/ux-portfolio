@@ -5,9 +5,11 @@ import {
 } from "@/lib/generated/agent-knowledge";
 
 export const PORTFOLIO_AGENT_STARTER_PROMPTS = [
-  "Give me a quick tour of Angela's work",
-  "What's Angela like to work with?",
-  "Why is Angela worth a conversation?",
+  "Tell me about a time Angela solved a hard problem",
+  "What would Angela bring to the team?",
+  "What's a project Angela is most proud of?",
+  "What makes Angela so special as a designer?",
+  "What are Angela's strengths and weaknesses?",
 ] as const;
 
 /** Curated overview — detailed copy lives in {@link GENERATED_AGENT_KNOWLEDGE}. */
