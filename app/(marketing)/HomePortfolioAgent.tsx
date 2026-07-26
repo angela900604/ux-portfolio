@@ -9,6 +9,7 @@ import {
   useRef,
   useState,
   type FormEvent,
+  type ReactNode,
 } from "react";
 import { createPortal } from "react-dom";
 import {
@@ -48,69 +49,171 @@ function CloseIcon() {
   );
 }
 
-function renderInlineMarkdown(text: string) {
-  const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g);
-  return parts.map((part, index) => {
-    const linkMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
-    if (linkMatch) {
-      const [, label, href] = linkMatch;
-      const isExternal = href.startsWith("http");
-      if (isExternal) {
-        return (
-          <a
-            key={index}
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[color:var(--nav-accent-blue)] underline underline-offset-2 transition hover:text-zinc-100"
-          >
-            {label}
-          </a>
-        );
-      }
-      return (
-        <Link
-          key={index}
-          href={href}
-          className="text-[color:var(--nav-accent-blue)] underline underline-offset-2 transition hover:text-zinc-100"
-        >
-          {label}
-        </Link>
+const AGENT_LINK_CLASS =
+  "text-zinc-400 underline decoration-dotted decoration-zinc-600 underline-offset-[3px] transition hover:text-zinc-200 hover:decoration-zinc-400";
+
+function renderAgentLink(label: string, href: string, key: number) {
+  const isExternal = href.startsWith("http");
+  if (isExternal) {
+    return (
+      <a
+        key={key}
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={AGENT_LINK_CLASS}
+      >
+        {label}
+      </a>
+    );
+  }
+  return (
+    <Link key={key} href={href} className={AGENT_LINK_CLASS}>
+      {label}
+    </Link>
+  );
+}
+
+function renderInlineMarkdown(text: string, keyPrefix = "inline"): ReactNode {
+  const nodes: ReactNode[] = [];
+  const pattern = /(\*\*(.+?)\*\*|\[([^\]]+)\]\(([^)]+)\))/g;
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+  let partIndex = 0;
+
+  while ((match = pattern.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      nodes.push(
+        <span key={`${keyPrefix}-t-${partIndex++}`}>
+          {text.slice(lastIndex, match.index)}
+        </span>,
       );
     }
-    return <span key={index}>{part}</span>;
-  });
+
+    if (match[2]) {
+      nodes.push(
+        <strong
+          key={`${keyPrefix}-b-${partIndex++}`}
+          className="font-medium text-zinc-100"
+        >
+          {match[2]}
+        </strong>,
+      );
+    } else if (match[3] && match[4]) {
+      nodes.push(renderAgentLink(match[3], match[4], partIndex++));
+    }
+
+    lastIndex = pattern.lastIndex;
+  }
+
+  if (lastIndex < text.length) {
+    nodes.push(
+      <span key={`${keyPrefix}-t-${partIndex++}`}>{text.slice(lastIndex)}</span>,
+    );
+  }
+
+  return nodes.length > 0 ? nodes : text;
+}
+
+function stripMarkdownHeading(line: string): string {
+  return line
+    .replace(/^#{1,3}\s+/, "")
+    .replace(/^\*\*(.+)\*\*$/, "$1")
+    .trim();
+}
+
+function isSectionHeadingLine(line: string): boolean {
+  const trimmed = line.trim();
+  if (!trimmed || /^[-*•]\s+/.test(trimmed)) return false;
+  if (/^#{1,3}\s+/.test(trimmed)) return true;
+  if (/^\*\*[^*]+\*\*$/.test(trimmed)) return true;
+  if (
+    /^[\p{Extended_Pictographic}\u2600-\u27BF]/u.test(trimmed) &&
+    trimmed.length < 72 &&
+    !trimmed.includes(". ")
+  ) {
+    return true;
+  }
+  return false;
+}
+
+function parseBlock(block: string) {
+  const lines = block.split("\n").filter((line) => line.trim() !== "");
+  if (lines.length === 0) return { heading: null as string | null, bodyLines: [] as string[] };
+
+  if (isSectionHeadingLine(lines[0])) {
+    return {
+      heading: stripMarkdownHeading(lines[0]),
+      bodyLines: lines.slice(1),
+    };
+  }
+
+  return { heading: null, bodyLines: lines };
+}
+
+function renderBodyLines(lines: string[], keyPrefix: string) {
+  const isList = lines.every((line) => /^[-*•]\s+/.test(line.trim()));
+
+  if (isList) {
+    return (
+      <ul className="space-y-1.5">
+        {lines.map((line, itemIndex) => {
+          const item = line.replace(/^[-*•]\s+/, "").trim();
+          return (
+            <li
+              key={`${keyPrefix}-li-${itemIndex}`}
+              className="flex gap-2 text-sm leading-snug text-zinc-300 sm:text-[15px] sm:leading-snug"
+            >
+              <span className="mt-[0.45em] h-1 w-1 shrink-0 rounded-full bg-zinc-600" aria-hidden />
+              <span>{renderInlineMarkdown(item, `${keyPrefix}-li-${itemIndex}`)}</span>
+            </li>
+          );
+        })}
+      </ul>
+    );
+  }
+
+  return (
+    <div className="space-y-2">
+      {lines.map((line, lineIndex) => (
+        <p
+          key={`${keyPrefix}-p-${lineIndex}`}
+          className="text-sm leading-relaxed text-zinc-300 sm:text-[15px]"
+        >
+          {renderInlineMarkdown(line, `${keyPrefix}-p-${lineIndex}`)}
+        </p>
+      ))}
+    </div>
+  );
 }
 
 function AgentMessageBody({ content }: { content: string }) {
-  const blocks = content.split(/\n{2,}/);
+  const blocks = content.split(/\n{2,}/).filter((block) => block.trim());
 
   return (
-    <div className="space-y-3 text-sm leading-relaxed text-zinc-300 sm:text-[15px]">
+    <div className="space-y-0">
       {blocks.map((block, blockIndex) => {
-        const lines = block.split("\n");
-        const isList = lines.every(
-          (line) => line.trim() === "" || /^[-*•]\s+/.test(line.trim()),
-        );
-
-        if (isList) {
-          return (
-            <ul
-              key={blockIndex}
-              className="list-disc space-y-1.5 pl-5 marker:text-zinc-500"
-            >
-              {lines
-                .map((line) => line.replace(/^[-*•]\s+/, "").trim())
-                .filter(Boolean)
-                .map((item, itemIndex) => (
-                  <li key={itemIndex}>{renderInlineMarkdown(item)}</li>
-                ))}
-            </ul>
-          );
-        }
+        const { heading, bodyLines } = parseBlock(block.trim());
+        const hasSectionDivider = blockIndex > 0;
 
         return (
-          <p key={blockIndex}>{renderInlineMarkdown(block.trim())}</p>
+          <section
+            key={blockIndex}
+            className={
+              hasSectionDivider
+                ? "mt-4 border-t border-zinc-800/90 pt-4"
+                : undefined
+            }
+          >
+            {heading ? (
+              <h3 className="mb-2.5 text-[13px] font-medium leading-snug tracking-tight text-zinc-100 sm:text-sm">
+                {renderInlineMarkdown(heading, `h-${blockIndex}`)}
+              </h3>
+            ) : null}
+            {bodyLines.length > 0
+              ? renderBodyLines(bodyLines, `b-${blockIndex}`)
+              : null}
+          </section>
         );
       })}
     </div>

@@ -418,10 +418,6 @@ mt-6 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-5
 
 ---
 
-## Page source: app/accessibility-voiceover/layout.tsx
-
----
-
 ## Page source: app/accessibility-voiceover/page.tsx
 
 ---
@@ -1889,10 +1885,6 @@ Lessons learned under enterprise constraints
 
 ---
 
-## Page source: app/case-studies/layout.tsx
-
----
-
 ## Page source: app/case-studies/momi-animal-health/MomiOutcomesChart.tsx
 
 cs-data-viz overflow-hidden p-6 sm:p-8
@@ -2115,10 +2107,6 @@ mt-3 list-disc space-y-2 pl-5 text-base leading-relaxed text-zinc-300 marker:tex
 
 ---
 
-## Page source: app/competitor-analysis/layout.tsx
-
----
-
 ## Page source: app/competitor-analysis/page.tsx
 
 ---
@@ -2149,15 +2137,7 @@ Older-adult focus group—how they use phones and day-to-day spending habits
 
 ---
 
-## Page source: app/multisegment-interviews/layout.tsx
-
----
-
 ## Page source: app/multisegment-interviews/page.tsx
-
----
-
-## Page source: app/user-research-journey/layout.tsx
 
 ---
 
