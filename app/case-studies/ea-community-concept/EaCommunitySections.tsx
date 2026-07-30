@@ -99,7 +99,7 @@ export function ResearchStatsGrid() {
           >
             {stat.value}
           </p>
-          <p className="mt-3 text-sm leading-relaxed text-zinc-400">{stat.caption}</p>
+          <p className="mt-3 cs-body-sm">{stat.caption}</p>
         </div>
       ))}
     </div>
@@ -114,14 +114,14 @@ export function PersonaBlock() {
         <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500">
           Persona
         </p>
-        <p className="text-xl font-semibold text-zinc-100">{p.name}</p>
+        <p className="text-[15px] font-medium text-zinc-100">{p.name}</p>
         <p className="text-sm text-zinc-500">
           {p.role} · Age {p.age} · {p.location}
         </p>
       </div>
 
       <blockquote className="border-l-2 pl-4" style={{ borderColor: EA_ACCENT }}>
-        <p className="text-base italic leading-relaxed text-zinc-400 sm:text-lg">
+        <p className="cs-body italic">
           &ldquo;{p.quote}&rdquo;
         </p>
       </blockquote>
@@ -130,7 +130,7 @@ export function PersonaBlock() {
         <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500">
           Scenario
         </p>
-        <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
+        <p className="cs-body">
           {p.scenario}
         </p>
       </div>
@@ -140,19 +140,19 @@ export function PersonaBlock() {
           <dt className="text-[11px] font-semibold uppercase tracking-wider text-zinc-500">
             Behaviour
           </dt>
-          <dd className="mt-1.5 text-sm leading-relaxed text-zinc-400">{p.behaviour}</dd>
+          <dd className="mt-1.5 cs-body-sm">{p.behaviour}</dd>
         </div>
         <div>
           <dt className="text-[11px] font-semibold uppercase tracking-wider text-zinc-500">
             Pain points
           </dt>
-          <dd className="mt-1.5 text-sm leading-relaxed text-zinc-400">{p.painPoints}</dd>
+          <dd className="mt-1.5 cs-body-sm">{p.painPoints}</dd>
         </div>
         <div>
           <dt className="text-[11px] font-semibold uppercase tracking-wider text-zinc-500">
             Motivation
           </dt>
-          <dd className="mt-1.5 text-sm leading-relaxed text-zinc-400">{p.motivation}</dd>
+          <dd className="mt-1.5 cs-body-sm">{p.motivation}</dd>
         </div>
       </dl>
     </div>
@@ -184,7 +184,7 @@ export function TaskFlowSteps() {
               </span>
             </div>
             {step.note ? (
-              <p className="mt-2 text-sm leading-relaxed text-zinc-400">{step.note}</p>
+              <p className="mt-2 cs-body-sm">{step.note}</p>
             ) : null}
           </div>
         </li>

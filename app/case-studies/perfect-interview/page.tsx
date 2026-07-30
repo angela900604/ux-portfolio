@@ -156,7 +156,7 @@ export default function PerfectInterviewCaseStudy() {
           id="context"
           className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+          <span className="cs-section-eyebrow">
             Context
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>What is PerfectInterview.ai?</h2>
@@ -171,7 +171,7 @@ export default function PerfectInterviewCaseStudy() {
           id="mockups"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+          <span className="cs-section-eyebrow">
             Mockups
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>Hi-fi screens</h2>
@@ -186,7 +186,7 @@ export default function PerfectInterviewCaseStudy() {
           id="problem"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+          <span className="cs-section-eyebrow">
             Problem
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
@@ -208,7 +208,7 @@ export default function PerfectInterviewCaseStudy() {
           id="process"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+          <span className="cs-section-eyebrow">
             Process
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
@@ -255,7 +255,7 @@ export default function PerfectInterviewCaseStudy() {
           id="mvp-1"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+          <span className="cs-section-eyebrow">
             MVP 1
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>Redesign foundations</h2>

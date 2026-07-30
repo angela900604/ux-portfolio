@@ -86,7 +86,7 @@ function ReviewCard({ review }: { review: AppStoreReview }) {
           </p>
         </div>
       </div>
-      <p className="mt-3 text-sm leading-relaxed text-zinc-400">{review.body}</p>
+      <p className="mt-3 cs-body-sm">{review.body}</p>
     </div>
   );
 }
@@ -96,7 +96,7 @@ export function AppStoreReviewsSection({ appStoreHref }: { appStoreHref: string 
     <div className="mt-12 space-y-6">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+          <p className="cs-section-eyebrow">
             App Store
           </p>
           <h3 className="mt-1 text-zinc-100">

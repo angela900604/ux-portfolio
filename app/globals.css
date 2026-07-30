@@ -89,12 +89,6 @@ html.soft-cursor :disabled:hover {
   cursor: not-allowed !important;
 }
 
-/* Case study narrative: layout sets text-base / sm:text-lg on .case-study-prose */
-.case-study-prose .text-sm {
-  font-size: inherit !important;
-  line-height: inherit !important;
-}
-
 /* Narrative uses full main column; 32px to TOC comes from grid gap (see lib/site-shell). */
 .case-study-prose .max-w-xl,
 .case-study-prose .max-w-2xl,
@@ -114,11 +108,11 @@ html.soft-cursor :disabled:hover {
   line-height: 1.25rem !important;
 }
 
-/* Case studies — Joseph typography scale on dark shell */
+/* Case study narrative — homepage-aligned minimal scale (15px body, 20–22px section titles) */
 .case-study-prose h2 {
-  font-size: 2.125rem;
-  line-height: 1.25;
-  letter-spacing: -0.025em;
+  font-size: 1.25rem;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
   font-weight: 500;
   color: #fafafa;
 }
@@ -126,11 +120,21 @@ html.soft-cursor :disabled:hover {
 .case-study-prose h2.case-study-section-title,
 .case-study-prose h3.case-study-section-title,
 .case-study-prose p.case-study-section-title {
-  font-size: 2.125rem;
-  line-height: 1.25;
-  letter-spacing: -0.025em;
+  font-size: 1.25rem;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
   font-weight: 500;
   color: #fafafa;
+}
+
+@media (min-width: 640px) {
+  .case-study-prose h2,
+  .case-study-prose h2.case-study-section-title,
+  .case-study-prose h3.case-study-section-title,
+  .case-study-prose p.case-study-section-title {
+    font-size: 1.375rem;
+    line-height: 1.3;
+  }
 }
 
 .case-study-prose h3 {
@@ -142,8 +146,8 @@ html.soft-cursor :disabled:hover {
 }
 
 .case-study-prose p {
-  font-size: 1.0625rem;
-  line-height: 1.7;
+  font-size: 0.9375rem;
+  line-height: 1.65;
   font-weight: 400;
   color: #a1a1aa;
 }
@@ -151,7 +155,29 @@ html.soft-cursor :disabled:hover {
 .case-study-prose .case-study-section-title + p,
 .case-study-prose h2 + p,
 .case-study-prose h3 + p {
-  margin-top: 1rem;
+  margin-top: 0.75rem;
+}
+
+.cs-section-eyebrow {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #71717a;
+}
+
+.cs-body {
+  font-size: 15px;
+  line-height: 1.65;
+  font-weight: 400;
+  color: #a1a1aa;
+}
+
+.cs-body-sm {
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 400;
+  color: #a1a1aa;
 }
 
 @keyframes homeBubbleFloat {

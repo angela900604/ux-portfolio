@@ -171,7 +171,7 @@ export default function EaCommunityConceptCaseStudy() {
           id="context"
           className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+          <span className="cs-section-eyebrow">
             Context
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
@@ -198,7 +198,7 @@ export default function EaCommunityConceptCaseStudy() {
           id="research"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+          <span className="cs-section-eyebrow">
             Research
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
@@ -218,7 +218,7 @@ export default function EaCommunityConceptCaseStudy() {
           id="principles"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+          <span className="cs-section-eyebrow">
             Principles
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
@@ -276,7 +276,7 @@ export default function EaCommunityConceptCaseStudy() {
           id="task-flow"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+          <span className="cs-section-eyebrow">
             Task flow
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
@@ -294,7 +294,7 @@ export default function EaCommunityConceptCaseStudy() {
           id="wireframes"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+          <span className="cs-section-eyebrow">
             Wireframes
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
@@ -315,7 +315,7 @@ export default function EaCommunityConceptCaseStudy() {
           id="events"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+          <span className="cs-section-eyebrow">
             Events
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
@@ -333,7 +333,7 @@ export default function EaCommunityConceptCaseStudy() {
           id="more-time"
           className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+          <span className="cs-section-eyebrow">
             Honest close
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>

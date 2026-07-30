@@ -43,7 +43,7 @@ export function CaseStudyImpactBanner({
             {primary.value}
           </p>
           {primary.hint ? (
-            <p className="mt-3 max-w-md text-sm leading-relaxed text-zinc-400">
+            <p className="mt-3 max-w-md cs-body-sm">
               {primary.hint}
             </p>
           ) : null}
@@ -57,7 +57,7 @@ export function CaseStudyImpactBanner({
               {secondary.value}
             </p>
             {secondary.hint ? (
-              <p className="mt-3 max-w-md text-sm leading-relaxed text-zinc-400">
+              <p className="mt-3 max-w-md cs-body-sm">
                 {secondary.hint}
               </p>
             ) : null}

@@ -13,7 +13,7 @@ export const CASE_STUDY_AT_A_GLANCE_DARK_HERO_PROPS = {
   labelClassName:
     "text-[11px] font-semibold uppercase tracking-wider text-zinc-400",
   valueClassName:
-    "mt-0.5 text-base font-medium leading-[1.65] text-zinc-300 sm:text-lg sm:text-zinc-200",
+    "mt-0.5 text-[15px] font-medium leading-[1.65] text-zinc-300 sm:text-zinc-200",
 } as const;
 
 /** Cream / light `below-meta` hero band (Admission Hub, MOMI, Haphy Living). */
@@ -23,7 +23,7 @@ export const CASE_STUDY_AT_A_GLANCE_LIGHT_HERO_PROPS = {
   labelClassName:
     "text-[11px] font-semibold uppercase tracking-wider text-[#7A7A7A]",
   valueClassName:
-    "mt-0.5 text-base font-medium leading-[1.65] text-[#2C3E50] sm:text-lg",
+    "mt-0.5 text-[15px] font-medium leading-[1.65] text-[#2C3E50]",
 } as const;
 
 type Props = {
@@ -59,7 +59,7 @@ export function CaseStudyAtAGlance({
   noAccentGridClassName,
   hideTitle = false,
   labelClassName = "text-[11px] font-semibold uppercase tracking-wider text-zinc-500",
-  valueClassName = "mt-0.5 text-base font-medium leading-[1.65] text-white/90 sm:text-lg",
+  valueClassName = "mt-0.5 text-[15px] font-medium leading-[1.65] text-white/90",
 }: Props) {
   const bar = ACCENT_BAR[accent];
 
@@ -112,7 +112,7 @@ export function CaseStudyAtAGlance({
 
   return (
     <div className="space-y-2">
-      <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+      <p className="cs-section-eyebrow">
         At a glance
       </p>
       {body}

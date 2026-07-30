@@ -7,7 +7,7 @@ export function OutcomesMetricsChart() {
       role="img"
       aria-label="Outcome metrics over three months: plus 500 Instagram followers net new, plus 21 percent Instagram engagement versus baseline, plus 18 percent organic site traffic in sessions"
     >
-      <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+      <p className="cs-section-eyebrow">
         Outcomes at a glance (3 months)
       </p>
       <div className="mt-6 space-y-7">

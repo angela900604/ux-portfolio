@@ -72,13 +72,13 @@ export default function EInvoiceDesignPage() {
     <div className="min-h-screen">
       <section className="border-b border-zinc-800">
         <div className={`${SITE_SHELL_INNER} py-16 sm:py-20`}>
-          <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+          <p className="cs-section-eyebrow">
             Case study
           </p>
           <h1 className={`mt-3 ${CASE_STUDY_PRIMARY_TITLE_CLASS}`}>
             e-Invoice design showcase
           </h1>
-          <p className="mt-4 max-w-3xl text-zinc-400 sm:text-lg">
+          <p className="mt-4 max-w-3xl cs-body">
             A visual-first page focused on the UI craft and key redesign screens.
           </p>
         </div>

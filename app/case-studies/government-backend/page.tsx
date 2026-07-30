@@ -91,7 +91,7 @@ export default function GovernmentBackendCaseStudy() {
           id="project-background"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+          <span className="cs-section-eyebrow">
             Opportunity
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
@@ -105,7 +105,7 @@ export default function GovernmentBackendCaseStudy() {
             <h5 className="text-zinc-100">
               Example of corresponding screens
             </h5>
-            <p className="max-w-3xl text-sm text-zinc-400 leading-relaxed">
+            <p className="max-w-3xl cs-body-sm">
               Staff compose notification content in the backend, set publish timing,
               and schedule delivery in advance. End users receive{" "}
               <span className="text-zinc-400">push notifications</span>, then open the
@@ -149,7 +149,7 @@ export default function GovernmentBackendCaseStudy() {
           id="design-engineering-alignment"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+          <span className="cs-section-eyebrow">
             Design &amp; engineering
           </span>
           <GovernmentBackendEngineeringAlignment />
@@ -167,7 +167,7 @@ export default function GovernmentBackendCaseStudy() {
           id="iterations"
           className="scroll-mt-28 space-y-8 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+          <span className="cs-section-eyebrow">
             Key design iterations
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>

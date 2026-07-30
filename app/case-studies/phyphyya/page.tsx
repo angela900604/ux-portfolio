@@ -190,7 +190,7 @@ export default function PhyphyyaCaseStudy() {
                 <h3 className="text-zinc-100 mb-[12px] border-l-[3px] border-zinc-800 pl-[15px] font-sans">
                   Color Palette
                 </h3>
-                <p className="text-[16px] text-zinc-400 pl-[18px]">
+                <p className="cs-body pl-[18px]">
                   Incorporating soft blue-gray as one of the primary tones,
                   paired with warm gray and beige. The blue-gray and beige tones
                   coexist harmoniously, offering both freshness and warm vintage ambiance.
@@ -207,7 +207,7 @@ export default function PhyphyyaCaseStudy() {
                 <h3 className="text-zinc-100 mb-[12px] border-l-[3px] border-zinc-800 pl-[15px] font-sans">
                   Style Characteristics
                 </h3>
-                <p className="text-[16px] text-zinc-400 pl-[18px]">
+                <p className="cs-body pl-[18px]">
                   Rounded typography is giving a warm brand personality. Rough
                   hand-drawn brush strokes and paper texture, creating a warm
                   vintage atmosphere.
@@ -227,7 +227,7 @@ export default function PhyphyyaCaseStudy() {
             <h2 className="text-zinc-100 mb-[20px] relative inline-block font-sans after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-zinc-500 after:mx-auto after:mt-[15px]">
               Etsy shop &amp; Print-on-Demand
             </h2>
-            <p className="text-[16px] text-zinc-400 leading-relaxed">
+            <p className="cs-body leading-relaxed">
               I launched{" "}
               <a
                 href="https://www.etsy.com/ca/shop/HaphyLiving"
@@ -264,7 +264,7 @@ export default function PhyphyyaCaseStudy() {
             </div>
             </div>
 
-            <div className="w-full space-y-[28px] text-[16px] text-zinc-400 leading-relaxed">
+            <div className="w-full space-y-[28px] cs-body leading-relaxed">
             <p>
               <strong className="text-zinc-100 font-sans">
                 1 · Design in Procreate
@@ -327,7 +327,7 @@ export default function PhyphyyaCaseStudy() {
           <details className="group w-full rounded-xl border border-zinc-800 bg-zinc-900/40 open:border-zinc-800/60">
             <summary className="cursor-pointer list-none px-5 py-4 text-sm font-medium text-zinc-400 transition hover:bg-zinc-900/40 sm:px-6 sm:py-5 [&::-webkit-details-marker]:hidden">
               <span className="inline-flex w-full items-center justify-between gap-3">
-                <span className="min-w-0 text-left font-sans text-base font-semibold tracking-tight text-zinc-100 sm:text-lg">
+                <span className="min-w-0 text-left font-sans text-[15px] font-medium leading-[1.35] text-zinc-100">
                   What I&apos;m testing next
                 </span>
                 <span

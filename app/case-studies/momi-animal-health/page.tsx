@@ -6,7 +6,7 @@ import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { MomiOutcomesChart } from "./MomiOutcomesChart";
-import { CASE_STUDY_BODY_GRID, SITE_SHELL_INNER } from "@/lib/site-shell";
+import { CASE_STUDY_BODY_GRID, CASE_STUDY_SECTION_TITLE_CLASS, SITE_SHELL_INNER } from "@/lib/site-shell";
 
 export const metadata = {
   title: "MOMI Animal Health | Angela Yang",
@@ -105,10 +105,10 @@ function Section({
       id={id}
       className={id ? "scroll-mt-28 sm:scroll-mt-32" : undefined}
     >
-      <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+      <span className="cs-section-eyebrow">
         {kicker}
       </span>
-      {title ? <h2 className="mt-2 text-zinc-100">{title}</h2> : null}
+      {title ? <h2 className={`mt-2 ${CASE_STUDY_SECTION_TITLE_CLASS}`}>{title}</h2> : null}
       {children}
     </CaseStudyInViewSection>
   );
@@ -158,10 +158,10 @@ export default function MomiAnimalHealthCaseStudy() {
                 key={card.title}
                 className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5 sm:p-6"
               >
-                <h3 className="text-sm font-semibold tracking-tight text-zinc-100 sm:text-base">
+                <h3 className="text-[15px] font-medium leading-[1.35] text-zinc-100">
                   {card.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-zinc-400">
+                <p className="mt-2 cs-body-sm">
                   {card.body}
                 </p>
               </article>
@@ -170,7 +170,7 @@ export default function MomiAnimalHealthCaseStudy() {
 
           <div className="mt-8">
             <h5 className="text-zinc-100">Pet expo — on-site</h5>
-            <p className="mt-2 text-sm text-zinc-400 leading-relaxed max-w-2xl">
+            <p className="mt-2 cs-body-sm max-w-2xl">
               Coordinated{" "}
               <span className="font-medium text-zinc-100">
                 internal teams and external partners
@@ -183,7 +183,7 @@ export default function MomiAnimalHealthCaseStudy() {
               so leads and retail relationships picked up at the show could move
               forward cleanly after the event.
             </p>
-            <p className="mt-2 text-sm text-zinc-400 leading-relaxed max-w-2xl">
+            <p className="mt-2 cs-body-sm max-w-2xl">
               Photos from the pet exhibition floor: booth footprint, wall
               display, and live rabbit on hay next to product.
             </p>

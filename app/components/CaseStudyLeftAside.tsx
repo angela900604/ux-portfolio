@@ -55,7 +55,7 @@ export function CaseStudyLeftAside() {
           {meta.title}
         </p>
         {meta.subtitle ? (
-          <p className="text-sm leading-[1.65] text-zinc-400 sm:text-[15px] sm:leading-[1.7] lg:text-[17px]">
+          <p className="text-[15px] leading-[1.65] text-zinc-400">
             {meta.subtitle}
           </p>
         ) : null}

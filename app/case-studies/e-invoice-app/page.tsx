@@ -105,19 +105,10 @@ function StoryBeat({
 
   const cardClass = "border-t border-zinc-600 pt-4";
 
-  const headlineClass = isOutcome
-    ? largeHeadline
-      ? "text-base font-semibold leading-snug text-zinc-100 sm:text-lg md:text-[1.35rem] md:leading-snug"
-      : "text-base font-semibold leading-snug text-zinc-100 sm:text-lg md:text-xl"
-    : largeHeadline
-      ? "text-base font-semibold leading-snug tracking-tight text-zinc-100 sm:text-lg md:text-[1.35rem] md:leading-snug lg:text-[1.5rem]"
-      : "text-lg font-semibold leading-snug text-zinc-100 sm:text-xl md:text-2xl";
+  const headlineClass =
+    "text-[15px] font-medium leading-[1.35] text-zinc-100";
 
-  const detailClass = isOutcome
-    ? "mt-1 text-[13px] font-normal leading-relaxed text-zinc-400 sm:text-sm"
-    : largeHeadline
-      ? "mt-2 text-sm font-normal leading-relaxed text-zinc-400 sm:text-[0.9375rem]"
-      : "mt-2 text-sm font-normal leading-relaxed text-zinc-400 sm:text-[0.9375rem]";
+  const detailClass = "mt-2 cs-body-sm";
 
   return (
     <div className={isConflict ? "relative my-2 pl-10" : "relative pl-10"}>
@@ -159,7 +150,7 @@ function StoryBeat({
 
 /** Same headline scale as {@link StoryBeat} with `largeHeadline` (e.g. Decision cards). */
 const STORY_OUTCOME_CALLOUT_HEADLINE_CLASS =
-  "mt-3 max-w-3xl text-base font-semibold leading-snug tracking-tight text-zinc-100 sm:text-lg md:text-[1.35rem] md:leading-snug lg:text-[1.5rem]";
+  "mt-3 max-w-3xl text-[15px] font-medium leading-[1.35] text-zinc-100";
 
 /** Full-width outcome callout: no timeline rail (Section 1). Dark surface, accent rail—no mint fill. */
 function StoryOutcomeCallout({
@@ -565,7 +556,7 @@ export default function EInvoiceCaseStudy() {
               <h3 className={CASE_STUDY_SECTION_TITLE_CLASS}>
                 Handoff &amp; engineering alignment
               </h3>
-              <div className="text-sm leading-relaxed text-zinc-400 sm:text-base">
+              <div className="cs-body">
                 <p className="font-medium text-zinc-400">
                   Handoff included three layers:
                 </p>
@@ -644,10 +635,10 @@ export default function EInvoiceCaseStudy() {
           id="functional-map"
           className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+          <span className="cs-section-eyebrow">
             Functional map
           </span>
-          <p className="max-w-3xl text-sm leading-relaxed text-zinc-400 sm:text-base">
+          <p className="max-w-3xl cs-body">
             Before moving to wireframe, I mapped out{" "}
             <span className={JOURNEY_EMPHASIS}>functional map</span> for all
             features (login, home, prize redemptions, etc) and{" "}
@@ -677,7 +668,7 @@ export default function EInvoiceCaseStudy() {
           className="scroll-mt-28 space-y-12 sm:scroll-mt-32"
         >
           <div className="max-w-3xl space-y-4">
-            <p className="max-w-3xl text-sm leading-relaxed text-zinc-400 sm:text-base">
+            <p className="max-w-3xl cs-body">
               In user interviews, people described how they wanted the app to
               feel in everyday use—easy to scan, calm, and not overwhelming.
               They said they wanted something that felt familiar and light, not
@@ -693,7 +684,7 @@ export default function EInvoiceCaseStudy() {
             >
               {(["Intuitive", "Minimal", "Fresh", "Modern"] as const).map((word) => (
                 <li key={word}>
-                  <span className="inline-flex rounded-lg border border-emerald-500/45 bg-emerald-500/10 px-3 py-1.5 text-base font-semibold tracking-wide text-emerald-100 sm:text-lg">
+                  <span className="inline-flex rounded-lg border border-emerald-500/45 bg-emerald-500/10 px-3 py-1.5 text-[14px] font-medium tracking-wide text-emerald-100">
                     {word}
                   </span>
                 </li>
@@ -779,7 +770,7 @@ export default function EInvoiceCaseStudy() {
               <span className={M_TXT}>88%</span> success and a clear fix list for login,
               invoice management, and prize flows.
             </h2>
-            <p className="max-w-3xl text-sm leading-relaxed text-zinc-400">
+            <p className="max-w-3xl cs-body-sm">
               One-on-one observation on core tasks; errors and satisfaction tracked so
               VoiceOver paths, visual hierarchy, and plain-language fixes could ship
               before launch—not relegated to a late &quot;a11y pass.&quot;
@@ -924,7 +915,7 @@ export default function EInvoiceCaseStudy() {
               id="business-constraints"
               className="scroll-mt-28 space-y-5 border-t border-zinc-800 pt-10 sm:scroll-mt-32 sm:pt-12"
             >
-              <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+              <span className="cs-section-eyebrow">
                 Business constraints
               </span>
               <h3 className={CASE_STUDY_SECTION_TITLE_CLASS}>
@@ -1006,7 +997,7 @@ export default function EInvoiceCaseStudy() {
           <span className="text-xs font-semibold uppercase tracking-[0.14em] text-emerald-200/85">
             Figma files
           </span>
-          <h2 className="case-study-section-title max-w-2xl text-pretty font-semibold tracking-tight text-zinc-100">
+          <h2 className={`case-study-section-title max-w-2xl text-pretty ${CASE_STUDY_SECTION_TITLE_CLASS}`}>
             Open the source files for wireflows, page logic, and hi-fi mocks in one
             place.
           </h2>

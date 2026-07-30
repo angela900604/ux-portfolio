@@ -29,7 +29,7 @@ export default function CaseStudySlugPage({
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-6">
-      <p className="text-xs font-medium uppercase tracking-widest text-zinc-500 mb-2">
+      <p className="cs-section-eyebrow mb-2">
         Case study
         <span className="text-zinc-600 mx-2">·</span>
         {slug}

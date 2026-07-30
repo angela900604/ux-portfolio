@@ -35,7 +35,7 @@ function PainBlock({
             </span>
           ))}
         </div>
-        <h4 className="text-2xl font-semibold tracking-tight text-zinc-100 sm:text-[1.85rem]">
+        <h4 className="text-xl font-medium tracking-[-0.02em] text-zinc-100 sm:text-[22px]">
           {title}
         </h4>
         <p className="text-base leading-relaxed text-zinc-300 sm:text-[1.05rem]">
@@ -192,7 +192,7 @@ export function EInvoiceMultisegmentResearchSections() {
             <p className="inline-flex w-fit rounded-full border border-emerald-500/30 bg-emerald-500/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.1em] text-emerald-200">
               Shared truth
             </p>
-            <p className="mt-4 text-base font-medium leading-[1.65] text-zinc-200 sm:text-lg sm:leading-[1.6]">
+            <p className="mt-4 cs-body font-medium text-zinc-200">
               Everyone has the same entry behavior of showing the carrier barcode and
               scanning paper invoices.
             </p>
@@ -201,7 +201,7 @@ export function EInvoiceMultisegmentResearchSections() {
             <p className="inline-flex w-fit rounded-full border border-orange-500/30 bg-orange-500/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.1em] text-orange-200">
               Conflict insights
             </p>
-            <p className="mt-4 text-base font-medium leading-[1.65] text-zinc-200 sm:text-lg sm:leading-[1.6]">
+            <p className="mt-4 cs-body font-medium text-zinc-200">
               On the home screen, older and low-vision groups wanted fewer items, more
               whitespace, and vivid color for fast recognition—while younger groups
               wanted a denser dashboard—more modules, promos, and shortcuts—and a

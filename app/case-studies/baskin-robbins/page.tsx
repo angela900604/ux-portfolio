@@ -204,7 +204,7 @@ export default function BaskinRobbinsCaseStudy() {
           id="project-background"
           className={`space-y-6 ${sectionScroll}`}
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+          <span className="cs-section-eyebrow">
             Project background
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
@@ -245,7 +245,7 @@ export default function BaskinRobbinsCaseStudy() {
           id="cross-market-decisions"
           className={`space-y-6 border-t border-zinc-800 pt-10 sm:pt-12 ${sectionScroll}`}
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+          <span className="cs-section-eyebrow">
             Cross-market decisions
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
@@ -321,10 +321,10 @@ export default function BaskinRobbinsCaseStudy() {
                   id="design-journey-req"
                   className={`space-y-4 ${sectionScroll}`}
                 >
-                  <h3 className="text-lg font-semibold tracking-tight text-zinc-100 sm:text-xl">
+                  <h3 className="text-[15px] font-medium leading-[1.35] text-zinc-100">
                     Requirement interviews &amp; functional map
                   </h3>
-                  <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
+                  <p className="cs-body">
                     Interviews with the client and backend team locked feasibility and
                     scope early. Japan tied tiers to points; Taiwan&apos;s CRM used
                     spend, with no initial point-redemption plan—we redesigned loyalty
@@ -337,10 +337,10 @@ export default function BaskinRobbinsCaseStudy() {
                   id="design-journey-visual"
                   className={`space-y-4 ${sectionScroll}`}
                 >
-                  <h3 className="text-lg font-semibold tracking-tight text-zinc-100 sm:text-xl">
+                  <h3 className="text-[15px] font-medium leading-[1.35] text-zinc-100">
                     Visual style proposal
                   </h3>
-                  <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
+                  <p className="cs-body">
                     Three directions under time pressure:{" "}
                     <span className="text-zinc-400">
                       A — sweet &amp; energetic (pink-forward)
@@ -362,10 +362,10 @@ export default function BaskinRobbinsCaseStudy() {
                   id="design-journey-flow"
                   className={`space-y-4 ${sectionScroll}`}
                 >
-                  <h3 className="text-lg font-semibold tracking-tight text-zinc-100 sm:text-xl">
+                  <h3 className="text-[15px] font-medium leading-[1.35] text-zinc-100">
                     Page flow &amp; interaction logic
                   </h3>
-                  <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
+                  <p className="cs-body">
                     After mockup approval, a detailed page flow captured transitions,
                     decision logic, scroll vs. fixed regions, and states—not just arrows.
                     Figma links let engineers walk the logic without slack threads.
@@ -376,10 +376,10 @@ export default function BaskinRobbinsCaseStudy() {
                   id="design-journey-hq"
                   className={`space-y-4 ${sectionScroll}`}
                 >
-                  <h3 className="text-lg font-semibold tracking-tight text-zinc-100 sm:text-xl">
+                  <h3 className="text-[15px] font-medium leading-[1.35] text-zinc-100">
                     Cross-market review with Japan HQ
                   </h3>
-                  <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
+                  <p className="cs-body">
                     HQ sign-off gated engineering. I presented through
                     interpreter-supported calls with both market rationale and screens—why
                     Taiwan diverged where it had to—so we avoided expensive post-launch
@@ -391,10 +391,10 @@ export default function BaskinRobbinsCaseStudy() {
                   id="design-journey-handoff"
                   className={`space-y-4 ${sectionScroll}`}
                 >
-                  <h3 className="text-lg font-semibold tracking-tight text-zinc-100 sm:text-xl">
+                  <h3 className="text-[15px] font-medium leading-[1.35] text-zinc-100">
                     Handoff &amp; UAT
                   </h3>
-                  <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
+                  <p className="cs-body">
                     Handoff was two Figmas: full mockups with slice notes (dimensions,
                     constraints, scroll regions) and a UI kit (components, color, type,
                     icons). Pre-launch UAT stressed voucher redemption—POS scans of
@@ -428,7 +428,7 @@ export default function BaskinRobbinsCaseStudy() {
           id="process-deviation"
           className={`space-y-6 border-t border-zinc-800 pt-10 sm:pt-12 ${sectionScroll}`}
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+          <span className="cs-section-eyebrow">
             Reflection
           </span>
           <div className="max-w-3xl space-y-4 text-zinc-400 leading-relaxed">

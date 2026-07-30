@@ -8,6 +8,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
+import { CS_BODY } from "@/lib/case-study-theme";
 
 function hashToId(hash: string): string | null {
   if (!hash.startsWith("#")) return null;
@@ -109,11 +110,11 @@ export function DesignJourneyCollapsible({
         className="flex w-full items-center justify-between gap-4 border-t border-zinc-600 py-4 text-left transition hover:opacity-80"
       >
         <span id={headingId} className="min-w-0">
-          <span className="block text-[15px] font-medium tracking-tight text-zinc-100 sm:text-base">
+          <span className="block text-[15px] font-medium leading-[1.35] text-zinc-100">
             {title}
           </span>
           {subtitle ? (
-            <span className="mt-1 block text-[15px] leading-[1.7] text-zinc-400">
+            <span className={`mt-1 block ${CS_BODY}`}>
               {subtitle}
             </span>
           ) : null}

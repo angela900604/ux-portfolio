@@ -24,7 +24,7 @@ const SECTION_WRAP =
 export default function UserResearchJourneyPage() {
   return (
     <article className="min-h-screen bg-zinc-950 text-zinc-100">
-      <CaseStudyContentLayout contentClassName="space-y-0 text-base leading-relaxed sm:text-lg">
+      <CaseStudyContentLayout contentClassName="space-y-0">
         <nav className="flex flex-wrap gap-x-4 gap-y-2 text-sm text-zinc-500">
           <Link href="/" className="transition hover:text-zinc-200">
             ← Home
@@ -44,7 +44,7 @@ export default function UserResearchJourneyPage() {
           <p className={RESEARCH_SECTION_LABEL}>
             Ministry of Finance Cloud Invoice · User research
           </p>
-          <h1 className={`${RESEARCH_SECTION_TITLE} sm:text-4xl`}>
+          <h1 className={RESEARCH_SECTION_TITLE}>
             User research journey
           </h1>
           <p className={RESEARCH_SECTION_BODY}>

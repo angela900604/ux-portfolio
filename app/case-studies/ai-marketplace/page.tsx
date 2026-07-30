@@ -192,7 +192,7 @@ export default function AiMarketplaceCaseStudy() {
           id="context"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32 sm:space-y-8"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+          <span className="cs-section-eyebrow">
             Opportunity
           </span>
           <div className="max-w-3xl space-y-8">
@@ -211,20 +211,20 @@ export default function AiMarketplaceCaseStudy() {
                 <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-zinc-500">
                   The insight
                 </p>
-                <p className="mt-4 text-sm leading-relaxed text-zinc-400 sm:text-[15px]">
+                <p className="mt-4 cs-body-sm sm:text-[15px]">
                   Three ways parents want to move gear came up in early
                   conversations.
                 </p>
                 <div className="mt-4 divide-y divide-zinc-800/80">
-                  <p className="pb-4 text-lg font-medium leading-snug text-zinc-400 sm:text-xl">
+                  <p className="pb-4 cs-body font-medium text-zinc-300">
                     Wants to bulk-list items without filling out a separate form for
                     each one
                   </p>
-                  <p className="py-4 text-lg font-medium leading-snug text-zinc-400 sm:text-xl">
+                  <p className="py-4 cs-body font-medium text-zinc-300">
                     Wants items gone before the baby outgrows them — timing matters more
                     than price
                   </p>
-                  <p className="pt-4 text-lg font-medium leading-snug text-zinc-400 sm:text-xl">
+                  <p className="pt-4 cs-body font-medium text-zinc-300">
                     Just wants to drop off a black garbage bag and be done with it — no
                     listings, no chats
                   </p>
@@ -253,7 +253,7 @@ export default function AiMarketplaceCaseStudy() {
             <span className="inline-flex rounded-full border border-[#B75E45]/55 bg-[#B75E45]/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#e8c9bf]">
               The design response
             </span>
-            <p className="mt-4 text-sm leading-relaxed text-zinc-400 sm:text-[15px]">
+            <p className="mt-4 cs-body-sm sm:text-[15px]">
               Each path uses{" "}
               <span className="font-semibold text-zinc-100">AI where it helps</span>{" "}
               — removing admin work while keeping parents in control of what publishes.
@@ -264,10 +264,10 @@ export default function AiMarketplaceCaseStudy() {
                   <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-zinc-500">
                     List fast
                   </p>
-                  <p className="mt-2 text-lg font-semibold leading-snug text-white sm:text-xl">
+                  <p className="mt-2 text-[15px] font-medium leading-[1.35] text-white">
                     Selling Agent — one photo, multiple listings.
                   </p>
-                  <p className="mt-3 text-sm leading-relaxed text-zinc-400 sm:text-[15px]">
+                  <p className="mt-3 cs-body-sm sm:text-[15px]">
                     Take one photo and the agent generates all your listings at once.
                     No forms, no repetition — review and publish in one go.
                   </p>
@@ -276,7 +276,7 @@ export default function AiMarketplaceCaseStudy() {
                   <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-zinc-500">
                     Sell fast
                   </p>
-                  <p className="mt-2 text-lg font-semibold leading-snug text-white sm:text-xl">
+                  <p className="mt-2 text-[15px] font-medium leading-[1.35] text-white">
                     Parenting Copilot nudges buyers when their baby enters a new phase
                     and surfaces the gear they&apos;ll need next.
                   </p>
@@ -285,10 +285,10 @@ export default function AiMarketplaceCaseStudy() {
                   <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-zinc-500">
                     Giveaway free fast
                   </p>
-                  <p className="mt-2 text-lg font-semibold leading-snug text-white sm:text-xl">
+                  <p className="mt-2 text-[15px] font-medium leading-[1.35] text-white">
                     MINA Circle — claim free donated items.
                   </p>
-                  <p className="mt-3 text-sm leading-relaxed text-zinc-400 sm:text-[15px]">
+                  <p className="mt-3 cs-body-sm sm:text-[15px]">
                     At offline events, parents drop off a bag of gear and walk away
                     with partner discount coupons. No listings, no chat threads —
                     just done.
@@ -303,7 +303,7 @@ export default function AiMarketplaceCaseStudy() {
           id="selling-agent"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+          <span className="cs-section-eyebrow">
             Selling agent
           </span>
           <div className="min-w-0 space-y-8">
@@ -341,7 +341,7 @@ export default function AiMarketplaceCaseStudy() {
                 <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[rgba(220,140,110,0.7)]">
                   System constraints
                 </p>
-                <h3 className="text-base font-semibold leading-snug text-[#f0e8e4] sm:text-lg">
+                <h3 className="text-[15px] font-medium leading-[1.35] text-[#f0e8e4]">
                   No blocking spinner — show staged progress while AI work lands
                 </h3>
                 <p className="text-[15px] leading-relaxed text-[rgba(220,200,190,0.7)] sm:text-base">
@@ -357,7 +357,7 @@ export default function AiMarketplaceCaseStudy() {
                 <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[rgba(220,140,110,0.7)]">
                   Automation and user control
                 </p>
-                <h3 className="text-base font-semibold leading-snug text-[#f0e8e4] sm:text-lg">
+                <h3 className="text-[15px] font-medium leading-[1.35] text-[#f0e8e4]">
                   Preview before publish — trust-first, and true to server state
                 </h3>
                 <p className="text-[15px] leading-relaxed text-[rgba(220,200,190,0.7)] sm:text-base">
@@ -491,7 +491,7 @@ export default function AiMarketplaceCaseStudy() {
           id="parenting-copilot"
           className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+          <span className="cs-section-eyebrow">
             Parenting copilot
           </span>
           <div className="min-w-0 space-y-5">
@@ -531,7 +531,7 @@ export default function AiMarketplaceCaseStudy() {
           id="design-system"
           className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+          <span className="cs-section-eyebrow">
             Design system
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>

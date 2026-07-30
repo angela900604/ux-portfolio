@@ -6,7 +6,7 @@ import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { OutcomesMetricsChart } from "./OutcomesMetricsChart";
-import { CASE_STUDY_BODY_GRID, SITE_SHELL_INNER } from "@/lib/site-shell";
+import { CASE_STUDY_BODY_GRID, CASE_STUDY_SECTION_TITLE_CLASS, SITE_SHELL_INNER } from "@/lib/site-shell";
 
 const AH_ASSET = (name: string) => `/case-studies/admission-hub/${name}`;
 
@@ -58,10 +58,10 @@ function Section({
       id={id}
       className={id ? "scroll-mt-28 sm:scroll-mt-32" : undefined}
     >
-      <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+      <span className="cs-section-eyebrow">
         {kicker}
       </span>
-      {title ? <h2 className="mt-2 text-zinc-100">{title}</h2> : null}
+      {title ? <h2 className={`mt-2 ${CASE_STUDY_SECTION_TITLE_CLASS}`}>{title}</h2> : null}
       {children}
     </CaseStudyInViewSection>
   );
@@ -158,7 +158,7 @@ export default function AdmissionHubCaseStudy() {
             <h5 className="text-zinc-100">
               Email (Mailchimp) — how sends were structured
             </h5>
-            <p className="mt-2 text-sm text-zinc-400 leading-relaxed max-w-3xl">
+            <p className="mt-2 cs-body-sm max-w-3xl">
               Mailchimp execution—templates, segmentation, and cadence tied to
               site content—so sends consistently fed the pipeline of{" "}
               <span className="font-medium text-zinc-100">
@@ -170,7 +170,7 @@ export default function AdmissionHubCaseStudy() {
             <p className="mt-2 text-xs text-zinc-500 leading-relaxed max-w-3xl">
               Original campaign screenshots weren&apos;t preserved.
             </p>
-            <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-zinc-400 leading-relaxed max-w-3xl">
+            <ul className="mt-4 list-disc space-y-2 pl-5 cs-body-sm max-w-3xl">
               <li>
                 <strong className="font-medium text-zinc-100">Cadence:</strong>{" "}
                 Sends aligned with blog publishes and seasonal hooks so
@@ -217,11 +217,11 @@ export default function AdmissionHubCaseStudy() {
             <h5 className="text-zinc-100">
               SEO + WordPress
             </h5>
-            <p className="mt-2 text-sm text-zinc-400 leading-relaxed max-w-3xl">
+            <p className="mt-2 cs-body-sm max-w-3xl">
               Utility articles and on-page structure to support organic
               discovery.
             </p>
-            <p className="mt-3 text-sm text-zinc-400 leading-relaxed max-w-3xl">
+            <p className="mt-3 cs-body-sm max-w-3xl">
               Long posts with clear outlines and sidebars so Taiwan- and Hong
               Kong–based readers could self-serve before consulting.
             </p>
@@ -241,7 +241,7 @@ export default function AdmissionHubCaseStudy() {
                   sizes="(max-width: 896px) 100vw, 896px"
                 />
               </ImageLightbox>
-              <figcaption className="mt-4 text-sm text-zinc-400 leading-relaxed">
+              <figcaption className="mt-4 cs-body-sm">
                 <span className="font-semibold text-zinc-100">
                   Featured articles (live)
                 </span>
@@ -269,15 +269,15 @@ export default function AdmissionHubCaseStudy() {
               <h5 className="text-zinc-100">
                 Visuals for web + social
               </h5>
-              <p className="mt-2 text-sm text-zinc-400 leading-relaxed">
+              <p className="mt-2 cs-body-sm">
                 Figma graphics for the site and Instagram—supporting +500
                 followers and +21% engagement over roughly three months.
               </p>
-              <p className="mt-3 text-sm text-zinc-400 leading-relaxed">
+              <p className="mt-3 cs-body-sm">
                 I locked hero hierarchy and promo clarity so culture posts and
                 conversion flyers still read as one ADM system.
               </p>
-              <p className="mt-3 text-sm text-zinc-400 leading-relaxed">
+              <p className="mt-3 cs-body-sm">
                 Campaign and blog visuals so email, web, and social pointed to
                 the same story and CTAs.
               </p>
@@ -286,7 +286,7 @@ export default function AdmissionHubCaseStudy() {
               <h5 className="text-zinc-100">
                 Calendar hooks &amp; “utility” social
               </h5>
-              <p className="mt-2 text-sm text-zinc-400 leading-relaxed">
+              <p className="mt-2 cs-body-sm">
                 I chased utility moments people actually search for on Instagram
                 (times, places, seasonal hooks).
               </p>
@@ -314,7 +314,7 @@ export default function AdmissionHubCaseStudy() {
           kicker="03 · Outcomes"
           title="Measurable growth in engagement and reach"
         >
-          <p className="mt-4 max-w-3xl text-sm text-zinc-400 leading-relaxed">
+          <p className="mt-4 max-w-3xl cs-body-sm">
             The numbers below are anchored in{" "}
             <a
               href="https://www.instagram.com/adm.tw/"
@@ -329,7 +329,7 @@ export default function AdmissionHubCaseStudy() {
             account during the same stretch.
           </p>
 
-          <p className="mt-3 text-xs font-medium uppercase tracking-widest text-zinc-500">
+          <p className="mt-3 cs-section-eyebrow">
             Instagram · typical post likes
           </p>
           <div className="mt-2 flex flex-wrap items-center gap-2 sm:gap-3">

@@ -1,6 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
+import { CS_BODY } from "@/lib/case-study-theme";
 
 type Props = {
   /** Button label when collapsed (e.g. “Read full context”). */
@@ -46,7 +47,7 @@ export function CaseStudyExpandable({
       className={`group mt-4 rounded-xl border ${shell} ${className}`.trim()}
     >
       <summary
-        className={`cursor-pointer list-none px-4 py-3 text-sm font-semibold transition [&::-webkit-details-marker]:hidden ${summaryTone}`}
+        className={`cursor-pointer list-none px-4 py-3 text-[14px] font-medium transition [&::-webkit-details-marker]:hidden ${summaryTone}`}
       >
         <span
           className={`underline underline-offset-4 group-open:hidden ${decoration}`}
@@ -57,7 +58,7 @@ export function CaseStudyExpandable({
           Show less
         </span>
       </summary>
-      <div className="border-t border-zinc-800/80 px-4 pb-4 pt-3 text-sm leading-relaxed text-zinc-300">
+      <div className={`border-t border-zinc-800/80 px-4 pb-4 pt-3 ${CS_BODY}`}>
         {children}
       </div>
     </details>

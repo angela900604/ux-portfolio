@@ -7,7 +7,7 @@ export function MomiOutcomesChart() {
       role="img"
       aria-label="Outcomes: 75 percent growth in ecommerce platform sales from role start through role end"
     >
-      <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+      <p className="cs-section-eyebrow">
         Outcomes
       </p>
 

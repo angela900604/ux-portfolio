@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { CS_META_LABEL, CS_SECTION_EYEBROW } from "@/lib/case-study-theme";
+import { CS_BODY, CS_META_LABEL, CS_SECTION_EYEBROW } from "@/lib/case-study-theme";
 
 export type CaseStudyHeroTldrMetric = {
   kicker: string;
@@ -36,7 +36,7 @@ export function CaseStudyHeroTldr({
   return (
     <div className="min-w-0">
       <span className={CS_SECTION_EYEBROW}>{sectionLabel}</span>
-      <h2 className="mt-3 max-w-4xl text-pretty text-[1.625rem] font-medium leading-[1.28] tracking-[-0.025em] text-zinc-100 sm:mt-5 sm:text-[2.125rem] sm:leading-[1.25]">
+      <h2 className="mt-3 max-w-4xl text-pretty text-xl font-medium leading-[1.3] tracking-[-0.02em] text-zinc-100 sm:mt-4 sm:text-[22px]">
         {headline}
       </h2>
 
@@ -51,11 +51,11 @@ export function CaseStudyHeroTldr({
             >
               {m.value}
             </dd>
-            <dd className="mt-2 text-sm font-medium leading-snug text-zinc-100">
+            <dd className="mt-2 text-[14px] font-medium leading-snug text-zinc-100">
               {m.title}
             </dd>
             {m.detail ? (
-              <dd className="mt-2 text-[15px] leading-[1.7] text-zinc-400">
+              <dd className={`mt-2 ${CS_BODY}`}>
                 {m.detail}
               </dd>
             ) : null}

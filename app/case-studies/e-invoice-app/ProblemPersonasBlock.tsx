@@ -12,7 +12,7 @@ export function ProblemPersonasBlock() {
     >
       <div className="grid min-w-0 gap-10 lg:grid-cols-2 lg:items-start lg:gap-12">
         <div className="min-w-0 space-y-6">
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+          <span className="cs-section-eyebrow">
             01 · The problem
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
@@ -57,7 +57,7 @@ export function ProblemPersonasBlock() {
                 </span>
               </span>
             </summary>
-            <div className="border-t border-zinc-800 px-4 pb-4 pt-1 text-sm leading-relaxed text-zinc-400 sm:text-[15px]">
+            <div className="border-t border-zinc-800 px-4 pb-4 pt-1 cs-body-sm sm:text-[15px]">
               <p>
                 In Taiwan, retail purchases always come with a{" "}
                 <span className="text-zinc-100">uniform invoice</span>{" "}

@@ -14,13 +14,13 @@ export const CS_SUBLABEL =
 export const CS_META_LABEL =
   "text-[11px] font-medium uppercase tracking-[0.2em] text-zinc-500 mb-2";
 
-/** Body copy */
+/** Body copy — matches homepage selected-work card description */
 export const CS_BODY =
-  "text-[17px] font-normal leading-[1.7] text-zinc-400";
+  "text-[15px] font-normal leading-[1.65] text-zinc-400";
 
-/** Smaller supporting copy */
+/** Smaller supporting copy — captions, footnotes */
 export const CS_BODY_SM =
-  "text-[15px] font-normal leading-[1.7] text-zinc-400";
+  "text-[14px] font-normal leading-[1.6] text-zinc-400";
 
 /** H3 sub-head within a section (Joseph: 15px / medium) */
 export const CS_H3 =
@@ -44,10 +44,10 @@ export const RESEARCH_SECTION_LABEL =
 export const RESEARCH_SECTION_HEADER = "max-w-3xl space-y-3";
 
 export const RESEARCH_SECTION_TITLE =
-  "text-2xl font-semibold leading-[1.2] tracking-[-0.02em] text-zinc-100 sm:text-3xl sm:leading-[1.15]";
+  "text-xl font-medium leading-[1.3] tracking-[-0.02em] text-zinc-100 sm:text-[22px]";
 
 export const RESEARCH_SECTION_BODY =
-  "max-w-2xl text-base leading-[1.65] text-zinc-300";
+  "max-w-2xl text-[15px] leading-[1.65] text-zinc-400";
 
 /** Soft content band (charts, tables) — no outer stroke */
 export const CS_CONTENT_BAND = "bg-zinc-900/40 p-5 sm:p-6";

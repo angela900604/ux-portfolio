@@ -37,14 +37,14 @@ export const CASE_STUDY_PRIMARY_TITLE_CLASS =
   "text-[2rem] font-medium leading-[1.12] tracking-[-0.025em] sm:text-[2.6875rem] sm:leading-[1.1]";
 
 /**
- * Case-study body section headline — Joseph h2 scale (34px / medium).
+ * Case-study body section headline — homepage card-title scale (20px → 22px sm).
  */
 export const CASE_STUDY_SECTION_TITLE_CLASS =
-  "case-study-section-title max-w-3xl font-medium tracking-[-0.025em] text-zinc-100";
+  "case-study-section-title max-w-3xl font-medium tracking-[-0.02em] text-zinc-100";
 
-/** Smaller supporting line directly under a section headline. */
+/** Supporting line directly under a section headline. */
 export const CASE_STUDY_SECTION_SUBTITLE_CLASS =
-  "mt-3 block max-w-3xl text-[17px] font-normal leading-[1.7] text-zinc-400 sm:mt-4";
+  "mt-2 block max-w-3xl text-[15px] font-normal leading-[1.65] text-zinc-400 sm:mt-3";
 
 /**
  * Counteract {@link SITE_GUTTER_CLASS} so a band (e.g. marquee) spans the full padded
