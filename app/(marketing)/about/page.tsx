@@ -3,6 +3,7 @@ import { ImageLightbox } from "@/app/components/ImageLightbox";
 import { BeyondDesignGallery } from "@/app/components/BeyondDesignGallery";
 import { BEYOND_PHOTOGRAPHY_GALLERY } from "@/app/content/beyond-design-gallery";
 import { AboutExperienceSection } from "./AboutExperienceSection";
+import { HaphyLivingCallout } from "./HaphyLivingCallout";
 import { MarketingHomeLogos } from "../MarketingHomeLogos";
 import { MARKETING_SECTION_TITLE_CLASS } from "@/lib/marketing-section-title";
 
@@ -133,7 +134,8 @@ export default function AboutPage() {
 
       <section className="mt-14 border-t border-zinc-800 pt-12">
         <h2 className={MARKETING_SECTION_TITLE_CLASS}>Beyond design</h2>
-        <div className="mt-6">
+        <HaphyLivingCallout />
+        <div className="mt-12 border-t border-zinc-800/90 pt-10">
           <BeyondDesignGallery
             photography={BEYOND_PHOTOGRAPHY_GALLERY}
             graphic={[]}

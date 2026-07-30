@@ -112,7 +112,7 @@ export function BeyondDesignGallery({
   const closeLightbox = useCallback(() => setLightbox(null), []);
 
   return (
-    <div className="mt-10">
+    <div>
       <div className="space-y-12">
         <section>
           <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-3 lg:grid-cols-4 lg:grid-rows-[repeat(4,minmax(0,auto))] lg:gap-3">
