@@ -80,7 +80,7 @@ function GalleryTile({
       onClick={onOpen}
       className={`group relative block w-full min-w-0 cursor-zoom-in text-left ${item.gridClass}`}
     >
-      <div className="relative h-full min-h-[200px] w-full overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+      <div className="relative h-full min-h-[200px] w-full overflow-hidden rounded-lg border border-zinc-800 bg-zinc-900/40">
         <Image
           src={item.src}
           alt={item.alt}

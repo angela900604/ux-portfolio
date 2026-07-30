@@ -8,12 +8,12 @@ import {
 } from "@/app/content/haphy-living";
 import {
   MARKETING_FLAGSHIP_SERIF,
-  MARKETING_FLAGSHIP_SERIF_LEAD_COMPACT_CLASS,
-  MARKETING_FLAGSHIP_SERIF_LEAD_MAX_WIDTH_WIDE_CLASS,
 } from "@/lib/marketing-flagship-serif";
 
 const HAPHY_LINK_CLASS =
   "font-medium text-zinc-200 underline decoration-dotted decoration-zinc-600 underline-offset-[3px] transition-colors hover:decoration-zinc-400";
+
+const BEYOND_GALLERY_RADIUS_CLASS = "rounded-lg";
 
 export function HaphyLivingCallout() {
   return (
@@ -26,12 +26,15 @@ export function HaphyLivingCallout() {
             alt={item.alt}
             className="block w-full min-w-0"
           >
-            <div className="relative h-full min-h-[200px] w-full overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+            <div
+              className={`relative w-full overflow-hidden border border-zinc-800 bg-zinc-900/40 ${BEYOND_GALLERY_RADIUS_CLASS}`}
+            >
               <Image
                 src={item.src}
                 alt={item.alt}
-                fill
-                className="object-cover object-center opacity-95"
+                width={item.width}
+                height={item.height}
+                className="h-auto w-full object-contain object-center"
                 sizes="(max-width: 1024px) 100vw, 400px"
               />
             </div>
@@ -40,7 +43,7 @@ export function HaphyLivingCallout() {
       </div>
 
       <figcaption
-        className={`mt-4 text-zinc-400 ${MARKETING_FLAGSHIP_SERIF_LEAD_COMPACT_CLASS} ${MARKETING_FLAGSHIP_SERIF_LEAD_MAX_WIDTH_WIDE_CLASS}`}
+        className="mt-4 max-w-4xl text-[17px] font-normal leading-[1.7] text-zinc-400 text-pretty xl:max-w-5xl"
         style={{ fontFamily: MARKETING_FLAGSHIP_SERIF }}
       >
         I run{" "}
