@@ -64,12 +64,12 @@ export default function AboutPage() {
       <MarketingHomeLogos />
 
       <section className="mt-14 border-t border-zinc-800 pt-12">
-        <h2 className={MARKETING_SECTION_TITLE_CLASS}>
-          The part of the job where I feel most alive.
-        </h2>
-        <div className="mt-6 grid items-start gap-8 lg:grid-cols-12 lg:gap-10">
-          <div className="min-w-0 text-sm leading-relaxed text-zinc-400 sm:text-base lg:col-span-5">
-            <p>
+        <div className="grid items-start gap-8 lg:grid-cols-12 lg:gap-10">
+          <div className="min-w-0 lg:col-span-5">
+            <h2 className={MARKETING_SECTION_TITLE_CLASS}>
+              The part of the job where I feel most alive.
+            </h2>
+            <p className="mt-6 text-sm leading-relaxed text-zinc-400 sm:text-base">
               Whether it&apos;s a focus group or a 1:1 usability session, I care
               about making participants feel respected and heard, then turning what
               we learn into something the team can act on. This is where I&apos;m
@@ -83,7 +83,7 @@ export default function AboutPage() {
               className="block w-full"
               disableHoverScale
             >
-              <div className="relative w-full overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40">
+              <div className="relative w-full overflow-hidden rounded-lg border border-zinc-800 bg-zinc-900/40">
                 <Image
                   src={INTERVIEW_PHOTO_SRC}
                   alt="Collage: Angela facilitating user research—in group sessions, one-on-one interviews, and conversations with participants across ages and contexts."

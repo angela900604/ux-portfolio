@@ -105,48 +105,49 @@ export default function AiMarketplaceCaseStudy() {
               />
             </div>
 
-            <figure className="w-full min-w-0">
-              <div
-                className="relative w-full min-h-0 overflow-hidden bg-black shadow-[0_20px_50px_-20px_rgba(0,0,0,0.65)]"
-                style={{ aspectRatio: `${MINA_HERO_VID_W} / ${MINA_HERO_VID_H}` }}
-              >
-                <video
-                  className="absolute inset-0 h-full w-full min-h-0 min-w-0 object-contain object-center"
-                  width={MINA_HERO_VID_W}
-                  height={MINA_HERO_VID_H}
-                  poster={MINA_HERO}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="auto"
-                  aria-label="MINA hero: three iPhone flows—Parenting Copilot, create listing with AI tags, and offer flow."
+            <div className="flex w-full min-w-0 flex-col gap-3">
+              <figure className="w-full min-w-0 overflow-hidden bg-black">
+                <div
+                  className="relative w-full min-h-0"
+                  style={{ aspectRatio: `${MINA_HERO_VID_W} / ${MINA_HERO_VID_H}` }}
                 >
-                  <source src={MINA_HERO_VID_SOURCES.mp4} type="video/mp4" />
-                  <source src={MINA_HERO_VID_SOURCES.webm} type="video/webm" />
-                </video>
-              </div>
-            </figure>
+                  <video
+                    className="absolute inset-0 h-full w-full min-h-0 min-w-0 object-contain object-center"
+                    width={MINA_HERO_VID_W}
+                    height={MINA_HERO_VID_H}
+                    poster={MINA_HERO}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="auto"
+                    aria-label="MINA hero: three iPhone flows—Parenting Copilot, create listing with AI tags, and offer flow."
+                  >
+                    <source src={MINA_HERO_VID_SOURCES.mp4} type="video/mp4" />
+                    <source src={MINA_HERO_VID_SOURCES.webm} type="video/webm" />
+                  </video>
+                </div>
+              </figure>
 
-            <section className="mt-8 w-full min-w-0 sm:mt-12">
-              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:items-stretch">
-                <div className="relative min-h-[min(88vw,480px)] w-full overflow-hidden sm:row-span-2 sm:min-h-[min(100%,640px)]">
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:grid-rows-2">
+                <div className="flex min-h-0 items-center justify-center overflow-hidden bg-black sm:row-span-2">
                   <ImageLightbox
                     src={MINA_MOCKUP_HAND}
                     alt="MINA Parenting Copilot on iPhone, held in hand against a light textured background"
-                    className="absolute inset-0"
+                    className="block w-full"
                     disableHoverScale
                   >
                     <Image
                       src={MINA_MOCKUP_HAND}
                       alt="MINA Parenting Copilot on iPhone, held in hand against a light textured background"
-                      fill
-                      className="object-cover object-center"
+                      width={720}
+                      height={1024}
+                      className="h-auto w-full object-contain object-center"
                       sizes="(max-width: 640px) 100vw, 50vw"
                     />
                   </ImageLightbox>
                 </div>
-                <div className="overflow-hidden">
+                <div className="flex min-h-0 items-center justify-center overflow-hidden bg-black">
                   <ImageLightbox
                     src={MINA_MOCKUP_ISO}
                     alt="MINA listing detail shown in an isometric iPhone mockup"
@@ -158,12 +159,12 @@ export default function AiMarketplaceCaseStudy() {
                       alt="MINA listing detail shown in an isometric iPhone mockup"
                       width={1024}
                       height={576}
-                      className="h-auto w-full object-cover"
+                      className="h-auto w-full object-contain object-center"
                       sizes="(max-width: 640px) 100vw, 50vw"
                     />
                   </ImageLightbox>
                 </div>
-                <div className="overflow-hidden">
+                <div className="flex min-h-0 items-center justify-center overflow-hidden bg-black">
                   <ImageLightbox
                     src={MINA_MOCKUP_SOFA}
                     alt="MINA review listing screen shown on iPhone mockup on a leather sofa"
@@ -175,13 +176,13 @@ export default function AiMarketplaceCaseStudy() {
                       alt="MINA review listing screen shown on iPhone mockup on a leather sofa"
                       width={1024}
                       height={576}
-                      className="h-auto w-full object-cover"
+                      className="h-auto w-full object-contain object-center"
                       sizes="(max-width: 640px) 100vw, 50vw"
                     />
                   </ImageLightbox>
                 </div>
               </div>
-            </section>
+            </div>
 
           </div>
         </div>

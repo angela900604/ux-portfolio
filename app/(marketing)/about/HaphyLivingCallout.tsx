@@ -39,7 +39,7 @@ export function HaphyLivingCallout() {
         ))}
       </div>
 
-      <figcaption className="mt-4 max-w-4xl font-sans text-[17px] font-normal leading-[1.7] text-zinc-400 text-pretty xl:max-w-5xl">
+      <figcaption className="mt-4 max-w-4xl font-sans text-[15px] font-normal leading-[1.65] text-zinc-400 text-pretty xl:max-w-5xl">
         I run{" "}
         <a
           href={HAPHY_LIVING_SHOP_URL}
