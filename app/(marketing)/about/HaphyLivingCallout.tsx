@@ -6,9 +6,6 @@ import {
   HAPHY_LIVING_PRODUCT_IMAGES,
   HAPHY_LIVING_SHOP_URL,
 } from "@/app/content/haphy-living";
-import {
-  MARKETING_FLAGSHIP_SERIF,
-} from "@/lib/marketing-flagship-serif";
 
 const HAPHY_LINK_CLASS =
   "font-medium text-zinc-200 underline decoration-dotted decoration-zinc-600 underline-offset-[3px] transition-colors hover:decoration-zinc-400";
@@ -42,10 +39,7 @@ export function HaphyLivingCallout() {
         ))}
       </div>
 
-      <figcaption
-        className="mt-4 max-w-4xl text-[17px] font-normal leading-[1.7] text-zinc-400 text-pretty xl:max-w-5xl"
-        style={{ fontFamily: MARKETING_FLAGSHIP_SERIF }}
-      >
+      <figcaption className="mt-4 max-w-4xl font-sans text-[17px] font-normal leading-[1.7] text-zinc-400 text-pretty xl:max-w-5xl">
         I run{" "}
         <a
           href={HAPHY_LIVING_SHOP_URL}

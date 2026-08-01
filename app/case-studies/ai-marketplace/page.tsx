@@ -111,7 +111,7 @@ export default function AiMarketplaceCaseStudy() {
                 style={{ aspectRatio: `${MINA_HERO_VID_W} / ${MINA_HERO_VID_H}` }}
               >
                 <video
-                  className="absolute inset-0 h-full w-full min-h-0 min-w-0 rounded-[inherit] object-contain object-center"
+                  className="absolute inset-0 h-full w-full min-h-0 min-w-0 object-contain object-center"
                   width={MINA_HERO_VID_W}
                   height={MINA_HERO_VID_H}
                   poster={MINA_HERO}
@@ -130,7 +130,7 @@ export default function AiMarketplaceCaseStudy() {
 
             <section className="mt-8 w-full min-w-0 sm:mt-12">
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:items-stretch">
-                <div className="relative min-h-[min(88vw,480px)] w-full overflow-hidden rounded-xl sm:row-span-2 sm:min-h-[min(100%,640px)]">
+                <div className="relative min-h-[min(88vw,480px)] w-full overflow-hidden sm:row-span-2 sm:min-h-[min(100%,640px)]">
                   <ImageLightbox
                     src={MINA_MOCKUP_HAND}
                     alt="MINA Parenting Copilot on iPhone, held in hand against a light textured background"
@@ -146,7 +146,7 @@ export default function AiMarketplaceCaseStudy() {
                     />
                   </ImageLightbox>
                 </div>
-                <div className="overflow-hidden rounded-xl">
+                <div className="overflow-hidden">
                   <ImageLightbox
                     src={MINA_MOCKUP_ISO}
                     alt="MINA listing detail shown in an isometric iPhone mockup"
@@ -163,7 +163,7 @@ export default function AiMarketplaceCaseStudy() {
                     />
                   </ImageLightbox>
                 </div>
-                <div className="overflow-hidden rounded-xl">
+                <div className="overflow-hidden">
                   <ImageLightbox
                     src={MINA_MOCKUP_SOFA}
                     alt="MINA review listing screen shown on iPhone mockup on a leather sofa"
