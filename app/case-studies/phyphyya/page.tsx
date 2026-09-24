@@ -1,26 +1,29 @@
 import Link from "next/link";
 import {
   CASE_STUDY_BODY_GRID,
+  CASE_STUDY_SECTION_TITLE_CLASS,
   SITE_SHELL_INNER,
 } from "@/lib/site-shell";
+import { HAPHY_LIVING_SHOP_URL } from "@/app/content/haphy-living";
+import { CS_BODY, CS_H3, CS_SECTION_EYEBROW } from "@/lib/case-study-theme";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 
 export const metadata = {
-  title: "Haphy Living (Brand IP) | Angela Yang",
+  title: "Haphy Living · Original brand IP & Etsy shop | Angela Yang",
   description:
-    "Haphy Living: a live commercial experiment and personal brand IP built from bunny-inspired design to POD production and Etsy operations.",
+    "End-to-end brand identity for a pet-lifestyle label — mascot, logo system, palette, and a live print-on-demand product line.",
 };
 
 export default function PhyphyyaCaseStudy() {
   const logoConceptImg = "/case-studies/phyphyya/gallery-10.png";
 
   const mascotCards = [
-    { src: "/case-studies/phyphyya/gallery-02.png", alt: "Mascot 1" },
-    { src: "/case-studies/phyphyya/gallery-03.png", alt: "Mascot 2" },
-    { src: "/case-studies/phyphyya/gallery-09.png", alt: "Mascot 3" },
-    { src: "/case-studies/phyphyya/gallery-16.png", alt: "Mascot 4" },
+    { src: "/case-studies/phyphyya/gallery-02.png", alt: "Haphy mascot pose 1" },
+    { src: "/case-studies/phyphyya/gallery-03.png", alt: "Haphy mascot pose 2" },
+    { src: "/case-studies/phyphyya/gallery-09.png", alt: "Haphy mascot pose 3" },
+    { src: "/case-studies/phyphyya/gallery-16.png", alt: "Haphy mascot pose 4" },
   ];
 
   const sweatshirtSeries = [
@@ -145,108 +148,157 @@ export default function PhyphyyaCaseStudy() {
         </div>
       </header>
 
-      <CaseStudyContentLayout contentClassName="">
-        {/* Logo Concept - Soft & Rounded */}
+      <CaseStudyContentLayout>
         <CaseStudyInViewSection
-          id="logo-concept"
-          className="scroll-mt-28 py-[80px] sm:scroll-mt-32 flex flex-col items-center"
+          id="context"
+          className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
         >
-          <div className="text-center mb-[60px] w-full">
-            <h2 className="text-zinc-100 mb-[20px] relative inline-block font-sans after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-zinc-500 after:mx-auto after:mt-[15px]">
-              Logo Concept - Soft & Rounded
-            </h2>
-          </div>
+          <span className={CS_SECTION_EYEBROW}>Context</span>
+          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
+            Building a pet-lifestyle brand IP from scratch
+          </h2>
+          <p className={`max-w-3xl ${CS_BODY}`}>
+            Haphy Living started as a personal project: turn my Holland lop
+            rabbit into a brand. No client, no brief — just a blank page and a
+            point of view. I owned everything: identity, artwork, product line,
+            shop, and marketing.
+          </p>
+        </CaseStudyInViewSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 items-start gap-[60px] w-full">
-            <div className="flex w-full flex-col gap-[40px]">
-              <div className="w-full rounded-[4px] overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.05)]">
-                <img
-                  src={logoConceptImg}
-                  alt="Logo Concept"
-                  className="w-full h-auto block"
-                  loading="lazy"
-                />
-              </div>
+        <CaseStudyInViewSection
+          id="identity"
+          className="scroll-mt-28 space-y-8 sm:scroll-mt-32"
+        >
+          <span className={CS_SECTION_EYEBROW}>The identity</span>
+          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
+            Cozy, a little mischievous, unmistakably ours
+          </h2>
+          <p className={`max-w-3xl ${CS_BODY}`}>
+            I designed a full identity system around one idea. A hand-drawn
+            mascot with a consistent personality across poses and seasons. A
+            warm, earthy palette that holds together from a 3-inch pin to a
+            wall-sized art print. A logo and wordmark flexible enough for
+            packaging, tags, and social avatars.
+          </p>
 
-              <div className="grid grid-cols-2 gap-[24px] lg:grid-cols-4 lg:gap-[30px]">
+          <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-2">
+            <div className="min-w-0 space-y-6">
+              <img
+                src={logoConceptImg}
+                alt="Haphy Living logo concept — soft rounded wordmark"
+                className="block h-auto w-full"
+                loading="lazy"
+              />
+              <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
                 {mascotCards.map((c) => (
-                  <div
+                  <img
                     key={c.src}
-                    className="rounded-[8px] border border-[#E5DFD4] bg-[#F5F3EF] p-[20px] text-center shadow-[0_10px_30px_rgba(0,0,0,0.06)] transition-transform duration-300 hover:-translate-y-[5px]"
-                  >
-                    <img
-                      src={c.src}
-                      alt={c.alt}
-                      className="block h-auto w-full rounded-[4px]"
-                      loading="lazy"
-                    />
-                  </div>
+                    src={c.src}
+                    alt={c.alt}
+                    className="block h-auto w-full"
+                    loading="lazy"
+                  />
                 ))}
               </div>
             </div>
-
-            <div className="pl-0 md:pl-[20px]">
-              <div className="mb-[40px]">
-                <h3 className="text-zinc-100 mb-[12px] border-l-[3px] border-zinc-800 pl-[15px] font-sans">
-                  Color Palette
-                </h3>
-                <p className="cs-body pl-[18px]">
-                  Incorporating soft blue-gray as one of the primary tones,
-                  paired with warm gray and beige. The blue-gray and beige tones
-                  coexist harmoniously, offering both freshness and warm vintage ambiance.
-                </p>
-                <div className="flex gap-[15px] mt-[15px] pl-[18px]">
-                  <div className="w-[40px] h-[40px] rounded-full shadow-[0_2px_5px_rgba(0,0,0,0.1)]" style={{ backgroundColor: "#8D99AE" }} />
-                  <div className="w-[40px] h-[40px] rounded-full shadow-[0_2px_5px_rgba(0,0,0,0.1)]" style={{ backgroundColor: "#D4C5B0" }} />
-                  <div className="w-[40px] h-[40px] rounded-full shadow-[0_2px_5px_rgba(0,0,0,0.1)]" style={{ backgroundColor: "#F5F3EF" }} />
-                  <div className="w-[40px] h-[40px] rounded-full shadow-[0_2px_5px_rgba(0,0,0,0.1)]" style={{ backgroundColor: "#4A4A4A" }} />
-                </div>
-              </div>
-
+            <div className="min-w-0 space-y-8">
               <div>
-                <h3 className="text-zinc-100 mb-[12px] border-l-[3px] border-zinc-800 pl-[15px] font-sans">
-                  Style Characteristics
-                </h3>
-                <p className="cs-body pl-[18px]">
-                  Rounded typography is giving a warm brand personality. Rough
-                  hand-drawn brush strokes and paper texture, creating a warm
-                  vintage atmosphere.
+                <h3 className={`${CS_H3} mb-3`}>Color palette + type</h3>
+                <p className={CS_BODY}>
+                  Soft blue-gray as a primary tone, paired with warm gray and
+                  beige — freshness with a vintage hold. Rounded letterforms
+                  carry a warm brand personality; hand-drawn brush strokes and
+                  paper texture keep the system from feeling sterile.
                 </p>
+                <div className="mt-4 flex gap-3">
+                  <div
+                    className="h-10 w-10 rounded-full"
+                    style={{ backgroundColor: "#8D99AE" }}
+                    aria-label="Blue-gray"
+                  />
+                  <div
+                    className="h-10 w-10 rounded-full"
+                    style={{ backgroundColor: "#D4C5B0" }}
+                    aria-label="Warm beige"
+                  />
+                  <div
+                    className="h-10 w-10 rounded-full border border-zinc-700"
+                    style={{ backgroundColor: "#F5F3EF" }}
+                    aria-label="Cream"
+                  />
+                  <div
+                    className="h-10 w-10 rounded-full"
+                    style={{ backgroundColor: "#4A4A4A" }}
+                    aria-label="Charcoal"
+                  />
+                </div>
               </div>
             </div>
           </div>
         </CaseStudyInViewSection>
 
-        {/* Etsy storefront & Print-on-Demand workflow */}
         <CaseStudyInViewSection
-          id="etsy-pod"
-          className="scroll-mt-28 py-[80px] sm:scroll-mt-32"
+          id="decisions"
+          className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
-          <div className="w-full min-w-0 px-5 sm:px-8 md:px-10 lg:px-12">
-            <div className="text-center w-full mb-[50px]">
-            <h2 className="text-zinc-100 mb-[20px] relative inline-block font-sans after:content-[''] after:block after:w-[40px] after:h-[3px] after:bg-zinc-500 after:mx-auto after:mt-[15px]">
-              Etsy shop &amp; Print-on-Demand
-            </h2>
-            <p className="cs-body leading-relaxed">
-              I launched{" "}
+          <span className={CS_SECTION_EYEBROW}>Key decisions</span>
+          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
+            Design for the product, not just the screen
+          </h2>
+          <ul className={`max-w-3xl space-y-5 ${CS_BODY}`}>
+            <li>
+              <strong className="font-medium text-zinc-100">
+                One mascot, many moods.
+              </strong>{" "}
+              Instead of a single static logo, the mascot carries the brand
+              across seasonal collections (Christmas, autumn, everyday) — the
+              identity stays recognizable while the product line keeps growing.
+            </li>
+            <li>
+              <strong className="font-medium text-zinc-100">
+                Design for the product, not just the screen.
+              </strong>{" "}
+              Every artwork is built print-first: full-bleed compositions, true
+              physical scale in mockups, and color checked against production
+              proofs — because a design that looks good in Figma and bad on a
+              tote isn&apos;t finished.
+            </li>
+            <li>
+              <strong className="font-medium text-zinc-100">
+                The shop is the portfolio.
+              </strong>{" "}
+              Listing photography, SEO titles, and lifestyle mockups are all
+              brand touchpoints. I treat the{" "}
               <a
-                href="https://www.etsy.com/ca/shop/HaphyLiving"
+                href={HAPHY_LIVING_SHOP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-zinc-100 underline underline-offset-2 hover:text-zinc-500"
+                className="font-medium text-zinc-200 underline decoration-dotted decoration-zinc-600 underline-offset-[3px] transition-colors hover:decoration-zinc-400"
               >
-                Haphy Living on Etsy
+                Etsy storefront
               </a>{" "}
-              to sell cozy, pet-inspired goods. The biggest early uncertainty was
-              differentiation in a crowded handmade category and whether I should
-              hold stock, so I intentionally used POD first to validate demand
-              with lower inventory risk.
-            </p>
-            </div>
+              as a designed surface, not an afterthought.
+            </li>
+          </ul>
+        </CaseStudyInViewSection>
 
-            {/* Left = smaller mobile capture, right = larger desktop grid; same height on lg */}
-            <div className="flex flex-col lg:flex-row gap-6 w-full mb-[40px] lg:items-stretch lg:h-[min(540px,72vh)]">
-            <div className="flex shrink-0 lg:w-[min(280px,32%)] items-center justify-center overflow-hidden rounded-[8px] shadow-[0_5px_15px_rgba(0,0,0,0.08)] px-3 py-4 lg:py-6 min-h-[420px] lg:min-h-0">
+        <CaseStudyInViewSection
+          id="etsy-pod"
+          className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
+        >
+          <span className={CS_SECTION_EYEBROW}>The product line</span>
+          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
+            A live print-on-demand shop, designed end to end
+          </h2>
+          <p className={`max-w-3xl ${CS_BODY}`}>
+            Art prints, tote bags, Christmas ornaments, enamel pins, magnets,
+            and sticker sheets — every listing designed, mocked up, and
+            optimized. I use a POD partner so I can validate demand without
+            holding stock, then iterate on listings with live Etsy data.
+          </p>
+
+          <div className="flex flex-col gap-6 lg:h-[min(540px,72vh)] lg:flex-row lg:items-stretch">
+            <div className="flex min-h-[420px] shrink-0 items-center justify-center overflow-hidden px-3 py-4 lg:min-h-0 lg:w-[min(280px,32%)] lg:py-6">
               <img
                 src="/case-studies/phyphyya/etsy-shop-mobile.png"
                 alt="Haphy Living Etsy shop on mobile"
@@ -254,7 +306,7 @@ export default function PhyphyyaCaseStudy() {
                 loading="lazy"
               />
             </div>
-            <div className="relative flex-1 min-h-[280px] overflow-hidden rounded-[8px] shadow-[0_5px_15px_rgba(0,0,0,0.08)] lg:min-h-0">
+            <div className="relative min-h-[280px] flex-1 overflow-hidden lg:min-h-0">
               <img
                 src="/case-studies/phyphyya/etsy-shop-desktop.png"
                 alt="Haphy Living Etsy shop — product grid"
@@ -262,151 +314,33 @@ export default function PhyphyyaCaseStudy() {
                 loading="lazy"
               />
             </div>
-            </div>
-
-            <div className="w-full space-y-[28px] cs-body leading-relaxed">
-            <p>
-              <strong className="text-zinc-100 font-sans">
-                1 · Design in Procreate
-              </strong>
-              <br />
-              I drew the wordmark and the lop-eared rabbit mascot by hand in
-              Procreate—keeping the soft, vintage brush texture consistent across
-              every touchpoint before anything went to print.
-            </p>
-            <p>
-              <strong className="text-zinc-100 font-sans">
-                2 · Print-on-Demand (POD) production
-              </strong>
-              <br />
-              I use a POD partner to manufacture on demand: I pick product
-              templates (phone cases, totes, magnets, die-cut stickers, etc.),
-              place the artwork at the correct safe margins, and export
-              print-ready files. When a customer orders on Etsy, the order is
-              sent to fulfillment—production, packaging, and shipping—so I can
-              focus on design and the shop experience instead of inventory while
-              testing which SKUs deserve deeper investment.
-            </p>
-            <p>
-              <strong className="text-zinc-100 font-sans">
-                3 · Lovart for listing &amp; social visuals
-              </strong>
-              <br />
-              I use Lovart to generate lifestyle mockups and product scenes—so
-              each listing has clear, on-brand photography that shows scale,
-              texture, and context (not just flat art on a white background).
-            </p>
-            <p>
-              <strong className="text-zinc-100 font-sans">
-                4 · Etsy as the storefront
-              </strong>
-              <br />
-              Etsy handles discovery, checkout, and buyer communication; POD
-              handles the physical workflow. Together they let me test products
-              and iterate on listings with low operational overhead.
-            </p>
-            <p>
-              <strong className="text-zinc-100 font-sans">
-                Real pitfall · Shipping economics
-              </strong>
-              <br />
-              The hardest issue so far is expensive POD shipping options, which
-              can compress margin and hurt conversion on lower-ticket items. The
-              current mitigation is pragmatic: prioritize bundles and higher-AOV
-              listings, keep shipping assumptions explicit in pricing tests, and
-              continue evaluating alternative POD partners.
-            </p>
-            </div>
           </div>
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection
-          id="testing-next"
-          className="scroll-mt-28 py-[80px] sm:scroll-mt-32"
+          id="outcome"
+          className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
         >
-          <details className="group w-full rounded-xl border border-zinc-800 bg-zinc-900/40 open:border-zinc-800/60">
-            <summary className="cursor-pointer list-none px-5 py-4 text-sm font-medium text-zinc-400 transition hover:bg-zinc-900/40 sm:px-6 sm:py-5 [&::-webkit-details-marker]:hidden">
-              <span className="inline-flex w-full items-center justify-between gap-3">
-                <span className="min-w-0 text-left font-sans text-[15px] font-medium leading-[1.35] text-zinc-100">
-                  What I&apos;m testing next
-                </span>
-                <span
-                  className="shrink-0 text-zinc-500 transition group-open:rotate-180"
-                  aria-hidden
-                >
-                  <svg
-                    width="18"
-                    height="18"
-                    viewBox="0 0 16 16"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="text-current"
-                  >
-                    <path
-                      d="M4 6l4 4 4-4"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </span>
-              </span>
-            </summary>
-            <div className="border-t border-zinc-800 px-5 pb-5 pt-4 sm:px-6 sm:pb-6">
-              <p className="text-[16px] leading-relaxed text-zinc-400">
-                Operating hypotheses I&apos;m running against live Etsy
-                data—shipping, pricing, and SKU mix—so the shop stays a learning
-                loop, not a one-off launch.
-              </p>
-              <ul className="mt-5 space-y-5 text-[16px] leading-relaxed text-zinc-400">
-                <li>
-                  <strong className="font-semibold text-zinc-100">
-                    Shipping economics
-                  </strong>
-                  <span className="block mt-1">
-                    Compare POD carriers and fulfillment paths for Canada / US
-                    buyers; test whether bundled listings and higher-AOV offers
-                    absorb shipping better than single low-ticket SKUs.
-                  </span>
-                </li>
-                <li>
-                  <strong className="font-semibold text-zinc-100">
-                    Pricing &amp; perceived value
-                  </strong>
-                  <span className="block mt-1">
-                    Run small, time-boxed price tests on comparable listings while
-                    keeping mockups and copy consistent—so shifts in conversion map
-                    more cleanly to price, not creative noise.
-                  </span>
-                </li>
-                <li>
-                  <strong className="font-semibold text-zinc-100">
-                    SKU mix &amp; bundles
-                  </strong>
-                  <span className="block mt-1">
-                    Narrow the catalog to a tight hero set (stickers, magnets,
-                    apparel) and add intentional bundles (e.g. sticker + magnet)
-                    to lift order value and clarify what the brand is for at a
-                    glance.
-                  </span>
-                </li>
-              </ul>
-            </div>
-          </details>
+          <span className={CS_SECTION_EYEBROW}>Outcome</span>
+          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
+            A complete, self-sustaining brand IP
+          </h2>
+          <p className={`max-w-3xl ${CS_BODY}`}>
+            Identity system, seasonal collections, and a live storefront —
+            built solo from zero, and still growing every holiday season.
+          </p>
         </CaseStudyInViewSection>
 
-        <footer className="border-t border-zinc-800 py-14">
+        <CaseStudyInViewSection className="border-t border-zinc-800 pt-12 space-y-8">
           <CaseStudyPrevNext currentSlug="phyphyya" variant="phyphyya" />
           <Link
             href="/"
-            className="mt-8 inline-block text-sm text-zinc-400 transition hover:text-zinc-100"
+            className="text-sm font-medium text-zinc-400 transition hover:text-zinc-100"
           >
             ← Back to home
           </Link>
-        </footer>
+        </CaseStudyInViewSection>
       </CaseStudyContentLayout>
     </article>
   );
 }
-

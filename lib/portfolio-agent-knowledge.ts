@@ -14,7 +14,7 @@ export const PORTFOLIO_AGENT_STARTER_PROMPTS = [
 
 /** Curated overview — detailed copy lives in {@link GENERATED_AGENT_KNOWLEDGE}. */
 export const PORTFOLIO_AGENT_CORE = `
-# Angela Yang — Product Designer
+# Angela Yang — Marketing Designer
 
 Contact: angela900604@gmail.com · Vancouver, BC · https://www.ycnangelayang.com/
 LinkedIn: https://www.linkedin.com/in/angelayangg/
@@ -86,7 +86,11 @@ export function parseAgentResponse(raw: string): {
     .slice(match.index + match[0].length)
     .split("\n")
     .map((line) => line.replace(/^[\s\-*•\d.)]+/, "").trim())
-    .filter(Boolean);
+    .filter((line) => {
+      if (!line) return false;
+      if (/^[—–\-·•]+$/.test(line)) return false;
+      return line.length >= 8;
+    });
 
   return { answer, followups };
 }

@@ -14,6 +14,7 @@ import {
   MINA_HOME_DISCIPLINE_TAGS,
   marketingDisciplineTagsForCaseStudySlug,
 } from "@/lib/marketing-work";
+import { HAPHY_LIVING_SHOP_URL } from "@/app/content/haphy-living";
 
 const MINA_APP_STORE_CA =
   "https://apps.apple.com/ca/app/mina-resale-for-parents/id6754006404";
@@ -294,13 +295,13 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
     eyebrowAsProjectCardTag: true,
     title: "Haphy Living",
     subtitle:
-      "A live ecommerce experiment built from a personal rabbit-inspired IP—illustration to POD production and Etsy storefront operations.",
+      "Original brand IP for a pet-lifestyle label—mascot, identity system, and a live print-on-demand Etsy shop.",
     items: [
-      { label: "Timeline", value: "2022 – present (ongoing)" },
-      { label: "Role", value: "Solo creator" },
+      { label: "Timeline", value: "2022 – present" },
+      { label: "Role", value: "Solo creator — brand, listings, shop" },
       {
         label: "Project type",
-        value: "Illustration · POD · Etsy storefront",
+        value: "Brand identity · Illustration · ecommerce",
       },
       {
         label: "Tools",
@@ -308,6 +309,11 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
       },
     ],
     textLinks: [
+      {
+        href: HAPHY_LIVING_SHOP_URL,
+        label: "Etsy · Haphy Living",
+        external: true,
+      },
       {
         href: PHYPHYA_INSTAGRAM,
         label: "Instagram · @phyphya__",

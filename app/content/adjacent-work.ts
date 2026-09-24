@@ -18,8 +18,8 @@ export const ADJACENT_WORK = [
   },
   {
     slug: "phyphyya",
-    title: "Haphy Living (Brand IP)",
-    outcome: "Brand identity system for Instagram/eCommerce",
+    title: "Haphy Living · Original brand IP & Etsy shop",
+    outcome: "Identity system, seasonal collections, live Etsy shop",
     tag: "Branding",
     role: "Branding & Visual Design",
     timeline: "2023 – 2024",

@@ -21,7 +21,7 @@ const ABOUT_EMPHASIS_CLASS =
 export const metadata = {
   title: "About | Angela Yang",
   description:
-    "Product Designer with digital marketing roots—high-growth consumer experiences across AI marketplaces, government services, and membership platforms; builds in the open and swaps notes on design workflows as tools evolve.",
+    "Marketing designer in Vancouver—Precise Pipe, MINA AI, government services, and Haphy Living. Brand, content, and product across the full funnel.",
 };
 
 export default function AboutPage() {
@@ -29,32 +29,34 @@ export default function AboutPage() {
     <div className="pb-20 font-sans">
       <div className="max-w-4xl space-y-4 text-[17px] font-normal leading-[1.7] text-zinc-400 text-pretty xl:max-w-5xl">
         <p>
-          I&apos;m a Product Designer specializing in delivering{" "}
-          <span className={ABOUT_EMPHASIS_CLASS}>end-to-end solutions</span>
-          {" "}across consumer-facing mobile apps and webs, such as{" "}
-          <span className={ABOUT_EMPHASIS_CLASS}>AI-driven marketplaces</span>,{" "}
-          <span className={ABOUT_EMPHASIS_CLASS}>membership platforms</span>, and{" "}
-          <span className={ABOUT_EMPHASIS_CLASS}>public service platforms</span>.
+          I&apos;m a{" "}
+          <span className={ABOUT_EMPHASIS_CLASS}>marketing designer</span>
+          {" "}in Vancouver, BC, currently leading a two-person design team at{" "}
+          <span className={ABOUT_EMPHASIS_CLASS}>Precise Pipe</span>
+          {" "}— owning everything from LinkedIn campaigns to trade-show booths
+          for a B2B industrial brand.
         </p>
         <p>
-          I enjoy diving into{" "}
-          <span className={ABOUT_EMPHASIS_CLASS}>user research</span>
-          {" "}to understand what people need, what the business wants to achieve, and what
-          technical limitations we&apos;re working with. This helps us make sure the design is
-          both possible and works well with the engineering team.
+          Before that, I designed across the full stack:{" "}
+          <span className={ABOUT_EMPHASIS_CLASS}>product design</span>
+          {" "}for an AI marketplace startup in San Francisco, government
+          platforms in Taiwan used by millions, and an AI interview platform in
+          Los Angeles. That range is my superpower — I think in{" "}
+          <span className={ABOUT_EMPHASIS_CLASS}>funnels, not just screens</span>
+          , and I measure what I make (
+          <span className={ABOUT_EMPHASIS_CLASS}>61% Instagram growth</span>
+          ,{" "}
+          <span className={ABOUT_EMPHASIS_CLASS}>40% engagement lift</span>
+          , and{" "}
+          <span className={ABOUT_EMPHASIS_CLASS}>30% more listing completions</span>
+          {" "}are a few receipts).
         </p>
         <p>
-          Being very{" "}
-          <span className={ABOUT_EMPHASIS_CLASS}>adaptable</span>
-          {" "}in an{" "}
-          <span className={ABOUT_EMPHASIS_CLASS}>AI-based workflow</span>
-          , using tools like{" "}
-          <span className={ABOUT_EMPHASIS_CLASS}>Stitch, Claude, Figma, and Cursor</span>
-          , lets me quickly turn ideas from{" "}
-          <span className={ABOUT_EMPHASIS_CLASS}>
-            sketches into detailed, ready-to-use prototypes
-          </span>
-          {" "}for developers.
+          I also run{" "}
+          <span className={ABOUT_EMPHASIS_CLASS}>Haphy Living</span>
+          , my own pet-lifestyle brand, where I&apos;m the entire creative
+          department. Bilingual in English and Mandarin. Always happy to talk
+          brand, content, or rabbits.
         </p>
         <p>And yes, this site was vibe-coded by me :)</p>
       </div>

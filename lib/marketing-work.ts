@@ -104,6 +104,17 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     showShipped: true,
   },
   {
+    slug: "phyphyya",
+    href: "/case-studies/phyphyya",
+    portfolioFocus: "marketing",
+    title: "Haphy Living · Original brand IP & Etsy shop",
+    description:
+      "End-to-end brand identity for a pet-lifestyle label — mascot, logo system, palette, and a live print-on-demand product line.",
+    disciplineTags: ["Brand identity · Illustration · ecommerce"],
+    year: "2022–present",
+    cover: { kind: "image", src: "/case-studies/phyphyya/gallery-14.png" },
+  },
+  {
     slug: "government-backend",
     href: "/case-studies/government-backend",
     portfolioFocus: "product",
@@ -166,17 +177,6 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
       src: "/case-studies/mina/cover_minamarketing.png",
     },
     coverUnoptimized: true,
-  },
-  {
-    slug: "phyphyya",
-    href: "/case-studies/phyphyya",
-    portfolioFocus: "marketing",
-    title: "Haphy Living (Brand IP)",
-    description:
-      "A rabbit-inspired brand IP from illustration through POD production to an Etsy storefront.",
-    disciplineTags: ["Branding · ecommerce"],
-    year: "2023–2024",
-    cover: { kind: "image", src: "/case-studies/phyphyya/gallery-14.png" },
   },
   // Hidden for now — restore when ready to publish
   // {

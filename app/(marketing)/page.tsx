@@ -5,13 +5,22 @@ import { HomeSelectedWorkSection } from "./HomeSelectedWorkSection";
 export const metadata: Metadata = {
   title: "Angela Yang",
   description:
-    "Product designer: government-scale digital services (Taiwan), AI products (Vancouver). Research, systems, ship-ready UX—selected work and about.",
+    "Marketing designer turning brand into measurable growth. Brand identity, content, and product—Precise Pipe, MINA AI, and Haphy Living.",
 };
 
 export default function HomePage() {
   return (
     <div className="pb-12 font-sans">
-      <p className="sr-only">Angela Yang — product designer, Vancouver</p>
+      <p className="sr-only">
+        Angela Yang — marketing designer turning brand into measurable growth,
+        Vancouver
+      </p>
+
+      <p className="mb-8 max-w-3xl text-[15px] font-normal leading-[1.65] text-zinc-400 sm:mb-10">
+        Currently Graphic Design &amp; Operations Coordinator at Precise Pipe ·
+        Previously MINA AI, TurnCloud, YK Labs · I also run Haphy Living, my own
+        pet-lifestyle brand.
+      </p>
 
       <HomePortfolioAgent />
 

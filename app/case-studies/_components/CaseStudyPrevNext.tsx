@@ -8,6 +8,7 @@ import {
 export const CASE_STUDY_NAV: { slug: string; label: string }[] = [
   { slug: "e-invoice-app", label: "e-Invoice app" },
   { slug: "ai-marketplace", label: "MINA · community marketplace" },
+  { slug: "phyphyya", label: "Haphy Living" },
   { slug: "government-backend", label: "Government backend" },
   { slug: "baskin-robbins", label: "Baskin-Robbins Taiwan" },
   { slug: "atlas-nova", label: "AtlasNova" },
@@ -16,7 +17,6 @@ export const CASE_STUDY_NAV: { slug: string; label: string }[] = [
     slug: "ai-marketplace/marketing",
     label: "MINA · Instagram",
   },
-  { slug: "phyphyya", label: "Haphy Living" },
   // { slug: "perfect-interview", label: "PerfectInterview.ai" }, // hidden for now
   { slug: "momi-animal-health", label: "MOMI Animal Health" },
   { slug: "admission-hub", label: "Admission Hub" },

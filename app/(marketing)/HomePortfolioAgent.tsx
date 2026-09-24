@@ -302,6 +302,7 @@ function AskInputForm({
               <button
                 type="button"
                 onClick={() => onPromptClick?.(prompt)}
+                title={prompt}
                 className="whitespace-nowrap rounded-full border border-zinc-700 px-3.5 py-1.5 text-[13px] text-zinc-400 transition-colors hover:border-zinc-500 hover:text-zinc-100"
               >
                 {prompt}
@@ -407,8 +408,8 @@ export function HomePortfolioAgent() {
           { role: "assistant", content: parsed.answer },
         ]);
         setFollowups(
-          parsed.followups.length > 0
-            ? parsed.followups
+          parsed.followups.length >= 2
+            ? parsed.followups.slice(0, 3)
             : [...PORTFOLIO_AGENT_STARTER_PROMPTS],
         );
       } catch {
@@ -529,7 +530,9 @@ export function HomePortfolioAgent() {
                       Ask a follow-up…
                     </p>
                     <ul className="flex flex-col gap-2">
-                      {followups.map((prompt) => (
+                      {followups
+                        .filter((prompt) => prompt.trim().length >= 8)
+                        .map((prompt) => (
                         <li key={prompt}>
                           <button
                             type="button"
