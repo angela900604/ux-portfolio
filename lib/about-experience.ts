@@ -10,11 +10,11 @@ export type AboutExperienceRow = {
 
 export const ABOUT_EXPERIENCE: readonly AboutExperienceRow[] = [
   {
-    title: "Graphic Design & Operations Coordinator",
+    title: "Marketing Creative Design & Operations",
     company: "Precise Pipe",
     dates: "2026 – Present",
     description:
-      "Lead a two-person design team for a B2B industrial brand—LinkedIn campaigns, website updates, trade-show booths, and client-facing print and digital collateral, aligned with marketing and client relations from production through delivery.",
+      "Design and deliver marketing materials for a B2B industrial brand—LinkedIn campaigns, website updates, trade-show booths, and client-facing print and digital collateral, aligned with marketing and client relations from production through delivery.",
   },
   {
     title: "Product Designer",

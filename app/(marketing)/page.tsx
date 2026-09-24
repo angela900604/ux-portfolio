@@ -17,9 +17,9 @@ export default function HomePage() {
       </p>
 
       <p className="mb-8 max-w-3xl text-[15px] font-normal leading-[1.65] text-zinc-400 sm:mb-10">
-        Currently Graphic Design &amp; Operations Coordinator at Precise Pipe ·
-        Previously MINA AI, TurnCloud, YK Labs · I also run Haphy Living, my own
-        pet-lifestyle brand.
+        Currently Marketing Creative Design &amp; Operations at Precise Pipe ·
+        Previously Product Designer at MINA AI, TurnCloud, YK Labs · I also run
+        Haphy Living, my own pet-lifestyle brand.
       </p>
 
       <HomePortfolioAgent />

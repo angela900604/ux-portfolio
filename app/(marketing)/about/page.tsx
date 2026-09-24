@@ -31,10 +31,8 @@ export default function AboutPage() {
         <p>
           I&apos;m a{" "}
           <span className={ABOUT_EMPHASIS_CLASS}>marketing designer</span>
-          {" "}in Vancouver, BC, currently leading a two-person design team at{" "}
-          <span className={ABOUT_EMPHASIS_CLASS}>Precise Pipe</span>
-          {" "}— owning everything from LinkedIn campaigns to trade-show booths
-          for a B2B industrial brand.
+          {" "}in Vancouver, BC, owning everything from LinkedIn campaigns to
+          trade-show booths for a B2B industrial brand.
         </p>
         <p>
           Before that, I designed across the full stack:{" "}
