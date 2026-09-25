@@ -193,17 +193,14 @@ export default function AtlasNovaCaseStudy() {
             One feature inside a larger platform
           </h2>
           <p className="max-w-3xl text-zinc-400 leading-relaxed">
-            <Highlight>AtlasNova AI</Highlight> is an enterprise macOS platform
-            with multiple AI product solutions. This case study is scoped to one
-            of them: <Highlight>AI-assisted document generation</Highlight> for
-            product teams writing PRDs and research docs—connect a knowledge base,
-            configure a template, and generate each section with persistent chat
-            beside the draft.
+            <Highlight>AtlasNova AI</Highlight> is an enterprise macOS platform.
+            This case study covers one feature: AI-assisted document generation
+            — connect a knowledge base, configure a template, generate each
+            section with persistent chat beside the draft.
           </p>
           <p className="max-w-3xl text-zinc-400 leading-relaxed">
-            As a UX/UI design intern, I owned the{" "}
-            <span className="text-zinc-400">UI for this feature</span>—mockups
-            and end-to-end flows from whiteboard sketches through hi-fi screens.
+            As a UX/UI design intern, I owned the feature&apos;s UI end to end
+            — from whiteboard sketches to hi-fi screens.
           </p>
         </CaseStudyInViewSection>
 
@@ -216,9 +213,9 @@ export default function AtlasNovaCaseStudy() {
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>What we designed for</h2>
           <p className="max-w-3xl text-zinc-400 leading-relaxed">
-            PMs using AtlasNova sit between two failure modes: AI that feels like a
-            black box, and workflows that split the document from the conversation.
-            Each principle below maps directly to a design decision.
+            PMs sit between two failure modes: AI as black box, and workflows
+            that split the doc from the conversation. Each principle below maps
+            to a design decision.
           </p>
           <ul className="max-w-3xl space-y-5 text-zinc-400 leading-relaxed">
             <li>
@@ -226,9 +223,8 @@ export default function AtlasNovaCaseStudy() {
                 <span className="font-semibold text-zinc-100">
                   AI-assisted, not AI-replaced
                 </span>{" "}
-                — Generation is step-by-step, but the PM stays in the loop. Chat
-                stays open while the doc updates, so steering a section feels like
-                commenting on the artifact—not switching apps mid-draft.
+                — step-by-step generation with chat open beside the doc, so
+                steering a section feels like commenting, not switching apps.
               </p>
             </li>
             <li>
@@ -236,26 +232,26 @@ export default function AtlasNovaCaseStudy() {
                 <span className="font-semibold text-zinc-100">
                   Transparent generation
                 </span>{" "}
-                — Each section surfaces where the model is in its pipeline (indexed
-                → reading → generating), so users can tolerate wait time and catch
-                bad source pulls before the whole PRD is wrong.
+                — each section shows its pipeline stage (indexed → reading →
+                generating), so users catch bad source pulls before the whole
+                PRD goes wrong.
               </p>
             </li>
             <li>
               <p>
                 <span className="font-semibold text-zinc-100">Split-pane layout</span>{" "}
-                — Document left, chat right, one macOS window. Users never lose
-                context toggling between generated copy and directing the AI.
+                — document left, chat right, one window. No context lost between
+                generated copy and directing the AI.
               </p>
             </li>
             <li>
               <p>
                 <span className="font-semibold text-zinc-100">
-                  Context you can see (@mentions)
+                  Visible context (@mentions)
                 </span>{" "}
-                — @mention pills reference knowledge-base artifacts—competitive
-                analyses, prior specs, research summaries—so grounding the model is
-                a visible, repeatable interaction, not hidden prompt engineering.
+                — @mention pills pull in prior specs, research summaries, and
+                competitive analyses, so grounding the model is visible and
+                repeatable, not hidden prompt engineering.
               </p>
             </li>
             <li>
@@ -263,10 +259,8 @@ export default function AtlasNovaCaseStudy() {
                 <span className="font-semibold text-zinc-100">
                   Template settings upfront
                 </span>{" "}
-                — Format, page count, detail level, and output type belong in
-                onboarding, not an advanced menu after a bad first draft. Surfacing
-                controls before generation cuts &ldquo;regenerate everything&rdquo;
-                loops.
+                — format, page count, and detail level in onboarding, not a
+                buried menu. Fewer &ldquo;regenerate everything&rdquo; loops.
               </p>
             </li>
             <li>
@@ -274,10 +268,9 @@ export default function AtlasNovaCaseStudy() {
                 <span className="font-semibold text-zinc-100">
                   Connected platforms
                 </span>{" "}
-                — Document generation pulls from scattered team knowledge. Connect
-                flows for Gmail, Google Drive, and other platforms let users import
-                context without leaving AtlasNova—familiar OAuth-style sign-in keeps
-                the handoff trustworthy.
+                — import context from Gmail, Google Drive, and more without
+                leaving AtlasNova; familiar OAuth-style sign-in keeps it
+                trustworthy.
               </p>
             </li>
           </ul>
@@ -332,10 +325,9 @@ export default function AtlasNovaCaseStudy() {
           </span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>New project onboarding</h2>
           <p className="max-w-3xl text-zinc-400 leading-relaxed">
-            Onboarding UI for new document projects: dashboard → prompt → AI
-            clarifying questions → template pick → file upload. The flow narrows
-            scope before generation—and surfaces template settings upfront, not
-            in a buried menu.
+            Onboarding for new document projects: dashboard → prompt → AI
+            clarifying questions → template pick → file upload. Narrows scope
+            before generation; surfaces template settings upfront.
           </p>
           <Figure
             src={UI_FLOW_SRC}

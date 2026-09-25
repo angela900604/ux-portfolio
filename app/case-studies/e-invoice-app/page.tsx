@@ -352,63 +352,29 @@ export default function EInvoiceCaseStudy() {
                 <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>The Homepage</h2>
               </header>
               <div className="grid gap-10 lg:grid-cols-2 lg:gap-12">
-                <StoryBeatTimeline className="max-w-none">
+                <StoryBeatTimeline className="max-w-none lg:col-span-2">
                   <StoryBeat
                     label="Problem"
-                    headline="Users opened the app and couldn&apos;t find what they needed."
-                    detail="Five very different user segments, all frustrated for different reasons."
+                    headline="Users opened the app and couldn&apos;t find what they needed — five very different segments, all frustrated for different reasons."
+                    detail="Icon-only controls left foreign residents guessing, and many low-vision users couldn&apos;t use the app without a caregiver."
                     largeHeadline
                   />
                   <StoryBeat
                     label="Key insight"
                     headline="Every group shared one first action: scan a paper invoice."
-                    detail="Seniors especially have a lot of paper invoices to scan. At checkout, cashiers assumed elderly don&apos;t use the e-invoice app and handed them paper receipts instead."
+                    detail="Seniors especially had stacks of paper invoices — cashiers assumed elderly users didn&apos;t use the app and handed them paper receipts instead."
                     largeHeadline
                   />
                   <StoryBeat
                     label="Decision"
-                    headline="Scan became the primary, large, labeled CTA—the first thing on open."
-                    detail="Before: small QR icon, top-right. After: unmissable."
-                    largeHeadline
-                  />
-                </StoryBeatTimeline>
-                <StoryBeatTimeline className="max-w-none">
-                  <StoryBeat
-                    label="Problem"
-                    headline="small Icon-only patterns left foreign residents guessing and many low-vision users couldn&apos;t use the app without a caregiver."
-                    detail=""
-                    largeHeadline
-                  />
-                  <StoryBeat
-                    label="Key insight"
-                    headline={
-                      <>
-                        <span className="block">
-                          <span className="font-semibold text-zinc-400">1.</span>{" "}
-                          Foreign residents needed readable text to decode controls—not
-                          icon-only cues.
-                        </span>
-                        <span className="mt-3 block">
-                          <span className="font-semibold text-zinc-400">2.</span>{" "}
-                          Low-vision users needed predictable, stable placement and
-                          large, labeled CTAs instead of small icons.
-                        </span>
-                      </>
-                    }
-                    detail=""
-                    largeHeadline
-                  />
-                  <StoryBeat
-                    label="Decision"
-                    headline="Large tap target + readable text label + fixed placement."
-                    detail="One pattern served both groups—including labels that don&apos;t assume Chinese literacy."
+                    headline="Scan became the primary CTA on open: large tap target, readable text label, fixed placement."
+                    detail="Before: small QR icon, top-right. After: unmissable. One pattern served all groups — labels that don&apos;t assume Chinese literacy."
                     largeHeadline
                   />
                 </StoryBeatTimeline>
               </div>
               <StoryOutcomeCallout
-                headline="Prototype testing with the same participants validated the scan-first, inclusive home direction."
-                detail="Strong positive responses across ages—especially seniors."
+                headline="Prototype testing with the same participants validated the scan-first direction — strong positive responses across ages, especially seniors."
               />
               <HomeBeforeAfterSlider />
             </section>
@@ -429,58 +395,31 @@ export default function EInvoiceCaseStudy() {
               <StoryBeatTimeline className="max-w-none">
                 <StoryBeat
                   label="Problem"
-                  headline="External stakeholders wanted the sustainability outreach zone to dominate on open. However, interview evidence suggested a different set of priorities first."
-                  detail={
-                    <>
-                      <span className="block">
-                        Government partners cared deeply about low-carbon messaging and
-                        wanted the sustainability promotion area to lead the home screen.
-                      </span>
-                      <span className="mt-3 block">
-                        What showed up consistently in interviews was a shared priority
-                        order: a prominent{" "}
-                        <span className="text-zinc-400">scan paper invoice</span>{" "}
-                        action first; then the{" "}
-                        <span className="text-zinc-400">in-app carrier barcode</span>{" "}
-                        for people who don&apos;t use iPhone or Android home-screen
-                        widgets and need to show the code as soon as they open the app;
-                        then{" "}
-                        <span className="text-zinc-400">
-                          not missing prize / lottery information
-                        </span>{" "}
-                        for younger and middle-aged users; then{" "}
-                        <span className="text-zinc-400">spending analysis</span> for
-                        younger users—often richer here than in standalone budgeting
-                        apps. The outreach zone wasn&apos;t among the top reasons people
-                        launched the app.{" "}
-                        <span className="text-zinc-400">Prototype testing</span> fed back
-                        the same story.
-                      </span>
-                    </>
-                  }
+                  headline="External stakeholders wanted the sustainability outreach zone to dominate on open."
+                  detail="But interviews showed a consistent priority order: scan action first, then the carrier barcode, then prize/lottery info, then spending analysis. The outreach zone wasn&apos;t among the top reasons people launched the app."
                   largeHeadline
                 />
                 <StoryBeat
                   label="Key insight"
-                  headline="Same home layout, two incompatible defaults across age."
-                  detail="Older and low-vision groups wanted fewer modules, more whitespace, and strong color for quick recognition. Younger groups wanted a denser dashboard—more modules, promos, and shortcuts—and a cooler, minimal palette."
+                  headline="Same home layout, two incompatible defaults: older and low-vision users wanted fewer modules and strong color for quick recognition; younger users wanted a denser dashboard."
+                  detail=""
                   largeHeadline
                 />
                 <StoryBeat
                   label="Conflict"
-                  headline="I brought interview evidence into government stakeholder meetings to push back"
-                  detail="I understood their need to surface carbon-reduction messaging and policy outreach—but the data said job-first ordering had to win the first screen. That was the argument I used in the room."
+                  headline="I brought interview evidence into government stakeholder meetings — I understood their need to surface carbon-reduction messaging, but the data said job-first ordering had to win the first screen."
+                  detail=""
                   largeHeadline
                 />
                 <StoryBeat
                   label="Resolution"
                   headline="A customizable home: section visibility toggles in Settings."
-                  detail="Users can turn individual home sections on or off—for example, someone who only wants the scan control and the sustainability outreach block can hide the rest, so the promo block still gets the space they care about without forcing that default on everyone. Partners accepted the model."
+                  detail="Users can hide sections they don&apos;t need, so the promo block keeps its space without forcing that default on everyone. Partners accepted the model."
                   largeHeadline
                 />
               </StoryBeatTimeline>
               <StoryOutcomeCallout
-                headline="Across scan, donate, and redemption—including visually impaired participants and mixed ages, the usability sessions reached 88% task success."
+                headline="Usability sessions across scan, donate, and redemption reached 88% task success — including visually impaired participants."
               />
               <SettingHomeModulesVideo className="w-full" />
             </section>
@@ -500,14 +439,14 @@ export default function EInvoiceCaseStudy() {
               <StoryBeatTimeline className="max-w-none">
                 <StoryBeat
                   label="Problem"
-                  headline="Authentication was secure, but middle-aged and senior users kept forgetting their verification passwords"
-                  detail="Login success hovered around ~68%. MoF verification codes and recovery friction blocked them before any core task."
+                  headline="Authentication was secure, but middle-aged and senior users kept forgetting their verification passwords."
+                  detail="Login success hovered around ~68% — verification codes and recovery friction blocked them before any core task."
                   largeHeadline
                 />
                 <StoryBeat
                   label="Decision"
-                  headline="Ship biometric login and in-app password recovery."
-                  detail="People could get back in without memorizing credentials or hunting a one-time code."
+                  headline="Shipped biometric login and in-app password recovery — no more memorizing credentials or hunting one-time codes."
+                  detail=""
                   largeHeadline
                 />
               </StoryBeatTimeline>
@@ -529,19 +468,19 @@ export default function EInvoiceCaseStudy() {
               <StoryBeatTimeline className="max-w-none">
                 <StoryBeat
                   label="Problem"
-                  headline="Many lottery prizes go unclaimed because people don&apos;t check, miss alerts, or never set up auto transfer."
-                  detail="About 1/4 major lottery prizes are never claimed. People forget to check, miss notifications, or use cloud invoices without linking a bank account for automatic payouts. Many foreign residents don&apos;t know auto-transfer exists or how to set it up. Seniors and foreign residents often didn&apos;t complete auto-transfer or biometric setup because they weren&apos;t aware of these features or how to enable them."
+                  headline="About 1 in 4 major lottery prizes go unclaimed — people forget to check, miss notifications, or never link a bank account for auto-transfer."
+                  detail="Seniors and foreign residents often didn&apos;t complete auto-transfer or biometric setup because they didn&apos;t know the features existed."
                   largeHeadline
                 />
                 <StoryBeat
                   label="Decision"
-                  headline="Guided onboarding &amp; English version for foreigners"
-                  detail="Biometric setup → bank account for auto-transfer → notifications → cloud backup—each step explained why it mattered, not only what to tap. I also shipped an English-language experience for foreign residents."
+                  headline="Guided onboarding: biometric setup → bank account for auto-transfer → notifications → cloud backup, each step explaining why it mattered."
+                  detail="Plus a full English-language experience for foreign residents."
                   largeHeadline
                 />
               </StoryBeatTimeline>
               <StoryOutcomeCallout
-                headline="One month post-launch, client-reported missed top-tier prize redemptions moved from about 24% to 18%."
+                headline="One month post-launch, missed top-tier prize redemptions dropped from ~24% to ~18% (client-reported)."
               />
               <GuidedOnboardingVideoPair className="w-full" />
             </section>
@@ -998,13 +937,8 @@ export default function EInvoiceCaseStudy() {
             Figma files
           </span>
           <h2 className={`case-study-section-title max-w-2xl text-pretty ${CASE_STUDY_SECTION_TITLE_CLASS}`}>
-            Open the source files for wireflows, page logic, and hi-fi mocks in one
-            place.
+            Wireflows, page logic, and hi-fi mockups — hi-fi and page flow first, wireframes for IA and early logic.
           </h2>
-          <p className="max-w-2xl text-sm text-zinc-400">
-            Hi-fi mockups and page flow first; wireframes and wireflow for IA and
-            early logic.
-          </p>
           <div className="flex flex-col gap-3 pt-1 sm:flex-row sm:flex-wrap sm:items-center">
             <SplitCapsuleLink
               href={FIGMA_MOCKUP_PAGE}

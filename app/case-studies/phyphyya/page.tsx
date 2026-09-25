@@ -174,11 +174,11 @@ export default function PhyphyyaCaseStudy() {
             Cozy, a little mischievous, unmistakably ours
           </h2>
           <p className={`max-w-3xl ${CS_BODY}`}>
-            I designed a full identity system around one idea. A hand-drawn
-            mascot with a consistent personality across poses and seasons. A
-            warm, earthy palette that holds together from a 3-inch pin to a
-            wall-sized art print. A logo and wordmark flexible enough for
-            packaging, tags, and social avatars.
+            A full identity system around one idea: a hand-drawn mascot with a
+            consistent personality across poses and seasons; a warm, earthy
+            palette that holds from a 3-inch pin to a wall-sized art print; a
+            logo and wordmark flexible enough for packaging, tags, and social
+            avatars.
           </p>
 
           <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-2">
@@ -205,10 +205,9 @@ export default function PhyphyyaCaseStudy() {
               <div>
                 <h3 className={`${CS_H3} mb-3`}>Color palette + type</h3>
                 <p className={CS_BODY}>
-                  Soft blue-gray as a primary tone, paired with warm gray and
-                  beige — freshness with a vintage hold. Rounded letterforms
-                  carry a warm brand personality; hand-drawn brush strokes and
-                  paper texture keep the system from feeling sterile.
+                  Soft blue-gray primary, paired with warm gray and beige —
+                  freshness with a vintage hold. Rounded letterforms and
+                  hand-drawn textures keep it warm, never sterile.
                 </p>
                 <div className="mt-4 flex gap-3">
                   <div
@@ -291,10 +290,10 @@ export default function PhyphyyaCaseStudy() {
             A live print-on-demand shop, designed end to end
           </h2>
           <p className={`max-w-3xl ${CS_BODY}`}>
-            Art prints, tote bags, Christmas ornaments, enamel pins, magnets,
-            and sticker sheets — every listing designed, mocked up, and
-            optimized. I use a POD partner so I can validate demand without
-            holding stock, then iterate on listings with live Etsy data.
+            Art prints, totes, ornaments, enamel pins, magnets, sticker sheets
+            — every listing designed, mocked up, and optimized. Print-on-demand
+            lets me validate demand without holding stock, then iterate with
+            live Etsy data.
           </p>
 
           <div className="flex flex-col gap-6 lg:h-[min(540px,72vh)] lg:flex-row lg:items-stretch">

@@ -295,9 +295,11 @@ function AskInputForm({
         </button>
       </div>
 
-      {showPrompts && prompts.length > 0 ? (
+      {showPrompts && prompts.filter((prompt) => prompt.trim().length >= 8).length > 0 ? (
         <ul className="-mb-0.5 flex items-center gap-2 overflow-x-auto pb-0.5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-          {prompts.map((prompt) => (
+          {prompts
+            .filter((prompt) => prompt.trim().length >= 8)
+            .map((prompt) => (
             <li key={prompt} className="shrink-0">
               <button
                 type="button"
