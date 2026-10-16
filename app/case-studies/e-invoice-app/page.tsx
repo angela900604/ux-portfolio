@@ -487,83 +487,6 @@ export default function EInvoiceCaseStudy() {
         </div>
 
         <div className="flex min-w-0 flex-col gap-10 sm:gap-12">
-          <CaseStudyInViewSection
-            id="e-invoice-handoff"
-            className="scroll-mt-28 border-t border-zinc-800 pt-10 sm:scroll-mt-32 sm:pt-12"
-          >
-            <div className="max-w-4xl space-y-4">
-              <h3 className={CASE_STUDY_SECTION_TITLE_CLASS}>
-                Handoff &amp; engineering alignment
-              </h3>
-              <div className="cs-body">
-                <p className="font-medium text-zinc-400">
-                  Handoff included three layers:
-                </p>
-                <ul className="mt-4 list-none space-y-3.5">
-                  <li className="flex gap-3">
-                    <span
-                      className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400/85"
-                      aria-hidden
-                    />
-                    <span>
-                      <span className="font-semibold text-zinc-400">
-                        API state matrix
-                      </span>
-                      {" — "}
-                      Each flow mapped against account states and timing windows, so
-                      engineering knew which endpoint to hit per scenario.
-                    </span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span
-                      className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400/85"
-                      aria-hidden
-                    />
-                    <span>
-                      <span className="font-semibold text-zinc-400">
-                        Screen reader annotation
-                      </span>
-                      {" — "}
-                      VoiceOver focus order marked directly on screens.
-                    </span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span
-                      className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400/85"
-                      aria-hidden
-                    />
-                    <span>
-                      <span className="font-semibold text-zinc-400">
-                        Component specs
-                      </span>
-                      {" — "}
-                      States, empty copy, and error strings per component in the Figma
-                      library.
-                    </span>
-                  </li>
-                </ul>
-              </div>
-              <figure className="mt-6 overflow-hidden">
-                <ImageLightbox
-                  src={HANDOFF_MODULE_SETTINGS_SPEC.src}
-                  alt={HANDOFF_MODULE_SETTINGS_SPEC.alt}
-                  className="block w-full"
-                  disableHoverScale
-                >
-                  <Image
-                    src={HANDOFF_MODULE_SETTINGS_SPEC.src}
-                    alt={HANDOFF_MODULE_SETTINGS_SPEC.alt}
-                    width={2414}
-                    height={1450}
-                    className="h-auto w-full object-contain object-top"
-                    sizes="(max-width: 1024px) 100vw, 1024px"
-                    unoptimized
-                  />
-                </ImageLightbox>
-              </figure>
-            </div>
-          </CaseStudyInViewSection>
-
           <DesignJourneyCollapsible
           journeySectionIds={E_INVOICE_JOURNEY_IDS}
           panelId="e-invoice-design-journey-panel"
@@ -930,15 +853,90 @@ export default function EInvoiceCaseStudy() {
           </div>
         </DesignJourneyCollapsible>
         <CaseStudyInViewSection
-          id="figma-resources"
-          className="scroll-mt-28 space-y-4 overflow-hidden p-6 sm:scroll-mt-32 sm:space-y-5 sm:p-8"
+          id="e-invoice-handoff"
+          className="scroll-mt-28 border-t border-zinc-800 pt-10 sm:scroll-mt-32 sm:pt-12"
         >
-          <span className="text-xs font-semibold uppercase tracking-[0.14em] text-emerald-200/85">
-            Figma files
-          </span>
-          <h2 className={`case-study-section-title max-w-2xl text-pretty ${CASE_STUDY_SECTION_TITLE_CLASS}`}>
-            Wireflows, page logic, and hi-fi mockups — hi-fi and page flow first, wireframes for IA and early logic.
-          </h2>
+          <div className="max-w-4xl space-y-4">
+            <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
+              Handoff &amp; engineering alignment
+            </h2>
+            <div className="cs-body">
+              <p className="font-medium text-zinc-400">
+                Handoff included three layers:
+              </p>
+              <ul className="mt-4 list-none space-y-3.5">
+                <li className="flex gap-3">
+                  <span
+                    className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400/85"
+                    aria-hidden
+                  />
+                  <span>
+                    <span className="font-semibold text-zinc-400">
+                      API state matrix
+                    </span>
+                    {" — "}
+                    Each flow mapped against account states and timing windows, so
+                    engineering knew which endpoint to hit per scenario.
+                  </span>
+                </li>
+                <li className="flex gap-3">
+                  <span
+                    className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400/85"
+                    aria-hidden
+                  />
+                  <span>
+                    <span className="font-semibold text-zinc-400">
+                      Screen reader annotation
+                    </span>
+                    {" — "}
+                    VoiceOver focus order marked directly on screens.
+                  </span>
+                </li>
+                <li className="flex gap-3">
+                  <span
+                    className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400/85"
+                    aria-hidden
+                  />
+                  <span>
+                    <span className="font-semibold text-zinc-400">
+                      Component specs
+                    </span>
+                    {" — "}
+                    States, empty copy, and error strings per component in the Figma
+                    library.
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <figure className="mt-6 overflow-hidden">
+              <ImageLightbox
+                src={HANDOFF_MODULE_SETTINGS_SPEC.src}
+                alt={HANDOFF_MODULE_SETTINGS_SPEC.alt}
+                className="block w-full"
+                disableHoverScale
+              >
+                <Image
+                  src={HANDOFF_MODULE_SETTINGS_SPEC.src}
+                  alt={HANDOFF_MODULE_SETTINGS_SPEC.alt}
+                  width={2414}
+                  height={1450}
+                  className="h-auto w-full object-contain object-top"
+                  sizes="(max-width: 1024px) 100vw, 1024px"
+                  unoptimized
+                />
+              </ImageLightbox>
+            </figure>
+          </div>
+        </CaseStudyInViewSection>
+        <CaseStudyInViewSection
+          id="figma-resources"
+          className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
+        >
+          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>Figma files</h2>
+          <p className="max-w-2xl cs-body">
+            Wireflows, page logic, and hi-fi mockups — hi-fi and page flow first,
+            wireframes for IA and early logic.
+          </p>
           <div className="flex flex-col gap-3 pt-1 sm:flex-row sm:flex-wrap sm:items-center">
             <SplitCapsuleLink
               href={FIGMA_MOCKUP_PAGE}

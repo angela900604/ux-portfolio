@@ -14,7 +14,7 @@ export const ABOUT_EXPERIENCE: readonly AboutExperienceRow[] = [
     company: "Precise Pipe",
     dates: "2026 – Present",
     description:
-      "Design and deliver marketing materials for a B2B industrial brand—LinkedIn campaigns, website updates, trade-show booths, and client-facing print and digital collateral, aligned with marketing and client relations from production through delivery.",
+      "Design and deliver physical print collateral, trade-show booths, and digital marketing for a B2B industrial brand, ensuring 100% adherence to print specifications. Coordinate cross-border ocean freight booking and factory production tracking while partnering with Marketing and Client Relations teams to streamline buyer experiences from manufacturing through final delivery.",
   },
   {
     title: "Product Designer",
