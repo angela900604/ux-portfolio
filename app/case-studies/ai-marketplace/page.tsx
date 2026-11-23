@@ -14,6 +14,7 @@ import {
   CASE_STUDY_SECTION_TITLE_CLASS,
   SITE_SHELL_INNER,
 } from "@/lib/site-shell";
+import { CS_BODY, CS_META_LABEL } from "@/lib/case-study-theme";
 
 const MINA_HERO = "/case-studies/mina/mina-ai-hero.png";
 const MINA_MOCKUP_HAND = "/case-studies/mina/mockup-hand-01.png";
@@ -93,6 +94,23 @@ export default function AiMarketplaceCaseStudy() {
             className={`${CASE_STUDY_BODY_GRID} flex min-w-0 flex-col overflow-x-hidden`}
           >
             <div className="mb-10 sm:mb-12">
+              <dl className="mb-8 grid max-w-3xl grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-6">
+                <div>
+                  <dt className={CS_META_LABEL}>Role</dt>
+                  <dd className={CS_BODY}>Sole Product Designer</dd>
+                </div>
+                <div>
+                  <dt className={CS_META_LABEL}>Dates</dt>
+                  <dd className={CS_BODY}>Sep 2025 – May 2026</dd>
+                </div>
+                <div>
+                  <dt className={CS_META_LABEL}>Outcome</dt>
+                  <dd className={CS_BODY}>
+                    Redesigned listing flows, increasing completed listings by
+                    30%; owned a full Figma design system (50+ components).
+                  </dd>
+                </div>
+              </dl>
               <CaseStudyHeroTldr
                 metricValueClassName="text-[#B75E45]"
                 headline={

@@ -10,11 +10,11 @@ export type AboutExperienceRow = {
 
 export const ABOUT_EXPERIENCE: readonly AboutExperienceRow[] = [
   {
-    title: "Marketing Creative Design & Operations",
-    company: "Precise Pipe",
+    title: "Graphic Design & Operations Coordinator",
+    company: "Precise Pipe Inc.",
     dates: "2026 – Present",
     description:
-      "Design and deliver physical print collateral, trade-show booths, and digital marketing for a B2B industrial brand, ensuring 100% adherence to print specifications. Coordinate cross-border ocean freight booking and factory production tracking while partnering with Marketing and Client Relations teams to streamline buyer experiences from manufacturing through final delivery.",
+      "Lead a team of two graphic designers, assigning ownership by product type so each designer manages their orders end-to-end as the bridge between factories and clients. Personally track factory production for 8,000+ items per month across 10+ factories in Airtable, keeping clients updated and coordinating via Slack. Own post-sale follow-through — production, trucking and ocean freight, invoicing, and ocean-freight documentation (packing lists, CI, MTRs, BLs, booking confirmations, bulk-carrier contracts) — plus trucking PODs and Excel breakdowns for LCL split deliveries. Design flyers and one-pagers for convention marketing and for sales to hand to clients, plus trade-show booths and digital marketing.",
   },
   {
     title: "Product Designer",
@@ -29,6 +29,13 @@ export const ABOUT_EXPERIENCE: readonly AboutExperienceRow[] = [
     dates: "2024 – 2025",
     description:
       "Shipped complex consumer and public-sector work: led UX for Taiwan’s Ministry of Finance uniform-invoice app, inclusive patterns for a diverse user base grounded in 30+ research sessions, and leadership-ready journey and IA artifacts. Led the Baskin-Robbins Taiwan membership app with cross-market alignment to Japan HQ.",
+  },
+  {
+    title: "Marketing & Operations Specialist",
+    company: "T-Drum Enterprise Co. Ltd",
+    dates: "2024",
+    description:
+      "Managed 40–50 daily supplier communications across email and phone, resolving specifications, billing, and ordering issues while building reliable overseas vendor relationships.",
   },
   {
     title: "UX Designer",
@@ -52,10 +59,10 @@ export const ABOUT_EXPERIENCE: readonly AboutExperienceRow[] = [
       "Addressed declining visibility by rebuilding Instagram around educational and lifestyle content across Reels and Instagram posts on a consistent schedule. Designed campaign graphics in Figma, Canva, and Adobe with repeatable templates; combined SEO competitor research with Instagram and site analytics to refine WordPress content and the calendar.",
   },
   {
-    title: "Social Media Coordinator",
+    title: "Social Media Coordinator & Administrative Assistant",
     company: "MOMI Animal Health",
     dates: "2021",
     description:
-      "Produced digital assets in Figma, Canva, Illustrator, and Photoshop for launches and seasonal promos on Facebook and ecommerce (MOMO, PChome); designed expo banners, flyers, and branded merchandise so in-person touchpoints matched online.",
+      "Produced digital assets in Figma, Canva, Illustrator, and Photoshop for launches and seasonal promos on Facebook and ecommerce (MOMO, PChome); designed expo banners, flyers, and branded merchandise so in-person touchpoints matched online. Processed invoices and import/export documentation and coordinated with overseas vendors and customs agents, handling 20+ daily client inquiries.",
   },
 ] as const;

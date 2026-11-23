@@ -956,6 +956,25 @@ export default function EInvoiceCaseStudy() {
         </CaseStudyInViewSection>
         </div>
 
+        <CaseStudyInViewSection
+          id="research-journey"
+          className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
+        >
+          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
+            Full research journey
+          </h2>
+          <p className="max-w-2xl cs-body">
+            Competitor analysis, multisegment interviews, and accessibility
+            work behind this redesign (Feb–Nov 2025).
+          </p>
+          <Link
+            href="/user-research-journey"
+            className="inline-block text-sm font-medium text-zinc-200 underline decoration-dotted decoration-zinc-600 underline-offset-[3px] transition-colors hover:decoration-zinc-400"
+          >
+            Full research journey →
+          </Link>
+        </CaseStudyInViewSection>
+
         <CaseStudyInViewSection className="border-t border-zinc-800 pt-12 space-y-8">
           <CaseStudyPrevNext currentSlug="e-invoice-app" />
           <Link

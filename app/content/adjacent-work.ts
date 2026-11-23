@@ -6,7 +6,7 @@ export const ADJACENT_WORK = [
     outcome: "+18% organic traffic, +21% engagement",
     tag: "Digital Marketing",
     role: "Digital Marketer",
-    timeline: "May – Aug 2022",
+    timeline: "May – Sep 2022",
   },
   {
     slug: "momi-animal-health",

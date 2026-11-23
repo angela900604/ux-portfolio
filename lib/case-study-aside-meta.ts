@@ -121,8 +121,8 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
     subtitle:
       "an AI-native marketplace for parents who outgrow baby gear overnight",
     items: [
-      { label: "Timeline", value: "Sep 2025 – Present" },
-      { label: "Role", value: "Sole product designer · 1 PM + 5 engineers" },
+      { label: "Timeline", value: "Sep 2025 – May 2026" },
+      { label: "Role", value: "Sole Product Designer · 1 PM + 5 engineers" },
       {
         label: "Project type",
         value: "Growth & iteration on a live product",
@@ -353,7 +353,7 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
     subtitle:
       "Study-abroad brand in Toronto—Instagram cadence toward Canada-life content, SEO articles, and funnel analytics.",
     items: [
-      { label: "Timeline", value: "May 2022 – Aug 2022 (4 months)" },
+      { label: "Timeline", value: "May – Sep 2022" },
       { label: "Role", value: "Digital Marketer" },
       {
         label: "Project type",

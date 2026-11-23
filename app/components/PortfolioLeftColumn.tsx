@@ -46,7 +46,8 @@ export function PortfolioLeftColumn() {
         </h1>
         {!isAbout ? (
           <p className="mt-3 max-w-[20rem] text-[15px] font-normal leading-[1.5] tracking-[-0.01em] text-zinc-400">
-            Marketing designer turning brand into measurable growth.
+            Marketing designer turning brand into measurable growth — and
+            operations that actually ship.
           </p>
         ) : null}
 

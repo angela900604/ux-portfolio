@@ -139,6 +139,17 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     showShipped: true,
   },
   {
+    slug: "admission-hub",
+    href: "/case-studies/admission-hub",
+    portfolioFocus: "marketing",
+    title: "Admission Hub",
+    description:
+      "Digital marketing coordinator — rebuilt Instagram around life-in-Canada storytelling (+61% followers in 3 months) and grew website traffic +18% via SEO.",
+    disciplineTags: ["Social media management · Content strategy · Copywriting · Search engine optimization"],
+    year: "2022",
+    cover: { kind: "image", src: "/case-studies/admission-hub/home-cover.png" },
+  },
+  {
     slug: "atlas-nova",
     href: "/case-studies/atlas-nova",
     portfolioFocus: "product",
@@ -202,17 +213,6 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
       kind: "image",
       src: "/case-studies/momi-animal-health/home-cover.png",
     },
-  },
-  {
-    slug: "admission-hub",
-    href: "/case-studies/admission-hub",
-    portfolioFocus: "marketing",
-    title: "Admission Hub",
-    description:
-      "Instagram, SEO, and long-form content for a study-abroad consultancy rebuilding visibility and trust.",
-    disciplineTags: ["Social media management · Content strategy · Copywriting · Search engine optimization"],
-    year: "2022",
-    cover: { kind: "image", src: "/case-studies/admission-hub/home-cover.png" },
   },
 ] as const;
 

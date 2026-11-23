@@ -4,6 +4,7 @@ import Image from "next/image";
 import { ImageLightbox } from "@/app/components/ImageLightbox";
 import {
   HAPHY_LIVING_PRODUCT_IMAGES,
+  HAPHY_LIVING_SHOP_INSTAGRAM_URL,
   HAPHY_LIVING_SHOP_URL,
 } from "@/app/content/haphy-living";
 
@@ -50,7 +51,16 @@ export function HaphyLivingCallout() {
           Haphy Living
         </a>
         , an Etsy shop where I illustrate my bunny Haphy into everyday
-        objects—brand, packaging, and customer care.
+        objects—brand, packaging, and customer care.{" "}
+        <a
+          href={HAPHY_LIVING_SHOP_INSTAGRAM_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={HAPHY_LINK_CLASS}
+        >
+          Shop on Instagram — @haphyliving
+        </a>
+        .
       </figcaption>
     </figure>
   );

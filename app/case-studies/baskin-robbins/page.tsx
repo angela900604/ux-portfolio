@@ -440,6 +440,17 @@ export default function BaskinRobbinsCaseStudy() {
           </div>
         </CaseStudyInViewSection>
 
+        <CaseStudyInViewSection
+          id="outcome"
+          className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
+        >
+          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>Outcome</h2>
+          <p className="text-zinc-400 leading-relaxed">
+            Outcome — [To add: what shipped / what changed, in Angela&apos;s
+            words.]
+          </p>
+        </CaseStudyInViewSection>
+
         <CaseStudyInViewSection className="border-t border-zinc-800 pt-12 space-y-8">
           <CaseStudyPrevNext currentSlug="baskin-robbins" />
           <Link

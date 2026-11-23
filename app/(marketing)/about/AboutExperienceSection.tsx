@@ -29,6 +29,26 @@ export function AboutExperienceSection() {
           <ExperienceRow key={`${row.title}-${row.dates}-${row.company}`} row={row} />
         ))}
       </div>
+
+      <h2 className={`${MARKETING_SECTION_TITLE_CLASS} mt-16 sm:mt-20`}>
+        Education
+      </h2>
+      <div className="mt-8 space-y-4 text-sm font-normal leading-relaxed text-zinc-400 sm:text-[0.9375rem]">
+        <p>
+          Honours B.A., New Media Studies — University of Toronto Scarborough
+          (2019–2024)
+        </p>
+        <p>UX Design Diploma — BrainStation (2023)</p>
+      </div>
+
+      <h2 className={`${MARKETING_SECTION_TITLE_CLASS} mt-16 sm:mt-20`}>
+        Skills
+      </h2>
+      <p className="mt-8 text-sm font-normal leading-relaxed text-zinc-400 sm:text-[0.9375rem]">
+        Adobe Creative Suite (Photoshop, Illustrator, Premiere), Figma, Canva,
+        Excel, Airtable, Slack, Mailchimp, WordPress, Google Analytics,
+        PostHog, A/B testing.
+      </p>
     </section>
   );
 }

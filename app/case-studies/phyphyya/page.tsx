@@ -6,6 +6,7 @@ import {
 } from "@/lib/site-shell";
 import {
   HAPHY_LIVING_INSTAGRAM_URL,
+  HAPHY_LIVING_SHOP_INSTAGRAM_URL,
   HAPHY_LIVING_SHOP_URL,
 } from "@/app/content/haphy-living";
 import { CS_BODY, CS_H3, CS_SECTION_EYEBROW } from "@/lib/case-study-theme";
@@ -247,7 +248,17 @@ export default function PhyphyyaCaseStudy() {
               @lifewith.haphy
             </a>{" "}
             is Haphy&apos;s daily life first — product shows up occasionally,
-            never as a feed takeover.
+            never as a feed takeover. The shop has its own account —{" "}
+            <a
+              href={HAPHY_LIVING_SHOP_INSTAGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-zinc-200 underline decoration-dotted decoration-zinc-600 underline-offset-[3px] transition-colors hover:decoration-zinc-400"
+            >
+              @haphyliving
+            </a>{" "}
+            — for products, drops, and market days; @lifewith.haphy stays
+            Haphy&apos;s daily life.
           </p>
           <ul className={`max-w-3xl space-y-5 ${CS_BODY}`}>
             <li>
@@ -296,6 +307,10 @@ export default function PhyphyyaCaseStudy() {
           id="popup"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
+          {/* TODO Angela: booth results (what sold / how much) — do not publish until provided */}
+          {/* TODO Angela: Lonsdale Quay wording — only after acceptance; do not publish while pending */}
+          {/* TODO Angela: confirm whether to name Printify / Duplium as suppliers */}
+          {/* TODO Angela: confirm whether "12 sales, 5.0 rating" on the Etsy screenshot alt is still current */}
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>In person: the booth</h2>
           <p className={`max-w-3xl ${CS_BODY}`}>
             First in-person test: a festival booth, Nov 7–8. Postcard sets, pet
@@ -440,9 +455,9 @@ export default function PhyphyyaCaseStudy() {
             A complete, self-sustaining brand IP
           </h2>
           <p className={`max-w-3xl ${CS_BODY}`}>
-            One brand, three channels: a live Etsy shop, an Instagram audience
-            that finds it, and a booth table — built solo from zero, and still
-            growing every holiday season.
+            One brand, three channels: a live Etsy shop, two Instagram accounts
+            (shop and daily life), and a booth table — built solo from zero,
+            and still growing every holiday season.
           </p>
         </CaseStudyInViewSection>
 
