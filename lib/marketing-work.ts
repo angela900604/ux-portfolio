@@ -79,6 +79,17 @@ export const PERFECT_INTERVIEW_HOME_TECH_HIGHLIGHTS =
 
 export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
   {
+    slug: "phyphyya",
+    href: "/case-studies/phyphyya",
+    portfolioFocus: "marketing",
+    title: "Haphy Living · Original brand IP & Etsy shop",
+    description:
+      "End-to-end brand identity for a pet-lifestyle label — mascot, seasonal collections, a live Etsy shop, and in-person Christmas market pop-ups.",
+    disciplineTags: ["Brand identity · Illustration · ecommerce"],
+    year: "2022–present",
+    cover: { kind: "image", src: "/case-studies/phyphyya/gallery-14.png" },
+  },
+  {
     slug: "e-invoice-app",
     href: "/case-studies/e-invoice-app",
     portfolioFocus: "product",
@@ -102,17 +113,6 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     year: "2025–2026",
     cover: { kind: "mina" },
     showShipped: true,
-  },
-  {
-    slug: "phyphyya",
-    href: "/case-studies/phyphyya",
-    portfolioFocus: "marketing",
-    title: "Haphy Living · Original brand IP & Etsy shop",
-    description:
-      "End-to-end brand identity for a pet-lifestyle label — mascot, logo system, palette, and a live print-on-demand product line.",
-    disciplineTags: ["Brand identity · Illustration · ecommerce"],
-    year: "2022–present",
-    cover: { kind: "image", src: "/case-studies/phyphyya/gallery-14.png" },
   },
   {
     slug: "government-backend",

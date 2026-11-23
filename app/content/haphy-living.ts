@@ -1,6 +1,9 @@
 export const HAPHY_LIVING_SHOP_URL =
   "https://www.etsy.com/ca/shop/HaphyLiving";
 
+export const HAPHY_LIVING_INSTAGRAM_URL =
+  "https://www.instagram.com/lifewith.haphy/";
+
 export type HaphyProductImage = {
   src: string;
   alt: string;

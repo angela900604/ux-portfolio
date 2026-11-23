@@ -4,7 +4,10 @@ import {
   CASE_STUDY_SECTION_TITLE_CLASS,
   SITE_SHELL_INNER,
 } from "@/lib/site-shell";
-import { HAPHY_LIVING_SHOP_URL } from "@/app/content/haphy-living";
+import {
+  HAPHY_LIVING_INSTAGRAM_URL,
+  HAPHY_LIVING_SHOP_URL,
+} from "@/app/content/haphy-living";
 import { CS_BODY, CS_H3, CS_SECTION_EYEBROW } from "@/lib/case-study-theme";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
@@ -13,7 +16,7 @@ import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 export const metadata = {
   title: "Haphy Living · Original brand IP & Etsy shop | Angela Yang",
   description:
-    "End-to-end brand identity for a pet-lifestyle label — mascot, logo system, palette, and a live print-on-demand product line.",
+    "End-to-end brand identity for a pet-lifestyle label — mascot, seasonal collections, a live Etsy shop, and in-person Christmas market pop-ups.",
 };
 
 export default function PhyphyyaCaseStudy() {
@@ -24,21 +27,6 @@ export default function PhyphyyaCaseStudy() {
     { src: "/case-studies/phyphyya/gallery-03.png", alt: "Haphy mascot pose 2" },
     { src: "/case-studies/phyphyya/gallery-09.png", alt: "Haphy mascot pose 3" },
     { src: "/case-studies/phyphyya/gallery-16.png", alt: "Haphy mascot pose 4" },
-  ];
-
-  const sweatshirtSeries = [
-    {
-      src: "/case-studies/phyphyya/gallery-12.png",
-      alt: "Sweatshirt hanger display",
-    },
-    {
-      src: "/case-studies/phyphyya/gallery-15.png",
-      alt: "Sweatshirt lifestyle",
-    },
-    {
-      src: "/case-studies/phyphyya/gallery-05.png",
-      alt: "Sweatshirt desktop details",
-    },
   ];
 
   return (
@@ -69,14 +57,6 @@ export default function PhyphyyaCaseStudy() {
                 <img
                   src="/case-studies/phyphyya/gallery-06.png"
                   alt="Haphy Living business card and stationery"
-                  className="block h-auto w-full"
-                  loading="lazy"
-                />
-              </div>
-              <div className="min-w-0 md:col-span-2">
-                <img
-                  src="/case-studies/phyphyya/gallery-17.png"
-                  alt="Haphy Living environmental product display"
                   className="block h-auto w-full"
                   loading="lazy"
                 />
@@ -132,18 +112,6 @@ export default function PhyphyyaCaseStudy() {
                 />
               </div>
             </div>
-
-            <div className="grid w-full grid-cols-1 gap-4 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {sweatshirtSeries.map((it) => (
-                <img
-                  key={it.src}
-                  src={it.src}
-                  alt={it.alt}
-                  className="block h-[400px] w-full object-cover sm:h-[420px]"
-                  loading="lazy"
-                />
-              ))}
-            </div>
           </div>
         </div>
       </header>
@@ -161,8 +129,236 @@ export default function PhyphyyaCaseStudy() {
             Haphy Living started as a personal project: turn my Holland lop
             rabbit into a brand. No client, no brief — just a blank page and a
             point of view. I owned everything: identity, artwork, product line,
-            shop, and marketing.
+            shop, marketing, and showing up in person as a vendor.
           </p>
+        </CaseStudyInViewSection>
+
+        <CaseStudyInViewSection
+          id="decisions"
+          className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
+        >
+          <span className={CS_SECTION_EYEBROW}>Key decisions</span>
+          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
+            Design for the product, not just the screen
+          </h2>
+          <ul className={`max-w-3xl space-y-5 ${CS_BODY}`}>
+            <li>
+              <strong className="font-medium text-zinc-100">
+                One mascot, many moods.
+              </strong>{" "}
+              Instead of a single static logo, the mascot carries the brand
+              across seasonal collections (Christmas, autumn, everyday) — the
+              identity stays recognizable while the product line keeps growing.
+            </li>
+            <li>
+              <strong className="font-medium text-zinc-100">
+                Design for the product, not just the screen.
+              </strong>{" "}
+              Every artwork is built print-first: full-bleed compositions, true
+              physical scale in mockups, and color checked against production
+              proofs — because a design that looks good in Figma and bad on a
+              tote isn&apos;t finished.
+            </li>
+            <li>
+              <strong className="font-medium text-zinc-100">
+                The shop is the portfolio.
+              </strong>{" "}
+              Listing photography, SEO titles, and lifestyle mockups are all
+              brand touchpoints. I treat the{" "}
+              <a
+                href={HAPHY_LIVING_SHOP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-zinc-200 underline decoration-dotted decoration-zinc-600 underline-offset-[3px] transition-colors hover:decoration-zinc-400"
+              >
+                Etsy storefront
+              </a>{" "}
+              as a designed surface, not an afterthought.
+            </li>
+            <li>
+              <strong className="font-medium text-zinc-100">
+                The booth is a brand system, too.
+              </strong>{" "}
+              Seasonal SKUs — knitted pet hats, Haphy-inspired postcards, a
+              Christmas tote — only work if the table, poster, and QR flyer
+              feel like the same world as the Etsy listing.
+            </li>
+          </ul>
+        </CaseStudyInViewSection>
+
+        <CaseStudyInViewSection
+          id="etsy-pod"
+          className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
+        >
+          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
+            Etsy, run like a product
+          </h2>
+          <p className={`max-w-3xl ${CS_BODY}`}>
+            The shop isn&apos;t a gallery — it&apos;s a product I iterate on
+            with live data.
+          </p>
+          <ul className={`max-w-3xl space-y-5 ${CS_BODY}`}>
+            <li>
+              Rewrote all 10 titles and tags for search. The sweatshirt now
+              ranks #2 organically for &quot;holland lop sweatshirt&quot;; the
+              red pearl hat ranks #1 as an ad and #3 organically.
+            </li>
+            <li>
+              Weekly visits rose from 46 to 63 after the rewrite — and Etsy
+              search, which brought zero visits before, started bringing people
+              in.
+            </li>
+            <li>
+              Priced from unit economics — every listing is costed to the
+              order, so a cut never quietly turns into a loss.
+            </li>
+          </ul>
+
+          <div className="space-y-4">
+            <img
+              src="/case-studies/phyphyya/etsy-shop-storefront.jpg"
+              alt="Haphy Living Etsy shop — Christmas collection, 12 sales, 5.0 rating"
+              className="block h-auto w-full"
+              loading="lazy"
+            />
+            <img
+              src="/case-studies/phyphyya/etsy-shop-manager.jpg"
+              alt="Etsy Shop Manager — live listings including hats, postcards, totes, and print-on-demand goods"
+              className="block h-auto w-full"
+              loading="lazy"
+            />
+          </div>
+        </CaseStudyInViewSection>
+
+        <CaseStudyInViewSection
+          id="instagram"
+          className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
+        >
+          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
+            Instagram is the top of the funnel
+          </h2>
+          <p className={`max-w-3xl ${CS_BODY}`}>
+            <a
+              href={HAPHY_LIVING_INSTAGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-zinc-200 underline decoration-dotted decoration-zinc-600 underline-offset-[3px] transition-colors hover:decoration-zinc-400"
+            >
+              @lifewith.haphy
+            </a>{" "}
+            is Haphy&apos;s daily life first — product shows up occasionally,
+            never as a feed takeover.
+          </p>
+          <ul className={`max-w-3xl space-y-5 ${CS_BODY}`}>
+            <li>
+              Reels go out Wed and Fri at 7 AM, the slots the audience actually
+              watches. 62% of views come from non-followers.
+            </li>
+            <li>
+              The tree-hat Reel hit 174 views in 3 hours, 82% from
+              non-followers — and taught me the hook has to land in the first
+              2 seconds: the hat went on at 10 seconds, and 76% skipped before
+              it.
+            </li>
+          </ul>
+
+          <div className="grid grid-cols-1 items-start gap-6 md:grid-cols-[minmax(0,22rem)_1fr]">
+            <div className="min-w-0">
+              <p className={`${CS_H3} mb-3`}>@lifewith.haphy</p>
+              <div className="grid grid-cols-3 gap-1">
+                {Array.from({ length: 9 }, (_, i) => {
+                  const n = String(i + 1).padStart(2, "0");
+                  return (
+                    <img
+                      key={n}
+                      src={`/case-studies/phyphyya/instagram/grid-${n}.jpg`}
+                      alt=""
+                      className="aspect-square w-full object-cover"
+                      loading="lazy"
+                    />
+                  );
+                })}
+              </div>
+            </div>
+            <div className="min-w-0">
+              <p className={`${CS_H3} mb-3`}>Tree-hat Reel</p>
+              <img
+                src="/case-studies/phyphyya/instagram/grid-02.jpg"
+                alt="Still from the tree-hat Reel — Christmas hats on the dresser, Haphy watching"
+                className="block h-auto w-full max-h-[560px] object-contain object-left"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </CaseStudyInViewSection>
+
+        <CaseStudyInViewSection
+          id="popup"
+          className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
+        >
+          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>In person: the booth</h2>
+          <p className={`max-w-3xl ${CS_BODY}`}>
+            First in-person test: a festival booth, Nov 7–8. Postcard sets, pet
+            Christmas hats, and a QR code back to the shop — plus Tap to Pay
+            on my phone, no card reader to buy.
+          </p>
+
+          <img
+            src="/case-studies/phyphyya/popup-2026/booth-with-haphy.jpg"
+            alt="At the pop-up booth with Haphy, the Holland lop who inspired the brand"
+            className="block h-auto w-full"
+            loading="lazy"
+          />
+
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <img
+              src="/case-studies/phyphyya/popup-2026/booth-poster.jpg"
+              alt="Booth display: Inspired by Haphy poster, Christmas tree hats, and QR code to the full catalog"
+              className="block aspect-[3/4] w-full object-cover"
+              loading="lazy"
+            />
+            <img
+              src="/case-studies/phyphyya/popup-2026/booth-table.jpg"
+              alt="Haphy Living booth table — postcards, knitted hats, and Etsy QR stand"
+              className="block aspect-[3/4] w-full object-cover"
+              loading="lazy"
+            />
+            <img
+              src="/case-studies/phyphyya/popup-2026/booth-hats-detail.jpg"
+              alt="Close-up of Christmas pet hats, Haphy postcards, and knit accessories on the booth"
+              className="block aspect-[3/4] w-full object-cover object-top"
+              loading="lazy"
+            />
+            <img
+              src="/case-studies/phyphyya/popup-2026/pet-hat-on-dog.jpg"
+              alt="A Pomeranian wearing a red knitted Christmas pet hat from the Haphy Living booth"
+              className="block aspect-[3/4] w-full object-cover object-top"
+              loading="lazy"
+            />
+          </div>
+        </CaseStudyInViewSection>
+
+        <CaseStudyInViewSection
+          id="sourcing"
+          className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
+        >
+          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
+            Sourcing: print-on-demand first
+          </h2>
+          <p className={`max-w-3xl ${CS_BODY}`}>
+            Print-on-demand carries the line — artwork in, mockup out, no
+            inventory held — so I can test a design with real orders before
+            committing to stock. The handmade hats are the exception: sewn in
+            small batches, sold singly. I costed a 300-piece run with an
+            overseas hat supplier and paused it — the math didn&apos;t clear
+            the Christmas window. Saying no to stock is part of the job.
+          </p>
+          <img
+            src="/case-studies/phyphyya/popup-2026/christmas-tote.jpg"
+            alt="Print-on-demand Christmas tote — Haphy by the fireplace"
+            className="block h-auto w-full max-w-3xl"
+            loading="lazy"
+          />
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection
@@ -237,96 +433,16 @@ export default function PhyphyyaCaseStudy() {
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection
-          id="decisions"
-          className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
-        >
-          <span className={CS_SECTION_EYEBROW}>Key decisions</span>
-          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
-            Design for the product, not just the screen
-          </h2>
-          <ul className={`max-w-3xl space-y-5 ${CS_BODY}`}>
-            <li>
-              <strong className="font-medium text-zinc-100">
-                One mascot, many moods.
-              </strong>{" "}
-              Instead of a single static logo, the mascot carries the brand
-              across seasonal collections (Christmas, autumn, everyday) — the
-              identity stays recognizable while the product line keeps growing.
-            </li>
-            <li>
-              <strong className="font-medium text-zinc-100">
-                Design for the product, not just the screen.
-              </strong>{" "}
-              Every artwork is built print-first: full-bleed compositions, true
-              physical scale in mockups, and color checked against production
-              proofs — because a design that looks good in Figma and bad on a
-              tote isn&apos;t finished.
-            </li>
-            <li>
-              <strong className="font-medium text-zinc-100">
-                The shop is the portfolio.
-              </strong>{" "}
-              Listing photography, SEO titles, and lifestyle mockups are all
-              brand touchpoints. I treat the{" "}
-              <a
-                href={HAPHY_LIVING_SHOP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-medium text-zinc-200 underline decoration-dotted decoration-zinc-600 underline-offset-[3px] transition-colors hover:decoration-zinc-400"
-              >
-                Etsy storefront
-              </a>{" "}
-              as a designed surface, not an afterthought.
-            </li>
-          </ul>
-        </CaseStudyInViewSection>
-
-        <CaseStudyInViewSection
-          id="etsy-pod"
-          className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
-        >
-          <span className={CS_SECTION_EYEBROW}>The product line</span>
-          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
-            A live print-on-demand shop, designed end to end
-          </h2>
-          <p className={`max-w-3xl ${CS_BODY}`}>
-            Art prints, totes, ornaments, enamel pins, magnets, sticker sheets
-            — every listing designed, mocked up, and optimized. Print-on-demand
-            lets me validate demand without holding stock, then iterate with
-            live Etsy data.
-          </p>
-
-          <div className="flex flex-col gap-6 lg:h-[min(540px,72vh)] lg:flex-row lg:items-stretch">
-            <div className="flex min-h-[420px] shrink-0 items-center justify-center overflow-hidden px-3 py-4 lg:min-h-0 lg:w-[min(280px,32%)] lg:py-6">
-              <img
-                src="/case-studies/phyphyya/etsy-shop-mobile.png"
-                alt="Haphy Living Etsy shop on mobile"
-                className="max-h-full max-w-full w-auto object-contain"
-                loading="lazy"
-              />
-            </div>
-            <div className="relative min-h-[280px] flex-1 overflow-hidden lg:min-h-0">
-              <img
-                src="/case-studies/phyphyya/etsy-shop-desktop.png"
-                alt="Haphy Living Etsy shop — product grid"
-                className="absolute inset-0 h-full w-full object-cover object-[center_top]"
-                loading="lazy"
-              />
-            </div>
-          </div>
-        </CaseStudyInViewSection>
-
-        <CaseStudyInViewSection
           id="outcome"
           className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
         >
-          <span className={CS_SECTION_EYEBROW}>Outcome</span>
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
             A complete, self-sustaining brand IP
           </h2>
           <p className={`max-w-3xl ${CS_BODY}`}>
-            Identity system, seasonal collections, and a live storefront —
-            built solo from zero, and still growing every holiday season.
+            One brand, three channels: a live Etsy shop, an Instagram audience
+            that finds it, and a booth table — built solo from zero, and still
+            growing every holiday season.
           </p>
         </CaseStudyInViewSection>
 

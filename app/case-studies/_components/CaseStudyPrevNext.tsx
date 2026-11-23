@@ -6,9 +6,9 @@ import {
 
 /** Order matches homepage: flagship → core product → adjacent work */
 export const CASE_STUDY_NAV: { slug: string; label: string }[] = [
+  { slug: "phyphyya", label: "Haphy Living" },
   { slug: "e-invoice-app", label: "e-Invoice app" },
   { slug: "ai-marketplace", label: "MINA · community marketplace" },
-  { slug: "phyphyya", label: "Haphy Living" },
   { slug: "government-backend", label: "Government backend" },
   { slug: "baskin-robbins", label: "Baskin-Robbins Taiwan" },
   { slug: "atlas-nova", label: "AtlasNova" },

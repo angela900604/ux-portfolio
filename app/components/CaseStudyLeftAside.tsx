@@ -23,10 +23,11 @@ function projectTypeTags(meta: CaseStudyAsideMeta): string[] {
 }
 
 function formatProjectTypeLine(tags: string[], value: string): string {
-  const parts = [
-    ...tags,
-    ...(value.trim() ? [value.trim()] : []),
-  ];
+  const trimmed = value.trim();
+  const alreadyInTags = tags.some(
+    (t) => t.trim().toLowerCase() === trimmed.toLowerCase(),
+  );
+  const parts = [...tags, ...(trimmed && !alreadyInTags ? [trimmed] : [])];
   return parts.map(sentenceCaseSegment).join(" · ");
 }
 

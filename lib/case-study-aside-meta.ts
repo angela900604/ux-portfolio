@@ -14,13 +14,15 @@ import {
   MINA_HOME_DISCIPLINE_TAGS,
   marketingDisciplineTagsForCaseStudySlug,
 } from "@/lib/marketing-work";
-import { HAPHY_LIVING_SHOP_URL } from "@/app/content/haphy-living";
+import {
+  HAPHY_LIVING_INSTAGRAM_URL,
+  HAPHY_LIVING_SHOP_URL,
+} from "@/app/content/haphy-living";
 
 const MINA_APP_STORE_CA =
   "https://apps.apple.com/ca/app/mina-resale-for-parents/id6754006404";
 const BR31_APP_STORE_TW =
   "https://apps.apple.com/tw/app/31%E4%BF%B1%E6%A8%82%E9%83%A8/id6755289789";
-const PHYPHYA_INSTAGRAM = "https://www.instagram.com/phyphya__/";
 const E_INVOICE_FIGMA_APP_MOCKUP =
   "https://www.figma.com/design/xvssk9Yfmx51aiSpwWE8sv/APP-Mockup?node-id=1-8&t=MW0x7q3jDP00Fqzx-1";
 const ATLAS_NOVA_FIGMA_SKETCHES =
@@ -295,10 +297,10 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
     eyebrowAsProjectCardTag: true,
     title: "Haphy Living",
     subtitle:
-      "Original brand IP for a pet-lifestyle label—mascot, identity system, and a live print-on-demand Etsy shop.",
+      "Original brand IP for a pet-lifestyle label—mascot, identity system, Etsy shop, and in-person Christmas market pop-ups.",
     items: [
       { label: "Timeline", value: "2022 – present" },
-      { label: "Role", value: "Solo creator — brand, listings, shop" },
+      { label: "Role", value: "Solo creator — brand, shop, pop-ups" },
       {
         label: "Project type",
         value: "Brand identity · Illustration · ecommerce",
@@ -315,8 +317,8 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
         external: true,
       },
       {
-        href: PHYPHYA_INSTAGRAM,
-        label: "Instagram · @phyphya__",
+        href: HAPHY_LIVING_INSTAGRAM_URL,
+        label: "Instagram · @lifewith.haphy",
         external: true,
         className:
           "text-sm font-medium text-[#E5D0B9] underline-offset-[5px] transition hover:text-[#d4be9f] hover:underline",
