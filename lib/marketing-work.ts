@@ -139,6 +139,20 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     showShipped: true,
   },
   {
+    slug: "momi-animal-health",
+    href: "/case-studies/momi-animal-health",
+    portfolioFocus: "marketing",
+    title: "MOMI Animal Health",
+    description:
+      "Social, event, and ecommerce graphics for a Taiwan animal-health brand across digital and in-person touchpoints.",
+    disciplineTags: ["graphic design · content creation · Event coordination · ecommerce"],
+    year: "2021",
+    cover: {
+      kind: "image",
+      src: "/case-studies/momi-animal-health/home-cover.png",
+    },
+  },
+  {
     slug: "admission-hub",
     href: "/case-studies/admission-hub",
     portfolioFocus: "marketing",
@@ -200,20 +214,6 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
   //   techHighlights: PERFECT_INTERVIEW_HOME_TECH_HIGHLIGHTS,
   //   cover: { kind: "image", src: PERFECT_INTERVIEW_COVER },
   // },
-  {
-    slug: "momi-animal-health",
-    href: "/case-studies/momi-animal-health",
-    portfolioFocus: "marketing",
-    title: "MOMI Animal Health",
-    description:
-      "Social, event, and ecommerce graphics for a Taiwan animal-health brand across digital and in-person touchpoints.",
-    disciplineTags: ["graphic design · content creation · Event coordination · ecommerce"],
-    year: "2021",
-    cover: {
-      kind: "image",
-      src: "/case-studies/momi-animal-health/home-cover.png",
-    },
-  },
 ] as const;
 
 /** Tag pills for a case-study slug when it appears on the homepage grid. */

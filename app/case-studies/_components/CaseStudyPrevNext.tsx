@@ -11,6 +11,7 @@ export const CASE_STUDY_NAV: { slug: string; label: string }[] = [
   { slug: "ai-marketplace", label: "MINA · community marketplace" },
   { slug: "government-backend", label: "Government backend" },
   { slug: "baskin-robbins", label: "Baskin-Robbins Taiwan" },
+  { slug: "momi-animal-health", label: "MOMI Animal Health" },
   { slug: "admission-hub", label: "Admission Hub" },
   { slug: "atlas-nova", label: "AtlasNova" },
   { slug: "ea-community-concept", label: "EA Community Concept" },
@@ -19,7 +20,6 @@ export const CASE_STUDY_NAV: { slug: string; label: string }[] = [
     label: "MINA · Instagram",
   },
   // { slug: "perfect-interview", label: "PerfectInterview.ai" }, // hidden for now
-  { slug: "momi-animal-health", label: "MOMI Animal Health" },
 ];
 
 export function CaseStudyPrevNext({
