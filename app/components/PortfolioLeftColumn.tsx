@@ -78,6 +78,8 @@ export function PortfolioLeftColumn() {
       <div className={`shrink-0 lg:pb-0 lg:pt-2 ${MOBILE_RAIL_FOOTER}`}>
         <p className="text-[clamp(0.8rem,1.6vw,0.95rem)] font-normal leading-snug tracking-[-0.015em] text-zinc-50">
           Marketing designer
+          <br />
+          UIUX designer
         </p>
 
         <div className="my-5 border-t border-zinc-800 sm:my-6" aria-hidden />

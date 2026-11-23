@@ -40,15 +40,6 @@ export function AboutExperienceSection() {
         </p>
         <p>UX Design Diploma — BrainStation (2023)</p>
       </div>
-
-      <h2 className={`${MARKETING_SECTION_TITLE_CLASS} mt-16 sm:mt-20`}>
-        Skills
-      </h2>
-      <p className="mt-8 text-sm font-normal leading-relaxed text-zinc-400 sm:text-[0.9375rem]">
-        Adobe Creative Suite (Photoshop, Illustrator, Premiere), Figma, Canva,
-        Excel, Airtable, Slack, Mailchimp, WordPress, Google Analytics,
-        PostHog, A/B testing.
-      </p>
     </section>
   );
 }

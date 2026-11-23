@@ -96,7 +96,7 @@ Mandarin)
 
 Analytics & Tools: Google Analytics, PostHog, A/B Testing, Microsoft Office Suite, CRM Tools
 PROFESSIONAL EXPERIENCE
-Graphic Design & Operations Coordinator | Jun 2026 – Present
+Marketing Design & Operations | Jun 2026 – Present
 Precise Pipe Inc.  |  Richmond, BC (On-site)
 
 • Lead and coordinate a team of two graphic designers, managing timelines, priorities, and creative output for marketing
@@ -293,7 +293,7 @@ Full write-up or visuals may be in progress for this project.
 
 ## About page experience timeline
 
-Graphic Design & Operations Coordinator
+Marketing Design & Operations
 
 Lead a team of two graphic designers, assigning ownership by product type so each designer manages their orders end-to-end as the bridge between factories and clients. Personally track factory production for 8,000+ items per month across 10+ factories in Airtable, keeping clients updated and coordinating via Slack. Own post-sale follow-through — production, trucking and ocean freight, invoicing, and ocean-freight documentation (packing lists, CI, MTRs, BLs, booking confirmations, bulk-carrier contracts) — plus trucking PODs and Excel breakdowns for LCL split deliveries. Design flyers and one-pagers for convention marketing and for sales to hand to clients, plus trade-show booths and digital marketing.
 

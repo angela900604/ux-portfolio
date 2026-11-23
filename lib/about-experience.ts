@@ -10,25 +10,25 @@ export type AboutExperienceRow = {
 
 export const ABOUT_EXPERIENCE: readonly AboutExperienceRow[] = [
   {
-    title: "Graphic Design & Operations Coordinator",
+    title: "Marketing Design & Operations",
     company: "Precise Pipe Inc.",
     dates: "2026 – Present",
     description:
-      "Lead a team of two graphic designers, assigning ownership by product type so each designer manages their orders end-to-end as the bridge between factories and clients. Personally track factory production for 8,000+ items per month across 10+ factories in Airtable, keeping clients updated and coordinating via Slack. Own post-sale follow-through — production, trucking and ocean freight, invoicing, and ocean-freight documentation (packing lists, CI, MTRs, BLs, booking confirmations, bulk-carrier contracts) — plus trucking PODs and Excel breakdowns for LCL split deliveries. Design flyers and one-pagers for convention marketing and for sales to hand to clients, plus trade-show booths and digital marketing.",
+      "Lead two graphic designers on brand for a B2B industrial company — flyers, one-pagers, trade-show booths, and digital marketing. Assign work by product type so each designer owns the piece from brief to the client.",
   },
   {
     title: "Product Designer",
     company: "MINA AI",
     dates: "2025 – 2026",
     description:
-      "Sole product designer that owned the Figma design system end-to-end, paired qualitative research with PostHog funnels to sharpen seller jobs-to-be-done, and redesigned checkout and listing flows. Shipped high-fidelity flows for AI-assisted features with emphasis on control, transparency, and edge cases; helped define MVP scope and priorities with founders as the primary design voice.",
+      "Sole product designer. Redesigned listing flows (+30% completed listings) and owned a 50+ component Figma design system.",
   },
   {
     title: "Product Designer",
     company: "TurnCloud Technology Service",
     dates: "2024 – 2025",
     description:
-      "Shipped complex consumer and public-sector work: led UX for Taiwan’s Ministry of Finance uniform-invoice app, inclusive patterns for a diverse user base grounded in 30+ research sessions, and leadership-ready journey and IA artifacts. Led the Baskin-Robbins Taiwan membership app with cross-market alignment to Japan HQ.",
+      "UX for Taiwan’s Ministry of Finance invoice app (30+ research sessions) and the Baskin-Robbins Taiwan membership app, aligned with Japan HQ.",
   },
   {
     title: "Marketing & Operations Specialist",
@@ -42,27 +42,27 @@ export const ABOUT_EXPERIENCE: readonly AboutExperienceRow[] = [
     company: "YK Labs",
     dates: "2024",
     description:
-      "Improved core funnel completion by redesigning onboarding and task flow, backed by heuristics, usability testing, and PostHog. Launched a responsive marketing site in Framer to clarify the product before signup.",
+      "Redesigned onboarding and task flow; launched a Framer marketing site so the product was clear before signup.",
   },
   {
     title: "UX/UI Designer Intern",
     company: "AtlasNova AI",
     dates: "2023",
     description:
-      "Owned UX/UI for the AI-assisted document generation feature on AtlasNova's enterprise macOS platform—a product suite with multiple AI solutions. Delivered mockups and end-to-end UI flows for onboarding, split-pane workspace, and generation-status patterns.",
+      "UX/UI for AI-assisted document generation on AtlasNova’s macOS platform — onboarding, split-pane workspace, and status patterns.",
   },
   {
     title: "Digital Marketing Coordinator",
     company: "Admission Hub",
     dates: "2022",
     description:
-      "Addressed declining visibility by rebuilding Instagram around educational and lifestyle content across Reels and Instagram posts on a consistent schedule. Designed campaign graphics in Figma, Canva, and Adobe with repeatable templates; combined SEO competitor research with Instagram and site analytics to refine WordPress content and the calendar.",
+      "Rebuilt Instagram around life-in-Canada storytelling (+61% followers in 3 months) and grew website traffic +18% with SEO.",
   },
   {
     title: "Social Media Coordinator & Administrative Assistant",
     company: "MOMI Animal Health",
     dates: "2021",
     description:
-      "Produced digital assets in Figma, Canva, Illustrator, and Photoshop for launches and seasonal promos on Facebook and ecommerce (MOMO, PChome); designed expo banners, flyers, and branded merchandise so in-person touchpoints matched online. Processed invoices and import/export documentation and coordinated with overseas vendors and customs agents, handling 20+ daily client inquiries.",
+      "Social and ecommerce graphics for launches and promos; expo banners and merch so the floor matched the feed.",
   },
 ] as const;

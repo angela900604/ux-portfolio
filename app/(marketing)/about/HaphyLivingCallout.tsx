@@ -50,8 +50,8 @@ export function HaphyLivingCallout() {
         >
           Haphy Living
         </a>
-        , an Etsy shop where I illustrate my bunny Haphy into everyday
-        objects—brand, packaging, and customer care.{" "}
+        , my pet-lifestyle brand — identity, products, shop, and customer
+        care.{" "}
         <a
           href={HAPHY_LIVING_SHOP_INSTAGRAM_URL}
           target="_blank"
