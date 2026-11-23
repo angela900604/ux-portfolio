@@ -31,32 +31,22 @@ export default function AboutPage() {
         <p>
           I&apos;m a{" "}
           <span className={ABOUT_EMPHASIS_CLASS}>marketing designer</span>
-          {" "}in Vancouver, BC, owning everything from LinkedIn campaigns to
-          trade-show booths for a B2B industrial brand.
+          {" "}in Vancouver. Right now I work on brand and operations for a
+          B2B industrial company — campaigns, flyers, trade-show booths, and
+          the follow-through after a sale.
         </p>
         <p>
-          Before that, I designed across the full stack:{" "}
+          Before that I did{" "}
           <span className={ABOUT_EMPHASIS_CLASS}>product design</span>
-          {" "}for an AI marketplace startup in San Francisco, government
-          platforms in Taiwan used by millions, and an AI interview platform in
-          Los Angeles. That range is my superpower — I think in{" "}
-          <span className={ABOUT_EMPHASIS_CLASS}>funnels, not just screens</span>
-          , and I measure what I make (
-          <span className={ABOUT_EMPHASIS_CLASS}>61% Instagram growth</span>
-          ,{" "}
-          <span className={ABOUT_EMPHASIS_CLASS}>40% engagement lift</span>
-          , and{" "}
-          <span className={ABOUT_EMPHASIS_CLASS}>30% more listing completions</span>
-          {" "}are a few receipts).
+          : an AI marketplace in San Francisco, government apps in Taiwan, and
+          an interview platform in Los Angeles.
         </p>
         <p>
           I also run{" "}
           <span className={ABOUT_EMPHASIS_CLASS}>Haphy Living</span>
-          , my own pet-lifestyle brand, where I&apos;m the entire creative
-          department. Bilingual in English and Mandarin. Always happy to talk
-          brand, content, or rabbits.
+          , my pet-lifestyle shop. English and Mandarin.
         </p>
-        <p>And yes, this site was vibe-coded by me :)</p>
+        <p>This site was vibe-coded by me :)</p>
       </div>
 
       <AboutExperienceSection />
