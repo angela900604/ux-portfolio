@@ -25,8 +25,7 @@ function CoverMedia({ item }: { item: MarketingWorkItem }) {
 }
 
 function homeCategoryLabel(item: MarketingWorkItem): string {
-  if (item.showShipped) return "Shipped product";
-  return item.portfolioFocus === "product" ? "Product design" : "Marketing design";
+  return item.portfolioFocus === "product" ? "UIUX design" : "Marketing design";
 }
 
 export function MarketingSelectedWorkGrid({
@@ -57,11 +56,6 @@ export function MarketingSelectedWorkGrid({
 
                 <p className="mt-3 flex-1 text-[15px] font-normal leading-[1.65] text-zinc-400">
                   {item.description}
-                </p>
-
-                <p className="mt-4 text-[12px] font-normal uppercase tracking-[0.16em] text-zinc-100 transition-colors group-hover:text-zinc-400">
-                  Read case study{" "}
-                  <span aria-hidden="true">→</span>
                 </p>
               </div>
             </Link>

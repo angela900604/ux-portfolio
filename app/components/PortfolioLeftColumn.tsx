@@ -44,12 +44,6 @@ export function PortfolioLeftColumn() {
         >
           {isAbout ? "About me" : "Hi, I'm Angela."}
         </h1>
-        {!isAbout ? (
-          <p className="mt-3 max-w-[20rem] text-[15px] font-normal leading-[1.5] tracking-[-0.01em] text-zinc-400">
-            Marketing designer turning brand into measurable growth — and
-            operations that actually ship.
-          </p>
-        ) : null}
 
         <div className="mt-5 w-full max-w-[280px] shrink-0 overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/30 sm:mt-6 sm:max-w-[min(100%,20rem)]">
           <ImageLightbox
