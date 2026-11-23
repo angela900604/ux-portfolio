@@ -46,7 +46,6 @@ export default function AboutPage() {
           <span className={ABOUT_EMPHASIS_CLASS}>Haphy Living</span>
           , my pet-lifestyle shop. English and Mandarin.
         </p>
-        <p>This site was vibe-coded by me :)</p>
       </div>
 
       <AboutExperienceSection />

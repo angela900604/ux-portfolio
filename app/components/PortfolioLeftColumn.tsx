@@ -135,7 +135,7 @@ export function PortfolioLeftColumn() {
         </div>
 
         <p className="mt-5 text-[11px] leading-relaxed text-zinc-600 sm:mt-6">
-          © {new Date().getFullYear()} · vibe-coded by me.
+          © {new Date().getFullYear()}
         </p>
       </div>
     </aside>
