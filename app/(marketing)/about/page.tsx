@@ -2,7 +2,6 @@ import Image from "next/image";
 import { ImageLightbox } from "@/app/components/ImageLightbox";
 import { BeyondDesignGallery } from "@/app/components/BeyondDesignGallery";
 import { BEYOND_PHOTOGRAPHY_GALLERY } from "@/app/content/beyond-design-gallery";
-import { AboutExperienceSection } from "./AboutExperienceSection";
 import { HaphyLivingCallout } from "./HaphyLivingCallout";
 import { MarketingHomeLogos } from "../MarketingHomeLogos";
 import { MARKETING_SECTION_TITLE_CLASS } from "@/lib/marketing-section-title";
@@ -37,8 +36,6 @@ export default function AboutPage() {
           shop, and customer care.
         </p>
       </div>
-
-      <AboutExperienceSection />
 
       <section className="mt-14 border-t border-zinc-800 pt-12">
         <div className="grid items-start gap-8 lg:grid-cols-12 lg:gap-10">
@@ -87,11 +84,19 @@ export default function AboutPage() {
 
       <section className="mt-14 border-t border-zinc-800 pt-12">
         <h2 className={MARKETING_SECTION_TITLE_CLASS}>Tools &amp; skills</h2>
-        <p className="mt-6 max-w-3xl text-sm font-normal leading-relaxed text-zinc-400 sm:text-[0.9375rem]">
-          Adobe Creative Suite (Photoshop, Illustrator, Premiere), Figma,
-          Canva, Excel, Airtable, Slack, Mailchimp, WordPress, Google
-          Analytics, PostHog, A/B testing.
-        </p>
+        <div className="mt-6 max-w-3xl space-y-3 text-sm font-normal leading-relaxed text-zinc-400 sm:text-[0.9375rem]">
+          <p>
+            Adobe Creative Suite (Photoshop, Illustrator, Premiere), Figma,
+            Framer, Canva, WordPress, Mailchimp, Excel, Airtable, Slack,
+            Google Analytics, PostHog.
+          </p>
+          <p>
+            Brand identity, content strategy, social (Instagram, Facebook,
+            LinkedIn), short-form video, print production, SEO, user research,
+            journey mapping, information architecture, wireframing,
+            accessibility (WCAG), A/B testing.
+          </p>
+        </div>
         <MarketingHomeLogos />
       </section>
     </div>
