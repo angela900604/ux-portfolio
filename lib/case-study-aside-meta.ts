@@ -5,7 +5,6 @@
 
 import {
   E_INVOICE_HOME_DISCIPLINE_TAGS,
-  E_INVOICE_HOME_TECH_HIGHLIGHTS,
   ATLAS_NOVA_HOME_DISCIPLINE_TAGS,
   EA_COMMUNITY_HOME_DISCIPLINE_TAGS,
   EA_COMMUNITY_HOME_TECH_HIGHLIGHTS,
@@ -91,15 +90,17 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
     subtitle:
       "Redesigning a government service used by 20 million people",
     items: [
-      { label: "Timeline", value: "Feb 2025 – Nov 2025 (10 months)" },
-      { label: "Role", value: "UX/UI Designer" },
       {
-        label: "Project type",
-        value: "End-to-end mobile app redesign",
+        label: "Role",
+        value:
+          "Product / UX Designer, TurnCloud (client: Taiwan Ministry of Finance)",
       },
+      { label: "Team", value: "Government stakeholders, engineering" },
+      { label: "Timeline", value: "Jul 2024 – Nov 2025" },
       {
-        label: "Focus",
-        value: E_INVOICE_HOME_TECH_HIGHLIGHTS,
+        label: "Outcome",
+        value:
+          "Missed top-tier prize redemptions 24% → 18% one month after launch; 88% task success in usability sessions",
       },
     ],
     primaryCta: {
@@ -121,16 +122,18 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
     subtitle:
       "an AI-native marketplace for parents who outgrow baby gear overnight",
     items: [
-      { label: "Timeline", value: "Sep 2025 – May 2026" },
-      { label: "Role", value: "Sole Product Designer · 1 PM + 5 engineers" },
       {
-        label: "Project type",
-        value: "Growth & iteration on a live product",
+        label: "Role",
+        value: "Marketing & Product Designer, MINA AI (fixed-term contract)",
       },
       {
-        label: "Focus",
-        value:
-          "Listing funnel, AI trust surfaces, design system, community-led growth",
+        label: "Team",
+        value: "Worked directly with engineering and the founding team",
+      },
+      { label: "Timeline", value: "Sep 2025 – May 2026" },
+      {
+        label: "Outcome",
+        value: "Completed listings +30% after the new listing flow shipped",
       },
     ],
     textLinks: [
@@ -181,15 +184,16 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
     subtitle:
       "Backend platform for the Ministry of Finance’s Uniform Invoice Lottery Redemption App—role-based access and reporting for 600+ staff.",
     items: [
-      { label: "Timeline", value: "Jul 2025 – Sep 2025 (3 months)" },
-      { label: "Role", value: "Lead UX/UI Designer" },
       {
-        label: "Project type",
-        value: "Backend admin platform · MoF lottery operations",
+        label: "Role",
+        value:
+          "Product / UX Designer, TurnCloud (client: Taiwan Ministry of Finance)",
       },
+      { label: "Team", value: "Government stakeholders, engineering" },
+      { label: "Timeline", value: "Jul 2024 – Nov 2025" },
       {
-        label: "Focus",
-        value: "RBAC, reporting, version workflows · Ship-ready UI",
+        label: "Outcome",
+        value: "One role-based backend serving 600+ staff",
       },
     ],
   },
@@ -200,19 +204,20 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
     subtitle:
       "Taiwan’s loyalty market was growing fast while BR31 still had no native app—end-to-end UX/UI for 31 Club, MVP on schedule, five-star early reviews.",
     items: [
-      { label: "Timeline", value: "Dec 2024 – Feb 2025 (3 months)" },
-      { label: "Role", value: "Lead UX/UI Designer" },
       {
-        label: "Project type",
-        value: "Membership app · Loyalty & rewards (Taiwan)",
+        label: "Role",
+        value:
+          "Product / UX Designer, TurnCloud (client: Baskin-Robbins Taiwan, with Japan HQ)",
       },
       {
-        label: "Market scope",
-        value: "Taiwan launch · Aligned with Japan HQ · iOS + Android",
+        label: "Team",
+        value: "Japan HQ design and product teams, Taiwan engineering",
       },
+      { label: "Timeline", value: "Jul 2024 – Nov 2025" },
       {
-        label: "Focus",
-        value: "Discovery through handoff · MVP with engineering",
+        label: "Outcome",
+        value:
+          "Taiwan MVP reframed around spend-based tiers and shipped for launch",
       },
     ],
     textLinks: [
@@ -229,10 +234,14 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
     title: "AtlasNova",
     subtitle: "Enterprise AI platform · document generation UI",
     items: [
-      { label: "Timeline", value: "2023" },
-      { label: "Role", value: "UX/UI Designer Intern" },
-      { label: "Project type", value: "" },
-      { label: "Scope", value: "UI for the document generation feature" },
+      { label: "Role", value: "UX/UI Design Intern, AtlasNova" },
+      { label: "Team", value: "Product manager, engineering" },
+      { label: "Timeline", value: "Internship" },
+      {
+        label: "Outcome",
+        value:
+          "Feature UI delivered end to end, from whiteboard sketches to hi-fi screens",
+      },
     ],
     textLinks: [
       {

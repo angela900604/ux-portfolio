@@ -86,6 +86,25 @@ export function PortfolioLeftColumn() {
           >
             angela900604@gmail.com
           </a>
+          <p className="pt-1 text-zinc-400">
+            <a
+              href="https://www.linkedin.com/in/angelayangg/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={HOVER_NAV}
+            >
+              LinkedIn
+            </a>
+            {" · "}
+            <a
+              href="/resume/AngelaYang_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={HOVER_NAV}
+            >
+              Resume
+            </a>
+          </p>
           <div className="flex items-center gap-3 pt-1">
             <a
               href="https://www.linkedin.com/in/angelayangg/"

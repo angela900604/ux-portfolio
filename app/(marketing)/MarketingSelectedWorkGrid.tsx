@@ -53,10 +53,6 @@ export function MarketingSelectedWorkGrid({
                 <h3 className="font-sans text-[20px] font-medium leading-[1.3] tracking-tight text-zinc-100 transition-colors group-hover:text-zinc-400 sm:text-[22px]">
                   {item.title}
                 </h3>
-
-                <p className="mt-3 flex-1 text-[15px] font-normal leading-[1.65] text-zinc-400">
-                  {item.description}
-                </p>
               </div>
             </Link>
           </FadeInSection>

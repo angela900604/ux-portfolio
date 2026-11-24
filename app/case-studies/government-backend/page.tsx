@@ -10,6 +10,7 @@ import { WideFigure } from "../e-invoice-app/EInvoiceFigures";
 import { GovernmentBackendCorrespondingScreensSlider } from "./GovernmentBackendCorrespondingScreensSlider";
 import { GovernmentBackendEngineeringAlignment } from "./GovernmentBackendEngineeringAlignment";
 import { GovernmentBackendHeroTldr } from "./GovernmentBackendHeroTldr";
+import { CaseStudyMetaBlock } from "../_components/CaseStudyMetaBlock";
 import {
   CASE_STUDY_BODY_GRID,
   CASE_STUDY_SECTION_TITLE_CLASS,
@@ -63,6 +64,29 @@ export default function GovernmentBackendCaseStudy() {
           >
             <div>
               <GovernmentBackendHeroTldr />
+              <div className="mt-10">
+                <CaseStudyMetaBlock
+                  items={[
+                    {
+                      label: "Role",
+                      value:
+                        "Product / UX Designer, TurnCloud (client: Taiwan Ministry of Finance)",
+                    },
+                    {
+                      label: "Team",
+                      value: "Government stakeholders, engineering",
+                    },
+                    {
+                      label: "Timeline",
+                      value: "Jul 2024 – Nov 2025",
+                    },
+                    {
+                      label: "Outcome",
+                      value: "One role-based backend serving 600+ staff",
+                    },
+                  ]}
+                />
+              </div>
             </div>
 
             <div className="overflow-hidden">
@@ -331,9 +355,12 @@ export default function GovernmentBackendCaseStudy() {
           className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
         >
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>Outcome</h2>
-          <p className="text-zinc-400 leading-relaxed">
-            Outcome — [To add: what shipped / what changed, in Angela&apos;s
-            words.]
+          <p className="max-w-3xl text-zinc-400 leading-relaxed">
+            One backend now runs announcements, promos, push rules, reporting,
+            and app versions for 600+ staff. Each role sees only what it can
+            use — if a role has no access to a feature, that feature simply
+            does not appear in their sidebar. Notifications go from compose to
+            scheduled push to the in-app centre in one flow.
           </p>
         </CaseStudyInViewSection>
 

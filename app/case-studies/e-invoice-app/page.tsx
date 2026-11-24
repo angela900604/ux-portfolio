@@ -8,6 +8,7 @@ import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { DesignJourneyCollapsible } from "../_components/DesignJourneyCollapsible";
 import { EInvoiceHeroTldr } from "./EInvoiceHeroTldr";
+import { CaseStudyMetaBlock } from "../_components/CaseStudyMetaBlock";
 import { FinalScreensMarquee } from "./FinalScreensMarquee";
 import { PortraitTile, WideFigure } from "./EInvoiceFigures";
 import { HomeBeforeAfterSlider } from "./HomeBeforeAfterSlider";
@@ -301,6 +302,30 @@ export default function EInvoiceCaseStudy() {
           >
           <div>
             <EInvoiceHeroTldr />
+            <div className="mt-10">
+              <CaseStudyMetaBlock
+                items={[
+                  {
+                    label: "Role",
+                    value:
+                      "Product / UX Designer, TurnCloud (client: Taiwan Ministry of Finance)",
+                  },
+                  {
+                    label: "Team",
+                    value: "Government stakeholders, engineering",
+                  },
+                  {
+                    label: "Timeline",
+                    value: "Jul 2024 – Nov 2025",
+                  },
+                  {
+                    label: "Outcome",
+                    value:
+                      "Missed top-tier prize redemptions 24% → 18% one month after launch; 88% task success in usability sessions",
+                  },
+                ]}
+              />
+            </div>
           </div>
 
           <div className="flex min-w-0 flex-col gap-8 sm:gap-10">

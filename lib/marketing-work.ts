@@ -79,24 +79,13 @@ export const PERFECT_INTERVIEW_HOME_TECH_HIGHLIGHTS =
 
 export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
   {
-    slug: "phyphyya",
-    href: "/case-studies/phyphyya",
-    portfolioFocus: "marketing",
-    title: "Haphy Living · Original brand IP & Etsy shop",
-    description:
-      "End-to-end brand identity for a pet-lifestyle label — mascot, seasonal collections, a live Etsy shop, and in-person Christmas market pop-ups.",
-    disciplineTags: ["Brand identity · Illustration · ecommerce"],
-    year: "2022–present",
-    cover: { kind: "image", src: "/case-studies/phyphyya/gallery-14.png" },
-  },
-  {
     slug: "e-invoice-app",
     href: "/case-studies/e-invoice-app",
     portfolioFocus: "product",
     title:
       "Redesigning Taiwan Ministry of Finance's Uniform Invoice Award Redemption App",
     description:
-      "A government service used by 20M people—research-led IA, accessibility, and ship-ready UI across 30+ sessions.",
+      "Taiwan Ministry of Finance invoice app, used by millions — missed prize redemptions 24% → 18%.",
     disciplineTags: ["Public service application · User research"],
     year: "2024–2025",
     cover: { kind: "e-invoice" },
@@ -108,11 +97,22 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     portfolioFocus: "product",
     title: "MINA · AI-Powered Marketplace Community for SF Parents",
     description:
-      "Sole designer on a live iOS marketplace—listing funnel lift, AI trust surfaces, and a 50+ component design system.",
+      "Community-first AI marketplace for parents — one photo, multiple listings. Completed listings +30%.",
     disciplineTags: ["AI-driven community · Mobile app"],
     year: "2025–2026",
     cover: { kind: "mina" },
     showShipped: true,
+  },
+  {
+    slug: "phyphyya",
+    href: "/case-studies/phyphyya",
+    portfolioFocus: "marketing",
+    title: "Haphy Living · Original brand IP & Etsy shop",
+    description:
+      "My own pet-lifestyle brand — identity, products, Etsy shop, and customer care, run end to end.",
+    disciplineTags: ["Brand identity · Illustration · ecommerce"],
+    year: "2022–present",
+    cover: { kind: "image", src: "/case-studies/phyphyya/gallery-14.png" },
   },
   {
     slug: "government-backend",
@@ -132,7 +132,7 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     portfolioFocus: "product",
     title: "Cross-market with Japan HQ · BR31 Taiwan membership app",
     description:
-      "End-to-end UX/UI for Taiwan's 31 Club loyalty app—cross-market alignment with Japan HQ, MVP on schedule.",
+      "Baskin-Robbins Taiwan membership app, built with Japan HQ — loyalty rebuilt around spend-based tiers for the Taiwan market.",
     disciplineTags: ["Mobile · Cross-market JP×TW"],
     year: "2024–2025",
     cover: { kind: "image", src: "/case-studies/baskin-robbins/home-cover.png" },
@@ -144,7 +144,7 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     portfolioFocus: "marketing",
     title: "MOMI Animal Health",
     description:
-      "Social, event, and ecommerce graphics for a Taiwan animal-health brand across digital and in-person touchpoints.",
+      "Social, retail, and expo design for a pet health brand — ecommerce sales +75% across my tenure.",
     disciplineTags: ["graphic design · content creation · Event coordination · ecommerce"],
     year: "2021",
     cover: {
@@ -169,7 +169,7 @@ export const MARKETING_SELECTED_WORK: readonly MarketingWorkItem[] = [
     portfolioFocus: "product",
     title: "AtlasNova · UI for AI-assisted document generation",
     description:
-      "Document generation UI for an enterprise macOS AI platform—onboarding, split-pane workspace, and status patterns.",
+      "AI-assisted document generation for an enterprise macOS platform — transparent AI, split-pane workspace.",
     disciplineTags: ["Enterprise AI · macOS · Document generation"],
     year: "2023",
     techHighlights: ATLAS_NOVA_HOME_TECH_HIGHLIGHTS,

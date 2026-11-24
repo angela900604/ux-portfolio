@@ -19,6 +19,7 @@ import {
   CASE_STUDY_SECTION_TITLE_CLASS,
   SITE_SHELL_INNER,
 } from "@/lib/site-shell";
+import { CaseStudyMetaBlock } from "../_components/CaseStudyMetaBlock";
 
 const BR_TLDR_METRICS: CaseStudyHeroTldrMetric[] = [
   {
@@ -132,6 +133,31 @@ export default function BaskinRobbinsCaseStudy() {
                 }
                 metrics={BR_TLDR_METRICS}
               />
+              <div className="mt-10">
+                <CaseStudyMetaBlock
+                  items={[
+                    {
+                      label: "Role",
+                      value:
+                        "Product / UX Designer, TurnCloud (client: Baskin-Robbins Taiwan, with Japan HQ)",
+                    },
+                    {
+                      label: "Team",
+                      value:
+                        "Japan HQ design and product teams, Taiwan engineering",
+                    },
+                    {
+                      label: "Timeline",
+                      value: "Jul 2024 – Nov 2025",
+                    },
+                    {
+                      label: "Outcome",
+                      value:
+                        "Taiwan MVP reframed around spend-based tiers and shipped for launch",
+                    },
+                  ]}
+                />
+              </div>
             </div>
 
             <div className="overflow-hidden">
@@ -445,9 +471,13 @@ export default function BaskinRobbinsCaseStudy() {
           className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
         >
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>Outcome</h2>
-          <p className="text-zinc-400 leading-relaxed">
-            Outcome — [To add: what shipped / what changed, in Angela&apos;s
-            words.]
+          <p className="max-w-3xl text-zinc-400 leading-relaxed">
+            The Taiwan MVP shipped around spend progress, tier unlocks, and
+            voucher redemption — matched to the phase-one backend instead of
+            forcing HQ&apos;s points model onto it. Every divergence from
+            Japan&apos;s 31Club was documented with its rationale ahead of HQ
+            reviews, so the local decisions survived review instead of being
+            reverted.
           </p>
         </CaseStudyInViewSection>
 

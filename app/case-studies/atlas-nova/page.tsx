@@ -14,6 +14,7 @@ import {
   CASE_STUDY_SECTION_TITLE_CLASS,
   SITE_SHELL_INNER,
 } from "@/lib/site-shell";
+import { CaseStudyMetaBlock } from "../_components/CaseStudyMetaBlock";
 
 const ATLAS_ACCENT = "#6366F1";
 const ATLAS_ACCENT_BG = "rgba(99, 102, 241, 0.16)";
@@ -176,6 +177,29 @@ export default function AtlasNovaCaseStudy() {
                 headline="AtlasNova — UI for AI-assisted document generation"
                 metrics={ATLAS_TLDR_METRICS}
               />
+              <div className="mt-10">
+                <CaseStudyMetaBlock
+                  items={[
+                    {
+                      label: "Role",
+                      value: "UX/UI Design Intern, AtlasNova",
+                    },
+                    {
+                      label: "Team",
+                      value: "Product manager, engineering",
+                    },
+                    {
+                      label: "Timeline",
+                      value: "Internship",
+                    },
+                    {
+                      label: "Outcome",
+                      value:
+                        "Feature UI delivered end to end, from whiteboard sketches to hi-fi screens",
+                    },
+                  ]}
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -336,6 +360,20 @@ export default function AtlasNovaCaseStudy() {
             height={UI_FLOW_H}
             unoptimized
           />
+        </CaseStudyInViewSection>
+
+        <CaseStudyInViewSection
+          id="outcome"
+          className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
+        >
+          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>Outcome</h2>
+          <p className="max-w-3xl text-zinc-400 leading-relaxed">
+            The feature went from whiteboard sketches to hi-fi screens the team
+            could build from: onboarding narrows scope before generation,
+            template settings are set upfront instead of buried in a menu, and
+            each section shows its pipeline stage so a bad source pull is
+            visible before the whole document goes wrong.
+          </p>
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection className="border-t border-zinc-800 pt-12 space-y-8">

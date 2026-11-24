@@ -72,7 +72,11 @@ export default function AdmissionHubCaseStudy() {
     <article className="min-h-screen">
       <header className="border-b border-zinc-800">
         <div className={`${SITE_SHELL_INNER} py-12 sm:py-16`}>
-          <div className={`${CASE_STUDY_BODY_GRID} min-w-0`}>
+          <div className={`${CASE_STUDY_BODY_GRID} min-w-0 space-y-6`}>
+            <p className="max-w-3xl text-[15px] font-normal leading-[1.65] text-zinc-400">
+              Study-abroad brand in Toronto—Instagram cadence toward Canada-life
+              content, SEO articles, and funnel analytics.
+            </p>
             <div className="overflow-hidden">
               <ImageLightbox
                 src={AH_ASSET("case-hero-cover.png")}
@@ -166,9 +170,6 @@ export default function AdmissionHubCaseStudy() {
               </span>{" "}
               researching Canada options (lead generation), not just one-off
               announcements.
-            </p>
-            <p className="mt-2 text-xs text-zinc-500 leading-relaxed max-w-3xl">
-              Original campaign screenshots weren&apos;t preserved.
             </p>
             <ul className="mt-4 list-disc space-y-2 pl-5 cs-body-sm max-w-3xl">
               <li>

@@ -14,7 +14,8 @@ import {
   CASE_STUDY_SECTION_TITLE_CLASS,
   SITE_SHELL_INNER,
 } from "@/lib/site-shell";
-import { CS_BODY, CS_META_LABEL } from "@/lib/case-study-theme";
+import { CS_BODY, CS_H3 } from "@/lib/case-study-theme";
+import { CaseStudyMetaBlock } from "../_components/CaseStudyMetaBlock";
 
 const MINA_HERO = "/case-studies/mina/mina-ai-hero.png";
 const MINA_MOCKUP_HAND = "/case-studies/mina/mockup-hand-01.png";
@@ -94,23 +95,6 @@ export default function AiMarketplaceCaseStudy() {
             className={`${CASE_STUDY_BODY_GRID} flex min-w-0 flex-col overflow-x-hidden`}
           >
             <div className="mb-10 sm:mb-12">
-              <dl className="mb-8 grid max-w-3xl grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-6">
-                <div>
-                  <dt className={CS_META_LABEL}>Role</dt>
-                  <dd className={CS_BODY}>Sole Product Designer</dd>
-                </div>
-                <div>
-                  <dt className={CS_META_LABEL}>Dates</dt>
-                  <dd className={CS_BODY}>Sep 2025 – May 2026</dd>
-                </div>
-                <div>
-                  <dt className={CS_META_LABEL}>Outcome</dt>
-                  <dd className={CS_BODY}>
-                    Redesigned listing flows, increasing completed listings by
-                    30%; owned a full Figma design system (50+ components).
-                  </dd>
-                </div>
-              </dl>
               <CaseStudyHeroTldr
                 metricValueClassName="text-[#B75E45]"
                 headline={
@@ -121,6 +105,32 @@ export default function AiMarketplaceCaseStudy() {
                 }
                 metrics={MINA_TLDR_METRICS}
               />
+              <div className="mt-10">
+                <CaseStudyMetaBlock
+                  items={[
+                    {
+                      label: "Role",
+                      value:
+                        "Marketing & Product Designer, MINA AI (fixed-term contract)",
+                    },
+                    {
+                      label: "Team",
+                      value:
+                        "Worked directly with engineering and the founding team",
+                    },
+                    {
+                      label: "Timeline",
+                      value: "Sep 2025 – May 2026",
+                    },
+                    {
+                      label: "Outcome",
+                      value:
+                        "Completed listings +30% after the new listing flow shipped",
+                    },
+                  ]}
+                  summary="Parents don't fill out forms — they chat. A parent uploads a pile of photos and describes what they're selling in their own words, and the AI turns that conversation into listings: it sorts the photos, fills in the details, and drafts everything for one-tap publish. The parent just checks and confirms. The flow was designed to feel like talking, not filing — no listing-by-listing form grind."
+                />
+              </div>
             </div>
 
             <div className="flex w-full min-w-0 flex-col gap-3">
@@ -407,33 +417,44 @@ export default function AiMarketplaceCaseStudy() {
                 </h2>
                 <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-12 lg:gap-12">
                   <div className="min-w-0 space-y-6 text-zinc-400 leading-relaxed lg:col-span-7">
-                    <p>
-                      The original vision was simple: a parent dumps a pile of photos,
-                      and AI figures out which ones belong to the same listing. The
-                      engineer said it wasn&apos;t feasible — the model couldn&apos;t
-                      reliably group photos that way.
-                    </p>
-                    <p>
-                      So I designed a workaround: one screen where parents could
-                      manually add listings and upload photos to each, then publish
-                      everything at once. It was technically sound.
-                    </p>
-                    <p>
-                      But after going deeper on the core user pain point, I realized it
-                      hadn&apos;t solved anything. Parents still had to build each
-                      listing by hand. The form grind was still there.
-                    </p>
-                    <p>
-                      I went back to the engineer with a different ask — one photo,
-                      multiple listings, with AI filling in the details.
-                    </p>
-                    <p>
-                      He was willing to try, but flagged a real edge case: blurry
-                      photos would cause inaccurate detections, and the model would
-                      silently generate bad data. So I added a photo-quality prompt —
-                      if the image wasn&apos;t clear enough, the app would ask the
-                      parent to retake it before the AI ran.
-                    </p>
+                    <div className="space-y-3">
+                      <h3 className={CS_H3}>The problem</h3>
+                      <p>
+                        The original vision was simple: a parent dumps a pile of photos,
+                        and AI figures out which ones belong to the same listing. The
+                        engineer said it wasn&apos;t feasible — the model couldn&apos;t
+                        reliably group photos that way.
+                      </p>
+                    </div>
+                    <div className="space-y-3">
+                      <h3 className={CS_H3}>
+                        The safe workaround — and why it wasn&apos;t enough
+                      </h3>
+                      <p>
+                        So I designed a workaround: one screen where parents could
+                        manually add listings and upload photos to each, then publish
+                        everything at once. It was technically sound.
+                      </p>
+                      <p>
+                        But after going deeper on the core user pain point, I realized it
+                        hadn&apos;t solved anything. Parents still had to build each
+                        listing by hand. The form grind was still there.
+                      </p>
+                    </div>
+                    <div className="space-y-3">
+                      <h3 className={CS_H3}>The pushback</h3>
+                      <p>
+                        I went back to the engineer with a different ask — one photo,
+                        multiple listings, with AI filling in the details.
+                      </p>
+                      <p>
+                        He was willing to try, but flagged a real edge case: blurry
+                        photos would cause inaccurate detections, and the model would
+                        silently generate bad data. So I added a photo-quality prompt —
+                        if the image wasn&apos;t clear enough, the app would ask the
+                        parent to retake it before the AI ran.
+                      </p>
+                    </div>
                     <p>
                       The final flow wasn&apos;t the original vision, and it wasn&apos;t
                       the safe workaround either. It came from pushing past the first
@@ -507,6 +528,43 @@ export default function AiMarketplaceCaseStudy() {
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection
+          id="outcome"
+          className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
+        >
+          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>Outcome</h2>
+          <p className={`max-w-3xl ${CS_BODY}`}>
+            Completed listings rose 30% after the new flow shipped. The
+            photo-quality prompt stopped the worst edge case before it could
+            happen — blurry photos get a retake request instead of silently
+            generating bad data — and parents only had to upload once to
+            create multiple listings.
+          </p>
+        </CaseStudyInViewSection>
+
+        <CaseStudyInViewSection
+          id="design-system"
+          className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
+        >
+          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>Design system</h2>
+          <p className={`max-w-3xl ${CS_BODY}`}>
+            I built the listing flow on a 50+ component design system in Figma,
+            so the marketplace, the AI surfaces, and the marketing site all
+            shipped from the same parts. One source of truth for spacing, type,
+            and states — no one-off screens.
+          </p>
+          <div className="w-full max-w-3xl space-y-3">
+            <div className="overflow-hidden">
+              <iframe
+                title="MINA UI component library portfolio (HTML)"
+                src="/case-studies/mina/ui_component_library_portfolio.html"
+                className="block h-[min(88vh,1100px)] w-full border-0 bg-[#F8EFEC]"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </CaseStudyInViewSection>
+
+        <CaseStudyInViewSection
           id="parenting-copilot"
           className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
@@ -542,33 +600,6 @@ export default function AiMarketplaceCaseStudy() {
                   />
                 </ImageLightbox>
               </figure>
-            </div>
-          </div>
-        </CaseStudyInViewSection>
-
-        <CaseStudyInViewSection
-          id="design-system"
-          className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
-        >
-          <span className="cs-section-eyebrow">
-            Design system
-          </span>
-          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
-            50+ components so engineering could move without redesigning atoms
-          </h2>
-          <p className="max-w-3xl text-zinc-400 leading-relaxed">
-            I owned a scalable Figma system that mirrored iOS—using standardized
-            variants, spacing, and component props—so a small team could ship
-            multiple complex flows fast without one-off specs.
-          </p>
-          <div className="w-full max-w-3xl space-y-3">
-            <div className="overflow-hidden">
-              <iframe
-                title="MINA UI component library portfolio (HTML)"
-                src="/case-studies/mina/ui_component_library_portfolio.html"
-                className="block h-[min(88vh,1100px)] w-full border-0 bg-[#F8EFEC]"
-                loading="lazy"
-              />
             </div>
           </div>
         </CaseStudyInViewSection>

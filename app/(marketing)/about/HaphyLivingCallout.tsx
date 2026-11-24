@@ -5,7 +5,6 @@ import { ImageLightbox } from "@/app/components/ImageLightbox";
 import {
   HAPHY_LIVING_PRODUCT_IMAGES,
   HAPHY_LIVING_SHOP_INSTAGRAM_URL,
-  HAPHY_LIVING_SHOP_URL,
 } from "@/app/content/haphy-living";
 
 const HAPHY_LINK_CLASS =
@@ -16,8 +15,8 @@ const BEYOND_GALLERY_RADIUS_CLASS = "rounded-lg";
 export function HaphyLivingCallout() {
   return (
     <figure className="mt-6 min-w-0">
-      <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-3 lg:grid-cols-3 lg:gap-3">
-        {HAPHY_LIVING_PRODUCT_IMAGES.map((item) => (
+      <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-3">
+        {HAPHY_LIVING_PRODUCT_IMAGES.slice(0, 2).map((item) => (
           <ImageLightbox
             key={item.src}
             src={item.src}
@@ -41,17 +40,6 @@ export function HaphyLivingCallout() {
       </div>
 
       <figcaption className="mt-4 max-w-4xl font-sans text-[15px] font-normal leading-[1.65] text-zinc-400 text-pretty xl:max-w-5xl">
-        I run{" "}
-        <a
-          href={HAPHY_LIVING_SHOP_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={HAPHY_LINK_CLASS}
-        >
-          Haphy Living
-        </a>
-        , my pet-lifestyle brand — identity, products, shop, and customer
-        care.{" "}
         <a
           href={HAPHY_LIVING_SHOP_INSTAGRAM_URL}
           target="_blank"
@@ -60,7 +48,6 @@ export function HaphyLivingCallout() {
         >
           Shop on Instagram — @haphyliving
         </a>
-        .
       </figcaption>
     </figure>
   );

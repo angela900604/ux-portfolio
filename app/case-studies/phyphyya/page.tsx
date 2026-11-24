@@ -205,11 +205,6 @@ export default function PhyphyyaCaseStudy() {
               red pearl hat ranks #1 as an ad and #3 organically.
             </li>
             <li>
-              Weekly visits rose from 46 to 63 after the rewrite — and Etsy
-              search, which brought zero visits before, started bringing people
-              in.
-            </li>
-            <li>
               Priced from unit economics — every listing is costed to the
               order, so a cut never quietly turns into a loss.
             </li>
@@ -266,9 +261,8 @@ export default function PhyphyyaCaseStudy() {
               watches. 62% of views come from non-followers.
             </li>
             <li>
-              The tree-hat Reel hit 174 views in 3 hours, 82% from
-              non-followers — and taught me the hook has to land in the first
-              2 seconds: the hat went on at 10 seconds, and 76% skipped before
+              The tree-hat Reel taught me the hook has to land in the first 2
+              seconds: the hat went on at 10 seconds, and 76% skipped before
               it.
             </li>
           </ul>
