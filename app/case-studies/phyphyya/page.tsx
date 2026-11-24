@@ -7,7 +7,6 @@ import {
 import {
   HAPHY_LIVING_INSTAGRAM_URL,
   HAPHY_LIVING_SHOP_INSTAGRAM_URL,
-  HAPHY_LIVING_SHOP_URL,
 } from "@/app/content/haphy-living";
 import { CS_BODY, CS_H3, CS_SECTION_EYEBROW } from "@/lib/case-study-theme";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
@@ -142,49 +141,31 @@ export default function PhyphyyaCaseStudy() {
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
             Design for the product, not just the screen
           </h2>
-          <ul className={`max-w-3xl space-y-5 ${CS_BODY}`}>
-            <li>
-              <strong className="font-medium text-zinc-100">
-                One mascot, many moods.
-              </strong>{" "}
-              Instead of a single static logo, the mascot carries the brand
-              across seasonal collections (Christmas, autumn, everyday) — the
-              identity stays recognizable while the product line keeps growing.
-            </li>
-            <li>
-              <strong className="font-medium text-zinc-100">
-                Design for the product, not just the screen.
-              </strong>{" "}
-              Every artwork is built print-first: full-bleed compositions, true
-              physical scale in mockups, and color checked against production
-              proofs — because a design that looks good in Figma and bad on a
-              tote isn&apos;t finished.
-            </li>
-            <li>
-              <strong className="font-medium text-zinc-100">
-                The shop is the portfolio.
-              </strong>{" "}
-              Listing photography, SEO titles, and lifestyle mockups are all
-              brand touchpoints. I treat the{" "}
-              <a
-                href={HAPHY_LIVING_SHOP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-medium text-zinc-200 underline decoration-dotted decoration-zinc-600 underline-offset-[3px] transition-colors hover:decoration-zinc-400"
-              >
-                Etsy storefront
-              </a>{" "}
-              as a designed surface, not an afterthought.
-            </li>
-            <li>
-              <strong className="font-medium text-zinc-100">
-                The booth is a brand system, too.
-              </strong>{" "}
-              Seasonal SKUs — knitted pet hats, Haphy-inspired postcards, a
-              Christmas tote — only work if the table, poster, and QR flyer
-              feel like the same world as the Etsy listing.
-            </li>
-          </ul>
+          <div className={`max-w-3xl space-y-5 ${CS_BODY}`}>
+            <p>
+              One mascot, many looks. Haphy wears a different outfit for each
+              season — Christmas, autumn, everyday — so the brand is always
+              easy to recognise, and I can keep adding new products.
+            </p>
+            <p>
+              Every design is made to be printed, not just to look good on a
+              screen. The artwork fills the whole product, the mockups show the
+              real size, and I check the colours against a printed sample. A
+              design that looks good in Figma but bad on a tote bag isn&apos;t
+              done.
+            </p>
+            <p>
+              My Etsy shop is part of the work, not just a place to sell. The
+              photos, the titles, and the lifestyle pictures are all part of
+              the brand, so I design them with the same care.
+            </p>
+            <p>
+              My market booth works the same way. The knitted pet hats, the
+              postcards, and the Christmas tote only work together if the
+              table, the poster, and the QR flyer all feel like the same world
+              as the Etsy shop.
+            </p>
+          </div>
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection
