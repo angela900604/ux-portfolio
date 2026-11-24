@@ -8,15 +8,22 @@ type Props = {
   className?: string;
   /** Delay in seconds (stagger lists). */
   delay?: number;
+  /** Skip the opacity-0 first paint (above-the-fold cards). */
+  eager?: boolean;
 };
 
 /**
  * Scroll-triggered fade + slight rise; respects prefers-reduced-motion.
  */
-export function FadeInSection({ children, className = "", delay = 0 }: Props) {
+export function FadeInSection({
+  children,
+  className = "",
+  delay = 0,
+  eager = false,
+}: Props) {
   const reduceMotion = useReducedMotion();
 
-  if (reduceMotion) {
+  if (reduceMotion || eager) {
     return <div className={className}>{children}</div>;
   }
 

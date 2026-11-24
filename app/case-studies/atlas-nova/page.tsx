@@ -16,9 +16,6 @@ import {
 } from "@/lib/site-shell";
 import { CaseStudyMetaBlock } from "../_components/CaseStudyMetaBlock";
 
-const ATLAS_ACCENT = "#6366F1";
-const ATLAS_ACCENT_BG = "rgba(99, 102, 241, 0.16)";
-
 const UI_FLOW_SRC = `/case-studies/atlas-nova/${encodeURIComponent("UI flow.png")}`;
 const UI_FLOW_W = 20554;
 const UI_FLOW_H = 9924;
@@ -117,10 +114,7 @@ export const metadata = {
 
 function Highlight({ children }: { children: ReactNode }) {
   return (
-    <span
-      className="rounded-md px-1.5 py-0.5 font-semibold"
-      style={{ backgroundColor: ATLAS_ACCENT_BG, color: ATLAS_ACCENT }}
-    >
+    <span className="font-semibold text-zinc-300">
       {children}
     </span>
   );

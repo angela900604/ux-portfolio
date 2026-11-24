@@ -61,35 +61,7 @@
   }
 }
 
-/* Soft fluffy cursor — hide system cursor when SoftCursor client is active */
-html.soft-cursor,
-html.soft-cursor * {
-  cursor: none !important;
-}
-
-/* Preserve resize affordance on drag handles */
-html.soft-cursor .cursor-ew-resize {
-  cursor: ew-resize !important;
-}
-
-html.soft-cursor input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]):not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="image"]):not([type="hidden"]),
-html.soft-cursor textarea,
-html.soft-cursor [contenteditable="true"] {
-  cursor: text !important;
-}
-
-html.soft-cursor [disabled],
-html.soft-cursor :disabled,
-html.soft-cursor .cursor-not-allowed {
-  cursor: not-allowed !important;
-}
-
-html.soft-cursor [disabled]:hover,
-html.soft-cursor :disabled:hover {
-  cursor: not-allowed !important;
-}
-
-/* Narrative uses full main column; 32px to TOC comes from grid gap (see lib/site-shell). */
+/* Narrative uses full main column for media; body copy is capped in ch below. */
 .case-study-prose .max-w-xl,
 .case-study-prose .max-w-2xl,
 .case-study-prose .max-w-3xl,
@@ -145,11 +117,13 @@ html.soft-cursor :disabled:hover {
   color: #fafafa;
 }
 
-.case-study-prose p {
+.case-study-prose p,
+.case-study-prose li {
   font-size: 0.9375rem;
   line-height: 1.65;
   font-weight: 400;
-  color: #a1a1aa;
+  color: #d4d4d8;
+  max-width: 72ch;
 }
 
 .case-study-prose .case-study-section-title + p,
@@ -170,14 +144,16 @@ html.soft-cursor :disabled:hover {
   font-size: 15px;
   line-height: 1.65;
   font-weight: 400;
-  color: #a1a1aa;
+  color: #d4d4d8;
+  max-width: 72ch;
 }
 
 .cs-body-sm {
   font-size: 14px;
   line-height: 1.6;
   font-weight: 400;
-  color: #a1a1aa;
+  color: #d4d4d8;
+  max-width: 72ch;
 }
 
 @keyframes homeBubbleFloat {

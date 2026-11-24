@@ -16,11 +16,11 @@ export const CS_META_LABEL =
 
 /** Body copy — matches homepage selected-work card description */
 export const CS_BODY =
-  "text-[15px] font-normal leading-[1.65] text-zinc-400";
+  "max-w-[72ch] text-[15px] font-normal leading-[1.65] text-zinc-300";
 
 /** Smaller supporting copy — captions, footnotes */
 export const CS_BODY_SM =
-  "text-[14px] font-normal leading-[1.6] text-zinc-400";
+  "max-w-[72ch] text-[14px] font-normal leading-[1.6] text-zinc-300";
 
 /** H3 sub-head within a section (Joseph: 15px / medium) */
 export const CS_H3 =

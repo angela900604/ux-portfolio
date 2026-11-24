@@ -8,7 +8,13 @@ import { HomeProjectCategoryBadge } from "@/app/components/ProjectCardTag";
 import { FadeInSection } from "@/app/components/FadeInSection";
 import type { MarketingWorkItem } from "@/lib/marketing-work";
 
-function CoverMedia({ item }: { item: MarketingWorkItem }) {
+function CoverMedia({
+  item,
+  priority = false,
+}: {
+  item: MarketingWorkItem;
+  priority?: boolean;
+}) {
   const c = item.cover;
   if (c.kind === "e-invoice") return <EInvoiceHomeProjectCover />;
   if (c.kind === "mina") return <MinaHomeProjectCover />;
@@ -17,6 +23,7 @@ function CoverMedia({ item }: { item: MarketingWorkItem }) {
       src={c.src}
       alt=""
       fill
+      priority={priority}
       unoptimized={item.coverUnoptimized === true}
       className="object-cover transition duration-700 ease-out group-hover:scale-[1.03]"
       sizes="(max-width: 639px) 100vw, (max-width: 1480px) 50vw, 720px"
@@ -37,10 +44,14 @@ export function MarketingSelectedWorkGrid({
     <ul className="mt-10 grid grid-cols-1 items-stretch gap-x-8 gap-y-16 font-sans sm:grid-cols-2 sm:gap-y-20">
       {items.map((item, i) => (
         <li key={item.slug} className="min-h-0">
-          <FadeInSection className="h-full" delay={0.05 + i * 0.05}>
+          <FadeInSection
+            className="h-full"
+            delay={0.05 + i * 0.05}
+            eager={i < 2}
+          >
             <Link href={item.href} className="group flex h-full flex-col">
-              <div className="relative aspect-[16/9] overflow-hidden rounded-xl bg-zinc-900/50">
-                <CoverMedia item={item} />
+              <div className="relative aspect-[16/9] overflow-hidden rounded-xl bg-zinc-800">
+                <CoverMedia item={item} priority={i < 2} />
               </div>
 
               <div className="mt-5 flex flex-1 flex-col sm:mt-6">

@@ -154,7 +154,7 @@ export default function GovernmentBackendCaseStudy() {
           <div className="overflow-hidden">
             <div className="relative w-full aspect-video">
               <video
-                className="absolute inset-0 h-full w-full bg-black object-contain"
+                className="absolute inset-0 h-full w-full bg-zinc-800 object-contain"
                 autoPlay
                 muted
                 loop

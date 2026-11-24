@@ -106,7 +106,7 @@ export function LoginBeforeAfterSlider() {
           }}
         />
         <div
-          className="pointer-events-none absolute top-1/2 z-[3] flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-zinc-900/40/90 text-zinc-100 shadow-lg ring-2 ring-zinc-400/50"
+          className="pointer-events-none absolute top-1/2 z-[3] flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-zinc-800 text-zinc-100 opacity-100 shadow-lg ring-2 ring-white"
           style={{ left: `${pos * 100}%` }}
           aria-hidden
         >

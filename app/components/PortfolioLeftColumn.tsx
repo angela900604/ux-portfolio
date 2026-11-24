@@ -45,7 +45,7 @@ export function PortfolioLeftColumn() {
           {isAbout ? "About me" : "Hi, I'm Angela."}
         </h1>
 
-        <div className="mt-5 w-full max-w-[280px] shrink-0 overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/30 sm:mt-6 sm:max-w-[min(100%,20rem)]">
+        <div className="mt-5 w-full max-w-[280px] shrink-0 overflow-hidden rounded-xl border border-zinc-800 bg-zinc-800 sm:mt-6 sm:max-w-[min(100%,20rem)]">
           <ImageLightbox
             src={PROFILE_SRC}
             alt="Angela Yang — profile photo"

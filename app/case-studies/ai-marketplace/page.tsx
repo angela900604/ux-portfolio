@@ -134,7 +134,7 @@ export default function AiMarketplaceCaseStudy() {
             </div>
 
             <div className="flex w-full min-w-0 flex-col gap-3">
-              <figure className="w-full min-w-0 overflow-hidden bg-black">
+              <figure className="w-full min-w-0 overflow-hidden bg-zinc-800">
                 <div
                   className="relative w-full min-h-0"
                   style={{ aspectRatio: `${MINA_HERO_VID_W} / ${MINA_HERO_VID_H}` }}
@@ -227,7 +227,7 @@ export default function AiMarketplaceCaseStudy() {
           <div className="max-w-3xl space-y-8">
             <div className="space-y-3">
               <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
-                No moms wants to list 47 baby items one by one.
+                No moms want to list 47 baby items one by one.
               </h2>
               <p className="text-zinc-400 leading-relaxed">
                 SF moms in tight spaces cycle through baby gear every few months.

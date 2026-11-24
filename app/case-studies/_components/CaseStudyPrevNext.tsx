@@ -57,12 +57,7 @@ export function CaseStudyPrevNext({
             <span className={muted}>Previous</span>
             <span className="ml-2 font-medium">{prev.label}</span>
           </Link>
-        ) : (
-          <span className={`inline-flex ${base} cursor-not-allowed opacity-50`}>
-            <span className={muted}>Previous</span>
-            <span className="ml-2">—</span>
-          </span>
-        )}
+        ) : null}
       </div>
       <div className="min-w-0 flex-1 sm:text-right">
         {next ? (
@@ -70,12 +65,7 @@ export function CaseStudyPrevNext({
             <span className={muted}>Next</span>
             <span className="ml-2 font-medium">{next.label}</span>
           </Link>
-        ) : (
-          <span className={`inline-flex ${base} cursor-not-allowed opacity-50`}>
-            <span className={muted}>Next</span>
-            <span className="ml-2">—</span>
-          </span>
-        )}
+        ) : null}
       </div>
     </nav>
   );

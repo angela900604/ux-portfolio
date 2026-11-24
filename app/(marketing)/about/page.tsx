@@ -20,7 +20,7 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <div className="pb-20 font-sans">
-      <div className="max-w-4xl space-y-4 text-[17px] font-normal leading-[1.7] text-zinc-400 text-pretty xl:max-w-5xl">
+      <div className="max-w-[72ch] space-y-4 text-[17px] font-normal leading-[1.7] text-zinc-300 text-pretty">
         <p>
           I&apos;m a{" "}
           <span className={ABOUT_EMPHASIS_CLASS}>product and brand designer</span>
@@ -38,7 +38,7 @@ export default function AboutPage() {
 
       <section className="mt-14 border-t border-zinc-800 pt-12">
         <h2 className={MARKETING_SECTION_TITLE_CLASS}>Experience</h2>
-        <ul className="mt-6 max-w-3xl space-y-2 text-sm font-normal leading-relaxed text-zinc-400 sm:text-[0.9375rem]">
+        <ul className="mt-6 max-w-[72ch] space-y-2 text-sm font-normal leading-relaxed text-zinc-300 sm:text-[0.9375rem]">
           <li>
             Graphic Design &amp; Operations Coordinator, Precise Pipe Inc.,
             2026–Present
@@ -51,7 +51,7 @@ export default function AboutPage() {
         <div className="grid items-start gap-8 lg:grid-cols-12 lg:gap-10">
           <div className="min-w-0 lg:col-span-5">
             <h2 className={MARKETING_SECTION_TITLE_CLASS}>How I work</h2>
-            <p className="mt-6 text-sm leading-relaxed text-zinc-400 sm:text-base">
+            <p className="mt-6 max-w-[72ch] text-sm leading-relaxed text-zinc-300 sm:text-base">
               I like talking to users — focus groups, 1:1s, usability tests —
               then turning that into something the team can ship. I work close
               to engineers and PMs from the start, and I use AI in the
@@ -94,7 +94,7 @@ export default function AboutPage() {
 
       <section className="mt-14 border-t border-zinc-800 pt-12">
         <h2 className={MARKETING_SECTION_TITLE_CLASS}>Tools &amp; skills</h2>
-        <p className="mt-6 max-w-3xl text-sm font-normal leading-relaxed text-zinc-400 sm:text-[0.9375rem]">
+        <p className="mt-6 max-w-[72ch] text-sm font-normal leading-relaxed text-zinc-300 sm:text-[0.9375rem]">
           Figma, Framer, Adobe Creative Suite (Photoshop, Illustrator,
           Premiere), WordPress, Canva, Mailchimp, Google Analytics, PostHog,
           Excel, Airtable, Slack.

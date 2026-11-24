@@ -13,7 +13,7 @@ import { caseStudySidebarLinkClass } from "@/lib/case-study-sidebar-accent";
 function sentenceCaseSegment(segment: string): string {
   const trimmed = segment.trim();
   if (!trimmed) return trimmed;
-  return trimmed.charAt(0).toUpperCase() + trimmed.slice(1).toLowerCase();
+  return trimmed;
 }
 
 function projectTypeTags(meta: CaseStudyAsideMeta): string[] {
@@ -102,10 +102,8 @@ export function CaseStudyLeftAside() {
         ) : null}
       </div>
 
-      <div className="hidden min-h-0 shrink lg:block lg:flex-1" aria-hidden />
-
       {meta.items.length > 0 ? (
-        <dl className="min-w-0 shrink-0 space-y-3 pt-6 sm:space-y-4 sm:pt-8 lg:pt-12">
+        <dl className="mt-8 min-w-0 shrink-0 space-y-3 sm:mt-10 sm:space-y-4">
           {meta.items.map((row) => {
             const isProjectType = row.label === "Project type";
             return (

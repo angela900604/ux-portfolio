@@ -10,6 +10,21 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <div className="pb-12 font-sans">
+      <link
+        rel="preload"
+        as="image"
+        href="/about/profile-v2.png"
+      />
+      <link
+        rel="preload"
+        as="image"
+        href="/home/e-invoice-flagship-cover.png"
+      />
+      <link
+        rel="preload"
+        as="image"
+        href="/case-studies/mina/mina-ai-hero.png"
+      />
       <HomeSelectedWorkSection />
     </div>
   );

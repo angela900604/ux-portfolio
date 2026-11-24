@@ -44,7 +44,7 @@ export const CASE_STUDY_SECTION_TITLE_CLASS =
 
 /** Supporting line directly under a section headline. */
 export const CASE_STUDY_SECTION_SUBTITLE_CLASS =
-  "mt-2 block max-w-3xl text-[15px] font-normal leading-[1.65] text-zinc-400 sm:mt-3";
+  "mt-2 block max-w-[72ch] text-[15px] font-normal leading-[1.65] text-zinc-300 sm:mt-3";
 
 /**
  * Counteract {@link SITE_GUTTER_CLASS} so a band (e.g. marquee) spans the full padded

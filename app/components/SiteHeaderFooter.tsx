@@ -1,4 +1,5 @@
 import { SiteTopNav } from "@/app/components/SiteTopNav";
+import { SiteSimpleFooter } from "@/app/components/SiteSimpleFooter";
 
 export function SiteHeaderFooter({
   children,
@@ -10,6 +11,7 @@ export function SiteHeaderFooter({
       <SiteTopNav />
 
       <main className="flex-1 pt-14">{children}</main>
+      <SiteSimpleFooter />
     </div>
   );
 }

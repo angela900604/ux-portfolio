@@ -41,7 +41,7 @@ export function EInvoiceHomeProjectCover() {
   return (
     <div
       ref={containerRef}
-      className="pointer-events-none absolute inset-0 overflow-hidden rounded-xl"
+      className="pointer-events-none absolute inset-0 overflow-hidden rounded-xl bg-zinc-800"
     >
       <video
         ref={videoRef}
@@ -50,7 +50,7 @@ export function EInvoiceHomeProjectCover() {
         muted
         loop
         playsInline
-        preload="metadata"
+        preload="auto"
         aria-label="Preview: Taiwan e-invoice app redesign"
       >
         <source src={WEBM} type="video/webm" />

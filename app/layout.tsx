@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
-import { SoftCursor } from "./components/SoftCursor";
 import "./globals.css";
 
 const sans = Inter({
@@ -47,7 +46,6 @@ export default function RootLayout({
       className={`${sans.variable} ${serifDisplay.variable} scroll-smooth`}
     >
       <body className="min-h-screen overflow-x-hidden">
-        <SoftCursor />
         {children}
       </body>
     </html>

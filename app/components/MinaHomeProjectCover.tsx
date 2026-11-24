@@ -41,7 +41,7 @@ export function MinaHomeProjectCover() {
   return (
     <div
       ref={containerRef}
-      className="pointer-events-none absolute inset-0 overflow-hidden rounded-xl"
+      className="pointer-events-none absolute inset-0 overflow-hidden rounded-xl bg-zinc-800"
     >
       <video
         ref={videoRef}
@@ -50,7 +50,7 @@ export function MinaHomeProjectCover() {
         muted
         loop
         playsInline
-        preload="metadata"
+        preload="auto"
         aria-label="Preview: MINA community-first marketplace for parents"
       >
         <source src={WEBM} type="video/webm" />

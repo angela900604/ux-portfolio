@@ -1,5 +1,6 @@
 import { SiteTopNav } from "@/app/components/SiteTopNav";
 import { PortfolioLeftColumn } from "@/app/components/PortfolioLeftColumn";
+import { SiteSimpleFooter } from "@/app/components/SiteSimpleFooter";
 import { SITE_GUTTER_CLASS, SITE_SHELL_CONTAINER } from "@/lib/site-shell";
 
 type MainWidth = "editorial" | "full";
@@ -42,6 +43,7 @@ export function PortfolioTwoColumnShell({
 
         <main className="order-2 min-w-0 w-full flex-1 overflow-x-hidden font-sans lg:order-none lg:min-h-0 lg:overflow-y-auto">
           <div className={MAIN_INNER[mainWidth]}>{children}</div>
+          <SiteSimpleFooter />
         </main>
       </div>
     </div>
