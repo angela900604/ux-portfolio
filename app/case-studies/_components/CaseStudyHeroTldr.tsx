@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { CS_BODY, CS_META_LABEL, CS_SECTION_EYEBROW } from "@/lib/case-study-theme";
+import { MARKETING_SECTION_TITLE_CLASS } from "@/lib/marketing-section-title";
 
 export type CaseStudyHeroTldrMetric = {
   kicker: string;
@@ -36,7 +37,9 @@ export function CaseStudyHeroTldr({
   return (
     <div className="min-w-0">
       <span className={CS_SECTION_EYEBROW}>{sectionLabel}</span>
-      <h2 className="mt-3 max-w-4xl text-pretty text-xl font-medium leading-[1.3] tracking-[-0.02em] text-zinc-100 sm:mt-4 sm:text-[22px]">
+      <h2
+        className={`mt-3 max-w-4xl text-pretty sm:mt-4 ${MARKETING_SECTION_TITLE_CLASS}`}
+      >
         {headline}
       </h2>
 

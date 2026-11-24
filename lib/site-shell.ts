@@ -28,9 +28,9 @@ export const SITE_SHELL_INNER = `mx-auto w-full min-w-0 ${SITE_MAX_WIDTH_CLASS}`
 /** Centered shell: max width + symmetric horizontal padding. */
 export const SITE_SHELL_CONTAINER = `${SITE_SHELL_INNER} ${SITE_GUTTER_CLASS}`;
 
-/** Primary project title scale (case study left rail). */
+/** Primary project title — same as Home case-study card titles. */
 export const CASE_STUDY_SIDEBAR_TITLE_CLASS =
-  "text-[1.375rem] font-medium leading-[1.25] tracking-[-0.02em] sm:text-[1.5rem]";
+  "text-lg font-normal tracking-tight text-zinc-200 sm:text-xl";
 
 /** Primary project title scale (in-page heroes). */
 export const CASE_STUDY_PRIMARY_TITLE_CLASS =
