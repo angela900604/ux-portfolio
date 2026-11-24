@@ -7,6 +7,7 @@ import { MinaHomeProjectCover } from "@/app/components/MinaHomeProjectCover";
 import { HomeProjectCategoryBadge } from "@/app/components/ProjectCardTag";
 import { FadeInSection } from "@/app/components/FadeInSection";
 import type { MarketingWorkItem } from "@/lib/marketing-work";
+import { MARKETING_SECTION_TITLE_CLASS } from "@/lib/marketing-section-title";
 
 function CoverMedia({
   item,
@@ -61,7 +62,9 @@ export function MarketingSelectedWorkGrid({
                   </HomeProjectCategoryBadge>
                 </div>
 
-                <h3 className="font-sans text-[20px] font-medium leading-[1.3] tracking-tight text-zinc-100 transition-colors group-hover:text-zinc-400 sm:text-[22px]">
+                <h3
+                  className={`${MARKETING_SECTION_TITLE_CLASS} transition-colors group-hover:text-zinc-400`}
+                >
                   {item.title}
                 </h3>
               </div>
