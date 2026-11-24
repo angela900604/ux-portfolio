@@ -40,7 +40,7 @@ export default function AboutPage() {
         <h2 className={MARKETING_SECTION_TITLE_CLASS}>Experience</h2>
         <ul className="mt-6 max-w-[72ch] space-y-2 text-sm font-normal leading-relaxed text-zinc-300 sm:text-[0.9375rem]">
           <li>
-            Graphic Design &amp; Operations Coordinator, Precise Pipe Inc.,
+            Marketing Design &amp; Operation, Precise Pipe Inc.,
             2026–Present
           </li>
           <li>Product Designer, MINA AI, 2025–2026</li>
