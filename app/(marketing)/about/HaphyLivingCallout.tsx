@@ -15,8 +15,8 @@ const BEYOND_GALLERY_RADIUS_CLASS = "rounded-lg";
 export function HaphyLivingCallout() {
   return (
     <figure className="mt-6 min-w-0">
-      <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-3">
-        {HAPHY_LIVING_PRODUCT_IMAGES.slice(0, 2).map((item) => (
+      <div className="grid grid-cols-4 gap-2 sm:gap-3">
+        {HAPHY_LIVING_PRODUCT_IMAGES.map((item) => (
           <ImageLightbox
             key={item.src}
             src={item.src}
@@ -24,15 +24,14 @@ export function HaphyLivingCallout() {
             className="block w-full min-w-0"
           >
             <div
-              className={`relative w-full overflow-hidden border border-zinc-800 bg-zinc-900/40 ${BEYOND_GALLERY_RADIUS_CLASS}`}
+              className={`relative aspect-square w-full overflow-hidden border border-zinc-800 bg-zinc-900/40 ${BEYOND_GALLERY_RADIUS_CLASS}`}
             >
               <Image
                 src={item.src}
                 alt={item.alt}
-                width={item.width}
-                height={item.height}
-                className="h-auto w-full object-contain object-center"
-                sizes="(max-width: 1024px) 100vw, 400px"
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 1024px) 25vw, 280px"
               />
             </div>
           </ImageLightbox>

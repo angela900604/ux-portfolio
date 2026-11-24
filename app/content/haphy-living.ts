@@ -17,39 +17,27 @@ export type HaphyProductImage = {
 /** Product shots for the About → Beyond design callout. */
 export const HAPHY_LIVING_PRODUCT_IMAGES: HaphyProductImage[] = [
   {
-    src: "/about/haphy-living/product-1.webp",
-    alt: "Haphy Living illustrated product on a warm lifestyle backdrop",
+    src: "/about/haphy-living/beyond-pins.jpg",
+    alt: "Haphy Living enamel pin set — four sleeping and sitting bunny illustrations on a wooden table",
     width: 1024,
     height: 1024,
   },
   {
-    src: "/about/haphy-living/product-2.avif",
-    alt: "Haphy Living bunny-themed illustrated goods",
-    width: 1024,
-    height: 1024,
-  },
-  {
-    src: "/about/haphy-living/product-3.png",
+    src: "/about/haphy-living/beyond-tote-cafe.jpg",
     alt: "Haphy Living canvas tote with a grid of bunny illustrations, styled at a café table",
     width: 1024,
     height: 1024,
   },
   {
-    src: "/about/haphy-living/product-4.avif",
-    alt: "Haphy Living product photography—illustrated bunny merchandise",
-    width: 1024,
+    src: "/about/haphy-living/beyond-postcards.jpg",
+    alt: "Haphy Living seasonal bunny postcards spread on a wooden table",
+    width: 824,
     height: 1024,
   },
   {
-    src: "/about/haphy-living/product-5.webp",
-    alt: "Haphy Living illustrated bunny product on a cozy desk setup",
-    width: 1024,
-    height: 1024,
-  },
-  {
-    src: "/about/haphy-living/product-6.jpg",
-    alt: "Haphy Living enamel pins with sleeping bunny illustrations on a wooden table",
-    width: 1024,
+    src: "/about/haphy-living/beyond-tote-christmas.jpg",
+    alt: "Haphy Living Christmas tote with a fireplace illustration, by a window overlooking a holiday market",
+    width: 824,
     height: 1024,
   },
 ];
