@@ -40,10 +40,17 @@ export default function AboutPage() {
         <h2 className={MARKETING_SECTION_TITLE_CLASS}>Experience</h2>
         <ul className="mt-6 max-w-[72ch] space-y-2 text-sm font-normal leading-relaxed text-zinc-300 sm:text-[0.9375rem]">
           <li>
-            Marketing Design &amp; Operation, Precise Pipe Inc.,
-            2026–Present
+            Marketing Design &amp; Operation, Precise Pipe Inc., 2026–Present
           </li>
-          <li>Product Designer, MINA AI, 2025–2026</li>
+          <li>Marketing &amp; Product Designer, MINA AI, 2025–2026</li>
+          <li>UX Designer, TurnCloud Technology Service, 2024–2025</li>
+          <li>UX Designer, YK Labs, 2024</li>
+          <li>
+            Marketing &amp; Operations Specialist, T-Drum Enterprise Co. Ltd,
+            2024
+          </li>
+          <li>Digital Marketing, Admission Hub, 2022</li>
+          <li>Social Media Coordinator, MOMI Animal Health, 2021</li>
         </ul>
       </section>
 
