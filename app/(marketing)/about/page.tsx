@@ -11,6 +11,9 @@ const INTERVIEW_PHOTO_SRC = "/about/user-interviews-collage.png";
 const ABOUT_EMPHASIS_CLASS =
   "font-medium underline decoration-dotted underline-offset-[3px] text-zinc-200 decoration-zinc-600 transition-colors hover:decoration-zinc-400";
 
+const ABOUT_SUBHEADING_CLASS =
+  "text-sm font-normal tracking-tight text-zinc-400";
+
 export const metadata = {
   title: "About | Angela Yang",
   description:
@@ -35,24 +38,6 @@ export default function AboutPage() {
           shop, and customer care.
         </p>
       </div>
-
-      <section className="mt-14 border-t border-zinc-800 pt-12">
-        <h2 className={MARKETING_SECTION_TITLE_CLASS}>Experience</h2>
-        <ul className="mt-6 max-w-[72ch] space-y-2 text-sm font-normal leading-relaxed text-zinc-300 sm:text-[0.9375rem]">
-          <li>
-            Marketing Design &amp; Operation, Precise Pipe Inc., 2026–Present
-          </li>
-          <li>Marketing &amp; Product Designer, MINA AI, 2025–2026</li>
-          <li>UX Designer, TurnCloud Technology Service, 2024–2025</li>
-          <li>UX Designer, YK Labs, 2024</li>
-          <li>
-            Marketing &amp; Operations Specialist, T-Drum Enterprise Co. Ltd,
-            2024
-          </li>
-          <li>Digital Marketing, Admission Hub, 2022</li>
-          <li>Social Media Coordinator, MOMI Animal Health, 2021</li>
-        </ul>
-      </section>
 
       <section className="mt-14 border-t border-zinc-800 pt-12">
         <div className="grid items-start gap-8 lg:grid-cols-12 lg:gap-10">
@@ -90,13 +75,33 @@ export default function AboutPage() {
 
       <section className="mt-14 border-t border-zinc-800 pt-12">
         <h2 className={MARKETING_SECTION_TITLE_CLASS}>Beyond design</h2>
+        <h3 className={`mt-6 ${ABOUT_SUBHEADING_CLASS}`}>Etsy Shop</h3>
         <HaphyLivingCallout />
-        <div className="mt-12 border-t border-zinc-800/90 pt-10">
+        <h3 className={`mt-12 ${ABOUT_SUBHEADING_CLASS}`}>Travel</h3>
+        <div className="mt-4">
           <BeyondDesignGallery
             photography={BEYOND_PHOTOGRAPHY_GALLERY}
             graphic={[]}
           />
         </div>
+      </section>
+
+      <section className="mt-14 border-t border-zinc-800 pt-12">
+        <h2 className={MARKETING_SECTION_TITLE_CLASS}>Experience</h2>
+        <ul className="mt-6 max-w-[72ch] space-y-2 text-sm font-normal leading-relaxed text-zinc-300 sm:text-[0.9375rem]">
+          <li>
+            Marketing Design &amp; Operation, Precise Pipe Inc., 2026–Present
+          </li>
+          <li>Marketing &amp; Product Designer, MINA AI, 2025–2026</li>
+          <li>UX Designer, TurnCloud Technology Service, 2024–2025</li>
+          <li>UX Designer, YK Labs, 2024</li>
+          <li>
+            Marketing &amp; Operations Specialist, T-Drum Enterprise Co. Ltd,
+            2024
+          </li>
+          <li>Digital Marketing, Admission Hub, 2022</li>
+          <li>Social Media Coordinator, MOMI Animal Health, 2021</li>
+        </ul>
       </section>
 
       <section className="mt-14 border-t border-zinc-800 pt-12">

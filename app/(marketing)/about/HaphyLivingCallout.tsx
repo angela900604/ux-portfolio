@@ -14,7 +14,7 @@ const BEYOND_GALLERY_RADIUS_CLASS = "rounded-lg";
 
 export function HaphyLivingCallout() {
   return (
-    <figure className="mt-6 min-w-0">
+    <figure className="mt-4 min-w-0">
       <div className="grid grid-cols-4 gap-2 sm:gap-3">
         {HAPHY_LIVING_PRODUCT_IMAGES.map((item) => (
           <ImageLightbox
