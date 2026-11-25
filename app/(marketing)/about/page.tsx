@@ -93,7 +93,7 @@ export default function AboutPage() {
             Marketing Design &amp; Operation, Precise Pipe Inc., 2026–Present
           </li>
           <li>Marketing &amp; Product Designer, MINA AI, 2025–2026</li>
-          <li>UX Designer, TurnCloud Technology Service, 2024–2025</li>
+          <li>UI/UX Designer, TurnCloud Technology Service, 2024–2025</li>
           <li>UX Designer, YK Labs, 2024</li>
           <li>
             Marketing &amp; Operations Specialist, T-Drum Enterprise Co. Ltd,
