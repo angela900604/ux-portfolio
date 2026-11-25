@@ -17,9 +17,9 @@ export function MarketSizingCharts() {
     <figure className="cs-data-viz space-y-8">
       <div className="grid gap-8 lg:grid-cols-2 lg:gap-10">
         <div className="overflow-hidden p-5 sm:p-6">
-          <h5 className="text-zinc-100">
+          <p className="text-[15px] font-medium leading-[1.35] text-zinc-100">
             Growth indicators
-          </h5>
+          </p>
           <p className="mt-1 text-xs text-zinc-500">
             Taiwan loyalty market — annual growth references
           </p>
@@ -65,13 +65,13 @@ export function MarketSizingCharts() {
         </div>
 
         <div className="overflow-hidden p-5 sm:p-6">
-          <h5 className="text-zinc-100">
+          <p className="text-[15px] font-medium leading-[1.35] text-zinc-100">
             Projected market size
-          </h5>
+          </p>
           <p className="mt-1 text-xs text-zinc-500">
             Taiwan loyalty market (2024 projection)
           </p>
-          <p className="mt-6 text-3xl font-semibold tracking-tight text-zinc-100 sm:text-4xl">
+          <p className="mt-6 text-xl font-medium tabular-nums tracking-tight text-zinc-100">
             US${MARKET_B}B
           </p>
           <p className="mt-1 text-sm text-zinc-400">approx. total market value</p>

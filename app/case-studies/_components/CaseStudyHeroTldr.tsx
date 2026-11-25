@@ -1,6 +1,11 @@
 import type { ReactNode } from "react";
-import { CS_BODY, CS_META_LABEL, CS_SECTION_EYEBROW } from "@/lib/case-study-theme";
-import { MARKETING_SECTION_TITLE_CLASS } from "@/lib/marketing-section-title";
+import {
+  CS_BODY,
+  CS_LEAD,
+  CS_META_LABEL,
+  CS_SECTION_EYEBROW,
+  CS_STAT,
+} from "@/lib/case-study-theme";
 
 export type CaseStudyHeroTldrMetric = {
   kicker: string;
@@ -37,12 +42,9 @@ export function CaseStudyHeroTldr({
   return (
     <div className="min-w-0">
       <span className={CS_SECTION_EYEBROW}>{sectionLabel}</span>
-      <h2
-        className={`mt-3 max-w-4xl text-pretty sm:mt-4 ${MARKETING_SECTION_TITLE_CLASS}`}
-      >
-        {headline}
-      </h2>
+      <p className={`mt-3 sm:mt-4 ${CS_LEAD}`}>{headline}</p>
 
+      {metrics.length > 0 ? (
       <dl
         className={`mt-8 grid ${gridClass} gap-x-6 gap-y-6 border-t border-zinc-800 pt-6`}
       >
@@ -50,7 +52,7 @@ export function CaseStudyHeroTldr({
           <div key={m.kicker + m.title} className="min-w-0">
             <dt className={CS_META_LABEL}>{m.kicker}</dt>
             <dd
-              className={`text-2xl font-medium tabular-nums tracking-tight sm:text-[1.75rem] ${metricValueClassName}`.trim()}
+              className={`${CS_STAT} ${metricValueClassName}`.trim()}
             >
               {m.value}
             </dd>
@@ -65,6 +67,7 @@ export function CaseStudyHeroTldr({
           </div>
         ))}
       </dl>
+      ) : null}
     </div>
   );
 }

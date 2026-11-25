@@ -20,6 +20,7 @@ import {
   ResearchStatsGrid,
   TaskFlowSteps,
 } from "./EaCommunitySections";
+import { CS_H3 } from "@/lib/case-study-theme";
 
 const EA_ACCENT = "#F97316";
 const EA_ACCENT_BG = "rgba(249, 115, 22, 0.16)";
@@ -74,13 +75,6 @@ const EA_TLDR_METRICS: CaseStudyHeroTldrMetric[] = [
     title: "Sole UX on a 4-person team",
     detail:
       "Secondary research synthesis, persona definition, and task-flow architecture for two frontend engineers and one data scientist.",
-  },
-  {
-    kicker: "Constraint",
-    value: "24 hours",
-    title: "Concept sprint, not shipped",
-    detail:
-      "Honest scope: flows and wireframes for a hackathon prototype—no hi-fi polish or live feature.",
   },
 ];
 
@@ -231,40 +225,32 @@ export default function EaCommunityConceptCaseStudy() {
           </p>
           <ul className="max-w-3xl space-y-5 text-zinc-400 leading-relaxed">
             <li>
-              <p>
-                <span className="font-semibold text-zinc-100">
-                  Search before browse
-                </span>{" "}
-                — Keyword search surfaces relevant communities immediately
+              <h3 className={CS_H3}>Search before browse</h3>
+              <p className="mt-2">
+                Keyword search surfaces relevant communities immediately
                 rather than forcing users through a directory. The wireframe uses
                 &ldquo;What are you interested in?&rdquo; as the entry point.
               </p>
             </li>
             <li>
-              <p>
-                <span className="font-semibold text-zinc-100">
-                  Interest over title
-                </span>{" "}
-                — Search results group communities, events, and people around a
+              <h3 className={CS_H3}>Interest over title</h3>
+              <p className="mt-2">
+                Search results group communities, events, and people around a
                 shared keyword (e.g. Art Gallery)—not just which franchise you
                 play.
               </p>
             </li>
             <li>
-              <p>
-                <span className="font-semibold text-zinc-100">
-                  Join with context
-                </span>{" "}
-                — Community profiles preview bio, member count, and upcoming
+              <h3 className={CS_H3}>Join with context</h3>
+              <p className="mt-2">
+                Community profiles preview bio, member count, and upcoming
                 events before commitment.
               </p>
             </li>
             <li>
-              <p>
-                <span className="font-semibold text-zinc-100">
-                  Events as on-ramps
-                </span>{" "}
-                — Event cards with host, schedule, and a Details CTA give a
+              <h3 className={CS_H3}>Events as on-ramps</h3>
+              <p className="mt-2">
+                Event cards with host, schedule, and a Details CTA give a
                 low-stakes path to participate before joining a community
                 full-time.
               </p>

@@ -52,9 +52,9 @@ export function CaseStudyLeftAside() {
             {meta.eyebrow}
           </p>
         ) : null}
-        <p className={CASE_STUDY_SIDEBAR_TITLE_CLASS}>
+        <h1 className={CASE_STUDY_SIDEBAR_TITLE_CLASS}>
           {meta.title}
-        </p>
+        </h1>
         {meta.subtitle ? (
           <p className="text-[15px] leading-[1.65] text-zinc-400">
             {meta.subtitle}

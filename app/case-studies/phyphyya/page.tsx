@@ -169,12 +169,20 @@ export default function PhyphyyaCaseStudy() {
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection
+          id="how-the-brand-runs"
+          className="scroll-mt-28 space-y-16 sm:scroll-mt-32"
+        >
+          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
+            How the brand runs
+          </h2>
+
+        <div
           id="etsy-pod"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
-          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
+          <h3 className={CS_H3}>
             Etsy, run like a product
-          </h2>
+          </h3>
           <p className={`max-w-3xl ${CS_BODY}`}>
             The shop isn&apos;t a gallery — it&apos;s a product I iterate on
             with live data.
@@ -205,15 +213,15 @@ export default function PhyphyyaCaseStudy() {
               loading="lazy"
             />
           </div>
-        </CaseStudyInViewSection>
+        </div>
 
-        <CaseStudyInViewSection
+        <div
           id="instagram"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
-          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
+          <h3 className={CS_H3}>
             Instagram is the top of the funnel
-          </h2>
+          </h3>
           <p className={`max-w-3xl ${CS_BODY}`}>
             <a
               href={HAPHY_LIVING_INSTAGRAM_URL}
@@ -276,9 +284,9 @@ export default function PhyphyyaCaseStudy() {
               />
             </div>
           </div>
-        </CaseStudyInViewSection>
+        </div>
 
-        <CaseStudyInViewSection
+        <div
           id="popup"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
@@ -286,7 +294,7 @@ export default function PhyphyyaCaseStudy() {
           {/* TODO Angela: Lonsdale Quay wording — only after acceptance; do not publish while pending */}
           {/* TODO Angela: confirm whether to name Printify / Duplium as suppliers */}
           {/* TODO Angela: confirm whether "12 sales, 5.0 rating" on the Etsy screenshot alt is still current */}
-          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>In person: the booth</h2>
+          <h3 className={CS_H3}>In person: the booth</h3>
           <p className={`max-w-3xl ${CS_BODY}`}>
             First in-person test: a festival booth, Nov 7–8. Postcard sets, pet
             Christmas hats, and a QR code back to the shop — plus Tap to Pay
@@ -326,15 +334,15 @@ export default function PhyphyyaCaseStudy() {
               loading="lazy"
             />
           </div>
-        </CaseStudyInViewSection>
+        </div>
 
-        <CaseStudyInViewSection
+        <div
           id="sourcing"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
-          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
+          <h3 className={CS_H3}>
             Sourcing: print-on-demand first
-          </h2>
+          </h3>
           <p className={`max-w-3xl ${CS_BODY}`}>
             Print-on-demand carries the line — artwork in, mockup out, no
             inventory held — so I can test a design with real orders before
@@ -349,6 +357,7 @@ export default function PhyphyyaCaseStudy() {
             className="block h-auto w-full max-w-3xl"
             loading="lazy"
           />
+        </div>
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection
@@ -389,7 +398,7 @@ export default function PhyphyyaCaseStudy() {
             </div>
             <div className="min-w-0 space-y-8">
               <div>
-                <h3 className={`${CS_H3} mb-3`}>Color palette + type</h3>
+                <p className={`${CS_H3} mb-3`}>Color palette + type</p>
                 <p className={CS_BODY}>
                   Soft blue-gray primary, paired with warm gray and beige —
                   freshness with a vintage hold. Rounded letterforms and
@@ -426,9 +435,9 @@ export default function PhyphyyaCaseStudy() {
           id="outcome"
           className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
         >
-          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
+          <p className={`max-w-3xl ${CS_BODY}`}>
             A complete, self-sustaining brand IP
-          </h2>
+          </p>
           <p className={`max-w-3xl ${CS_BODY}`}>
             One brand, three channels: a live Etsy shop, two Instagram accounts
             (shop and daily life), and a booth table — built solo from zero,

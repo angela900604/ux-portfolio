@@ -1,3 +1,6 @@
+import { CASE_STUDY_SECTION_TITLE_CLASS } from "@/lib/site-shell";
+import { CS_H3 } from "@/lib/case-study-theme";
+
 type AppStoreReview = {
   title?: string;
   /** Optional leading emoji (e.g. 👍) shown above the star row */
@@ -96,10 +99,10 @@ export function AppStoreReviewsSection({ appStoreHref }: { appStoreHref: string 
     <div className="mt-12 space-y-6">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <p className="cs-section-eyebrow">
-            App Store
-          </p>
-          <h3 className="mt-1 text-zinc-100">
+          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
+            App Store feedback
+          </h2>
+          <h3 className={`mt-3 ${CS_H3}`}>
             User feedback
           </h3>
           <p className="mt-1 max-w-xl text-sm text-zinc-500">

@@ -19,8 +19,6 @@ import {
   CASE_STUDY_SECTION_TITLE_CLASS,
   SITE_SHELL_INNER,
 } from "@/lib/site-shell";
-import { CaseStudyMetaBlock } from "../_components/CaseStudyMetaBlock";
-
 const BR_TLDR_METRICS: CaseStudyHeroTldrMetric[] = [
   {
     kicker: "Timeline",
@@ -35,20 +33,6 @@ const BR_TLDR_METRICS: CaseStudyHeroTldrMetric[] = [
     title: "Japan 31Club members",
     detail:
       "Japan's 31Club launched in 2014; member purchases account for 40%+ of total sales — the loyalty loop this app needed to replicate for Taiwan.",
-  },
-  {
-    kicker: "Cross-market",
-    value: "JP × TW",
-    title: "Japan HQ alignment",
-    detail:
-      "Interpreter-supported design reviews with documented divergence rationale — HQ sign-off secured before engineering started.",
-  },
-  {
-    kicker: "Shipped",
-    value: "Sept 2025",
-    title: "Taiwan App Store launch",
-    detail:
-      "Taiwan's first BR31 membership app, live on the App Store with POS barcode integration validated through pre-launch UAT.",
   },
 ];
 
@@ -133,34 +117,9 @@ export default function BaskinRobbinsCaseStudy() {
                 }
                 metrics={BR_TLDR_METRICS}
               />
-              <div className="mt-10">
-                <CaseStudyMetaBlock
-                  items={[
-                    {
-                      label: "Role",
-                      value:
-                        "Product / UX Designer, TurnCloud (client: Baskin-Robbins Taiwan, with Japan HQ)",
-                    },
-                    {
-                      label: "Team",
-                      value:
-                        "Japan HQ design and product teams, Taiwan engineering",
-                    },
-                    {
-                      label: "Timeline",
-                      value: "Jul 2024 – Nov 2025",
-                    },
-                    {
-                      label: "Outcome",
-                      value:
-                        "Taiwan MVP reframed around spend-based tiers and shipped for launch",
-                    },
-                  ]}
-                />
-              </div>
             </div>
 
-            <div className="overflow-hidden">
+            <div className="overflow-hidden bg-zinc-800">
               <ImageLightbox
                 src={HERO_MEMBERSHIP.src}
                 alt={HERO_MEMBERSHIP.alt}
@@ -181,7 +140,7 @@ export default function BaskinRobbinsCaseStudy() {
             </div>
 
             <div className="space-y-6 sm:space-y-8">
-              <div className="min-w-0 w-full">
+              <div className="min-w-0 w-full bg-zinc-800">
                 <ImageLightbox
                   src={heroPrimary.src}
                   alt={heroPrimary.alt}
@@ -206,7 +165,7 @@ export default function BaskinRobbinsCaseStudy() {
                     key={img.src}
                     src={img.src}
                     alt={img.alt}
-                    className="relative aspect-square min-w-0 overflow-hidden"
+                    className="relative aspect-square min-w-0 overflow-hidden bg-zinc-800"
                     disableHoverScale
                   >
                     <Image
@@ -434,9 +393,7 @@ export default function BaskinRobbinsCaseStudy() {
           id="process-deviation"
           className={`space-y-6 border-t border-zinc-800 pt-10 sm:pt-12 ${sectionScroll}`}
         >
-          <span className="cs-section-eyebrow">
-            Reflection
-          </span>
+          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>Reflection</h2>
           <div className="max-w-3xl space-y-4 text-zinc-400 leading-relaxed">
             <p>
               Due to a tight timeline for a Baskin Robbins mobile app project, I opted

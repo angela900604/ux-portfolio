@@ -14,35 +14,14 @@ import {
   CASE_STUDY_SECTION_TITLE_CLASS,
   SITE_SHELL_INNER,
 } from "@/lib/site-shell";
-import { CaseStudyMetaBlock } from "../_components/CaseStudyMetaBlock";
+import { CS_H3 } from "@/lib/case-study-theme";
 
 const UI_FLOW_SRC = `/case-studies/atlas-nova/${encodeURIComponent("UI flow.png")}`;
 const UI_FLOW_W = 20554;
 const UI_FLOW_H = 9924;
 const GMAIL_CONNECT_SRC = `/case-studies/atlas-nova/${encodeURIComponent("Gmail connect.png")}`;
 
-const ATLAS_TLDR_METRICS: CaseStudyHeroTldrMetric[] = [
-  {
-    kicker: "Platform",
-    value: "AtlasNova AI",
-    title: "Enterprise macOS suite",
-    detail:
-      "Multiple AI product solutions—this case study covers one feature: document generation.",
-  },
-  {
-    kicker: "Feature",
-    value: "Doc generation",
-    title: "AI-assisted PRDs & research docs",
-    detail:
-      "Knowledge base, templates, step-by-step section generation, persistent chat.",
-  },
-  {
-    kicker: "My role",
-    value: "Intern",
-    title: "UX/UI for this feature",
-    detail: "Mockups and end-to-end UI flows—not the full platform or other solutions.",
-  },
-];
+const ATLAS_TLDR_METRICS: CaseStudyHeroTldrMetric[] = [];
 
 const SKETCHES = [
   {
@@ -57,7 +36,7 @@ const SKETCHES = [
     width: 802,
     height: 1024,
     alt: "Whiteboard sketch — workspace navigation, tagging, and AI affordances",
-    caption: "Nav, tagging, and AI touchpoints.",
+    caption: "Nav — tagging, and AI touchpoints.",
   },
   {
     src: "/case-studies/atlas-nova/sketch-welcome-dashboard.png",
@@ -167,33 +146,9 @@ export default function AtlasNovaCaseStudy() {
           >
             <div className="mb-10 sm:mb-12">
               <CaseStudyHeroTldr
-                metricValueClassName="text-[#6366F1]"
                 headline="AtlasNova — UI for AI-assisted document generation"
                 metrics={ATLAS_TLDR_METRICS}
               />
-              <div className="mt-10">
-                <CaseStudyMetaBlock
-                  items={[
-                    {
-                      label: "Role",
-                      value: "UX/UI Design Intern, AtlasNova",
-                    },
-                    {
-                      label: "Team",
-                      value: "Product manager, engineering",
-                    },
-                    {
-                      label: "Timeline",
-                      value: "Internship",
-                    },
-                    {
-                      label: "Outcome",
-                      value:
-                        "Feature UI delivered end to end, from whiteboard sketches to hi-fi screens",
-                    },
-                  ]}
-                />
-              </div>
             </div>
           </div>
         </div>
@@ -237,56 +192,46 @@ export default function AtlasNovaCaseStudy() {
           </p>
           <ul className="max-w-3xl space-y-5 text-zinc-400 leading-relaxed">
             <li>
-              <p>
-                <span className="font-semibold text-zinc-100">
-                  AI-assisted, not AI-replaced
-                </span>{" "}
-                — step-by-step generation with chat open beside the doc, so
+              <h3 className={CS_H3}>AI-assisted, not AI-replaced</h3>
+              <p className="mt-2">
+                Step-by-step generation with chat open beside the doc, so
                 steering a section feels like commenting, not switching apps.
               </p>
             </li>
             <li>
-              <p>
-                <span className="font-semibold text-zinc-100">
-                  Transparent generation
-                </span>{" "}
-                — each section shows its pipeline stage (indexed → reading →
+              <h3 className={CS_H3}>Transparent generation</h3>
+              <p className="mt-2">
+                Each section shows its pipeline stage (indexed → reading →
                 generating), so users catch bad source pulls before the whole
                 PRD goes wrong.
               </p>
             </li>
             <li>
-              <p>
-                <span className="font-semibold text-zinc-100">Split-pane layout</span>{" "}
-                — document left, chat right, one window. No context lost between
+              <h3 className={CS_H3}>Split-pane layout</h3>
+              <p className="mt-2">
+                Document left, chat right, one window. No context lost between
                 generated copy and directing the AI.
               </p>
             </li>
             <li>
-              <p>
-                <span className="font-semibold text-zinc-100">
-                  Visible context (@mentions)
-                </span>{" "}
-                — @mention pills pull in prior specs, research summaries, and
+              <h3 className={CS_H3}>Visible context (@mentions)</h3>
+              <p className="mt-2">
+                @mention pills pull in prior specs, research summaries, and
                 competitive analyses, so grounding the model is visible and
                 repeatable, not hidden prompt engineering.
               </p>
             </li>
             <li>
-              <p>
-                <span className="font-semibold text-zinc-100">
-                  Template settings upfront
-                </span>{" "}
-                — format, page count, and detail level in onboarding, not a
+              <h3 className={CS_H3}>Template settings upfront</h3>
+              <p className="mt-2">
+                Format, page count, and detail level in onboarding, not a
                 buried menu. Fewer &ldquo;regenerate everything&rdquo; loops.
               </p>
             </li>
             <li>
-              <p>
-                <span className="font-semibold text-zinc-100">
-                  Connected platforms
-                </span>{" "}
-                — import context from Gmail, Google Drive, and more without
+              <h3 className={CS_H3}>Connected platforms</h3>
+              <p className="mt-2">
+                Import context from Gmail, Google Drive, and more without
                 leaving AtlasNova; familiar OAuth-style sign-in keeps it
                 trustworthy.
               </p>

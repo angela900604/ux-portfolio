@@ -102,7 +102,7 @@ export default function AdmissionHubCaseStudy() {
       <CaseStudyContentLayout
         contentClassName="space-y-20 sm:space-y-24"
       >
-        <Section id="strategy" kicker="01 · Strategy">
+        <Section id="strategy" kicker="01 · Strategy" title="Strategy">
           <div className="mt-4 max-w-2xl space-y-4 text-zinc-400 leading-relaxed">
             <p>
               I shifted toward{" "}
@@ -156,12 +156,15 @@ export default function AdmissionHubCaseStudy() {
         <Section
           id="what-i-did"
           kicker="02 · What I did"
-          title="A repeatable campaign + content system"
+          title="What I did"
         >
+          <p className="mt-4 max-w-2xl text-zinc-400 leading-relaxed">
+            A repeatable campaign + content system
+          </p>
           <div className="mt-4 rounded-xl border border-zinc-800 bg-zinc-900/40 p-6">
-            <h5 className="text-zinc-100">
+            <h3 className="text-[15px] font-medium leading-[1.35] text-zinc-100">
               Email (Mailchimp) — how sends were structured
-            </h5>
+            </h3>
             <p className="mt-2 cs-body-sm max-w-3xl">
               Mailchimp execution—templates, segmentation, and cadence tied to
               site content—so sends consistently fed the pipeline of{" "}
@@ -195,29 +198,12 @@ export default function AdmissionHubCaseStudy() {
                 habit—same story, different depth.
               </li>
             </ul>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {(
-                [
-                  "Mailchimp",
-                  "Templates",
-                  "Segmentation",
-                  "Cadence",
-                ] as const
-              ).map((tag) => (
-                <span
-                  key={tag}
-                  className="rounded-full border border-zinc-800 bg-zinc-900/40 px-3 py-1 text-xs text-zinc-400"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
           </div>
 
           <div className="mt-10 rounded-xl border border-zinc-800 bg-zinc-900/40 p-6">
-            <h5 className="text-zinc-100">
+            <h3 className="text-[15px] font-medium leading-[1.35] text-zinc-100">
               SEO + WordPress
-            </h5>
+            </h3>
             <p className="mt-2 cs-body-sm max-w-3xl">
               Utility articles and on-page structure to support organic
               discovery.
@@ -243,9 +229,9 @@ export default function AdmissionHubCaseStudy() {
                 />
               </ImageLightbox>
               <figcaption className="mt-4 cs-body-sm">
-                <span className="font-semibold text-zinc-100">
+                <h3 className="text-[15px] font-medium leading-[1.35] text-zinc-100">
                   Featured articles (live)
-                </span>
+                </h3>
                 <ul className="mt-2 flex flex-col gap-2">
                   {ADMISSION_WP_ARTICLES.map((item) => (
                     <li key={item.href}>
@@ -253,7 +239,7 @@ export default function AdmissionHubCaseStudy() {
                         href={item.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-zinc-100 underline decoration-zinc-600 underline-offset-2 hover:decoration-zinc-400"
+                        className="text-[15px] font-normal text-zinc-300 underline decoration-zinc-600 underline-offset-2 hover:decoration-zinc-400"
                       >
                         {item.label}
                       </a>
@@ -267,9 +253,9 @@ export default function AdmissionHubCaseStudy() {
 
           <div className="mt-10 grid gap-6 lg:grid-cols-2 lg:items-start">
             <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-6">
-              <h5 className="text-zinc-100">
+              <h3 className="text-[15px] font-medium leading-[1.35] text-zinc-100">
                 Visuals for web + social
-              </h5>
+              </h3>
               <p className="mt-2 cs-body-sm">
                 Figma graphics for the site and Instagram—supporting +500
                 followers and +21% engagement over roughly three months.
@@ -284,9 +270,9 @@ export default function AdmissionHubCaseStudy() {
               </p>
             </div>
             <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-6">
-              <h5 className="text-zinc-100">
+              <h3 className="text-[15px] font-medium leading-[1.35] text-zinc-100">
                 Calendar hooks &amp; “utility” social
-              </h5>
+              </h3>
               <p className="mt-2 cs-body-sm">
                 I chased utility moments people actually search for on Instagram
                 (times, places, seasonal hooks).

@@ -10,12 +10,12 @@ import { WideFigure } from "../e-invoice-app/EInvoiceFigures";
 import { GovernmentBackendCorrespondingScreensSlider } from "./GovernmentBackendCorrespondingScreensSlider";
 import { GovernmentBackendEngineeringAlignment } from "./GovernmentBackendEngineeringAlignment";
 import { GovernmentBackendHeroTldr } from "./GovernmentBackendHeroTldr";
-import { CaseStudyMetaBlock } from "../_components/CaseStudyMetaBlock";
 import {
   CASE_STUDY_BODY_GRID,
   CASE_STUDY_SECTION_TITLE_CLASS,
   SITE_SHELL_INNER,
 } from "@/lib/site-shell";
+import { CS_H3 } from "@/lib/case-study-theme";
 
 export const metadata = {
   title: "Role-Based Government Backend (600+ Staff) | Angela Yang",
@@ -64,29 +64,6 @@ export default function GovernmentBackendCaseStudy() {
           >
             <div>
               <GovernmentBackendHeroTldr />
-              <div className="mt-10">
-                <CaseStudyMetaBlock
-                  items={[
-                    {
-                      label: "Role",
-                      value:
-                        "Product / UX Designer, TurnCloud (client: Taiwan Ministry of Finance)",
-                    },
-                    {
-                      label: "Team",
-                      value: "Government stakeholders, engineering",
-                    },
-                    {
-                      label: "Timeline",
-                      value: "Jul 2024 – Nov 2025",
-                    },
-                    {
-                      label: "Outcome",
-                      value: "One role-based backend serving 600+ staff",
-                    },
-                  ]}
-                />
-              </div>
             </div>
 
             <div className="overflow-hidden">
@@ -115,36 +92,13 @@ export default function GovernmentBackendCaseStudy() {
           id="project-background"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
-          <span className="cs-section-eyebrow">
-            Opportunity
-          </span>
-          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
+          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>Opportunity</h2>
+          <p className="max-w-3xl cs-body">
             After the public lottery app shipped, MoF needed a single backend for
             announcements, promos, push rules, reporting, and app versions—used by{" "}
             <Metric>600+</Metric> people who expect the same familiarity
             as other government systems.
-          </h2>
-
-          <div className="space-y-3 pt-4">
-            <h5 className="text-zinc-100">
-              Example of corresponding screens
-            </h5>
-            <p className="max-w-3xl cs-body-sm">
-              Staff compose notification content in the backend, set publish timing,
-              and schedule delivery in advance. End users receive{" "}
-              <span className="text-zinc-400">push notifications</span>, then open the
-              in-app <span className="text-zinc-400">notification center</span> and
-              message details—aligned with those backend rules.
-            </p>
-            <GovernmentBackendCorrespondingScreensSlider
-              backendSrc={ASSET("annotation.png")}
-              appSrc={ASSET("app.png")}
-              backendAlt="Annotated diagram: backend notification rules and corresponding in-app notification surfaces"
-              appAlt="Corresponding app UI composition: push, notification center, and message detail aligned with backend settings"
-              aspectWidth={2648}
-              aspectHeight={1244}
-            />
-          </div>
+          </p>
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection
@@ -173,9 +127,29 @@ export default function GovernmentBackendCaseStudy() {
           id="design-engineering-alignment"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
-          <span className="cs-section-eyebrow">
+          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
             Design &amp; engineering
-          </span>
+          </h2>
+          <div className="space-y-3">
+            <h3 className={CS_H3}>
+              Example of corresponding screens
+            </h3>
+            <p className="max-w-3xl cs-body-sm">
+              Staff compose notification content in the backend, set publish timing,
+              and schedule delivery in advance. End users receive{" "}
+              <span className="text-zinc-400">push notifications</span>, then open the
+              in-app <span className="text-zinc-400">notification center</span> and
+              message details—aligned with those backend rules.
+            </p>
+            <GovernmentBackendCorrespondingScreensSlider
+              backendSrc={ASSET("annotation.png")}
+              appSrc={ASSET("app.png")}
+              backendAlt="Annotated diagram: backend notification rules and corresponding in-app notification surfaces"
+              appAlt="Corresponding app UI composition: push, notification center, and message detail aligned with backend settings"
+              aspectWidth={2648}
+              aspectHeight={1244}
+            />
+          </div>
           <GovernmentBackendEngineeringAlignment />
         </CaseStudyInViewSection>
 
@@ -194,9 +168,9 @@ export default function GovernmentBackendCaseStudy() {
           <span className="cs-section-eyebrow">
             Key design iterations
           </span>
-          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
+          <h3 className={CS_H3}>
             Two iterations that went through the longest discussions
-          </h2>
+          </h3>
           <p className="text-zinc-400 leading-relaxed">
             There were many iterations when discussing API capabilities, data
             sources, and staffing needs. I chose the following two features because
@@ -204,9 +178,9 @@ export default function GovernmentBackendCaseStudy() {
           </p>
 
           <div className="space-y-4">
-            <h5 className="text-zinc-100">
+            <h3 className={CS_H3}>
               Design iteration 1 · Data reporting
-            </h5>
+            </h3>
             <p className="text-zinc-400 leading-relaxed">
               <span className="text-zinc-400 font-semibold">Before:</span> Reporting
               worked, but the layout made it harder to answer common questions in one
@@ -280,9 +254,9 @@ export default function GovernmentBackendCaseStudy() {
           </div>
 
           <div className="space-y-4 max-w-3xl">
-            <h5 className="text-zinc-100">
+            <h3 className={CS_H3}>
               Design iteration 2 · App update version control
-            </h5>
+            </h3>
             <p className="text-zinc-400 leading-relaxed">
               With engineers, I aligned how the UI should surface{" "}
               <span className="text-zinc-400">mandatory vs. optional updates</span>,{" "}
@@ -322,9 +296,9 @@ export default function GovernmentBackendCaseStudy() {
             id="reflection"
             className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
           >
-            <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
+            <h3 className={CS_H3}>
               Processes and interfaces, under constraints
-            </h2>
+            </h3>
             <p className="text-zinc-400 leading-relaxed">
               This project taught me that designing government-scale platforms
               isn&apos;t just about new features—it&apos;s about integrating with

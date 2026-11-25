@@ -12,7 +12,9 @@ export const metadata = {
 export default function MinaMarketingPage() {
   return (
     <article className="min-h-screen">
-      <div className={`${SITE_SHELL_INNER} pb-16 sm:pb-20 pt-10 sm:pt-12`}>
+      <div
+        className={`case-study-prose ${SITE_SHELL_INNER} pb-16 sm:pb-20 pt-10 sm:pt-12`}
+      >
         <MinaInstagramGrid />
       </div>
 

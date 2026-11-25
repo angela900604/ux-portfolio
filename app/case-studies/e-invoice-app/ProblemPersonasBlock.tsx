@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ImageLightbox } from "@/app/components/ImageLightbox";
-import { CASE_STUDY_SECTION_TITLE_CLASS } from "@/lib/site-shell";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 
 export function ProblemPersonasBlock() {
@@ -15,11 +14,11 @@ export function ProblemPersonasBlock() {
           <span className="cs-section-eyebrow">
             01 · The problem
           </span>
-          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
+          <p className="max-w-3xl cs-body">
             Roughly 20 million people rely on this official app, yet only 2.8★ App
             Store ratings and broken flows were excluding elders, newcomers, and
             low-vision users.
-          </h2>
+          </p>
 
           <div>
             <Link

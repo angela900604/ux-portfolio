@@ -70,7 +70,7 @@ export function PortfolioLeftColumn() {
       <div className="hidden min-h-0 shrink lg:block lg:flex-1" aria-hidden />
 
       <div className={`shrink-0 lg:pb-0 lg:pt-2 ${MOBILE_RAIL_FOOTER}`}>
-        <p className="text-[clamp(0.8rem,1.6vw,0.95rem)] font-normal leading-snug tracking-[-0.015em] text-zinc-50">
+        <p className="text-sm font-normal leading-snug text-zinc-400">
           Marketing designer
           <br />
           UX designer

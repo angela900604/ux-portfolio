@@ -3,9 +3,9 @@ import { GovernmentBackendRoleChartLightbox } from "./GovernmentBackendRoleChart
 export function GovernmentBackendEngineeringAlignment() {
   return (
     <div className="w-full space-y-6">
-      <h2 className="max-w-3xl text-[15px] font-medium leading-[1.35] text-zinc-100">
+      <h3 className="max-w-3xl text-[15px] font-medium leading-[1.35] text-zinc-100">
         How I aligned design with engineering
-      </h2>
+      </h3>
 
       <figure className="space-y-4">
         <p className="max-w-3xl cs-body-sm sm:text-[15px]">

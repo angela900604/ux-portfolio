@@ -15,7 +15,6 @@ import {
   SITE_SHELL_INNER,
 } from "@/lib/site-shell";
 import { CS_BODY, CS_H3 } from "@/lib/case-study-theme";
-import { CaseStudyMetaBlock } from "../_components/CaseStudyMetaBlock";
 
 const MINA_HERO = "/case-studies/mina/mina-ai-hero.png";
 const MINA_MOCKUP_HAND = "/case-studies/mina/mockup-hand-01.png";
@@ -73,7 +72,7 @@ const MINA_TLDR_METRICS: CaseStudyHeroTldrMetric[] = [
   },
   {
     kicker: "Team",
-    value: "Sole",
+    value: "1 — sole designer",
     title: "Product design",
     detail: "1 PM + 5 engineers — end-to-end UX on iOS.",
   },
@@ -105,32 +104,15 @@ export default function AiMarketplaceCaseStudy() {
                 }
                 metrics={MINA_TLDR_METRICS}
               />
-              <div className="mt-10">
-                <CaseStudyMetaBlock
-                  items={[
-                    {
-                      label: "Role",
-                      value:
-                        "Marketing & Product Designer, MINA AI (fixed-term contract)",
-                    },
-                    {
-                      label: "Team",
-                      value:
-                        "Worked directly with engineering and the founding team",
-                    },
-                    {
-                      label: "Timeline",
-                      value: "Sep 2025 – May 2026",
-                    },
-                    {
-                      label: "Outcome",
-                      value:
-                        "Completed listings +30% after the new listing flow shipped",
-                    },
-                  ]}
-                  summary="Parents don't fill out forms — they chat. A parent uploads a pile of photos and describes what they're selling in their own words, and the AI turns that conversation into listings: it sorts the photos, fills in the details, and drafts everything for one-tap publish. The parent just checks and confirms. The flow was designed to feel like talking, not filing — no listing-by-listing form grind."
-                />
-              </div>
+              <p className={`mt-10 max-w-3xl ${CS_BODY}`}>
+                Parents don&apos;t fill out forms — they chat. A parent uploads a
+                pile of photos and describes what they&apos;re selling in their
+                own words, and the AI turns that conversation into listings: it
+                sorts the photos, fills in the details, and drafts everything for
+                one-tap publish. The parent just checks and confirms. The flow was
+                designed to feel like talking, not filing — no listing-by-listing
+                form grind.
+              </p>
             </div>
 
             <div className="flex w-full min-w-0 flex-col gap-3">
@@ -221,14 +203,12 @@ export default function AiMarketplaceCaseStudy() {
           id="context"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32 sm:space-y-8"
         >
-          <span className="cs-section-eyebrow">
-            Opportunity
-          </span>
+          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>Opportunity</h2>
           <div className="max-w-3xl space-y-8">
             <div className="space-y-3">
-              <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
+              <p className="max-w-3xl cs-body">
                 No moms want to list 47 baby items one by one.
-              </h2>
+              </p>
               <p className="text-zinc-400 leading-relaxed">
                 SF moms in tight spaces cycle through baby gear every few months.
                 They knew about Facebook Marketplace. They just couldn&apos;t
@@ -245,18 +225,18 @@ export default function AiMarketplaceCaseStudy() {
                   conversations.
                 </p>
                 <div className="mt-4 divide-y divide-zinc-800/80">
-                  <p className="pb-4 cs-body font-medium text-zinc-300">
+                  <h3 className={`${CS_H3} pb-4`}>
                     Wants to bulk-list items without filling out a separate form for
                     each one
-                  </p>
-                  <p className="py-4 cs-body font-medium text-zinc-300">
+                  </h3>
+                  <h3 className={`${CS_H3} py-4`}>
                     Wants items gone before the baby outgrows them — timing matters more
                     than price
-                  </p>
-                  <p className="pt-4 cs-body font-medium text-zinc-300">
+                  </h3>
+                  <h3 className={`${CS_H3} pt-4`}>
                     Just wants to drop off a black garbage bag and be done with it — no
                     listings, no chats
-                  </p>
+                  </h3>
                 </div>
               </div>
             </div>
@@ -290,9 +270,7 @@ export default function AiMarketplaceCaseStudy() {
             <div className="mt-6 overflow-hidden bg-black">
               <div className="divide-y divide-zinc-800">
                 <div className="px-5 py-6 sm:px-6 sm:py-8">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-zinc-500">
-                    List fast
-                  </p>
+                  <h3 className={CS_H3}>List fast</h3>
                   <p className="mt-2 text-[15px] font-medium leading-[1.35] text-white">
                     Selling Agent — one photo, multiple listings.
                   </p>
@@ -302,18 +280,14 @@ export default function AiMarketplaceCaseStudy() {
                   </p>
                 </div>
                 <div className="px-5 py-6 sm:px-6 sm:py-8">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-zinc-500">
-                    Sell fast
-                  </p>
+                  <h3 className={CS_H3}>Sell fast</h3>
                   <p className="mt-2 text-[15px] font-medium leading-[1.35] text-white">
                     Parenting Copilot nudges buyers when their baby enters a new phase
                     and surfaces the gear they&apos;ll need next.
                   </p>
                 </div>
                 <div className="px-5 py-6 sm:px-6 sm:py-8">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-zinc-500">
-                    Giveaway free fast
-                  </p>
+                  <h3 className={CS_H3}>Giveaway free fast</h3>
                   <p className="mt-2 text-[15px] font-medium leading-[1.35] text-white">
                     MINA Circle — claim free donated items.
                   </p>
@@ -332,14 +306,12 @@ export default function AiMarketplaceCaseStudy() {
           id="selling-agent"
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
-          <span className="cs-section-eyebrow">
-            Selling agent
-          </span>
+          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>Selling agent</h2>
           <div className="min-w-0 space-y-8">
-            <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
+            <p className="max-w-3xl cs-body">
               The redesign of the create listing flow enhanced completed listings by
               up to 30%.
-            </h2>
+            </p>
 
             <div className="max-w-4xl w-full">
               <div className="w-full overflow-hidden">
@@ -522,23 +494,19 @@ export default function AiMarketplaceCaseStudy() {
                     </div>
                   </aside>
                 </div>
+                <div className="space-y-3">
+                  <h3 className={CS_H3}>Outcome</h3>
+                  <p className={`max-w-3xl ${CS_BODY}`}>
+                    Completed listings rose 30% after the new flow shipped. The
+                    photo-quality prompt stopped the worst edge case before it could
+                    happen — blurry photos get a retake request instead of silently
+                    generating bad data — and parents only had to upload once to
+                    create multiple listings.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-        </CaseStudyInViewSection>
-
-        <CaseStudyInViewSection
-          id="outcome"
-          className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
-        >
-          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>Outcome</h2>
-          <p className={`max-w-3xl ${CS_BODY}`}>
-            Completed listings rose 30% after the new flow shipped. The
-            photo-quality prompt stopped the worst edge case before it could
-            happen — blurry photos get a retake request instead of silently
-            generating bad data — and parents only had to upload once to
-            create multiple listings.
-          </p>
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection
@@ -568,14 +536,12 @@ export default function AiMarketplaceCaseStudy() {
           id="parenting-copilot"
           className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
         >
-          <span className="cs-section-eyebrow">
-            Parenting copilot
-          </span>
+          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>Parenting copilot</h2>
           <div className="min-w-0 space-y-5">
-            <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
+            <p className="max-w-3xl cs-body">
               Babies grow fast. The Copilot notices when a phase is ending and asks:
               ready to pass this along?
-            </h2>
+            </p>
             <p className="max-w-3xl text-zinc-400 leading-relaxed">
               The copilot is a life-stage triggered circulation system: it helps
               parents notice when a phase is ending, what gear tends to matter next,

@@ -8,7 +8,6 @@ import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
 import { DesignJourneyCollapsible } from "../_components/DesignJourneyCollapsible";
 import { EInvoiceHeroTldr } from "./EInvoiceHeroTldr";
-import { CaseStudyMetaBlock } from "../_components/CaseStudyMetaBlock";
 import { FinalScreensMarquee } from "./FinalScreensMarquee";
 import { PortraitTile, WideFigure } from "./EInvoiceFigures";
 import { HomeBeforeAfterSlider } from "./HomeBeforeAfterSlider";
@@ -21,6 +20,7 @@ import {
   CASE_STUDY_SECTION_TITLE_CLASS,
   SITE_SHELL_INNER,
 } from "@/lib/site-shell";
+import { CS_H3 } from "@/lib/case-study-theme";
 
 export const metadata = {
   title:
@@ -302,30 +302,6 @@ export default function EInvoiceCaseStudy() {
           >
           <div>
             <EInvoiceHeroTldr />
-            <div className="mt-10">
-              <CaseStudyMetaBlock
-                items={[
-                  {
-                    label: "Role",
-                    value:
-                      "Product / UX Designer, TurnCloud (client: Taiwan Ministry of Finance)",
-                  },
-                  {
-                    label: "Team",
-                    value: "Government stakeholders, engineering",
-                  },
-                  {
-                    label: "Timeline",
-                    value: "Jul 2024 – Nov 2025",
-                  },
-                  {
-                    label: "Outcome",
-                    value:
-                      "Missed top-tier prize redemptions 24% → 18% one month after launch; 88% task success in usability sessions",
-                  },
-                ]}
-              />
-            </div>
           </div>
 
           <div className="flex min-w-0 flex-col gap-8 sm:gap-10">
@@ -413,10 +389,13 @@ export default function EInvoiceCaseStudy() {
                   Solution 2
                 </span>
                 <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
-                  Pushback with external stakeholders: promo-first vs. what users
-                  actually open the app for
+                  Promo vs. user priorities
                 </h2>
               </header>
+              <p className="max-w-3xl cs-body">
+                Pushback with external stakeholders: promo-first vs. what users
+                actually open the app for.
+              </p>
               <StoryBeatTimeline className="max-w-none">
                 <StoryBeat
                   label="Problem"
@@ -652,20 +631,20 @@ export default function EInvoiceCaseStudy() {
           className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
         >
           <div className="max-w-3xl space-y-6">
-            <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
+            <p className="max-w-3xl cs-body">
               Twelve moderated sessions—including low-vision users—landed at{" "}
               <span className={M_TXT}>88%</span> success and a clear fix list for login,
               invoice management, and prize flows.
-            </h2>
+            </p>
             <p className="max-w-3xl cs-body-sm">
               One-on-one observation on core tasks; errors and satisfaction tracked so
               VoiceOver paths, visual hierarchy, and plain-language fixes could ship
               before launch—not relegated to a late &quot;a11y pass.&quot;
             </p>
             <div className="overflow-hidden p-6">
-              <h4 className="text-zinc-100">
+              <h3 className={CS_H3}>
                 Results summary (prototype)
-              </h4>
+              </h3>
               <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 text-sm">
                 <div className="flex justify-between gap-4 border-b border-zinc-800 py-2">
                   <span className="text-zinc-400">Overall</span>
@@ -737,10 +716,10 @@ export default function EInvoiceCaseStudy() {
           className="!border-t-0 !pt-0 sm:!pt-0"
         >
           <div className="space-y-5">
-            <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
+            <p className="max-w-3xl cs-body">
               The hardest part was to balance all the various and conflicting needs
               from all age groups.
-            </h2>
+            </p>
             <div className="max-w-3xl space-y-4 text-zinc-400 leading-relaxed">
               <p>
                 Interviews were unambiguous: one group needed the sparsest possible

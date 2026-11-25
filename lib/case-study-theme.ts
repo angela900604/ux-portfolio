@@ -22,6 +22,16 @@ export const CS_BODY =
 export const CS_BODY_SM =
   "max-w-[72ch] text-[14px] font-normal leading-[1.6] text-zinc-300";
 
+/** Overview lead — body copy, not a heading */
+export const CS_LEAD =
+  "max-w-4xl text-pretty text-[15px] font-normal leading-[1.65] text-zinc-300";
+
+/**
+ * Large stat/summary figures — data, not headings. Capped at H2 size (1.25rem).
+ */
+export const CS_STAT =
+  "text-xl font-medium tabular-nums tracking-tight";
+
 /** H3 sub-head within a section (Joseph: 15px / medium) */
 export const CS_H3 =
   "text-[15px] font-medium leading-[1.35] text-zinc-100";

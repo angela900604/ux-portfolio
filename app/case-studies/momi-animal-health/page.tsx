@@ -125,7 +125,7 @@ export default function MomiAnimalHealthCaseStudy() {
             {HERO_GALLERY.map((img, i) => (
               <div
                 key={img.src}
-                className="overflow-hidden"
+                className="overflow-hidden bg-zinc-800"
               >
                 <ImageLightbox
                   src={img.src}
@@ -151,7 +151,7 @@ export default function MomiAnimalHealthCaseStudy() {
       </header>
 
       <CaseStudyContentLayout contentClassName="space-y-20 sm:space-y-24">
-        <Section id="what-i-did" kicker="01 · What I did">
+        <Section id="what-i-did" kicker="01 · What I did" title="What I did">
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             {TOUCHPOINT_CARDS.map((card) => (
               <article
@@ -169,7 +169,9 @@ export default function MomiAnimalHealthCaseStudy() {
           </div>
 
           <div className="mt-8">
-            <h5 className="text-zinc-100">Pet expo — on-site</h5>
+            <h3 className="text-[15px] font-medium leading-[1.35] text-zinc-100">
+              Pet expo — on-site
+            </h3>
             <p className="mt-2 cs-body-sm max-w-2xl">
               Coordinated{" "}
               <span className="font-medium text-zinc-100">

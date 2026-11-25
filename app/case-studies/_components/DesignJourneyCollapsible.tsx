@@ -9,6 +9,7 @@ import {
   type ReactNode,
 } from "react";
 import { CS_BODY } from "@/lib/case-study-theme";
+import { CASE_STUDY_SECTION_TITLE_CLASS } from "@/lib/site-shell";
 
 function hashToId(hash: string): string | null {
   if (!hash.startsWith("#")) return null;
@@ -101,26 +102,22 @@ export function DesignJourneyCollapsible({
     <div
       className={`scroll-mt-28 border-t border-zinc-800 pt-10 sm:scroll-mt-32 sm:pt-12 ${className}`.trim()}
     >
-      <button
-        type="button"
-        id={navAnchorId}
-        onClick={toggle}
-        aria-expanded={open}
-        aria-controls={panelId}
-        className="flex w-full items-center justify-between gap-4 border-t border-zinc-600 py-4 text-left transition hover:opacity-80"
-      >
-        <span id={headingId} className="min-w-0">
-          <span className="block text-[15px] font-medium leading-[1.35] text-zinc-100">
-            {title}
-          </span>
-          {subtitle ? (
-            <span className={`mt-1 block ${CS_BODY}`}>
-              {subtitle}
-            </span>
-          ) : null}
-        </span>
-        <AccordionChevron open={open} />
-      </button>
+      <h2 id={headingId} className={CASE_STUDY_SECTION_TITLE_CLASS}>
+        <button
+          type="button"
+          id={navAnchorId}
+          onClick={toggle}
+          aria-expanded={open}
+          aria-controls={panelId}
+          className="flex w-full items-center justify-between gap-4 border-t border-zinc-600 py-4 text-left font-[inherit] tracking-[inherit] text-inherit transition hover:opacity-80"
+        >
+          <span className="min-w-0">{title}</span>
+          <AccordionChevron open={open} />
+        </button>
+      </h2>
+      {subtitle ? (
+        <p className={`-mt-2 ${CS_BODY}`}>{subtitle}</p>
+      ) : null}
       <div
         id={panelId}
         role="region"

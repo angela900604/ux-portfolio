@@ -1,3 +1,5 @@
+import { CS_STAT } from "@/lib/case-study-theme";
+
 const EA_ACCENT = "#F97316";
 
 export const EA_ASSET = (name: string) =>
@@ -94,7 +96,7 @@ export function ResearchStatsGrid() {
           className="flex flex-col overflow-hidden p-5 sm:p-6"
         >
           <p
-            className="text-4xl font-bold tabular-nums tracking-tight sm:text-5xl"
+            className={CS_STAT}
             style={{ color: EA_ACCENT }}
           >
             {stat.value}
@@ -162,7 +164,9 @@ export function PersonaBlock() {
 export function TaskFlowSteps() {
   return (
     <ol className="max-w-3xl space-y-0">
-      {TASK_FLOW_STEPS.map((step, index) => (
+      {TASK_FLOW_STEPS.map((step, index) => {
+        const isTerminal = step.kind === "start" || step.kind === "end";
+        return (
         <li key={step.label} className="relative flex gap-4 pb-6 last:pb-0">
           {index < TASK_FLOW_STEPS.length - 1 ? (
             <span
@@ -170,25 +174,43 @@ export function TaskFlowSteps() {
               aria-hidden
             />
           ) : null}
+          {isTerminal ? (
+            <div
+              className="relative z-[1] flex h-9 w-9 shrink-0 items-center justify-center"
+              aria-hidden
+            >
+              <span className="h-2 w-2 rounded-full bg-zinc-500" />
+            </div>
+          ) : (
           <div
             className={`relative z-[1] flex h-9 w-9 shrink-0 items-center justify-center rounded-full border text-[10px] font-bold uppercase tracking-wide ${FLOW_KIND_STYLE[step.kind]}`}
             aria-hidden
           >
             {index + 1}
           </div>
+          )}
           <div className="min-w-0 flex-1 pt-0.5">
             <div className="flex flex-wrap items-center gap-2">
-              <p className="font-semibold text-zinc-100">{step.label}</p>
+              {isTerminal ? (
+                <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-zinc-500">
+                  {step.label}
+                </p>
+              ) : (
+                <p className="font-semibold text-zinc-100">{step.label}</p>
+              )}
+              {isTerminal ? null : (
               <span className="rounded-full border border-zinc-800 bg-zinc-900/40 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-zinc-500">
                 {FLOW_KIND_LABEL[step.kind]}
               </span>
+              )}
             </div>
             {step.note ? (
               <p className="mt-2 cs-body-sm">{step.note}</p>
             ) : null}
           </div>
         </li>
-      ))}
+        );
+      })}
     </ol>
   );
 }
