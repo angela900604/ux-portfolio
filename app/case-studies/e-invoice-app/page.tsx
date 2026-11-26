@@ -26,7 +26,7 @@ export const metadata = {
   title:
     "MOF Uniform Invoice Award Redemption app | Angela Yang",
   description:
-    "Government mobile app used by ~20 million people: trust & inclusion at national scale—multi-segment research (age, language, accessibility), competitive benchmarking, IA, ~88% prototype task success, measurable lifts in activation (onboarding) and retention (login success).",
+    "Government mobile app used by ~20 million people: trust & inclusion at national scale—multi-segment research (age, language, accessibility), competitive benchmarking, IA, and measurable lifts in activation (onboarding) and retention (login success).",
 };
 
 const FIGMA_MOCKUP_PAGE =
@@ -423,7 +423,7 @@ export default function EInvoiceCaseStudy() {
                 />
               </StoryBeatTimeline>
               <StoryOutcomeCallout
-                headline="Usability sessions across scan, donate, and redemption reached 88% task success — including visually impaired participants."
+                headline="Usability sessions across scan, donate, and redemption included visually impaired participants."
               />
               <SettingHomeModulesVideo className="w-full" />
             </section>
@@ -444,7 +444,7 @@ export default function EInvoiceCaseStudy() {
                 <StoryBeat
                   label="Problem"
                   headline="Authentication was secure, but middle-aged and senior users kept forgetting their verification passwords."
-                  detail="Login success hovered around ~68% — verification codes and recovery friction blocked them before any core task."
+                  detail="Pre-redesign, login success hovered around ~68% — verification codes and recovery friction blocked them before any core task."
                   largeHeadline
                 />
                 <StoryBeat
@@ -490,12 +490,13 @@ export default function EInvoiceCaseStudy() {
             </section>
         </div>
 
-        <div className="flex min-w-0 flex-col gap-10 sm:gap-12">
+        <div className="flex min-w-0 flex-col">
           <DesignJourneyCollapsible
           journeySectionIds={E_INVOICE_JOURNEY_IDS}
           panelId="e-invoice-design-journey-panel"
           title="Design journey"
           subtitle="Functional map, page flows, and moderated testing"
+          defaultOpen
         >
         <CaseStudyInViewSection
           id="functional-map"
@@ -505,7 +506,7 @@ export default function EInvoiceCaseStudy() {
             Functional map
           </span>
           <p className="max-w-3xl cs-body">
-            Before moving to wireframe, I mapped out{" "}
+            Before moving to wireframe, I mapped out a{" "}
             <span className={JOURNEY_EMPHASIS}>functional map</span> for all
             features (login, home, prize redemptions, etc) and{" "}
             <span className={JOURNEY_EMPHASIS}>validated</span> each touchpoint
@@ -572,7 +573,7 @@ export default function EInvoiceCaseStudy() {
                 <span className="text-zinc-400">hue signals function</span>, larger
                 readable type, and rounded cards/buttons that lower intimidation
                 for mixed-skill users. This matched interview keywords
-                (intuitive, simple, clean) while keeping public-service trust.
+                (intuitive, minimal, fresh, modern) while keeping public-service trust.
               </p>
               <p className="text-zinc-400 leading-relaxed">
                 Compared with modern minimal and professional practical, this
@@ -632,9 +633,8 @@ export default function EInvoiceCaseStudy() {
         >
           <div className="max-w-3xl space-y-6">
             <p className="max-w-3xl cs-body">
-              Twelve moderated sessions—including low-vision users—landed at{" "}
-              <span className={M_TXT}>88%</span> success and a clear fix list for login,
-              invoice management, and prize flows.
+              Twelve moderated sessions—including low-vision users—produced a clear
+              fix list for login, invoice management, and prize flows.
             </p>
             <p className="max-w-3xl cs-body-sm">
               One-on-one observation on core tasks; errors and satisfaction tracked so
@@ -646,10 +646,6 @@ export default function EInvoiceCaseStudy() {
                 Results summary (prototype)
               </h3>
               <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 text-sm">
-                <div className="flex justify-between gap-4 border-b border-zinc-800 py-2">
-                  <span className="text-zinc-400">Overall</span>
-                  <span className={M_TXT}>88%</span>
-                </div>
                 <div className="flex justify-between gap-4 border-b border-zinc-800 py-2">
                   <span className="text-zinc-400">Login &amp; registration</span>
                   <span className={M_TXT}>75%</span>
@@ -693,14 +689,14 @@ export default function EInvoiceCaseStudy() {
               <WideFigure
                 borderless
                 src={ASSET("prototype-matrix.png")}
-                alt="Prototype task success matrix spreadsheet"
-                caption="Task matrix / pass-fail by participant (export)."
+                alt="Figma prototype flow used for usability testing"
+                caption="Prototype for usability testing."
               />
               <WideFigure
                 borderless
                 src={ASSET("prototype-task-notes.png")}
-                alt="Session notes and task completion tracking"
-                caption="Session notes &amp; completion log (export)."
+                alt="Task matrix / pass-fail by participant (export)"
+                caption="Task matrix / pass-fail by participant (export)."
               />
             </div>
           </div>
@@ -713,7 +709,7 @@ export default function EInvoiceCaseStudy() {
           panelId="e-invoice-reflection-panel"
           title="Reflection"
           subtitle="Lessons, constraints, and what to validate next"
-          className="!border-t-0 !pt-0 sm:!pt-0"
+          defaultOpen
         >
           <div className="space-y-5">
             <p className="max-w-3xl cs-body">
@@ -856,6 +852,7 @@ export default function EInvoiceCaseStudy() {
             </div>
           </div>
         </DesignJourneyCollapsible>
+        <div className="flex min-w-0 flex-col gap-10 sm:gap-12">
         <CaseStudyInViewSection
           id="e-invoice-handoff"
           className="scroll-mt-28 border-t border-zinc-800 pt-10 sm:scroll-mt-32 sm:pt-12"
@@ -958,6 +955,7 @@ export default function EInvoiceCaseStudy() {
             />
           </div>
         </CaseStudyInViewSection>
+        </div>
         </div>
 
         <CaseStudyInViewSection

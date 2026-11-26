@@ -92,15 +92,14 @@ const CASE_STUDY_ASIDE_META: Record<string, CaseStudyAsideMeta> = {
     items: [
       {
         label: "Role",
-        value:
-          "Product / UX Designer, TurnCloud (client: Taiwan Ministry of Finance)",
+        value: "User Research & UX Designer",
       },
       { label: "Team", value: "Government stakeholders, engineering" },
-      { label: "Timeline", value: "Jul 2024 – Nov 2025" },
+      { label: "Timeline", value: "Feb 2025 – Nov 2025" },
       {
         label: "Outcome",
         value:
-          "Missed top-tier prize redemptions 24% → 18% one month after launch; 88% task success in usability sessions",
+          "Missed top-tier prize redemptions 24% → 18% one month after launch",
       },
     ],
     primaryCta: {

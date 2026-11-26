@@ -18,8 +18,8 @@ const METRICS: CaseStudyHeroTldrMetric[] = [
   },
   {
     kicker: "Testing scope",
-    value: "88%",
-    title: "Task success across ages",
+    value: "12",
+    title: "Moderated prototype sessions",
     detail:
       "Moderated prototype usability testing sessions with users 18–70+, including visually impaired participants, on scan, donate, and redemption.",
   },
@@ -30,8 +30,9 @@ export function EInvoiceHeroTldr() {
     <CaseStudyHeroTldr
       headline={
         <>
-          Shipped for 20M+ users · 5 user segments including low-vision and foreign
-          residents · Taiwan Ministry of Digital Affairs certified
+          Shipped for 20M+ users. Five user segments: seniors, middle-aged users,
+          younger users, foreign residents (including newcomers), and low-vision
+          users.
         </>
       }
       metrics={METRICS}

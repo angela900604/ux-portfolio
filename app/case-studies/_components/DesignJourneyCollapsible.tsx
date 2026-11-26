@@ -53,6 +53,7 @@ export function DesignJourneyCollapsible({
   title = "Design journey",
   subtitle,
   className = "",
+  defaultOpen = false,
 }: {
   children: ReactNode;
   journeySectionIds: readonly string[];
@@ -61,6 +62,7 @@ export function DesignJourneyCollapsible({
   title?: string;
   subtitle?: string;
   className?: string;
+  defaultOpen?: boolean;
 }) {
   const headingId = useId();
   const journeyIdSet = useMemo(
@@ -68,7 +70,7 @@ export function DesignJourneyCollapsible({
     [journeySectionIds],
   );
 
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(defaultOpen);
 
   useLayoutEffect(() => {
     const syncFromHash = () => {
@@ -100,7 +102,9 @@ export function DesignJourneyCollapsible({
 
   return (
     <div
-      className={`scroll-mt-28 border-t border-zinc-800 pt-10 sm:scroll-mt-32 sm:pt-12 ${className}`.trim()}
+      className={`scroll-mt-28 border-t border-zinc-800 sm:scroll-mt-32 ${
+        open ? "pt-10 sm:pt-12" : "pt-6 sm:pt-8"
+      } ${className}`.trim()}
     >
       <h2 id={headingId} className={CASE_STUDY_SECTION_TITLE_CLASS}>
         <button
@@ -109,23 +113,23 @@ export function DesignJourneyCollapsible({
           onClick={toggle}
           aria-expanded={open}
           aria-controls={panelId}
-          className="flex w-full items-center justify-between gap-4 border-t border-zinc-600 py-4 text-left font-[inherit] tracking-[inherit] text-inherit transition hover:opacity-80"
+          className="flex w-full items-center justify-between gap-4 py-0 text-left font-[inherit] tracking-[inherit] text-inherit transition hover:opacity-80"
         >
           <span className="min-w-0">{title}</span>
           <AccordionChevron open={open} />
         </button>
       </h2>
       {subtitle ? (
-        <p className={`-mt-2 ${CS_BODY}`}>{subtitle}</p>
+        <p className={`mt-1 ${CS_BODY}`}>{subtitle}</p>
       ) : null}
       <div
         id={panelId}
         role="region"
         aria-labelledby={headingId}
         hidden={!open}
-        className={open ? "pb-6 pt-2 sm:pb-8" : "hidden"}
+        className={open ? "pt-6" : "hidden"}
       >
-        {open ? <div className="pt-4">{children}</div> : null}
+        {open ? children : null}
       </div>
     </div>
   );

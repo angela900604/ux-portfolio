@@ -1,9 +1,14 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ImageLightbox } from "@/app/components/ImageLightbox";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 
 export function ProblemPersonasBlock() {
+  const [goalOpen, setGoalOpen] = useState(true);
+
   return (
     <CaseStudyInViewSection
       id="user-journey-map"
@@ -16,8 +21,8 @@ export function ProblemPersonasBlock() {
           </span>
           <p className="max-w-3xl cs-body">
             Roughly 20 million people rely on this official app, yet only 2.8★ App
-            Store ratings and broken flows were excluding elders, newcomers, and
-            low-vision users.
+            Store ratings (~Mar 2024–Mar 2025) and broken flows were excluding
+            elders, newcomers, and low-vision users.
           </p>
 
           <div>
@@ -29,7 +34,11 @@ export function ProblemPersonasBlock() {
             </Link>
           </div>
 
-          <details className="group max-w-3xl rounded-xl border border-zinc-800 bg-zinc-900/40 open:border-emerald-500/25">
+          <details
+            open={goalOpen}
+            onToggle={(e) => setGoalOpen(e.currentTarget.open)}
+            className="group max-w-3xl rounded-xl border border-zinc-800 bg-zinc-900/40 open:border-emerald-500/25"
+          >
             <summary className="cursor-pointer list-none px-4 py-3.5 text-sm font-medium text-emerald-300/95 transition hover:bg-zinc-900/40 hover:text-emerald-200 [&::-webkit-details-marker]:hidden">
               <span className="inline-flex w-full items-center justify-between gap-3">
                 <span>Context and design goal</span>
@@ -70,9 +79,8 @@ export function ProblemPersonasBlock() {
                 scan paper receipts into the app, and claim or donate prizes.
               </p>
               <p className="mt-4">
-                <span className="font-medium text-zinc-400">Design goal:</span> To
-                redesign the information architecture, flow and UI to make those core jobs
-                obvious and trustworthy for{" "}
+                The design goal was to redesign the information architecture, flow,
+                and UI to make those core jobs obvious and trustworthy for{" "}
                 <span className="text-zinc-100">
                   elders, newcomers, foreign residents, and low-vision users
                 </span>
