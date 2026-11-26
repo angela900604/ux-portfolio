@@ -2,7 +2,6 @@ import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ImageLightbox } from "@/app/components/ImageLightbox";
-import { SplitCapsuleLink } from "@/app/components/SplitCapsuleLink";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
@@ -30,6 +29,8 @@ const FIGMA_MOCKUP_PAGE =
   "https://www.figma.com/design/xvssk9Yfmx51aiSpwWE8sv/APP-Mockup?node-id=2103-5106&t=Ynz1CgBhJkN04Gfz-1";
 const FIGMA_WIREFRAME_FLOW =
   "https://www.figma.com/design/ixS4TwNUz1pu0Riv7peXRA/APP-Wireframe?node-id=2120-5665&t=j3rbIoMCpkpNcAY2-1";
+const FIGMA_PILL_CLASS =
+  "inline-flex w-fit items-center gap-2 rounded-full border border-emerald-500/80 bg-emerald-500/90 px-5 py-2.5 text-sm font-semibold text-zinc-950 transition-colors hover:border-emerald-700 hover:bg-emerald-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400/60 sm:px-6 sm:py-3 sm:text-base";
 
 const ASSET = (name: string) => `/case-studies/e-invoice/case-assets/${name}`;
 
@@ -558,24 +559,28 @@ export default function EInvoiceCaseStudy() {
         >
           <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>Figma files</h2>
           <p className="max-w-2xl cs-body">
-            Wireflows, page logic, and hi-fi mockups — hi-fi and page flow first,
+            Wireflows, page logic, and hi-fi mockups — page flow first,
             wireframes for IA and early logic.
           </p>
-          <div className="flex flex-col gap-3 pt-1 sm:flex-row sm:flex-wrap sm:items-center">
-            <SplitCapsuleLink
+          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+            <a
               href={FIGMA_MOCKUP_PAGE}
-              label="Mockup &amp; page flow"
-              variant="emeraldSoft"
               target="_blank"
               rel="noopener noreferrer"
-            />
-            <SplitCapsuleLink
+              className={FIGMA_PILL_CLASS}
+            >
+              Mockup &amp; page flow
+              <span aria-hidden>→</span>
+            </a>
+            <a
               href={FIGMA_WIREFRAME_FLOW}
-              label="Wireframe &amp; wireflow"
-              variant="outline"
               target="_blank"
               rel="noopener noreferrer"
-            />
+              className={FIGMA_PILL_CLASS}
+            >
+              Wireframe &amp; wireflow
+              <span aria-hidden>→</span>
+            </a>
           </div>
         </CaseStudyInViewSection>
         <CaseStudyInViewSection
