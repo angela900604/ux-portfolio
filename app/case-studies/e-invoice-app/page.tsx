@@ -196,24 +196,27 @@ const HERO_MOCK_GALLERY = [
   },
 ] as const;
 
-const FUNCTIONAL_MAP_TEASER = {
+/** Handoff & engineering alignment figure */
+const HANDOFF_MODULE_SETTINGS_SPEC = {
+  src: "/case-studies/e-invoice/Handoff.png",
+  alt: "E-invoice design handoff: Figma flows, API state mapping, screen reader annotations, and component specs for engineering alignment",
+} as const;
+
+const FUNCTIONAL_MAP_INITIAL_DISCUSSION = {
   src:
     "/case-studies/e-invoice/" +
     encodeURIComponent("Example of Initial Feature Discussion Stage.png"),
   alt: "Example of initial feature discussion stage: functional map and touchpoints before wireframes",
 } as const;
 
-const FOCUS_GROUP_TEASER = {
-  src: ASSET("interview-field-20250321-1330-copy.png"),
+const FOCUS_GROUP_PHOTO = {
+  src: "/case-studies/e-invoice/case-assets/interview-field-20250321-1330-copy.png",
   alt: "Older-adult focus group interview on mobile phone use and everyday spending habits",
+  caption:
+    "Older-adult focus group—how they use phones and day-to-day spending habits",
 } as const;
 
-const HANDOFF_TEASER = {
-  src: "/case-studies/e-invoice/Handoff.png",
-  alt: "E-invoice design handoff: Figma flows, API state mapping, screen reader annotations, and component specs for engineering alignment",
-} as const;
-
-const JOURNEY_TEXT_LINK_CLASS =
+const DOTTED_JOURNEY_LINK_CLASS =
   "inline-block text-sm font-medium text-zinc-200 underline decoration-dotted decoration-zinc-600 underline-offset-[3px] transition-colors hover:decoration-zinc-400";
 
 const FINAL_SOLUTION_SCREENS: {
@@ -486,22 +489,21 @@ export default function EInvoiceCaseStudy() {
           </p>
           <Link
             href="/case-studies/e-invoice-app/design-journey"
-            className={JOURNEY_TEXT_LINK_CLASS}
+            className={DOTTED_JOURNEY_LINK_CLASS}
           >
             Design journey →
           </Link>
           <Link
             href="/case-studies/e-invoice-app/design-journey"
-            aria-label="Design journey"
             className="block overflow-hidden"
           >
             <Image
-              src={FUNCTIONAL_MAP_TEASER.src}
-              alt={FUNCTIONAL_MAP_TEASER.alt}
+              src={FUNCTIONAL_MAP_INITIAL_DISCUSSION.src}
+              alt={FUNCTIONAL_MAP_INITIAL_DISCUSSION.alt}
               width={7136}
               height={2520}
               className="h-auto w-full object-contain"
-              sizes="(max-width: 1480px) 100vw, 1200px"
+              sizes="(max-width: 1024px) 100vw, 1024px"
               unoptimized
             />
           </Link>
@@ -515,22 +517,21 @@ export default function EInvoiceCaseStudy() {
           </h2>
           <Link
             href="/case-studies/e-invoice-app/handoff-engineering-alignment"
-            className={JOURNEY_TEXT_LINK_CLASS}
+            className={DOTTED_JOURNEY_LINK_CLASS}
           >
             Handoff &amp; engineering alignment →
           </Link>
           <Link
             href="/case-studies/e-invoice-app/handoff-engineering-alignment"
-            aria-label="Handoff & engineering alignment"
             className="block overflow-hidden"
           >
             <Image
-              src={HANDOFF_TEASER.src}
-              alt={HANDOFF_TEASER.alt}
+              src={HANDOFF_MODULE_SETTINGS_SPEC.src}
+              alt={HANDOFF_MODULE_SETTINGS_SPEC.alt}
               width={2414}
               height={1450}
               className="h-auto w-full object-contain object-top"
-              sizes="(max-width: 1480px) 100vw, 1200px"
+              sizes="(max-width: 1024px) 100vw, 1024px"
               unoptimized
             />
           </Link>
@@ -548,23 +549,24 @@ export default function EInvoiceCaseStudy() {
           </p>
           <Link
             href="/user-research-journey"
-            className={JOURNEY_TEXT_LINK_CLASS}
+            className={DOTTED_JOURNEY_LINK_CLASS}
           >
             Full research journey →
           </Link>
-          <Link
-            href="/user-research-journey"
-            aria-label="Full research journey"
-            className="block overflow-hidden"
-          >
-            <Image
-              src={FOCUS_GROUP_TEASER.src}
-              alt={FOCUS_GROUP_TEASER.alt}
-              width={2400}
-              height={1350}
-              className="h-auto w-full object-contain"
-              sizes="(max-width: 1480px) 100vw, 1200px"
-            />
+          <Link href="/user-research-journey" className="block overflow-hidden">
+            <figure className="min-w-0 space-y-2">
+              <Image
+                src={FOCUS_GROUP_PHOTO.src}
+                alt={FOCUS_GROUP_PHOTO.alt}
+                width={2400}
+                height={1350}
+                className="h-auto w-full object-contain"
+                sizes="(max-width: 1024px) 100vw, 1024px"
+              />
+              <figcaption className="max-w-3xl text-xs text-zinc-500">
+                {FOCUS_GROUP_PHOTO.caption}
+              </figcaption>
+            </figure>
           </Link>
         </CaseStudyInViewSection>
         <CaseStudyInViewSection
@@ -599,14 +601,18 @@ export default function EInvoiceCaseStudy() {
         </CaseStudyInViewSection>
 
 
-        <CaseStudyInViewSection className="border-t border-zinc-800 pt-12 space-y-8">
-          <CaseStudyPrevNext currentSlug="e-invoice-app" />
-          <Link
-            href="/"
-            className="text-sm font-medium text-zinc-400 hover:text-zinc-100 transition"
-          >
-            ← Back to home
-          </Link>
+        <CaseStudyInViewSection className="border-t border-zinc-800 pt-12">
+          <CaseStudyPrevNext
+            currentSlug="e-invoice-app"
+            leading={
+              <Link
+                href="/"
+                className="inline-flex items-center text-sm font-medium text-zinc-400 transition hover:text-zinc-100"
+              >
+                ← Back to home
+              </Link>
+            }
+          />
         </CaseStudyInViewSection>
       </CaseStudyContentLayout>
     </article>

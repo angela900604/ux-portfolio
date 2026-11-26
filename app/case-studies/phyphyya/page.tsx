@@ -322,12 +322,6 @@ export default function PhyphyyaCaseStudy() {
               loading="lazy"
             />
             <img
-              src="/case-studies/phyphyya/popup-2026/booth-hats-detail.jpg"
-              alt="Close-up of Christmas pet hats, Haphy postcards, and knit accessories on the booth"
-              className="block aspect-[3/4] w-full object-cover object-top"
-              loading="lazy"
-            />
-            <img
               src="/case-studies/phyphyya/popup-2026/pet-hat-on-dog.jpg"
               alt="A Pomeranian wearing a red knitted Christmas pet hat from the Haphy Living booth"
               className="block aspect-[3/4] w-full object-cover object-top"

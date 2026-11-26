@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Link from "next/link";
 import {
   CS_PREV_NEXT_LINK,
@@ -25,10 +26,13 @@ export const CASE_STUDY_NAV: { slug: string; label: string }[] = [
 export function CaseStudyPrevNext({
   currentSlug,
   variant = "dark",
+  leading,
 }: {
   currentSlug: string;
   /** `phyphyya` keeps the cream brand styling for Haphy Living */
   variant?: "dark" | "phyphyya";
+  /** Replaces the Previous pill (e.g. “← Back to home” on the first case study). */
+  leading?: ReactNode;
 }) {
   const i = CASE_STUDY_NAV.findIndex((x) => x.slug === currentSlug);
   if (i < 0) return null;
@@ -43,23 +47,22 @@ export function CaseStudyPrevNext({
   const muted =
     variant === "phyphyya" ? "text-[#9A8F82] text-xs" : CS_PREV_NEXT_MUTED;
 
+  const start = leading ? (
+    leading
+  ) : prev ? (
+    <Link href={`/case-studies/${prev.slug}`} className={`inline-flex ${base}`}>
+      <span className={muted}>Previous</span>
+      <span className="ml-2 font-medium">{prev.label}</span>
+    </Link>
+  ) : null;
+
   return (
     <nav
-      className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between"
+      className="flex flex-row items-center justify-between gap-4"
       aria-label="Previous and next case studies"
     >
-      <div className="min-w-0 flex-1">
-        {prev ? (
-          <Link
-            href={`/case-studies/${prev.slug}`}
-            className={`inline-flex ${base}`}
-          >
-            <span className={muted}>Previous</span>
-            <span className="ml-2 font-medium">{prev.label}</span>
-          </Link>
-        ) : null}
-      </div>
-      <div className="min-w-0 flex-1 sm:text-right">
+      <div className="min-w-0">{start}</div>
+      <div className="min-w-0 shrink-0">
         {next ? (
           <Link href={`/case-studies/${next.slug}`} className={`inline-flex ${base}`}>
             <span className={muted}>Next</span>

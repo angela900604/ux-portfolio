@@ -6,8 +6,8 @@ const FOOTER_LINK =
 /** Site-wide footer: existing contact + home. */
 export function SiteSimpleFooter() {
   return (
-    <footer className="border-t border-zinc-800 px-5 py-6 text-sm text-zinc-300 sm:px-10 lg:px-[63px]">
-      <p className="flex flex-wrap items-center gap-x-3 gap-y-1">
+    <footer className="px-5 text-sm text-zinc-300 sm:px-10 lg:px-[63px]">
+      <p className="flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-zinc-800 py-6">
         <a
           href="mailto:angela900604@gmail.com"
           className={FOOTER_LINK}
