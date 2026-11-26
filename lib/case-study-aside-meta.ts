@@ -393,7 +393,8 @@ export function getCaseStudyAsideMeta(pathname: string): CaseStudyAsideMeta {
   /** Same project context as e-invoice case study; hide research CTA on this page. */
   if (
     pathOnly === "/user-research-journey" ||
-    pathOnly === "/case-studies/e-invoice-app/design-journey"
+    pathOnly === "/case-studies/e-invoice-app/design-journey" ||
+    pathOnly === "/case-studies/e-invoice-app/handoff-engineering-alignment"
   ) {
     return {
       ...CASE_STUDY_ASIDE_META["e-invoice-app"],

@@ -196,11 +196,25 @@ const HERO_MOCK_GALLERY = [
   },
 ] as const;
 
-/** Handoff & engineering alignment figure */
-const HANDOFF_MODULE_SETTINGS_SPEC = {
+const FUNCTIONAL_MAP_TEASER = {
+  src:
+    "/case-studies/e-invoice/" +
+    encodeURIComponent("Example of Initial Feature Discussion Stage.png"),
+  alt: "Example of initial feature discussion stage: functional map and touchpoints before wireframes",
+} as const;
+
+const FOCUS_GROUP_TEASER = {
+  src: ASSET("interview-field-20250321-1330-copy.png"),
+  alt: "Older-adult focus group interview on mobile phone use and everyday spending habits",
+} as const;
+
+const HANDOFF_TEASER = {
   src: "/case-studies/e-invoice/Handoff.png",
   alt: "E-invoice design handoff: Figma flows, API state mapping, screen reader annotations, and component specs for engineering alignment",
 } as const;
+
+const JOURNEY_TEXT_LINK_CLASS =
+  "inline-block text-sm font-medium text-zinc-200 underline decoration-dotted decoration-zinc-600 underline-offset-[3px] transition-colors hover:decoration-zinc-400";
 
 const FINAL_SOLUTION_SCREENS: {
   id: string;
@@ -461,82 +475,6 @@ export default function EInvoiceCaseStudy() {
         </div>
 
         <CaseStudyInViewSection
-          id="e-invoice-handoff"
-          className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
-        >
-          <div className="max-w-4xl space-y-4">
-            <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
-              Handoff &amp; engineering alignment
-            </h2>
-            <div className="cs-body">
-              <p className="font-medium text-zinc-400">
-                Handoff included three layers:
-              </p>
-              <ul className="mt-4 list-none space-y-3.5">
-                <li className="flex gap-3">
-                  <span
-                    className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400/85"
-                    aria-hidden
-                  />
-                  <span>
-                    <span className="font-semibold text-zinc-400">
-                      API state matrix
-                    </span>
-                    {" — "}
-                    Each flow mapped against account states and timing windows, so
-                    engineering knew which endpoint to hit per scenario.
-                  </span>
-                </li>
-                <li className="flex gap-3">
-                  <span
-                    className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400/85"
-                    aria-hidden
-                  />
-                  <span>
-                    <span className="font-semibold text-zinc-400">
-                      Screen reader annotation
-                    </span>
-                    {" — "}
-                    VoiceOver focus order marked directly on screens.
-                  </span>
-                </li>
-                <li className="flex gap-3">
-                  <span
-                    className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400/85"
-                    aria-hidden
-                  />
-                  <span>
-                    <span className="font-semibold text-zinc-400">
-                      Component specs
-                    </span>
-                    {" — "}
-                    States, empty copy, and error strings per component in the Figma
-                    library.
-                  </span>
-                </li>
-              </ul>
-            </div>
-            <figure className="mt-6 overflow-hidden">
-              <ImageLightbox
-                src={HANDOFF_MODULE_SETTINGS_SPEC.src}
-                alt={HANDOFF_MODULE_SETTINGS_SPEC.alt}
-                className="block w-full"
-                disableHoverScale
-              >
-                <Image
-                  src={HANDOFF_MODULE_SETTINGS_SPEC.src}
-                  alt={HANDOFF_MODULE_SETTINGS_SPEC.alt}
-                  width={2414}
-                  height={1450}
-                  className="h-auto w-full object-contain object-top"
-                  sizes="(max-width: 1024px) 100vw, 1024px"
-                  unoptimized
-                />
-              </ImageLightbox>
-            </figure>
-          </div>
-        </CaseStudyInViewSection>
-        <CaseStudyInViewSection
           id="design-journey"
           className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
         >
@@ -548,9 +486,85 @@ export default function EInvoiceCaseStudy() {
           </p>
           <Link
             href="/case-studies/e-invoice-app/design-journey"
-            className="inline-block text-sm font-medium text-zinc-200 underline decoration-dotted decoration-zinc-600 underline-offset-[3px] transition-colors hover:decoration-zinc-400"
+            className={JOURNEY_TEXT_LINK_CLASS}
           >
             Design journey →
+          </Link>
+          <Link
+            href="/case-studies/e-invoice-app/design-journey"
+            aria-label="Design journey"
+            className="block overflow-hidden"
+          >
+            <Image
+              src={FUNCTIONAL_MAP_TEASER.src}
+              alt={FUNCTIONAL_MAP_TEASER.alt}
+              width={7136}
+              height={2520}
+              className="h-auto w-full object-contain"
+              sizes="(max-width: 1480px) 100vw, 1200px"
+              unoptimized
+            />
+          </Link>
+        </CaseStudyInViewSection>
+        <CaseStudyInViewSection
+          id="e-invoice-handoff"
+          className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
+        >
+          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
+            Handoff &amp; engineering alignment
+          </h2>
+          <Link
+            href="/case-studies/e-invoice-app/handoff-engineering-alignment"
+            className={JOURNEY_TEXT_LINK_CLASS}
+          >
+            Handoff &amp; engineering alignment →
+          </Link>
+          <Link
+            href="/case-studies/e-invoice-app/handoff-engineering-alignment"
+            aria-label="Handoff & engineering alignment"
+            className="block overflow-hidden"
+          >
+            <Image
+              src={HANDOFF_TEASER.src}
+              alt={HANDOFF_TEASER.alt}
+              width={2414}
+              height={1450}
+              className="h-auto w-full object-contain object-top"
+              sizes="(max-width: 1480px) 100vw, 1200px"
+              unoptimized
+            />
+          </Link>
+        </CaseStudyInViewSection>
+        <CaseStudyInViewSection
+          id="research-journey"
+          className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
+        >
+          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
+            Full research journey
+          </h2>
+          <p className="max-w-2xl cs-body">
+            Competitor analysis, multisegment interviews, and accessibility
+            work behind this redesign.
+          </p>
+          <Link
+            href="/user-research-journey"
+            className={JOURNEY_TEXT_LINK_CLASS}
+          >
+            Full research journey →
+          </Link>
+          <Link
+            href="/user-research-journey"
+            aria-label="Full research journey"
+            className="block overflow-hidden"
+          >
+            <Image
+              src={FOCUS_GROUP_TEASER.src}
+              alt={FOCUS_GROUP_TEASER.alt}
+              width={2400}
+              height={1350}
+              className="h-auto w-full object-contain"
+              sizes="(max-width: 1480px) 100vw, 1200px"
+            />
           </Link>
         </CaseStudyInViewSection>
         <CaseStudyInViewSection
@@ -582,24 +596,6 @@ export default function EInvoiceCaseStudy() {
               <span aria-hidden>→</span>
             </a>
           </div>
-        </CaseStudyInViewSection>
-        <CaseStudyInViewSection
-          id="research-journey"
-          className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
-        >
-          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
-            Full research journey
-          </h2>
-          <p className="max-w-2xl cs-body">
-            Competitor analysis, multisegment interviews, and accessibility
-            work behind this redesign (Feb–Nov 2025).
-          </p>
-          <Link
-            href="/user-research-journey"
-            className="inline-block text-sm font-medium text-zinc-200 underline decoration-dotted decoration-zinc-600 underline-offset-[3px] transition-colors hover:decoration-zinc-400"
-          >
-            Full research journey →
-          </Link>
         </CaseStudyInViewSection>
 
 
