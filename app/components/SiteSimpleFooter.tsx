@@ -1,9 +1,7 @@
-import Link from "next/link";
-
 const FOOTER_LINK =
   "text-zinc-300 underline decoration-dotted decoration-zinc-600 underline-offset-[3px] transition-colors hover:text-zinc-100 hover:decoration-zinc-400";
 
-/** Site-wide footer: existing contact + home. */
+/** Site-wide footer: email + LinkedIn. */
 export function SiteSimpleFooter() {
   return (
     <footer className="px-5 text-sm text-zinc-300 sm:px-10 lg:px-[63px]">
@@ -25,12 +23,6 @@ export function SiteSimpleFooter() {
         >
           LinkedIn
         </a>
-        <span aria-hidden className="text-zinc-600">
-          ·
-        </span>
-        <Link href="/" className={FOOTER_LINK}>
-          Back to home
-        </Link>
       </p>
     </footer>
   );

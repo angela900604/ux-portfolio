@@ -439,7 +439,7 @@ export default function PhyphyyaCaseStudy() {
         </CaseStudyInViewSection>
 
         <CaseStudyInViewSection className="border-t border-zinc-800 pt-12 space-y-8">
-          <CaseStudyPrevNext currentSlug="phyphyya" variant="phyphyya" />
+          <CaseStudyPrevNext currentSlug="phyphyya" />
           <Link
             href="/"
             className="text-sm font-medium text-zinc-400 transition hover:text-zinc-100"

@@ -64,6 +64,6 @@ export const CS_CONTENT_BAND = "bg-zinc-900/40 p-5 sm:p-6";
 
 /** Prev / next case study control */
 export const CS_PREV_NEXT_LINK =
-  "inline-flex rounded-xl border border-zinc-700/60 bg-zinc-900/40 px-4 py-3 text-sm text-zinc-300 transition hover:border-zinc-600 hover:bg-zinc-900/60 hover:text-zinc-100";
+  "inline-flex items-center rounded-xl border border-zinc-700/60 bg-zinc-900/40 px-4 py-3 text-sm leading-none text-zinc-300 transition hover:border-zinc-600 hover:bg-zinc-900/60 hover:text-zinc-100";
 
 export const CS_PREV_NEXT_MUTED = "text-zinc-500 text-xs";

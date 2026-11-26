@@ -25,12 +25,9 @@ export const CASE_STUDY_NAV: { slug: string; label: string }[] = [
 
 export function CaseStudyPrevNext({
   currentSlug,
-  variant = "dark",
   leading,
 }: {
   currentSlug: string;
-  /** `phyphyya` keeps the cream brand styling for Haphy Living */
-  variant?: "dark" | "phyphyya";
   /** Replaces the Previous pill (e.g. “← Back to home” on the first case study). */
   leading?: ReactNode;
 }) {
@@ -39,20 +36,14 @@ export function CaseStudyPrevNext({
   const prev = i > 0 ? CASE_STUDY_NAV[i - 1] : null;
   const next = i < CASE_STUDY_NAV.length - 1 ? CASE_STUDY_NAV[i + 1] : null;
 
-  const base =
-    variant === "phyphyya"
-      ? "rounded-[22px] border border-[#D5C9B7] bg-[#F5F3EF] px-6 py-3 text-sm text-[#4A4A4A] transition hover:border-[#B8AA95] hover:bg-[#F8F5F0]"
-      : CS_PREV_NEXT_LINK;
-
-  const muted =
-    variant === "phyphyya" ? "text-[#9A8F82] text-xs" : CS_PREV_NEXT_MUTED;
-
   const start = leading ? (
     leading
   ) : prev ? (
-    <Link href={`/case-studies/${prev.slug}`} className={`inline-flex ${base}`}>
-      <span className={muted}>Previous</span>
-      <span className="ml-2 font-medium">{prev.label}</span>
+    <Link href={`/case-studies/${prev.slug}`} className={CS_PREV_NEXT_LINK}>
+      <span className={`${CS_PREV_NEXT_MUTED} leading-none`}>Previous</span>
+      <span className="ml-2 font-medium leading-none text-zinc-100">
+        {prev.label}
+      </span>
     </Link>
   ) : null;
 
@@ -64,9 +55,11 @@ export function CaseStudyPrevNext({
       <div className="min-w-0">{start}</div>
       <div className="min-w-0 shrink-0">
         {next ? (
-          <Link href={`/case-studies/${next.slug}`} className={`inline-flex ${base}`}>
-            <span className={muted}>Next</span>
-            <span className="ml-2 font-medium">{next.label}</span>
+          <Link href={`/case-studies/${next.slug}`} className={CS_PREV_NEXT_LINK}>
+            <span className={`${CS_PREV_NEXT_MUTED} leading-none`}>Next</span>
+            <span className="ml-2 font-medium leading-none text-zinc-100">
+              {next.label}
+            </span>
           </Link>
         ) : null}
       </div>

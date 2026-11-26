@@ -217,7 +217,7 @@ const FOCUS_GROUP_PHOTO = {
 } as const;
 
 const DOTTED_JOURNEY_LINK_CLASS =
-  "inline-block text-sm font-medium text-zinc-200 underline decoration-dotted decoration-zinc-600 underline-offset-[3px] transition-colors hover:decoration-zinc-400";
+  "inline-block text-sm font-medium text-emerald-500 underline decoration-dotted decoration-emerald-500 underline-offset-[3px] transition-colors hover:text-emerald-700 hover:decoration-emerald-700";
 
 const FINAL_SOLUTION_SCREENS: {
   id: string;
