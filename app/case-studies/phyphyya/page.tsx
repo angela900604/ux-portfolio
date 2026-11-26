@@ -301,14 +301,13 @@ export default function PhyphyyaCaseStudy() {
             on my phone, no card reader to buy.
           </p>
 
-          <img
-            src="/case-studies/phyphyya/popup-2026/booth-with-haphy.jpg"
-            alt="At the pop-up booth with Haphy, the Holland lop who inspired the brand"
-            className="block h-auto w-full"
-            loading="lazy"
-          />
-
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <div className="grid grid-cols-2 gap-4">
+            <img
+              src="/case-studies/phyphyya/popup-2026/booth-with-haphy.jpg"
+              alt="At the pop-up booth with Haphy, the Holland lop who inspired the brand"
+              className="block aspect-[3/4] w-full object-cover"
+              loading="lazy"
+            />
             <img
               src="/case-studies/phyphyya/popup-2026/booth-poster.jpg"
               alt="Booth display: Inspired by Haphy poster, Christmas tree hats, and QR code to the full catalog"
