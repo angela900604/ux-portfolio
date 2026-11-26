@@ -322,21 +322,28 @@ export default function GovernmentBackendCaseStudy() {
             </p>
           </CaseStudyInViewSection>
         </DesignJourneyCollapsible>
-        </div>
 
-        <CaseStudyInViewSection
-          id="outcome"
-          className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
+        <DesignJourneyCollapsible
+          journeySectionIds={["outcome"]}
+          navAnchorId="outcome"
+          panelId="gov-backend-outcome-panel"
+          title="Outcome"
+          className="!border-t-0 !pt-0 sm:!pt-0"
         >
-          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>Outcome</h2>
-          <p className="max-w-3xl text-zinc-400 leading-relaxed">
-            One backend now runs announcements, promos, push rules, reporting,
-            and app versions for 600+ staff. Each role sees only what it can
-            use — if a role has no access to a feature, that feature simply
-            does not appear in their sidebar. Notifications go from compose to
-            scheduled push to the in-app centre in one flow.
-          </p>
-        </CaseStudyInViewSection>
+          <CaseStudyInViewSection
+            id="outcome"
+            className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
+          >
+            <p className="max-w-3xl text-zinc-400 leading-relaxed">
+              One backend now runs announcements, promos, push rules, reporting,
+              and app versions for 600+ staff. Each role sees only what it can
+              use — if a role has no access to a feature, that feature simply
+              does not appear in their sidebar. Notifications go from compose to
+              scheduled push to the in-app centre in one flow.
+            </p>
+          </CaseStudyInViewSection>
+        </DesignJourneyCollapsible>
+        </div>
 
         <CaseStudyInViewSection className="border-t border-zinc-800 pt-12 space-y-8">
           <CaseStudyPrevNext currentSlug="government-backend" />
