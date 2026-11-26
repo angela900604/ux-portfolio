@@ -18,7 +18,6 @@ import {
   CASE_STUDY_SECTION_TITLE_CLASS,
   SITE_SHELL_INNER,
 } from "@/lib/site-shell";
-import { CS_H3 } from "@/lib/case-study-theme";
 
 export const metadata = {
   title:
@@ -307,7 +306,10 @@ export default function EInvoiceCaseStudy() {
         <FinalScreensMarquee slides={FINAL_SOLUTION_MARQUEE_SLIDES} />
       </CaseStudyInViewSection>
 
-      <CaseStudyContentLayout containerClassName="!pt-0 sm:!pt-0">
+      <CaseStudyContentLayout
+        containerClassName="!pt-0 sm:!pt-0"
+        contentClassName="space-y-16 sm:space-y-20"
+      >
         <div className="space-y-16 border-t border-zinc-800 pt-14 sm:space-y-20 sm:pt-16">
             <section
               id="e-invoice-story-1-homepage"
@@ -455,6 +457,7 @@ export default function EInvoiceCaseStudy() {
               />
               <GuidedOnboardingVideoPair className="w-full" />
             </section>
+        </div>
 
         <CaseStudyInViewSection
           id="design-journey"
@@ -473,7 +476,6 @@ export default function EInvoiceCaseStudy() {
             Design journey →
           </Link>
         </CaseStudyInViewSection>
-
         <CaseStudyInViewSection
           id="e-invoice-handoff"
           className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
@@ -576,7 +578,6 @@ export default function EInvoiceCaseStudy() {
             />
           </div>
         </CaseStudyInViewSection>
-
         <CaseStudyInViewSection
           id="research-journey"
           className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
@@ -596,6 +597,7 @@ export default function EInvoiceCaseStudy() {
           </Link>
         </CaseStudyInViewSection>
 
+
         <CaseStudyInViewSection className="border-t border-zinc-800 pt-12 space-y-8">
           <CaseStudyPrevNext currentSlug="e-invoice-app" />
           <Link
@@ -605,7 +607,6 @@ export default function EInvoiceCaseStudy() {
             ← Back to home
           </Link>
         </CaseStudyInViewSection>
-        </div>
       </CaseStudyContentLayout>
     </article>
   );

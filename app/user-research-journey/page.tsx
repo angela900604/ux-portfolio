@@ -6,9 +6,7 @@ import { CompetitorAnalysisMain } from "@/app/competitor-analysis/CompetitorAnal
 import { MultisegmentInterviewsMain } from "@/app/multisegment-interviews/MultisegmentInterviewsMain";
 import { EInvoiceMultisegmentResearchSections } from "@/app/case-studies/e-invoice-app/EInvoiceMultisegmentResearchSections";
 import { EInvoiceReflectionBody } from "@/app/case-studies/e-invoice-app/EInvoiceReflectionBody";
-import { CASE_STUDY_SECTION_TITLE_CLASS } from "@/lib/site-shell";
 import {
-  CS_BODY,
   RESEARCH_SECTION_BODY,
   RESEARCH_SECTION_HEADER,
   RESEARCH_SECTION_LABEL,
@@ -84,10 +82,10 @@ export default function UserResearchJourneyPage() {
         </section>
 
         <section id="reflection" className={SECTION_WRAP}>
-          <div className={RESEARCH_SECTION_HEADER}>
-            <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>Reflection</h2>
-            <p className={`max-w-3xl ${CS_BODY}`}>
-              Lessons, constraints, and what I&apos;d validate next
+          <div className={`${RESEARCH_SECTION_HEADER} mb-8 sm:mb-10`}>
+            <h2 className={RESEARCH_SECTION_TITLE}>Reflection</h2>
+            <p className={RESEARCH_SECTION_BODY}>
+              Lessons, constraints, and what to validate next
             </p>
           </div>
           <EInvoiceReflectionBody />

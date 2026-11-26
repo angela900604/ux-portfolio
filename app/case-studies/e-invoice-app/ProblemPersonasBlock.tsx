@@ -29,30 +29,32 @@ export function ProblemPersonasBlock() {
             </Link>
           </div>
 
-          <div className="max-w-3xl space-y-4 cs-body-sm sm:text-[15px]">
-            <p className="text-sm font-medium text-zinc-100">
+          <div className="max-w-3xl space-y-4">
+            <p className="text-sm font-medium text-emerald-300/95">
               Context and design goal
             </p>
-            <p>
-              In Taiwan, retail purchases always come with a{" "}
-              <span className="text-zinc-100">uniform invoice</span>{" "}
-              <span className="text-zinc-500">(統一發票)</span>, often paper with a
-              lottery number and QR code. The Ministry of Finance{" "}
-              <span className="text-zinc-100">cloud invoice / e-invoice ecosystem</span>{" "}
-              <span className="text-zinc-500">(電子發票)</span> lets people store digital
-              copies, bind a{" "}
-              <span className="text-zinc-100">mobile carrier barcode</span>{" "}
-              <span className="text-zinc-500">(手機條碼)</span> for automatic matching,
-              scan paper receipts into the app, and claim or donate prizes.
-            </p>
-            <p>
-              The design goal was to redesign the information architecture, flow,
-              and UI to make those core jobs obvious and trustworthy for{" "}
-              <span className="text-zinc-100">
-                elders, newcomers, foreign residents, and low-vision users
-              </span>
-              .
-            </p>
+            <div className="cs-body-sm space-y-4 sm:text-[15px]">
+              <p>
+                In Taiwan, retail purchases always come with a{" "}
+                <span className="text-zinc-100">uniform invoice</span>{" "}
+                <span className="text-zinc-500">(統一發票)</span>, often paper with a
+                lottery number and QR code. The Ministry of Finance{" "}
+                <span className="text-zinc-100">cloud invoice / e-invoice ecosystem</span>{" "}
+                <span className="text-zinc-500">(電子發票)</span> lets people store digital
+                copies, bind a{" "}
+                <span className="text-zinc-100">mobile carrier barcode</span>{" "}
+                <span className="text-zinc-500">(手機條碼)</span> for automatic matching,
+                scan paper receipts into the app, and claim or donate prizes.
+              </p>
+              <p>
+                The design goal was to redesign the information architecture, flow,
+                and UI to make those core jobs obvious and trustworthy for{" "}
+                <span className="text-zinc-100">
+                  elders, newcomers, foreign residents, and low-vision users
+                </span>
+                .
+              </p>
+            </div>
           </div>
         </div>
 
