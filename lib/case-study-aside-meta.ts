@@ -398,6 +398,10 @@ export function getCaseStudyAsideMeta(pathname: string): CaseStudyAsideMeta {
     };
   }
 
+  if (pathOnly === "/case-studies/e-invoice-app/design-journey") {
+    return CASE_STUDY_ASIDE_META["e-invoice-app"];
+  }
+
   const key = caseStudyPathKey(pathname);
   if (!key) {
     return {

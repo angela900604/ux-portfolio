@@ -6,10 +6,8 @@ import { SplitCapsuleLink } from "@/app/components/SplitCapsuleLink";
 import { CaseStudyContentLayout } from "../_components/CaseStudyContentLayout";
 import { CaseStudyInViewSection } from "../_components/CaseStudyInViewSection";
 import { CaseStudyPrevNext } from "../_components/CaseStudyPrevNext";
-import { DesignJourneyCollapsible } from "../_components/DesignJourneyCollapsible";
 import { EInvoiceHeroTldr } from "./EInvoiceHeroTldr";
 import { FinalScreensMarquee } from "./FinalScreensMarquee";
-import { PortraitTile, WideFigure } from "./EInvoiceFigures";
 import { HomeBeforeAfterSlider } from "./HomeBeforeAfterSlider";
 import { GuidedOnboardingVideoPair } from "./OnboardingDemoVideo";
 import { SettingHomeModulesVideo } from "./SettingHomeModulesVideo";
@@ -35,13 +33,6 @@ const FIGMA_WIREFRAME_FLOW =
   "https://www.figma.com/design/ixS4TwNUz1pu0Riv7peXRA/APP-Wireframe?node-id=2120-5665&t=j3rbIoMCpkpNcAY2-1";
 
 const ASSET = (name: string) => `/case-studies/e-invoice/case-assets/${name}`;
-
-const FUNCTIONAL_MAP_INITIAL_DISCUSSION = {
-  src:
-    "/case-studies/e-invoice/" +
-    encodeURIComponent("Example of Initial Feature Discussion Stage.png"),
-  alt: "Example of initial feature discussion stage: functional map and touchpoints before wireframes",
-} as const;
 
 const STORY_BEAT_PALETTE: Record<
   string,
@@ -210,30 +201,6 @@ const HANDOFF_MODULE_SETTINGS_SPEC = {
   src: "/case-studies/e-invoice/Handoff.png",
   alt: "E-invoice design handoff: Figma flows, API state mapping, screen reader annotations, and component specs for engineering alignment",
 } as const;
-
-/** Friendly lifestyle palette (style direction 01) */
-const STYLE_SWATCHES: { hex: string; name: string }[] = [
-  { hex: "#25244A", name: "Deep navy" },
-  { hex: "#51B0A9", name: "Teal" },
-  { hex: "#A089FD", name: "Lavender" },
-  { hex: "#E57651", name: "Coral" },
-  { hex: "#F8D364", name: "Warm yellow" },
-];
-
-const M_TXT =
-  "rounded-md bg-emerald-500/20 px-1.5 py-0.5 font-semibold tabular-nums text-emerald-200";
-const M_TIME =
-  "rounded-md bg-amber-500/15 px-1.5 py-0.5 font-medium tabular-nums text-amber-100/95";
-/** Labels in testing recap — emerald accent */
-const E_INVOICE_ACCENT_LABEL = "font-semibold text-emerald-300";
-/** Design journey copy — emerald emphasis on key terms */
-const JOURNEY_EMPHASIS = "font-semibold text-emerald-200";
-
-const E_INVOICE_JOURNEY_IDS = [
-  "functional-map",
-  "page-flow-design",
-  "testing",
-] as const;
 
 const FINAL_SOLUTION_SCREENS: {
   id: string;
@@ -488,374 +455,28 @@ export default function EInvoiceCaseStudy() {
               />
               <GuidedOnboardingVideoPair className="w-full" />
             </section>
-        </div>
 
-        <div className="flex min-w-0 flex-col">
-          <DesignJourneyCollapsible
-          journeySectionIds={E_INVOICE_JOURNEY_IDS}
-          panelId="e-invoice-design-journey-panel"
-          title="Design journey"
-          subtitle="Functional map, page flows, and moderated testing"
-          defaultOpen
-        >
         <CaseStudyInViewSection
-          id="functional-map"
-          className="scroll-mt-28 space-y-5 sm:scroll-mt-32"
+          id="design-journey"
+          className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
         >
-          <span className="cs-section-eyebrow">
-            Functional map
-          </span>
-          <p className="max-w-3xl cs-body">
-            Before moving to wireframe, I mapped out a{" "}
-            <span className={JOURNEY_EMPHASIS}>functional map</span> for all
-            features (login, home, prize redemptions, etc) and{" "}
-            <span className={JOURNEY_EMPHASIS}>validated</span> each touchpoint
-            with <span className={JOURNEY_EMPHASIS}>internal stakeholders</span>{" "}
-            (engineers on{" "}
-            <span className={JOURNEY_EMPHASIS}>
-              API availability and data sources
-            </span>
-            ) and{" "}
-            <span className={JOURNEY_EMPHASIS}>external stakeholders</span>{" "}
-            (government staff clients) to confirm the scope was{" "}
-            <span className={JOURNEY_EMPHASIS}>feasible</span>.
+          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
+            Design journey
+          </h2>
+          <p className="max-w-2xl cs-body">
+            Functional map, page flows, and moderated testing
           </p>
-          <WideFigure
-            borderless
-            src={FUNCTIONAL_MAP_INITIAL_DISCUSSION.src}
-            alt={FUNCTIONAL_MAP_INITIAL_DISCUSSION.alt}
-            width={7136}
-            height={2520}
-            unoptimized
-          />
+          <Link
+            href="/case-studies/e-invoice-app/design-journey"
+            className="inline-block text-sm font-medium text-zinc-200 underline decoration-dotted decoration-zinc-600 underline-offset-[3px] transition-colors hover:decoration-zinc-400"
+          >
+            Design journey →
+          </Link>
         </CaseStudyInViewSection>
 
-        <CaseStudyInViewSection
-          id="page-flow-design"
-          className="scroll-mt-28 space-y-12 sm:scroll-mt-32"
-        >
-          <div className="max-w-3xl space-y-4">
-            <p className="max-w-3xl cs-body">
-              In user interviews, people described how they wanted the app to
-              feel in everyday use—easy to scan, calm, and not overwhelming.
-              They said they wanted something that felt familiar and light, not
-              stiff or crowded. Those conversations kept circling back to the
-              same qualities, which we captured as:
-            </p>
-            <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">
-              Interview keywords
-            </p>
-            <ul
-              className="flex flex-wrap gap-2.5"
-              aria-label="User interview keywords (English)"
-            >
-              {(["Intuitive", "Minimal", "Fresh", "Modern"] as const).map((word) => (
-                <li key={word}>
-                  <span className="inline-flex rounded-lg border border-emerald-500/45 bg-emerald-500/10 px-3 py-1.5 text-[14px] font-medium tracking-wide text-emerald-100">
-                    {word}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="grid gap-10 lg:grid-cols-2 lg:items-start lg:gap-14">
-            <div className="min-w-0 space-y-6">
-              <p className="text-xs font-semibold uppercase tracking-widest text-violet-400/90">
-                Moodboard &amp; style directions
-              </p>
-              <h3 className={CASE_STUDY_SECTION_TITLE_CLASS}>
-                Vibrant, Life, Fun
-              </h3>
-              <p className="text-zinc-400 leading-relaxed">
-                The approved route stayed closest to daily behavior: a
-                multi-color system where{" "}
-                <span className="text-zinc-400">hue signals function</span>, larger
-                readable type, and rounded cards/buttons that lower intimidation
-                for mixed-skill users. This matched interview keywords
-                (intuitive, minimal, fresh, modern) while keeping public-service trust.
-              </p>
-              <p className="text-zinc-400 leading-relaxed">
-                Compared with modern minimal and professional practical, this
-                direction best balanced recognition speed for silver users and
-                visual clarity for younger users. It improved scan-findability,
-                hierarchy legibility, and one-handed task completion in
-                real-world contexts (checkout lines, transit, crowded retail).
-              </p>
-            </div>
-            <div className="min-w-0 space-y-6 lg:sticky lg:top-24 lg:self-start">
-              <WideFigure
-                borderless
-                src={ASSET("moodboard-lifestyle-hero.png")}
-                alt="Person using a phone outdoors in an urban setting, sunny lifestyle context"
-              />
-              <div>
-                <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">
-                  Palette
-                </p>
-                <ul className="mt-3 flex flex-wrap gap-3">
-                  {STYLE_SWATCHES.map((s) => (
-                    <li
-                      key={s.hex}
-                      className="flex flex-col items-center gap-1.5 text-center"
-                    >
-                      <span
-                        className="h-11 w-11 rounded-xl shadow-md sm:h-12 sm:w-12"
-                        style={{ backgroundColor: s.hex }}
-                        title={s.hex}
-                      />
-                      <span className="max-w-[5.5rem] text-[10px] leading-tight text-zinc-500">
-                        {s.name}
-                        <span className="block font-mono text-zinc-400">{s.hex}</span>
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div className="max-w-3xl space-y-4 pt-2">
-            <h3 className={CASE_STUDY_SECTION_TITLE_CLASS}>
-              Mockups &amp; design system
-            </h3>
-            <p className="text-zinc-400 leading-relaxed">
-              High-fidelity work used the iOS / iPadOS UI Kit as a baseline—native
-              components, predictable spacing, and patterns that engineering could map
-              quickly to production constraints.
-            </p>
-          </div>
-        </CaseStudyInViewSection>
-
-        <CaseStudyInViewSection
-          id="testing"
-          className="scroll-mt-28 space-y-6 sm:scroll-mt-32"
-        >
-          <div className="max-w-3xl space-y-6">
-            <p className="max-w-3xl cs-body">
-              Twelve moderated sessions—including low-vision users—produced a clear
-              fix list for login, invoice management, and prize flows.
-            </p>
-            <p className="max-w-3xl cs-body-sm">
-              One-on-one observation on core tasks; errors and satisfaction tracked so
-              VoiceOver paths, visual hierarchy, and plain-language fixes could ship
-              before launch—not relegated to a late &quot;a11y pass.&quot;
-            </p>
-            <div className="overflow-hidden p-6">
-              <h3 className={CS_H3}>
-                Results summary (prototype)
-              </h3>
-              <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 text-sm">
-                <div className="flex justify-between gap-4 border-b border-zinc-800 py-2">
-                  <span className="text-zinc-400">Login &amp; registration</span>
-                  <span className={M_TXT}>75%</span>
-                </div>
-                <div className="flex justify-between gap-4 border-b border-zinc-800 py-2">
-                  <span className="text-zinc-400">Carrier binding</span>
-                  <span className={M_TXT}>67%</span>
-                </div>
-                <div className="flex justify-between gap-4 border-b border-zinc-800 py-2">
-                  <span className="text-zinc-400">Invoice wallet &amp; donation</span>
-                  <span className={M_TXT}>83%</span>
-                </div>
-                <div className="flex justify-between gap-4 border-b border-zinc-800 py-2">
-                  <span className="text-zinc-400">Scan &amp; prize redemption</span>
-                  <span className={M_TXT}>92%</span>
-                </div>
-                <div className="flex justify-between gap-4 border-b border-zinc-800 py-2">
-                  <span className="text-zinc-400">Spending analysis</span>
-                  <span className={M_TXT}>100%</span>
-                </div>
-              </div>
-              <p className="mt-4 text-sm text-zinc-400">
-                Errors: average{" "}
-                <span className={M_TIME}>1.3</span> errors per participant—mostly form
-                entry and unclear prompts. Shortest task: scan &amp; prize redemption (
-                <span className={M_TIME}>~40s</span> avg.). Longest: carrier binding (
-                <span className={M_TIME}>~2m 20s</span> avg.).
-              </p>
-              <p className="mt-3 text-sm text-zinc-400">
-                <span className={E_INVOICE_ACCENT_LABEL}>What worked:</span> scan &amp;
-                prize check with visual/audio feedback; homepage layout (especially for
-                elderly); spending charts valued by younger users.
-              </p>
-              <p className="mt-2 text-sm text-zinc-400">
-                <span className={E_INVOICE_ACCENT_LABEL}>What didn&apos;t:</span>{" "}
-                first-run length still a tension for some (optional steps skipped);
-                multi-language prompts unclear; prize redemption steps confusing.
-              </p>
-            </div>
-            <div className="grid gap-6 sm:grid-cols-2 max-w-4xl">
-              <WideFigure
-                borderless
-                src={ASSET("prototype-matrix.png")}
-                alt="Figma prototype flow used for usability testing"
-                caption="Prototype for usability testing."
-              />
-              <WideFigure
-                borderless
-                src={ASSET("prototype-task-notes.png")}
-                alt="Task matrix / pass-fail by participant (export)"
-                caption="Task matrix / pass-fail by participant (export)."
-              />
-            </div>
-          </div>
-        </CaseStudyInViewSection>
-
-        </DesignJourneyCollapsible>
-        <DesignJourneyCollapsible
-          journeySectionIds={["reflection", "business-constraints"]}
-          navAnchorId="reflection"
-          panelId="e-invoice-reflection-panel"
-          title="Reflection"
-          subtitle="Lessons, constraints, and what to validate next"
-          defaultOpen
-        >
-          <div className="space-y-5">
-            <p className="max-w-3xl cs-body">
-              The hardest part was to balance all the various and conflicting needs
-              from all age groups.
-            </p>
-            <div className="max-w-3xl space-y-4 text-zinc-400 leading-relaxed">
-              <p>
-                Interviews were unambiguous: one group needed the sparsest possible
-                home and loud visual anchors; another wanted a richer dashboard with
-                shortcuts and status surfacing immediately. A single static default
-                would always read as &quot;wrong&quot; to half the base. I chose{" "}
-                <span className="text-zinc-100">
-                  configurability—optional home modules with fixed rails
-                </span>{" "}
-                over picking one designed default and accepting that we&apos;d quietly
-                fail a major segment.
-              </p>
-              <p>
-                The cost showed up in testing:{" "}
-                <span className="text-zinc-100">
-                  first launch picked up cognitive overhead
-                </span>{" "}
-                because people encountered density choices before they had finished a
-                single high-confidence task. If I were redesigning today, I&apos;d
-                validate a{" "}
-                <span className="text-zinc-100">
-                  tiered onboarding sequence in production
-                </span>
-                —complete one core job (e.g. scan or passbook) with a sane default,
-                then surface module toggles with clearer presets. Same principle as
-                progressive disclosure in trust-heavy products:{" "}
-                <span className="text-zinc-100">
-                  earn comprehension before preference complexity
-                </span>
-                , and A/B test when that handoff happens.
-              </p>
-              <p>
-                A second lesson sat in the data tail: the weakest tasks were rarely
-                about motor skill—they were about{" "}
-                <span className="text-zinc-100">
-                  whether people understood why a step existed
-                </span>
-                . Inclusive design here meant scenario language and mental models, not
-                only bigger type.
-              </p>
-              <p>
-                On the engineering side, one of the hardest stretches while shaping each
-                screen and flow was staying in lockstep with{" "}
-                <span className="text-zinc-100">backend engineers</span> and with{" "}
-                <span className="text-zinc-100">
-                  engineers who maintained the legacy system
-                </span>
-                . We had to walk through{" "}
-                <span className="text-zinc-100">every API</span> and{" "}
-                <span className="text-zinc-100">each system judgment path</span>{" "}
-                together—clarifying what would be sent back at which stage, and exactly
-                what data each page needed to display and to hand off to the next step.
-                Without that shared map, the experience looked complete in design but
-                could not line up with what we could ship with confidence.
-              </p>
-            </div>
-
-            <div
-              id="business-constraints"
-              className="scroll-mt-28 space-y-5 border-t border-zinc-800 pt-10 sm:scroll-mt-32 sm:pt-12"
-            >
-              <span className="cs-section-eyebrow">
-                Business constraints
-              </span>
-              <h3 className={CASE_STUDY_SECTION_TITLE_CLASS}>
-                Sprint timelines, MoF policy, and backend limits meant every surface had
-                to survive legal review and what engineering could actually ship.
-              </h3>
-              <div className="grid gap-4 sm:grid-cols-3">
-                <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-4">
-                  <p className="text-xs font-semibold text-violet-400">Timeline</p>
-                  <p className="mt-2 text-sm text-zinc-400">
-                    Tight deadlines for research, design, and testing—solutions needed
-                    to ship in sprints without delaying release schedules.
-                  </p>
-                </div>
-                <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-4">
-                  <p className="text-xs font-semibold text-violet-400">Stakeholders</p>
-                  <p className="mt-2 text-sm text-zinc-400">
-                    As a Ministry of Finance government service, features must follow
-                    official regulations and public-sector standards—no commercial
-                    partnerships or private-business campaigns.
-                  </p>
-                </div>
-                <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-4">
-                  <p className="text-xs font-semibold text-violet-400">Technical</p>
-                  <p className="mt-2 text-sm text-zinc-400">
-                    Existing backends limit real-time integration for spending analysis
-                    and multi-language support. Performance must stay smooth despite
-                    biometric login, push notifications, and donation batch processing.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="max-w-3xl space-y-3 border-t border-zinc-800 pt-8">
-              <h3 className={CASE_STUDY_SECTION_TITLE_CLASS}>
-                What I&apos;d validate next
-              </h3>
-              <ul className="list-disc space-y-2 pl-5 text-zinc-400 leading-relaxed marker:text-zinc-500">
-                <li>
-                  Production experiment on{" "}
-                  <span className="text-zinc-400">when</span> optional home modules
-                  are introduced (after first successful task vs. first session).
-                </li>
-                <li>
-                  Deeper pairing with policy/legal on{" "}
-                  <span className="text-zinc-400">how much scenario copy</span> we
-                  can show in technical setup flows without over-promising merchant
-                  coverage.
-                </li>
-                <li>
-                  Longitudinal study on{" "}
-                  <span className="text-zinc-400">VoiceOver task time</span> after
-                  IA stabilization—not just pass/fail in one lab cycle.
-                </li>
-              </ul>
-            </div>
-            <div className="overflow-hidden">
-              <ImageLightbox
-                src="/case-studies/e-invoice/photo-stakeholder-meeting.png"
-                alt="Stakeholder meeting during the e-Invoice redesign project"
-                className="block w-full"
-                disableHoverScale
-              >
-                <Image
-                  src="/case-studies/e-invoice/photo-stakeholder-meeting.png"
-                  alt="Stakeholder meeting during the e-Invoice redesign project"
-                  width={1600}
-                  height={900}
-                  className="h-auto w-full object-cover"
-                />
-              </ImageLightbox>
-            </div>
-          </div>
-        </DesignJourneyCollapsible>
-        <div className="flex min-w-0 flex-col gap-10 sm:gap-12">
         <CaseStudyInViewSection
           id="e-invoice-handoff"
-          className="scroll-mt-28 border-t border-zinc-800 pt-10 sm:scroll-mt-32 sm:pt-12"
+          className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
         >
           <div className="max-w-4xl space-y-4">
             <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
@@ -955,8 +576,6 @@ export default function EInvoiceCaseStudy() {
             />
           </div>
         </CaseStudyInViewSection>
-        </div>
-        </div>
 
         <CaseStudyInViewSection
           id="research-journey"
@@ -986,6 +605,7 @@ export default function EInvoiceCaseStudy() {
             ← Back to home
           </Link>
         </CaseStudyInViewSection>
+        </div>
       </CaseStudyContentLayout>
     </article>
   );
