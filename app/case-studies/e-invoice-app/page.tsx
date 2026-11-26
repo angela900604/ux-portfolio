@@ -460,23 +460,6 @@ export default function EInvoiceCaseStudy() {
         </div>
 
         <CaseStudyInViewSection
-          id="design-journey"
-          className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
-        >
-          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
-            Design journey
-          </h2>
-          <p className="max-w-2xl cs-body">
-            Functional map, page flows, and moderated testing
-          </p>
-          <Link
-            href="/case-studies/e-invoice-app/design-journey"
-            className="inline-block text-sm font-medium text-zinc-200 underline decoration-dotted decoration-zinc-600 underline-offset-[3px] transition-colors hover:decoration-zinc-400"
-          >
-            Design journey →
-          </Link>
-        </CaseStudyInViewSection>
-        <CaseStudyInViewSection
           id="e-invoice-handoff"
           className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
         >
@@ -551,6 +534,23 @@ export default function EInvoiceCaseStudy() {
               </ImageLightbox>
             </figure>
           </div>
+        </CaseStudyInViewSection>
+        <CaseStudyInViewSection
+          id="design-journey"
+          className="scroll-mt-28 space-y-4 sm:scroll-mt-32"
+        >
+          <h2 className={CASE_STUDY_SECTION_TITLE_CLASS}>
+            Design journey
+          </h2>
+          <p className="max-w-2xl cs-body">
+            Functional map, page flows, and moderated testing
+          </p>
+          <Link
+            href="/case-studies/e-invoice-app/design-journey"
+            className="inline-block text-sm font-medium text-zinc-200 underline decoration-dotted decoration-zinc-600 underline-offset-[3px] transition-colors hover:decoration-zinc-400"
+          >
+            Design journey →
+          </Link>
         </CaseStudyInViewSection>
         <CaseStudyInViewSection
           id="figma-resources"
